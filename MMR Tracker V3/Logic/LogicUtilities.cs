@@ -1,8 +1,7 @@
 ﻿using MathNet.Symbolics;
-using MMR_Tracker_V3.TrackerObjectExtentions;
+using MMR_Tracker_V3.DataStructure;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Diagnostics;
 using System.Linq;
 using System.Text;
@@ -39,7 +38,7 @@ namespace MMR_Tracker_V3.Logic
                 Parameters = LogicLine[paramStart..];
             }
         }
-        public static void MoveRequirementsToConditionals(TrackerObjects.MMRData.JsonFormatLogicItem entry)
+        public static void MoveRequirementsToConditionals(MMRData.JsonFormatLogicItem entry)
         {
             if (!entry.ConditionalItems.Any()) { entry.ConditionalItems = new List<List<string>> { entry.RequiredItems }; }
             else
@@ -53,7 +52,7 @@ namespace MMR_Tracker_V3.Logic
             }
             entry.RequiredItems = new List<string>(); ;
         }
-        public static void RemoveRedundantConditionals(TrackerObjects.MMRData.JsonFormatLogicItem entry)
+        public static void RemoveRedundantConditionals(MMRData.JsonFormatLogicItem entry)
         {
             var cleanedConditionals = entry.ConditionalItems.Select(x => x.Distinct().ToList()).ToList();
 
@@ -106,7 +105,7 @@ namespace MMR_Tracker_V3.Logic
                 return false;
             }
         }
-        public static void MakeCommonConditionalsRequirements(TrackerObjects.MMRData.JsonFormatLogicItem entry)
+        public static void MakeCommonConditionalsRequirements(MMRData.JsonFormatLogicItem entry)
         {
             List<string> ConsistantConditionals =
                 entry.ConditionalItems.SelectMany(x => x).Distinct().Where(i => entry.ConditionalItems.All(x => x.Contains(i))).ToList();

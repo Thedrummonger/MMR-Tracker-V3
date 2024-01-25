@@ -1,13 +1,7 @@
-﻿using MMR_Tracker_V3.SpoilerLogImporter;
-using MMR_Tracker_V3.TrackerObjects;
+﻿using MMR_Tracker_V3.DataStructure;
 using System;
-using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
-using System.Linq;
-using System.Net;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace MMR_Tracker_V3.Logic
 {

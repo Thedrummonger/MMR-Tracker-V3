@@ -1,12 +1,7 @@
-﻿using MMR_Tracker_V3.TrackerObjects;
-using System;
-using System.Collections.Generic;
-using System.Diagnostics;
+﻿using MMR_Tracker_V3.DataStructure;
+using MMR_Tracker_V3.TrackerObjects;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using static MMR_Tracker_V3.TrackerObjects.InstanceData;
-using static MMR_Tracker_V3.TrackerObjects.MiscData;
+using static MMR_Tracker_V3.DataStructure.MiscData;
 
 namespace MMR_Tracker_V3.TrackerObjectExtentions
 {

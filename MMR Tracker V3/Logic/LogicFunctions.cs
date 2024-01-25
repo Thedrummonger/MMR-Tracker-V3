@@ -4,17 +4,14 @@ using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using static MMR_Tracker_V3.TrackerObjects.InstanceData;
-using static MMR_Tracker_V3.TrackerObjects.LocationData;
-using static MMR_Tracker_V3.TrackerObjects.MiscData;
+using MMR_Tracker_V3.DataStructure;
+using static MMR_Tracker_V3.DataStructure.MiscData;
 
 namespace MMR_Tracker_V3.Logic
 {
     public class LogicFunctions
     {
-        public static readonly Dictionary<string, Func<TrackerInstance, string, string[], List<string>, bool>> Functions = new()
+        public static readonly Dictionary<string, Func<InstanceData.TrackerInstance, string, string[], List<string>, bool>> Functions = new()
         {
             { "check", (instance, Function, Params, SubUnlockData) => { return CheckAvailableFunction(instance, Function, Params); } },
             { "available", (instance, Function, Params, SubUnlockData) => { return CheckAvailableFunction(instance, Function, Params); } },
@@ -58,14 +55,14 @@ namespace MMR_Tracker_V3.Logic
             return true;
         }
 
-        public static bool LogicFunctionAquired(TrackerInstance instance, string i, List<string> SubUnlockData = null)
+        public static bool LogicFunctionAquired(InstanceData.TrackerInstance instance, string i, List<string> SubUnlockData = null)
         {
             SubUnlockData ??= new List<string>();
             if (!IsLogicFunction(i, out string Function, out string Parameters)) { return false; }
             return Functions[Function](instance, Function, GetParamList(Parameters), SubUnlockData);
         }
 
-        private static bool CheckRenewableFunction(TrackerInstance instance, string Function, string[] Parameters)
+        private static bool CheckRenewableFunction(InstanceData.TrackerInstance instance, string Function, string[] Parameters)
         {
             var ShouldBeRepeatable = true;
             if (Parameters.Length > 1 && bool.TryParse(Parameters[1], out bool Mod))
@@ -81,14 +78,14 @@ namespace MMR_Tracker_V3.Logic
                 IsAtProperCheck(x, ShouldBeRepeatable) &&
                 x.Randomizeditem.OwningPlayer == -1 &&
                 x.Randomizeditem.Item == item.ID);
-            bool IsAtProperCheck(LocationObject x, bool ShouldBeRepeatable)
+            bool IsAtProperCheck(LocationData.LocationObject x, bool ShouldBeRepeatable)
             {
                 if (ShouldBeRepeatable) { return x.GetDictEntry().Repeatable is not null && (bool)x.GetDictEntry().Repeatable; }
                 else { return x.GetDictEntry().Repeatable is not null && !(bool)x.GetDictEntry().Repeatable; }
             }
         }
 
-        private static bool CheckIsRandomizedFunction(TrackerInstance instance, string Function, string[] Parameters)
+        private static bool CheckIsRandomizedFunction(InstanceData.TrackerInstance instance, string Function, string[] Parameters)
         {
             bool Inverse = Parameters.Length > 1 && bool.TryParse(Parameters[1], out bool InverseParam) && !InverseParam;
             bool IsLitteral = Parameters[0].IsLiteralID(out string CleanedID);
@@ -99,7 +96,7 @@ namespace MMR_Tracker_V3.Logic
             return randomizedState == RandomizedState.Randomized != Inverse;
         }
 
-        private static bool CheckTrickEnabledFunction(TrackerInstance instance, string Function, string[] Parameters)
+        private static bool CheckTrickEnabledFunction(InstanceData.TrackerInstance instance, string Function, string[] Parameters)
         {
             bool Inverse = Parameters.Length > 1 && bool.TryParse(Parameters[1], out bool InverseParam) && !InverseParam;
             if (!instance.MacroPool.ContainsKey(Parameters[0])) { Debug.WriteLine($"{Parameters[0]} Was not a valid Trick Macro"); return false; }
@@ -107,7 +104,7 @@ namespace MMR_Tracker_V3.Logic
             return instance.MacroPool[Parameters[0]].TrickEnabled != Inverse;
         }
 
-        private static bool CheckAvailableFunction(TrackerInstance instance, string Function, string[] Parameters)
+        private static bool CheckAvailableFunction(InstanceData.TrackerInstance instance, string Function, string[] Parameters)
         {
             bool Inverted = Parameters.Length > 1 && bool.TryParse(Parameters[1], out bool IsInverted) && !IsInverted;
             bool litteral = Parameters[0].IsLiteralID(out string paramClean);
@@ -124,7 +121,7 @@ namespace MMR_Tracker_V3.Logic
             return false;
         }
 
-        private static bool CheckOptionFunction(TrackerInstance instance, string Function, string[] Parameters)
+        private static bool CheckOptionFunction(InstanceData.TrackerInstance instance, string Function, string[] Parameters)
         {
             if (Parameters.Length < 1) { return false; } //No Values Pased
 
@@ -173,7 +170,7 @@ namespace MMR_Tracker_V3.Logic
             }
         }
 
-        private static bool CheckContainsFunction(TrackerInstance instance, string Function, string[] Parameters)
+        private static bool CheckContainsFunction(InstanceData.TrackerInstance instance, string Function, string[] Parameters)
         {
             if (Parameters.Length < 2) { return false; } //Not enough Values Pased
 

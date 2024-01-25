@@ -1,12 +1,8 @@
 ﻿using Newtonsoft.Json;
 using Octokit;
 using System;
-using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace MMR_Tracker_V3
 {
@@ -20,9 +16,10 @@ namespace MMR_Tracker_V3
                 TrackerObjects.InstanceData.OptionFile options;
                 try { options = JsonConvert.DeserializeObject<TrackerObjects.InstanceData.OptionFile>(File.ReadAllText(References.Globalpaths.OptionFile)); }
                 catch { Debug.WriteLine("could not parse options.txt"); return VersionStatus; }
-                if (!options.CheckForUpdate) {
+                if (!options.CheckForUpdate)
+                {
                     Debug.WriteLine("Checking for updates not enabled");
-                    return VersionStatus; 
+                    return VersionStatus;
                 }
             }
             else { return VersionStatus; }
@@ -33,16 +30,16 @@ namespace MMR_Tracker_V3
                 VersionStatus.LatestVersion = client.Repository.Release.GetLatest("Thedrummonger", "MMR-Tracker-V3").Result;
                 var VersionSatus = VersionStatus.LatestVersion.TagName.AsVersion().CompareTo(References.trackerVersion);
 
-                Debug.WriteLine($"Latest Version: { VersionStatus.LatestVersion.TagName } Current Version { References.trackerVersion }");
+                Debug.WriteLine($"Latest Version: {VersionStatus.LatestVersion.TagName} Current Version {References.trackerVersion}");
                 if (VersionSatus < 0) { Debug.WriteLine($"Using Unreleased Dev Version"); VersionStatus.VersionStatus = versionStatus.dev; }
                 else if (VersionSatus > 0) { Debug.WriteLine($"Using Outdated Version"); VersionStatus.VersionStatus = versionStatus.outdated; }
                 else if (VersionSatus == 0) { Debug.WriteLine($"Using Current Version"); VersionStatus.VersionStatus = versionStatus.current; }
                 return VersionStatus;
             }
-            catch (Exception ex) 
-            { 
+            catch (Exception ex)
+            {
                 Debug.WriteLine("Could not get github release data");
-                Debug.WriteLine(ex); 
+                Debug.WriteLine(ex);
                 return VersionStatus;
             }
         }

@@ -1,4 +1,5 @@
-﻿using MMR_Tracker_V3.TrackerObjectExtentions;
+﻿using MMR_Tracker_V3.DataStructure;
+using MMR_Tracker_V3.TrackerObjectExtentions;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
@@ -59,7 +60,7 @@ namespace MMR_Tracker_V3.SpoilerLogImporter
                             Debug.WriteLine($"{i.Value} was not a valid Junk Location!");
                             continue;
                         }
-                        LocationObj.SetRandomizedState(TrackerObjects.MiscData.RandomizedState.ForcedJunk);
+                        LocationObj.SetRandomizedState(MiscData.RandomizedState.ForcedJunk);
                     }
                 }
             }
@@ -67,7 +68,7 @@ namespace MMR_Tracker_V3.SpoilerLogImporter
             {
                 var Location = Instance.GetLocationByID(i.Key);
                 var item = Instance.GetItemByID(i.Value);
-                if (i.Value == "Vanilla" && Location is not null) { Location.SetRandomizedState(TrackerObjects.MiscData.RandomizedState.ForcedJunk); continue; }
+                if (i.Value == "Vanilla" && Location is not null) { Location.SetRandomizedState(MiscData.RandomizedState.ForcedJunk); continue; }
                 if (Location is null)
                 {
                     Debug.WriteLine($"{i.Key} was not a valid location!");

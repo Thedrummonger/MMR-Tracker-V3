@@ -1,26 +1,16 @@
-﻿using MathNet.Symbolics;
-using MMR_Tracker_V3.TrackerObjectExtentions;
+﻿using MMR_Tracker_V3.TrackerObjectExtentions;
 using MMR_Tracker_V3.TrackerObjects;
-using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Diagnostics;
 using System.Linq;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Threading.Tasks;
-using static Microsoft.FSharp.Core.LanguagePrimitives;
-using static MMR_Tracker_V3.TrackerObjects.InstanceData;
-using static MMR_Tracker_V3.TrackerObjects.ItemData;
-using static MMR_Tracker_V3.TrackerObjects.LocationData;
-using static MMR_Tracker_V3.TrackerObjects.LogicDictionaryData;
-using static MMR_Tracker_V3.TrackerObjects.MiscData;
+using static MMR_Tracker_V3.DataStructure.MiscData;
+using MMR_Tracker_V3.DataStructure;
 
 namespace MMR_Tracker_V3.Logic
 {
     public class LogicCalculation(InstanceData.InstanceContainer _container)
     {
-        public readonly InstanceContainer container = _container;
+        public readonly InstanceData.InstanceContainer container = _container;
         public Dictionary<string, List<string>> LogicUnlockData = [];
         public Dictionary<string, MMRData.JsonFormatLogicItem> LogicMap = [];
         public Dictionary<object, int> AutoObtainedObjects = [];
@@ -109,7 +99,7 @@ namespace MMR_Tracker_V3.Logic
                     else
                     {
                         if (LogicItem.Type == LogicEntryType.item && !LogicItem.HadItemCount)
-                        { UsableItems.AddRange(Enumerable.Repeat(LogicItem.CleanID, (LogicItem.Object as ItemObject).GetTotalUsable())); }
+                        { UsableItems.AddRange(Enumerable.Repeat(LogicItem.CleanID, (LogicItem.Object as ItemData.ItemObject).GetTotalUsable())); }
                         else if (LogicEntryAquired(i, SubUnlockData)) { UsableItems.Add(i); }
                     }
                 }

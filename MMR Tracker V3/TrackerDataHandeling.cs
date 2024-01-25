@@ -1,16 +1,13 @@
-﻿using MMR_Tracker_V3.TrackerObjectExtentions;
+﻿using MMR_Tracker_V3.DataStructure;
+using MMR_Tracker_V3.TrackerObjectExtentions;
 using MMR_Tracker_V3.TrackerObjects;
-using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
-using System.Diagnostics;
 using System.Linq;
-using System.Text.RegularExpressions;
+using static MMR_Tracker_V3.DataStructure.MiscData;
 using static MMR_Tracker_V3.TrackerObjects.EntranceData;
 using static MMR_Tracker_V3.TrackerObjects.HintData;
 using static MMR_Tracker_V3.TrackerObjects.LocationData;
-using static MMR_Tracker_V3.TrackerObjects.MiscData;
-using static MMR_Tracker_V3.TrackerObjects.InstanceData;
 
 namespace MMR_Tracker_V3
 {
@@ -81,7 +78,7 @@ namespace MMR_Tracker_V3
             //dataSets.UncheckedOrMarkedLocations = instance.LocationPool.Values.Where(x => x.CheckState != MiscData.CheckState.Checked).ToList();
             //dataSets.AvailableLocations = dataSets.UncheckedOrMarkedLocations.Where(x => x.Available || x.CheckState == MiscData.CheckState.Marked).ToList();
 
-            foreach(var i in instance.LocationProxyData.LocationProxies.Values)
+            foreach (var i in instance.LocationProxyData.LocationProxies.Values)
             {
                 var CheckState = i.GetReferenceLocation().CheckState;
                 switch (CheckState)
@@ -121,7 +118,7 @@ namespace MMR_Tracker_V3
                     case CheckState.Unchecked:
                         dataSets.ExitStateIsUnchecked.Add(i);
                         dataSets.ExitStateIsNOTChecked.Add(i);
-                        if(i.Available) { dataSets.ExitISMarkedOrISAvailableAndUnchecked.Add(i); }
+                        if (i.Available) { dataSets.ExitISMarkedOrISAvailableAndUnchecked.Add(i); }
                         break;
                 }
             }

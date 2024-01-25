@@ -1,23 +1,22 @@
-﻿using MMR_Tracker_V3.TrackerObjects;
+﻿using MMR_Tracker_V3.DataStructure;
+using MMR_Tracker_V3.TrackerObjectExtentions;
+using MMR_Tracker_V3.TrackerObjects;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Diagnostics;
 using System.Dynamic;
+using System.Globalization;
 using System.IO;
 using System.IO.Compression;
 using System.Linq;
-using System.Runtime.Serialization.Formatters.Binary;
+using System.Net;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading;
 using YamlDotNet.Serialization;
-using System.Globalization;
-using System.Text.RegularExpressions;
-using MMR_Tracker_V3.TrackerObjectExtentions;
-using System.Net;
 using static MMR_Tracker_V3.TrackerObjects.InstanceData;
-using MathNet.Numerics;
 
 namespace MMR_Tracker_V3
 {
@@ -49,8 +48,8 @@ namespace MMR_Tracker_V3
         {
             int idx = LastOccurrence ? input.LastIndexOf(Split) : input.IndexOf(Split);
             Tuple<string, string> Output;
-            if (idx != -1) { Output = new ( input[..idx], input[(idx + 1)..] ); }
-            else { Output = new ( input, string.Empty ); }
+            if (idx != -1) { Output = new(input[..idx], input[(idx + 1)..]); }
+            else { Output = new(input, string.Empty); }
             return Output;
         }
         public static bool In<T>(this T obj, params T[] args)
@@ -92,7 +91,7 @@ namespace MMR_Tracker_V3
             return source.PickRandom(1).Single();
         }
 
-        public static void SetIfEmpty<T,V>(this Dictionary<T, V> Dict, T Value, V Default)
+        public static void SetIfEmpty<T, V>(this Dictionary<T, V> Dict, T Value, V Default)
         {
             if (!Dict.ContainsKey(Value)) { Dict[Value] = Default; }
         }
@@ -375,7 +374,7 @@ namespace MMR_Tracker_V3
             }
             string Content = File.ReadAllText(FilePath);
             var ByteContent = File.ReadAllBytes(FilePath);
-            if (Options?.CompressSave??false)
+            if (Options?.CompressSave ?? false)
             {
                 if (TestCompressedByteSave(ByteContent)) { return SaveType.CompressedByte; };
                 if (TestStandardSave(Content)) { return SaveType.Standard; };
@@ -612,7 +611,7 @@ namespace MMR_Tracker_V3
                 OutObject.Name = locationProxy.GetDictEntry().Name;
                 OutObject.OriginalItem = DictData.OriginalItem;
                 OutObject.Randomizeditem = LocReference?.Randomizeditem.Item;
-                OutObject.Starred = LocReference?.Starred??false;
+                OutObject.Starred = LocReference?.Starred ?? false;
                 OutObject.ValidItemTypes = DictData.ValidItemTypes;
             }
             else if (Object is ItemData.ItemObject ItemObject)
@@ -646,7 +645,7 @@ namespace MMR_Tracker_V3
                 var DictData = MacroObject.GetDictEntry();
                 var LogicData = instance.GetLogic(MacroObject.ID, false);
                 OutObject.ID = MacroObject.ID;
-                OutObject.Area = Istrick ? (LogicData.TrickCategory??"misc") : "macro";
+                OutObject.Area = Istrick ? (LogicData.TrickCategory ?? "misc") : "macro";
                 OutObject.Name = DictData.Name ?? MacroObject.ID;
                 OutObject.OriginalItem = MacroObject.ID;
                 OutObject.Randomizeditem = MacroObject.ID;

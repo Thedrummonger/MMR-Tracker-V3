@@ -1,10 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Runtime.InteropServices;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace MMR_Tracker_V3
 {
@@ -13,10 +9,10 @@ namespace MMR_Tracker_V3
         public static Version trackerVersion = new(2, 0, 0);
         public static UpdateManager.TrackerVersionStatus TrackerVersionStatus = new UpdateManager.TrackerVersionStatus();
 
-        public static OSPlatform? CurrentOS = 
-            RuntimeInformation.IsOSPlatform(OSPlatform.Windows) ? OSPlatform.Windows : 
+        public static OSPlatform? CurrentOS =
+            RuntimeInformation.IsOSPlatform(OSPlatform.Windows) ? OSPlatform.Windows :
             (RuntimeInformation.IsOSPlatform(OSPlatform.OSX) ? OSPlatform.OSX :
-            (RuntimeInformation.IsOSPlatform(OSPlatform.Linux) ? OSPlatform.Linux : 
+            (RuntimeInformation.IsOSPlatform(OSPlatform.Linux) ? OSPlatform.Linux :
             (RuntimeInformation.IsOSPlatform(OSPlatform.FreeBSD) ? OSPlatform.FreeBSD : null)));
 
         public static class Globalpaths

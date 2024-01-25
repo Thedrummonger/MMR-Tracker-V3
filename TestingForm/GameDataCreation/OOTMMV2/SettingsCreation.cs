@@ -9,6 +9,7 @@ using static MMR_Tracker_V3.GameDataCreation.OOTMMV2.OOTMMUtil;
 using System.IO;
 using static TestingForm.GameDataCreation.OOTMMV2.datamodel;
 using MMR_Tracker_V3.Logic;
+using MMR_Tracker_V3.DataStructure;
 
 namespace MMR_Tracker_V3.GameDataCreation.OOTMMV2
 {

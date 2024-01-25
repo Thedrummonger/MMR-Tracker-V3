@@ -8,10 +8,10 @@ using System.Net.Http;
 using System.Net.Sockets;
 using System.Text;
 using System.Threading.Tasks;
-using MMR_Tracker_V3.TrackerObjects;
 using FParsec;
 using MMR_Tracker_V3;
 using MathNet.Numerics.Statistics;
+using MMR_Tracker_V3.DataStructure;
 
 namespace WebServer
 {

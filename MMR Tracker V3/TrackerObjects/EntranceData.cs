@@ -2,9 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using static MMR_Tracker_V3.TrackerObjects.MiscData;
+using static MMR_Tracker_V3.DataStructure.MiscData;
 
 namespace MMR_Tracker_V3.TrackerObjects
 {
@@ -60,10 +58,10 @@ namespace MMR_Tracker_V3.TrackerObjects
         {
             private EntranceRandoArea _parentArea = ParentArea;
             public EntranceRandoArea GetParentArea() { return _parentArea; }
-            public void SetParent(EntranceRandoArea parent) 
+            public void SetParent(EntranceRandoArea parent)
             {
                 SetParent(parent.GetParent());
-                _parentArea = parent; 
+                _parentArea = parent;
             }
             public string ExitID { get; set; }
             public bool IsWarp { get; set; } = false;

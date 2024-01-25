@@ -1,15 +1,11 @@
-﻿using MathNet.Numerics;
+﻿using MMR_Tracker_V3.DataStructure;
 using MMR_Tracker_V3.Logic;
 using MMR_Tracker_V3.TrackerObjectExtentions;
 using MMR_Tracker_V3.TrackerObjects;
-using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
-using System.IO;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace MMR_Tracker_V3
 {
@@ -22,7 +18,7 @@ namespace MMR_Tracker_V3
         public PlaythroughGenerator(InstanceData.TrackerInstance instance, List<string> IngoredChecks = null)
         {
             Container.CopyAndLoadInstance(instance);
-            _IngoredChecks = IngoredChecks??new List<string>();
+            _IngoredChecks = IngoredChecks ?? new List<string>();
             Container.logicCalculation = new LogicCalculation(Container);
         }
 
@@ -112,7 +108,7 @@ namespace MMR_Tracker_V3
                         sphere = Sphere
                     };
                     if (!FirstObtainedDict.ContainsKey(playthroughObject.ItemObtained)) { FirstObtainedDict.Add(playthroughObject.ItemObtained, new List<Tuple<object, PlaythroughObject>>()); }
-                    FirstObtainedDict[playthroughObject.ItemObtained].Add(new Tuple<object, PlaythroughObject> ( i, playthroughObject));
+                    FirstObtainedDict[playthroughObject.ItemObtained].Add(new Tuple<object, PlaythroughObject>(i, playthroughObject));
                     Playthrough.Add(i.ID, playthroughObject);
                 }
 
@@ -159,7 +155,7 @@ namespace MMR_Tracker_V3
 
             Debug.WriteLine($"Wincon is {WinCon.id}");
 
-            foreach(var i in Playthrough.Values)
+            foreach (var i in Playthrough.Values)
             {
                 i.Important = false;
             }
@@ -172,7 +168,7 @@ namespace MMR_Tracker_V3
 
             while (UnhandledImportantChecks().Any())
             {
-                foreach(var i in UnhandledImportantChecks())
+                foreach (var i in UnhandledImportantChecks())
                 {
                     MarkCheckwithRequiredItems(i);
                 }
@@ -180,12 +176,12 @@ namespace MMR_Tracker_V3
 
             void MarkCheckwithRequiredItems(PlaythroughObject ImportantCheck)
             {
-                foreach(var i in ImportantCheck.advancedUnlockData.RealItemsUsed)
+                foreach (var i in ImportantCheck.advancedUnlockData.RealItemsUsed)
                 {
-                    int StartingAmount = Container.Instance.GetItemByID(i.Key)?.AmountInStartingpool??0;
+                    int StartingAmount = Container.Instance.GetItemByID(i.Key)?.AmountInStartingpool ?? 0;
                     if (FirstObtainedDict.ContainsKey(i.Key))
                     {
-                        for(var j = 0; j < i.Value; j++)
+                        for (var j = 0; j < i.Value; j++)
                         {
                             if (StartingAmount > 0) { StartingAmount--; continue; }
                             FirstObtainedDict[i.Key][j].Item2.Important = true;
@@ -204,7 +200,7 @@ namespace MMR_Tracker_V3
                     var item = i.Replace("renewable{", "").Replace("}", "");
                     if (FirstObtainedDict.ContainsKey(item))
                     {
-                        foreach(var j in FirstObtainedDict[item])
+                        foreach (var j in FirstObtainedDict[item])
                         {
                             if (j.Item1 is LocationData.LocationObject Loc && Loc.IsRepeatable())
                             {
@@ -223,7 +219,7 @@ namespace MMR_Tracker_V3
 
         private void GetRealItemData()
         {
-            foreach(var i in Playthrough)
+            foreach (var i in Playthrough)
             {
                 i.Value.advancedUnlockData = PlaythroughTools.GetAdvancedUnlockData(i.Key, Container.logicCalculation.LogicUnlockData, Container.Instance, this);
             }
@@ -243,7 +239,7 @@ namespace MMR_Tracker_V3
 
         public void PrepareInstance()
         {
-            foreach(var i in Container.Instance.ItemPool.Values)
+            foreach (var i in Container.Instance.ItemPool.Values)
             {
                 i.AmountAquiredLocally = 0;
             }
@@ -254,32 +250,32 @@ namespace MMR_Tracker_V3
             foreach (var i in Container.Instance.LocationPool.Values)
             {
                 i.Available = false;
-                i.CheckState = TrackerObjects.MiscData.CheckState.Unchecked;
-                if (i.GetItemAtCheck() == null) { i.RandomizedState = TrackerObjects.MiscData.RandomizedState.ForcedJunk; }
+                i.CheckState = MiscData.CheckState.Unchecked;
+                if (i.GetItemAtCheck() == null) { i.RandomizedState = MiscData.RandomizedState.ForcedJunk; }
                 else
                 {
                     i.Randomizeditem.Item = i.GetItemAtCheck();
-                    i.RandomizedState = TrackerObjects.MiscData.RandomizedState.Randomized;
+                    i.RandomizedState = MiscData.RandomizedState.Randomized;
                 }
-                if (_IngoredChecks.Contains(i.ID)) { i.RandomizedState = TrackerObjects.MiscData.RandomizedState.ForcedJunk; }
+                if (_IngoredChecks.Contains(i.ID)) { i.RandomizedState = MiscData.RandomizedState.ForcedJunk; }
             }
             foreach (var i in Container.Instance.EntrancePool.AreaList.Values.SelectMany(x => x.RandomizableExits().Values))
             {
                 i.Available = false;
-                i.CheckState = TrackerObjects.MiscData.CheckState.Unchecked;
-                if (i.GetDestinationAtExit() == null) { i.RandomizedState = TrackerObjects.MiscData.RandomizedState.ForcedJunk; }
+                i.CheckState = MiscData.CheckState.Unchecked;
+                if (i.GetDestinationAtExit() == null) { i.RandomizedState = MiscData.RandomizedState.ForcedJunk; }
                 else
                 {
                     i.DestinationExit = i.GetDestinationAtExit();
                     if (i.RandomizedState == MiscData.RandomizedState.UnrandomizedManual) { i.RandomizedState = MiscData.RandomizedState.Randomized; }
                     //i.RandomizedState = TrackerObjects.MiscData.RandomizedState.Randomized;
                 }
-                if (_IngoredChecks.Contains(i.ID)) { i.RandomizedState = TrackerObjects.MiscData.RandomizedState.ForcedJunk; }
+                if (_IngoredChecks.Contains(i.ID)) { i.RandomizedState = MiscData.RandomizedState.ForcedJunk; }
             }
             foreach (var i in Container.Instance.EntrancePool.AreaList.Values.SelectMany(x => x.NonRandomizableExits().Values))
             {
                 i.Available = false;
-                i.CheckState = TrackerObjects.MiscData.CheckState.Unchecked;
+                i.CheckState = MiscData.CheckState.Unchecked;
             }
             foreach (var i in Container.Instance.MacroPool.Values)
             {
@@ -291,22 +287,23 @@ namespace MMR_Tracker_V3
         {
             List<string> readablePlaythrough = new List<string>();
             int sphere = -1;
-            foreach(var p in FormatPlaythrough)
+            foreach (var p in FormatPlaythrough)
             {
-                if (sphere != p.Value.sphere) { 
+                if (sphere != p.Value.sphere)
+                {
                     if (sphere > -1) { readablePlaythrough.Add(String.Empty); }
                     readablePlaythrough.Add($"SPHERE: {p.Value.sphere}");
                     sphere = p.Value.sphere;
                 }
                 string AreaName = (Container.Instance.GetLocationByID(p.Key)?.GetDictEntry()?.Area);
-                string LocationName = Container.Instance.GetLocationByID(p.Key)?.GetDictEntry()?.GetName()??p.Key;
+                string LocationName = Container.Instance.GetLocationByID(p.Key)?.GetDictEntry()?.GetName() ?? p.Key;
                 string LocationDisplay = AreaName is null ? LocationName : $"{AreaName} - {LocationName}";
-                string ItemName = Container.Instance.GetItemByID(p.Value.ItemObtained)?.GetDictEntry()?.GetName()??p.Value.ItemObtained;
+                string ItemName = Container.Instance.GetItemByID(p.Value.ItemObtained)?.GetDictEntry()?.GetName() ?? p.Value.ItemObtained;
                 List<string> RealItems = new List<string>();
 
-                foreach(var i in p.Value.advancedUnlockData.RealItemsUsed)
+                foreach (var i in p.Value.advancedUnlockData.RealItemsUsed)
                 {
-                    string display = Container.Instance.GetItemByID(i.Key)?.GetDictEntry()?.GetName()??i.Key;
+                    string display = Container.Instance.GetItemByID(i.Key)?.GetDictEntry()?.GetName() ?? i.Key;
                     if (i.Value > 1) { display += $" X{i.Value}"; }
                     RealItems.Add(display);
                 }
@@ -378,7 +375,7 @@ namespace MMR_Tracker_V3
                     {
                         GetAreaData(logicItem.CleanID, playthroughObject, instance, out List<EntranceData.EntranceAreaPair> path, out List<string> areasVisited);
                         Data.AreasAccessed.AddRange(areasVisited);
-                        foreach(var p in path)
+                        foreach (var p in path)
                         {
                             string PathID = p.GetStringID();
                             if (!Data.ExitsTaken.Contains(PathID))
@@ -396,7 +393,7 @@ namespace MMR_Tracker_V3
             }
         }
 
-        public static void GetAreaData(string area,  PlaythroughGenerator playthroughObject, InstanceData.TrackerInstance instance, out List<EntranceData.EntranceAreaPair> outPath, out List<string> outAreasVisited)
+        public static void GetAreaData(string area, PlaythroughGenerator playthroughObject, InstanceData.TrackerInstance instance, out List<EntranceData.EntranceAreaPair> outPath, out List<string> outAreasVisited)
         {
             List<EntranceData.EntranceAreaPair> path = new List<EntranceData.EntranceAreaPair>();
             List<string> areasVisited = new List<string>();
@@ -448,7 +445,7 @@ namespace MMR_Tracker_V3
             {
                 ReturnList.Add(i);
             }
-            ReturnList.Add(new MiscData.Divider(Divider) );
+            ReturnList.Add(new MiscData.Divider(Divider));
             ReturnList.Add(new MiscData.Divider("REAL ITEMS USED:"));
             Dictionary<string, int> TempRealItems = [];
             foreach (var i in ADVUnlockData.RealItemsUsed)
@@ -461,7 +458,7 @@ namespace MMR_Tracker_V3
                 string RenewableItemName = i.Replace("renewable{", "").TrimEnd('}');
                 if (!TempRealItems.ContainsKey(RenewableItemName)) { TempRealItems.Add(RenewableItemName, 1); }
             }
-            foreach(var i in TempRealItems)
+            foreach (var i in TempRealItems)
             {
                 ReturnList.Add(i);
             }
@@ -553,7 +550,7 @@ namespace MMR_Tracker_V3
 
                 double PrecentUnlocked = (double)ShereBreakdown[i].Where(x => x.Available).Count() / (double)ShereBreakdown[i].Count();
                 double PrecentAquired = (double)ShereBreakdown[i].Where(x => x.CheckState == MiscData.CheckState.Checked).Count() / (double)ShereBreakdown[i].Count();
-                Results[i] = new ShpereCompletionData { PercentageAquired= Math.Round(PrecentAquired*100, 2), PercentageAvailable = Math.Round(PrecentUnlocked*100, 2), ChecksInSphere = i };
+                Results[i] = new ShpereCompletionData { PercentageAquired = Math.Round(PrecentAquired * 100, 2), PercentageAvailable = Math.Round(PrecentUnlocked * 100, 2), ChecksInSphere = i };
             }
             return Results;
         }

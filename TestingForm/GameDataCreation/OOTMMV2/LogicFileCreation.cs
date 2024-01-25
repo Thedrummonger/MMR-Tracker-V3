@@ -1,5 +1,5 @@
-﻿using MMR_Tracker_V3.Logic;
-using MMR_Tracker_V3.TrackerObjects;
+﻿using MMR_Tracker_V3.DataStructure;
+using MMR_Tracker_V3.Logic;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;

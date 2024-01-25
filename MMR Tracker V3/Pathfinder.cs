@@ -1,15 +1,8 @@
-﻿using MMR_Tracker_V3.TrackerObjectExtentions;
+﻿using MMR_Tracker_V3.DataStructure;
+using MMR_Tracker_V3.TrackerObjectExtentions;
 using MMR_Tracker_V3.TrackerObjects;
-using Newtonsoft.Json;
-using System;
 using System.Collections.Generic;
-using System.Collections.Specialized;
-using System.Diagnostics;
-using System.IO;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using static System.Formats.Asn1.AsnWriter;
 
 namespace MMR_Tracker_V3
 {
@@ -29,13 +22,13 @@ namespace MMR_Tracker_V3
         {
             bool ShowMacro = instance.StaticOptions.OptionFile.ShowMacroExitsPathfinder;
             bool IsRoot = false;
-            if (Paths == null) 
+            if (Paths == null)
             {
                 Overloaded = false;
                 IsRoot = true;
                 SeenAreas.Clear();
                 BuildEntranceMap(instance);
-                Paths = [ new Dictionary<string, string> { { Start, "" } } ];
+                Paths = [new Dictionary<string, string> { { Start, "" } }];
             }
 
             if (!instance.StaticOptions.OptionFile.ShowRedundantPathfinder)
@@ -74,11 +67,11 @@ namespace MMR_Tracker_V3
 
             if (FoundAreas.ContainsKey(Goal))
             {
-                foreach(var GoalPath in FoundAreas[Goal])
+                foreach (var GoalPath in FoundAreas[Goal])
                 {
                     Dictionary<string, string> FormattedPath = [];
                     int Index = 1;
-                    foreach(var stop in GoalPath)
+                    foreach (var stop in GoalPath)
                     {
                         string Area = stop.Key;
                         string Exit = stop.Value;
@@ -113,7 +106,7 @@ namespace MMR_Tracker_V3
             foreach (var i in instance.EntrancePool.AreaList.Values)
             {
                 if (!EntranceMap.ContainsKey(i.ID)) { EntranceMap[i.ID] = new Dictionary<string, EntranceData.EntranceRandoDestination>(); }
-                foreach(var j in i.Exits)
+                foreach (var j in i.Exits)
                 {
                     if (j.Value.CheckState != MiscData.CheckState.Checked) { continue; }
                     if (j.Value.IsWarp) { Warps[j.Key] = j.Value.DestinationExit; }

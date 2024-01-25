@@ -3,14 +3,10 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.IO;
-using System.Linq;
 using System.Net;
 using System.Net.Sockets;
-using System.Text;
-using System.Threading.Tasks;
-using static MMR_Tracker_V3.TrackerObjects.NetData;
 
-namespace MMR_Tracker_V3.TrackerObjects
+namespace MMR_Tracker_V3.DataStructure
 {
     public class NetData
     {
@@ -31,7 +27,7 @@ namespace MMR_Tracker_V3.TrackerObjects
             [Description("Multiworld")]
             Multiworld = 3
         }
-        public class NetPacket(int _playerID, NetData.PacketType _packetType, string _Password = "", Dictionary<int, Dictionary<string, int>> _ItemData = null)
+        public class NetPacket(int _playerID, PacketType _packetType, string _Password = "", Dictionary<int, Dictionary<string, int>> _ItemData = null)
         {
             public int PlayerID = _playerID;
             public string Password = _Password;
@@ -40,7 +36,7 @@ namespace MMR_Tracker_V3.TrackerObjects
             public int[] UpdateWhitelist = null;
             public Dictionary<string, string> LocationData = new Dictionary<string, string>();
             //Dictionary<PlayerID, Dictionary<ItemID, ItemAmount>>
-            public Dictionary<int,Dictionary<string, int>> ItemData = _ItemData;
+            public Dictionary<int, Dictionary<string, int>> ItemData = _ItemData;
             public ChatMessage ChatMessage = null;
             public HandshakeResponse HandshakeResponse = null;
 
@@ -60,13 +56,13 @@ namespace MMR_Tracker_V3.TrackerObjects
         public class ServerClient
         {
             public Guid ClientID;
-            [Newtonsoft.Json.JsonIgnore]
+            [JsonIgnore]
             public TcpClient NetClient;
             public NetPacket Handshake;
-            [Newtonsoft.Json.JsonIgnore]
+            [JsonIgnore]
             public IPEndPoint EndPoint;
             public int PlayerID;
-            public NetData.OnlineMode ClientMode;
+            public OnlineMode ClientMode;
             public Dictionary<string, string> OnlineLocationData;
             public Dictionary<int, Dictionary<string, int>> MultiworldItemData;
             public IPAddress GetIP() { return EndPoint?.Address; }
@@ -76,7 +72,7 @@ namespace MMR_Tracker_V3.TrackerObjects
         {
             public Guid ClientID;
             public int PlayerID;
-            public NetData.OnlineMode ClientMode;
+            public OnlineMode ClientMode;
             public bool ConnectionSuccess;
             public string ConnectionStatus;
             public int[] ConnectedPlayers;
@@ -86,15 +82,15 @@ namespace MMR_Tracker_V3.TrackerObjects
             public static string ConfigFilePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Recources", "ServerConfig.cfg");
             public IPAddress IPAddress = IPAddress.Any;
             public int Port = DefaultProgramPort;
-            public NetData.OnlineMode ServerGameMode = NetData.OnlineMode.None;
+            public OnlineMode ServerGameMode = OnlineMode.None;
             public List<IPAddress> IPBlacklist = new List<IPAddress>();
             public List<IPAddress> IPWhitelist = new List<IPAddress>();
             public bool RequireLogin = false;
             public Dictionary<int, string> UserLogins = new Dictionary<int, string>();
             public ConfigFile SetDefaultExamples()
             {
-                IPBlacklist.Add(System.Net.IPAddress.Parse("8.8.8.8"));
-                IPBlacklist.Add(System.Net.IPAddress.Parse("8.8.4.4"));
+                IPBlacklist.Add(IPAddress.Parse("8.8.8.8"));
+                IPBlacklist.Add(IPAddress.Parse("8.8.4.4"));
                 for (var i = 1; i <= 4; i++)
                 {
                     UserLogins.Add(i, $"Password{i}");
@@ -106,7 +102,7 @@ namespace MMR_Tracker_V3.TrackerObjects
                 if (!File.Exists(ConfigFilePath)) { WriteNewConfig(); }
                 else
                 {
-                    try { _ = JsonConvert.DeserializeObject<ConfigFile>(File.ReadAllText(ConfigFilePath), MMR_Tracker_V3.Utility.DefaultSerializerSettings); }
+                    try { _ = JsonConvert.DeserializeObject<ConfigFile>(File.ReadAllText(ConfigFilePath), Utility.DefaultSerializerSettings); }
                     catch { WriteNewConfig(); }
                 }
             }
@@ -114,7 +110,7 @@ namespace MMR_Tracker_V3.TrackerObjects
             public static void WriteNewConfig()
             {
                 ConfigFile configFile = new ConfigFile().SetDefaultExamples();
-                File.WriteAllText(ConfigFilePath, MMR_Tracker_V3.Utility.ToFormattedJson(configFile));
+                File.WriteAllText(ConfigFilePath, configFile.ToFormattedJson());
             }
         }
         public static void ParseNetServerArgs(string[] args, out IPAddress IP, out int Port)

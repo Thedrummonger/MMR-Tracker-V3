@@ -1,12 +1,11 @@
-﻿using MMR_Tracker_V3.TrackerObjects;
-using Newtonsoft.Json;
+﻿using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Text;
 using System.Threading.Tasks;
-using static MMR_Tracker_V3.TrackerObjects.NetData;
+using static MMR_Tracker_V3.DataStructure.NetData;
 
 namespace WebServer
 {

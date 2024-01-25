@@ -1,4 +1,4 @@
-﻿using Newtonsoft.Json;
+﻿using MMR_Tracker_V3.TrackerObjects;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -8,7 +8,7 @@ using System.Net.Sockets;
 using static MMR_Tracker_V3.TrackerDataHandling;
 using static MMR_Tracker_V3.TrackerObjects.InstanceData;
 
-namespace MMR_Tracker_V3.TrackerObjects
+namespace MMR_Tracker_V3.DataStructure
 {
     public static class MiscData
     {
@@ -84,7 +84,7 @@ namespace MMR_Tracker_V3.TrackerObjects
                 CheckCoiceOptions = Copy.CheckCoiceOptions;
                 CheckIntOPtions = Copy.CheckIntOPtions;
             }
-            public CheckItemSetting(CheckState _TargetCheckState) 
+            public CheckItemSetting(CheckState _TargetCheckState)
             {
                 TargetheckState = _TargetCheckState;
             }
@@ -94,16 +94,16 @@ namespace MMR_Tracker_V3.TrackerObjects
             }
             public CheckState TargetheckState;
             public bool EnforceMarkAction = false;
-            public Func<IEnumerable<object>, InstanceContainer, List<ManualCheckObjectResult>> CheckUnassignedLocations = 
-                (IEnumerable<object> O, InstanceContainer C) => { throw new NotImplementedException("CheckUnassignedLocations was not assigned"); };
+            public Func<IEnumerable<object>, InstanceContainer, List<ManualCheckObjectResult>> CheckUnassignedLocations =
+                (O, C) => { throw new NotImplementedException("CheckUnassignedLocations was not assigned"); };
             public Func<IEnumerable<object>, InstanceContainer, List<ManualCheckObjectResult>> CheckUnassignedEntrances =
-                (IEnumerable<object> O, InstanceContainer C) => { throw new NotImplementedException("CheckUnassignedEntrances was not assigned"); };
+                (O, C) => { throw new NotImplementedException("CheckUnassignedEntrances was not assigned"); };
             public Func<IEnumerable<object>, InstanceContainer, List<ManualCheckObjectResult>> CheckUnassignedHints =
-                (IEnumerable<object> O, InstanceContainer C) => { throw new NotImplementedException("CheckUnassignedHints was not assigned"); };
+                (O, C) => { throw new NotImplementedException("CheckUnassignedHints was not assigned"); };
             public Func<IEnumerable<object>, InstanceContainer, List<ManualCheckObjectResult>> CheckCoiceOptions =
-                (IEnumerable<object> O, InstanceContainer C) => { throw new NotImplementedException("CheckCoiceOptions was not assigned"); };
+                (O, C) => { throw new NotImplementedException("CheckCoiceOptions was not assigned"); };
             public Func<IEnumerable<object>, InstanceContainer, List<ManualCheckObjectResult>> CheckIntOPtions =
-                (IEnumerable<object> O, InstanceContainer C) => { throw new NotImplementedException("CheckIntOPtions was not assigned"); };
+                (O, C) => { throw new NotImplementedException("CheckIntOPtions was not assigned"); };
             public CheckItemSetting SetTargetheckState(CheckState _TargetCheckState) { TargetheckState = _TargetCheckState; return this; }
             public CheckItemSetting SetEnforceMarkAction(bool _EnforceMarkAction) { EnforceMarkAction = _EnforceMarkAction; return this; }
             public CheckItemSetting SetCheckUnassignedLocations(Func<IEnumerable<object>, InstanceContainer, List<ManualCheckObjectResult>> func) { CheckUnassignedLocations = func; return this; }
@@ -119,7 +119,7 @@ namespace MMR_Tracker_V3.TrackerObjects
             /// <returns></returns>
             public CheckItemSetting SetCheckUnassignedLocations(Dictionary<string, string> StaticLocationItemMap)
             {
-                CheckUnassignedLocations = (IEnumerable<object> O, InstanceContainer C) =>
+                CheckUnassignedLocations = (O, C) =>
                 {
                     List<ManualCheckObjectResult> Results = [];
                     foreach (var obj in O)
@@ -158,7 +158,7 @@ namespace MMR_Tracker_V3.TrackerObjects
         public class TrackerLocationDataList
         {
             public InstanceContainer InstanceContainer;
-            public InstanceData.TrackerInstance Instance { get { return InstanceContainer.Instance; } }
+            public TrackerInstance Instance { get { return InstanceContainer.Instance; } }
             public Dictionary<string, int> Categories;
             public Divider Divider;
             public string Filter;
@@ -169,16 +169,16 @@ namespace MMR_Tracker_V3.TrackerObjects
             public List<object> FinalData = [];
             private bool _ShowAll = false;
             public bool LocationsFiltered { get { return ItemsFound != ItemsDisplayed; } }
-            public bool ShowUnavailableEntries { get { return _ShowAll || (Filter.StartsWith("^") && !Filter.StartsWith("^^")) || Filter.StartsWith("^^^"); } }
+            public bool ShowUnavailableEntries { get { return _ShowAll || Filter.StartsWith("^") && !Filter.StartsWith("^^") || Filter.StartsWith("^^^"); } }
             public bool ShowInvalidEntries { get { return Filter.StartsWith("^^"); } }
-            public TrackerLocationDataList(Divider _Divider, InstanceContainer _InstanceContainer, string _Filter, DataSets _DataSets = null, Dictionary<string, int> _Categories = null) 
+            public TrackerLocationDataList(Divider _Divider, InstanceContainer _InstanceContainer, string _Filter, DataSets _DataSets = null, Dictionary<string, int> _Categories = null)
             {
                 Divider = _Divider;
                 InstanceContainer = _InstanceContainer;
                 Filter = _Filter;
                 DataSets = _DataSets is null ? CreateDataSets(Instance) : _DataSets;
                 Categories = _Categories is null ? Utility.GetCategoriesFromFile(Instance) : _Categories;
-            }  
+            }
             public TrackerLocationDataList Reset() { FinalData = []; ItemsFound = 0; ItemsDisplayed = 0; return this; }
             public TrackerLocationDataList PrintReverse(bool reverse = true) { Reverse = reverse; return this; }
             public TrackerLocationDataList ShowUnavailable(bool showall = true) { _ShowAll = showall; return this; }
@@ -297,7 +297,7 @@ namespace MMR_Tracker_V3.TrackerObjects
             if (e is Enum)
             {
                 Type type = e.GetType();
-                Array values = System.Enum.GetValues(type);
+                Array values = Enum.GetValues(type);
 
                 foreach (int val in values)
                 {

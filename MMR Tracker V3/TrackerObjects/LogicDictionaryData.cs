@@ -1,14 +1,9 @@
-﻿using MMR_Tracker_V3.TrackerObjectExtentions;
-using System;
+﻿using System;
 using System.Collections.Generic;
-using System.Diagnostics;
 using System.Linq;
-using System.Runtime.CompilerServices;
-using System.Text;
-using System.Threading.Tasks;
+using static MMR_Tracker_V3.DataStructure.MiscData;
+using static MMR_Tracker_V3.DataStructure.MMRData;
 using static MMR_Tracker_V3.TrackerObjects.InstanceData;
-using static MMR_Tracker_V3.TrackerObjects.MiscData;
-using static MMR_Tracker_V3.TrackerObjects.MMRData;
 using static MMR_Tracker_V3.TrackerObjects.OptionData;
 
 namespace MMR_Tracker_V3.TrackerObjects
@@ -129,7 +124,7 @@ namespace MMR_Tracker_V3.TrackerObjects
                 return DoEdits switch
                 {
                     true => _parent.GetParentInstancer().InstanceReference.OptionActionItemEdits[ID].Name,
-                    _ => Name??ID,
+                    _ => Name ?? ID,
                 };
             }
             public string GetOptionEditDefinedName(List<OptionData.Action> Actions)
@@ -150,10 +145,11 @@ namespace MMR_Tracker_V3.TrackerObjects
                 var OptionsEffectingThisItem = Actions.Where(x => x.ItemMaxAmountEdit.ContainsKey(ID));
                 if (!OptionsEffectingThisItem.Any()) { return MaxAmountInWorld ?? -1; }
                 int FinalValue = MaxAmountInWorld is null ? -1 : (int)MaxAmountInWorld;
-                foreach(var i in OptionsEffectingThisItem)
+                foreach (var i in OptionsEffectingThisItem)
                 {
                     var EditData = i.ItemMaxAmountEdit[ID];
-                    switch (EditData.action){
+                    switch (EditData.action)
+                    {
                         case MathOP.add:
                             if (FinalValue < 0) { break; }
                             FinalValue += EditData.amount;

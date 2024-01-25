@@ -1,14 +1,8 @@
-﻿using MathNet.Numerics;
-using MMR_Tracker_V3.TrackerObjectExtentions;
+﻿using MMR_Tracker_V3.TrackerObjectExtentions;
 using System;
 using System.Collections.Generic;
-using System.Diagnostics;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using static MMR_Tracker_V3.TrackerObjects.ItemData;
-using static MMR_Tracker_V3.TrackerObjects.MiscData;
-using static MMR_Tracker_V3.TrackerObjects.MMRData;
+using static MMR_Tracker_V3.DataStructure.MiscData;
 
 namespace MMR_Tracker_V3.TrackerObjects
 {
@@ -56,7 +50,7 @@ namespace MMR_Tracker_V3.TrackerObjects
             public int DictInd { get; set; } = -1;
             public override string ToString()
             {
-                return DisplayName??GetDictEntry().Name??ID;
+                return DisplayName ?? GetDictEntry().Name ?? ID;
             }
             public bool ProxyAvailable()
             {

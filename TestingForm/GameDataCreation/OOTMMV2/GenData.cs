@@ -14,6 +14,7 @@ using TestingForm;
 using static MMR_Tracker_V3.Logic.LogicUtilities;
 using static TestingForm.GameDataCreation.OOTMMV2.datamodel;
 using MMR_Tracker_V3.Logic;
+using MMR_Tracker_V3.DataStructure;
 
 namespace MMR_Tracker_V3.GameDataCreation.OOTMMV2
 {

@@ -1,4 +1,5 @@
-﻿using MMR_Tracker_V3.TrackerObjectExtentions;
+﻿using MMR_Tracker_V3.DataStructure;
+using MMR_Tracker_V3.TrackerObjectExtentions;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
@@ -67,66 +68,66 @@ namespace MMR_Tracker_V3.SpoilerLogImporter
             {
                 var Dict = i.GetDictEntry();
 
-                i.SetRandomizedState(TrackerObjects.MiscData.RandomizedState.Randomized);
+                i.SetRandomizedState(MiscData.RandomizedState.Randomized);
 
                 if (Dict.ValidItemTypes.Contains("MultiCoinBlock") && !ShuffleSuperMulti)
                 {
-                    i.SetRandomizedState(TrackerObjects.MiscData.RandomizedState.Unrandomized);
+                    i.SetRandomizedState(MiscData.RandomizedState.Unrandomized);
                 }
                 if (Dict.ValidItemTypes.Contains("SuperBlock") && !ShuffleSuperMulti && PartnerUpgradeShuffle == 0)
                 {
-                    i.SetRandomizedState(TrackerObjects.MiscData.RandomizedState.UnrandomizedManual);
+                    i.SetRandomizedState(MiscData.RandomizedState.UnrandomizedManual);
                 }
 
                 if (Dict.SpoilerData.SpoilerLogNames.Contains("KootFavor") && KootShuffle < 1)
                 {
-                    i.SetRandomizedState(TrackerObjects.MiscData.RandomizedState.Unrandomized);
+                    i.SetRandomizedState(MiscData.RandomizedState.Unrandomized);
                 }
                 if (Dict.SpoilerData.SpoilerLogNames.Contains("KootFavorKey") && KootShuffle < 2)
                 {
-                    i.SetRandomizedState(TrackerObjects.MiscData.RandomizedState.Unrandomized);
+                    i.SetRandomizedState(MiscData.RandomizedState.Unrandomized);
                 }
                 if (Dict.SpoilerData.SpoilerLogNames.Contains("KootFavorCoin") && (!KootCoinShuffle || KootShuffle < 1))
                 {
-                    i.SetRandomizedState(TrackerObjects.MiscData.RandomizedState.Unrandomized);
+                    i.SetRandomizedState(MiscData.RandomizedState.Unrandomized);
                 }
 
                 if (Dict.SpoilerData.SpoilerLogNames.Contains("LetterChain") && LetterShuffle < 3)
                 {
-                    i.SetRandomizedState(TrackerObjects.MiscData.RandomizedState.Unrandomized);
+                    i.SetRandomizedState(MiscData.RandomizedState.Unrandomized);
                 }
                 if (Dict.SpoilerData.SpoilerLogNames.Contains("ChainLetterFinal") && LetterShuffle < 2)
                 {
-                    i.SetRandomizedState(TrackerObjects.MiscData.RandomizedState.Unrandomized);
+                    i.SetRandomizedState(MiscData.RandomizedState.Unrandomized);
                 }
                 if (Dict.SpoilerData.SpoilerLogNames.Contains("SimpleLetter") && LetterShuffle < 1)
                 {
-                    i.SetRandomizedState(TrackerObjects.MiscData.RandomizedState.Unrandomized);
+                    i.SetRandomizedState(MiscData.RandomizedState.Unrandomized);
                 }
 
                 if (Dict.SpoilerData.SpoilerLogNames.Contains("DOJO") && !DOJOShuffle)
                 {
-                    i.SetRandomizedState(TrackerObjects.MiscData.RandomizedState.Unrandomized);
+                    i.SetRandomizedState(MiscData.RandomizedState.Unrandomized);
                 }
                 if (Dict.SpoilerData.SpoilerLogNames.Contains("RadioTrade") && !RadioShuffle)
                 {
-                    i.SetRandomizedState(TrackerObjects.MiscData.RandomizedState.Unrandomized);
+                    i.SetRandomizedState(MiscData.RandomizedState.Unrandomized);
                 }
 
                 if (Dict.SpoilerData.SpoilerLogNames.Contains("TreeBushCoin") && !BushTreeCoinShuffle)
                 {
                     if (Dict.OriginalItem != "Coin") { throw new Exception($"Why {Dict.ID}"); }
-                    i.SetRandomizedState(TrackerObjects.MiscData.RandomizedState.Unrandomized);
+                    i.SetRandomizedState(MiscData.RandomizedState.Unrandomized);
                 }
                 if (Dict.SpoilerData.SpoilerLogNames.Contains("OverworldCoin") && !OverWorldCoinShuffle)
                 {
                     if (Dict.OriginalItem != "Coin") { throw new Exception($"Why {Dict.ID}"); }
-                    i.SetRandomizedState(TrackerObjects.MiscData.RandomizedState.Unrandomized);
+                    i.SetRandomizedState(MiscData.RandomizedState.Unrandomized);
                 }
                 if (Dict.SpoilerData.SpoilerLogNames.Contains("BlockCoin") && !BlockCoinShuffle)
                 {
                     if (Dict.OriginalItem != "Coin") { throw new Exception($"Why {Dict.ID}"); }
-                    i.SetRandomizedState(TrackerObjects.MiscData.RandomizedState.Unrandomized);
+                    i.SetRandomizedState(MiscData.RandomizedState.Unrandomized);
                 }
 
             }
@@ -185,7 +186,7 @@ namespace MMR_Tracker_V3.SpoilerLogImporter
                         if (!Instance.LocationPool.ContainsKey(Location.Key)) { throw new Exception($"{Location.Key} Is not a valid Location"); }
                         var Loc = Instance.LocationPool[Location.Key];
                         //Check if the location is unrandomized
-                        bool CheckUnrand = Loc.IsUnrandomized(TrackerObjects.MiscData.UnrandState.Any);
+                        bool CheckUnrand = Loc.IsUnrandomized(MiscData.UnrandState.Any);
 
                         string SpoilerGivenItem = Location.Value.ToString();
 

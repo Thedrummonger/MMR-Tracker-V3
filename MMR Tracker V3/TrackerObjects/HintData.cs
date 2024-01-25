@@ -1,10 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using static MMR_Tracker_V3.TrackerObjects.MiscData;
-using static MMR_Tracker_V3.TrackerObjects.MMRData;
+using static MMR_Tracker_V3.DataStructure.MiscData;
 
 namespace MMR_Tracker_V3.TrackerObjects
 {
@@ -15,8 +11,9 @@ namespace MMR_Tracker_V3.TrackerObjects
         public class HintObject(InstanceData.TrackerInstance Parent) : CheckableLocation(Parent)
         {
             private InstanceData.TrackerInstance _parent = Parent;
-            public new RandomizedState RandomizedState { 
-                get { return _RandomizedState; } 
+            public new RandomizedState RandomizedState
+            {
+                get { return _RandomizedState; }
                 set { _RandomizedState = value == RandomizedState.Randomized ? RandomizedState.Randomized : RandomizedState.ForcedJunk; }
             }
             private RandomizedState _RandomizedState = RandomizedState.Randomized;

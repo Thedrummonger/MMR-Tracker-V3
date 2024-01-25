@@ -1,15 +1,14 @@
-﻿using MMR_Tracker_V3.Logic;
+﻿using MMR_Tracker_V3.DataStructure;
+using MMR_Tracker_V3.Logic;
 using MMR_Tracker_V3.TrackerObjects;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using static MMR_Tracker_V3.TrackerObjects.InstanceData;
+using static MMR_Tracker_V3.DataStructure.MiscData;
 using static MMR_Tracker_V3.TrackerObjects.EntranceData;
+using static MMR_Tracker_V3.TrackerObjects.InstanceData;
 using static MMR_Tracker_V3.TrackerObjects.ItemData;
 using static MMR_Tracker_V3.TrackerObjects.LocationData;
-using static MMR_Tracker_V3.TrackerObjects.MiscData;
 using static MMR_Tracker_V3.TrackerObjects.OptionData;
 
 namespace MMR_Tracker_V3.TrackerObjectExtentions
@@ -85,7 +84,7 @@ namespace MMR_Tracker_V3.TrackerObjectExtentions
         public static LogicEntryType GetLocationEntryType(this InstanceData.TrackerInstance instance, string ID, bool literal, out object Obj)
         {
             if (literal && instance.LocationPool.ContainsKey(ID)) { Obj = instance.LocationPool[ID]; return LogicEntryType.location; }
-            if (literal && instance.EntrancePool.ExitLookupByID.ContainsKey(ID)) { Obj = instance.GetExitByLogicID(ID);  return LogicEntryType.Exit; }
+            if (literal && instance.EntrancePool.ExitLookupByID.ContainsKey(ID)) { Obj = instance.GetExitByLogicID(ID); return LogicEntryType.Exit; }
             if (literal && instance.HintPool.ContainsKey(ID)) { Obj = instance.HintPool[ID]; return LogicEntryType.Hint; }
             if (instance.MacroPool.ContainsKey(ID)) { Obj = instance.MacroPool[ID]; return LogicEntryType.macro; }
             if (!literal && instance.LocationPool.ContainsKey(ID)) { Obj = instance.LocationPool[ID]; return LogicEntryType.location; }
@@ -179,7 +178,7 @@ namespace MMR_Tracker_V3.TrackerObjectExtentions
             if (CheckItemID)
             {
                 ValidItem = ValidItem.Concat(instance.ItemPool.Values.Where(x =>
-                    x.ID== Item && (x.CanBePlaced() || IgnoreMaxAmount) && (x.ValidStartingItem() || !ForStartingPool))).ToList();
+                    x.ID == Item && (x.CanBePlaced() || IgnoreMaxAmount) && (x.ValidStartingItem() || !ForStartingPool))).ToList();
             }
             if (!ValidItem.Any()) { return null; }
             return ValidItem[0];
@@ -224,7 +223,7 @@ namespace MMR_Tracker_V3.TrackerObjectExtentions
             {
                 var MacroData = instance.GetMacroByID(ID);
                 MacroData.GetPrice(out int p, out char c);
-                if (p > -1 && !instance.PriceData.GetCapacityMap(c).ContainsValue(ID)&& DoEdits)
+                if (p > -1 && !instance.PriceData.GetCapacityMap(c).ContainsValue(ID) && DoEdits)
                 {
                     LogicEditing.HandlePriceLogic(instance, p, c, CopyRequirements, CopyConditionals, out CopyRequirements, out CopyConditionals);
                 }
@@ -233,14 +232,14 @@ namespace MMR_Tracker_V3.TrackerObjectExtentions
             {
                 var LocationData = instance.GetLocationByID(ID);
                 LocationData.GetPrice(out int p, out char c);
-                if (p > -1 && !instance.PriceData.GetCapacityMap(c).ContainsValue(ID)&& DoEdits)
+                if (p > -1 && !instance.PriceData.GetCapacityMap(c).ContainsValue(ID) && DoEdits)
                 {
                     LogicEditing.HandlePriceLogic(instance, p, c, CopyRequirements, CopyConditionals, out CopyRequirements, out CopyConditionals);
                 }
             }
 
-            if (DoEdits) 
-            { 
+            if (DoEdits)
+            {
                 LogicEditing.HandleOptionLogicEdits(actions, ID, CopyRequirements, CopyConditionals, out CopyRequirements, out CopyConditionals);
             }
 
@@ -308,31 +307,31 @@ namespace MMR_Tracker_V3.TrackerObjectExtentions
         {
             if (Entry is LocationObject LO)
             {
-                return LO.GetDictEntry()?.GetName()??LO.ID;
+                return LO.GetDictEntry()?.GetName() ?? LO.ID;
             }
             else if (Entry is MacroObject MO)
             {
-                return MO.GetDictEntry()?.Name??MO.ID;
+                return MO.GetDictEntry()?.Name ?? MO.ID;
             }
             else if (Entry is ItemObject IO)
             {
-                return IO.GetDictEntry()?.Name??IO.ID;
+                return IO.GetDictEntry()?.Name ?? IO.ID;
             }
             else if (Entry is ChoiceOption CO)
             {
-                return CO.Name??CO.ID;
+                return CO.Name ?? CO.ID;
             }
             else if (Entry is ToggleOption TO)
             {
-                return TO.Name??TO.ID;
+                return TO.Name ?? TO.ID;
             }
             else if (Entry is IntOption NO)
             {
-                return NO.Name??NO.ID;
+                return NO.Name ?? NO.ID;
             }
             else if (Entry is HintData.HintObject HO)
             {
-                return HO.GetDictEntry()?.Name??HO.ID;
+                return HO.GetDictEntry()?.Name ?? HO.ID;
             }
             else { return null; }
         }

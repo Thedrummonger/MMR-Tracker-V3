@@ -1,11 +1,7 @@
-﻿using MMR_Tracker_V3.TrackerObjects;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using MMR_Tracker_V3.DataStructure;
+using MMR_Tracker_V3.TrackerObjects;
+using static MMR_Tracker_V3.DataStructure.MiscData;
 using static MMR_Tracker_V3.TrackerObjects.EntranceData;
-using static MMR_Tracker_V3.TrackerObjects.MiscData;
 
 namespace MMR_Tracker_V3.TrackerObjectExtentions
 {
@@ -13,11 +9,11 @@ namespace MMR_Tracker_V3.TrackerObjectExtentions
     {
         public static string DisplayArea(this EntranceRandoExit exit)
         {
-            return exit.GetDictEntry()?.DisplayArea??exit.GetParentArea().ID;
+            return exit.GetDictEntry()?.DisplayArea ?? exit.GetParentArea().ID;
         }
         public static string DisplayExit(this EntranceRandoExit exit)
         {
-            return exit.GetDictEntry()?.DisplayExit??exit.ExitID;
+            return exit.GetDictEntry()?.DisplayExit ?? exit.ExitID;
         }
         public static string GetEntranceDisplayName(this EntranceRandoExit ExitObjectObject)
         {

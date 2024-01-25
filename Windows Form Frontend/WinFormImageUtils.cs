@@ -8,10 +8,10 @@ using System.Threading.Tasks;
 using static Windows_Form_Frontend.WinFormImageUtils;
 using System.IO;
 using System.Diagnostics;
-using MMR_Tracker_V3.TrackerObjects;
 using MMR_Tracker_V3;
 using Octokit;
 using MMR_Tracker_V3.TrackerObjectExtentions;
+using MMR_Tracker_V3.DataStructure;
 
 namespace Windows_Form_Frontend
 {
@@ -337,7 +337,7 @@ namespace Windows_Form_Frontend
                 if (!trackerState.ItemValues.ContainsKey(ItemName)) { trackerState.ItemValues[ItemName] = new ItemCounts(); }
                 trackerState.ItemValues[ItemName].Obtained += item.GetTotalUsable();
             }
-            foreach (var location in Instance.LocationPool.Values.Where(x => x.CheckState == MMR_Tracker_V3.TrackerObjects.MiscData.CheckState.Marked))
+            foreach (var location in Instance.LocationPool.Values.Where(x => x.CheckState == MiscData.CheckState.Marked))
             {
                 string MarkedItem = location.Randomizeditem.Item;
                 if (!trackerState.ItemValues.ContainsKey(MarkedItem)) { trackerState.ItemValues[MarkedItem] = new ItemCounts(); }

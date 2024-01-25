@@ -1,18 +1,16 @@
 ﻿using MMR_Tracker_V3.Logic;
 using MMR_Tracker_V3.TrackerObjectExtentions;
-using MMR_Tracker_V3.TrackerObjects;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
-using System.Linq;
+using static MMR_Tracker_V3.DataStructure.MiscData;
+using static MMR_Tracker_V3.DataStructure.MMRData;
 using static MMR_Tracker_V3.TrackerObjects.HintData;
 using static MMR_Tracker_V3.TrackerObjects.ItemData;
 using static MMR_Tracker_V3.TrackerObjects.LocationData;
 using static MMR_Tracker_V3.TrackerObjects.LogicDictionaryData;
-using static MMR_Tracker_V3.TrackerObjects.MiscData;
-using static MMR_Tracker_V3.TrackerObjects.MMRData;
 using static MMR_Tracker_V3.TrackerObjects.OptionData;
 
 namespace MMR_Tracker_V3.TrackerObjects
@@ -140,7 +138,7 @@ namespace MMR_Tracker_V3.TrackerObjects
                     bool Literal = wincon.IsLiteralID(out string ParsedWinCon);
                     instance.GetItemEntryType(ParsedWinCon, Literal, out object ItemOut);
                     instance.GetItemEntryType(ParsedWinCon, Literal, out object LocationOut);
-                    var outitem = ItemOut??LocationOut??null;
+                    var outitem = ItemOut ?? LocationOut ?? null;
                     if (outitem is not null) { generator.FilterImportantPlaythrough(outitem); }
                     Debug.WriteLine($"Seed Beatable: {generator.Playthrough.ContainsKey(instance.LogicDictionary.WinCondition)}");
                 }
@@ -234,10 +232,10 @@ namespace MMR_Tracker_V3.TrackerObjects
                 foreach (var i in _Instance.HintPool.Values) { i.SetParent(_Instance); }
                 foreach (var i in _Instance.ItemPool.Values) { i.SetParent(_Instance); }
                 _Instance.EntrancePool.SetParent(_Instance);
-                foreach (var i in _Instance.EntrancePool.AreaList.Values) 
-                { 
-                    i.SetParent(_Instance); 
-                    foreach(var j in i.Exits.Values) { j.SetParent(i); }
+                foreach (var i in _Instance.EntrancePool.AreaList.Values)
+                {
+                    i.SetParent(_Instance);
+                    foreach (var j in i.Exits.Values) { j.SetParent(i); }
                 }
                 Instance.LogicDictionary.SetParentContainer(Instance);
                 foreach (var i in Instance.LogicDictionary.LocationList) { i.Value.ID = i.Key; i.Value.SetParent(Instance.LogicDictionary); }

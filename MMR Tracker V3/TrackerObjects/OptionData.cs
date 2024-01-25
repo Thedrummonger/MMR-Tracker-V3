@@ -1,10 +1,7 @@
-﻿using System;
+﻿using MMR_Tracker_V3.DataStructure;
+using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Diagnostics;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace MMR_Tracker_V3.TrackerObjects
 {
@@ -22,8 +19,8 @@ namespace MMR_Tracker_V3.TrackerObjects
             public Dictionary<string, OptionValue> ValueList { get; set; } = new Dictionary<string, OptionValue>();
             public OptionValue GetValue(string _Value = null)
             {
-                if (!ValueList.ContainsKey(_Value??Value)) { throw new Exception($"{_Value??Value} was not a valid value for Option {ID}"); }
-                return ValueList[_Value??Value];
+                if (!ValueList.ContainsKey(_Value ?? Value)) { throw new Exception($"{_Value ?? Value} was not a valid value for Option {ID}"); }
+                return ValueList[_Value ?? Value];
             }
             public void SetValue(string _Value)
             {
@@ -45,8 +42,8 @@ namespace MMR_Tracker_V3.TrackerObjects
             }
             public string getValueName(string _val = null)
             {
-                if (!ValueList.ContainsKey(_val??Value)) { return _val; }
-                return string.IsNullOrWhiteSpace(ValueList[_val??Value].Name) ? ValueList[_val??Value].ID : ValueList[_val??Value].Name;
+                if (!ValueList.ContainsKey(_val ?? Value)) { return _val; }
+                return string.IsNullOrWhiteSpace(ValueList[_val ?? Value].Name) ? ValueList[_val ?? Value].ID : ValueList[_val ?? Value].Name;
             }
         }
 
@@ -121,13 +118,13 @@ namespace MMR_Tracker_V3.TrackerObjects
             public OptionValue Disabled { get; set; }
             public OptionValue GetValue(string _Value = null)
             {
-                string v = _Value??Value;
+                string v = _Value ?? Value;
                 OptionValue vo;
                 if (Enabled.ID == v) { vo = Enabled; }
                 else if (Disabled.ID == v) { vo = Disabled; }
                 else { vo = null; }
 
-                if (vo is null) { throw new Exception($"{_Value??Value} was not a valid value for Option {ID}"); }
+                if (vo is null) { throw new Exception($"{_Value ?? Value} was not a valid value for Option {ID}"); }
                 return vo;
             }
             public void SetValue(bool _Value)
@@ -142,7 +139,7 @@ namespace MMR_Tracker_V3.TrackerObjects
                 else if (Disabled.ID == v) { vo = Disabled; }
                 else { vo = null; }
 
-                if (vo is null) { throw new Exception($"{_Value??Value} was not a valid value for Option {ID}"); }
+                if (vo is null) { throw new Exception($"{_Value ?? Value} was not a valid value for Option {ID}"); }
                 Value = vo.ID;
             }
             public void ToggleValue()
@@ -233,7 +230,7 @@ namespace MMR_Tracker_V3.TrackerObjects
                 return ReturnList;
             }
 
-            public List<string> GetValue(InstanceData.TrackerInstance instance) 
+            public List<string> GetValue(InstanceData.TrackerInstance instance)
             {
                 return instance.InstanceReference.OptionActionCollectionEdits[ID];
             }
@@ -284,7 +281,7 @@ namespace MMR_Tracker_V3.TrackerObjects
         public class CollectionEditData
         {
             public MiscData.MathOP action { get; set; } = MiscData.MathOP.add;
-            public List<string> Values { get; set; } = new List<string>(); 
+            public List<string> Values { get; set; } = new List<string>();
         }
 
         [Serializable]

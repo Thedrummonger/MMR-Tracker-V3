@@ -1,21 +1,14 @@
-﻿using MathNet.Numerics;
+﻿using MMR_Tracker_V3.DataStructure;
 using MMR_Tracker_V3.Logic;
 using MMR_Tracker_V3.SpoilerLogImporter;
 using MMR_Tracker_V3.TrackerObjectExtentions;
 using MMR_Tracker_V3.TrackerObjects;
-using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
-using System.IO;
 using System.Linq;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Threading.Tasks;
-using System.Xml;
+using static MMR_Tracker_V3.DataStructure.MiscData;
 using static MMR_Tracker_V3.TrackerObjects.InstanceData;
-using static MMR_Tracker_V3.Logic.LogicStringParser;
-using static MMR_Tracker_V3.TrackerObjects.MiscData;
 
 namespace MMR_Tracker_V3
 {
@@ -87,8 +80,8 @@ namespace MMR_Tracker_V3
             foreach (var i in Instance.LogicDictionary.EntranceList) { i.Value.ID = i.Key; i.Value.SetParent(Instance.LogicDictionary); }
             foreach (var i in Instance.LogicDictionary.HintSpots) { i.Value.ID = i.Key; i.Value.SetParent(Instance.LogicDictionary); }
             foreach (var i in Instance.LogicDictionary.MacroList) { i.Value.ID = i.Key; i.Value.SetParent(Instance.LogicDictionary); }
-            foreach (var i in Instance.LogicDictionary.ChoiceOptions) 
-            { 
+            foreach (var i in Instance.LogicDictionary.ChoiceOptions)
+            {
                 i.Value.ID = i.Key;
                 foreach (var j in i.Value.ValueList) { j.Value.ID = j.Key; }
             }
@@ -97,7 +90,7 @@ namespace MMR_Tracker_V3
             foreach (var i in Instance.LogicDictionary.LogicEntryCollections) { i.Value.ID = i.Key; }
 
             int Index = 0;
-            foreach(var i in Instance.LogicDictionary.ItemList)
+            foreach (var i in Instance.LogicDictionary.ItemList)
             {
                 Instance.ItemPool.Add(i.Key, new(Instance) { ID = i.Key });
                 Index++;
@@ -151,17 +144,17 @@ namespace MMR_Tracker_V3
                     {
                         if (!Instance.LocationProxyData.LocationsWithProxys.ContainsKey(i.Id)) { Instance.LocationProxyData.LocationsWithProxys.Add(i.Id, new List<string>()); }
                         Instance.LocationProxyData.LocationsWithProxys[i.Id].AddRange(DictEntry.Value.LocationProxys.Select(x => x.ID));
-                        foreach(var proxy in DictEntry.Value.LocationProxys) 
-                        { 
-                            Instance.LocationProxyData.LocationProxies.Add(proxy.ID, proxy.ToInstanceData(DictEntry.Value, Instance)); 
+                        foreach (var proxy in DictEntry.Value.LocationProxys)
+                        {
+                            Instance.LocationProxyData.LocationProxies.Add(proxy.ID, proxy.ToInstanceData(DictEntry.Value, Instance));
                         }
                     }
                 }
                 else if (Instance.LogicDictionary.HintSpots.Any(x => x.Key == i.Id))
                 {
                     var DictEntry = Instance.LogicDictionary.HintSpots.First(x => x.Key == i.Id);
-                    Instance.HintPool.Add(i.Id, new(Instance) 
-                    { 
+                    Instance.HintPool.Add(i.Id, new(Instance)
+                    {
                         ID = i.Id,
                         referenceData = new ReferenceData { LogicIndex = Index, LogicList = Source }
                     });
@@ -183,8 +176,8 @@ namespace MMR_Tracker_V3
                 }
                 else
                 {
-                    Instance.MacroPool.Add(i.Id, new(Instance) 
-                    { 
+                    Instance.MacroPool.Add(i.Id, new(Instance)
+                    {
                         ID = i.Id,
                         referenceData = new ReferenceData { LogicIndex = Index, LogicList = Source }
                     });
@@ -196,17 +189,18 @@ namespace MMR_Tracker_V3
             Instance.PriceData.WalletEntries = PriceRando.GetAllWalletLogicEntries(Instance);
             Dictionary<string, Tuple<char, int>> ItemWallets = Instance.LogicDictionary.ItemList.Values
                 .Where(x => x.WalletCapacity != null && (int)x.WalletCapacity > -1)
-                .ToDictionary(x => x.ID, x => new Tuple<char, int>(x.WalletCurrency??'$', (int)x.WalletCapacity ) );
+                .ToDictionary(x => x.ID, x => new Tuple<char, int>(x.WalletCurrency ?? '$', (int)x.WalletCapacity));
             Dictionary<string, Tuple<char, int>> MacroWallets = Instance.LogicDictionary.MacroList.Values
                 .Where(x => x.WalletCapacity != null && (int)x.WalletCapacity > -1)
-                .ToDictionary(x => x.ID, x => new Tuple<char, int>(x.WalletCurrency??'$', (int)x.WalletCapacity));
+                .ToDictionary(x => x.ID, x => new Tuple<char, int>(x.WalletCurrency ?? '$', (int)x.WalletCapacity));
             Dictionary<string, Tuple<char, int>> AllWallets = ItemWallets.Concat(MacroWallets).ToDictionary(kvp => kvp.Key, kvp => kvp.Value);
 
             foreach (var i in AllWallets)
             {
                 string CanAffordString = $"MMRTCanAfford{i.Value.Item1}{i.Value.Item2}";
                 Debug.WriteLine($"Adding Wallet {CanAffordString}");
-                Instance.MacroPool.Add(CanAffordString, new(Instance) { 
+                Instance.MacroPool.Add(CanAffordString, new(Instance)
+                {
                     ID = CanAffordString,
                     referenceData = new ReferenceData { LogicIndex = Index, LogicList = LogicFileType.Runtime }
                 });
@@ -225,7 +219,7 @@ namespace MMR_Tracker_V3
 
             Instance.PriceData.Initialized = true;
 
-            Instance.EntrancePool.RootArea = Instance.LogicDictionary.RootArea??"Root";
+            Instance.EntrancePool.RootArea = Instance.LogicDictionary.RootArea ?? "Root";
 
             new Areaheader { Area = "Hidden Locations" }.SetMinimized(DisplayListType.Locations, Instance.StaticOptions);
 
@@ -272,7 +266,7 @@ namespace MMR_Tracker_V3
             }
             if (DefSet.ManualRandomizationState is not null)
             {
-                foreach(var Manual in DefSet.ManualRandomizationState)
+                foreach (var Manual in DefSet.ManualRandomizationState)
                 {
                     bool Litteral = Manual.Key.IsLiteralID(out string LocationObjectID);
                     var EntryType = instance.GetLocationEntryType(LocationObjectID, Litteral, out _);

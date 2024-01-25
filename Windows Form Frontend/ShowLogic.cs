@@ -1,5 +1,6 @@
 ﻿using MathNet.Numerics;
 using MMR_Tracker_V3;
+using MMR_Tracker_V3.DataStructure;
 using MMR_Tracker_V3.Logic;
 using MMR_Tracker_V3.TrackerObjectExtentions;
 using MMR_Tracker_V3.TrackerObjects;
@@ -13,7 +14,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using static MMR_Tracker_V3.TrackerObjects.MiscData;
+using static MMR_Tracker_V3.DataStructure.MiscData;
 
 namespace Windows_Form_Frontend
 {
@@ -463,7 +464,7 @@ namespace Windows_Form_Frontend
             }
         }
 
-        private void UpdateTimeCheckboxes(MMR_Tracker_V3.TrackerObjects.MMRData.JsonFormatLogicItem OriginalLogic)
+        private void UpdateTimeCheckboxes(MMRData.JsonFormatLogicItem OriginalLogic)
         {
             int Index = 0;
             foreach (var i in TimeCheckBoxes)

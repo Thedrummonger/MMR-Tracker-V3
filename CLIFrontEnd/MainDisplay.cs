@@ -1,5 +1,4 @@
-﻿using MMR_Tracker_V3.TrackerObjects;
-using MMR_Tracker_V3;
+﻿using MMR_Tracker_V3;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,10 +7,11 @@ using System.Threading.Tasks;
 using static MMR_Tracker_V3.TrackerDataHandling;
 using static CLIFrontEnd.CLIUtility;
 using static MMR_Tracker_V3.TrackerObjects.InstanceData;
-using static MMR_Tracker_V3.TrackerObjects.MiscData;
+using static MMR_Tracker_V3.DataStructure.MiscData;
 using Octokit;
 using static MMR_Tracker_V3.Logic.LogicStringParser;
 using MMR_Tracker_V3.TrackerObjectExtentions;
+using MMR_Tracker_V3.DataStructure;
 
 namespace CLIFrontEnd
 {

@@ -1,20 +1,13 @@
-﻿using MMR_Tracker_V3.TrackerObjectExtentions;
-using MMR_Tracker_V3.TrackerObjects;
+﻿using MMR_Tracker_V3.TrackerObjects;
 using System;
 using System.Collections.Generic;
-using System.Diagnostics;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using static MMR_Tracker_V3.TrackerObjects.InstanceData;
-using static MMR_Tracker_V3.TrackerObjects.LocationData;
-using static MMR_Tracker_V3.TrackerObjects.MiscData;
 
 namespace MMR_Tracker_V3.Logic
 {
     public static class LogicEditing
     {
-        public static void HandlePriceLogic(TrackerInstance instance, int Price, char Currency, List<string> Requirements, List<List<string>> Conditionals, out List<string> NewRequirements, out List<List<string>> NewConditionals)
+        public static void HandlePriceLogic(InstanceData.TrackerInstance instance, int Price, char Currency, List<string> Requirements, List<List<string>> Conditionals, out List<string> NewRequirements, out List<List<string>> NewConditionals)
         {
             if (!instance.PriceData.GetCapacityMap(Currency).Any())
             {

@@ -1,14 +1,10 @@
 ﻿using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using static MMR_Tracker_V3.Logic.LogicStringParser;
-using static MMR_Tracker_V3.TrackerObjects.MiscData;
+using static MMR_Tracker_V3.DataStructure.MiscData;
 
-namespace MMR_Tracker_V3.TrackerObjects
+namespace MMR_Tracker_V3.DataStructure
 {
     public class MMRData
     {
@@ -47,8 +43,8 @@ namespace MMR_Tracker_V3.TrackerObjects
 
             public bool HasIdenticalLogic(JsonFormatLogicItem logicItem2)
             {
-                bool ReqEqual = this.RequiredItems.SequenceEqual(logicItem2.RequiredItems);
-                bool ConEqual = this.ConditionalItems.SelectMany(x => x).SequenceEqual(logicItem2.ConditionalItems.SelectMany(x => x));
+                bool ReqEqual = RequiredItems.SequenceEqual(logicItem2.RequiredItems);
+                bool ConEqual = ConditionalItems.SelectMany(x => x).SequenceEqual(logicItem2.ConditionalItems.SelectMany(x => x));
                 return ReqEqual && ConEqual;
             }
         }
@@ -58,9 +54,9 @@ namespace MMR_Tracker_V3.TrackerObjects
         {
             public int Version { get; set; } = -1;
 
-            public string GameCode 
-            { 
-                get { return _GameCode ?? "MMR"; } 
+            public string GameCode
+            {
+                get { return _GameCode ?? "MMR"; }
                 set { _GameCode = value == "MMR" ? null : value; }
             }
             private string _GameCode = null;
@@ -69,20 +65,20 @@ namespace MMR_Tracker_V3.TrackerObjects
 
             public override string ToString()
             {
-                return Newtonsoft.Json.JsonConvert.SerializeObject(this, _NewtonsoftJsonSerializerOptions);
+                return JsonConvert.SerializeObject(this, _NewtonsoftJsonSerializerOptions);
                 //return JsonSerializer.Serialize(this, _jsonSerializerOptions);
             }
 
             public static LogicFile FromJson(string json)
             {
-                return Newtonsoft.Json.JsonConvert.DeserializeObject<LogicFile>(json, _NewtonsoftJsonSerializerOptions);
+                return JsonConvert.DeserializeObject<LogicFile>(json, _NewtonsoftJsonSerializerOptions);
                 //return JsonSerializer.Deserialize<LogicFile>(json, _jsonSerializerOptions);
             }
 
-            private readonly static Newtonsoft.Json.JsonSerializerSettings _NewtonsoftJsonSerializerOptions = new Newtonsoft.Json.JsonSerializerSettings
+            private readonly static JsonSerializerSettings _NewtonsoftJsonSerializerOptions = new JsonSerializerSettings
             {
-                Formatting = Newtonsoft.Json.Formatting.Indented,
-                NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore,
+                Formatting = Formatting.Indented,
+                NullValueHandling = NullValueHandling.Ignore,
                 Converters = { new Newtonsoft.Json.Converters.StringEnumConverter() }
             };
 

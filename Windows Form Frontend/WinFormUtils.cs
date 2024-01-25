@@ -1,5 +1,6 @@
 ﻿using Microsoft.VisualBasic;
 using MMR_Tracker_V3;
+using MMR_Tracker_V3.DataStructure;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -24,7 +25,7 @@ namespace Windows_Form_Frontend
             public Dictionary<string, DropDownOptionTree> SubGroups { get; set; } = new Dictionary<string, DropDownOptionTree>();
         }
 
-        public static MMR_Tracker_V3.TrackerObjects.MiscData.Divider CreateDivider(object containerObject, string DividerText = "")
+        public static MiscData.Divider CreateDivider(object containerObject, string DividerText = "")
         {
             Font font;
             Graphics g;
@@ -49,7 +50,7 @@ namespace Windows_Form_Frontend
             }
             else
             {
-                return new MMR_Tracker_V3.TrackerObjects.MiscData.Divider(DividerText);
+                return new MiscData.Divider(DividerText);
             }
 
             string Divider = DividerText;
@@ -61,7 +62,7 @@ namespace Windows_Form_Frontend
                 if ((int)g.MeasureString(newDivider, font).Width < width) { Divider = newDivider; }
                 else { break; }
             }
-            return new MMR_Tracker_V3.TrackerObjects.MiscData.Divider(Divider);
+            return new MiscData.Divider(Divider);
         }
 
         public static void PrintMessageToListBox(object containerObject, string Text = "")
