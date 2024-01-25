@@ -1,5 +1,4 @@
-﻿using MMR_Tracker_V3.DataStructure;
-using MMR_Tracker_V3.Logic;
+﻿using MMR_Tracker_V3.Logic;
 using MMR_Tracker_V3.SpoilerLogImporter;
 using MMR_Tracker_V3.TrackerObjectExtentions;
 using MMR_Tracker_V3.TrackerObjects;
@@ -7,7 +6,7 @@ using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
-using static MMR_Tracker_V3.DataStructure.MiscData;
+using static MMR_Tracker_V3.TrackerObjects.MiscData;
 using static MMR_Tracker_V3.TrackerObjects.InstanceData;
 
 namespace MMR_Tracker_V3

@@ -9,7 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Windows_Form_Frontend;
-using static MMR_Tracker_V3.DataStructure.MiscData;
+using static MMR_Tracker_V3.TrackerObjects.MiscData;
 
 namespace TestingForm
 {

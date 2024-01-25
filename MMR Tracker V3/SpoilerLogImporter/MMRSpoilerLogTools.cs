@@ -7,7 +7,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using static MMR_Tracker_V3.TrackerObjects.InstanceData;
-using static MMR_Tracker_V3.DataStructure.MiscData;
+using static MMR_Tracker_V3.TrackerObjects.MiscData;
 
 namespace MMR_Tracker_V3.SpoilerLogImporter
 {

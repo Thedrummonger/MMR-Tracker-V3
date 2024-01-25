@@ -11,7 +11,7 @@ using System.Diagnostics;
 using MMR_Tracker_V3;
 using Octokit;
 using MMR_Tracker_V3.TrackerObjectExtentions;
-using MMR_Tracker_V3.DataStructure;
+using MMR_Tracker_V3.TrackerObjects;
 
 namespace Windows_Form_Frontend
 {

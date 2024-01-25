@@ -1,10 +1,10 @@
-﻿using MMR_Tracker_V3.DataStructure;
+﻿using MMR_Tracker_V3.TrackerObjects;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using static MMR_Tracker_V3.DataStructure.NetData;
+using static MMR_Tracker_V3.TrackerObjects.NetData;
 
 namespace WebServer
 {

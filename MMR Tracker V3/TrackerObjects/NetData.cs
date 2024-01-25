@@ -6,7 +6,7 @@ using System.IO;
 using System.Net;
 using System.Net.Sockets;
 
-namespace MMR_Tracker_V3.DataStructure
+namespace MMR_Tracker_V3.TrackerObjects
 {
     public class NetData
     {

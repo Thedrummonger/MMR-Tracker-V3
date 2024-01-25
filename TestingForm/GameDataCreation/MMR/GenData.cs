@@ -1,11 +1,10 @@
 ﻿using MMR_Tracker_V3;
-using MMR_Tracker_V3.DataStructure;
 using MMR_Tracker_V3.Logic;
 using MMR_Tracker_V3.TrackerObjects;
 using Newtonsoft.Json;
 using System.Diagnostics;
 using static MMR_Tracker_V3.TrackerObjects.LogicDictionaryData;
-using static MMR_Tracker_V3.DataStructure.MMRData;
+using static MMR_Tracker_V3.TrackerObjects.MMRData;
 
 namespace TestingForm.GameDataCreation.MMR
 {

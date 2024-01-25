@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using static MMR_Tracker_V3.DataStructure.MiscData;
+using static MMR_Tracker_V3.TrackerObjects.MiscData;
 
 namespace MMR_Tracker_V3.TrackerObjects
 {

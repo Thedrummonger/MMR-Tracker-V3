@@ -1,6 +1,5 @@
 ﻿using MathNet.Numerics;
 using MMR_Tracker_V3;
-using MMR_Tracker_V3.DataStructure;
 using MMR_Tracker_V3.Logic;
 using MMR_Tracker_V3.TrackerObjectExtentions;
 using MMR_Tracker_V3.TrackerObjects;
@@ -14,7 +13,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using static MMR_Tracker_V3.DataStructure.MiscData;
+using static MMR_Tracker_V3.TrackerObjects.MiscData;
 
 namespace Windows_Form_Frontend
 {

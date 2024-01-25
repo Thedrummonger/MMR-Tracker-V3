@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 using FParsec;
 using MMR_Tracker_V3;
 using MathNet.Numerics.Statistics;
-using MMR_Tracker_V3.DataStructure;
+using MMR_Tracker_V3.TrackerObjects;
 
 namespace WebServer
 {

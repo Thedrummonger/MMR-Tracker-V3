@@ -19,10 +19,9 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Windows_Form_Frontend;
 using static MMR_Tracker_V3.TrackerObjects.InstanceData;
-using static MMR_Tracker_V3.DataStructure.MiscData;
-using static MMR_Tracker_V3.DataStructure.NetData;
+using static MMR_Tracker_V3.TrackerObjects.MiscData;
+using static MMR_Tracker_V3.TrackerObjects.NetData;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
-using MMR_Tracker_V3.DataStructure;
 
 namespace TestingForm
 {

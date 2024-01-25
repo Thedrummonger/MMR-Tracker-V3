@@ -1,5 +1,4 @@
-﻿using MMR_Tracker_V3.TrackerObjects;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Globalization;
@@ -8,7 +7,7 @@ using System.Net.Sockets;
 using static MMR_Tracker_V3.TrackerDataHandling;
 using static MMR_Tracker_V3.TrackerObjects.InstanceData;
 
-namespace MMR_Tracker_V3.DataStructure
+namespace MMR_Tracker_V3.TrackerObjects
 {
     public static class MiscData
     {

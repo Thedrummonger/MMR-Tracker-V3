@@ -1,4 +1,4 @@
-﻿using static MMR_Tracker_V3.DataStructure.MiscData;
+﻿using static MMR_Tracker_V3.TrackerObjects.MiscData;
 using static MMR_Tracker_V3.TrackerObjects.InstanceData;
 
 namespace MMR_Tracker_V3
