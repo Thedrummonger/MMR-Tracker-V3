@@ -79,19 +79,7 @@ namespace Windows_Form_Frontend
             {
                 var Download = MessageBox.Show($"Your tracker version {References.trackerVersion} is out of Date. Would you like to download the latest version {References.TrackerVersionStatus.LatestVersion.TagName}?\n\nTo disable this message click \"cancel\" or disable \"Check for Updates\" in the options file", "Tracker Out of Date", MessageBoxButtons.YesNoCancel);
                 if (Download == DialogResult.Yes) { { System.Diagnostics.Process.Start("explorer.exe", References.TrackerVersionStatus.LatestVersion.HtmlUrl); this.Close(); return; } }
-                else if (Download == DialogResult.Cancel)
-                {
-                    MMR_Tracker_V3.TrackerObjects.InstanceData.OptionFile options = new MMR_Tracker_V3.TrackerObjects.InstanceData.OptionFile();
-                    if (File.Exists(References.Globalpaths.OptionFile))
-                    {
-                        try { options = JsonConvert.DeserializeObject<MMR_Tracker_V3.TrackerObjects.InstanceData.OptionFile>(File.ReadAllText(References.Globalpaths.OptionFile)); }
-                        catch { Debug.WriteLine("could not parse options.txt"); }
-                    }
-                    options.CheckForUpdate = false;
-                    References.TrackerVersionStatus.DoUpdateCheck = false;
-                    try { File.WriteAllText(References.Globalpaths.OptionFile, JsonConvert.SerializeObject(options, Utility.DefaultSerializerSettings)); }
-                    catch (Exception ex) { Debug.WriteLine($"could not write to options.txt {ex}"); }
-                }
+                else if (Download == DialogResult.Cancel) { UpdateManager.DisableUpdateChecks(); }
             }
         }
 

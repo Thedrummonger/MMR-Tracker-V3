@@ -1,17 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Drawing.Imaging;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using static Windows_Form_Frontend.WinFormImageUtils;
-using System.IO;
-using System.Diagnostics;
-using MMR_Tracker_V3;
-using Octokit;
-using MMR_Tracker_V3.TrackerObjectExtentions;
+﻿using MMR_Tracker_V3.TrackerObjectExtentions;
 using MMR_Tracker_V3.TrackerObjects;
+using System;
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.Drawing;
+using System.Drawing.Imaging;
+using System.IO;
+using System.Linq;
 
 namespace Windows_Form_Frontend
 {
@@ -75,7 +70,7 @@ namespace Windows_Form_Frontend
             public void AddDisplayItem(string DisplayBoxID, string ID, int ImageX, int ImageY, string Logic, bool Invert = false, int R = 0, int G = 0, int B = 0)
             {
                 DisplayItem NewItem = new DisplayItem(ID, new Point(ImageX, ImageY), Logic);
-                NewItem.edits = new ImageEdits() { Invert= Invert, Reshade = new RGB(R,G,B) };
+                NewItem.edits = new ImageEdits() { Invert = Invert, Reshade = new RGB(R, G, B) };
                 var TargetBox = DisplayBoxes.First(x => x.ID == DisplayBoxID);
                 TargetBox.DisplayItems.Add(NewItem);
             }
@@ -104,9 +99,9 @@ namespace Windows_Form_Frontend
             {
                 AddTextToDefaultImage(DisplayBoxID, position, type, value);
                 var TargetBox = DisplayBoxes.First(x => x.ID == DisplayBoxID);
-                foreach(var i in TargetBox.DisplayItems)
+                foreach (var i in TargetBox.DisplayItems)
                 {
-                    AddTextToDisplayItem(DisplayBoxID, i.Name, position, type, value); 
+                    AddTextToDisplayItem(DisplayBoxID, i.Name, position, type, value);
                 }
             }
         }
@@ -146,11 +141,11 @@ namespace Windows_Form_Frontend
             public DisplayItem GetItemToDisplay(TrackerState trackerState)
             {
                 var ValidImage = DisplayItems.FirstOrDefault(x => x.DisplayItemValid(trackerState));
-                if (ValidImage == null) 
+                if (ValidImage == null)
                 {
                     var NonValid = new DisplayItem("Default", DefaultImageLocations, "true");
                     NonValid.ManualSetImage(DefaultImage);
-                    return NonValid; 
+                    return NonValid;
                 }
                 return ValidImage;
             }
@@ -169,7 +164,7 @@ namespace Windows_Form_Frontend
 
         public class RGB
         {
-            public RGB(int Ri, int Gi, int Bi) 
+            public RGB(int Ri, int Gi, int Bi)
             {
                 R = Ri;
                 G = Gi;
@@ -184,7 +179,7 @@ namespace Windows_Form_Frontend
         {
             public bool GreyScale { get; set; } = false;
             public bool Invert { get; set; } = false;
-            public RGB Reshade { get; set; } = new RGB(0,0,0);
+            public RGB Reshade { get; set; } = new RGB(0, 0, 0);
         }
 
         public class DisplayItem
@@ -193,7 +188,7 @@ namespace Windows_Form_Frontend
             {
                 Name = DefaultName;
                 ImageLocations = ImageLocation;
-                LogicReferenceEntry= DefaultLogicReferenceEntry;
+                LogicReferenceEntry = DefaultLogicReferenceEntry;
             }
             public string Name { get; set; }
             public Point ImageLocations { get; set; } = new Point(0, 0);
@@ -201,7 +196,7 @@ namespace Windows_Form_Frontend
             public ImageEdits edits { get; set; } = new ImageEdits();
             public string LogicReferenceEntry { get; set; }
             public string FilterString { get; set; }
-            public List<ImageTextBox> TextDisplay { get; set; } =  new List<ImageTextBox> { };
+            public List<ImageTextBox> TextDisplay { get; set; } = new List<ImageTextBox> { };
             public bool DisplayItemValid(TrackerState trackerState)
             {
                 return ParseImageDisplayLogic(trackerState, LogicReferenceEntry);

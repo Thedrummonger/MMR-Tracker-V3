@@ -1,14 +1,9 @@
 ﻿using MMR_Tracker_V3;
 using MMR_Tracker_V3.TrackerObjects;
-using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Windows_Form_Frontend
@@ -92,13 +87,13 @@ namespace Windows_Form_Frontend
                     Stops.Add(new Pathfinder.PathfinderPath { Display = stop.Value == "" ? stop.Key : $"{stop.Key} => {stop.Value}", Index = index, Focused = FocusInd > -1 });
                 }
 
-                string PathHash = string.Join("|", Stops.Select(x => x.Display ));
+                string PathHash = string.Join("|", Stops.Select(x => x.Display));
                 if (PrintedPaths.Contains(PathHash)) { continue; }
                 PrintedPaths.Add(PathHash);
 
                 if (FocusInd > -1 && index != FocusInd) { index++; continue; }
                 Results.Add(WinFormUtils.CreateDivider(PathFinderLB));
-                Results.Add(new Pathfinder.PathfinderPath { Display = $"Path {index+1}: {Stops.Count - 1} Stops", Index = index });
+                Results.Add(new Pathfinder.PathfinderPath { Display = $"Path {index + 1}: {Stops.Count - 1} Stops", Index = index });
                 Results.AddRange(Stops);
                 index++;
             }

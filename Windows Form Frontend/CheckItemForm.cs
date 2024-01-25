@@ -1,19 +1,11 @@
-﻿using MMR_Tracker_V3;
-using MMR_Tracker_V3.TrackerObjectExtentions;
+﻿using MMR_Tracker_V3.TrackerObjectExtentions;
 using MMR_Tracker_V3.TrackerObjects;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Diagnostics;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using static MMR_Tracker_V3.TrackerObjects.MiscData;
 using static MMR_Tracker_V3.TrackerObjects.InstanceData;
-using static Windows_Form_Frontend.WinFormUtils;
+using static MMR_Tracker_V3.TrackerObjects.MiscData;
 
 namespace Windows_Form_Frontend
 {
@@ -96,8 +88,8 @@ namespace Windows_Form_Frontend
         {
             FormatUIItems(false, false, "");
             var EnteredItems = new List<OptionData.OptionValue>();
-            this.Text = "Select Value for Option " + Option.Name??Option.ID;
-            foreach(var i in Option.ValueList)
+            this.Text = "Select Value for Option " + Option.Name ?? Option.ID;
+            foreach (var i in Option.ValueList)
             {
                 EnteredItems.Add(i.Value);
             }

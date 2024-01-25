@@ -1,14 +1,9 @@
 ﻿using Microsoft.VisualBasic;
 using MMR_Tracker_V3;
 using MMR_Tracker_V3.TrackerObjects;
-using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Drawing;
-using System.Linq;
-using System.Runtime.CompilerServices;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using static MMR_Tracker_V3.TrackerObjects.InstanceData;
 
@@ -89,7 +84,7 @@ namespace Windows_Form_Frontend
 
             container.Items.Clear();
             string CurrentMessage = "";
-            foreach(var c in Text.Split(" "))
+            foreach (var c in Text.Split(" "))
             {
                 if (c == "\n")
                 {

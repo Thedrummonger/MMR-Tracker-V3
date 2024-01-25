@@ -1,17 +1,13 @@
-﻿using MathNet.Numerics;
-using MMR_Tracker_V3;
+﻿using MMR_Tracker_V3;
 using MMR_Tracker_V3.Logic;
 using MMR_Tracker_V3.TrackerObjectExtentions;
 using MMR_Tracker_V3.TrackerObjects;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using static MMR_Tracker_V3.TrackerObjects.MiscData;
 
@@ -39,7 +35,8 @@ namespace Windows_Form_Frontend
             InitializeComponent();
             CurrentID = id;
             IC = _instanceContainer;
-            ReqLBHeightData = new ListBoxHeightData() { 
+            ReqLBHeightData = new ListBoxHeightData()
+            {
                 Main = LBReq,
                 TopPosFull = lbCond.Location.Y,
                 TopPosCut = LBReq.Location.Y,
@@ -112,7 +109,7 @@ namespace Windows_Form_Frontend
                 bool hasTimeLogic = UnAlteredLogic.TimeAvailable != TimeOfDay.None || UnAlteredLogic.TimeSetup != TimeOfDay.None;
                 bool ShowTimeLogic = hasTimeLogic && chkShowTime.Checked;
                 //Title
-                string EntryName = IC.Instance.GetDynamicObjName((object)LogicItemObject)??LogicItem;
+                string EntryName = IC.Instance.GetDynamicObjName((object)LogicItemObject) ?? LogicItem;
                 if (EntryName != LogicItem) { EntryName = $"{EntryName} ({LogicItem})"; }
                 this.Text = $"{typeDisplay}: {EntryName}{Availablility}";
                 //Text Changes
@@ -273,7 +270,7 @@ namespace Windows_Form_Frontend
         {
             LBReq.Items.Clear();
 
-            foreach(var i in AllLogicIDs)
+            foreach (var i in AllLogicIDs)
             {
                 IC.Instance.GetLocationEntryType(i, false, out object entry);
                 if (!SearchStringParser.FilterSearch(IC.Instance, entry, textBox1.Text, i)) { continue; }
@@ -315,7 +312,7 @@ namespace Windows_Form_Frontend
 
         private List<object> CreateGotoDataFromList(Dictionary<string, LogicEntryType> GotoList)
         {
-            foreach(var i in AddItemsFromFunction(GotoList))
+            foreach (var i in AddItemsFromFunction(GotoList))
             {
                 if (!GotoList.ContainsKey(i.Key)) { GotoList.Add(i.Key, i.Value); }
             }
@@ -342,7 +339,7 @@ namespace Windows_Form_Frontend
                             break;
                         case LogicEntryType.item:
                             LitEntry.tag = c;
-                            LitEntry.Display = $"{IC.Instance.GetItemByID(CleanedID)?.GetDictEntry()?.GetName()??CleanedID}: {IC.Instance.GetLocationByID(c)?.GetDictEntry()?.GetName()??c}";
+                            LitEntry.Display = $"{IC.Instance.GetItemByID(CleanedID)?.GetDictEntry()?.GetName() ?? CleanedID}: {IC.Instance.GetLocationByID(c)?.GetDictEntry()?.GetName() ?? c}";
                             break;
                         case LogicEntryType.macro:
                         default:
@@ -354,7 +351,7 @@ namespace Windows_Form_Frontend
                 }
             }
             Dictionary<string, LogicEntryType> LocationsGotoList = GetLocationsFromFunctions(GotoList).OrderBy(x => x.Value).ThenBy(x => x.Key).ToDictionary(x => x.Key, x => x.Value);
-            foreach(var i in LocationsGotoList)
+            foreach (var i in LocationsGotoList)
             {
                 if (CurrentType != i.Value)
                 {
@@ -366,7 +363,7 @@ namespace Windows_Form_Frontend
                 {
                     case LogicEntryType.location:
                         LitEntry.tag = i.Key;
-                        LitEntry.Display = IC.Instance.GetLocationByID(i.Key)?.GetDictEntry()?.GetName()??i.Key;
+                        LitEntry.Display = IC.Instance.GetLocationByID(i.Key)?.GetDictEntry()?.GetName() ?? i.Key;
                         break;
                     case LogicEntryType.Exit:
                     default:
@@ -435,9 +432,9 @@ namespace Windows_Form_Frontend
                 {
                     var Data = Param.Split(',').Select(x => x.Trim()).ToArray();
                     var ItemType = IC.Instance.GetItemEntryType(Data[1], false, out object obj);
-                    if (ItemType == LogicEntryType.LogicEntryCollection) 
-                    { 
-                        AddFromVariable(Data[1]); 
+                    if (ItemType == LogicEntryType.LogicEntryCollection)
+                    {
+                        AddFromVariable(Data[1]);
                     }
                     else if (!CurrentList.ContainsKey(Data[1]))
                     {
@@ -481,17 +478,17 @@ namespace Windows_Form_Frontend
             switch (LogicItem.Type)
             {
                 case LogicEntryType.Area:
-                    var ValidLoadingZoneExits = IC.Instance.EntrancePool.AreaList.Values.SelectMany(x => x.RandomizableExits().Values.Where(x => 
-                        (x.DestinationExit is not null  && x.DestinationExit.region == LogicItem.CleanID && x.CheckState != MiscData.CheckState.Unchecked) ||
+                    var ValidLoadingZoneExits = IC.Instance.EntrancePool.AreaList.Values.SelectMany(x => x.RandomizableExits().Values.Where(x =>
+                        (x.DestinationExit is not null && x.DestinationExit.region == LogicItem.CleanID && x.CheckState != MiscData.CheckState.Unchecked) ||
                         (x.IsUnrandomized() && x.GetVanillaDestination().region == LogicItem.CleanID)));
-                    var ValidMacroExits = IC.Instance.EntrancePool.AreaList.Values.SelectMany(x => x.NonRandomizableExits().Values.Where(x => 
-                        (x.DestinationExit is not null  && x.DestinationExit.region == LogicItem.CleanID) || 
+                    var ValidMacroExits = IC.Instance.EntrancePool.AreaList.Values.SelectMany(x => x.NonRandomizableExits().Values.Where(x =>
+                        (x.DestinationExit is not null && x.DestinationExit.region == LogicItem.CleanID) ||
                         x.GetVanillaDestination().region == LogicItem.CleanID));
                     var ValidExits = ValidLoadingZoneExits.Concat(ValidMacroExits);
                     return ValidExits.Select(x => x.ID).ToList();
                 case LogicEntryType.item:
-                    var ValidLocations = IC.Instance.LocationPool.Values.Where(x => 
-                        (x.Randomizeditem.Item is not null && x.Randomizeditem.Item == LogicItem.CleanID && x.CheckState != MiscData.CheckState.Unchecked) || 
+                    var ValidLocations = IC.Instance.LocationPool.Values.Where(x =>
+                        (x.Randomizeditem.Item is not null && x.Randomizeditem.Item == LogicItem.CleanID && x.CheckState != MiscData.CheckState.Unchecked) ||
                         ((x.IsUnrandomized() || x.SingleValidItem is not null) && x.GetItemAtCheck() == LogicItem.CleanID));
                     return ValidLocations.Select(x => x.ID).ToList();
                 case LogicEntryType.macro:
@@ -502,22 +499,22 @@ namespace Windows_Form_Frontend
         }
         private string GetDisplayName(string i)
         {
-            return i + (IC.logicCalculation.LogicEntryAquired( i, new List<string>()) ? "*" : "");
+            return i + (IC.logicCalculation.LogicEntryAquired(i, new List<string>()) ? "*" : "");
         }
 
         private void btnGoTo_Click(object sender, EventArgs e)
         {
             Debug.WriteLine(state);
-            if (state == FormState.showLogic) 
-            { 
-                var GotoList = CreatGotoList(GetAllLogicItemsByFromID(CurrentID), out List<object> DataEntriesOnly); 
+            if (state == FormState.showLogic)
+            {
+                var GotoList = CreatGotoList(GetAllLogicItemsByFromID(CurrentID), out List<object> DataEntriesOnly);
                 state = FormState.GoTo;
                 PrintGotoData(GotoList);
             }
-            else if (state == FormState.GoTo) 
-            { 
-                PrintLogicToLists(); 
-                state = FormState.showLogic; 
+            else if (state == FormState.GoTo)
+            {
+                PrintLogicToLists();
+                state = FormState.showLogic;
             }
             UpdateUI();
         }
@@ -525,7 +522,7 @@ namespace Windows_Form_Frontend
         private void btnGoBack_Click(object sender, EventArgs e)
         {
             CurrentID = GoBackList[^1];
-            GoBackList.RemoveAt(GoBackList.Count -1);
+            GoBackList.RemoveAt(GoBackList.Count - 1);
             PrintLogicToLists();
             UpdateUI();
         }
@@ -557,7 +554,7 @@ namespace Windows_Form_Frontend
                 {
                     GoBackList.Add(CurrentID);
                     CurrentID = str;
-                    PrintLogicToLists(); 
+                    PrintLogicToLists();
                     state = FormState.showLogic;
                 }
             }
@@ -591,7 +588,7 @@ namespace Windows_Form_Frontend
                 {
                     if (CurrentID is not null) { GoBackList.Add(CurrentID); }
                     CurrentID = str;
-                    PrintLogicToLists(); 
+                    PrintLogicToLists();
                     state = FormState.showLogic;
                 }
             }

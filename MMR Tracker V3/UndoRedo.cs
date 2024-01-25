@@ -1,5 +1,5 @@
-﻿using static MMR_Tracker_V3.TrackerObjects.MiscData;
-using static MMR_Tracker_V3.TrackerObjects.InstanceData;
+﻿using static MMR_Tracker_V3.TrackerObjects.InstanceData;
+using static MMR_Tracker_V3.TrackerObjects.MiscData;
 
 namespace MMR_Tracker_V3
 {

@@ -1,19 +1,10 @@
-﻿using MathNet.Numerics;
-using MMR_Tracker_V3;
-using System;
+﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Diagnostics;
 using System.Drawing;
-using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices;
-using System.Text;
-using System.Threading;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using static System.Windows.Forms.DataFormats;
 using static Windows_Form_Frontend.WinFormImageUtils;
 
 namespace Windows_Form_Frontend
@@ -159,7 +150,7 @@ namespace Windows_Form_Frontend
                 lbl.Text = LabelText;
                 lbl.BackColor = Color.Black;
                 lbl.ForeColor = Color.White;
-                lbl.Parent= this;
+                lbl.Parent = this;
                 lbl.AutoSize = true;
                 lbl.Location = getLableLocation(text, FormPB, lbl);
                 this.Controls.Add(lbl);
@@ -187,7 +178,7 @@ namespace Windows_Form_Frontend
         {
             Rectangle screenRectangle = this.RectangleToScreen(this.ClientRectangle);
             int titleHeight = screenRectangle.Top - this.Top;
-            return _Instance.LimiterDirection == WinFormImageUtils.StaticDirecton.Horizontal ? (this.Width-16) / _Instance.ImagesPerLimiterDirection : (this.Height - titleHeight - 4) / _Instance.ImagesPerLimiterDirection;
+            return _Instance.LimiterDirection == WinFormImageUtils.StaticDirecton.Horizontal ? (this.Width - 16) / _Instance.ImagesPerLimiterDirection : (this.Height - titleHeight - 4) / _Instance.ImagesPerLimiterDirection;
         }
 
         private Point GetPBpositionByIndex(int index)

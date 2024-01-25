@@ -1,18 +1,13 @@
-﻿using MathNet.Numerics;
-using MMR_Tracker_V3;
+﻿using MMR_Tracker_V3;
 using MMR_Tracker_V3.SpoilerLogImporter;
 using MMR_Tracker_V3.TrackerObjectExtentions;
 using MMR_Tracker_V3.TrackerObjects;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Diagnostics;
-using System.Drawing;
 using System.IO;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Windows_Form_Frontend
@@ -43,7 +38,7 @@ namespace Windows_Form_Frontend
             }
             cmbLocationType.SelectedIndex = 0;
 
-            PrintToLocationList(); 
+            PrintToLocationList();
             PrintStartingItemData();
             PrinttrickData();
             UpdatedSettingStrings();
@@ -82,7 +77,7 @@ namespace Windows_Form_Frontend
                 {
                     PrintExitData();
                 }
-                else if(selection == "Hints")
+                else if (selection == "Hints")
                 {
                     btnSetUnRandomized.Enabled = false;
                     btnSetManual.Enabled = false;
@@ -141,7 +136,7 @@ namespace Windows_Form_Frontend
                     if (_Instance.GetItemByID(VanillaItem) != null)
                     {
                         var VanillaItemObject = _Instance.GetItemByID(VanillaItem).GetDictEntry();
-                        VanillaItemText  = $"{VanillaItemObject.GetName()} [{VanillaItem}]";
+                        VanillaItemText = $"{VanillaItemObject.GetName()} [{VanillaItem}]";
                     }
                     else
                     {
@@ -168,7 +163,7 @@ namespace Windows_Form_Frontend
             List<ListViewItem> TempList = new List<ListViewItem>();
             foreach (var area in _Instance.EntrancePool.AreaList)
             {
-                foreach(var i in area.Value.RandomizableExits())
+                foreach (var i in area.Value.RandomizableExits())
                 {
                     if (i.Value.IsRandomized() && !chkShowRand.Checked) { continue; }
                     if (i.Value.IsUnrandomized(MiscData.UnrandState.Unrand) && !chkShowUnrand.Checked) { continue; }
@@ -229,7 +224,7 @@ namespace Windows_Form_Frontend
                 var DictEntry = i.GetDictEntry();
                 string DisplayName = DictEntry.Name ?? i.ID;
                 if (!SearchStringParser.FilterSearch(_Instance, i, txtTrickSearch.Text, DisplayName)) { continue; }
-                if (CurrentCategory != (_Instance.GetLogic(i.ID, false).TrickCategory??""))
+                if (CurrentCategory != (_Instance.GetLogic(i.ID, false).TrickCategory ?? ""))
                 {
                     lvTricks.Items.Add(WinFormUtils.CreateDivider(lvTricks, _Instance.GetLogic(i.ID, false).TrickCategory.ToUpper()).ToString());
                     CurrentCategory = _Instance.GetLogic(i.ID, false).TrickCategory;
@@ -246,22 +241,22 @@ namespace Windows_Form_Frontend
         private void lvTricks_ItemChecked(object sender, ItemCheckedEventArgs e)
         {
             if (Updating) { return; }
-            if (!(e.Item.Tag is MacroObject)) 
+            if (!(e.Item.Tag is MacroObject))
             {
                 Updating = true;
                 e.Item.Checked = false;
                 Updating = false;
-                return; 
+                return;
             }
             var trick = (MacroObject)e.Item.Tag;
             trick.TrickEnabled = e.Item.Checked;
-            UpdateItemSets(); 
+            UpdateItemSets();
             UpdatedSettingStrings();
             ChangesMade = true;
         }
         private void btnAddStartingItem_Click(object sender, EventArgs e)
         {
-            foreach(var i in lbAvailableStarting.SelectedItems)
+            foreach (var i in lbAvailableStarting.SelectedItems)
             {
                 ItemData.ItemObject Item = i as ItemData.ItemObject;
                 Item.AmountInStartingpool++;
@@ -317,8 +312,8 @@ namespace Windows_Form_Frontend
             foreach (var i in CheckedLocationItems)
             {
                 if (button == btnSetRandomized) { i.SetRandomizedState(MiscData.RandomizedState.Randomized); }
-                if (button == btnSetUnRandomized) 
-                { 
+                if (button == btnSetUnRandomized)
+                {
                     if (!i.CanBeUnrandomized()) { Debug.WriteLine($"{i.ID} Could not be unrandomized"); continue; }
                     i.SetRandomizedState(MiscData.RandomizedState.Unrandomized);
                 }

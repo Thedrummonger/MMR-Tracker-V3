@@ -3,10 +3,10 @@ using MMR_Tracker_V3.TrackerObjects;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using static MMR_Tracker_V3.TrackerObjects.MiscData;
 using static MMR_Tracker_V3.TrackerObjects.EntranceData;
 using static MMR_Tracker_V3.TrackerObjects.HintData;
 using static MMR_Tracker_V3.TrackerObjects.LocationData;
+using static MMR_Tracker_V3.TrackerObjects.MiscData;
 
 namespace MMR_Tracker_V3
 {
