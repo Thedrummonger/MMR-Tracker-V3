@@ -1,17 +1,10 @@
 ﻿using MMR_Tracker_V3;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using static MMR_Tracker_V3.TrackerDataHandling;
-using static CLIFrontEnd.CLIUtility;
-using static MMR_Tracker_V3.TrackerObjects.InstanceData;
-using static MMR_Tracker_V3.TrackerObjects.MiscData;
-using Octokit;
-using static MMR_Tracker_V3.Logic.LogicStringParser;
 using MMR_Tracker_V3.TrackerObjectExtentions;
 using MMR_Tracker_V3.TrackerObjects;
+using static CLIFrontEnd.CLIUtility;
+using static MMR_Tracker_V3.TrackerDataHandling;
+using static MMR_Tracker_V3.TrackerObjects.InstanceData;
+using static MMR_Tracker_V3.TrackerObjects.MiscData;
 
 namespace CLIFrontEnd
 {
@@ -30,12 +23,12 @@ namespace CLIFrontEnd
                 { "c", new(() => { displayType = CLIDisplayListType.Checked; }, "Displays Checked Locations/entrances") },
                 { "o", new(() => { displayType = CLIDisplayListType.Options; }, "Displays Logic Options") },
                 { "p", new(() => { }, "Displays Pathfinder") },
-                { "z", new(instanceContainer.DoUndo, "Undo last action") },
-                { "y", new(instanceContainer.DoRedo, "Redo last undo action") },
+                { "z", new( () => { instanceContainer.DoUndo(); instanceContainer.logicCalculation.CompileOptionActionEdits(); }, "Undo last action") },
+                { "y", new( () => { instanceContainer.DoRedo(); instanceContainer.logicCalculation.CompileOptionActionEdits(); }, "Redo last undo action") },
                 { "s", new(() => {
                     var Result = NativeFileDialogSharp.Dialog.FileSave("mmrtsav");
                     if (Result.IsOk) { instanceContainer.SaveInstance(Result.Path); } }, "Save as") },
-                { "h", new(() => { ShowHelp = !ShowHelp; }, "Hide Help Menu") },
+                { "h", new(() => { ShowHelp = !ShowHelp; }, "Toggle Help Menu") },
             };
             while (true)
             {
@@ -61,36 +54,106 @@ namespace CLIFrontEnd
                 Console.WriteLine(CreateDivider());
                 if (ShowHelp)
                 {
-                    Console.WriteLine("Commands:");
+                    Console.WriteLine("Usage:");
+                    Console.WriteLine("Type the items index to select it");
+                    Console.WriteLine("Multiple items can be separated with , and ranges can be defined with -");
+                    Console.WriteLine("Example: 1,12,18-25");
+                    Console.WriteLine("Add one of the following Prefixes to change the action");
+                    Console.WriteLine(@"#: Mark the selected location");
+                    Console.WriteLine(@"$: Set the price of the selected locations.");
+                    Console.WriteLine(@"%: Hide the selected locations.");
+                    Console.WriteLine("\nAdditional Commands:");
                     foreach (var i in Options)
                     {
-                        Console.WriteLine($"{i.Key}: {i.Value.Description}");
+                        Console.WriteLine($"{i.Key.ToUpper()}: {i.Value.Description}");
                     }
-                    Console.WriteLine("Type the items index to select it");
-                    Console.WriteLine("Multiple items can be seperated with , and ranges can be defined with -");
-                    Console.WriteLine("Example: 1,12,18-25");
+                    Console.WriteLine(@"\: Use this followed by a search string to filter the list");
                     Console.WriteLine(CreateDivider());
                 }
                 else
                 {
-                    Console.WriteLine("Use h to show commands");
+                    Console.WriteLine("Use h to show Help Menu");
                 }
 
-                var input = Console.ReadLine();
-                CheckState checkState = displayType == CLIDisplayListType.Checked ? CheckState.Unchecked : CheckState.Checked;
-
-                if (Options.TryGetValue(input, out DisplayAction? value)) { value.action(); }
-                else
+                var input = Console.ReadLine() ?? "";
+                if (Options.TryGetValue(input, out DisplayAction? value))
                 {
-                    var Indices = InputParser.ParseIndicesString(input);
-                    CheckItems(Indices, Objects, checkState);
+                    value.action();
+                    continue;
+                }
+
+                var InputData = new InputPrefixData(input);
+
+                switch (InputData.itemAction)
+                {
+                    case SelectedItemAction.Filter:
+                        Filter = InputData.ParsedInput;
+                        continue;
+                    case SelectedItemAction.Price:
+                        instanceContainer.SaveState();
+                        SetLocationPrice(InputData.Indexes, Objects);
+                        instanceContainer.logicCalculation.CompileOptionActionEdits();
+                        continue;
+                    case SelectedItemAction.Hide:
+                        instanceContainer.SaveState();
+                        HideLocations(InputData.Indexes, Objects);
+                        continue;
+                    case SelectedItemAction.Check:
+                        CheckState checkState = displayType == CLIDisplayListType.Checked ? CheckState.Unchecked : CheckState.Checked;
+                        instanceContainer.SaveState();
+                        CheckItems(InputData.Indexes, Objects, checkState, displayType);
+                        if (displayType == CLIDisplayListType.Options) { instanceContainer.logicCalculation.CompileOptionActionEdits(); }
+                        break;
+                    case SelectedItemAction.Mark:
+                        instanceContainer.SaveState();
+                        CheckItems(InputData.Indexes, Objects, CheckState.Marked, displayType);
+                        if (displayType == CLIDisplayListType.Options) { instanceContainer.logicCalculation.CompileOptionActionEdits(); }
+                        break;
                 }
 
             }
         }
 
-        private void CheckItems(List<int> Indexes, Dictionary<int, object> reference, CheckState checkState)
+        private void HideLocations(List<int> indexes, Dictionary<int, object> reference)
         {
+            List<object> CheckObjects = indexes.Where(x => reference.ContainsKey(x)).Select(x => reference[x]).ToList();
+            foreach (var i in CheckObjects)
+            {
+                if (i is CheckableLocation checkableLocation)
+                {
+                    checkableLocation.Hidden = !checkableLocation.Hidden;
+                }
+            }
+        }
+
+        private void SetLocationPrice(List<int> indexes, Dictionary<int, object> reference)
+        {
+            List<object> CheckObjects = indexes.Where(x => reference.ContainsKey(x)).Select(x => reference[x]).ToList();
+            foreach (var i in CheckObjects)
+            {
+                if (i is CheckableLocation checkableLocation)
+                {
+                    LocationChecking.SetPrice(checkableLocation);
+                }
+            }
+        }
+
+        private void CheckItems(List<int> Indexes, Dictionary<int, object> reference, CheckState checkState, CLIDisplayListType displayType)
+        {
+            DisplayListType? Source = displayType.ToStandardDisplayListType();
+            if (Source is not null && Indexes.Count == 1 && reference.TryGetValue(Indexes[0], out object? value) && value is MiscData.Areaheader AH)
+            {
+                if (AH.IsMinimized((DisplayListType)Source, instanceContainer.Instance.StaticOptions))
+                {
+                    AH.RemoveMinimized((DisplayListType)Source, instanceContainer.Instance.StaticOptions);
+                }
+                else
+                {
+                    AH.SetMinimized((DisplayListType)Source, instanceContainer.Instance.StaticOptions);
+                }
+                return;
+            }
+
             List<object> CheckObjects = Indexes.Where(x => reference.ContainsKey(x)).Select(x => reference[x]).ToList();
             var CheckObjectOptions = new MiscData.CheckItemSetting(checkState)
                             .SetCheckUnassignedLocations(LocationChecking.HandleUnAssignedLocations)
@@ -109,7 +172,7 @@ namespace CLIFrontEnd
             Data.WriteLocations(MiscData.CheckState.Unchecked, false).WriteLocations(MiscData.CheckState.Unchecked, true);
             if (instanceContainer.Instance.CombineEntrancesWithLocations()) { Data.WriteEntrances(MiscData.CheckState.Unchecked, true); }
             Data.WriteHints(MiscData.CheckState.Unchecked);
-            return PrintData(Data);
+            return PrintData(Data, DisplayListType.Locations);
         }
         private Dictionary<int, object> ShowAvailableEntrances()
         {
@@ -117,7 +180,7 @@ namespace CLIFrontEnd
             instanceContainer.logicCalculation.CalculateLogic();
             var Data = new MiscData.TrackerLocationDataList(new MiscData.Divider("==========="), instanceContainer, Filter);
             Data.WriteEntrances(MiscData.CheckState.Unchecked, false);
-            return PrintData(Data);
+            return PrintData(Data, DisplayListType.Entrances);
         }
         private Dictionary<int, object> ShowCheckedLocations()
         {
@@ -127,26 +190,30 @@ namespace CLIFrontEnd
             Data.WriteLocations(MiscData.CheckState.Checked, false).WriteLocations(MiscData.CheckState.Checked, true)
                     .WriteEntrances(MiscData.CheckState.Checked, true).WriteHints(MiscData.CheckState.Checked).WriteStartingItems().WriteOnlineItems();
             if (instanceContainer.Instance.StaticOptions.ShowOptionsInListBox == DisplayListType.Checked) { Data.WriteOptions(); }
-            return PrintData(Data);
+            return PrintData(Data, DisplayListType.Checked);
         }
 
         private Dictionary<int, object> ShowOptions()
         {
             Console.Clear();
             instanceContainer.logicCalculation.CalculateLogic();
-            var Data = new TrackerLocationDataList(new Divider("==========="), instanceContainer, Filter); 
+            var Data = new TrackerLocationDataList(new Divider("==========="), instanceContainer, Filter);
             Data.WriteOptions();
-            return PrintData(Data);
+            return PrintData(Data, null);
         }
 
-        private Dictionary<int, object> PrintData(TrackerLocationDataList Data)
+        private Dictionary<int, object> PrintData(TrackerLocationDataList Data, DisplayListType? Source)
         {
             Dictionary<int, object> Locations = Data.FinalData.Select((s, index) => new { s, index }).ToDictionary(x => x.index + 1, x => x.s);
             int Padding = Locations.Keys.Max().ToString().Length;
             bool InMinimized = false;
             foreach (var LocationObject in Locations)
             {
-                if (LocationObject.Value is Areaheader area) { InMinimized = area.IsMinimized(DisplayListType.Checked, instanceContainer.Instance.StaticOptions); }
+                if (Source is not null && LocationObject.Value is Areaheader area)
+                {
+                    InMinimized = area.IsMinimized((DisplayListType)Source, instanceContainer.Instance.StaticOptions);
+                    if (InMinimized) { area.DisplayOverride = area.Area + " ---"; }
+                }
                 else if (InMinimized) { continue; }
                 Console.WriteLine($"{LocationObject.Key.ToString($"D{Padding}")}: {LocationObject.Value}");
             }

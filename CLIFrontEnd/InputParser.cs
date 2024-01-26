@@ -1,10 +1,4 @@
 ﻿using MMR_Tracker_V3;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using static Microsoft.FSharp.Core.ByRefKinds;
 
 namespace CLIFrontEnd
 {
@@ -21,7 +15,7 @@ namespace CLIFrontEnd
             var sections = input.Split(',').Select(x => x.Trim());
             foreach (var i in sections)
             {
-                if (i.IsIntegerRange(out Tuple<int,int> Range))
+                if (i.IsIntegerRange(out Tuple<int, int> Range))
                 {
                     for (var q = Range.Item1; q <= Range.Item2; q++) { Indexes.Add(q); }
                 }

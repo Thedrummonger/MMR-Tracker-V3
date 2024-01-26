@@ -218,19 +218,9 @@ namespace MMR_Tracker_V3.TrackerObjectExtentions
 
             Utility.DeepCloneLogic(LogicFileEntry.RequiredItems, LogicFileEntry.ConditionalItems, out List<string> CopyRequirements, out List<List<string>> CopyConditionals);
 
-            if (entryType == LogicEntryType.macro)
+            if (Obj is CheckableLocation checkableLocation)
             {
-                var MacroData = instance.GetMacroByID(ID);
-                MacroData.GetPrice(out int p, out char c);
-                if (p > -1 && !instance.PriceData.GetCapacityMap(c).ContainsValue(ID) && DoEdits)
-                {
-                    LogicEditing.HandlePriceLogic(instance, p, c, CopyRequirements, CopyConditionals, out CopyRequirements, out CopyConditionals);
-                }
-            }
-            else if (entryType == LogicEntryType.location)
-            {
-                var LocationData = instance.GetLocationByID(ID);
-                LocationData.GetPrice(out int p, out char c);
+                checkableLocation.GetPrice(out int p, out char c);
                 if (p > -1 && !instance.PriceData.GetCapacityMap(c).ContainsValue(ID) && DoEdits)
                 {
                     LogicEditing.HandlePriceLogic(instance, p, c, CopyRequirements, CopyConditionals, out CopyRequirements, out CopyConditionals);

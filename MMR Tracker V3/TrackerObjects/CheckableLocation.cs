@@ -31,5 +31,32 @@ namespace MMR_Tracker_V3.TrackerObjects
             Currency = inCurrency;
             return;
         }
+
+        public string GetName()
+        {
+            dynamic DynObj = this;
+            if (Utility.DynamicMethodExists(DynObj, "GetDictEntry"))
+            {
+                var DictEntry = DynObj.GetDictEntry();
+                if (DictEntry is null) { return ID; }
+                if (Utility.DynamicMethodExists(DictEntry, "GetName"))
+                {
+                    return DictEntry.GetName();
+                }
+                else if (Utility.DynamicPropertyExist(DictEntry, "Name"))
+                {
+                    return DictEntry.Name;
+                }
+                else if (Utility.DynamicPropertyExist(DynObj, "Name"))
+                {
+                    return DynObj.Name;
+                }
+            }
+            else if (Utility.DynamicPropertyExist(DynObj, "Name"))
+            {
+                return DynObj.Name;
+            }
+            return ID;
+        }
     }
 }

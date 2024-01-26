@@ -18,9 +18,10 @@ namespace MMR_Tracker_V3.TrackerObjects
             public string Area { get; set; }
             public bool ForceUpper { get; set; } = true;
             public bool AddColon { get; set; } = true;
+            public string DisplayOverride { get; set; } = null;
             public override string ToString()
             {
-                string Display = Area;
+                string Display = DisplayOverride ?? Area;
                 if (ForceUpper) { Display = Display.ToUpper(); }
                 if (AddColon) { Display += ":"; }
                 return Display;

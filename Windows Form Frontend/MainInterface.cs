@@ -908,16 +908,15 @@ namespace Windows_Form_Frontend
             }
 
             //Object Price Edit
-            dynamic Target = listBox.SelectedItem;
-            if (Utility.DynamicPropertyExist(Target, "Price") || PriceRando.TestForPriceData(Target))
+            if (listBox.SelectedItem is CheckableLocation checkableLocation)
             {
-                Target.GetPrice(out int p, out char c);
+                checkableLocation.GetPrice(out int p, out char c);
                 string SetPriceText = p > -1 ? "Clear Price" : "Set Price";
                 ToolStripItem SetPrice = contextMenuStrip.Items.Add(SetPriceText);
                 SetPrice.Click += (sender, e) =>
                 {
-                    if (p > -1) { Target.SetPrice(-1); }
-                    else { SetCheckPrice(Target); }
+                    if (p > -1) { checkableLocation.SetPrice(-1); }
+                    else { SetCheckPrice(checkableLocation); }
                     InstanceContainer.logicCalculation.CompileOptionActionEdits();
                     InstanceContainer.logicCalculation.CalculateLogic();
                     UpdateUI();
@@ -940,10 +939,9 @@ namespace Windows_Form_Frontend
             }
         }
 
-        private void SetCheckPrice(dynamic Object)
+        private void SetCheckPrice(CheckableLocation Object)
         {
-            var DictEntry = Object.GetDictEntry();
-            var PriceContainer = new List<OptionData.IntOption>() { new(InstanceContainer.Instance) { ID = DictEntry.Name ?? DictEntry.ID, Value = 0 } };
+            var PriceContainer = new List<OptionData.IntOption>() { new(InstanceContainer.Instance) { ID = Object.GetName(), Value = 0 } };
             VariableInputWindow PriceInput = new(PriceContainer, InstanceContainer);
             PriceInput.ShowDialog();
             var ResultPrice = PriceInput._Result.First().GetItem<int>();

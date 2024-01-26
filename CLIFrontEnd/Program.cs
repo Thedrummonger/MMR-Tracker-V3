@@ -1,7 +1,5 @@
 ﻿using MMR_Tracker_V3;
 using MMR_Tracker_V3.TrackerObjects;
-using System.Data;
-using static CLIFrontEnd.InputParser;
 
 namespace CLIFrontEnd
 {

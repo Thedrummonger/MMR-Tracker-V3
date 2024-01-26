@@ -1,11 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace CLIFrontEnd
+﻿namespace CLIFrontEnd
 {
     public class CLISelectMenu(IEnumerable<object> Source)
     {
@@ -34,7 +27,7 @@ namespace CLIFrontEnd
                 else if (pressedKey == ConsoleKey.UpArrow && selectedLineIndex - 1 >= 0)
                     selectedLineIndex--;
 
-            } 
+            }
             while (pressedKey != ConsoleKey.Enter);
             SelectedObject = items[selectedLineIndex];
             return SelectedObject;

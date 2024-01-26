@@ -1,13 +1,8 @@
 ﻿using MMR_Tracker_V3.TrackerObjects;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace CLIFrontEnd
 {
-    internal class CLIUtility
+    internal static class CLIUtility
     {
         public static MiscData.Divider CreateDivider(string key = "=")
         {
@@ -29,6 +24,65 @@ namespace CLIFrontEnd
             Entrances,
             Options,
             Pathfinder
+        }
+        public enum SelectedItemAction
+        {
+            Filter,
+            Check,
+            Mark,
+            Price,
+            Hide
+        }
+        public class InputPrefixData
+        {
+            public string ParsedInput = "";
+            public SelectedItemAction itemAction = SelectedItemAction.Check;
+            public List<int> Indexes = [];
+            public InputPrefixData(string? Input)
+            {
+                if (Input is null)
+                {
+                    ParsedInput = "";
+                }
+                else if (Input.StartsWith('\\'))
+                {
+                    ParsedInput = Input[1..];
+                    itemAction = SelectedItemAction.Filter;
+                }
+                else if (Input.StartsWith('#'))
+                {
+                    ParsedInput = Input[1..];
+                    itemAction = SelectedItemAction.Mark;
+                }
+                else if (Input.StartsWith('$'))
+                {
+                    ParsedInput = Input[1..];
+                    itemAction = SelectedItemAction.Price;
+                }
+                else if (Input.StartsWith('%'))
+                {
+                    ParsedInput = Input[1..];
+                    itemAction = SelectedItemAction.Hide;
+                }
+                else
+                {
+                    ParsedInput = Input;
+                    itemAction = SelectedItemAction.Check;
+                }
+                Indexes = InputParser.ParseIndicesString(ParsedInput);
+            }
+        }
+
+
+        public static MiscData.DisplayListType? ToStandardDisplayListType(this CLIDisplayListType CLIDLT)
+        {
+            return CLIDLT switch
+            {
+                CLIDisplayListType.Locations => MiscData.DisplayListType.Locations,
+                CLIDisplayListType.Checked => MiscData.DisplayListType.Checked,
+                CLIDisplayListType.Entrances => MiscData.DisplayListType.Entrances,
+                _ => null
+            };
         }
     }
 }

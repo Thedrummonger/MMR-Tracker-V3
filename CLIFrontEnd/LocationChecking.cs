@@ -1,39 +1,29 @@
-﻿using MMR_Tracker_V3.TrackerObjects;
-using MMR_Tracker_V3;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using static MMR_Tracker_V3.TrackerObjects.MiscData;
-using static MMR_Tracker_V3.TrackerObjects.InstanceData;
-using static MMR_Tracker_V3.TrackerObjects.LocationData;
-using MMR_Tracker_V3.TrackerObjectExtentions;
+﻿using MMR_Tracker_V3.TrackerObjectExtentions;
+using MMR_Tracker_V3.TrackerObjects;
 
 namespace CLIFrontEnd
 {
     internal class LocationChecking
     {
-        public static void SetPrice(InstanceData.InstanceContainer Container, dynamic entry)
+        public static void SetPrice(CheckableLocation entry)
         {
-            if (!Utility.DynamicPropertyExist(entry, "Price") && !MMR_Tracker_V3.PriceRando.TestForPriceData(entry)) { return; }
-            entry.GetPrice(out int p, out char c);
+            entry.GetPrice(out int p, out _);
             if (p > -1) { entry.SetPrice(-1); return; }
-            var DictEntry = entry.GetDictEntry(Container.Instance);
             Console.Clear();
             while (p == -1)
             {
-                Console.WriteLine($"Enter Price for {DictEntry.Name ?? DictEntry.ID}");
-                var input = Console.ReadLine();
+                Console.WriteLine($"Enter Price for {entry.GetName()}");
+                var input = Console.ReadLine() ?? "";
                 if (int.TryParse(input, out int newPrice) && newPrice > -1) { entry.SetPrice(newPrice); }
                 else { Console.WriteLine($"{input} is not a valid price. Price must be a positive number"); }
-                entry.GetPrice(out p, out c);
+
+                entry.GetPrice(out p, out _);
             }
         }
 
-        public static List<ManualCheckObjectResult> HandleUnAssignedLocations(IEnumerable<object> CheckObject, InstanceContainer Instance)
+        public static List<MiscData.ManualCheckObjectResult> HandleUnAssignedLocations(IEnumerable<object> CheckObject, InstanceData.InstanceContainer Instance)
         {
-            List<ManualCheckObjectResult> Result = new List<ManualCheckObjectResult>();
+            List<MiscData.ManualCheckObjectResult> Result = [];
             foreach (var i in CheckObject)
             {
                 if (i is LocationData.LocationObject LO)
@@ -52,9 +42,9 @@ namespace CLIFrontEnd
             return Result;
         }
 
-        public static List<ManualCheckObjectResult> HandleUnAssignedVariables(IEnumerable<object> CheckObject, InstanceContainer Instance)
+        public static List<MiscData.ManualCheckObjectResult> HandleUnAssignedVariables(IEnumerable<object> CheckObject, InstanceData.InstanceContainer Instance)
         {
-            List<ManualCheckObjectResult> Result = new List<ManualCheckObjectResult>();
+            List<MiscData.ManualCheckObjectResult> Result = [];
             foreach (var i in CheckObject)
             {
                 if (i is HintData.HintObject HO)
@@ -75,7 +65,7 @@ namespace CLIFrontEnd
             }
             return Result;
         }
-        private static ManualCheckObjectResult LoopItemSelect(LocationObject Location)
+        private static MiscData.ManualCheckObjectResult LoopItemSelect(LocationData.LocationObject Location)
         {
             string Filter = "";
             while (true)
@@ -90,10 +80,10 @@ namespace CLIFrontEnd
                 }
                 Console.WriteLine(CLIUtility.CreateDivider());
                 Console.WriteLine("Select Item at " + Location.GetDictEntry().GetName());
-                var input = Console.ReadLine();
+                var input = Console.ReadLine() ?? "";
                 if (int.TryParse(input, out int index) && Items.TryGetValue(index, out ItemData.ItemObject? value))
                 {
-                    return new ManualCheckObjectResult(Location, value.ID);
+                    return new MiscData.ManualCheckObjectResult(Location, value.ID);
                 }
                 else if (input.StartsWith(@"\"))
                 {
@@ -101,14 +91,13 @@ namespace CLIFrontEnd
                 }
             }
         }
-        private static ManualCheckObjectResult LoopEntranceSelect(EntranceData.EntranceRandoExit Exit)
+        private static MiscData.ManualCheckObjectResult LoopEntranceSelect(EntranceData.EntranceRandoExit Exit)
         {
             var Instance = Exit.GetParent();
             string Filter = "";
             while (true)
             {
                 Console.Clear();
-                var Counter = 0;
                 Dictionary<int, EntranceData.EntranceRandoDestination> EnteredItems = Instance.GetAllLoadingZoneDestinations(Filter)
                     .Select((s, index) => new { s, index }).ToDictionary(x => x.index + 1, x => x.s);
                 int Padding = EnteredItems.Keys.Max().ToString().Length;
@@ -118,10 +107,10 @@ namespace CLIFrontEnd
                 }
                 Console.WriteLine(CLIUtility.CreateDivider());
                 Console.WriteLine("Select Destination at Exit " + Exit.GetParentArea().ID + " -> " + Exit.ExitID);
-                var input = Console.ReadLine();
+                var input = Console.ReadLine() ?? "";
                 if (int.TryParse(input, out int index) && EnteredItems.TryGetValue(index, out EntranceData.EntranceRandoDestination? value))
                 {
-                    return new ManualCheckObjectResult(Exit, value);
+                    return new MiscData.ManualCheckObjectResult(Exit, value);
                 }
                 else if (input.StartsWith(@"\"))
                 {
@@ -130,7 +119,7 @@ namespace CLIFrontEnd
             }
         }
 
-        private static ManualCheckObjectResult LoopChoiceOptionSelect(OptionData.ChoiceOption Option)
+        private static MiscData.ManualCheckObjectResult LoopChoiceOptionSelect(OptionData.ChoiceOption Option)
         {
             string Filter = "";
             while (true)
@@ -145,10 +134,10 @@ namespace CLIFrontEnd
                 }
                 Console.WriteLine(CLIUtility.CreateDivider());
                 Console.WriteLine("Select Value for " + Option.getOptionName());
-                var input = Console.ReadLine();
+                var input = Console.ReadLine() ?? "";
                 if (int.TryParse(input, out int index) && Items.TryGetValue(index, out OptionData.OptionValue? value))
                 {
-                    return new ManualCheckObjectResult(Option, value.ID);
+                    return new MiscData.ManualCheckObjectResult(Option, value.ID);
                 }
                 else if (input.StartsWith(@"\"))
                 {
@@ -156,13 +145,12 @@ namespace CLIFrontEnd
                 }
             }
         }
-        private static ManualCheckObjectResult LoopHintSelect(HintData.HintObject HintSpot)
+        private static MiscData.ManualCheckObjectResult LoopHintSelect(HintData.HintObject HintSpot)
         {
             Console.Clear();
             Console.WriteLine($"Enter Hint at {HintSpot.ID}");
             string hint = Console.ReadLine();
-            //HintSpot.HintText = hint;
-            return new ManualCheckObjectResult(HintSpot, hint);
+            return new MiscData.ManualCheckObjectResult(HintSpot, hint);
         }
     }
 }
