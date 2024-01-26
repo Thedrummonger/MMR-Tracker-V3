@@ -34,29 +34,27 @@ namespace MMR_Tracker_V3.TrackerObjects
 
         public string GetName()
         {
-            dynamic DynObj = this;
-            if (Utility.DynamicMethodExists(DynObj, "GetDictEntry"))
-            {
-                var DictEntry = DynObj.GetDictEntry();
-                if (DictEntry is null) { return ID; }
-                if (Utility.DynamicMethodExists(DictEntry, "GetName"))
-                {
-                    return DictEntry.GetName();
-                }
-                else if (Utility.DynamicPropertyExist(DictEntry, "Name"))
-                {
-                    return DictEntry.Name;
-                }
-                else if (Utility.DynamicPropertyExist(DynObj, "Name"))
-                {
-                    return DynObj.Name;
-                }
-            }
-            else if (Utility.DynamicPropertyExist(DynObj, "Name"))
-            {
-                return DynObj.Name;
-            }
+            string name = CheckForDictName(this);
+            if (name is not null) { return name; }
+            name = CheckForObjectName(this);
+            if (name is not null) { return name; }
             return ID;
+        }
+
+        private static string CheckForDictName(dynamic Object)
+        {
+            if (!Utility.DynamicMethodExists(Object, "GetDictEntry")) { return null; }
+            var DictEntry = Object.GetDictEntry();
+            if (DictEntry is null) { return null; }
+            if (Utility.DynamicMethodExists(DictEntry, "GetName")) { return DictEntry.GetName(); }
+            if (Utility.DynamicPropertyExist(DictEntry, "Name")) { return DictEntry.Name; }
+            return null;
+        }
+
+        private static string CheckForObjectName(dynamic Object)
+        {
+            if (Utility.DynamicPropertyExist(Object, "Name")) { return Object.Name; }
+            return null;
         }
     }
 }
