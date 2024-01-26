@@ -231,7 +231,7 @@ namespace MMR_Tracker_V3.GameDataCreation.TPRando
             {
                 if (Values is null) 
                 {
-                    tRPDictionary.ToggleOptions.Add(ID, new OptionData.ToggleOption
+                    tRPDictionary.ToggleOptions.Add(ID, new OptionData.ToggleOption(null)
                     {
                         Name = Name,
                         SubCategory = Category,
@@ -243,7 +243,7 @@ namespace MMR_Tracker_V3.GameDataCreation.TPRando
                 }
                 else
                 {
-                    var Option = new OptionData.ChoiceOption
+                    var Option = new OptionData.ChoiceOption(null)
                     {
                         ID = ID,
                         Name= Name,

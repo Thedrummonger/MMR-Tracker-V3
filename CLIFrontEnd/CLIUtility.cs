@@ -15,5 +15,14 @@ namespace CLIFrontEnd
             for (var i = 0; i < Console.WindowWidth; i++) { Divider += key; }
             return new MiscData.Divider(Divider);
         }
+
+
+        public enum CLIDisplayListType
+        {
+            Locations,
+            Checked,
+            Entrances,
+            Options
+        }
     }
 }

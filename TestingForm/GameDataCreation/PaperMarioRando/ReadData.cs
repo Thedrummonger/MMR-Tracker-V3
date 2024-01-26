@@ -451,7 +451,7 @@ namespace MMR_Tracker_V3.GameDataCreation.PaperMarioRando
             };
 
 
-            var StartingLocationSetting = new OptionData.ChoiceOption { ID = "StartingMap", Name = "Starting Map", Value = "65796" };
+            var StartingLocationSetting = new OptionData.ChoiceOption(null) { ID = "StartingMap", Name = "Starting Map", Value = "65796" };
             foreach(var map in StaringMapSetting) { StartingLocationSetting.ValueList.Add(map.Key, new OptionData.OptionValue { Name = map.Value }); }
             PMRDict.ChoiceOptions.Add("StartingMap", StartingLocationSetting);
 
@@ -462,9 +462,9 @@ namespace MMR_Tracker_V3.GameDataCreation.PaperMarioRando
             PRMLogic.Logic.Add(new MMRData.JsonFormatLogicItem { Id = "RF_Missable" });
             PRMLogic.Logic.Add(new MMRData.JsonFormatLogicItem { Id = "RF_OutOfLogic" });
 
-            PMRDict.IntOptions.Add("MagicalSeedsRequired", new OptionData.IntOption { ID = "MagicalSeedsRequired", Name = "Magical Seeds Required", Value = 4 });
-            PMRDict.IntOptions.Add("StarHuntRequired", new OptionData.IntOption { ID = "StarHuntRequired", Name = "Required Power Stars", Value = 0, Conditionals = new List<List<string>> { new List<string> { "setting{StarHunt, true}" } } });
-            PMRDict.IntOptions.Add("StarWaySpiritsNeededCnt", new OptionData.IntOption { ID = "StarWaySpiritsNeededCnt", Name = "StarWay Spirits Needed", Value = 7 });
+            PMRDict.IntOptions.Add("MagicalSeedsRequired", new OptionData.IntOption(null) { ID = "MagicalSeedsRequired", Name = "Magical Seeds Required", Value = 4 });
+            PMRDict.IntOptions.Add("StarHuntRequired", new OptionData.IntOption(null) { ID = "StarHuntRequired", Name = "Required Power Stars", Value = 0, Conditionals = new List<List<string>> { new List<string> { "setting{StarHunt, true}" } } });
+            PMRDict.IntOptions.Add("StarWaySpiritsNeededCnt", new OptionData.IntOption(null) { ID = "StarWaySpiritsNeededCnt", Name = "StarWay Spirits Needed", Value = 7 });
 
             AddToggleoption("BlueHouseOpen", Display: "Open Blue House");
             AddToggleoption("Ch7BridgeVisible", "true", "Ch.7 Bridge Visible ");
@@ -485,14 +485,14 @@ namespace MMR_Tracker_V3.GameDataCreation.PaperMarioRando
             
             void AddOption(string ID, string Default, List<Tuple<string, string>> Options, string Display = null)
             {
-                var option = new OptionData.ChoiceOption { ID = ID, Name = Display??ID, Value = Default };
+                var option = new OptionData.ChoiceOption(null) { ID = ID, Name = Display??ID, Value = Default };
                 foreach(var item in Options) { option.ValueList.Add(item.Item1, new OptionData.OptionValue { Name = item.Item2 }); }
                 PMRDict.ChoiceOptions.Add(ID, option);
             }
 
             void AddToggleoption(string ID, string defval = "false", string Display = null, string Logic = null)
             {
-                var option = new OptionData.ToggleOption { ID = ID, Name = Display??ID, Value = defval };
+                var option = new OptionData.ToggleOption(null) { ID = ID, Name = Display??ID, Value = defval };
                 if (Logic is not null) { option.Conditionals = LogicStringConverter.ConvertLogicStringToConditional(PMRParser, Logic, ID); }
                 option.CreateSimpleValues(true);
                 PMRDict.ToggleOptions.Add(ID, option);

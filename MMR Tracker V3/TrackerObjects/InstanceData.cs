@@ -231,6 +231,10 @@ namespace MMR_Tracker_V3.TrackerObjects
                 foreach (var i in _Instance.MacroPool.Values) { i.SetParent(_Instance); }
                 foreach (var i in _Instance.HintPool.Values) { i.SetParent(_Instance); }
                 foreach (var i in _Instance.ItemPool.Values) { i.SetParent(_Instance); }
+                foreach (var i in _Instance.ChoiceOptions.Values) { i.SetParent(_Instance); }
+                foreach (var i in _Instance.MultiSelectOptions.Values) { i.SetParent(_Instance); }
+                foreach (var i in _Instance.ToggleOptions.Values) { i.SetParent(_Instance); }
+                foreach (var i in _Instance.IntOptions.Values) { i.SetParent(_Instance); }
                 _Instance.EntrancePool.SetParent(_Instance);
                 foreach (var i in _Instance.EntrancePool.AreaList.Values)
                 {

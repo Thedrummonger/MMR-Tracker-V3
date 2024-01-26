@@ -17,7 +17,7 @@ namespace CLIFrontEnd
 {
     internal class MainDisplay(InstanceContainer instanceContainer)
     {
-        DisplayListType displayType = DisplayListType.Locations;
+        CLIDisplayListType displayType = CLIDisplayListType.Locations;
         bool ShowHelp = true;
         string Filter = "";
 
@@ -30,23 +30,27 @@ namespace CLIFrontEnd
                 Dictionary<int, object> Objects = [];
                 switch (displayType)
                 {
-                    case DisplayListType.Locations:
+                    case CLIDisplayListType.Locations:
                         Objects = ShowAvailableLocations();
                         break;
-                    case DisplayListType.Entrances:
+                    case CLIDisplayListType.Entrances:
                         Objects = ShowAvailableEntrances();
                         break;
-                    case DisplayListType.Checked:
+                    case CLIDisplayListType.Checked:
                         Objects = ShowCheckedLocations();
+                        break;
+                    case CLIDisplayListType.Options:
+                        Objects = ShowOptions();
                         break;
                 }
 
                 var input = Console.ReadLine();
-                CheckState checkState = displayType == DisplayListType.Checked ? CheckState.Unchecked : CheckState.Checked;
+                CheckState checkState = displayType == CLIDisplayListType.Checked ? CheckState.Unchecked : CheckState.Checked;
 
-                if (input == "l") { displayType = DisplayListType.Locations; }
-                else if (input == "e") { displayType = instanceContainer.Instance.CombineEntrancesWithLocations() ? DisplayListType.Locations : DisplayListType.Entrances; }
-                else if (input == "c") { displayType = DisplayListType.Checked; }
+                if (input == "l") { displayType = CLIDisplayListType.Locations; }
+                else if (input == "e") { displayType = instanceContainer.Instance.CombineEntrancesWithLocations() ? CLIDisplayListType.Locations : CLIDisplayListType.Entrances; }
+                else if (input == "c") { displayType = CLIDisplayListType.Checked; }
+                else if (input == "o") { displayType = CLIDisplayListType.Options; }
                 else if (input == "z") { instanceContainer.DoUndo(); }
                 else if (input == "y") { instanceContainer.DoRedo(); }
                 else if (input == "s")
@@ -81,41 +85,41 @@ namespace CLIFrontEnd
             Console.Clear();
             instanceContainer.logicCalculation.CalculateLogic();
             var Data = new MiscData.TrackerLocationDataList(new MiscData.Divider("==========="), instanceContainer, Filter);
-            Data.PopulateAvailableLocationList();
-            Dictionary<int, object> Locations = Data.FinalData.Select((s, index) => new { s, index }).ToDictionary(x => x.index + 1, x => x.s);
-            int Padding = Locations.Keys.Max().ToString().Length;
-            bool InMinimized = false;
-            foreach (var LocationObject in Locations)
-            {
-                if (LocationObject.Value is Areaheader area) { InMinimized = area.IsMinimized(DisplayListType.Locations, instanceContainer.Instance.StaticOptions); }
-                else if (InMinimized) { continue; }
-                Console.WriteLine($"{LocationObject.Key.ToString($"D{Padding}")}: {LocationObject.Value}");
-            }
-            return Locations;
+            Data.WriteLocations(MiscData.CheckState.Unchecked, false).WriteLocations(MiscData.CheckState.Unchecked, true);
+            if (instanceContainer.Instance.CombineEntrancesWithLocations()) { Data.WriteEntrances(MiscData.CheckState.Unchecked, true); }
+            Data.WriteHints(MiscData.CheckState.Unchecked);
+            return PrintData(Data);
         }
         private Dictionary<int, object> ShowAvailableEntrances()
         {
             Console.Clear();
             instanceContainer.logicCalculation.CalculateLogic();
             var Data = new MiscData.TrackerLocationDataList(new MiscData.Divider("==========="), instanceContainer, Filter);
-            Data.PopulateAvailableEntranceList();
-            Dictionary<int, object> Locations = Data.FinalData.Select((s, index) => new { s, index }).ToDictionary(x => x.index + 1, x => x.s);
-            int Padding = Locations.Keys.Max().ToString().Length;
-            bool InMinimized = false;
-            foreach (var LocationObject in Locations)
-            {
-                if (LocationObject.Value is Areaheader area) { InMinimized = area.IsMinimized(DisplayListType.Entrances, instanceContainer.Instance.StaticOptions); }
-                else if (InMinimized) { continue; }
-                Console.WriteLine($"{LocationObject.Key.ToString($"D{Padding}")}: {LocationObject.Value}");
-            }
-            return Locations;
+            Data.WriteEntrances(MiscData.CheckState.Unchecked, false);
+            return PrintData(Data);
         }
         private Dictionary<int, object> ShowCheckedLocations()
         {
             Console.Clear();
             instanceContainer.logicCalculation.CalculateLogic();
             var Data = new TrackerLocationDataList(new Divider("==========="), instanceContainer, Filter);
-            Data.PopulateCheckedLocationList(); 
+            Data.WriteLocations(MiscData.CheckState.Checked, false).WriteLocations(MiscData.CheckState.Checked, true)
+                    .WriteEntrances(MiscData.CheckState.Checked, true).WriteHints(MiscData.CheckState.Checked).WriteStartingItems().WriteOnlineItems();
+            if (instanceContainer.Instance.StaticOptions.ShowOptionsInListBox == DisplayListType.Checked) { Data.WriteOptions(); }
+            return PrintData(Data);
+        }
+
+        private Dictionary<int, object> ShowOptions()
+        {
+            Console.Clear();
+            instanceContainer.logicCalculation.CalculateLogic();
+            var Data = new TrackerLocationDataList(new Divider("==========="), instanceContainer, Filter); 
+            Data.WriteOptions();
+            return PrintData(Data);
+        }
+
+        private Dictionary<int, object> PrintData(TrackerLocationDataList Data)
+        {
             Dictionary<int, object> Locations = Data.FinalData.Select((s, index) => new { s, index }).ToDictionary(x => x.index + 1, x => x.s);
             int Padding = Locations.Keys.Max().ToString().Length;
             bool InMinimized = false;

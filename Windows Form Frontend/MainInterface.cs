@@ -943,7 +943,7 @@ namespace Windows_Form_Frontend
         private void SetCheckPrice(dynamic Object)
         {
             var DictEntry = Object.GetDictEntry();
-            var PriceContainer = new List<OptionData.IntOption>() { new() { ID = DictEntry.Name ?? DictEntry.ID, Value = 0 } };
+            var PriceContainer = new List<OptionData.IntOption>() { new(InstanceContainer.Instance) { ID = DictEntry.Name ?? DictEntry.ID, Value = 0 } };
             VariableInputWindow PriceInput = new(PriceContainer, InstanceContainer);
             PriceInput.ShowDialog();
             var ResultPrice = PriceInput._Result.First().GetItem<int>();

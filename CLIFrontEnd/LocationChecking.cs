@@ -44,6 +44,10 @@ namespace CLIFrontEnd
                 {
                     Result.Add(LoopEntranceSelect(EO));
                 }
+                if (i is OptionData.ChoiceOption CO)
+                {
+                    Result.Add(LoopChoiceOptionSelect(CO));
+                }
             }
             return Result;
         }
@@ -56,6 +60,17 @@ namespace CLIFrontEnd
                 if (i is HintData.HintObject HO)
                 {
                     Result.Add(LoopHintSelect(HO));
+                }
+                else if (i is OptionData.IntOption IO)
+                {
+                    int? Val = null;
+                    while (Val is null)
+                    {
+                        Console.Clear();
+                        Console.WriteLine($"Enter value for {IO.getOptionName()}");
+                        if (int.TryParse(Console.ReadLine(), out int SelectedVal)) { Val = SelectedVal; }
+                    }
+                    Result.Add(new(IO, Val));
                 }
             }
             return Result;
@@ -107,6 +122,33 @@ namespace CLIFrontEnd
                 if (int.TryParse(input, out int index) && EnteredItems.TryGetValue(index, out EntranceData.EntranceRandoDestination? value))
                 {
                     return new ManualCheckObjectResult(Exit, value);
+                }
+                else if (input.StartsWith(@"\"))
+                {
+                    Filter = input[1..];
+                }
+            }
+        }
+
+        private static ManualCheckObjectResult LoopChoiceOptionSelect(OptionData.ChoiceOption Option)
+        {
+            string Filter = "";
+            while (true)
+            {
+                Console.Clear();
+                var ValidItems = Option.ValueList.Values;
+                Dictionary<int, OptionData.OptionValue> Items = ValidItems.Select((s, index) => new { s, index }).ToDictionary(x => x.index + 1, x => x.s);
+                int Padding = Items.Keys.Max().ToString().Length;
+                foreach (var i in Items)
+                {
+                    Console.WriteLine($"{i.Key.ToString($"D{Padding}")}: {i.Value}");
+                }
+                Console.WriteLine(CLIUtility.CreateDivider());
+                Console.WriteLine("Select Value for " + Option.getOptionName());
+                var input = Console.ReadLine();
+                if (int.TryParse(input, out int index) && Items.TryGetValue(index, out OptionData.OptionValue? value))
+                {
+                    return new ManualCheckObjectResult(Option, value.ID);
                 }
                 else if (input.StartsWith(@"\"))
                 {

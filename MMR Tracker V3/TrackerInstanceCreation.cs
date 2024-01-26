@@ -72,6 +72,10 @@ namespace MMR_Tracker_V3
             Instance.ToggleOptions = Instance.LogicDictionary.ToggleOptions.ToDictionary(x => x.Key, y => y.Value);
             Instance.IntOptions = Instance.LogicDictionary.IntOptions.ToDictionary(x => x.Key, y => y.Value);
             Instance.LogicEntryCollections = Instance.LogicDictionary.LogicEntryCollections.ToDictionary(x => x.Key, y => y.Value);
+            foreach (var i in Instance.ChoiceOptions.Values) { i.SetParent(Instance); }
+            foreach (var i in Instance.MultiSelectOptions.Values) { i.SetParent(Instance); }
+            foreach (var i in Instance.ToggleOptions.Values) { i.SetParent(Instance); }
+            foreach (var i in Instance.IntOptions.Values) { i.SetParent(Instance); }
 
             Instance.LogicDictionary.SetParentContainer(Instance);
             foreach (var i in Instance.LogicDictionary.LocationList) { i.Value.ID = i.Key; i.Value.SetParent(Instance.LogicDictionary); }

@@ -143,8 +143,8 @@ namespace TestingForm
 
         private void TestDynamicMethodLookup()
         {
-            dynamic ChoiceOption = new OptionData.ChoiceOption();
-            dynamic MultiOption = new OptionData.MultiSelectOption();
+            dynamic ChoiceOption = new OptionData.ChoiceOption(null);
+            dynamic MultiOption = new OptionData.MultiSelectOption(null);
 
             bool t1 = MMR_Tracker_V3.Utility.DynamicMethodExists(ChoiceOption, "SetValue");
             bool t2 = MMR_Tracker_V3.Utility.DynamicMethodExists(MultiOption, "SetValue");

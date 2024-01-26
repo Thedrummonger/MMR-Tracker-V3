@@ -25,7 +25,7 @@ namespace MMR_Tracker_V3.GameDataCreation.OOTMMV2
             {
                 if (Setting.type == "number")
                 {
-                    OptionData.IntOption IntSettingDictEntry = new OptionData.IntOption
+                    OptionData.IntOption IntSettingDictEntry = new OptionData.IntOption(null)
                     {
                         ID = Setting.key,
                         Name = Setting.name,
@@ -38,7 +38,7 @@ namespace MMR_Tracker_V3.GameDataCreation.OOTMMV2
                 }
                 else if (Setting.type == "boolean")
                 {
-                    OptionData.ToggleOption IntSettingDictEntry = new OptionData.ToggleOption
+                    OptionData.ToggleOption IntSettingDictEntry = new OptionData.ToggleOption(null)
                     {
                         ID = Setting.key,
                         Name = Setting.name,
@@ -52,7 +52,7 @@ namespace MMR_Tracker_V3.GameDataCreation.OOTMMV2
                 }
                 else if (Setting.type == "enum")
                 {
-                    OptionData.ChoiceOption IntSettingDictEntry = new OptionData.ChoiceOption
+                    OptionData.ChoiceOption IntSettingDictEntry = new OptionData.ChoiceOption(null)
                     {
                         ID = Setting.key,
                         Name = Setting.name,
@@ -68,7 +68,7 @@ namespace MMR_Tracker_V3.GameDataCreation.OOTMMV2
                 }
                 else if (Setting.type == "set")
                 {
-                    OptionData.MultiSelectOption multiSelectSettingDictEntry = new OptionData.MultiSelectOption
+                    OptionData.MultiSelectOption multiSelectSettingDictEntry = new OptionData.MultiSelectOption(null)
                     {
                         ID = Setting.key,
                         Name = Setting.name,
@@ -94,7 +94,7 @@ namespace MMR_Tracker_V3.GameDataCreation.OOTMMV2
             foreach (var setting in ParserData.DungeonLayouts)
             {
                 var Data = setting.Split("_").ToArray();
-                OptionData.ToggleOption IntSettingDictEntry = new OptionData.ToggleOption
+                OptionData.ToggleOption IntSettingDictEntry = new OptionData.ToggleOption(null)
                 {
                     ID = setting,
                     Name = Utility.ConvertToCamelCase(setting.Replace("_", " ")),
@@ -222,7 +222,7 @@ namespace MMR_Tracker_V3.GameDataCreation.OOTMMV2
                 {
                     var namedata = i.Key.Split('|');
 
-                    OptionData.ToggleOption Requirement = new OptionData.ToggleOption();
+                    OptionData.ToggleOption Requirement = new OptionData.ToggleOption(null);
                     Requirement.ID = $"{ID.ToLower()}_{namedata[1]}";
                     Requirement.Name = namedata[0];
                     Requirement.SubCategory = Category;
@@ -244,7 +244,7 @@ namespace MMR_Tracker_V3.GameDataCreation.OOTMMV2
                 ReqVar.Entries = new List<string>();
                 dictionaryFile.LogicEntryCollections.Add(ReqVar.ID, ReqVar);
 
-                OptionData.IntOption req_count = new OptionData.IntOption();
+                OptionData.IntOption req_count = new OptionData.IntOption(null);
                 req_count.SubCategory = Category;
                 req_count.Name = "Items Required";
                 req_count.ID = $"{ID.ToLower()}_count";

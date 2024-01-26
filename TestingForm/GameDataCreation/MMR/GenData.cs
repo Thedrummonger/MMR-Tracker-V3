@@ -137,17 +137,17 @@ namespace TestingForm.GameDataCreation.MMR
             void AddSimpleToggle(string ID, string Name, string Category, bool Default)
             {
                 SettingPriority++;
-                MMRDictV16.ToggleOptions.Add(ID, new OptionData.ToggleOption { ID = ID, Value = Default.ToString().ToLower(), Name = Name, SubCategory = Category, Priority = SettingPriority }.CreateSimpleValues(true));
+                MMRDictV16.ToggleOptions.Add(ID, new OptionData.ToggleOption(null) { ID = ID, Value = Default.ToString().ToLower(), Name = Name, SubCategory = Category, Priority = SettingPriority }.CreateSimpleValues(true));
             }
             void AddSimpleMultiSelect(string ID, string Name, string Category, params string[] Values)
             {
                 SettingPriority++;
-                MMRDictV16.MultiSelectOptions.Add(ID, new OptionData.MultiSelectOption { ID = ID, Name = Name, EnabledValues = new HashSet<string>(), SubCategory = Category, Priority = SettingPriority }.CreateSimpleValues(Values));
+                MMRDictV16.MultiSelectOptions.Add(ID, new OptionData.MultiSelectOption(null) { ID = ID, Name = Name, EnabledValues = new HashSet<string>(), SubCategory = Category, Priority = SettingPriority }.CreateSimpleValues(Values));
             }
             void AddSimpleChoice(string ID, string Name, string Category, string Default, params string[] Values)
             {
                 SettingPriority++;
-                MMRDictV16.ChoiceOptions.Add(ID, new OptionData.ChoiceOption { ID = ID, Name = Name, Value = Default, SubCategory = Category, Priority = SettingPriority }.CreateSimpleValues(Values));
+                MMRDictV16.ChoiceOptions.Add(ID, new OptionData.ChoiceOption(null) { ID = ID, Name = Name, Value = Default, SubCategory = Category, Priority = SettingPriority }.CreateSimpleValues(Values));
             }
             OptionData.AdditionalLogic CreateAdditionalLogic(OptionData.OptionValue Value)
             {
@@ -198,7 +198,7 @@ namespace TestingForm.GameDataCreation.MMR
             //==========================================================================================================================================================================
             //Boss Remian Moon Requirement
             SettingPriority++;
-            MMRDictV16.IntOptions.Add("RequiredBossRemains", new OptionData.IntOption
+            MMRDictV16.IntOptions.Add("RequiredBossRemains", new OptionData.IntOption(null)
             {
                 ID = "RequiredBossRemains",
                 Name = "Required Boss Remains",

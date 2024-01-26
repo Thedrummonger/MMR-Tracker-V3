@@ -6,15 +6,22 @@ namespace MMR_Tracker_V3.TrackerObjects
 {
     public class OptionData
     {
-        public class ChoiceOption
+        public class LogicOption(InstanceData.TrackerInstance Parent)
         {
+            private InstanceData.TrackerInstance _parent = Parent;
+            public InstanceData.TrackerInstance GetParent() { return _parent; }
+            public void SetParent(InstanceData.TrackerInstance parent) { _parent = parent; }
+
             public string ID { get; set; }
             public string Name { get; set; }
-            public string Value { get; set; }
             public string Description { get; set; }
             public string SubCategory { get; set; }
             public int Priority { get; set; } = 0;
-            public List<List<string>> Conditionals { get; set; } = new List<List<string>>();
+            public List<List<string>> Conditionals { get; set; } = [];
+        }
+        public class ChoiceOption(InstanceData.TrackerInstance Parent) : LogicOption(Parent)
+        {
+            public string Value { get; set; }
             public Dictionary<string, OptionValue> ValueList { get; set; } = new Dictionary<string, OptionValue>();
             public OptionValue GetValue(string _Value = null)
             {
@@ -46,15 +53,9 @@ namespace MMR_Tracker_V3.TrackerObjects
             }
         }
 
-        public class MultiSelectOption
+        public class MultiSelectOption(InstanceData.TrackerInstance Parent) : LogicOption(Parent)
         {
-            public string ID { get; set; }
-            public string Name { get; set; }
             public HashSet<string> EnabledValues { get; set; }
-            public string Description { get; set; }
-            public string SubCategory { get; set; }
-            public int Priority { get; set; } = 0;
-            public List<List<string>> Conditionals { get; set; } = new List<List<string>>();
             public Dictionary<string, OptionValue> ValueList { get; set; } = new Dictionary<string, OptionValue>();
             public OptionValue GetValue(string _Value)
             {
@@ -104,15 +105,9 @@ namespace MMR_Tracker_V3.TrackerObjects
                 return $"-{Value}: {Parent.EnabledValues.Contains(Value.ID)}";
             }
         }
-        public class ToggleOption
+        public class ToggleOption(InstanceData.TrackerInstance Parent) : LogicOption(Parent)
         {
-            public string ID { get; set; }
-            public string Name { get; set; }
             public string Value { get; set; }
-            public string Description { get; set; }
-            public string SubCategory { get; set; }
-            public int Priority { get; set; }
-            public List<List<string>> Conditionals { get; set; } = new List<List<string>>();
             public OptionValue Enabled { get; set; }
             public OptionValue Disabled { get; set; }
             public OptionValue GetValue(string _Value = null)
@@ -169,15 +164,9 @@ namespace MMR_Tracker_V3.TrackerObjects
             }
 
         }
-        public class IntOption
+        public class IntOption(InstanceData.TrackerInstance Parent) : LogicOption(Parent)
         {
-            public string ID { get; set; }
-            public string Name { get; set; }
             public int Value { get; set; }
-            public string Description { get; set; }
-            public string SubCategory { get; set; }
-            public int Priority { get; set; }
-            public List<List<string>> Conditionals { get; set; } = new List<List<string>>();
             public int Min { get; set; } = int.MinValue;
             public int Max { get; set; } = int.MaxValue;
             public void SetValue(int _Value)
