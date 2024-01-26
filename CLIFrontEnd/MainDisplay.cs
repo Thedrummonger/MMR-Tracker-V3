@@ -23,6 +23,20 @@ namespace CLIFrontEnd
 
         public void Display()
         {
+            Dictionary<string, DisplayAction> Options = new()
+            {
+                { "l", new(() => { displayType = CLIDisplayListType.Locations; }, "Displays Available Locations") },
+                { "e", new(() => { displayType = instanceContainer.Instance.CombineEntrancesWithLocations() ? CLIDisplayListType.Locations : CLIDisplayListType.Entrances;}, "Displays Available Entrances") },
+                { "c", new(() => { displayType = CLIDisplayListType.Checked; }, "Displays Checked Locations/entrances") },
+                { "o", new(() => { displayType = CLIDisplayListType.Options; }, "Displays Logic Options") },
+                { "p", new(() => { }, "Displays Pathfinder") },
+                { "z", new(instanceContainer.DoUndo, "Undo last action") },
+                { "y", new(instanceContainer.DoRedo, "Redo last undo action") },
+                { "s", new(() => {
+                    var Result = NativeFileDialogSharp.Dialog.FileSave("mmrtsav");
+                    if (Result.IsOk) { instanceContainer.SaveInstance(Result.Path); } }, "Save as") },
+                { "h", new(() => { ShowHelp = !ShowHelp; }, "Hide Help Menu") },
+            };
             while (true)
             {
                 Console.Clear();
@@ -44,21 +58,28 @@ namespace CLIFrontEnd
                         break;
                 }
 
+                Console.WriteLine(CreateDivider());
+                if (ShowHelp)
+                {
+                    Console.WriteLine("Commands:");
+                    foreach (var i in Options)
+                    {
+                        Console.WriteLine($"{i.Key}: {i.Value.Description}");
+                    }
+                    Console.WriteLine("Type the items index to select it");
+                    Console.WriteLine("Multiple items can be seperated with , and ranges can be defined with -");
+                    Console.WriteLine("Example: 1,12,18-25");
+                    Console.WriteLine(CreateDivider());
+                }
+                else
+                {
+                    Console.WriteLine("Use h to show commands");
+                }
+
                 var input = Console.ReadLine();
                 CheckState checkState = displayType == CLIDisplayListType.Checked ? CheckState.Unchecked : CheckState.Checked;
 
-                if (input == "l") { displayType = CLIDisplayListType.Locations; }
-                else if (input == "e") { displayType = instanceContainer.Instance.CombineEntrancesWithLocations() ? CLIDisplayListType.Locations : CLIDisplayListType.Entrances; }
-                else if (input == "c") { displayType = CLIDisplayListType.Checked; }
-                else if (input == "o") { displayType = CLIDisplayListType.Options; }
-                else if (input == "z") { instanceContainer.DoUndo(); }
-                else if (input == "y") { instanceContainer.DoRedo(); }
-                else if (input == "s")
-                {
-                    var Result = NativeFileDialogSharp.Dialog.FileSave("mmrtsav");
-                    if (Result.IsOk) { instanceContainer.SaveInstance(Result.Path); }
-                }
-                else if (input == "h") { ShowHelp = !ShowHelp; }
+                if (Options.TryGetValue(input, out DisplayAction? value)) { value.action(); }
                 else
                 {
                     var Indices = InputParser.ParseIndicesString(input);

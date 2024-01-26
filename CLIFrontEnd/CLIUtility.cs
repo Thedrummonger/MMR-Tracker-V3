@@ -16,13 +16,19 @@ namespace CLIFrontEnd
             return new MiscData.Divider(Divider);
         }
 
+        public class DisplayAction(Action action, string description)
+        {
+            public Action action = action;
+            public string Description = description;
+        }
 
         public enum CLIDisplayListType
         {
             Locations,
             Checked,
             Entrances,
-            Options
+            Options,
+            Pathfinder
         }
     }
 }
