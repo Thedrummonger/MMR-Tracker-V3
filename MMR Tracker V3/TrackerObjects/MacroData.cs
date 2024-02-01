@@ -1,4 +1,4 @@
-﻿using MMR_Tracker_V3.TrackerObjectExtentions;
+﻿using MMR_Tracker_V3.TrackerObjectExtensions;
 using System;
 
 namespace MMR_Tracker_V3.TrackerObjects

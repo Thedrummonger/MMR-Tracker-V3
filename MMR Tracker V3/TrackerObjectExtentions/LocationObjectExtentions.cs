@@ -2,9 +2,9 @@
 using System.Linq;
 using static MMR_Tracker_V3.TrackerObjects.MiscData;
 
-namespace MMR_Tracker_V3.TrackerObjectExtentions
+namespace MMR_Tracker_V3.TrackerObjectExtensions
 {
-    public static class LocationObjectExtentions
+    public static class LocationObjectExtensions
     {
         public static bool CanContainItem(this LocationData.LocationObject loc, ItemData.ItemObject item, bool EmptyIsWildcard = true)
         {

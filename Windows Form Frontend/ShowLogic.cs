@@ -1,6 +1,6 @@
 ﻿using MMR_Tracker_V3;
 using MMR_Tracker_V3.Logic;
-using MMR_Tracker_V3.TrackerObjectExtentions;
+using MMR_Tracker_V3.TrackerObjectExtensions;
 using MMR_Tracker_V3.TrackerObjects;
 using System;
 using System.Collections.Generic;
@@ -230,17 +230,17 @@ namespace Windows_Form_Frontend
 
             foreach (var i in Logic.RequiredItems.Where(x => !bool.TryParse(x, out bool bout) || !bout))
             {
-                StandardListBoxItem boxItem = new StandardListBoxItem() { Display = GetDisplayName(i), tag = i };
+                StandardListBoxItem boxItem = new StandardListBoxItem() { Display = GetDisplayName(i), Tag = i };
                 LBReq.Items.Add(boxItem);
             }
             if (LocationObject is EntranceData.EntranceRandoExit EO && !Logic.RequiredItems.Contains(EO.GetParentArea().ID))
             {
-                StandardListBoxItem boxItem = new StandardListBoxItem() { Display = GetDisplayName(EO.GetParentArea().ID), tag = EO.GetParentArea().ID };
+                StandardListBoxItem boxItem = new StandardListBoxItem() { Display = GetDisplayName(EO.GetParentArea().ID), Tag = EO.GetParentArea().ID };
                 LBReq.Items.Add(boxItem);
             }
             foreach (var cond in Logic.ConditionalItems)
             {
-                StandardListBoxItem boxItem = new StandardListBoxItem() { Display = string.Join(" | ", cond.Select(x => GetDisplayName(x))), tag = cond };
+                StandardListBoxItem boxItem = new StandardListBoxItem() { Display = string.Join(" | ", cond.Select(x => GetDisplayName(x))), Tag = cond };
                 lbCond.Items.Add(boxItem);
             }
             Updating = false;
@@ -334,16 +334,16 @@ namespace Windows_Form_Frontend
                     switch (CurrentType)
                     {
                         case LogicEntryType.Area:
-                            LitEntry.tag = c;
+                            LitEntry.Tag = c;
                             LitEntry.Display = $"{CleanedID}: {c}";
                             break;
                         case LogicEntryType.item:
-                            LitEntry.tag = c;
+                            LitEntry.Tag = c;
                             LitEntry.Display = $"{IC.Instance.GetItemByID(CleanedID)?.GetDictEntry()?.GetName() ?? CleanedID}: {IC.Instance.GetLocationByID(c)?.GetDictEntry()?.GetName() ?? c}";
                             break;
                         case LogicEntryType.macro:
                         default:
-                            LitEntry.tag = c;
+                            LitEntry.Tag = c;
                             LitEntry.Display = CleanedID;
                             break;
                     }
@@ -362,12 +362,12 @@ namespace Windows_Form_Frontend
                 switch (CurrentType)
                 {
                     case LogicEntryType.location:
-                        LitEntry.tag = i.Key;
+                        LitEntry.Tag = i.Key;
                         LitEntry.Display = IC.Instance.GetLocationByID(i.Key)?.GetDictEntry()?.GetName() ?? i.Key;
                         break;
                     case LogicEntryType.Exit:
                     default:
-                        LitEntry.tag = i.Key;
+                        LitEntry.Tag = i.Key;
                         LitEntry.Display = i.Key;
                         break;
                 }
@@ -531,14 +531,14 @@ namespace Windows_Form_Frontend
         {
             if (state == FormState.showLogic)
             {
-                if (lbCond.SelectedItem is StandardListBoxItem SI && SI.tag is List<string> Cond)
+                if (lbCond.SelectedItem is StandardListBoxItem SI && SI.Tag is List<string> Cond)
                 {
                     var GotoList = CreatGotoList(Cond, out List<object> DataEntriesOnly);
                     if (!DataEntriesOnly.Any()) { return; }
                     else if (DataEntriesOnly.Count == 1 && DataEntriesOnly.First() is StandardListBoxItem SLI && Cond.Count == 1)
                     {
                         GoBackList.Add(CurrentID);
-                        CurrentID = SLI.tag.ToString();
+                        CurrentID = SLI.Tag.ToString();
                         PrintLogicToLists();
                     }
                     else
@@ -550,7 +550,7 @@ namespace Windows_Form_Frontend
             }
             else if (state == FormState.GoTo)
             {
-                if (lbCond.SelectedItem is StandardListBoxItem SI && SI.tag is string str)
+                if (lbCond.SelectedItem is StandardListBoxItem SI && SI.Tag is string str)
                 {
                     GoBackList.Add(CurrentID);
                     CurrentID = str;
@@ -565,14 +565,14 @@ namespace Windows_Form_Frontend
         {
             if (state == FormState.showLogic)
             {
-                if (LBReq.SelectedItem is StandardListBoxItem SI && SI.tag is string req)
+                if (LBReq.SelectedItem is StandardListBoxItem SI && SI.Tag is string req)
                 {
                     var GotoList = CreatGotoList(new List<string> { req }, out List<object> DataEntriesOnly);
                     if (!DataEntriesOnly.Any()) { return; }
                     else if (DataEntriesOnly.Count == 1 && DataEntriesOnly.First() is StandardListBoxItem SLI)
                     {
                         GoBackList.Add(CurrentID);
-                        CurrentID = SLI.tag.ToString();
+                        CurrentID = SLI.Tag.ToString();
                         PrintLogicToLists();
                     }
                     else

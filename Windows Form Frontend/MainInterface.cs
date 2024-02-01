@@ -1,6 +1,6 @@
 ﻿using MMR_Tracker_V3;
 using MMR_Tracker_V3.SpoilerLogImporter;
-using MMR_Tracker_V3.TrackerObjectExtentions;
+using MMR_Tracker_V3.TrackerObjectExtensions;
 using MMR_Tracker_V3.TrackerObjects;
 using Newtonsoft.Json;
 using System;
@@ -391,9 +391,7 @@ namespace Windows_Form_Frontend
             if (InstanceContainer is null || InstanceContainer.Instance is null) { tlpMaster.Visible = false; return; }
             tlpMaster.Visible = true;
 
-            InstanceContainer.Instance.EntrancePool.IsEntranceRando = InstanceContainer.Instance.EntrancePool.CheckForRandomEntrances();
-
-            PathFinderToolStripMenuItem.Visible = InstanceContainer.Instance.EntrancePool.IsEntranceRando;
+            PathFinderToolStripMenuItem.Visible = InstanceContainer.Instance.EntrancePool.HasRandomizableEntrances();
 
             redoToolStripMenuItem.Enabled = InstanceContainer.RedoStringList.Any();
             undoToolStripMenuItem.Enabled = InstanceContainer.UndoStringList.Any();
@@ -605,7 +603,7 @@ namespace Windows_Form_Frontend
             SaveAsToolStripMenuItem.Visible = (InstanceContainer.Instance != null) && !string.IsNullOrWhiteSpace(InstanceContainer.CurrentSavePath);
             spoilerLogToolsToolStripMenuItem.Visible = (InstanceContainer.Instance != null);
             importSpoilerLogToolStripMenuItem.Visible = (InstanceContainer.Instance != null);
-            PathFinderToolStripMenuItem.Visible = (InstanceContainer.Instance != null && InstanceContainer.Instance.EntrancePool.IsEntranceRando);
+            PathFinderToolStripMenuItem.Visible = (InstanceContainer.Instance != null && InstanceContainer.Instance.EntrancePool.HasRandomizableEntrances());
 
             viewToolStripMenuItem.Visible = (InstanceContainer.Instance != null && InstanceContainer.Instance.StaticOptions.OptionFile.WinformData.UILayout == UILayout.Compact);
             
@@ -810,7 +808,7 @@ namespace Windows_Form_Frontend
             //Navigate to Area
             if (listBox.SelectedItem is MiscData.Areaheader NavAreaObject &&
                 InstanceContainer.Instance.EntrancePool.AreaList.ContainsKey(NavAreaObject.Area) &&
-                InstanceContainer.Instance.EntrancePool.IsEntranceRando)
+                InstanceContainer.Instance.EntrancePool.HasRandomizableEntrances())
             {
                 ToolStripItem NavigateHereContextItem = contextMenuStrip.Items.Add("Navigate To this area");
                 NavigateHereContextItem.Click += (sender, e) => { CMBEnd.SelectedItem = NavAreaObject.Area; };
@@ -960,7 +958,7 @@ namespace Windows_Form_Frontend
                 var FLI = new MiscData.StandardListBoxItem
                 {
                     Display = i is MiscData.Divider DVIx ? DVIx.Display : i.ToString(),
-                    tag = i is MiscData.Divider DVIy ? DVIy : i.ToString(),
+                    Tag = i is MiscData.Divider DVIy ? DVIy : i.ToString(),
                     tagFunc = i is MiscData.Divider ? ShowUnlockSubFunction : null
                 };
                 Items.Add(FLI);
@@ -978,8 +976,8 @@ namespace Windows_Form_Frontend
             bool Toggleing = false;
             foreach (var i in TO.Item1)
             {
-                bool IsDivider = i.Item1 is MiscData.StandardListBoxItem FLI && FLI.tag is MiscData.Divider;
-                Toggleing = IsDivider ? ((i.Item1 as MiscData.StandardListBoxItem).tag as MiscData.Divider).Display == DIV.Display : Toggleing;
+                bool IsDivider = i.Item1 is MiscData.StandardListBoxItem FLI && FLI.Tag is MiscData.Divider;
+                Toggleing = IsDivider ? ((i.Item1 as MiscData.StandardListBoxItem).Tag as MiscData.Divider).Display == DIV.Display : Toggleing;
                 bool Shown = (Toggleing ? !i.Item2 : i.Item2) || IsDivider;
                 Return.Add((i.Item1, Shown));
             }

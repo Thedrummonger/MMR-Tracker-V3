@@ -1,5 +1,5 @@
 ﻿using MMR_Tracker_V3.Logic;
-using MMR_Tracker_V3.TrackerObjectExtentions;
+using MMR_Tracker_V3.TrackerObjectExtensions;
 using MMR_Tracker_V3.TrackerObjects;
 using System;
 using System.Collections.Generic;
@@ -516,12 +516,14 @@ namespace MMR_Tracker_V3
                 int MissingAmunt = item.Value - ItemObj.GetTotalUsable();
                 NeededItems.Add($"{ItemObj.GetDictEntry().GetName()} x{MissingAmunt}");
             }
-            foreach (var item in AdvancedUnlockData.Rootareas)
+            if (Instance.EntrancePool.HasRandomizableEntrances())
             {
-                if (!Instance.EntrancePool.IsEntranceRando) { break; }
-                if (Instance.EntrancePool.AreaList.ContainsKey(item) && Instance.EntrancePool.AreaList[item].ExitsAcessibleFrom < 1)
+                foreach (var item in AdvancedUnlockData.Rootareas)
                 {
-                    NeededItems.Add(item);
+                    if (Instance.EntrancePool.AreaList.ContainsKey(item) && Instance.EntrancePool.AreaList[item].ExitsAcessibleFrom < 1)
+                    {
+                        NeededItems.Add(item);
+                    }
                 }
             }
             return NeededItems;

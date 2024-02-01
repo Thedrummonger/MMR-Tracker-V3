@@ -1,4 +1,4 @@
-﻿using MMR_Tracker_V3.TrackerObjectExtentions;
+﻿using MMR_Tracker_V3.TrackerObjectExtensions;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -20,15 +20,24 @@ namespace MMR_Tracker_V3.TrackerObjects
             public Dictionary<string, EntranceRandoArea> AreaList { get; set; } = [];
             //The area accessable from the beggining of the game
             public string RootArea { get; set; } = "Root";
-            public bool IsEntranceRando { get; set; } = false;
 
-            public bool CheckForRandomEntrances()
+            private bool? HasRandomizableEntrancesCACHE = null;
+            public bool HasRandomizableEntrances()
             {
-                return AreaList.Any(x => x.Value.RandomizableExits().Any(x => x.Value.RandomizedState == RandomizedState.Randomized));
+                HasRandomizableEntrancesCACHE ??= GetAllRandomizableExits().Length != 0;
+                return (bool)HasRandomizableEntrancesCACHE;
             }
-            public int GetAmountOfRandomizedEntrances()
+            public bool HasAnyRandomizedEntrances()
             {
-                return AreaList.SelectMany(x => x.Value.RandomizableExits().Where(y => y.Value.IsRandomized())).Count();
+                return GetAllRandomizedExits().Length != 0;
+            }
+            public EntranceRandoExit[] GetAllRandomizableExits()
+            {
+                return AreaList.Values.SelectMany(x => x.RandomizableExits().Values).ToArray();
+            }
+            public EntranceRandoExit[] GetAllRandomizedExits()
+            {
+                return GetAllRandomizableExits().Where(y => y.IsRandomized()).ToArray();
             }
         }
         public class EntranceRandoArea(InstanceData.TrackerInstance Parent)

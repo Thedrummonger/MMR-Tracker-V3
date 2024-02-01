@@ -1,5 +1,5 @@
 ﻿using MMR_Tracker_V3;
-using MMR_Tracker_V3.TrackerObjectExtentions;
+using MMR_Tracker_V3.TrackerObjectExtensions;
 using MMR_Tracker_V3.TrackerObjects;
 using System;
 using System.Collections.Generic;
@@ -63,22 +63,22 @@ namespace Windows_Form_Frontend
                 {
                     if (i is MiscData.StandardListBoxItem LBI && outitem is not null)
                     {
-                        if (outitem is ItemData.ItemObject && LBI.tag is ItemData.ItemObject IO && IO.ID == ParsedWinCon)
+                        if (outitem is ItemData.ItemObject && LBI.Tag is ItemData.ItemObject IO && IO.ID == ParsedWinCon)
                         {
                             cmbWinCon.SelectedItem = i;
                             break;
                         }
-                        else if (outitem is LocationData.LocationObject && LBI.tag is LocationData.LocationObject LO && LO.ID == ParsedWinCon)
+                        else if (outitem is LocationData.LocationObject && LBI.Tag is LocationData.LocationObject LO && LO.ID == ParsedWinCon)
                         {
                             cmbWinCon.SelectedItem = i;
                             break;
                         }
-                        else if (outitem is MacroObject && LBI.tag is MacroObject MO && MO.ID == ParsedWinCon)
+                        else if (outitem is MacroObject && LBI.Tag is MacroObject MO && MO.ID == ParsedWinCon)
                         {
                             cmbWinCon.SelectedItem = i;
                             break;
                         }
-                        else if (outitem is EntranceData.EntranceRandoArea && LBI.tag is EntranceData.EntranceRandoArea AO && AO.ID == ParsedWinCon)
+                        else if (outitem is EntranceData.EntranceRandoArea && LBI.Tag is EntranceData.EntranceRandoArea AO && AO.ID == ParsedWinCon)
                         {
                             cmbWinCon.SelectedItem = i;
                             break;
@@ -89,12 +89,12 @@ namespace Windows_Form_Frontend
                 if (ItemOut != null && ItemOut is ItemData.ItemObject ItemObject)
                 {
                     string displayName = ItemObject.GetDictEntry().Name ?? ItemObject.ID;
-                    SeedCheckRequiredItems.Add(new MiscData.StandardListBoxItem { Display = displayName, tag = ItemObject.ID });
+                    SeedCheckRequiredItems.Add(new MiscData.StandardListBoxItem { Display = displayName, Tag = ItemObject.ID });
                 }
                 else if (ItemOut != null && ItemOut is MacroObject MacroObject)
                 {
                     string displayName = MacroObject.GetDictEntry().Name ?? MacroObject.ID;
-                    SeedCheckRequiredItems.Add(new MiscData.StandardListBoxItem { Display = displayName, tag = MacroObject.ID });
+                    SeedCheckRequiredItems.Add(new MiscData.StandardListBoxItem { Display = displayName, Tag = MacroObject.ID });
                 }
             }
         }
@@ -131,7 +131,7 @@ namespace Windows_Form_Frontend
                 {
                     string Dis = i.GetDictEntry().GetName();
                     if (DisplayCounts.ContainsKey(Dis) && DisplayCounts[Dis] > 1) { Dis = $"{Dis} [{i.ID}]"; }
-                    cmbWinCon.Items.Add(new MiscData.StandardListBoxItem { Display = Dis, tag = i });
+                    cmbWinCon.Items.Add(new MiscData.StandardListBoxItem { Display = Dis, Tag = i });
                     if (Graphic.MeasureString(Dis, cmbWinCon.Font).Width > CMBWidth) { CMBWidth = (int)Graphic.MeasureString(Dis, cmbWinCon.Font).Width; }
                 }
             }
@@ -142,7 +142,7 @@ namespace Windows_Form_Frontend
                 foreach (var i in Locations)
                 {
                     string Dis = i.GetDictEntry().GetName();
-                    cmbWinCon.Items.Add(new MiscData.StandardListBoxItem { Display = Dis, tag = i });
+                    cmbWinCon.Items.Add(new MiscData.StandardListBoxItem { Display = Dis, Tag = i });
                     if (Graphic.MeasureString(Dis, cmbWinCon.Font).Width > CMBWidth) { CMBWidth = (int)Graphic.MeasureString(Dis, cmbWinCon.Font).Width; }
                 }
             }
@@ -153,7 +153,7 @@ namespace Windows_Form_Frontend
                 foreach (var i in Macros)
                 {
                     string Dis = i.GetDictEntry().Name ?? i.ID;
-                    cmbWinCon.Items.Add(new MiscData.StandardListBoxItem { Display = Dis, tag = i });
+                    cmbWinCon.Items.Add(new MiscData.StandardListBoxItem { Display = Dis, Tag = i });
                     if (Graphic.MeasureString(Dis, cmbWinCon.Font).Width > CMBWidth) { CMBWidth = (int)Graphic.MeasureString(Dis, cmbWinCon.Font).Width; }
                 }
             }
@@ -164,7 +164,7 @@ namespace Windows_Form_Frontend
                 foreach (var i in Areas)
                 {
                     string Dis = i.ID;
-                    cmbWinCon.Items.Add(new MiscData.StandardListBoxItem { Display = Dis, tag = i });
+                    cmbWinCon.Items.Add(new MiscData.StandardListBoxItem { Display = Dis, Tag = i });
                     if (Graphic.MeasureString(Dis, cmbWinCon.Font).Width > CMBWidth) { CMBWidth = (int)Graphic.MeasureString(Dis, cmbWinCon.Font).Width; }
                 }
             }
@@ -182,12 +182,12 @@ namespace Windows_Form_Frontend
             playthroughGenerator.GeneratePlaythrough();
             var SelectedItem = cmbWinCon.SelectedItem as MiscData.StandardListBoxItem;
 
-            bool FullPlaythrough = !chkOnlyImportant.Checked || SelectedItem?.tag == null;
+            bool FullPlaythrough = !chkOnlyImportant.Checked || SelectedItem?.Tag == null;
 
             if (!FullPlaythrough)
             {
-                bool sucess = playthroughGenerator.FilterImportantPlaythrough(SelectedItem.tag);
-                if (!sucess) { MessageBox.Show($"Error {SelectedItem.tag} Could not be reached this seed"); return; }
+                bool sucess = playthroughGenerator.FilterImportantPlaythrough(SelectedItem.Tag);
+                if (!sucess) { MessageBox.Show($"Error {SelectedItem.Tag} Could not be reached this seed"); return; }
             }
 
             var Result = playthroughGenerator.Playthrough.Where(x => x.Value.Important || (FullPlaythrough && x.Value.CheckType != MiscData.LogicEntryType.macro)).ToDictionary(x => x.Key, x => x.Value);
@@ -212,7 +212,7 @@ namespace Windows_Form_Frontend
             List<MiscData.StandardListBoxItem> SpoilerList = new List<MiscData.StandardListBoxItem>();
             foreach (var check in SpoilerChecks)
             {
-                MiscData.StandardListBoxItem LBI = new MiscData.StandardListBoxItem() { tag = check };
+                MiscData.StandardListBoxItem LBI = new MiscData.StandardListBoxItem() { Tag = check };
                 ItemData.ItemObject Item = _instance.GetItemByID(check.GetItemAtCheck());
                 if (Item == null)
                 {
@@ -232,13 +232,13 @@ namespace Windows_Form_Frontend
             foreach (var spoiler in SpoilerList)
             {
                 if (!CleanedEntries.ContainsKey(spoiler.Display)) { CleanedEntries[spoiler.Display] = new List<LocationData.LocationObject>(); }
-                CleanedEntries[spoiler.Display].Add(spoiler.tag as LocationData.LocationObject);
+                CleanedEntries[spoiler.Display].Add(spoiler.Tag as LocationData.LocationObject);
             }
             CleanedEntries = CleanedEntries.OrderBy(x => x.Key).ToDictionary(x => x.Key, x => x.Value);
             if (CleanedEntries.Any() && chkShowMacros.Checked) { lbSpoilerLookupItems.Items.Add(WinFormUtils.CreateDivider(lbSpoilerLookupItems, "Locations")); }
             foreach (var i in CleanedEntries)
             {
-                lbSpoilerLookupItems.Items.Add(new MiscData.StandardListBoxItem { Display = i.Key, tag = i.Value });
+                lbSpoilerLookupItems.Items.Add(new MiscData.StandardListBoxItem { Display = i.Key, Tag = i.Value });
             }
 
             List<MiscData.StandardListBoxItem> MacroList = new List<MiscData.StandardListBoxItem>();
@@ -246,7 +246,7 @@ namespace Windows_Form_Frontend
             {
                 foreach (var check in _instance.MacroPool.Values)
                 {
-                    MiscData.StandardListBoxItem LBI = new MiscData.StandardListBoxItem() { tag = check, Display = check.GetDictEntry().Name ?? check.ID };
+                    MiscData.StandardListBoxItem LBI = new MiscData.StandardListBoxItem() { Tag = check, Display = check.GetDictEntry().Name ?? check.ID };
                     if (SearchStringParser.FilterSearch(_instance, check, textBox2.Text, LBI.Display)) { MacroList.Add(LBI); }
                 }
                 if (MacroList.Any()) { lbSpoilerLookupItems.Items.Add(WinFormUtils.CreateDivider(lbSpoilerLookupItems, "Macros")); }
@@ -264,11 +264,11 @@ namespace Windows_Form_Frontend
         {
             if (lbSpoilerLookupItems.SelectedItem is MiscData.StandardListBoxItem SLI)
             {
-                if (SLI.tag is LocationData.LocationObject LO)
+                if (SLI.Tag is LocationData.LocationObject LO)
                 {
                     MessageBox.Show($"{SLI.Display} Can be found in\n\n-{LO.GetDictEntry().Area}");
                 }
-                else if (SLI.tag is List<LocationData.LocationObject> LLO)
+                else if (SLI.Tag is List<LocationData.LocationObject> LLO)
                 {
                     if (LLO.Count == 1)
                     {
@@ -299,12 +299,12 @@ namespace Windows_Form_Frontend
                     lbSpoilerLookupItems.SelectedIndex = currInd;
                 }
 
-                if (SLI.tag is LocationData.LocationObject LO)
+                if (SLI.Tag is LocationData.LocationObject LO)
                 {
                     if (SpoilerLookupPlaythrough.ContainsKey(LO.ID)) { MessageBox.Show($"{SLI.Display} Can be obtained sphere {SpoilerLookupPlaythrough[LO.ID].sphere}"); }
                     else { MessageBox.Show($"{SLI.Display} Can not be obtained with known items"); }
                 }
-                else if (SLI.tag is List<LocationData.LocationObject> LLO)
+                else if (SLI.Tag is List<LocationData.LocationObject> LLO)
                 {
                     if (LLO.Count == 1)
                     {
@@ -322,7 +322,7 @@ namespace Windows_Form_Frontend
                         else { MessageBox.Show($"{SLI.Display} Can be obtained sphere {SpheresObtainable.Min()}"); }
                     }
                 }
-                else if (SLI.tag is MacroObject MO)
+                else if (SLI.Tag is MacroObject MO)
                 {
                     if (SpoilerLookupPlaythrough.ContainsKey(MO.ID)) { MessageBox.Show($"{SLI.Display} Can be obtained sphere {SpoilerLookupPlaythrough[MO.ID].sphere}"); }
                     else if (MO.isTrick() && !MO.TrickEnabled) { MessageBox.Show($"{SLI.Display} Is a trick and is not enabled"); }
@@ -335,11 +335,11 @@ namespace Windows_Form_Frontend
         {
             if (lbSpoilerLookupItems.SelectedItem is MiscData.StandardListBoxItem SLI)
             {
-                if (SLI.tag is LocationData.LocationObject LO)
+                if (SLI.Tag is LocationData.LocationObject LO)
                 {
                     MessageBox.Show($"{SLI.Display} Can be found at\n\n-{LO.GetDictEntry().GetName()}");
                 }
-                else if (SLI.tag is List<LocationData.LocationObject> LLO)
+                else if (SLI.Tag is List<LocationData.LocationObject> LLO)
                 {
                     if (LLO.Count == 1)
                     {
@@ -357,8 +357,8 @@ namespace Windows_Form_Frontend
         {
             if (lbSpoilerLookupItems.SelectedItem is MiscData.StandardListBoxItem SLI)
             {
-                bool EnableLocation = SLI.tag is LocationData.LocationObject || SLI.tag is List<LocationData.LocationObject>;
-                bool EnableSphere = SLI.tag is MacroObject || SLI.tag is List<MacroObject>;
+                bool EnableLocation = SLI.Tag is LocationData.LocationObject || SLI.Tag is List<LocationData.LocationObject>;
+                bool EnableSphere = SLI.Tag is MacroObject || SLI.Tag is List<MacroObject>;
                 btnArea.Enabled = EnableLocation;
                 btnLocation.Enabled = EnableLocation;
                 btnSphere.Enabled = EnableLocation || EnableSphere;
@@ -397,13 +397,13 @@ namespace Windows_Form_Frontend
                     string displayName = i.GetDictEntry().GetName();
                     if (DisplayCounts.ContainsKey(displayName) && DisplayCounts[displayName] > 1) { displayName = $"{displayName} [{i.ID}]"; }
                     if (SearchStringParser.FilterSearch(_instance, i, txtSeedCheckFilter.Text, displayName))
-                        lbObtainable.Items.Add(new MiscData.StandardListBoxItem { Display = displayName, tag = i.ID });
+                        lbObtainable.Items.Add(new MiscData.StandardListBoxItem { Display = displayName, Tag = i.ID });
                 }
                 foreach (var i in _instance.MacroPool.Values.OrderBy(x => x.GetDictEntry().Name ?? x.ID))
                 {
                     string displayName = i.GetDictEntry().Name ?? i.ID;
                     if (SearchStringParser.FilterSearch(_instance, i, txtSeedCheckFilter.Text, displayName))
-                        lbObtainable.Items.Add(new MiscData.StandardListBoxItem { Display = displayName, tag = i.ID });
+                        lbObtainable.Items.Add(new MiscData.StandardListBoxItem { Display = displayName, Tag = i.ID });
                 }
             }
             if (seedCheckMode == SeedCheckMode.addIgnore)
@@ -421,7 +421,7 @@ namespace Windows_Form_Frontend
                 {
                     string displayName = i.GetDictEntry().GetName();
                     if (SearchStringParser.FilterSearch(_instance, i, txtSeedCheckFilter.Text, displayName))
-                        lbObtainable.Items.Add(new MiscData.StandardListBoxItem { Display = displayName, tag = i.ID });
+                        lbObtainable.Items.Add(new MiscData.StandardListBoxItem { Display = displayName, Tag = i.ID });
                 }
             }
             if (seedCheckMode == SeedCheckMode.view)
@@ -435,8 +435,8 @@ namespace Windows_Form_Frontend
                 lbObtainable.Items.Clear();
                 SeedCheckRequiredItems.ForEach(x => lbRequiredItems.Items.Add(x));
                 SeedCheckIgnoredLocations.ForEach(x => LBIgnoredItems.Items.Add(x));
-                var ObtainableItems = SeedCheckResults.Where(x => x.tag is bool obt && obt && SearchStringParser.FilterSearch(_instance, x.Display, txtSeedCheckFilter.Text, x.Display));
-                var UnObtainableItems = SeedCheckResults.Where(x => x.tag is bool obt && !obt && SearchStringParser.FilterSearch(_instance, x.Display, txtSeedCheckFilter.Text, x.Display));
+                var ObtainableItems = SeedCheckResults.Where(x => x.Tag is bool obt && obt && SearchStringParser.FilterSearch(_instance, x.Display, txtSeedCheckFilter.Text, x.Display));
+                var UnObtainableItems = SeedCheckResults.Where(x => x.Tag is bool obt && !obt && SearchStringParser.FilterSearch(_instance, x.Display, txtSeedCheckFilter.Text, x.Display));
 
                 if (chkShowObtainable.Checked)
                 {
@@ -507,8 +507,8 @@ namespace Windows_Form_Frontend
             lbObtainable.Items.Add("Generating Playthrough");
             lbObtainable.Items.Add("This may take a while");
             lbObtainable.Update();
-            var IgnoredChecks = SeedCheckIgnoredLocations.Select(x => x.tag).Select(x => x as string).ToList();
-            var requiredItems = SeedCheckRequiredItems.Select(x => x.tag).Select(x => x as string).ToList();
+            var IgnoredChecks = SeedCheckIgnoredLocations.Select(x => x.Tag).Select(x => x as string).ToList();
+            var requiredItems = SeedCheckRequiredItems.Select(x => x.Tag).Select(x => x as string).ToList();
             if (!SeedCheckRequiredItems.Any())
             {
                 requiredItems = _instance.ItemPool.Values.Select(x => x.ID).ToList();
@@ -525,7 +525,7 @@ namespace Windows_Form_Frontend
 
                 bool ItemObtainable = SeedCheckPlaytrhough.FirstObtainedDict.ContainsKey(i) || (RequiredItemObj is ItemData.ItemObject IOS && (IOS?.AmountInStartingpool ?? 0) > 0);
 
-                SeedCheckResults.Add(new MiscData.StandardListBoxItem { Display = Dis, tag = ItemObtainable });
+                SeedCheckResults.Add(new MiscData.StandardListBoxItem { Display = Dis, Tag = ItemObtainable });
             }
         }
 

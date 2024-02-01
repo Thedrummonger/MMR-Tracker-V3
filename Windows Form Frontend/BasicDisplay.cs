@@ -52,7 +52,7 @@ namespace Windows_Form_Frontend
         {
             if (listBox1.SelectedItem is MiscData.StandardListBoxItem FLI && FLI.tagFunc is not null)
             {
-                var output = FLI.tagFunc(ValueTuple.Create(_displayItems, FLI.tag));
+                var output = FLI.tagFunc(ValueTuple.Create(_displayItems, FLI.Tag));
                 CreateDisplayItems(output);
                 updateDisplay();
             }

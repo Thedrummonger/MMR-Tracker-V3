@@ -10,9 +10,9 @@ using static MMR_Tracker_V3.TrackerObjects.ItemData;
 using static MMR_Tracker_V3.TrackerObjects.LocationData;
 using static MMR_Tracker_V3.TrackerObjects.OptionData;
 
-namespace MMR_Tracker_V3.TrackerObjectExtentions
+namespace MMR_Tracker_V3.TrackerObjectExtensions
 {
-    public static class TrackerInstanceExtentions
+    public static class TrackerInstanceExtensions
     {
         public static LogicItemData GetLogicItemData(this InstanceData.TrackerInstance Instance, string LogicItem)
         {
@@ -337,7 +337,7 @@ namespace MMR_Tracker_V3.TrackerObjectExtentions
         public static bool CombineEntrancesWithLocations(this InstanceData.TrackerInstance Instance)
         {
             if (Instance == null) { return true; }
-            return !Instance.StaticOptions.OptionFile.EntranceRandoFeatures || !Instance.EntrancePool.IsEntranceRando || !Instance.EntrancePool.CheckForRandomEntrances();
+            return !Instance.StaticOptions.OptionFile.EntranceRandoFeatures || !Instance.EntrancePool.HasAnyRandomizedEntrances();
         }
     }
 }

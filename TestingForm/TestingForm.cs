@@ -1,7 +1,7 @@
 using MMR_Tracker_V3.TrackerObjects;
 using Windows_Form_Frontend;
 using System.Diagnostics;
-using MMR_Tracker_V3.TrackerObjectExtentions;
+using MMR_Tracker_V3.TrackerObjectExtensions;
 using System.Net;
 using System.Net.Sockets;
 using System.Text;

@@ -1,4 +1,4 @@
-﻿using MMR_Tracker_V3.TrackerObjectExtentions;
+﻿using MMR_Tracker_V3.TrackerObjectExtensions;
 using MMR_Tracker_V3.TrackerObjects;
 using System;
 using System.Collections.Generic;
@@ -58,7 +58,6 @@ namespace MMR_Tracker_V3.SpoilerLogImporter
                 case "OOTMM":
                     container.Instance.SpoilerLog = new InstanceData.SpoilerLogFileData { FileName = OriginalFile, Log = spoilerLog };
                     OOTMMSpoilerLogTools.readAndApplySpoilerLog(container.Instance);
-                    container.Instance.EntrancePool.IsEntranceRando = container.Instance.EntrancePool.CheckForRandomEntrances();
                     container.Instance.SpoilerLog.GetStaticPlaythrough(container.Instance);
                     break;
                 case "MMR":

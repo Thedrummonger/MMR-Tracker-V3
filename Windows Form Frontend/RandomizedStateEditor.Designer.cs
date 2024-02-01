@@ -30,639 +30,634 @@ namespace Windows_Form_Frontend
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RandomizedStateEditor));
-            this.lvLocationList = new System.Windows.Forms.ListView();
-            this.columnHeaderEntry = new System.Windows.Forms.ColumnHeader();
-            this.columnHeaderVanilla = new System.Windows.Forms.ColumnHeader();
-            this.columnHeaderRandomizedState = new System.Windows.Forms.ColumnHeader();
-            this.btnSetRandomized = new System.Windows.Forms.Button();
-            this.btnSetUnRandomized = new System.Windows.Forms.Button();
-            this.btnSetManual = new System.Windows.Forms.Button();
-            this.btnSetJunk = new System.Windows.Forms.Button();
-            this.btnAddStartingItem = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.lvTricks = new System.Windows.Forms.ListView();
-            this.Tricks = new System.Windows.Forms.ColumnHeader();
-            this.label4 = new System.Windows.Forms.Label();
-            this.txtSearchAvailableStarting = new System.Windows.Forms.TextBox();
-            this.TxtLocationSearch = new System.Windows.Forms.TextBox();
-            this.txtTrickSearch = new System.Windows.Forms.TextBox();
-            this.txtLocString = new System.Windows.Forms.TextBox();
-            this.cmbLocationType = new System.Windows.Forms.ComboBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.txtEntString = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.txtjunkString = new System.Windows.Forms.TextBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.txtStartString = new System.Windows.Forms.TextBox();
-            this.button8 = new System.Windows.Forms.Button();
-            this.chkShowRand = new System.Windows.Forms.CheckBox();
-            this.chkShowJunk = new System.Windows.Forms.CheckBox();
-            this.chkShowManual = new System.Windows.Forms.CheckBox();
-            this.chkShowUnrand = new System.Windows.Forms.CheckBox();
-            this.lbAvailableStarting = new System.Windows.Forms.ListBox();
-            this.lbCurrentStarting = new System.Windows.Forms.ListBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.btnRemoveStartingItem = new System.Windows.Forms.Button();
-            this.txtSearchCurrentStarting = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
-            this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
-            this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
-            this.tableLayoutPanel1.SuspendLayout();
-            this.tableLayoutPanel2.SuspendLayout();
-            this.tableLayoutPanel3.SuspendLayout();
-            this.tableLayoutPanel4.SuspendLayout();
-            this.SuspendLayout();
+            lvLocationList = new System.Windows.Forms.ListView();
+            columnHeaderEntry = new System.Windows.Forms.ColumnHeader();
+            columnHeaderVanilla = new System.Windows.Forms.ColumnHeader();
+            columnHeaderRandomizedState = new System.Windows.Forms.ColumnHeader();
+            btnSetRandomized = new System.Windows.Forms.Button();
+            btnSetUnRandomized = new System.Windows.Forms.Button();
+            btnSetManual = new System.Windows.Forms.Button();
+            btnSetJunk = new System.Windows.Forms.Button();
+            btnAddStartingItem = new System.Windows.Forms.Button();
+            label1 = new System.Windows.Forms.Label();
+            label3 = new System.Windows.Forms.Label();
+            lvTricks = new System.Windows.Forms.ListView();
+            Tricks = new System.Windows.Forms.ColumnHeader();
+            label4 = new System.Windows.Forms.Label();
+            txtSearchAvailableStarting = new System.Windows.Forms.TextBox();
+            TxtLocationSearch = new System.Windows.Forms.TextBox();
+            txtTrickSearch = new System.Windows.Forms.TextBox();
+            txtLocString = new System.Windows.Forms.TextBox();
+            cmbLocationType = new System.Windows.Forms.ComboBox();
+            label5 = new System.Windows.Forms.Label();
+            label6 = new System.Windows.Forms.Label();
+            txtEntString = new System.Windows.Forms.TextBox();
+            label7 = new System.Windows.Forms.Label();
+            txtjunkString = new System.Windows.Forms.TextBox();
+            label8 = new System.Windows.Forms.Label();
+            txtStartString = new System.Windows.Forms.TextBox();
+            button8 = new System.Windows.Forms.Button();
+            chkShowRand = new System.Windows.Forms.CheckBox();
+            chkShowJunk = new System.Windows.Forms.CheckBox();
+            chkShowManual = new System.Windows.Forms.CheckBox();
+            chkShowUnrand = new System.Windows.Forms.CheckBox();
+            lbAvailableStarting = new System.Windows.Forms.ListBox();
+            lbCurrentStarting = new System.Windows.Forms.ListBox();
+            label2 = new System.Windows.Forms.Label();
+            btnRemoveStartingItem = new System.Windows.Forms.Button();
+            txtSearchCurrentStarting = new System.Windows.Forms.TextBox();
+            button1 = new System.Windows.Forms.Button();
+            tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
+            tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
+            tableLayoutPanel1.SuspendLayout();
+            tableLayoutPanel2.SuspendLayout();
+            tableLayoutPanel3.SuspendLayout();
+            tableLayoutPanel4.SuspendLayout();
+            SuspendLayout();
             // 
             // lvLocationList
             // 
-            this.lvLocationList.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.lvLocationList.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeaderEntry,
-            this.columnHeaderVanilla,
-            this.columnHeaderRandomizedState});
-            this.tableLayoutPanel1.SetColumnSpan(this.lvLocationList, 4);
-            this.lvLocationList.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lvLocationList.Location = new System.Drawing.Point(3, 78);
-            this.lvLocationList.Name = "lvLocationList";
-            this.lvLocationList.Size = new System.Drawing.Size(439, 388);
-            this.lvLocationList.TabIndex = 0;
-            this.lvLocationList.UseCompatibleStateImageBehavior = false;
-            this.lvLocationList.View = System.Windows.Forms.View.Details;
-            this.lvLocationList.ItemChecked += new System.Windows.Forms.ItemCheckedEventHandler(this.lvLocationList_ItemChecked);
+            lvLocationList.BackColor = System.Drawing.SystemColors.ControlDark;
+            lvLocationList.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] { columnHeaderEntry, columnHeaderVanilla, columnHeaderRandomizedState });
+            tableLayoutPanel1.SetColumnSpan(lvLocationList, 4);
+            lvLocationList.Dock = System.Windows.Forms.DockStyle.Fill;
+            lvLocationList.Location = new System.Drawing.Point(3, 78);
+            lvLocationList.Name = "lvLocationList";
+            lvLocationList.Size = new System.Drawing.Size(439, 388);
+            lvLocationList.TabIndex = 0;
+            lvLocationList.UseCompatibleStateImageBehavior = false;
+            lvLocationList.View = System.Windows.Forms.View.Details;
+            lvLocationList.ItemChecked += lvLocationList_ItemChecked;
             // 
             // columnHeaderEntry
             // 
-            this.columnHeaderEntry.Text = "Entry";
-            this.columnHeaderEntry.Width = 233;
+            columnHeaderEntry.Text = "Entry";
+            columnHeaderEntry.Width = 233;
             // 
             // columnHeaderVanilla
             // 
-            this.columnHeaderVanilla.Text = "Vanilla Item";
-            this.columnHeaderVanilla.Width = 150;
+            columnHeaderVanilla.Text = "Vanilla Item";
+            columnHeaderVanilla.Width = 150;
             // 
             // columnHeaderRandomizedState
             // 
-            this.columnHeaderRandomizedState.Text = "State";
-            this.columnHeaderRandomizedState.Width = 50;
+            columnHeaderRandomizedState.Text = "State";
+            columnHeaderRandomizedState.Width = 50;
             // 
             // btnSetRandomized
             // 
-            this.btnSetRandomized.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.btnSetRandomized.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnSetRandomized.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSetRandomized.Location = new System.Drawing.Point(222, 0);
-            this.btnSetRandomized.Margin = new System.Windows.Forms.Padding(0);
-            this.btnSetRandomized.Name = "btnSetRandomized";
-            this.btnSetRandomized.Size = new System.Drawing.Size(111, 25);
-            this.btnSetRandomized.TabIndex = 1;
-            this.btnSetRandomized.Text = "Randomize";
-            this.btnSetRandomized.UseVisualStyleBackColor = false;
-            this.btnSetRandomized.Click += new System.EventHandler(this.ChangeRandomizationState);
+            btnSetRandomized.BackColor = System.Drawing.SystemColors.ControlDark;
+            btnSetRandomized.Dock = System.Windows.Forms.DockStyle.Fill;
+            btnSetRandomized.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            btnSetRandomized.Location = new System.Drawing.Point(222, 0);
+            btnSetRandomized.Margin = new System.Windows.Forms.Padding(0);
+            btnSetRandomized.Name = "btnSetRandomized";
+            btnSetRandomized.Size = new System.Drawing.Size(111, 25);
+            btnSetRandomized.TabIndex = 1;
+            btnSetRandomized.Text = "Randomize";
+            btnSetRandomized.UseVisualStyleBackColor = false;
+            btnSetRandomized.Click += ChangeRandomizationState;
             // 
             // btnSetUnRandomized
             // 
-            this.btnSetUnRandomized.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.btnSetUnRandomized.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnSetUnRandomized.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSetUnRandomized.Location = new System.Drawing.Point(222, 25);
-            this.btnSetUnRandomized.Margin = new System.Windows.Forms.Padding(0);
-            this.btnSetUnRandomized.Name = "btnSetUnRandomized";
-            this.btnSetUnRandomized.Size = new System.Drawing.Size(111, 25);
-            this.btnSetUnRandomized.TabIndex = 2;
-            this.btnSetUnRandomized.Text = "Unrandomize";
-            this.btnSetUnRandomized.UseVisualStyleBackColor = false;
-            this.btnSetUnRandomized.Click += new System.EventHandler(this.ChangeRandomizationState);
+            btnSetUnRandomized.BackColor = System.Drawing.SystemColors.ControlDark;
+            btnSetUnRandomized.Dock = System.Windows.Forms.DockStyle.Fill;
+            btnSetUnRandomized.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            btnSetUnRandomized.Location = new System.Drawing.Point(222, 25);
+            btnSetUnRandomized.Margin = new System.Windows.Forms.Padding(0);
+            btnSetUnRandomized.Name = "btnSetUnRandomized";
+            btnSetUnRandomized.Size = new System.Drawing.Size(111, 25);
+            btnSetUnRandomized.TabIndex = 2;
+            btnSetUnRandomized.Text = "Unrandomize";
+            btnSetUnRandomized.UseVisualStyleBackColor = false;
+            btnSetUnRandomized.Click += ChangeRandomizationState;
             // 
             // btnSetManual
             // 
-            this.btnSetManual.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.btnSetManual.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnSetManual.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSetManual.Location = new System.Drawing.Point(333, 25);
-            this.btnSetManual.Margin = new System.Windows.Forms.Padding(0);
-            this.btnSetManual.Name = "btnSetManual";
-            this.btnSetManual.Size = new System.Drawing.Size(112, 25);
-            this.btnSetManual.TabIndex = 4;
-            this.btnSetManual.Text = "UnRand Manual";
-            this.btnSetManual.UseVisualStyleBackColor = false;
-            this.btnSetManual.Click += new System.EventHandler(this.ChangeRandomizationState);
+            btnSetManual.BackColor = System.Drawing.SystemColors.ControlDark;
+            btnSetManual.Dock = System.Windows.Forms.DockStyle.Fill;
+            btnSetManual.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            btnSetManual.Location = new System.Drawing.Point(333, 25);
+            btnSetManual.Margin = new System.Windows.Forms.Padding(0);
+            btnSetManual.Name = "btnSetManual";
+            btnSetManual.Size = new System.Drawing.Size(112, 25);
+            btnSetManual.TabIndex = 4;
+            btnSetManual.Text = "UnRand Manual";
+            btnSetManual.UseVisualStyleBackColor = false;
+            btnSetManual.Click += ChangeRandomizationState;
             // 
             // btnSetJunk
             // 
-            this.btnSetJunk.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.btnSetJunk.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnSetJunk.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSetJunk.Location = new System.Drawing.Point(333, 0);
-            this.btnSetJunk.Margin = new System.Windows.Forms.Padding(0);
-            this.btnSetJunk.Name = "btnSetJunk";
-            this.btnSetJunk.Size = new System.Drawing.Size(112, 25);
-            this.btnSetJunk.TabIndex = 3;
-            this.btnSetJunk.Text = "Force Junk";
-            this.btnSetJunk.UseVisualStyleBackColor = false;
-            this.btnSetJunk.Click += new System.EventHandler(this.ChangeRandomizationState);
+            btnSetJunk.BackColor = System.Drawing.SystemColors.ControlDark;
+            btnSetJunk.Dock = System.Windows.Forms.DockStyle.Fill;
+            btnSetJunk.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            btnSetJunk.Location = new System.Drawing.Point(333, 0);
+            btnSetJunk.Margin = new System.Windows.Forms.Padding(0);
+            btnSetJunk.Name = "btnSetJunk";
+            btnSetJunk.Size = new System.Drawing.Size(112, 25);
+            btnSetJunk.TabIndex = 3;
+            btnSetJunk.Text = "Force Junk";
+            btnSetJunk.UseVisualStyleBackColor = false;
+            btnSetJunk.Click += ChangeRandomizationState;
             // 
             // btnAddStartingItem
             // 
-            this.btnAddStartingItem.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.btnAddStartingItem.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnAddStartingItem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAddStartingItem.Location = new System.Drawing.Point(159, 0);
-            this.btnAddStartingItem.Margin = new System.Windows.Forms.Padding(0);
-            this.btnAddStartingItem.Name = "btnAddStartingItem";
-            this.btnAddStartingItem.Size = new System.Drawing.Size(60, 25);
-            this.btnAddStartingItem.TabIndex = 7;
-            this.btnAddStartingItem.Text = "Add";
-            this.btnAddStartingItem.UseVisualStyleBackColor = false;
-            this.btnAddStartingItem.Click += new System.EventHandler(this.btnAddStartingItem_Click);
+            btnAddStartingItem.BackColor = System.Drawing.SystemColors.ControlDark;
+            btnAddStartingItem.Dock = System.Windows.Forms.DockStyle.Fill;
+            btnAddStartingItem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            btnAddStartingItem.Location = new System.Drawing.Point(159, 0);
+            btnAddStartingItem.Margin = new System.Windows.Forms.Padding(0);
+            btnAddStartingItem.Name = "btnAddStartingItem";
+            btnAddStartingItem.Size = new System.Drawing.Size(60, 25);
+            btnAddStartingItem.TabIndex = 7;
+            btnAddStartingItem.Text = "Add";
+            btnAddStartingItem.UseVisualStyleBackColor = false;
+            btnAddStartingItem.Click += btnAddStartingItem_Click;
             // 
             // label1
             // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(5, 5);
-            this.label1.Margin = new System.Windows.Forms.Padding(5);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(101, 15);
-            this.label1.TabIndex = 8;
-            this.label1.Text = "Location Settings";
+            label1.AutoSize = true;
+            label1.BackColor = System.Drawing.Color.Transparent;
+            label1.Dock = System.Windows.Forms.DockStyle.Fill;
+            label1.ForeColor = System.Drawing.Color.White;
+            label1.Location = new System.Drawing.Point(5, 5);
+            label1.Margin = new System.Windows.Forms.Padding(5);
+            label1.Name = "label1";
+            label1.Size = new System.Drawing.Size(101, 15);
+            label1.TabIndex = 8;
+            label1.Text = "Location Settings";
             // 
             // label3
             // 
-            this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(5, 5);
-            this.label3.Margin = new System.Windows.Forms.Padding(5);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(131, 15);
-            this.label3.TabIndex = 10;
-            this.label3.Text = "Available Starting Items";
+            label3.AutoSize = true;
+            label3.BackColor = System.Drawing.Color.Transparent;
+            label3.ForeColor = System.Drawing.Color.White;
+            label3.Location = new System.Drawing.Point(5, 5);
+            label3.Margin = new System.Windows.Forms.Padding(5);
+            label3.Name = "label3";
+            label3.Size = new System.Drawing.Size(131, 15);
+            label3.TabIndex = 10;
+            label3.Text = "Available Starting Items";
             // 
             // lvTricks
             // 
-            this.lvTricks.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.lvTricks.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.Tricks});
-            this.tableLayoutPanel3.SetColumnSpan(this.lvTricks, 2);
-            this.lvTricks.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lvTricks.Location = new System.Drawing.Point(3, 53);
-            this.lvTricks.Name = "lvTricks";
-            this.lvTricks.Size = new System.Drawing.Size(214, 288);
-            this.lvTricks.TabIndex = 12;
-            this.lvTricks.UseCompatibleStateImageBehavior = false;
-            this.lvTricks.View = System.Windows.Forms.View.Details;
-            this.lvTricks.ItemChecked += new System.Windows.Forms.ItemCheckedEventHandler(this.lvTricks_ItemChecked);
+            lvTricks.BackColor = System.Drawing.SystemColors.ControlDark;
+            lvTricks.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] { Tricks });
+            tableLayoutPanel3.SetColumnSpan(lvTricks, 2);
+            lvTricks.Dock = System.Windows.Forms.DockStyle.Fill;
+            lvTricks.Location = new System.Drawing.Point(3, 53);
+            lvTricks.Name = "lvTricks";
+            lvTricks.Size = new System.Drawing.Size(214, 288);
+            lvTricks.TabIndex = 12;
+            lvTricks.UseCompatibleStateImageBehavior = false;
+            lvTricks.View = System.Windows.Forms.View.Details;
+            lvTricks.ItemChecked += lvTricks_ItemChecked;
             // 
             // Tricks
             // 
-            this.Tricks.Text = "Trick List";
-            this.Tricks.Width = 203;
+            Tricks.Text = "Trick List";
+            Tricks.Width = 203;
             // 
             // label4
             // 
-            this.label4.AutoSize = true;
-            this.label4.BackColor = System.Drawing.Color.Transparent;
-            this.tableLayoutPanel3.SetColumnSpan(this.label4, 2);
-            this.label4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(5, 5);
-            this.label4.Margin = new System.Windows.Forms.Padding(5);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(210, 15);
-            this.label4.TabIndex = 13;
-            this.label4.Text = "Trick Settings";
+            label4.AutoSize = true;
+            label4.BackColor = System.Drawing.Color.Transparent;
+            tableLayoutPanel3.SetColumnSpan(label4, 2);
+            label4.Dock = System.Windows.Forms.DockStyle.Fill;
+            label4.ForeColor = System.Drawing.Color.White;
+            label4.Location = new System.Drawing.Point(5, 5);
+            label4.Margin = new System.Windows.Forms.Padding(5);
+            label4.Name = "label4";
+            label4.Size = new System.Drawing.Size(210, 15);
+            label4.TabIndex = 13;
+            label4.Text = "Trick Settings";
             // 
             // txtSearchAvailableStarting
             // 
-            this.txtSearchAvailableStarting.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.tableLayoutPanel2.SetColumnSpan(this.txtSearchAvailableStarting, 2);
-            this.txtSearchAvailableStarting.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtSearchAvailableStarting.Location = new System.Drawing.Point(3, 28);
-            this.txtSearchAvailableStarting.Name = "txtSearchAvailableStarting";
-            this.txtSearchAvailableStarting.Size = new System.Drawing.Size(213, 23);
-            this.txtSearchAvailableStarting.TabIndex = 15;
-            this.txtSearchAvailableStarting.TextChanged += new System.EventHandler(this.txtSearchAvailableStarting_TextChanged);
+            txtSearchAvailableStarting.BackColor = System.Drawing.SystemColors.ControlDark;
+            tableLayoutPanel2.SetColumnSpan(txtSearchAvailableStarting, 2);
+            txtSearchAvailableStarting.Dock = System.Windows.Forms.DockStyle.Fill;
+            txtSearchAvailableStarting.Location = new System.Drawing.Point(3, 28);
+            txtSearchAvailableStarting.Name = "txtSearchAvailableStarting";
+            txtSearchAvailableStarting.Size = new System.Drawing.Size(213, 23);
+            txtSearchAvailableStarting.TabIndex = 15;
+            txtSearchAvailableStarting.TextChanged += txtSearchAvailableStarting_TextChanged;
             // 
             // TxtLocationSearch
             // 
-            this.TxtLocationSearch.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.tableLayoutPanel1.SetColumnSpan(this.TxtLocationSearch, 2);
-            this.TxtLocationSearch.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.TxtLocationSearch.Location = new System.Drawing.Point(2, 26);
-            this.TxtLocationSearch.Margin = new System.Windows.Forms.Padding(2, 1, 0, 0);
-            this.TxtLocationSearch.Name = "TxtLocationSearch";
-            this.TxtLocationSearch.Size = new System.Drawing.Size(220, 23);
-            this.TxtLocationSearch.TabIndex = 16;
-            this.TxtLocationSearch.TextChanged += new System.EventHandler(this.TxtLocationSearch_TextChanged);
+            TxtLocationSearch.BackColor = System.Drawing.SystemColors.ControlDark;
+            tableLayoutPanel1.SetColumnSpan(TxtLocationSearch, 2);
+            TxtLocationSearch.Dock = System.Windows.Forms.DockStyle.Fill;
+            TxtLocationSearch.Location = new System.Drawing.Point(2, 26);
+            TxtLocationSearch.Margin = new System.Windows.Forms.Padding(2, 1, 0, 0);
+            TxtLocationSearch.Name = "TxtLocationSearch";
+            TxtLocationSearch.Size = new System.Drawing.Size(220, 23);
+            TxtLocationSearch.TabIndex = 16;
+            TxtLocationSearch.TextChanged += TxtLocationSearch_TextChanged;
             // 
             // txtTrickSearch
             // 
-            this.txtTrickSearch.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.tableLayoutPanel3.SetColumnSpan(this.txtTrickSearch, 2);
-            this.txtTrickSearch.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtTrickSearch.Location = new System.Drawing.Point(3, 28);
-            this.txtTrickSearch.Name = "txtTrickSearch";
-            this.txtTrickSearch.Size = new System.Drawing.Size(214, 23);
-            this.txtTrickSearch.TabIndex = 17;
-            this.txtTrickSearch.TextChanged += new System.EventHandler(this.txtTrickSearch_TextChanged);
+            txtTrickSearch.BackColor = System.Drawing.SystemColors.ControlDark;
+            tableLayoutPanel3.SetColumnSpan(txtTrickSearch, 2);
+            txtTrickSearch.Dock = System.Windows.Forms.DockStyle.Fill;
+            txtTrickSearch.Location = new System.Drawing.Point(3, 28);
+            txtTrickSearch.Name = "txtTrickSearch";
+            txtTrickSearch.Size = new System.Drawing.Size(214, 23);
+            txtTrickSearch.TabIndex = 17;
+            txtTrickSearch.TextChanged += txtTrickSearch_TextChanged;
             // 
             // txtLocString
             // 
-            this.txtLocString.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.txtLocString.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtLocString.Location = new System.Drawing.Point(0, 369);
-            this.txtLocString.Margin = new System.Windows.Forms.Padding(0);
-            this.txtLocString.Name = "txtLocString";
-            this.txtLocString.Size = new System.Drawing.Size(110, 23);
-            this.txtLocString.TabIndex = 19;
+            txtLocString.BackColor = System.Drawing.SystemColors.ControlDark;
+            txtLocString.Dock = System.Windows.Forms.DockStyle.Fill;
+            txtLocString.Location = new System.Drawing.Point(0, 369);
+            txtLocString.Margin = new System.Windows.Forms.Padding(0);
+            txtLocString.Name = "txtLocString";
+            txtLocString.Size = new System.Drawing.Size(110, 23);
+            txtLocString.TabIndex = 19;
             // 
             // cmbLocationType
             // 
-            this.cmbLocationType.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.cmbLocationType.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.cmbLocationType.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cmbLocationType.FormattingEnabled = true;
-            this.cmbLocationType.Location = new System.Drawing.Point(111, 1);
-            this.cmbLocationType.Margin = new System.Windows.Forms.Padding(0, 1, 0, 0);
-            this.cmbLocationType.Name = "cmbLocationType";
-            this.cmbLocationType.Size = new System.Drawing.Size(111, 23);
-            this.cmbLocationType.TabIndex = 20;
-            this.cmbLocationType.SelectedValueChanged += new System.EventHandler(this.cmbLocationType_SelectedValueChanged);
+            cmbLocationType.BackColor = System.Drawing.SystemColors.ControlDark;
+            cmbLocationType.Dock = System.Windows.Forms.DockStyle.Fill;
+            cmbLocationType.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            cmbLocationType.FormattingEnabled = true;
+            cmbLocationType.Location = new System.Drawing.Point(111, 1);
+            cmbLocationType.Margin = new System.Windows.Forms.Padding(0, 1, 0, 0);
+            cmbLocationType.Name = "cmbLocationType";
+            cmbLocationType.Size = new System.Drawing.Size(111, 23);
+            cmbLocationType.TabIndex = 20;
+            cmbLocationType.SelectedValueChanged += cmbLocationType_SelectedValueChanged;
             // 
             // label5
             // 
-            this.label5.AutoSize = true;
-            this.label5.BackColor = System.Drawing.Color.Transparent;
-            this.label5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(5, 349);
-            this.label5.Margin = new System.Windows.Forms.Padding(5);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(100, 15);
-            this.label5.TabIndex = 21;
-            this.label5.Text = "Location String";
+            label5.AutoSize = true;
+            label5.BackColor = System.Drawing.Color.Transparent;
+            label5.Dock = System.Windows.Forms.DockStyle.Fill;
+            label5.ForeColor = System.Drawing.Color.White;
+            label5.Location = new System.Drawing.Point(5, 349);
+            label5.Margin = new System.Windows.Forms.Padding(5);
+            label5.Name = "label5";
+            label5.Size = new System.Drawing.Size(100, 15);
+            label5.TabIndex = 21;
+            label5.Text = "Location String";
             // 
             // label6
             // 
-            this.label6.AutoSize = true;
-            this.label6.BackColor = System.Drawing.Color.Transparent;
-            this.label6.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(115, 349);
-            this.label6.Margin = new System.Windows.Forms.Padding(5);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(100, 15);
-            this.label6.TabIndex = 23;
-            this.label6.Text = "Entrance String";
+            label6.AutoSize = true;
+            label6.BackColor = System.Drawing.Color.Transparent;
+            label6.Dock = System.Windows.Forms.DockStyle.Fill;
+            label6.ForeColor = System.Drawing.Color.White;
+            label6.Location = new System.Drawing.Point(115, 349);
+            label6.Margin = new System.Windows.Forms.Padding(5);
+            label6.Name = "label6";
+            label6.Size = new System.Drawing.Size(100, 15);
+            label6.TabIndex = 23;
+            label6.Text = "Entrance String";
             // 
             // txtEntString
             // 
-            this.txtEntString.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.txtEntString.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtEntString.Location = new System.Drawing.Point(110, 369);
-            this.txtEntString.Margin = new System.Windows.Forms.Padding(0);
-            this.txtEntString.Name = "txtEntString";
-            this.txtEntString.Size = new System.Drawing.Size(110, 23);
-            this.txtEntString.TabIndex = 22;
+            txtEntString.BackColor = System.Drawing.SystemColors.ControlDark;
+            txtEntString.Dock = System.Windows.Forms.DockStyle.Fill;
+            txtEntString.Location = new System.Drawing.Point(110, 369);
+            txtEntString.Margin = new System.Windows.Forms.Padding(0);
+            txtEntString.Name = "txtEntString";
+            txtEntString.Size = new System.Drawing.Size(110, 23);
+            txtEntString.TabIndex = 22;
             // 
             // label7
             // 
-            this.label7.AutoSize = true;
-            this.label7.BackColor = System.Drawing.Color.Transparent;
-            this.label7.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label7.ForeColor = System.Drawing.Color.White;
-            this.label7.Location = new System.Drawing.Point(115, 399);
-            this.label7.Margin = new System.Windows.Forms.Padding(5);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(100, 15);
-            this.label7.TabIndex = 27;
-            this.label7.Text = "Junk Location String";
+            label7.AutoSize = true;
+            label7.BackColor = System.Drawing.Color.Transparent;
+            label7.Dock = System.Windows.Forms.DockStyle.Fill;
+            label7.ForeColor = System.Drawing.Color.White;
+            label7.Location = new System.Drawing.Point(115, 399);
+            label7.Margin = new System.Windows.Forms.Padding(5);
+            label7.Name = "label7";
+            label7.Size = new System.Drawing.Size(100, 15);
+            label7.TabIndex = 27;
+            label7.Text = "Junk Location String";
             // 
             // txtjunkString
             // 
-            this.txtjunkString.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.txtjunkString.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtjunkString.Location = new System.Drawing.Point(110, 419);
-            this.txtjunkString.Margin = new System.Windows.Forms.Padding(0);
-            this.txtjunkString.Name = "txtjunkString";
-            this.txtjunkString.Size = new System.Drawing.Size(110, 23);
-            this.txtjunkString.TabIndex = 26;
+            txtjunkString.BackColor = System.Drawing.SystemColors.ControlDark;
+            txtjunkString.Dock = System.Windows.Forms.DockStyle.Fill;
+            txtjunkString.Location = new System.Drawing.Point(110, 419);
+            txtjunkString.Margin = new System.Windows.Forms.Padding(0);
+            txtjunkString.Name = "txtjunkString";
+            txtjunkString.Size = new System.Drawing.Size(110, 23);
+            txtjunkString.TabIndex = 26;
             // 
             // label8
             // 
-            this.label8.AutoSize = true;
-            this.label8.BackColor = System.Drawing.Color.Transparent;
-            this.label8.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label8.ForeColor = System.Drawing.Color.White;
-            this.label8.Location = new System.Drawing.Point(5, 399);
-            this.label8.Margin = new System.Windows.Forms.Padding(5);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(100, 15);
-            this.label8.TabIndex = 25;
-            this.label8.Text = "Starting Item String";
+            label8.AutoSize = true;
+            label8.BackColor = System.Drawing.Color.Transparent;
+            label8.Dock = System.Windows.Forms.DockStyle.Fill;
+            label8.ForeColor = System.Drawing.Color.White;
+            label8.Location = new System.Drawing.Point(5, 399);
+            label8.Margin = new System.Windows.Forms.Padding(5);
+            label8.Name = "label8";
+            label8.Size = new System.Drawing.Size(100, 15);
+            label8.TabIndex = 25;
+            label8.Text = "Starting Item String";
             // 
             // txtStartString
             // 
-            this.txtStartString.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.txtStartString.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtStartString.Location = new System.Drawing.Point(0, 419);
-            this.txtStartString.Margin = new System.Windows.Forms.Padding(0);
-            this.txtStartString.Name = "txtStartString";
-            this.txtStartString.Size = new System.Drawing.Size(110, 23);
-            this.txtStartString.TabIndex = 24;
+            txtStartString.BackColor = System.Drawing.SystemColors.ControlDark;
+            txtStartString.Dock = System.Windows.Forms.DockStyle.Fill;
+            txtStartString.Location = new System.Drawing.Point(0, 419);
+            txtStartString.Margin = new System.Windows.Forms.Padding(0);
+            txtStartString.Name = "txtStartString";
+            txtStartString.Size = new System.Drawing.Size(110, 23);
+            txtStartString.TabIndex = 24;
             // 
             // button8
             // 
-            this.button8.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.button8.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button8.Location = new System.Drawing.Point(0, 444);
-            this.button8.Margin = new System.Windows.Forms.Padding(0);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(110, 25);
-            this.button8.TabIndex = 30;
-            this.button8.Text = "Apply Strings";
-            this.button8.UseVisualStyleBackColor = false;
-            this.button8.Click += new System.EventHandler(this.btnApplySettingStrings_Click);
+            button8.BackColor = System.Drawing.SystemColors.ControlDark;
+            button8.Dock = System.Windows.Forms.DockStyle.Fill;
+            button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            button8.Location = new System.Drawing.Point(0, 444);
+            button8.Margin = new System.Windows.Forms.Padding(0);
+            button8.Name = "button8";
+            button8.Size = new System.Drawing.Size(110, 25);
+            button8.TabIndex = 30;
+            button8.Text = "Apply Strings";
+            button8.UseVisualStyleBackColor = false;
+            button8.Click += btnApplySettingStrings_Click;
             // 
             // chkShowRand
             // 
-            this.chkShowRand.AutoSize = true;
-            this.chkShowRand.BackColor = System.Drawing.Color.Transparent;
-            this.chkShowRand.Checked = true;
-            this.chkShowRand.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.chkShowRand.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.chkShowRand.ForeColor = System.Drawing.Color.White;
-            this.chkShowRand.Location = new System.Drawing.Point(3, 53);
-            this.chkShowRand.Name = "chkShowRand";
-            this.chkShowRand.Size = new System.Drawing.Size(105, 19);
-            this.chkShowRand.TabIndex = 31;
-            this.chkShowRand.Text = "Randomized";
-            this.chkShowRand.UseVisualStyleBackColor = false;
-            this.chkShowRand.CheckedChanged += new System.EventHandler(this.TxtLocationSearch_TextChanged);
+            chkShowRand.AutoSize = true;
+            chkShowRand.BackColor = System.Drawing.Color.Transparent;
+            chkShowRand.Checked = true;
+            chkShowRand.CheckState = System.Windows.Forms.CheckState.Checked;
+            chkShowRand.Dock = System.Windows.Forms.DockStyle.Fill;
+            chkShowRand.ForeColor = System.Drawing.Color.White;
+            chkShowRand.Location = new System.Drawing.Point(3, 53);
+            chkShowRand.Name = "chkShowRand";
+            chkShowRand.Size = new System.Drawing.Size(105, 19);
+            chkShowRand.TabIndex = 31;
+            chkShowRand.Text = "Randomized";
+            chkShowRand.UseVisualStyleBackColor = false;
+            chkShowRand.CheckedChanged += TxtLocationSearch_TextChanged;
             // 
             // chkShowJunk
             // 
-            this.chkShowJunk.AutoSize = true;
-            this.chkShowJunk.BackColor = System.Drawing.Color.Transparent;
-            this.chkShowJunk.Checked = true;
-            this.chkShowJunk.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.chkShowJunk.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.chkShowJunk.ForeColor = System.Drawing.Color.White;
-            this.chkShowJunk.Location = new System.Drawing.Point(114, 53);
-            this.chkShowJunk.Name = "chkShowJunk";
-            this.chkShowJunk.Size = new System.Drawing.Size(105, 19);
-            this.chkShowJunk.TabIndex = 32;
-            this.chkShowJunk.Text = "Junk";
-            this.chkShowJunk.UseVisualStyleBackColor = false;
-            this.chkShowJunk.CheckedChanged += new System.EventHandler(this.TxtLocationSearch_TextChanged);
+            chkShowJunk.AutoSize = true;
+            chkShowJunk.BackColor = System.Drawing.Color.Transparent;
+            chkShowJunk.Checked = true;
+            chkShowJunk.CheckState = System.Windows.Forms.CheckState.Checked;
+            chkShowJunk.Dock = System.Windows.Forms.DockStyle.Fill;
+            chkShowJunk.ForeColor = System.Drawing.Color.White;
+            chkShowJunk.Location = new System.Drawing.Point(114, 53);
+            chkShowJunk.Name = "chkShowJunk";
+            chkShowJunk.Size = new System.Drawing.Size(105, 19);
+            chkShowJunk.TabIndex = 32;
+            chkShowJunk.Text = "Junk";
+            chkShowJunk.UseVisualStyleBackColor = false;
+            chkShowJunk.CheckedChanged += TxtLocationSearch_TextChanged;
             // 
             // chkShowManual
             // 
-            this.chkShowManual.AutoSize = true;
-            this.chkShowManual.BackColor = System.Drawing.Color.Transparent;
-            this.chkShowManual.Checked = true;
-            this.chkShowManual.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.chkShowManual.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.chkShowManual.ForeColor = System.Drawing.Color.White;
-            this.chkShowManual.Location = new System.Drawing.Point(336, 53);
-            this.chkShowManual.Name = "chkShowManual";
-            this.chkShowManual.Size = new System.Drawing.Size(106, 19);
-            this.chkShowManual.TabIndex = 34;
-            this.chkShowManual.Text = "Manual";
-            this.chkShowManual.UseVisualStyleBackColor = false;
-            this.chkShowManual.CheckedChanged += new System.EventHandler(this.TxtLocationSearch_TextChanged);
+            chkShowManual.AutoSize = true;
+            chkShowManual.BackColor = System.Drawing.Color.Transparent;
+            chkShowManual.Checked = true;
+            chkShowManual.CheckState = System.Windows.Forms.CheckState.Checked;
+            chkShowManual.Dock = System.Windows.Forms.DockStyle.Fill;
+            chkShowManual.ForeColor = System.Drawing.Color.White;
+            chkShowManual.Location = new System.Drawing.Point(336, 53);
+            chkShowManual.Name = "chkShowManual";
+            chkShowManual.Size = new System.Drawing.Size(106, 19);
+            chkShowManual.TabIndex = 34;
+            chkShowManual.Text = "Manual";
+            chkShowManual.UseVisualStyleBackColor = false;
+            chkShowManual.CheckedChanged += TxtLocationSearch_TextChanged;
             // 
             // chkShowUnrand
             // 
-            this.chkShowUnrand.AutoSize = true;
-            this.chkShowUnrand.BackColor = System.Drawing.Color.Transparent;
-            this.chkShowUnrand.Checked = true;
-            this.chkShowUnrand.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.chkShowUnrand.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.chkShowUnrand.ForeColor = System.Drawing.Color.White;
-            this.chkShowUnrand.Location = new System.Drawing.Point(225, 53);
-            this.chkShowUnrand.Name = "chkShowUnrand";
-            this.chkShowUnrand.Size = new System.Drawing.Size(105, 19);
-            this.chkShowUnrand.TabIndex = 33;
-            this.chkShowUnrand.Text = "Unrandomized";
-            this.chkShowUnrand.UseVisualStyleBackColor = false;
-            this.chkShowUnrand.CheckedChanged += new System.EventHandler(this.TxtLocationSearch_TextChanged);
+            chkShowUnrand.AutoSize = true;
+            chkShowUnrand.BackColor = System.Drawing.Color.Transparent;
+            chkShowUnrand.Checked = true;
+            chkShowUnrand.CheckState = System.Windows.Forms.CheckState.Checked;
+            chkShowUnrand.Dock = System.Windows.Forms.DockStyle.Fill;
+            chkShowUnrand.ForeColor = System.Drawing.Color.White;
+            chkShowUnrand.Location = new System.Drawing.Point(225, 53);
+            chkShowUnrand.Name = "chkShowUnrand";
+            chkShowUnrand.Size = new System.Drawing.Size(105, 19);
+            chkShowUnrand.TabIndex = 33;
+            chkShowUnrand.Text = "Unrandomized";
+            chkShowUnrand.UseVisualStyleBackColor = false;
+            chkShowUnrand.CheckedChanged += TxtLocationSearch_TextChanged;
             // 
             // lbAvailableStarting
             // 
-            this.lbAvailableStarting.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.tableLayoutPanel2.SetColumnSpan(this.lbAvailableStarting, 2);
-            this.lbAvailableStarting.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lbAvailableStarting.FormattingEnabled = true;
-            this.lbAvailableStarting.ItemHeight = 15;
-            this.lbAvailableStarting.Location = new System.Drawing.Point(3, 53);
-            this.lbAvailableStarting.Name = "lbAvailableStarting";
-            this.lbAvailableStarting.SelectionMode = System.Windows.Forms.SelectionMode.MultiExtended;
-            this.lbAvailableStarting.Size = new System.Drawing.Size(213, 178);
-            this.lbAvailableStarting.TabIndex = 5;
-            this.lbAvailableStarting.DoubleClick += new System.EventHandler(this.btnAddStartingItem_Click);
+            lbAvailableStarting.BackColor = System.Drawing.SystemColors.ControlDark;
+            tableLayoutPanel2.SetColumnSpan(lbAvailableStarting, 2);
+            lbAvailableStarting.Dock = System.Windows.Forms.DockStyle.Fill;
+            lbAvailableStarting.FormattingEnabled = true;
+            lbAvailableStarting.ItemHeight = 15;
+            lbAvailableStarting.Location = new System.Drawing.Point(3, 53);
+            lbAvailableStarting.Name = "lbAvailableStarting";
+            lbAvailableStarting.SelectionMode = System.Windows.Forms.SelectionMode.MultiExtended;
+            lbAvailableStarting.Size = new System.Drawing.Size(213, 178);
+            lbAvailableStarting.TabIndex = 5;
+            lbAvailableStarting.DoubleClick += btnAddStartingItem_Click;
             // 
             // lbCurrentStarting
             // 
-            this.lbCurrentStarting.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.tableLayoutPanel2.SetColumnSpan(this.lbCurrentStarting, 2);
-            this.lbCurrentStarting.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lbCurrentStarting.FormattingEnabled = true;
-            this.lbCurrentStarting.ItemHeight = 15;
-            this.lbCurrentStarting.Location = new System.Drawing.Point(3, 287);
-            this.lbCurrentStarting.Name = "lbCurrentStarting";
-            this.lbCurrentStarting.SelectionMode = System.Windows.Forms.SelectionMode.MultiExtended;
-            this.lbCurrentStarting.Size = new System.Drawing.Size(213, 179);
-            this.lbCurrentStarting.TabIndex = 6;
-            this.lbCurrentStarting.DoubleClick += new System.EventHandler(this.btnRemoveStartingItem_Click);
+            lbCurrentStarting.BackColor = System.Drawing.SystemColors.ControlDark;
+            tableLayoutPanel2.SetColumnSpan(lbCurrentStarting, 2);
+            lbCurrentStarting.Dock = System.Windows.Forms.DockStyle.Fill;
+            lbCurrentStarting.FormattingEnabled = true;
+            lbCurrentStarting.ItemHeight = 15;
+            lbCurrentStarting.Location = new System.Drawing.Point(3, 287);
+            lbCurrentStarting.Name = "lbCurrentStarting";
+            lbCurrentStarting.SelectionMode = System.Windows.Forms.SelectionMode.MultiExtended;
+            lbCurrentStarting.Size = new System.Drawing.Size(213, 179);
+            lbCurrentStarting.TabIndex = 6;
+            lbCurrentStarting.DoubleClick += btnRemoveStartingItem_Click;
             // 
             // label2
             // 
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(5, 239);
-            this.label2.Margin = new System.Windows.Forms.Padding(5);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(123, 15);
-            this.label2.TabIndex = 9;
-            this.label2.Text = "Current Starting Items";
+            label2.AutoSize = true;
+            label2.BackColor = System.Drawing.Color.Transparent;
+            label2.ForeColor = System.Drawing.Color.White;
+            label2.Location = new System.Drawing.Point(5, 239);
+            label2.Margin = new System.Windows.Forms.Padding(5);
+            label2.Name = "label2";
+            label2.Size = new System.Drawing.Size(123, 15);
+            label2.TabIndex = 9;
+            label2.Text = "Current Starting Items";
             // 
             // btnRemoveStartingItem
             // 
-            this.btnRemoveStartingItem.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.btnRemoveStartingItem.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnRemoveStartingItem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRemoveStartingItem.Location = new System.Drawing.Point(159, 234);
-            this.btnRemoveStartingItem.Margin = new System.Windows.Forms.Padding(0);
-            this.btnRemoveStartingItem.Name = "btnRemoveStartingItem";
-            this.btnRemoveStartingItem.Size = new System.Drawing.Size(60, 25);
-            this.btnRemoveStartingItem.TabIndex = 11;
-            this.btnRemoveStartingItem.Text = "Remove";
-            this.btnRemoveStartingItem.UseVisualStyleBackColor = false;
-            this.btnRemoveStartingItem.Click += new System.EventHandler(this.btnRemoveStartingItem_Click);
+            btnRemoveStartingItem.BackColor = System.Drawing.SystemColors.ControlDark;
+            btnRemoveStartingItem.Dock = System.Windows.Forms.DockStyle.Fill;
+            btnRemoveStartingItem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            btnRemoveStartingItem.Location = new System.Drawing.Point(159, 234);
+            btnRemoveStartingItem.Margin = new System.Windows.Forms.Padding(0);
+            btnRemoveStartingItem.Name = "btnRemoveStartingItem";
+            btnRemoveStartingItem.Size = new System.Drawing.Size(60, 25);
+            btnRemoveStartingItem.TabIndex = 11;
+            btnRemoveStartingItem.Text = "Remove";
+            btnRemoveStartingItem.UseVisualStyleBackColor = false;
+            btnRemoveStartingItem.Click += btnRemoveStartingItem_Click;
             // 
             // txtSearchCurrentStarting
             // 
-            this.txtSearchCurrentStarting.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.tableLayoutPanel2.SetColumnSpan(this.txtSearchCurrentStarting, 2);
-            this.txtSearchCurrentStarting.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtSearchCurrentStarting.Location = new System.Drawing.Point(3, 262);
-            this.txtSearchCurrentStarting.Name = "txtSearchCurrentStarting";
-            this.txtSearchCurrentStarting.Size = new System.Drawing.Size(213, 23);
-            this.txtSearchCurrentStarting.TabIndex = 18;
-            this.txtSearchCurrentStarting.TextChanged += new System.EventHandler(this.txtSearchCurrentStarting_TextChanged);
+            txtSearchCurrentStarting.BackColor = System.Drawing.SystemColors.ControlDark;
+            tableLayoutPanel2.SetColumnSpan(txtSearchCurrentStarting, 2);
+            txtSearchCurrentStarting.Dock = System.Windows.Forms.DockStyle.Fill;
+            txtSearchCurrentStarting.Location = new System.Drawing.Point(3, 262);
+            txtSearchCurrentStarting.Name = "txtSearchCurrentStarting";
+            txtSearchCurrentStarting.Size = new System.Drawing.Size(213, 23);
+            txtSearchCurrentStarting.TabIndex = 18;
+            txtSearchCurrentStarting.TextChanged += txtSearchCurrentStarting_TextChanged;
             // 
             // button1
             // 
-            this.button1.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.button1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Location = new System.Drawing.Point(110, 444);
-            this.button1.Margin = new System.Windows.Forms.Padding(0);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(110, 25);
-            this.button1.TabIndex = 35;
-            this.button1.Text = "Load Setting File";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.btnLoadSettingFile_Click);
+            button1.BackColor = System.Drawing.SystemColors.ControlDark;
+            button1.Dock = System.Windows.Forms.DockStyle.Fill;
+            button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            button1.Location = new System.Drawing.Point(110, 444);
+            button1.Margin = new System.Windows.Forms.Padding(0);
+            button1.Name = "button1";
+            button1.Size = new System.Drawing.Size(110, 25);
+            button1.TabIndex = 35;
+            button1.Text = "Load Setting File";
+            button1.UseVisualStyleBackColor = false;
+            button1.Click += btnLoadSettingFile_Click;
             // 
             // tableLayoutPanel1
             // 
-            this.tableLayoutPanel1.ColumnCount = 4;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel1.Controls.Add(this.label1, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.cmbLocationType, 1, 0);
-            this.tableLayoutPanel1.Controls.Add(this.chkShowManual, 3, 2);
-            this.tableLayoutPanel1.Controls.Add(this.btnSetRandomized, 2, 0);
-            this.tableLayoutPanel1.Controls.Add(this.chkShowUnrand, 2, 2);
-            this.tableLayoutPanel1.Controls.Add(this.btnSetJunk, 3, 0);
-            this.tableLayoutPanel1.Controls.Add(this.chkShowJunk, 1, 2);
-            this.tableLayoutPanel1.Controls.Add(this.btnSetUnRandomized, 2, 1);
-            this.tableLayoutPanel1.Controls.Add(this.chkShowRand, 0, 2);
-            this.tableLayoutPanel1.Controls.Add(this.btnSetManual, 3, 1);
-            this.tableLayoutPanel1.Controls.Add(this.TxtLocationSearch, 0, 1);
-            this.tableLayoutPanel1.Controls.Add(this.lvLocationList, 0, 3);
-            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(3, 3);
-            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 4;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(445, 469);
-            this.tableLayoutPanel1.TabIndex = 36;
+            tableLayoutPanel1.ColumnCount = 4;
+            tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            tableLayoutPanel1.Controls.Add(label1, 0, 0);
+            tableLayoutPanel1.Controls.Add(cmbLocationType, 1, 0);
+            tableLayoutPanel1.Controls.Add(chkShowManual, 3, 2);
+            tableLayoutPanel1.Controls.Add(btnSetRandomized, 2, 0);
+            tableLayoutPanel1.Controls.Add(chkShowUnrand, 2, 2);
+            tableLayoutPanel1.Controls.Add(btnSetJunk, 3, 0);
+            tableLayoutPanel1.Controls.Add(chkShowJunk, 1, 2);
+            tableLayoutPanel1.Controls.Add(btnSetUnRandomized, 2, 1);
+            tableLayoutPanel1.Controls.Add(chkShowRand, 0, 2);
+            tableLayoutPanel1.Controls.Add(btnSetManual, 3, 1);
+            tableLayoutPanel1.Controls.Add(TxtLocationSearch, 0, 1);
+            tableLayoutPanel1.Controls.Add(lvLocationList, 0, 3);
+            tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            tableLayoutPanel1.Location = new System.Drawing.Point(3, 3);
+            tableLayoutPanel1.Name = "tableLayoutPanel1";
+            tableLayoutPanel1.RowCount = 4;
+            tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
+            tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
+            tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
+            tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            tableLayoutPanel1.Size = new System.Drawing.Size(445, 469);
+            tableLayoutPanel1.TabIndex = 36;
             // 
             // tableLayoutPanel2
             // 
-            this.tableLayoutPanel2.ColumnCount = 2;
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 60F));
-            this.tableLayoutPanel2.Controls.Add(this.btnAddStartingItem, 1, 0);
-            this.tableLayoutPanel2.Controls.Add(this.btnRemoveStartingItem, 1, 3);
-            this.tableLayoutPanel2.Controls.Add(this.label3, 0, 0);
-            this.tableLayoutPanel2.Controls.Add(this.label2, 0, 3);
-            this.tableLayoutPanel2.Controls.Add(this.txtSearchAvailableStarting, 0, 1);
-            this.tableLayoutPanel2.Controls.Add(this.txtSearchCurrentStarting, 0, 4);
-            this.tableLayoutPanel2.Controls.Add(this.lbAvailableStarting, 0, 2);
-            this.tableLayoutPanel2.Controls.Add(this.lbCurrentStarting, 0, 5);
-            this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(454, 3);
-            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
-            this.tableLayoutPanel2.RowCount = 6;
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(219, 469);
-            this.tableLayoutPanel2.TabIndex = 37;
+            tableLayoutPanel2.ColumnCount = 2;
+            tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 60F));
+            tableLayoutPanel2.Controls.Add(btnAddStartingItem, 1, 0);
+            tableLayoutPanel2.Controls.Add(btnRemoveStartingItem, 1, 3);
+            tableLayoutPanel2.Controls.Add(label3, 0, 0);
+            tableLayoutPanel2.Controls.Add(label2, 0, 3);
+            tableLayoutPanel2.Controls.Add(txtSearchAvailableStarting, 0, 1);
+            tableLayoutPanel2.Controls.Add(txtSearchCurrentStarting, 0, 4);
+            tableLayoutPanel2.Controls.Add(lbAvailableStarting, 0, 2);
+            tableLayoutPanel2.Controls.Add(lbCurrentStarting, 0, 5);
+            tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            tableLayoutPanel2.Location = new System.Drawing.Point(454, 3);
+            tableLayoutPanel2.Name = "tableLayoutPanel2";
+            tableLayoutPanel2.RowCount = 6;
+            tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
+            tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
+            tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
+            tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
+            tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            tableLayoutPanel2.Size = new System.Drawing.Size(219, 469);
+            tableLayoutPanel2.TabIndex = 37;
             // 
             // tableLayoutPanel3
             // 
-            this.tableLayoutPanel3.ColumnCount = 2;
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel3.Controls.Add(this.label4, 0, 0);
-            this.tableLayoutPanel3.Controls.Add(this.txtTrickSearch, 0, 1);
-            this.tableLayoutPanel3.Controls.Add(this.label5, 0, 3);
-            this.tableLayoutPanel3.Controls.Add(this.lvTricks, 0, 2);
-            this.tableLayoutPanel3.Controls.Add(this.button1, 1, 7);
-            this.tableLayoutPanel3.Controls.Add(this.label6, 1, 3);
-            this.tableLayoutPanel3.Controls.Add(this.button8, 0, 7);
-            this.tableLayoutPanel3.Controls.Add(this.label8, 0, 5);
-            this.tableLayoutPanel3.Controls.Add(this.txtjunkString, 1, 6);
-            this.tableLayoutPanel3.Controls.Add(this.label7, 1, 5);
-            this.tableLayoutPanel3.Controls.Add(this.txtStartString, 0, 6);
-            this.tableLayoutPanel3.Controls.Add(this.txtLocString, 0, 4);
-            this.tableLayoutPanel3.Controls.Add(this.txtEntString, 1, 4);
-            this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel3.Location = new System.Drawing.Point(679, 3);
-            this.tableLayoutPanel3.Name = "tableLayoutPanel3";
-            this.tableLayoutPanel3.RowCount = 8;
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(220, 469);
-            this.tableLayoutPanel3.TabIndex = 38;
+            tableLayoutPanel3.ColumnCount = 2;
+            tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            tableLayoutPanel3.Controls.Add(label4, 0, 0);
+            tableLayoutPanel3.Controls.Add(txtTrickSearch, 0, 1);
+            tableLayoutPanel3.Controls.Add(label5, 0, 3);
+            tableLayoutPanel3.Controls.Add(lvTricks, 0, 2);
+            tableLayoutPanel3.Controls.Add(button1, 1, 7);
+            tableLayoutPanel3.Controls.Add(label6, 1, 3);
+            tableLayoutPanel3.Controls.Add(button8, 0, 7);
+            tableLayoutPanel3.Controls.Add(label8, 0, 5);
+            tableLayoutPanel3.Controls.Add(txtjunkString, 1, 6);
+            tableLayoutPanel3.Controls.Add(label7, 1, 5);
+            tableLayoutPanel3.Controls.Add(txtStartString, 0, 6);
+            tableLayoutPanel3.Controls.Add(txtLocString, 0, 4);
+            tableLayoutPanel3.Controls.Add(txtEntString, 1, 4);
+            tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
+            tableLayoutPanel3.Location = new System.Drawing.Point(679, 3);
+            tableLayoutPanel3.Name = "tableLayoutPanel3";
+            tableLayoutPanel3.RowCount = 8;
+            tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
+            tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
+            tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
+            tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
+            tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
+            tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
+            tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
+            tableLayoutPanel3.Size = new System.Drawing.Size(220, 469);
+            tableLayoutPanel3.TabIndex = 38;
             // 
             // tableLayoutPanel4
             // 
-            this.tableLayoutPanel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.tableLayoutPanel4.ColumnCount = 3;
-            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel4.Controls.Add(this.tableLayoutPanel3, 2, 0);
-            this.tableLayoutPanel4.Controls.Add(this.tableLayoutPanel1, 0, 0);
-            this.tableLayoutPanel4.Controls.Add(this.tableLayoutPanel2, 1, 0);
-            this.tableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel4.Location = new System.Drawing.Point(0, 0);
-            this.tableLayoutPanel4.Name = "tableLayoutPanel4";
-            this.tableLayoutPanel4.RowCount = 1;
-            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel4.Size = new System.Drawing.Size(902, 475);
-            this.tableLayoutPanel4.TabIndex = 39;
+            tableLayoutPanel4.BackColor = System.Drawing.Color.FromArgb(0, 0, 64);
+            tableLayoutPanel4.ColumnCount = 3;
+            tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            tableLayoutPanel4.Controls.Add(tableLayoutPanel3, 2, 0);
+            tableLayoutPanel4.Controls.Add(tableLayoutPanel1, 0, 0);
+            tableLayoutPanel4.Controls.Add(tableLayoutPanel2, 1, 0);
+            tableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
+            tableLayoutPanel4.Location = new System.Drawing.Point(0, 0);
+            tableLayoutPanel4.Name = "tableLayoutPanel4";
+            tableLayoutPanel4.RowCount = 1;
+            tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            tableLayoutPanel4.Size = new System.Drawing.Size(902, 475);
+            tableLayoutPanel4.TabIndex = 39;
             // 
             // RandomizedStateEditor
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
-            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(902, 475);
-            this.Controls.Add(this.tableLayoutPanel4);
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "RandomizedStateEditor";
-            this.Text = "RandomizedStateEditor";
-            this.Load += new System.EventHandler(this.RandomizedStateEditor_Load);
-            this.tableLayoutPanel1.ResumeLayout(false);
-            this.tableLayoutPanel1.PerformLayout();
-            this.tableLayoutPanel2.ResumeLayout(false);
-            this.tableLayoutPanel2.PerformLayout();
-            this.tableLayoutPanel3.ResumeLayout(false);
-            this.tableLayoutPanel3.PerformLayout();
-            this.tableLayoutPanel4.ResumeLayout(false);
-            this.ResumeLayout(false);
-
+            AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            BackgroundImage = (System.Drawing.Image)resources.GetObject("$this.BackgroundImage");
+            BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            ClientSize = new System.Drawing.Size(902, 475);
+            Controls.Add(tableLayoutPanel4);
+            Icon = (System.Drawing.Icon)resources.GetObject("$this.Icon");
+            Name = "RandomizedStateEditor";
+            Text = "Item Pool Editor";
+            Load += RandomizedStateEditor_Load;
+            tableLayoutPanel1.ResumeLayout(false);
+            tableLayoutPanel1.PerformLayout();
+            tableLayoutPanel2.ResumeLayout(false);
+            tableLayoutPanel2.PerformLayout();
+            tableLayoutPanel3.ResumeLayout(false);
+            tableLayoutPanel3.PerformLayout();
+            tableLayoutPanel4.ResumeLayout(false);
+            ResumeLayout(false);
         }
 
         #endregion

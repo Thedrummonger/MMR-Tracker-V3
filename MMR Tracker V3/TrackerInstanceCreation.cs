@@ -1,6 +1,6 @@
 ﻿using MMR_Tracker_V3.Logic;
 using MMR_Tracker_V3.SpoilerLogImporter;
-using MMR_Tracker_V3.TrackerObjectExtentions;
+using MMR_Tracker_V3.TrackerObjectExtensions;
 using MMR_Tracker_V3.TrackerObjects;
 using System;
 using System.Collections.Generic;
@@ -218,22 +218,11 @@ namespace MMR_Tracker_V3
                 });
             }
 
-            Instance.EntrancePool.IsEntranceRando = Instance.EntrancePool.CheckForRandomEntrances();
-
             Instance.PriceData.Initialized = true;
 
             Instance.EntrancePool.RootArea = Instance.LogicDictionary.RootArea ?? "Root";
 
             new Areaheader { Area = "Hidden Locations" }.SetMinimized(DisplayListType.Locations, Instance.StaticOptions);
-
-            //If the number of randomized entrances is less than 10% of the number of randomized locations, show the entrances in the location box
-            if (Instance.EntrancePool.IsEntranceRando)
-            {
-                double EntrancesRandomized = Instance.EntrancePool.GetAmountOfRandomizedEntrances();
-                double Locationsrandomized = Instance.LocationPool.Where(x => x.Value.AppearsinListbox()).Count();
-                double LocationEntranceRatio = Math.Round(EntrancesRandomized / Locationsrandomized, 2);
-                Instance.StaticOptions.OptionFile.EntranceRandoFeatures = LocationEntranceRatio >= .1;
-            }
 
             if (Instance.LogicDictionary.DefaultSettings is not null)
             {

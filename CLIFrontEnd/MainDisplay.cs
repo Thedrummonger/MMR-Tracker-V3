@@ -1,6 +1,7 @@
 ﻿using MMR_Tracker_V3;
-using MMR_Tracker_V3.TrackerObjectExtentions;
+using MMR_Tracker_V3.TrackerObjectExtensions;
 using MMR_Tracker_V3.TrackerObjects;
+using System.ComponentModel;
 using static CLIFrontEnd.CLIUtility;
 using static MMR_Tracker_V3.TrackerDataHandling;
 using static MMR_Tracker_V3.TrackerObjects.InstanceData;
@@ -23,6 +24,7 @@ namespace CLIFrontEnd
                 { "c", new(() => { displayType = CLIDisplayListType.Checked; }, "Displays Checked Locations/entrances") },
                 { "o", new(() => { displayType = CLIDisplayListType.Options; }, "Displays Logic Options") },
                 { "p", new(() => { }, "Displays Pathfinder") },
+                { "i", new(() => { new ItemPoolEditor().Start(instanceContainer); }, "Item Pool Options") },
                 { "z", new( () => { instanceContainer.DoUndo(); instanceContainer.logicCalculation.CompileOptionActionEdits(); }, "Undo last action") },
                 { "y", new( () => { instanceContainer.DoRedo(); instanceContainer.logicCalculation.CompileOptionActionEdits(); }, "Redo last undo action") },
                 { "s", new(() => {

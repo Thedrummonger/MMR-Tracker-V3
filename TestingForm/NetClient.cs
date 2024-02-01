@@ -1,7 +1,7 @@
 ﻿using MathNet.Numerics.Statistics;
 using Microsoft.VisualBasic;
 using MMR_Tracker_V3;
-using MMR_Tracker_V3.TrackerObjectExtentions;
+using MMR_Tracker_V3.TrackerObjectExtensions;
 using MMR_Tracker_V3.TrackerObjects;
 using Newtonsoft.Json;
 using System;
