@@ -1,4 +1,5 @@
 ﻿using MMR_Tracker_V3.TrackerObjects;
+using System.Text;
 
 namespace CLIFrontEnd
 {
@@ -25,50 +26,23 @@ namespace CLIFrontEnd
             Options,
             Pathfinder
         }
-        public enum SelectedItemAction
-        {
-            Filter,
-            Check,
-            Mark,
-            Price,
-            Hide
-        }
         public class InputPrefixData
         {
+            private HashSet<char> ValidPrefixes = ['\\', '#', '$', '%', '!', '@', '$', '^', '*'];
             public string ParsedInput = "";
-            public SelectedItemAction itemAction = SelectedItemAction.Check;
             public List<int> Indexes = [];
-            public InputPrefixData(string? Input)
+            public HashSet<char> Prefixes = [];
+            public InputPrefixData(string? Input = null, char[]? ValidPrefixChars = null)
             {
-                if (Input is null)
+                if (ValidPrefixChars is not null) { ValidPrefixes = [.. ValidPrefixChars]; }
+                StringBuilder stringBuilder = new();
+                Input ??= Console.ReadLine()??"";
+                foreach(var i in Input)
                 {
-                    ParsedInput = "";
+                    if (ValidPrefixes.Contains(i)) { Prefixes.Add(i); }
+                    else { stringBuilder.Append(i); }
                 }
-                else if (Input.StartsWith('\\'))
-                {
-                    ParsedInput = Input[1..];
-                    itemAction = SelectedItemAction.Filter;
-                }
-                else if (Input.StartsWith('#'))
-                {
-                    ParsedInput = Input[1..];
-                    itemAction = SelectedItemAction.Mark;
-                }
-                else if (Input.StartsWith('$'))
-                {
-                    ParsedInput = Input[1..];
-                    itemAction = SelectedItemAction.Price;
-                }
-                else if (Input.StartsWith('%'))
-                {
-                    ParsedInput = Input[1..];
-                    itemAction = SelectedItemAction.Hide;
-                }
-                else
-                {
-                    ParsedInput = Input;
-                    itemAction = SelectedItemAction.Check;
-                }
+                ParsedInput = stringBuilder.ToString();
                 Indexes = InputParser.ParseIndicesString(ParsedInput);
             }
         }

@@ -24,7 +24,7 @@ namespace CLIFrontEnd
                 { "c", new(() => { displayType = CLIDisplayListType.Checked; }, "Displays Checked Locations/entrances") },
                 { "o", new(() => { displayType = CLIDisplayListType.Options; }, "Displays Logic Options") },
                 { "p", new(() => { }, "Displays Pathfinder") },
-                { "i", new(() => { new ItemPoolEditor().Start(instanceContainer); }, "Item Pool Options") },
+                { "i", new(() => { new ItemPoolEditor().Start(instanceContainer); instanceContainer.logicCalculation.CompileOptionActionEdits(); }, "Item Pool Options") },
                 { "z", new( () => { instanceContainer.DoUndo(); instanceContainer.logicCalculation.CompileOptionActionEdits(); }, "Undo last action") },
                 { "y", new( () => { instanceContainer.DoRedo(); instanceContainer.logicCalculation.CompileOptionActionEdits(); }, "Redo last undo action") },
                 { "s", new(() => {
@@ -86,31 +86,31 @@ namespace CLIFrontEnd
 
                 var InputData = new InputPrefixData(input);
 
-                switch (InputData.itemAction)
+                if (InputData.Prefixes.Contains('\\'))
                 {
-                    case SelectedItemAction.Filter:
-                        Filter = InputData.ParsedInput;
-                        continue;
-                    case SelectedItemAction.Price:
-                        instanceContainer.SaveState();
-                        SetLocationPrice(InputData.Indexes, Objects);
-                        instanceContainer.logicCalculation.CompileOptionActionEdits();
-                        continue;
-                    case SelectedItemAction.Hide:
-                        instanceContainer.SaveState();
-                        HideLocations(InputData.Indexes, Objects);
-                        continue;
-                    case SelectedItemAction.Check:
-                        CheckState checkState = displayType == CLIDisplayListType.Checked ? CheckState.Unchecked : CheckState.Checked;
-                        instanceContainer.SaveState();
-                        CheckItems(InputData.Indexes, Objects, checkState, displayType);
-                        if (displayType == CLIDisplayListType.Options) { instanceContainer.logicCalculation.CompileOptionActionEdits(); }
-                        break;
-                    case SelectedItemAction.Mark:
-                        instanceContainer.SaveState();
-                        CheckItems(InputData.Indexes, Objects, CheckState.Marked, displayType);
-                        if (displayType == CLIDisplayListType.Options) { instanceContainer.logicCalculation.CompileOptionActionEdits(); }
-                        break;
+                    Filter = InputData.ParsedInput;
+                    continue;
+                }
+                else if (InputData.Prefixes.Contains('$'))
+                {
+                    instanceContainer.SaveState();
+                    SetLocationPrice(InputData.Indexes, Objects);
+                    instanceContainer.logicCalculation.CompileOptionActionEdits();
+                    continue;
+                }
+                else if (InputData.Prefixes.Contains('%'))
+                {
+                    instanceContainer.SaveState();
+                    HideLocations(InputData.Indexes, Objects);
+                    continue;
+                }
+                else
+                {
+                    CheckState checkState = displayType == CLIDisplayListType.Checked ? CheckState.Unchecked : CheckState.Checked;
+                    if (InputData.Prefixes.Contains('#')) { checkState = CheckState.Marked; }
+                    instanceContainer.SaveState();
+                    CheckItems(InputData.Indexes, Objects, checkState, displayType);
+                    if (displayType == CLIDisplayListType.Options) { instanceContainer.logicCalculation.CompileOptionActionEdits(); }
                 }
 
             }
