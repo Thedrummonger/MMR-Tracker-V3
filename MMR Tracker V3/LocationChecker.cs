@@ -38,30 +38,30 @@ namespace MMR_Tracker_V3
             UpdatedLogicObjects.AddRange(UpdatedLocations);
             UpdatedLogicObjects.AddRange(UpdatedExits);
 
-            if ((UpdatedLogicObjects.Count != 0 || UpdatedSettingObjects.Count != 0) && Options.TargetheckState != MiscData.CheckState.Marked)
+            if ((UpdatedLogicObjects.Count != 0 || UpdatedSettingObjects.Count != 0) && Options.TargetCheckState != MiscData.CheckState.Marked)
             {
-                instanceContainer.logicCalculation.CalculateLogic(Options.TargetheckState);
+                instanceContainer.logicCalculation.CalculateLogic(Options.TargetCheckState);
             }
 
             List<HintObject> UpdatedHints = SetHintsCheckState(SelectedObjects, instanceContainer, Options);
             List<LocationObject> HintedLocationsToUpdate = GetHIntedLocationsToUpdated(UpdatedHints, instanceContainer);
 
-            List<LocationObject> UpdatedHintedLocations = SetLocationsCheckState(HintedLocationsToUpdate, instanceContainer, new CheckItemSetting(Options).SetTargetheckState(CheckState.Marked));
+            List<LocationObject> UpdatedHintedLocations = SetLocationsCheckState(HintedLocationsToUpdate, instanceContainer, new CheckItemSetting(Options).SetTargetCheckState(CheckState.Marked));
 
             UpdatedHintObjects.AddRange(UpdatedHints);
             UpdatedLogicObjects.AddRange(UpdatedHintedLocations);
 
-            if (UpdatedExits.Any() && Options.TargetheckState == MiscData.CheckState.Checked)
+            if (UpdatedExits.Any() && Options.TargetCheckState == MiscData.CheckState.Checked)
             {
                 Dictionary<EntranceRandoExit, EntranceRandoDestination> PairedExits = GetEntrancePairsToUpdate(UpdatedExits, instanceContainer);
                 foreach (var i in PairedExits) { if (i.Key.GetDestinationAtExit() is null) { i.Key.DestinationExit = i.Value; } }
                 IEnumerable<EntranceRandoExit> PairedExitsToMark = PairedExits.Keys.Where(x => !x.Available);
                 IEnumerable<EntranceRandoExit> PairedExitsToCheck = PairedExits.Keys.Where(x => x.Available);
-                List<EntranceRandoExit> UpdatedMarkedPairedExits = SetEntrancesCheckState(PairedExitsToMark, instanceContainer, Options.Copy().SetTargetheckState(CheckState.Marked).SetEnforceMarkAction(true));
-                List<EntranceRandoExit> UpdatedCheckedPairedExits = SetEntrancesCheckState(PairedExitsToCheck, instanceContainer, Options.Copy().SetTargetheckState(CheckState.Checked).SetEnforceMarkAction(true));
+                List<EntranceRandoExit> UpdatedMarkedPairedExits = SetEntrancesCheckState(PairedExitsToMark, instanceContainer, Options.Copy().SetTargetCheckState(CheckState.Marked).SetEnforceMarkAction(true));
+                List<EntranceRandoExit> UpdatedCheckedPairedExits = SetEntrancesCheckState(PairedExitsToCheck, instanceContainer, Options.Copy().SetTargetCheckState(CheckState.Checked).SetEnforceMarkAction(true));
                 if (UpdatedCheckedPairedExits.Any())
                 {
-                    instanceContainer.logicCalculation.CalculateLogic(Options.TargetheckState);
+                    instanceContainer.logicCalculation.CalculateLogic(Options.TargetCheckState);
                 }
                 UpdatedLogicObjects.AddRange(UpdatedMarkedPairedExits);
                 UpdatedLogicObjects.AddRange(UpdatedCheckedPairedExits);
@@ -95,12 +95,12 @@ namespace MMR_Tracker_V3
             }
             if (choiceOptions.Any())
             {
-                var Result = Options.CheckCoiceOptions(choiceOptions, instanceContainer);
+                var Result = Options.CheckChoiceOptions(choiceOptions, instanceContainer);
                 foreach (var O in Result) { O.GetCheck<OptionData.ChoiceOption>().SetValue(O.GetItem<string>()); }
             }
             if (IntOptions.Any())
             {
-                var Result = Options.CheckIntOPtions(IntOptions, instanceContainer);
+                var Result = Options.CheckIntOptions(IntOptions, instanceContainer);
                 foreach (var O in Result) { O.GetCheck<OptionData.IntOption>().SetValue(O.GetItem<int>()); }
             }
 
@@ -123,7 +123,7 @@ namespace MMR_Tracker_V3
             locationObjects = locationObjects.Distinct();
             //If we are performing an uncheck action there should be no unchecked locations in the list and even if there are nothing will be done to them anyway
             //This check is neccessary for the "UnMark Only" action.
-            IEnumerable<LocationObject> UncheckedlocationObjects = (Options.TargetheckState == MiscData.CheckState.Unchecked) ?
+            IEnumerable<LocationObject> UncheckedlocationObjects = (Options.TargetCheckState == MiscData.CheckState.Unchecked) ?
                 new List<LocationObject>() :
                 locationObjects.Where(x => x.CheckState == MiscData.CheckState.Unchecked);
 
@@ -141,7 +141,7 @@ namespace MMR_Tracker_V3
             foreach (LocationObject LocationObject in locationObjects)
             {
                 //When we mark a location, the action is always sent as Marked, but if the location is already marked we should instead Unchecked it unless EnforceMarkAction is true.
-                var Action = (Options.TargetheckState == MiscData.CheckState.Marked && LocationObject.CheckState == MiscData.CheckState.Marked) && !Options.EnforceMarkAction ? MiscData.CheckState.Unchecked : Options.TargetheckState;
+                var Action = (Options.TargetCheckState == MiscData.CheckState.Marked && LocationObject.CheckState == MiscData.CheckState.Marked) && !Options.EnforceMarkAction ? MiscData.CheckState.Unchecked : Options.TargetCheckState;
                 if (LocationObject.ToggleChecked(Action))
                 {
                     UpdatedObjects.Add(LocationObject);
@@ -157,7 +157,7 @@ namespace MMR_Tracker_V3
 
             //Handle Exits
             IEnumerable<EntranceRandoExit> ExitObjects = SelectedObjects.Where(x => x is EntranceRandoExit).Select(x => x as EntranceRandoExit);
-            IEnumerable<EntranceRandoExit> UncheckedExitObjects = (Options.TargetheckState == MiscData.CheckState.Unchecked) ?
+            IEnumerable<EntranceRandoExit> UncheckedExitObjects = (Options.TargetCheckState == MiscData.CheckState.Unchecked) ?
                 new List<EntranceRandoExit>() :
                 ExitObjects.Where(x => x.CheckState == MiscData.CheckState.Unchecked);
             foreach (EntranceRandoExit ExitObject in UncheckedExitObjects)
@@ -172,7 +172,7 @@ namespace MMR_Tracker_V3
             }
             foreach (EntranceRandoExit ExitObject in ExitObjects)
             {
-                var Action = (Options.TargetheckState == MiscData.CheckState.Marked && ExitObject.CheckState == MiscData.CheckState.Marked) && !Options.EnforceMarkAction ? MiscData.CheckState.Unchecked : Options.TargetheckState;
+                var Action = (Options.TargetCheckState == MiscData.CheckState.Marked && ExitObject.CheckState == MiscData.CheckState.Marked) && !Options.EnforceMarkAction ? MiscData.CheckState.Unchecked : Options.TargetCheckState;
                 if (ExitObject.ToggleExitChecked(Action))
                 {
                     UpdatedObjects.Add(ExitObject);
@@ -201,7 +201,7 @@ namespace MMR_Tracker_V3
             foreach (HintObject hintObject in HintObjects)
             {
                 UpdatedObjects.Add(hintObject);
-                var CheckAction = (Options.TargetheckState == MiscData.CheckState.Marked && hintObject.CheckState == MiscData.CheckState.Marked) && !Options.EnforceMarkAction ? MiscData.CheckState.Unchecked : Options.TargetheckState;
+                var CheckAction = (Options.TargetCheckState == MiscData.CheckState.Marked && hintObject.CheckState == MiscData.CheckState.Marked) && !Options.EnforceMarkAction ? MiscData.CheckState.Unchecked : Options.TargetCheckState;
                 hintObject.CheckState = CheckAction;
                 hintObject.HintText = CheckAction == MiscData.CheckState.Unchecked ? null : hintObject.HintText;
             }

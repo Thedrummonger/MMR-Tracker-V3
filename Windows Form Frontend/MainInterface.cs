@@ -1006,8 +1006,8 @@ namespace Windows_Form_Frontend
                 .SetCheckUnassignedLocations(HandleUnassignedChecks)
                 .SetCheckUnassignedEntrances(HandleUnassignedChecks)
                 .SetCheckUnassignedHints(HandleUnassignedVariables)
-                .SetCheckCoiceOptions(HandleUnassignedChecks)
-                .SetCheckIntOPtions(HandleUnassignedVariables);
+                .SetCheckChoiceOptions(HandleUnassignedChecks)
+                .SetCheckIntOptions(HandleUnassignedVariables);
 
             var UpdatedObjects = LocationChecker.CheckSelectedItems(Items, InstanceContainer, CheckObjectOptions);
 

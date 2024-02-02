@@ -369,7 +369,16 @@ namespace TestingForm
                 LocationList.Add(Location);
             }
 
-            var CheckObjectOptions = new CheckItemSetting(CheckAction).SetEnforceMarkAction(true).SetCheckUnassignedLocations(LocationDataToProcess);
+            var CheckObjectOptions = new CheckItemSetting(CheckAction).SetEnforceMarkAction(true).SetCheckUnassignedLocations((O, C) =>
+            {
+                List<ManualCheckObjectResult> Results = [];
+                foreach (var obj in O)
+                {
+                    LocationData.LocationObject location = obj as LocationData.LocationObject;
+                    Results.Add(new ManualCheckObjectResult(location, LocationDataToProcess[location.ID]));
+                }
+                return Results;
+            });
 
             LocationChecker.SetLocationsCheckState(LocationList, InstanceContainer, CheckObjectOptions);
 

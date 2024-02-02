@@ -161,8 +161,8 @@ namespace CLIFrontEnd
                             .SetCheckUnassignedLocations(LocationChecking.HandleUnAssignedLocations)
                             .SetCheckUnassignedEntrances(LocationChecking.HandleUnAssignedLocations)
                             .SetCheckUnassignedHints(LocationChecking.HandleUnAssignedVariables)
-                            .SetCheckCoiceOptions(LocationChecking.HandleUnAssignedLocations)
-                            .SetCheckIntOPtions(LocationChecking.HandleUnAssignedVariables);
+                            .SetCheckChoiceOptions(LocationChecking.HandleUnAssignedLocations)
+                            .SetCheckIntOptions(LocationChecking.HandleUnAssignedVariables);
             LocationChecker.CheckSelectedItems(CheckObjects, instanceContainer, CheckObjectOptions);
         }
 
@@ -170,17 +170,17 @@ namespace CLIFrontEnd
         {
             Console.Clear();
             instanceContainer.logicCalculation.CalculateLogic();
-            var Data = new MiscData.TrackerLocationDataList(new MiscData.Divider("==========="), instanceContainer, Filter);
-            Data.WriteLocations(MiscData.CheckState.Unchecked, false).WriteLocations(MiscData.CheckState.Unchecked, true);
-            if (instanceContainer.Instance.CombineEntrancesWithLocations()) { Data.WriteEntrances(MiscData.CheckState.Unchecked, true); }
+            var Data = new MiscData.TrackerLocationDataList(new MiscData.Divider("==========="), instanceContainer, Filter).PrintReverse();
             Data.WriteHints(MiscData.CheckState.Unchecked);
+            if (instanceContainer.Instance.CombineEntrancesWithLocations()) { Data.WriteEntrances(MiscData.CheckState.Unchecked, true); }
+            Data.WriteLocations(MiscData.CheckState.Unchecked, true).WriteLocations(MiscData.CheckState.Unchecked, false);
             return PrintData(Data, DisplayListType.Locations);
         }
         private Dictionary<int, object> ShowAvailableEntrances()
         {
             Console.Clear();
             instanceContainer.logicCalculation.CalculateLogic();
-            var Data = new MiscData.TrackerLocationDataList(new MiscData.Divider("==========="), instanceContainer, Filter);
+            var Data = new MiscData.TrackerLocationDataList(new MiscData.Divider("==========="), instanceContainer, Filter).PrintReverse();
             Data.WriteEntrances(MiscData.CheckState.Unchecked, false);
             return PrintData(Data, DisplayListType.Entrances);
         }
@@ -188,10 +188,10 @@ namespace CLIFrontEnd
         {
             Console.Clear();
             instanceContainer.logicCalculation.CalculateLogic();
-            var Data = new TrackerLocationDataList(new Divider("==========="), instanceContainer, Filter);
-            Data.WriteLocations(MiscData.CheckState.Checked, false).WriteLocations(MiscData.CheckState.Checked, true)
-                    .WriteEntrances(MiscData.CheckState.Checked, true).WriteHints(MiscData.CheckState.Checked).WriteStartingItems().WriteOnlineItems();
+            var Data = new TrackerLocationDataList(new Divider("==========="), instanceContainer, Filter).PrintReverse();
             if (instanceContainer.Instance.StaticOptions.ShowOptionsInListBox == DisplayListType.Checked) { Data.WriteOptions(); }
+            Data.WriteOnlineItems().WriteStartingItems().WriteHints(MiscData.CheckState.Checked).WriteEntrances(MiscData.CheckState.Checked, true)
+                .WriteLocations(MiscData.CheckState.Checked, true).WriteLocations(MiscData.CheckState.Checked, false);
             return PrintData(Data, DisplayListType.Checked);
         }
 

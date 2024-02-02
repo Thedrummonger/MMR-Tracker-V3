@@ -246,6 +246,7 @@ namespace MMR_Tracker_V3
 
             LocationsEntries = LocationsEntries.Where(x => Hidden ? IsHidden(x) : !IsHidden(x));
 
+            if (Data.Reverse) { LocationsEntries = LocationsEntries.Reverse(); }
 
             string CurrentLocation = "";
             foreach (var obj in LocationsEntries)
@@ -299,6 +300,8 @@ namespace MMR_Tracker_V3
                 Categorized[Sub].Add(item);
             }
 
+            if (Data.Reverse) { Categorized = Categorized.Reverse().ToDictionary(x => x.Key, x => x.Value); }
+
             string CurrentCategory = null;
             foreach (var i in Categorized)
             {
@@ -336,9 +339,10 @@ namespace MMR_Tracker_V3
             {
                 HintList = Data.ShowUnavailableEntries ? Data.DataSets.HintStateIsNOTChecked : Data.DataSets.HIntISMarkedOrISAvailableAndUnchecked;
             }
-            if (HintList.Any())
+            if (HintList.Count != 0)
             {
                 bool DividerCreated = false;
+                if (Data.Reverse) { HintList.Reverse(); }
                 foreach (var i in HintList)
                 {
                     if (i.RandomizedState == MiscData.RandomizedState.ForcedJunk && !Data.ShowInvalidEntries) { continue; }
@@ -371,6 +375,8 @@ namespace MMR_Tracker_V3
             ValidExits = ValidExits.OrderByDescending(x => SortByAvailability(x, Data) && x.Available)
                 .ThenBy(x => x.DisplayArea())
                 .ThenBy(x => x.DisplayName).ToList();
+            if (Data.Reverse) { ValidExits.Reverse(); }
+
             string CurrentArea = "";
             foreach (var i in ValidExits)
             {
@@ -394,8 +400,9 @@ namespace MMR_Tracker_V3
         {
             if (Data.DataSets.CurrentStartingItems.Any())
             {
+                var StartingItems = Data.Reverse ? Data.DataSets.CurrentStartingItems.ToArray().Reverse() : Data.DataSets.CurrentStartingItems;
                 bool DividerCreated = false;
-                foreach (var i in Data.DataSets.CurrentStartingItems)
+                foreach (var i in StartingItems)
                 {
                     string Display = $"{i.GetDictEntry().GetName()} X{i.AmountInStartingpool}";
                     Data.ItemsFound++;
@@ -416,8 +423,9 @@ namespace MMR_Tracker_V3
         {
             if (Data.DataSets.OnlineObtainedItems.Any())
             {
+                var OnlineItems = Data.Reverse ? Data.DataSets.OnlineObtainedItems.ToArray().Reverse() : Data.DataSets.OnlineObtainedItems;
                 bool DividerCreated = false;
-                foreach (var i in Data.DataSets.OnlineObtainedItems)
+                foreach (var i in OnlineItems)
                 {
                     foreach (var j in i.AmountAquiredOnline)
                     {

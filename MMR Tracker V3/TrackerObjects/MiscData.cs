@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MMR_Tracker_V3.TrackerObjectExtensions;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Globalization;
@@ -79,22 +80,23 @@ namespace MMR_Tracker_V3.TrackerObjects
         {
             public CheckItemSetting(CheckItemSetting Copy)
             {
-                TargetheckState = Copy.TargetheckState;
+                TargetCheckState = Copy.TargetCheckState;
+                EnforceMarkAction = Copy.EnforceMarkAction;
                 CheckUnassignedLocations = Copy.CheckUnassignedLocations;
                 CheckUnassignedEntrances = Copy.CheckUnassignedEntrances;
                 CheckUnassignedHints = Copy.CheckUnassignedHints;
-                CheckCoiceOptions = Copy.CheckCoiceOptions;
-                CheckIntOPtions = Copy.CheckIntOPtions;
+                CheckChoiceOptions = Copy.CheckChoiceOptions;
+                CheckIntOptions = Copy.CheckIntOptions;
             }
             public CheckItemSetting(CheckState _TargetCheckState)
             {
-                TargetheckState = _TargetCheckState;
+                TargetCheckState = _TargetCheckState;
             }
             public CheckItemSetting Copy()
             {
                 return new CheckItemSetting(this);
             }
-            public CheckState TargetheckState;
+            public CheckState TargetCheckState;
             public bool EnforceMarkAction = false;
             public Func<IEnumerable<object>, InstanceContainer, List<ManualCheckObjectResult>> CheckUnassignedLocations =
                 (O, C) => { throw new NotImplementedException("CheckUnassignedLocations was not assigned"); };
@@ -102,37 +104,18 @@ namespace MMR_Tracker_V3.TrackerObjects
                 (O, C) => { throw new NotImplementedException("CheckUnassignedEntrances was not assigned"); };
             public Func<IEnumerable<object>, InstanceContainer, List<ManualCheckObjectResult>> CheckUnassignedHints =
                 (O, C) => { throw new NotImplementedException("CheckUnassignedHints was not assigned"); };
-            public Func<IEnumerable<object>, InstanceContainer, List<ManualCheckObjectResult>> CheckCoiceOptions =
-                (O, C) => { throw new NotImplementedException("CheckCoiceOptions was not assigned"); };
-            public Func<IEnumerable<object>, InstanceContainer, List<ManualCheckObjectResult>> CheckIntOPtions =
-                (O, C) => { throw new NotImplementedException("CheckIntOPtions was not assigned"); };
-            public CheckItemSetting SetTargetheckState(CheckState _TargetCheckState) { TargetheckState = _TargetCheckState; return this; }
+            public Func<IEnumerable<object>, InstanceContainer, List<ManualCheckObjectResult>> CheckChoiceOptions =
+                (O, C) => { throw new NotImplementedException("CheckChoiceOptions was not assigned"); };
+            public Func<IEnumerable<object>, InstanceContainer, List<ManualCheckObjectResult>> CheckIntOptions =
+                (O, C) => { throw new NotImplementedException("CheckIntOptions was not assigned"); };
+            public CheckItemSetting SetTargetCheckState(CheckState _TargetCheckState) { TargetCheckState = _TargetCheckState; return this; }
             public CheckItemSetting SetEnforceMarkAction(bool _EnforceMarkAction) { EnforceMarkAction = _EnforceMarkAction; return this; }
             public CheckItemSetting SetCheckUnassignedLocations(Func<IEnumerable<object>, InstanceContainer, List<ManualCheckObjectResult>> func) { CheckUnassignedLocations = func; return this; }
             public CheckItemSetting SetCheckUnassignedEntrances(Func<IEnumerable<object>, InstanceContainer, List<ManualCheckObjectResult>> func) { CheckUnassignedEntrances = func; return this; }
             public CheckItemSetting SetCheckUnassignedHints(Func<IEnumerable<object>, InstanceContainer, List<ManualCheckObjectResult>> func) { CheckUnassignedHints = func; return this; }
-            public CheckItemSetting SetCheckCoiceOptions(Func<IEnumerable<object>, InstanceContainer, List<ManualCheckObjectResult>> func) { CheckCoiceOptions = func; return this; }
-            public CheckItemSetting SetCheckIntOPtions(Func<IEnumerable<object>, InstanceContainer, List<ManualCheckObjectResult>> func) { CheckIntOPtions = func; return this; }
+            public CheckItemSetting SetCheckChoiceOptions(Func<IEnumerable<object>, InstanceContainer, List<ManualCheckObjectResult>> func) { CheckChoiceOptions = func; return this; }
+            public CheckItemSetting SetCheckIntOptions(Func<IEnumerable<object>, InstanceContainer, List<ManualCheckObjectResult>> func) { CheckIntOptions = func; return this; }
 
-            /// <summary>
-            /// Creates a function that assignes an unchecked location an item based on a predefined map
-            /// </summary>
-            /// <param name="StaticLocationItemMap">A dictionary of location ids and the Item ID of the item at that location</param>
-            /// <returns></returns>
-            public CheckItemSetting SetCheckUnassignedLocations(Dictionary<string, string> StaticLocationItemMap)
-            {
-                CheckUnassignedLocations = (O, C) =>
-                {
-                    List<ManualCheckObjectResult> Results = [];
-                    foreach (var obj in O)
-                    {
-                        LocationData.LocationObject location = obj as LocationData.LocationObject;
-                        Results.Add(new ManualCheckObjectResult(location, StaticLocationItemMap[location.ID]));
-                    }
-                    return Results;
-                };
-                return this;
-            }
 
         }
         public class ManualCheckObjectResult(object _Check, object _Item, int _OwningPlayer = -1)
