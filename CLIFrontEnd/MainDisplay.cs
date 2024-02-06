@@ -70,6 +70,7 @@ namespace CLIFrontEnd
                         Console.WriteLine($"{i.Key.ToUpper()}: {i.Value.Description}");
                     }
                     Console.WriteLine(@"\: Use this followed by a search string to filter the list");
+                    Console.WriteLine(@"x: Return to the main menu");
                     Console.WriteLine(CreateDivider());
                 }
                 else

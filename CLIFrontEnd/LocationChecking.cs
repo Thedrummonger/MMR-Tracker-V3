@@ -57,8 +57,8 @@ namespace CLIFrontEnd
                     while (Val is null)
                     {
                         Console.Clear();
-                        Console.WriteLine($"Enter value for {IO.getOptionName()}");
-                        if (int.TryParse(Console.ReadLine(), out int SelectedVal)) { Val = SelectedVal; }
+                        Console.WriteLine($"Enter value for {IO.getOptionName()} (Current: {IO.Value}) (Range: {IO.Min} - {IO.Max})");
+                        if (int.TryParse(Console.ReadLine(), out int SelectedVal) && SelectedVal <= IO.Max && SelectedVal >= IO.Min) { Val = SelectedVal; }
                     }
                     Result.Add(new(IO, Val));
                 }
@@ -133,7 +133,7 @@ namespace CLIFrontEnd
                     Console.WriteLine($"{i.Key.ToString($"D{Padding}")}: {i.Value}");
                 }
                 Console.WriteLine(CLIUtility.CreateDivider());
-                Console.WriteLine("Select Value for " + Option.getOptionName());
+                Console.WriteLine("Select Value for " + Option.getOptionName() + $" Current: {Option.Value}");
                 var input = Console.ReadLine() ?? "";
                 if (int.TryParse(input, out int index) && Items.TryGetValue(index, out OptionData.OptionValue? value))
                 {
