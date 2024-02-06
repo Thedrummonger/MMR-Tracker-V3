@@ -78,7 +78,26 @@ namespace CLIFrontEnd
                 }
 
                 var input = Console.ReadLine() ?? "";
-                if (Options.TryGetValue(input, out DisplayAction? value))
+                if (input.Equals("x", StringComparison.CurrentCultureIgnoreCase))
+                {
+                    var MenuSelect = new CLISelectMenu(["Yes", "No"]);
+                    MenuSelect.Run(["Are you sure you want to exit?"]);
+                    if (MenuSelect.selectedLineIndex == 0)
+                    {
+                        if (instanceContainer.UnsavedChanges)
+                        {
+                            MenuSelect.Run(["You have Unsaved Changes, would you like to save?"]);
+                            if (MenuSelect.selectedLineIndex == 0)
+                            {
+                                var Result = NativeFileDialogSharp.Dialog.FileSave("mmrtsav");
+                                if (Result.IsOk) { instanceContainer.SaveInstance(Result.Path); }
+                            }
+                        }
+                        return;
+                    }
+                }
+
+                if (Options.TryGetValue(input.ToLower(), out DisplayAction? value))
                 {
                     value.action();
                     continue;

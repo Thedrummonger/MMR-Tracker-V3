@@ -7,31 +7,39 @@ namespace CLIFrontEnd
     {
         static void Main()
         {
-            object[] MainMenu = ["New (From File)", "New (From Preset)", "Load"];
-            var MenuSelect = new CLISelectMenu(MainMenu);
-
-            InstanceData.InstanceContainer container = new();
-
-            bool Success = false;
-            string Error = null;
-            while (!Success)
+            while(true)
             {
-                MenuSelect.Run(string.IsNullOrWhiteSpace(Error) ? [] : [Error]);
-                switch (MenuSelect.selectedLineIndex)
+                CLISelectMenu MenuSelect = new(["New (From File)", "New (From Preset)", "Load", "Exit"]);
+
+                InstanceData.InstanceContainer container = new();
+
+                bool ShouldExit = false;
+                bool Success = false;
+                string Error = null;
+                while (!Success)
                 {
-                    case 0:
-                        (Success, Error) = LoadFromLogicFile(container);
-                        break;
-                    case 1:
-                        (Success, Error) = LoadFromTemplate(container);
-                        break;
-                    case 2:
-                        (Success, Error) = LoadFromSaveFile(container);
-                        break;
+                    MenuSelect.Run(string.IsNullOrWhiteSpace(Error) ? [] : [Error]);
+                    switch (MenuSelect.selectedLineIndex)
+                    {
+                        case 0:
+                            (Success, Error) = LoadFromLogicFile(container);
+                            break;
+                        case 1:
+                            (Success, Error) = LoadFromTemplate(container);
+                            break;
+                        case 2:
+                            (Success, Error) = LoadFromSaveFile(container);
+                            break;
+                        case 3:
+                            Success = true;
+                            ShouldExit = true;
+                            break;
+                    }
                 }
+                if (ShouldExit) { break; }
+                MainDisplay mainDisplay = new(container);
+                mainDisplay.Display();
             }
-            MainDisplay mainDisplay = new MainDisplay(container);
-            mainDisplay.Display();
         }
 
         private static (bool, string) LoadFromSaveFile(InstanceData.InstanceContainer container)

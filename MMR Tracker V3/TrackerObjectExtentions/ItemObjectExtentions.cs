@@ -8,8 +8,7 @@ namespace MMR_Tracker_V3.TrackerObjectExtensions
     {
         public static bool ValidStartingItem(this ItemData.ItemObject Item)
         {
-            var ItemIndex = Item.GetParent().GetItemByID(Item.ID);
-            var DictEntry = ItemIndex.GetDictEntry();
+            var DictEntry = Item.GetDictEntry();
             return DictEntry.ValidStartingItem != null && (bool)DictEntry.ValidStartingItem;
         }
 
@@ -36,6 +35,12 @@ namespace MMR_Tracker_V3.TrackerObjectExtensions
         {
             if (Item.GetDictEntry().GetMaxAmountInWorld() < 0) { return true; }
             return Item.GetAmountPlaced() < Item.GetDictEntry().GetMaxAmountInWorld();
+        }
+
+        public static int GetAmountLeftToPlace(this ItemData.ItemObject Item)
+        {
+            if (Item.GetDictEntry().GetMaxAmountInWorld() < 0) { return 9999999; }
+            return Item.GetDictEntry().GetMaxAmountInWorld() - Item.GetAmountPlaced();
         }
 
         public static int GetTotalUsable(this ItemData.ItemObject Item)

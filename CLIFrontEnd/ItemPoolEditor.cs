@@ -1,4 +1,5 @@
 ﻿using MMR_Tracker_V3;
+using MMR_Tracker_V3.TrackerObjectExtensions;
 using MMR_Tracker_V3.TrackerObjects;
 using System;
 using System.Collections.Generic;
@@ -46,11 +47,67 @@ namespace CLIFrontEnd
                     LoopLocationStateChange(container, [.. container.Instance.HintPool.Values]);
                     break;
                 case PoolEditType.StartingItemPool:
+                    LoopStartPoolEdit(container);
                     break;
                 case PoolEditType.TrickPool:
                     LoopTrickEdit(container);
                     break;
             }
+        }
+
+        private void LoopStartPoolEdit(InstanceContainer container)
+        {
+            string Filter = "";
+            while (true)
+            {
+                Console.Clear();
+                var ObjectList = PrintStartingItems(container, Filter);
+                string ParsedInput = Console.ReadLine();
+                if (string.IsNullOrWhiteSpace(ParsedInput)) { return; }
+                if (ParsedInput.StartsWith('\\')) { Filter = ParsedInput[1..]; continue; }
+                var InputData = new InputPrefixData(ParsedInput);
+                foreach (var Index in InputData.Indexes)
+                {
+                    if (!ObjectList.TryGetValue(Index, out ItemData.ItemObject IO)) { continue; }
+                    int Amount = -1;
+                    string? Error = null;
+                    while (Amount < 0)
+                    {
+                        Console.Clear();
+                        int MaxAmountInWorld = IO.GetDictEntry().GetMaxAmountInWorld();
+                        Console.WriteLine($"Starting Pool Amounts for: {IO.GetDictEntry().GetName()}");
+                        Console.WriteLine($"Current Amount in Starting Pool: {IO.AmountInStartingpool}");
+                        Console.WriteLine($"Current Amount Placed in other locations: {IO.GetAmountPlaced() - IO.AmountInStartingpool}");
+                        Console.WriteLine($"Max Amount in Placeable: {(MaxAmountInWorld < 0 ? 99999 : MaxAmountInWorld)}");
+                        int AmountLeftToPlace = IO.GetAmountLeftToPlace();
+                        string Range = AmountLeftToPlace == 0 ? "0" : $"0 - {AmountLeftToPlace}";
+                        Console.WriteLine($"Set Amount in starting pool: (Valid Range: {Range})");
+                        if (Error is not null) { Console.WriteLine($"Error: {Error}"); }
+                        string Input = Console.ReadLine() ?? "";
+                        if (string.IsNullOrWhiteSpace(Input)) { break; }
+                        if (int.TryParse(Input, out var amount))
+                        {
+                            Amount = amount;
+                            if (amount < 0) { Error = $"{amount} is not valid!"; }
+                        }
+                        if (Amount > IO.GetAmountLeftToPlace()) { Error = $"{Amount} is not valid!"; Amount = -1;  }
+                    }
+                    if (Amount > -1) { IO.AmountInStartingpool = Amount; }
+                }
+            }
+        }
+
+        private Dictionary<int, ItemData.ItemObject> PrintStartingItems(InstanceContainer container, string filter)
+        {
+            List<ItemData.ItemObject> Items = container.Instance.ItemPool.Values.Where(x => x.ValidStartingItem() && (x.GetAmountLeftToPlace() > 0 || x.AmountInStartingpool > 0)).ToList();
+            Items = Items.Where(x => SearchStringParser.FilterSearch(container.Instance, x, filter, x.GetDictEntry().GetName())).ToList();
+            Dictionary<int, ItemData.ItemObject> StartingItems = Items.Select((s, index) => new { s, index }).ToDictionary(x => x.index + 1, x => x.s);
+            int Padding = StartingItems.Keys.Max().ToString().Length;
+            foreach (var LocationObject in StartingItems)
+            {
+                Console.WriteLine($"{LocationObject.Key.ToString($"D{Padding}")}: [X{LocationObject.Value.AmountInStartingpool}] {LocationObject.Value.GetDictEntry().GetName()}");
+            }
+            return StartingItems;
         }
 
         private void LoopLocationStateChange(InstanceContainer container, List<object> Objects)
