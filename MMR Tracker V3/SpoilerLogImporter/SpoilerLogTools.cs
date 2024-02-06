@@ -99,6 +99,7 @@ namespace MMR_Tracker_V3.SpoilerLogImporter
             {
                 i.SpoilerHintText = null;
             }
+            instance.SpoilerLog = null;
         }
     }
 }

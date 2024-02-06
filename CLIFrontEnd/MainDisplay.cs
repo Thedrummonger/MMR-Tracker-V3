@@ -1,4 +1,5 @@
 ﻿using MMR_Tracker_V3;
+using MMR_Tracker_V3.SpoilerLogImporter;
 using MMR_Tracker_V3.TrackerObjectExtensions;
 using MMR_Tracker_V3.TrackerObjects;
 using System.ComponentModel;
@@ -25,11 +26,10 @@ namespace CLIFrontEnd
                 { "o", new(() => { displayType = CLIDisplayListType.Options; }, "Displays Logic Options") },
                 { "p", new(() => { }, "Displays Pathfinder") },
                 { "i", new(() => { new ItemPoolEditor().Start(instanceContainer); instanceContainer.logicCalculation.CompileOptionActionEdits(); }, "Item Pool Options") },
-                { "z", new( () => { instanceContainer.DoUndo(); instanceContainer.logicCalculation.CompileOptionActionEdits(); }, "Undo last action") },
-                { "y", new( () => { instanceContainer.DoRedo(); instanceContainer.logicCalculation.CompileOptionActionEdits(); }, "Redo last undo action") },
-                { "s", new(() => {
-                    var Result = NativeFileDialogSharp.Dialog.FileSave("mmrtsav");
-                    if (Result.IsOk) { instanceContainer.SaveInstance(Result.Path); } }, "Save as") },
+                { "z", new(() => { instanceContainer.DoUndo(); instanceContainer.logicCalculation.CompileOptionActionEdits(); }, "Undo last action") },
+                { "y", new(() => { instanceContainer.DoRedo(); instanceContainer.logicCalculation.CompileOptionActionEdits(); }, "Redo last undo action") },
+                { "s", new(SaveInstance, "Save as") },
+                { "r", new(ImportSpoilerLog, "Import Spoiler Log") },
                 { "h", new(() => { ShowHelp = !ShowHelp; }, "Toggle Help Menu") },
             };
             while (true)
@@ -88,11 +88,7 @@ namespace CLIFrontEnd
                         if (instanceContainer.UnsavedChanges)
                         {
                             MenuSelect.Run(["You have Unsaved Changes, would you like to save?"]);
-                            if (MenuSelect.selectedLineIndex == 0)
-                            {
-                                var Result = NativeFileDialogSharp.Dialog.FileSave("mmrtsav");
-                                if (Result.IsOk) { instanceContainer.SaveInstance(Result.Path); }
-                            }
+                            if (MenuSelect.selectedLineIndex == 0) { SaveInstance(); }
                         }
                         return;
                     }
@@ -133,6 +129,34 @@ namespace CLIFrontEnd
                     if (displayType == CLIDisplayListType.Options) { instanceContainer.logicCalculation.CompileOptionActionEdits(); }
                 }
 
+            }
+        }
+
+        private void SaveInstance()
+        {
+            var Result = NativeFileDialogSharp.Dialog.FileSave("mmrtsav");
+            if (Result.IsOk) 
+            { 
+                bool SaveSuccess = instanceContainer.SaveInstance(Result.Path); 
+                if (SaveSuccess) { instanceContainer.UnsavedChanges = false; }
+            }
+        }
+
+        private void ImportSpoilerLog()
+        {
+            if (instanceContainer.Instance.SpoilerLog == null)
+            {
+                var Result = NativeFileDialogSharp.Dialog.FileOpen(SpoilerLogTools.GetSpoilerLogFilter(instanceContainer.Instance).SplitOnce('.', true).Item2);
+                if (Result.IsOk)
+                {
+                    instanceContainer.SaveState();
+                    SpoilerLogTools.ImportSpoilerLog(Result.Path, instanceContainer);
+                }
+            }
+            else
+            {
+                instanceContainer.SaveState();
+                SpoilerLogTools.RemoveSpoilerData(instanceContainer.Instance);
             }
         }
 

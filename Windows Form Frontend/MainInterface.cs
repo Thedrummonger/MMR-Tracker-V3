@@ -216,7 +216,6 @@ namespace Windows_Form_Frontend
             {
                 SaveTrackerState();
                 SpoilerLogTools.RemoveSpoilerData(InstanceContainer.Instance);
-                InstanceContainer.Instance.SpoilerLog = null;
             }
             InstanceContainer.logicCalculation.CalculateLogic();
             UpdateUI();
