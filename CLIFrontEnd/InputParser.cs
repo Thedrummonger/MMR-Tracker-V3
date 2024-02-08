@@ -4,10 +4,6 @@ namespace CLIFrontEnd
 {
     internal class InputParser
     {
-        public static void ParseRawInput(string input)
-        {
-
-        }
 
         public static List<int> ParseIndicesString(string input)
         {

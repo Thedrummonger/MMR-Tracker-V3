@@ -5,10 +5,11 @@ namespace CLIFrontEnd
 {
     internal static class CLIUtility
     {
-        public static MiscData.Divider CreateDivider(string key = "=")
+        public static MiscData.Divider CreateDivider(int KeyPadding = 0, string key = "=")
         {
+            int Width = Console.WindowWidth - KeyPadding;
             string Divider = "";
-            for (var i = 0; i < Console.WindowWidth; i++) { Divider += key; }
+            for (var i = 0; i < Width; i++) { Divider += key; }
             return new MiscData.Divider(Divider);
         }
 

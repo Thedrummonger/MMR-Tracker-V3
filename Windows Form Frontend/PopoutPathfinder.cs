@@ -21,23 +21,20 @@ namespace Windows_Form_Frontend
 
         private void PopoutPathfinder_Load(object sender, EventArgs e)
         {
-            var AccessableAreas = _instance.EntrancePool.AreaList.Values.Where(x => x.ExitsAcessibleFrom > 0 && (x.RandomizableExits().Any() || _instance.StaticOptions.OptionFile.ShowMacroExitsPathfinder)).Select(x => x.ID);
-            comboBox1.DataSource = AccessableAreas.OrderBy(x => x).ToList();
-            comboBox2.DataSource = AccessableAreas.OrderBy(x => x).ToList();
+            comboBox1.DataSource = Pathfinder.GetValidStartingAreas(_instance).OrderBy(x => x).ToArray();
+            comboBox2.DataSource = Pathfinder.GetValidDestinationAreas(_instance).OrderBy(x => x).ToArray();
             listBox1.HorizontalScrollbar = true;
         }
 
         private void comboBox1_DropDown(object sender, EventArgs e)
         {
-            var AccessableAreas = _instance.EntrancePool.AreaList.Values.Where(x => x.ExitsAcessibleFrom > 0 && (x.RandomizableExits().Any() || _instance.StaticOptions.OptionFile.ShowMacroExitsPathfinder)).Select(x => x.ID);
-            comboBox1.DataSource = AccessableAreas.OrderBy(x => x).ToList();
+            comboBox1.DataSource = Pathfinder.GetValidStartingAreas(_instance).OrderBy(x => x).ToArray();
             WinFormUtils.AdjustComboBoxWidth(sender as System.Windows.Forms.ComboBox);
         }
 
         private void comboBox2_DropDown(object sender, EventArgs e)
         {
-            var AccessableAreas = _instance.EntrancePool.AreaList.Values.Where(x => x.ExitsAcessibleFrom > 0 && (x.RandomizableExits().Any() || _instance.StaticOptions.OptionFile.ShowMacroExitsPathfinder)).Select(x => x.ID);
-            comboBox2.DataSource = AccessableAreas.OrderBy(x => x).ToList();
+            comboBox2.DataSource = Pathfinder.GetValidDestinationAreas(_instance).OrderBy(x => x).ToArray();
             WinFormUtils.AdjustComboBoxWidth(sender as System.Windows.Forms.ComboBox);
         }
 

@@ -24,7 +24,7 @@ namespace CLIFrontEnd
                 { "e", new(() => { displayType = instanceContainer.Instance.CombineEntrancesWithLocations() ? CLIDisplayListType.Locations : CLIDisplayListType.Entrances;}, "Displays Available Entrances") },
                 { "c", new(() => { displayType = CLIDisplayListType.Checked; }, "Displays Checked Locations/entrances") },
                 { "o", new(() => { displayType = CLIDisplayListType.Options; }, "Displays Logic Options") },
-                { "p", new(() => { }, "Displays Pathfinder") },
+                { "p", new(() => { displayType = CLIDisplayListType.Pathfinder; }, "Displays Pathfinder") },
                 { "i", new(() => { new ItemPoolEditor().Start(instanceContainer); instanceContainer.logicCalculation.CompileOptionActionEdits(); }, "Item Pool Options") },
                 { "z", new(() => { instanceContainer.DoUndo(); instanceContainer.logicCalculation.CompileOptionActionEdits(); }, "Undo last action") },
                 { "y", new(() => { instanceContainer.DoRedo(); instanceContainer.logicCalculation.CompileOptionActionEdits(); }, "Redo last undo action") },
@@ -51,7 +51,13 @@ namespace CLIFrontEnd
                     case CLIDisplayListType.Options:
                         Objects = ShowOptions();
                         break;
+                    case CLIDisplayListType.Pathfinder:
+                        Pathfinder pathfinder = new Pathfinder(instanceContainer);
+                        pathfinder.Show();
+                        displayType = CLIDisplayListType.Locations;
+                        continue;
                 }
+
 
                 Console.WriteLine(CreateDivider());
                 if (ShowHelp)
@@ -71,7 +77,7 @@ namespace CLIFrontEnd
                     }
                     Console.WriteLine(@"\: Use this followed by a search string to filter the list");
                     Console.WriteLine(@"x: Return to the main menu");
-                    Console.WriteLine(CreateDivider());
+                    Console.WriteLine(CreateDivider(1));
                 }
                 else
                 {
@@ -214,7 +220,7 @@ namespace CLIFrontEnd
         {
             Console.Clear();
             instanceContainer.logicCalculation.CalculateLogic();
-            var Data = new MiscData.TrackerLocationDataList(new MiscData.Divider("==========="), instanceContainer, Filter).PrintReverse();
+            var Data = new MiscData.TrackerLocationDataList(new Divider(""), instanceContainer, Filter).PrintReverse();
             Data.WriteHints(MiscData.CheckState.Unchecked);
             if (instanceContainer.Instance.CombineEntrancesWithLocations()) { Data.WriteEntrances(MiscData.CheckState.Unchecked, true); }
             Data.WriteLocations(MiscData.CheckState.Unchecked, true).WriteLocations(MiscData.CheckState.Unchecked, false);
@@ -224,7 +230,7 @@ namespace CLIFrontEnd
         {
             Console.Clear();
             instanceContainer.logicCalculation.CalculateLogic();
-            var Data = new MiscData.TrackerLocationDataList(new MiscData.Divider("==========="), instanceContainer, Filter).PrintReverse();
+            var Data = new MiscData.TrackerLocationDataList(new Divider(""), instanceContainer, Filter).PrintReverse();
             Data.WriteEntrances(MiscData.CheckState.Unchecked, false);
             return PrintData(Data, DisplayListType.Entrances);
         }
@@ -232,7 +238,7 @@ namespace CLIFrontEnd
         {
             Console.Clear();
             instanceContainer.logicCalculation.CalculateLogic();
-            var Data = new TrackerLocationDataList(new Divider("==========="), instanceContainer, Filter).PrintReverse();
+            var Data = new TrackerLocationDataList(new Divider(""), instanceContainer, Filter).PrintReverse();
             if (instanceContainer.Instance.StaticOptions.ShowOptionsInListBox == DisplayListType.Checked) { Data.WriteOptions(); }
             Data.WriteOnlineItems().WriteStartingItems().WriteHints(MiscData.CheckState.Checked).WriteEntrances(MiscData.CheckState.Checked, true)
                 .WriteLocations(MiscData.CheckState.Checked, true).WriteLocations(MiscData.CheckState.Checked, false);
@@ -243,7 +249,7 @@ namespace CLIFrontEnd
         {
             Console.Clear();
             instanceContainer.logicCalculation.CalculateLogic();
-            var Data = new TrackerLocationDataList(new Divider("==========="), instanceContainer, Filter);
+            var Data = new TrackerLocationDataList(new Divider(""), instanceContainer, Filter);
             Data.WriteOptions();
             return PrintData(Data, null);
         }
@@ -255,13 +261,15 @@ namespace CLIFrontEnd
             bool InMinimized = false;
             foreach (var LocationObject in Locations)
             {
-                if (Source is not null && LocationObject.Value is Areaheader area)
+                object Value = LocationObject.Value;
+                if (Source is not null && Value is Areaheader area)
                 {
                     InMinimized = area.IsMinimized((DisplayListType)Source, instanceContainer.Instance.StaticOptions);
                     if (InMinimized) { area.DisplayOverride = area.Area + " ---"; }
                 }
                 else if (InMinimized) { continue; }
-                Console.WriteLine($"{LocationObject.Key.ToString($"D{Padding}")}: {LocationObject.Value}");
+                if (Value is MiscData.Divider) { Value = CLIUtility.CreateDivider(LocationObject.Key.ToString($"D{Padding}").Length + 3); }
+                Console.WriteLine($"{LocationObject.Key.ToString($"D{Padding}")}: {Value}");
             }
             return Locations;
         }

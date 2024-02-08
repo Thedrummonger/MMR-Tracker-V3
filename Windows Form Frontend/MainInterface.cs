@@ -397,9 +397,8 @@ namespace Windows_Form_Frontend
 
             string CurrentStart = (string)CMBStart.SelectedItem ?? "";
             string CurrentEnd = (string)CMBEnd.SelectedItem ?? "";
-            var AccessableAreas = InstanceContainer.Instance.EntrancePool.AreaList.Values.Where(x => x.ExitsAcessibleFrom > 0 && (x.RandomizableExits().Any() || InstanceContainer.Instance.StaticOptions.OptionFile.ShowMacroExitsPathfinder)).Select(x => x.ID);
-            CMBStart.DataSource = AccessableAreas.OrderBy(x => x).ToList();
-            CMBEnd.DataSource = AccessableAreas.OrderBy(x => x).ToList();
+            CMBStart.DataSource = Pathfinder.GetValidStartingAreas(InstanceContainer.Instance).OrderBy(x => x).ToArray();
+            CMBEnd.DataSource = Pathfinder.GetValidDestinationAreas(InstanceContainer.Instance).OrderBy(x => x).ToArray();
             if (CMBStart.Items.Contains(CurrentStart)) { CMBStart.SelectedIndex = CMBStart.Items.IndexOf(CurrentStart); }
             if (CMBEnd.Items.Contains(CurrentEnd)) { CMBEnd.SelectedIndex = CMBEnd.Items.IndexOf(CurrentEnd); }
 

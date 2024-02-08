@@ -1,6 +1,8 @@
-﻿using MMR_Tracker_V3.TrackerObjectExtensions;
+﻿using MathNet.Numerics;
+using MMR_Tracker_V3.TrackerObjectExtensions;
 using MMR_Tracker_V3.TrackerObjects;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 
 namespace MMR_Tracker_V3
@@ -123,6 +125,33 @@ namespace MMR_Tracker_V3
             {
                 return Display;
             }
+        }
+
+        public static string[] GetValidStartingAreas(InstanceData.TrackerInstance Instance)
+        {
+            HashSet<string> result = [];
+            bool CanMacro = Instance.StaticOptions.OptionFile.ShowMacroExitsPathfinder;
+            foreach (var i in Instance.EntrancePool.AreaList)
+            {
+                var ExitsToCheck = CanMacro ? i.Value.Exits.Values : i.Value.RandomizableExits().Values;
+                if (!ExitsToCheck.Any(x => x.CheckState == MiscData.CheckState.Checked)) { continue; }
+                result.Add(i.Key);
+            }
+            return [.. result];
+        }
+        public static string[] GetValidDestinationAreas(InstanceData.TrackerInstance Instance)
+        {
+            HashSet<string> result = [];
+            bool CanMacro = Instance.StaticOptions.OptionFile.ShowMacroExitsPathfinder;
+            var AllExits = Instance.EntrancePool.AreaList.Values.SelectMany(x => x.Exits.Values);
+            var ExitsToCheck = CanMacro ? AllExits : Instance.EntrancePool.GetAllRandomizableExits();
+            foreach (var i in ExitsToCheck)
+            {
+                if (i.CheckState != MiscData.CheckState.Checked) { continue; }
+                if (i.DestinationExit == null) { continue; }
+                result.Add(i.DestinationExit.region);
+            }
+            return [.. result];
         }
     }
 }
