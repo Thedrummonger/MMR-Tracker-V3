@@ -257,6 +257,7 @@ namespace CLIFrontEnd
         private Dictionary<int, object> PrintData(TrackerLocationDataList Data, DisplayListType? Source)
         {
             Dictionary<int, object> Locations = Data.FinalData.Select((s, index) => new { s, index }).ToDictionary(x => x.index + 1, x => x.s);
+            if (Locations.Count == 0) { return Locations; }
             int Padding = Locations.Keys.Max().ToString().Length;
             bool InMinimized = false;
             foreach (var LocationObject in Locations)

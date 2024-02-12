@@ -102,6 +102,7 @@ namespace CLIFrontEnd
             List<ItemData.ItemObject> Items = container.Instance.ItemPool.Values.Where(x => x.ValidStartingItem() && (x.GetAmountLeftToPlace() > 0 || x.AmountInStartingpool > 0)).ToList();
             Items = Items.Where(x => SearchStringParser.FilterSearch(container.Instance, x, filter, x.GetDictEntry().GetName())).ToList();
             Dictionary<int, ItemData.ItemObject> StartingItems = Items.Select((s, index) => new { s, index }).ToDictionary(x => x.index + 1, x => x.s);
+            if (StartingItems.Count == 0) { return StartingItems; }
             int Padding = StartingItems.Keys.Max().ToString().Length;
             foreach (var LocationObject in StartingItems)
             {
@@ -140,6 +141,7 @@ namespace CLIFrontEnd
             List<CheckableLocation> checkableLocations = objects.Where(x => x is CheckableLocation).Cast<CheckableLocation>().ToList();
             checkableLocations = checkableLocations.Where(x => SearchStringParser.FilterSearch(container.Instance, x, filter, x.GetName())).ToList();
             Dictionary<int, CheckableLocation> Locations = checkableLocations.Select((s, index) => new { s, index }).ToDictionary(x => x.index + 1, x => x.s);
+            if (Locations.Count == 0) { return Locations; }
             int Padding = Locations.Keys.Max().ToString().Length;
             foreach (var LocationObject in Locations)
             {
@@ -176,6 +178,7 @@ namespace CLIFrontEnd
             IEnumerable<MacroObject> Tricks = container.Instance.MacroPool.Values.Where(x => x.isTrick())??[];
             Tricks = Tricks.Where(x => SearchStringParser.FilterSearch(container.Instance, x, filter, x.GetName())).ToList();
             Dictionary<int, MacroObject> Locations = Tricks.Select((s, index) => new { s, index }).ToDictionary(x => x.index + 1, x => x.s);
+            if (Locations.Count == 0) { return Locations; }
             int Padding = Locations.Keys.Max().ToString().Length;
             foreach (var LocationObject in Locations)
             {

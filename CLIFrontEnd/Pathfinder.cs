@@ -15,12 +15,16 @@ namespace CLIFrontEnd
     {
         public void Show()
         {
+            var ValidStartingAreas = MMR_Tracker_V3.Pathfinder.GetValidStartingAreas(container.Instance);
+            var ValidDestinationAreas = MMR_Tracker_V3.Pathfinder.GetValidDestinationAreas(container.Instance);
+            if (ValidStartingAreas.Length == 0 || ValidDestinationAreas.Length == 0) { return; }
+
             string selectedStartingArea = null;
             string selectedDestinationArea = null;
             while (selectedStartingArea ==  null)
             {
                 Console.Clear();
-                var StartingAreas = PrintStartingAreas();
+                var StartingAreas = PrintAreas(ValidStartingAreas.OrderBy(x => x));
                 Console.WriteLine(CLIUtility.CreateDivider());
                 Console.WriteLine("Select Starting Area");
                 if (!int.TryParse(Console.ReadLine(), out int selectedStartingAreaInd) ||
@@ -33,7 +37,7 @@ namespace CLIFrontEnd
             while (selectedDestinationArea == null)
             {
                 Console.Clear();
-                var DestinationAreas = PrintDestinationAreas();
+                var DestinationAreas = PrintAreas(ValidDestinationAreas.OrderBy(x => x));
                 Console.WriteLine(CLIUtility.CreateDivider());
                 Console.WriteLine("Select Destination Area");
                 if (!int.TryParse(Console.ReadLine(), out int selectedDestinationAreaInd) ||
@@ -56,15 +60,6 @@ namespace CLIFrontEnd
                 }
             }
             Console.ReadLine();
-        }
-
-        private Dictionary<int, string> PrintStartingAreas()
-        {
-            return PrintAreas(MMR_Tracker_V3.Pathfinder.GetValidStartingAreas(container.Instance).OrderBy(x => x));
-        }
-        private Dictionary<int, string> PrintDestinationAreas()
-        {
-            return PrintAreas(MMR_Tracker_V3.Pathfinder.GetValidDestinationAreas(container.Instance).OrderBy(x => x));
         }
 
         private Dictionary<int, string> PrintAreas(IEnumerable<string> Areas)
