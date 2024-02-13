@@ -75,7 +75,7 @@ namespace MMR_Tracker_V3.Logic
             return instance.LocationPool.Values.Any(x =>
                 x.CheckState == CheckState.Checked &&
                 IsAtProperCheck(x, ShouldBeRepeatable) &&
-                x.Randomizeditem.OwningPlayer == -1 &&
+                x.Randomizeditem.OwningPlayer == instance.GetParentContainer().netConnection.PlayerID &&
                 x.Randomizeditem.Item == item.ID);
             bool IsAtProperCheck(LocationData.LocationObject x, bool ShouldBeRepeatable)
             {
@@ -90,9 +90,8 @@ namespace MMR_Tracker_V3.Logic
             bool IsLitteral = Parameters[0].IsLiteralID(out string CleanedID);
             instance.GetLocationEntryType(CleanedID, IsLitteral, out dynamic OBJ);
             if (OBJ is null) { Debug.WriteLine($"{Parameters[0]} is not a valid logic Entry"); return false; }
-            if (!Utility.DynamicPropertyExist(OBJ, "RandomizedState")) { Debug.WriteLine($"{Parameters[0]} is not a randomizable entry"); return false; }
-            RandomizedState randomizedState = OBJ.RandomizedState;
-            return randomizedState == RandomizedState.Randomized != Inverse;
+            if (OBJ is not CheckableLocation CLO) { Debug.WriteLine($"{Parameters[0]} is not a randomizable entry"); return false; }
+            return CLO.RandomizedState == RandomizedState.Randomized != Inverse;
         }
 
         private static bool CheckTrickEnabledFunction(InstanceData.TrackerInstance instance, string Function, string[] Parameters)
@@ -127,45 +126,36 @@ namespace MMR_Tracker_V3.Logic
             var OptionType = instance.GetLocationEntryType(Parameters[0], false, out _);
             bool Inverse = Parameters.Length > 2 && bool.TryParse(Parameters[2], out bool inverseValue) && !inverseValue;
 
-            if (OptionType == LogicEntryType.ToggleOption)
+            switch (OptionType)
             {
-                var TogOpt = instance.ToggleOptions[Parameters[0]];
-                if (Parameters.Length < 2 || TogOpt.Enabled.ID == Parameters[1]) { return TogOpt.GetValue() == TogOpt.Enabled != Inverse; }
-                else if (TogOpt.Disabled.ID == Parameters[1]) { return TogOpt.GetValue() == TogOpt.Disabled != Inverse; }
-                else if (bool.TryParse(Parameters[1], out bool ParamBool))
-                {
-                    if (ParamBool) { return TogOpt.GetValue() == TogOpt.Enabled != Inverse; }
-                    else { return TogOpt.GetValue() == TogOpt.Disabled != Inverse; }
-                }
-                else
-                {
+                case LogicEntryType.ToggleOption:
+                    var TogOpt = instance.ToggleOptions[Parameters[0]];
+                    if (Parameters.Length < 2 || TogOpt.Enabled.ID == Parameters[1]) { return TogOpt.GetValue() == TogOpt.Enabled != Inverse; }
+                    else if (TogOpt.Disabled.ID == Parameters[1]) { return TogOpt.GetValue() == TogOpt.Disabled != Inverse; }
+                    else if (TogOpt.Enabled.ID == Parameters[1]) { return TogOpt.GetValue() == TogOpt.Enabled != Inverse; }
+                    else if (bool.TryParse(Parameters[1], out bool ParamBool))
+                    {
+                        if (ParamBool) { return TogOpt.GetValue() == TogOpt.Enabled != Inverse; }
+                        else { return TogOpt.GetValue() == TogOpt.Disabled != Inverse; }
+                    }
+                    else { return false; }
+                case LogicEntryType.ChoiceOption:
+                    var ChoiceOpt = instance.ChoiceOptions[Parameters[0]];
+                    if (Parameters.Length < 2) { return false; } //Not enough values passed
+                    if (!ChoiceOpt.ValueList.ContainsKey(Parameters[1])) { Debug.WriteLine($"{Parameters[1]} was not a valid Value for option {ChoiceOpt.ID}"); }
+                    return ChoiceOpt.GetValue().ID == Parameters[1] != Inverse;
+                case LogicEntryType.MultiSelectOption:
+                    var MultiOpt = instance.MultiSelectOptions[Parameters[0]];
+                    if (Parameters.Length < 2) { return false; } //Not enough values passed
+                    if (!MultiOpt.ValueList.ContainsKey(Parameters[1])) { Debug.WriteLine($"{Parameters[1]} was not a valid Value for option {MultiOpt.ID}"); }
+                    return MultiOpt.EnabledValues.Contains(Parameters[1]) != Inverse;
+                case LogicEntryType.IntOption:
+                    var IntOpt = instance.IntOptions[Parameters[0]];
+                    if (Parameters.Length < 2) { return false; } //Not enough values passed
+                    if (!int.TryParse(Parameters[1], out int ParamInt)) { return false; }
+                    return IntOpt.Value == ParamInt != Inverse;
+                default:
                     return false;
-                }
-            }
-            else if (OptionType == LogicEntryType.ChoiceOption)
-            {
-                var ChoiceOpt = instance.ChoiceOptions[Parameters[0]];
-                if (Parameters.Length < 2) { return false; } //Not enough values passed
-                if (!ChoiceOpt.ValueList.ContainsKey(Parameters[1])) { Debug.WriteLine($"{Parameters[1]} was not a valid Value for option {ChoiceOpt.ID}"); }
-                return ChoiceOpt.GetValue().ID == Parameters[1] != Inverse;
-            }
-            else if (OptionType == LogicEntryType.MultiSelectOption)
-            {
-                var ChoiceOpt = instance.MultiSelectOptions[Parameters[0]];
-                if (Parameters.Length < 2) { return false; } //Not enough values passed
-                if (!ChoiceOpt.ValueList.ContainsKey(Parameters[1])) { Debug.WriteLine($"{Parameters[1]} was not a valid Value for option {ChoiceOpt.ID}"); }
-                return ChoiceOpt.EnabledValues.Contains(Parameters[1]) != Inverse;
-            }
-            else if (OptionType == LogicEntryType.IntOption)
-            {
-                var IntOpt = instance.IntOptions[Parameters[0]];
-                if (Parameters.Length < 2) { return false; } //Not enough values passed
-                if (!int.TryParse(Parameters[1], out int ParamInt)) { return false; }
-                return IntOpt.Value == ParamInt != Inverse;
-            }
-            else
-            {
-                return false;
             }
         }
 
@@ -190,22 +180,33 @@ namespace MMR_Tracker_V3.Logic
 
             bool inverse = Parameters.Length > 2 && bool.TryParse(Parameters[2], out bool inverseValue) && !inverseValue; //If a third param is passed and its a false bool, invert the result
 
-            bool RequiremntMet = false;
+            List<CheckableLocation> ValidEntries = [];
             foreach (var currentOption in OptionList)
             {
                 var CurrentOptionType = instance.GetLocationEntryType(currentOption, false, out object CurrentOptionEntry);
-                foreach (var CurrentValue in ValueList)
+                if (CurrentOptionType == LogicEntryType.location && 
+                    CurrentOptionEntry is CheckableLocation CLO && 
+                    (CurrentOptionEntry as LocationData.LocationObject).GetItemAtCheck() is not null)
                 {
-                    //This should always return whatever value will result in false if the item is unknown. This is because checking a location should never 
-                    //result in another location becoming unavilable otherwise we could enter an infinite loop if both those location are checked automatically
-                    if (CurrentOptionType == LogicEntryType.location && instance.GetLocationByID(currentOption)?.GetItemAtCheck() == null) { RequiremntMet = inverse; }
-                    else if (CurrentOptionType == LogicEntryType.location && instance.GetLocationByID(currentOption)?.GetItemAtCheck() == CurrentValue) { RequiremntMet = true; }
-                    else if (CurrentOptionType == LogicEntryType.Exit && (CurrentOptionEntry as EntranceData.EntranceRandoExit)?.DestinationExit == null) { RequiremntMet = inverse; }
-                    else if (CurrentOptionType == LogicEntryType.Exit && (CurrentOptionEntry as EntranceData.EntranceRandoExit).LeadsToArea(CurrentValue)) { RequiremntMet = true; }
+                    ValidEntries.Add(CLO);
+                }
+                else if (CurrentOptionType == LogicEntryType.Exit && 
+                    CurrentOptionEntry is CheckableLocation CLE && 
+                    (CurrentOptionEntry as EntranceData.EntranceRandoExit).DestinationExit is not null)
+                {
+                    ValidEntries.Add(CLE);
                 }
             }
-            return RequiremntMet != inverse;
-
+            if (ValidEntries.Count == 0) { return false; }
+            foreach(var Location in ValidEntries)
+            {
+                foreach(var Item in ValueList)
+                {
+                    if (Location is LocationData.LocationObject LO && LO.GetItemAtCheck() == Item) { return !inverse; }
+                    else if (Location is EntranceData.EntranceRandoExit EO && EO.LeadsToArea(Item)) {  return !inverse; }
+                }
+            }
+            return inverse;
         }
     }
     internal class MMRSettingExpressionParser
