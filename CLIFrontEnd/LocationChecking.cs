@@ -73,11 +73,7 @@ namespace CLIFrontEnd
                 Console.Clear();
                 var ValidItems = Location.GetValidItems(Filter);
                 Dictionary<int, ItemData.ItemObject> Items = ValidItems.Select((s, index) => new { s, index }).ToDictionary(x => x.index + 1, x => x.s);
-                int Padding = Items.Keys.Max().ToString().Length;
-                foreach (var i in Items)
-                {
-                    Console.WriteLine($"{i.Key.ToString($"D{Padding}")}: {i.Value}");
-                }
+                PrintItems(Items);
                 Console.WriteLine(CLIUtility.CreateDivider());
                 Console.WriteLine("Select Item at " + Location.GetDictEntry().GetName());
                 var input = Console.ReadLine() ?? "";
@@ -100,11 +96,7 @@ namespace CLIFrontEnd
                 Console.Clear();
                 Dictionary<int, EntranceData.EntranceRandoDestination> EnteredItems = Instance.GetAllLoadingZoneDestinations(Filter)
                     .Select((s, index) => new { s, index }).ToDictionary(x => x.index + 1, x => x.s);
-                int Padding = EnteredItems.Keys.Max().ToString().Length;
-                foreach (var Entry in EnteredItems)
-                {
-                    Console.WriteLine($"{Entry.Key.ToString($"D{Padding}")}: {Entry.Value}");
-                }
+                PrintItems(EnteredItems);
                 Console.WriteLine(CLIUtility.CreateDivider());
                 Console.WriteLine("Select Destination at Exit " + Exit.GetParentArea().ID + " -> " + Exit.ExitID);
                 var input = Console.ReadLine() ?? "";
@@ -127,11 +119,7 @@ namespace CLIFrontEnd
                 Console.Clear();
                 var ValidItems = Option.ValueList.Values;
                 Dictionary<int, OptionData.OptionValue> Items = ValidItems.Select((s, index) => new { s, index }).ToDictionary(x => x.index + 1, x => x.s);
-                int Padding = Items.Keys.Max().ToString().Length;
-                foreach (var i in Items)
-                {
-                    Console.WriteLine($"{i.Key.ToString($"D{Padding}")}: {i.Value}");
-                }
+                PrintItems(Items);
                 Console.WriteLine(CLIUtility.CreateDivider());
                 Console.WriteLine("Select Value for " + Option.getOptionName() + $" Current: {Option.Value}");
                 var input = Console.ReadLine() ?? "";
@@ -151,6 +139,15 @@ namespace CLIFrontEnd
             Console.WriteLine($"Enter Hint at {HintSpot.ID}");
             string hint = Console.ReadLine();
             return new MiscData.ManualCheckObjectResult(HintSpot, hint);
+        }
+        private static void PrintItems<T>(Dictionary<int, T> Items)
+        {
+            if (Items.Count == 0) { return; }
+            int Padding = Items.Keys.Max().ToString().Length;
+            foreach (var i in Items)
+            {
+                Console.WriteLine($"{i.Key.ToString($"D{Padding}")}: {i.Value}");
+            }
         }
     }
 }
