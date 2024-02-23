@@ -7,6 +7,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using TestingForm;
 using static MMR_Tracker_V3.GameDataCreation.OOTMMV2.OOTMMUtil;
 using static TestingForm.GameDataCreation.OOTMMV2.datamodel;
 
@@ -19,11 +20,11 @@ namespace MMR_Tracker_V3.GameDataCreation.OOTMMV2
 
             LogicDictionaryData.LogicDictionary logicDictionaryData = new LogicDictionaryData.LogicDictionary() { GameCode = "OOTMM", RootArea = "OOT SPAWN", LogicVersion = 2 };
 
-            List<MMROOTLocation> OOTPool = JsonConvert.DeserializeObject<List<MMROOTLocation>>(Utility.ConvertCsvFileToJsonObject(File.ReadAllLines(OTTMMPaths.OOTPoolFile)));
-            List<MMROOTLocation> MMPool = JsonConvert.DeserializeObject<List<MMROOTLocation>>(Utility.ConvertCsvFileToJsonObject(File.ReadAllLines(OTTMMPaths.MMPoolFile)));
+            List<MMROOTLocation> OOTPool = JsonConvert.DeserializeObject<List<MMROOTLocation>>(TestingUtility.ConvertCsvFileToJsonObject(File.ReadAllLines(OTTMMPaths.OOTPoolFile)));
+            List<MMROOTLocation> MMPool = JsonConvert.DeserializeObject<List<MMROOTLocation>>(TestingUtility.ConvertCsvFileToJsonObject(File.ReadAllLines(OTTMMPaths.MMPoolFile)));
 
-            List<MMROOTHintData> OOTGossips = JsonConvert.DeserializeObject<List<MMROOTHintData>>(Utility.ConvertCsvFileToJsonObject(File.ReadAllLines(OTTMMPaths.OOTHintFile)));
-            List<MMROOTHintData> MMGossips = JsonConvert.DeserializeObject<List<MMROOTHintData>>(Utility.ConvertCsvFileToJsonObject(File.ReadAllLines(OTTMMPaths.MMHintFile)));
+            List<MMROOTHintData> OOTGossips = JsonConvert.DeserializeObject<List<MMROOTHintData>>(TestingUtility.ConvertCsvFileToJsonObject(File.ReadAllLines(OTTMMPaths.OOTHintFile)));
+            List<MMROOTHintData> MMGossips = JsonConvert.DeserializeObject<List<MMROOTHintData>>(TestingUtility.ConvertCsvFileToJsonObject(File.ReadAllLines(OTTMMPaths.MMHintFile)));
 
             Dictionary<string, string> TrickList = JsonConvert.DeserializeObject<Dictionary<string, string>>(File.ReadAllText(OTTMMPaths.TricksFile));
             List<string> ItemList = JsonConvert.DeserializeObject<List<string>>(File.ReadAllText(OTTMMPaths.ItemsFile));
@@ -122,8 +123,8 @@ namespace MMR_Tracker_V3.GameDataCreation.OOTMMV2
 
             static void CreateEntranceConnections(OOTMMParserData OTTMMPaths, LogicDictionaryData.LogicDictionary logicDictionaryData)
             {
-                var OOTEntrances = JsonConvert.DeserializeObject<List<MMROOTEntranceData>>(Utility.ConvertCsvFileToJsonObject(File.ReadAllLines(OTTMMPaths.OOTEntrancesFile)));
-                var MMEntrances = JsonConvert.DeserializeObject<List<MMROOTEntranceData>>(Utility.ConvertCsvFileToJsonObject(File.ReadAllLines(OTTMMPaths.MMEntrancesFile)));
+                var OOTEntrances = JsonConvert.DeserializeObject<List<MMROOTEntranceData>>(TestingUtility.ConvertCsvFileToJsonObject(File.ReadAllLines(OTTMMPaths.OOTEntrancesFile)));
+                var MMEntrances = JsonConvert.DeserializeObject<List<MMROOTEntranceData>>(TestingUtility.ConvertCsvFileToJsonObject(File.ReadAllLines(OTTMMPaths.MMEntrancesFile)));
 
                 foreach (var Connection in OTTMMPaths.AreaConnections)
                 {

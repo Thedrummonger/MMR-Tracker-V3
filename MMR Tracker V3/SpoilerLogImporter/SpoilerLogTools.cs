@@ -101,5 +101,10 @@ namespace MMR_Tracker_V3.SpoilerLogImporter
             }
             instance.SpoilerLog = null;
         }
+
+        public static bool CheckForSpoilerLog(InstanceData.TrackerInstance logic)
+        {
+            return logic.LocationPool.Values.Any(x => !string.IsNullOrWhiteSpace(x.Randomizeditem.SpoilerLogGivenItem));
+        }
     }
 }

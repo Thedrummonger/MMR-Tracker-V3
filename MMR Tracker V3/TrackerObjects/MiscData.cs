@@ -162,7 +162,7 @@ namespace MMR_Tracker_V3.TrackerObjects
                 InstanceContainer = _InstanceContainer;
                 Filter = _Filter;
                 DataSets = _DataSets is null ? CreateDataSets(Instance) : _DataSets;
-                Categories = _Categories is null ? Utility.GetCategoriesFromFile(Instance) : _Categories;
+                Categories = _Categories is null ? CategoryFileHandling.GetCategoriesFromFile(Instance) : _Categories;
             }
             public TrackerLocationDataList Reset() { FinalData = []; ItemsFound = 0; ItemsDisplayed = 0; return this; }
             public TrackerLocationDataList PrintReverse(bool reverse = true) { Reverse = reverse; return this; }

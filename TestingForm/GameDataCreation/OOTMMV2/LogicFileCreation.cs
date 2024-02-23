@@ -8,6 +8,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using TestingForm;
 using TestingForm.GameDataCreation.OOTMMV2;
 using static MMR_Tracker_V3.GameDataCreation.OOTMMV2.OOTMMUtil;
 using static TestingForm.GameDataCreation.OOTMMV2.datamodel;
@@ -44,7 +45,7 @@ namespace MMR_Tracker_V3.GameDataCreation.OOTMMV2
 
             void AddMacroFile(string MacroFile, string GameCode)
             {
-                var FileOBJ = JsonConvert.DeserializeObject<Dictionary<string, string>>(Utility.ConvertYamlStringToJsonString(File.ReadAllText(MacroFile)));
+                var FileOBJ = JsonConvert.DeserializeObject<Dictionary<string, string>>(TestingUtility.ConvertYamlStringToJsonString(File.ReadAllText(MacroFile)));
                 foreach (var item in FileOBJ)
                 {
                     if (IsOOTMMLogicFunction(item.Key, out string Func, out string Params, new('(', ')')))
@@ -65,7 +66,7 @@ namespace MMR_Tracker_V3.GameDataCreation.OOTMMV2
             {
                 foreach (var WorldFile in files)
                 {
-                    var FileOBJ = JsonConvert.DeserializeObject<Dictionary<string, MMROOTLogicEntry>>(Utility.ConvertYamlStringToJsonString(File.ReadAllText(WorldFile)));
+                    var FileOBJ = JsonConvert.DeserializeObject<Dictionary<string, MMROOTLogicEntry>>(TestingUtility.ConvertYamlStringToJsonString(File.ReadAllText(WorldFile)));
                     foreach (var Area in FileOBJ)
                     {
                         foreach (var Location in Area.Value.locations)

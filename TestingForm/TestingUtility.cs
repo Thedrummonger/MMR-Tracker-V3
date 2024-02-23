@@ -3,6 +3,7 @@ using MMR_Tracker_V3.TrackerObjectExtensions;
 using MMR_Tracker_V3.TrackerObjects;
 using Newtonsoft.Json;
 using System.Diagnostics;
+using YamlDotNet.Serialization;
 using static MMR_Tracker_V3.References;
 #pragma warning disable CS8602 // Dereference of a possibly null reference.
 #pragma warning disable CS8603 // Possible null reference return.
@@ -81,6 +82,58 @@ namespace TestingForm
                 PathsUpdated = true;
             }
             if (PathsUpdated) { File.WriteAllText(Globalpaths.DevFile, JsonConvert.SerializeObject(DevINI, MMR_Tracker_V3.Utility.DefaultSerializerSettings)); }
+        }
+
+        /// <summary>
+        /// Converts the given YAML string to a serialized JSON string
+        /// </summary>
+        /// <param name="YAML">YAML string</param>
+        /// <param name="Format">Whether or not to format the resulting JSON string</param>
+        /// <returns></returns>
+        public static string ConvertYamlStringToJsonString(string YAML, bool Format = false)
+        {
+            var deserializer = new YamlDotNet.Serialization.DeserializerBuilder().Build();
+            object yamlIsDumb = deserializer.Deserialize<object>(YAML);
+            if (Format) { return JsonConvert.SerializeObject(yamlIsDumb, Utility.DefaultSerializerSettings); }
+            return JsonConvert.SerializeObject(yamlIsDumb);
+        }
+
+        /// <summary>
+        /// Converts the Given object to a YAML string
+        /// </summary>
+        /// <param name="OBJ">The source Object</param>
+        /// <returns></returns>
+        public static string ConvertObjectToYamlString(object OBJ)
+        {
+            var serializer = new SerializerBuilder().Build();
+            var stringResult = serializer.Serialize(OBJ);
+            return stringResult;
+        }
+        public static string ConvertCsvFileToJsonObject(string[] lines)
+        {
+            var csv = new List<string[]>();
+
+            var properties = lines[0].Split(',');
+
+            foreach (string line in lines)
+            {
+                var LineData = line.Split(',');
+                csv.Add(LineData);
+            }
+
+            var listObjResult = new List<Dictionary<string, string>>();
+
+            for (int i = 1; i < lines.Length; i++)
+            {
+                if (string.IsNullOrWhiteSpace(lines[i])) { continue; }
+                var objResult = new Dictionary<string, string>();
+                for (int j = 0; j < properties.Length; j++)
+                    objResult.Add(properties[j].Trim(), csv[i][j].Trim());
+
+                listObjResult.Add(objResult);
+            }
+
+            return JsonConvert.SerializeObject(listObjResult, Utility.DefaultSerializerSettings);
         }
     }
 }

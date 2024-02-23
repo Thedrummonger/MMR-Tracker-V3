@@ -124,6 +124,14 @@ namespace MMR_Tracker_V3.Logic
             NewConditionals.RemoveAll(x => !x.Any());
             entry.ConditionalItems = NewConditionals;
         }
+
+        public static MMRData.JsonFormatLogicItem CreateInaccessibleLogic(string ID) => new()
+        {
+            Id = ID,
+            RequiredItems = new List<string> { "false" },
+            ConditionalItems = new List<List<string>>(),
+            IsTrick = false
+        };
     }
     public static class LogicStringConverter
     {
