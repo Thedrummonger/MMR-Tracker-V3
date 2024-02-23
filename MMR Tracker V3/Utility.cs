@@ -43,6 +43,14 @@ namespace MMR_Tracker_V3
             string Serialized = JsonConvert.SerializeObject(source);
             return JsonConvert.DeserializeObject<T>(Serialized);
         }
+        public static List<T> EnumAsArray<T>()
+        {
+            return Enum.GetValues(typeof(T)).Cast<T>().ToList();
+        }
+        public static List<string> EnumValuesAsArray<T>()
+        {
+            return EnumAsArray<T>().Select(x => x.ToString()).ToList();
+        }
         public static Tuple<string, string> SplitOnce(this string input, char Split, bool LastOccurrence = false)
         {
             int idx = LastOccurrence ? input.LastIndexOf(Split) : input.IndexOf(Split);

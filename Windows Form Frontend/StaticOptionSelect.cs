@@ -40,8 +40,8 @@ namespace Windows_Form_Frontend
             }
         }
 
-        private List<MiscData.UILayout> UILayoutsENUM = Enum.GetValues(typeof(MiscData.UILayout)).Cast<MiscData.UILayout>().ToList();
-        private List<string> UILayoutsSTRING = Enum.GetValues(typeof(MiscData.UILayout)).Cast<MiscData.UILayout>().Select(x => x.ToString()).ToList();
+        private List<MiscData.UILayout> UILayoutsENUM = Utility.EnumAsArray<MiscData.UILayout>();
+        private List<string> UILayoutsSTRING = Utility.EnumValuesAsArray<MiscData.UILayout>();
 
         private List<OptionLine> OptionLines = new List<OptionLine>();
         private void PopulateOptions()
