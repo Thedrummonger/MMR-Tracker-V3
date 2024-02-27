@@ -334,9 +334,11 @@ namespace Windows_Form_Frontend
             }
             else if (e.Button == MouseButtons.Right)
             {
-                LB.SelectedItems.Clear();
+                if ((ModifierKeys & Keys.Control) != Keys.Control) { LB.SelectedItems.Clear(); }
                 LB.SetSelected(index, true);
-                ShowContextMenu(LB);
+                //ShowContextMenu(LB);
+                LocationListContextMenu menu = new(this, LB, InstanceContainer);
+                menu.Show();
             }
         }
 
@@ -521,7 +523,7 @@ namespace Windows_Form_Frontend
             lblSwapPathfinder.Visible = Pathfinder;
         }
 
-        private void PrintToListBox(List<ListBox> ToUpdate = null)
+        public void PrintToListBox(List<ListBox> ToUpdate = null)
         {
             var lbLocTop = LBValidLocations.TopIndex;
             var lbEntTop = LBValidEntrances.TopIndex;
@@ -779,207 +781,6 @@ namespace Windows_Form_Frontend
                 return CurrentTree;
             }
 
-        }
-
-        //Context Menus
-
-        private void ShowContextMenu(ListBox listBox)
-        {
-            string LogicID = null;
-            DisplayListType? displayList = null;
-            if (listBox.SelectedItem is EntranceData.EntranceRandoExit LogicexitObject) { LogicID = LogicexitObject.ID; }
-            if (listBox.SelectedItem is LocationData.LocationObject LogicLocationObject) { LogicID = LogicLocationObject.ID; }
-            if (listBox.SelectedItem is HintData.HintObject LogicHintObject) { LogicID = LogicHintObject.ID; }
-            if (listBox.SelectedItem is LocationData.LocationProxy LogicProxyObject) { LogicID = LogicProxyObject.GetDictEntry().LogicInheritance ?? LogicProxyObject.ReferenceID; }
-
-            if (listBox == LBValidLocations) { displayList = DisplayListType.Locations; }
-            if (listBox == LBValidEntrances) { displayList = DisplayListType.Entrances; }
-            if (listBox == LBCheckedLocations) { displayList = DisplayListType.Checked; }
-
-
-            ContextMenuStrip contextMenuStrip = new();
-
-            //Refresh List Box
-            ToolStripItem RefreshContextItem = contextMenuStrip.Items.Add("Refresh");
-            RefreshContextItem.Click += (sender, e) => { PrintToListBox(new List<ListBox> { listBox }); };
-
-            //Navigate to Area
-            if (listBox.SelectedItem is MiscData.Areaheader NavAreaObject &&
-                InstanceContainer.Instance.EntrancePool.AreaList.ContainsKey(NavAreaObject.Area) &&
-                InstanceContainer.Instance.EntrancePool.HasRandomizableEntrances())
-            {
-                ToolStripItem NavigateHereContextItem = contextMenuStrip.Items.Add("Navigate To this area");
-                NavigateHereContextItem.Click += (sender, e) => { CMBEnd.SelectedItem = NavAreaObject.Area; };
-            }
-
-            //Area Object Functions
-            if (listBox.SelectedItem is MiscData.Areaheader AreaObject && displayList is not null)
-            {
-                //Filter By Area
-                var TagetTextBox = listBox == LBValidLocations ? TXTLocSearch : (listBox == LBValidEntrances ? TXTEntSearch : (listBox == LBCheckedLocations ? TXTCheckedSearch : null));
-                ToolStripItem FilterHereContextItem = contextMenuStrip.Items.Add("Filter By this area");
-                FilterHereContextItem.Click += (sender, e) =>
-                {
-                    TagetTextBox.Text = "#" + AreaObject.Area;
-                };
-                bool IsMinimized = AreaObject.IsMinimized((DisplayListType)displayList, InstanceContainer.Instance.StaticOptions);
-                string HideAction = IsMinimized ? "Expand Area" : "Minimize Area";
-                ToolStripItem HideAreaContextItem = contextMenuStrip.Items.Add(HideAction);
-                HideAreaContextItem.Click += (sender, e) =>
-                {
-                    if (IsMinimized) { AreaObject.RemoveMinimized((DisplayListType)displayList, InstanceContainer.Instance.StaticOptions); }
-                    else { AreaObject.SetMinimized((DisplayListType)displayList, InstanceContainer.Instance.StaticOptions); }
-                    PrintToListBox();
-                };
-            }
-
-            //Star Object
-            if (Utility.DynamicPropertyExist(listBox.SelectedItem as dynamic, "Starred"))
-            {
-                dynamic obj = listBox.SelectedItem;
-                string StarFunction = obj.Starred ? "UnStar Location" : "Star Location";
-                ToolStripItem StarContextItem = contextMenuStrip.Items.Add(StarFunction);
-                StarContextItem.Click += (sender, e) => { obj.Starred = !obj.Starred; PrintToListBox(new List<ListBox> { listBox }); };
-            }
-
-            //Show Logic
-            if (LogicID is not null && InstanceContainer.Instance.GetLogic(LogicID) is not null)
-            {
-                ToolStripItem ShowLogicFunction = contextMenuStrip.Items.Add("Show Logic");
-                ShowLogicFunction.Click += (sender, e) => { new ShowLogic(LogicID, InstanceContainer).Show(); };
-            }
-
-            //Show Unlock Data
-            if (LogicID is not null && InstanceContainer.logicCalculation.LogicUnlockData.ContainsKey(LogicID))
-            {
-                ToolStripItem WhatUnlockedThis = contextMenuStrip.Items.Add("What Unlocked This");
-                WhatUnlockedThis.Click += (sender, e) => { ShowUnlockData(LogicID); };
-            }
-
-            //Show Whats Missing
-            if (LogicID is not null && !InstanceContainer.logicCalculation.LogicUnlockData.ContainsKey(LogicID) && InstanceContainer.Instance.SpoilerLog is not null)
-            {
-                ToolStripItem WhatsMissing = contextMenuStrip.Items.Add("Show Missing Items");
-                WhatsMissing.Click += (sender, e) =>
-                {
-                    var missingitems = PlaythroughTools.GetMissingItems(LogicID, InstanceContainer.Instance);
-                    if (missingitems == null) { MessageBox.Show($"{LogicID} Can not be obtained"); return; }
-                    MessageBox.Show($"The Following items are still needed for {LogicID}\n\n{string.Join("\n", missingitems)}");
-                };
-            }
-
-            //Objects Check Functions
-            if ((LogicID is not null) && (listBox == LBValidLocations || listBox == LBValidEntrances))
-            {
-                dynamic TargetLocationObject = listBox.SelectedItem;
-                if (listBox.SelectedItem is LocationData.LocationProxy tp) { TargetLocationObject = InstanceContainer.Instance.GetLocationByID(tp.ReferenceID); }
-                //Check Item
-                ToolStripItem CheckContextItem = contextMenuStrip.Items.Add("Check Location");
-                CheckContextItem.Click += (sender, e) => { HandleItemSelect(new List<object> { listBox.SelectedItem }, MiscData.CheckState.Checked, LB: listBox); };
-                //Mark\UnMark Item
-                string MarkFunction = "Toggle Checked";
-                if (Utility.DynamicPropertyExist(TargetLocationObject, "CheckState"))
-                { MarkFunction = TargetLocationObject.CheckState == MiscData.CheckState.Marked ? "UnMark Location" : "Mark Location"; }
-                ToolStripItem MarkContextItem = contextMenuStrip.Items.Add(MarkFunction);
-                MarkContextItem.Click += (sender, e) => { HandleItemSelect(new List<object> { listBox.SelectedItem }, MiscData.CheckState.Marked, LB: listBox); };
-            }
-
-            //Objects Uncheck Functions
-            if ((LogicID is not null) && listBox == LBCheckedLocations)
-            {
-                //UnCheck Item
-                ToolStripItem CheckContextItem = contextMenuStrip.Items.Add("UnCheck entry");
-                CheckContextItem.Click += (sender, e) => { HandleItemSelect(new List<object> { listBox.SelectedItem }, MiscData.CheckState.Unchecked, LB: listBox); };
-                //Uncheck and Mark Item
-                ToolStripItem MarkContextItem = contextMenuStrip.Items.Add("Mark entry");
-                MarkContextItem.Click += (sender, e) => { HandleItemSelect(new List<object> { listBox.SelectedItem }, MiscData.CheckState.Marked, LB: listBox); };
-            }
-
-            //Variable and Option check Functions
-            if (listBox.SelectedItem is OptionData.ChoiceOption || listBox.SelectedItem is OptionData.ToggleOption || listBox.SelectedItem is OptionData.IntOption)
-            {
-                //UnCheck Item
-                ToolStripItem CheckContextItem = contextMenuStrip.Items.Add("Edit");
-                CheckContextItem.Click += (sender, e) => { HandleItemSelect(new List<object> { listBox.SelectedItem }, MiscData.CheckState.Unchecked, LB: listBox); };
-            }
-
-            //Object Price Edit
-            if (listBox.SelectedItem is CheckableLocation checkableLocation)
-            {
-                checkableLocation.GetPrice(out int p, out char c);
-                string SetPriceText = p > -1 ? "Clear Price" : "Set Price";
-                ToolStripItem SetPrice = contextMenuStrip.Items.Add(SetPriceText);
-                SetPrice.Click += (sender, e) =>
-                {
-                    if (p > -1) { checkableLocation.SetPrice(-1); }
-                    else { SetCheckPrice(checkableLocation); }
-                    InstanceContainer.logicCalculation.CompileOptionActionEdits();
-                    InstanceContainer.logicCalculation.CalculateLogic();
-                    UpdateUI();
-                };
-            }
-
-            //Hide Item
-            if (Utility.DynamicPropertyExist(listBox.SelectedItem, "Hidden"))
-            {
-                dynamic HiddenItem = listBox.SelectedItem;
-                string HiddenText = HiddenItem.Hidden ? "Unhide" : "Hide";
-                ToolStripItem SetHidden = contextMenuStrip.Items.Add(HiddenText);
-                SetHidden.Click += (sender, e) => { HiddenItem.Hidden = !HiddenItem.Hidden; PrintToListBox(new List<ListBox> { listBox }); };
-
-            }
-
-            if (contextMenuStrip.Items.Count > 0)
-            {
-                contextMenuStrip.Show(Cursor.Position);
-            }
-        }
-
-        private void SetCheckPrice(CheckableLocation Object)
-        {
-            var PriceContainer = new List<OptionData.IntOption>() { new(InstanceContainer.Instance) { ID = Object.GetName(), Value = 0 } };
-            VariableInputWindow PriceInput = new(PriceContainer, InstanceContainer);
-            PriceInput.ShowDialog();
-            var ResultPrice = PriceInput._Result.First().GetItem<int>();
-            Object.SetPrice(ResultPrice);
-        }
-
-        private void ShowUnlockData(string iD)
-        {
-            if (!InstanceContainer.logicCalculation.LogicUnlockData.ContainsKey(iD)) { return; }
-            var AdvancedUnlockData = PlaythroughTools.GetAdvancedUnlockData(iD, InstanceContainer.logicCalculation.LogicUnlockData, InstanceContainer.Instance);
-            var DataDisplay = PlaythroughTools.FormatAdvancedUnlockData(AdvancedUnlockData, InstanceContainer.logicCalculation.LogicUnlockData);
-
-            List<dynamic> Items = new List<dynamic>();
-            foreach (var i in DataDisplay)
-            {
-                var FLI = new MiscData.StandardListBoxItem
-                {
-                    Display = i is MiscData.Divider DVIx ? DVIx.Display : i.ToString(),
-                    Tag = i is MiscData.Divider DVIy ? DVIy : i.ToString(),
-                    tagFunc = i is MiscData.Divider ? ShowUnlockSubFunction : null
-                };
-                Items.Add(FLI);
-            }
-
-            BasicDisplay basicDisplay = new BasicDisplay(Items);
-            basicDisplay.Text = $"Unlock Data for {iD}";
-            basicDisplay.Show();
-        }
-
-        private dynamic ShowUnlockSubFunction(dynamic dynamic)
-        {
-            if (dynamic is not ValueTuple<List<ValueTuple<object, bool>>, object> TO || TO.Item2 is not MiscData.Divider DIV) { return null; }
-            List<ValueTuple<object, bool>> Return = new();
-            bool Toggleing = false;
-            foreach (var i in TO.Item1)
-            {
-                bool IsDivider = i.Item1 is MiscData.StandardListBoxItem FLI && FLI.Tag is MiscData.Divider;
-                Toggleing = IsDivider ? ((i.Item1 as MiscData.StandardListBoxItem).Tag as MiscData.Divider).Display == DIV.Display : Toggleing;
-                bool Shown = (Toggleing ? !i.Item2 : i.Item2) || IsDivider;
-                Return.Add((i.Item1, Shown));
-            }
-            return Return;
         }
 
         //ListboxObject Handeling

@@ -48,6 +48,16 @@ namespace Windows_Form_Frontend
                 numericUpDown1.Minimum = IntVariableObject.Min;
                 varType = VarType.Number;
             }
+            else if (_InputItems[0] is PriceContainer PricedObject)
+            {
+                var Location = PricedObject.SourceLocation;
+                string Display = Location.GetName() ?? Location.ID;
+                SetUIElements(false, $"Set Price for {Display}", "Set Value", "Price: " + Display);
+                numericUpDown1.Value = Location.hasPrice() ? (int)Location.Price : 0;
+                numericUpDown1.Maximum = int.MaxValue;
+                numericUpDown1.Minimum = 0;
+                varType = VarType.Price;
+            }
         }
         private void button1_Click(object sender, EventArgs e)
         {
@@ -59,6 +69,10 @@ namespace Windows_Form_Frontend
                     break;
                 case VarType.Number:
                     _Result.Add(new(_InputItems[0] as OptionData.IntOption, (int)numericUpDown1.Value));
+                    //(_InputItems[0] as OptionData.IntOption).Value = (int)numericUpDown1.Value;
+                    break;
+                case VarType.Price:
+                    _Result.Add(new((_InputItems[0] as PriceContainer).SourceLocation, (int)numericUpDown1.Value));
                     //(_InputItems[0] as OptionData.IntOption).Value = (int)numericUpDown1.Value;
                     break;
             }
@@ -87,7 +101,17 @@ namespace Windows_Form_Frontend
             String,
             Number,
             ListOf,
+            Price,
             None
+        }
+
+        public class PriceContainer
+        {
+            public CheckableLocation SourceLocation;
+            public PriceContainer(CheckableLocation source)
+            {
+                SourceLocation = source;
+            }
         }
 
     }
