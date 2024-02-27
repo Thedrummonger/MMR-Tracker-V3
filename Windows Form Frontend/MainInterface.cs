@@ -316,8 +316,7 @@ namespace Windows_Form_Frontend
                 if (LB.Items[index] is MiscData.Areaheader ah && displayList is not null)
                 {
                     bool IsMinimized = ah.IsMinimized((DisplayListType)displayList, InstanceContainer.Instance.StaticOptions);
-                    if (IsMinimized) { ah.RemoveMinimized((DisplayListType)displayList, InstanceContainer.Instance.StaticOptions); }
-                    else { ah.SetMinimized((DisplayListType)displayList, InstanceContainer.Instance.StaticOptions); }
+                    ah.SetMinimized((DisplayListType)displayList, InstanceContainer.Instance.StaticOptions, !IsMinimized);
                     PrintToListBox();
                     return;
                 }

@@ -200,7 +200,7 @@ namespace Windows_Form_Frontend
             TextBox.Text = string.Empty;
             foreach (var item in AreaHeaders)
             {
-                item.SetMinimized(displayList, InstanceContainer.Instance.StaticOptions);
+                item.SetMinimized(displayList, InstanceContainer.Instance.StaticOptions, true);
             }
             mainInterface.PrintToListBox();
         }
@@ -209,7 +209,7 @@ namespace Windows_Form_Frontend
             TextBox.Text = string.Empty;
             foreach (var item in AreaHeaders)
             {
-                item.RemoveMinimized(displayList, InstanceContainer.Instance.StaticOptions);
+                item.SetMinimized(displayList, InstanceContainer.Instance.StaticOptions, false);
             }
             mainInterface.PrintToListBox();
         }

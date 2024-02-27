@@ -35,12 +35,9 @@ namespace MMR_Tracker_V3.TrackerObjects
             {
                 return OptionFile.MinimizedHeaders.Contains(GetHideID(InList));
             }
-            public bool SetMinimized(DisplayListType InList, Options OptionFile)
+            public bool SetMinimized(DisplayListType InList, Options OptionFile, bool Minimize)
             {
-                return OptionFile.MinimizedHeaders.Add(GetHideID(InList));
-            }
-            public bool RemoveMinimized(DisplayListType InList, Options OptionFile)
-            {
+                if (Minimize) { return OptionFile.MinimizedHeaders.Add(GetHideID(InList)); }
                 return OptionFile.MinimizedHeaders.Remove(GetHideID(InList));
             }
         }

@@ -222,7 +222,7 @@ namespace MMR_Tracker_V3
 
             Instance.EntrancePool.RootArea = Instance.LogicDictionary.RootArea ?? "Root";
 
-            new Areaheader { Area = "Hidden Locations" }.SetMinimized(DisplayListType.Locations, Instance.StaticOptions);
+            new Areaheader { Area = "Hidden Locations" }.SetMinimized(DisplayListType.Locations, Instance.StaticOptions, true);
 
             if (Instance.LogicDictionary.DefaultSettings is not null)
             {

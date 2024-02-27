@@ -195,14 +195,8 @@ namespace CLIFrontEnd
             DisplayListType? Source = displayType.ToStandardDisplayListType();
             if (Source is not null && Indexes.Count == 1 && reference.TryGetValue(Indexes[0], out object? value) && value is MiscData.Areaheader AH)
             {
-                if (AH.IsMinimized((DisplayListType)Source, instanceContainer.Instance.StaticOptions))
-                {
-                    AH.RemoveMinimized((DisplayListType)Source, instanceContainer.Instance.StaticOptions);
-                }
-                else
-                {
-                    AH.SetMinimized((DisplayListType)Source, instanceContainer.Instance.StaticOptions);
-                }
+                bool CurrentMinimizeState = AH.IsMinimized((DisplayListType)Source, instanceContainer.Instance.StaticOptions);
+                AH.SetMinimized((DisplayListType)Source, instanceContainer.Instance.StaticOptions, !CurrentMinimizeState);
                 return;
             }
 
