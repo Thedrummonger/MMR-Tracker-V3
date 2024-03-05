@@ -75,18 +75,18 @@ namespace MMR_Tracker_V3
         /// </summary>
         /// <typeparam name="T">The Enum as a type</typeparam>
         /// <returns>An array of <Enum></returns>
-        public static List<T> EnumAsArray<T>()
+        public static IEnumerable<T> EnumAsArray<T>()
         {
-            return Enum.GetValues(typeof(T)).Cast<T>().ToList();
+            return Enum.GetValues(typeof(T)).Cast<T>().ToArray();
         }
         /// <summary>
         /// Creates an array containing the values of the given Enum as strings
         /// </summary>
         /// <typeparam name="T">The Enum as a type</typeparam>
         /// <returns>An array of <string></returns>
-        public static List<string> EnumValuesAsArray<T>()
+        public static IEnumerable<string> EnumAsStringArray<T>()
         {
-            return EnumAsArray<T>().Select(x => x.ToString()).ToList();
+            return EnumAsArray<T>().Select(x => x.ToString()).ToArray();
         }
         /// <summary>
         /// Splits a string by the first occurrence of the given char

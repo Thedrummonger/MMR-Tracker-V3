@@ -40,8 +40,8 @@ namespace Windows_Form_Frontend
             }
         }
 
-        private List<MiscData.UILayout> UILayoutsENUM = Utility.EnumAsArray<MiscData.UILayout>();
-        private List<string> UILayoutsSTRING = Utility.EnumValuesAsArray<MiscData.UILayout>();
+        private readonly MiscData.UILayout[] UILayoutsENUM = Utility.EnumAsArray<MiscData.UILayout>().ToArray();
+        private readonly string[] UILayoutsSTRING = Utility.EnumAsStringArray<MiscData.UILayout>().ToArray();
 
         private List<OptionLine> OptionLines = new List<OptionLine>();
         private void PopulateOptions()
@@ -103,7 +103,7 @@ namespace Windows_Form_Frontend
 
         private void UpdateUILayout(string val)
         {
-            TempOptionFile.WinformData.UILayout = UILayoutsENUM[UILayoutsSTRING.IndexOf(val)];
+            TempOptionFile.WinformData.UILayout = UILayoutsENUM[Array.IndexOf(UILayoutsSTRING, val)];
         }
 
         private string UpdateFont(string FontFamily, float? FontSize)
@@ -117,7 +117,7 @@ namespace Windows_Form_Frontend
             return WinFormUtils.ConvertFontToString(NewFont);
         }
 
-        private Label GetToolTipLable(string ToolTip)
+        private Label GetToolTipLabel(string ToolTip)
         {
             Label label = new Label();
             label.AutoSize = true;
@@ -159,7 +159,7 @@ namespace Windows_Form_Frontend
 
             foreach (var item in OptionLines)
             {
-                Label ToolTip = GetToolTipLable(item.ToolTip);
+                Label ToolTip = GetToolTipLabel(item.ToolTip);
                 ToolTip.Location = new Point(ControlPadding, y);
 
                 Label Description = new Label() { Text = item.Description, Location = new Point(XOffset(ToolTip), y), Width = MaxDescLength };

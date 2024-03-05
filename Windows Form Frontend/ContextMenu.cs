@@ -278,18 +278,18 @@ namespace Windows_Form_Frontend
             SelectedItems = listBox.SelectedItems.Cast<object>().ToList();
             AreaHeaders = SelectedItems.Where(x => x is Areaheader).Cast<Areaheader>().ToList();
             NavigatableAreas = AreaHeaders.Where(x => InstanceContainer.Instance.EntrancePool.AreaList.ContainsKey(x.Area)).ToList();
-            CheckableLocations = SelectedItems.Where(x => x is CheckableLocation).Cast<CheckableLocation>().ToList();
+            CheckableLocations = SelectedItems.OfType<CheckableLocation>().ToList();
             CheckedLocations = CheckableLocations.Where(x => x.CheckState == MiscData.CheckState.Checked).ToList();
             MarkedLocations = CheckableLocations.Where(x => x.CheckState == MiscData.CheckState.Marked).ToList();
             NotCheckedLocations = CheckableLocations.Where(x => x.CheckState != MiscData.CheckState.Checked).ToList();
             NotMarkedLocations = CheckableLocations.Where(x => x.CheckState != MiscData.CheckState.Marked).ToList();
             PricedLocations = CheckableLocations.Where(x => x.hasPrice()).ToList();
 
-            AllOptions = SelectedItems.Where(x => x is OptionData.LogicOption).Cast<OptionData.LogicOption>().ToList();
-            ChoiceOptions = SelectedItems.Where(x => x is OptionData.ChoiceOption).Cast<OptionData.ChoiceOption>().ToList();
-            ToggleOptions = SelectedItems.Where(x => x is OptionData.ToggleOption).Cast<OptionData.ToggleOption>().ToList();
-            MultiOptions = SelectedItems.Where(x => x is OptionData.MultiSelectOption).Cast<OptionData.MultiSelectOption>().ToList();
-            IntOptions = SelectedItems.Where(x => x is OptionData.IntOption).Cast<OptionData.IntOption>().ToList();
+            AllOptions = SelectedItems.OfType<OptionData.LogicOption>().ToList();
+            ChoiceOptions = SelectedItems.OfType<OptionData.ChoiceOption>().ToList();
+            ToggleOptions = SelectedItems.OfType<OptionData.ToggleOption>().ToList();
+            MultiOptions = SelectedItems.OfType<OptionData.MultiSelectOption>().ToList();
+            IntOptions = SelectedItems.OfType<OptionData.IntOption>().ToList();
         }
 
         private ToolStripItem AddItem(string Title, Action OnClick)
