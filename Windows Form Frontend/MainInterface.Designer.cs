@@ -499,21 +499,21 @@ namespace Windows_Form_Frontend
             // locationsToolStripMenuItem
             // 
             locationsToolStripMenuItem.Name = "locationsToolStripMenuItem";
-            locationsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            locationsToolStripMenuItem.Size = new System.Drawing.Size(125, 22);
             locationsToolStripMenuItem.Text = "Locations";
             locationsToolStripMenuItem.Click += ViewToolStripMenuItem_Click;
             // 
             // entrancesToolStripMenuItem
             // 
             entrancesToolStripMenuItem.Name = "entrancesToolStripMenuItem";
-            entrancesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            entrancesToolStripMenuItem.Size = new System.Drawing.Size(125, 22);
             entrancesToolStripMenuItem.Text = "Entrances";
             entrancesToolStripMenuItem.Click += ViewToolStripMenuItem_Click;
             // 
             // checkedToolStripMenuItem
             // 
             checkedToolStripMenuItem.Name = "checkedToolStripMenuItem";
-            checkedToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            checkedToolStripMenuItem.Size = new System.Drawing.Size(125, 22);
             checkedToolStripMenuItem.Text = "Checked";
             checkedToolStripMenuItem.Click += ViewToolStripMenuItem_Click;
             // 
@@ -691,7 +691,6 @@ namespace Windows_Form_Frontend
         public System.Windows.Forms.ListBox LBCheckedLocations;
         public System.Windows.Forms.ListBox LBValidEntrances;
         public System.Windows.Forms.ListBox LBValidLocations;
-        private System.Windows.Forms.ComboBox CMBEnd;
         private System.Windows.Forms.ComboBox CMBStart;
         private System.Windows.Forms.CheckBox CHKShowAll;
         private System.Windows.Forms.Button BTNSetEntrance;
@@ -732,6 +731,7 @@ namespace Windows_Form_Frontend
         private System.Windows.Forms.ToolStripMenuItem locationsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem entrancesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem checkedToolStripMenuItem;
+        public System.Windows.Forms.ComboBox CMBEnd;
     }
 }
 

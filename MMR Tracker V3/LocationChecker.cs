@@ -80,10 +80,10 @@ namespace MMR_Tracker_V3
             List<object> UpdatedObjects = new List<object>();
 
             //Handle Options
-            IEnumerable<OptionData.ChoiceOption> choiceOptions = SelectedObjects.Where(x => x is OptionData.ChoiceOption).Select(x => x as OptionData.ChoiceOption);
-            IEnumerable<OptionData.IntOption> IntOptions = SelectedObjects.Where(x => x is OptionData.IntOption).Select(x => x as OptionData.IntOption);
-            IEnumerable<OptionData.ToggleOption> ToggleOptions = SelectedObjects.Where(x => x is OptionData.ToggleOption).Select(x => x as OptionData.ToggleOption);
-            IEnumerable<OptionData.MultiSelectValueListDisplay> MultiSelectOptions = SelectedObjects.Where(x => x is OptionData.MultiSelectValueListDisplay).Select(x => x as OptionData.MultiSelectValueListDisplay);
+            IEnumerable<OptionData.ChoiceOption> choiceOptions = SelectedObjects.OfType<OptionData.ChoiceOption>();
+            IEnumerable<OptionData.IntOption> IntOptions = SelectedObjects.OfType<OptionData.IntOption>();
+            IEnumerable<OptionData.ToggleOption> ToggleOptions = SelectedObjects.OfType<OptionData.ToggleOption>();
+            IEnumerable<OptionData.MultiSelectValueListDisplay> MultiSelectOptions = SelectedObjects.OfType<OptionData.MultiSelectValueListDisplay>();
 
             foreach (var i in ToggleOptions)
             {
@@ -118,8 +118,8 @@ namespace MMR_Tracker_V3
             List<LocationObject> UpdatedObjects = new List<LocationObject>();
 
             //Handle Locations
-            IEnumerable<LocationObject> locationObjects = SelectedObjects.Where(x => x is LocationObject).Select(x => x as LocationObject);
-            locationObjects = locationObjects.Concat(SelectedObjects.Where(x => x is LocationProxy).Select(x => (x as LocationProxy).GetReferenceLocation()));
+            IEnumerable<LocationObject> locationObjects = SelectedObjects.OfType<LocationObject>();
+            locationObjects = locationObjects.Concat(SelectedObjects.OfType<LocationProxy>().Select(x => x.GetReferenceLocation()));
             locationObjects = locationObjects.Distinct();
             //If we are performing an uncheck action there should be no unchecked locations in the list and even if there are nothing will be done to them anyway
             //This check is neccessary for the "UnMark Only" action.
@@ -156,7 +156,7 @@ namespace MMR_Tracker_V3
             List<EntranceRandoExit> UpdatedObjects = new List<EntranceRandoExit>();
 
             //Handle Exits
-            IEnumerable<EntranceRandoExit> ExitObjects = SelectedObjects.Where(x => x is EntranceRandoExit).Select(x => x as EntranceRandoExit);
+            IEnumerable<EntranceRandoExit> ExitObjects = SelectedObjects.OfType<EntranceRandoExit>();
             IEnumerable<EntranceRandoExit> UncheckedExitObjects = (Options.TargetCheckState == MiscData.CheckState.Unchecked) ?
                 new List<EntranceRandoExit>() :
                 ExitObjects.Where(x => x.CheckState == MiscData.CheckState.Unchecked);
@@ -185,7 +185,7 @@ namespace MMR_Tracker_V3
         {
             List<HintObject> UpdatedObjects = new List<HintObject>();
             //Hints======================================
-            List<HintObject> HintObjects = SelectedObjects.Where(x => x is HintObject).Select(x => x as HintObject).ToList();
+            List<HintObject> HintObjects = SelectedObjects.OfType<HintObject>().ToList();
 
             var UncheckedHintObjects = HintObjects.Where(x => x.CheckState == MiscData.CheckState.Unchecked);
             foreach (var i in UncheckedHintObjects.Where(x => !string.IsNullOrWhiteSpace(x.SpoilerHintText)))

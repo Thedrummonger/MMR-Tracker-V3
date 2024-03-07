@@ -24,6 +24,15 @@ namespace MMR_Tracker_V3.TrackerObjects
             outCurrency = Currency ?? '$';
             return;
         }
+        public (int, char) GetPrice()
+        {
+            return (Price ?? -1, Currency ?? '$');
+        }
+        public bool hasPrice()
+        {
+            var (Price, Cur) = GetPrice();
+            return Price >= 0;
+        }
         public void SetPrice(int inPrice, char inCurrency = '\0')
         {
             if (inCurrency == '\0') { inCurrency = Currency ?? '$'; }
