@@ -63,7 +63,7 @@ namespace MMR_Tracker_V3.TrackerObjects
                 return Exits.Where(x => !x.Value.IsRandomizableEntrance()).ToDictionary(x => x.Key, v => v.Value);
             }
         }
-        public class EntranceRandoExit(InstanceData.TrackerInstance Parent, EntranceRandoArea ParentArea) : CheckableLocation(Parent)
+        public class EntranceRandoExit(EntranceRandoArea ParentArea) : CheckableLocation(ParentArea.GetParent())
         {
             private EntranceRandoArea _parentArea = ParentArea;
             public EntranceRandoArea GetParentArea() { return _parentArea; }
