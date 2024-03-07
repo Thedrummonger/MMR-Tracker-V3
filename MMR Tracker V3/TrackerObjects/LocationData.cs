@@ -98,6 +98,12 @@ namespace MMR_Tracker_V3.TrackerObjects
                 dynamic Target = GetLogicInheritance();
                 Target.SetPrice(inPrice, inCurrency);
             }
+            public new (int, char) GetPrice()
+            {
+                dynamic Target = GetLogicInheritance();
+                Target.GetPrice(out int? outPrice, out char? outCurrency);
+                return (outPrice ?? -1, outCurrency ?? '$');
+            }
 
             public override string GetName()
             {
