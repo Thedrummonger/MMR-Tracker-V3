@@ -26,5 +26,12 @@ namespace MMR_Tracker_V3.TrackerObjects
         {
             return GetParent().GetLogic(ID, false).IsTrick;
         }
+
+        public override string GetName()
+        {
+            return GetDictEntry().Name??ID;
+        }
+
+        public override object GetAbstractDictEntry() => GetDictEntry();
     }
 }

@@ -2,7 +2,7 @@
 
 namespace MMR_Tracker_V3.TrackerObjects
 {
-    public class CheckableLocation(InstanceData.TrackerInstance Parent)
+    public abstract class CheckableLocation(InstanceData.TrackerInstance Parent)
     {
         private InstanceData.TrackerInstance _parent = Parent;
         public InstanceData.TrackerInstance GetParent() { return _parent; }
@@ -41,29 +41,7 @@ namespace MMR_Tracker_V3.TrackerObjects
             return;
         }
 
-        public string GetName()
-        {
-            string name = CheckForDictName(this);
-            if (name is not null) { return name; }
-            name = CheckForObjectName(this);
-            if (name is not null) { return name; }
-            return ID;
-        }
-
-        private static string CheckForDictName(dynamic Object)
-        {
-            if (!Utility.DynamicMethodExists(Object, "GetDictEntry")) { return null; }
-            var DictEntry = Object.GetDictEntry();
-            if (DictEntry is null) { return null; }
-            if (Utility.DynamicMethodExists(DictEntry, "GetName")) { return DictEntry.GetName(); }
-            if (Utility.DynamicPropertyExist(DictEntry, "Name")) { return DictEntry.Name; }
-            return null;
-        }
-
-        private static string CheckForObjectName(dynamic Object)
-        {
-            if (Utility.DynamicPropertyExist(Object, "Name")) { return Object.Name; }
-            return null;
-        }
+        public abstract string GetName();
+        public abstract object GetAbstractDictEntry();
     }
 }

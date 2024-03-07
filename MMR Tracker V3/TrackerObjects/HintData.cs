@@ -29,6 +29,13 @@ namespace MMR_Tracker_V3.TrackerObjects
             {
                 return GetParent().LogicDictionary.HintSpots[ID];
             }
+
+            public override string GetName()
+            {
+                return GetDictEntry().Name ?? ID;
+            }
+
+            public override object GetAbstractDictEntry() => GetDictEntry();
         }
     }
 }

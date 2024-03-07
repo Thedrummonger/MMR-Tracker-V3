@@ -91,6 +91,13 @@ namespace MMR_Tracker_V3.TrackerObjects
             {
                 return $"{GetParentArea().ID} X {this.ExitID}";
             }
+
+            public override string GetName()
+            {
+                return GetDictEntry().DisplayExit ?? GetDictEntry().Exit;
+            }
+
+            public override object GetAbstractDictEntry() => GetDictEntry();
         }
         public class EntranceRandoDestination
         {

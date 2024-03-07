@@ -6,7 +6,7 @@ namespace MMR_Tracker_V3.TrackerObjects
 {
     public class OptionData
     {
-        public class LogicOption(InstanceData.TrackerInstance Parent)
+        public abstract class LogicOption(InstanceData.TrackerInstance Parent)
         {
             private InstanceData.TrackerInstance _parent = Parent;
             public InstanceData.TrackerInstance GetParent() { return _parent; }
@@ -18,12 +18,15 @@ namespace MMR_Tracker_V3.TrackerObjects
             public string SubCategory { get; set; }
             public int Priority { get; set; } = 0;
             public List<List<string>> Conditionals { get; set; } = [];
+
+            public abstract string getOptionName();
+            public abstract OptionValue GetValue(string _Value = null);
         }
         public class ChoiceOption(InstanceData.TrackerInstance Parent) : LogicOption(Parent)
         {
             public string Value { get; set; }
             public Dictionary<string, OptionValue> ValueList { get; set; } = new Dictionary<string, OptionValue>();
-            public OptionValue GetValue(string _Value = null)
+            public override OptionValue GetValue(string _Value = null)
             {
                 if (!ValueList.ContainsKey(_Value ?? Value)) { throw new Exception($"{_Value ?? Value} was not a valid value for Option {ID}"); }
                 return ValueList[_Value ?? Value];
@@ -42,7 +45,7 @@ namespace MMR_Tracker_V3.TrackerObjects
             {
                 return $"{getOptionName()}: {getValueName()}";
             }
-            public string getOptionName()
+            public override string getOptionName()
             {
                 return string.IsNullOrWhiteSpace(Name) ? ID : Name;
             }
@@ -57,7 +60,7 @@ namespace MMR_Tracker_V3.TrackerObjects
         {
             public HashSet<string> EnabledValues { get; set; }
             public Dictionary<string, OptionValue> ValueList { get; set; } = new Dictionary<string, OptionValue>();
-            public OptionValue GetValue(string _Value)
+            public override OptionValue GetValue(string _Value)
             {
                 if (!ValueList.ContainsKey(_Value)) { throw new Exception($"{_Value} was not a valid value for Option {ID}"); }
                 return ValueList[_Value];
@@ -86,7 +89,7 @@ namespace MMR_Tracker_V3.TrackerObjects
             {
                 return $"{getOptionName()}";
             }
-            public string getOptionName()
+            public override string getOptionName()
             {
                 return string.IsNullOrWhiteSpace(Name) ? ID : Name;
             }
@@ -110,7 +113,7 @@ namespace MMR_Tracker_V3.TrackerObjects
             public string Value { get; set; }
             public OptionValue Enabled { get; set; }
             public OptionValue Disabled { get; set; }
-            public OptionValue GetValue(string _Value = null)
+            public override OptionValue GetValue(string _Value = null)
             {
                 string v = _Value ?? Value;
                 OptionValue vo;
@@ -153,7 +156,7 @@ namespace MMR_Tracker_V3.TrackerObjects
             {
                 return $"{getOptionName()}: {getValueName()}";
             }
-            public string getOptionName()
+            public override string getOptionName()
             {
                 return string.IsNullOrWhiteSpace(Name) ? ID : Name;
             }
@@ -178,13 +181,17 @@ namespace MMR_Tracker_V3.TrackerObjects
             {
                 return $"{getOptionName()}: {getValueName()}";
             }
-            public string getOptionName()
+            public override string getOptionName()
             {
                 return string.IsNullOrWhiteSpace(Name) ? ID : Name;
             }
             public string getValueName()
             {
                 return Value.ToString();
+            }
+            public override OptionValue GetValue(string _Value)
+            {
+                return new OptionValue { ID = Value.ToString(), Name = Value.ToString(), Actions = new Action() };
             }
 
         }

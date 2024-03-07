@@ -28,6 +28,12 @@ namespace MMR_Tracker_V3.TrackerObjects
                 return GetParent().GetValidItemsForLocation(this, Filter, ForOtherPlayers);
             }
 
+            public override string GetName()
+            {
+                return GetDictEntry().Name;
+            }
+
+            public override object GetAbstractDictEntry() => GetDictEntry();
         }
         [Serializable]
         public class RandomizeditemData
@@ -92,6 +98,13 @@ namespace MMR_Tracker_V3.TrackerObjects
                 dynamic Target = GetLogicInheritance();
                 Target.SetPrice(inPrice, inCurrency);
             }
+
+            public override string GetName()
+            {
+                return GetDictEntry().Name??ID;
+            }
+
+            public override object GetAbstractDictEntry() => GetDictEntry();
         }
     }
 }
