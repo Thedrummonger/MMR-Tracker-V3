@@ -521,15 +521,17 @@ namespace MMR_Tracker_V3
             public string[] ValidItemTypes { get; set; } = null;
         }
 
-        public static readonly char[] LogicChars = ['&', '|', '+', '*', '(', ')'];
+        public static readonly HashSet<char> LogicChars = ['&', '|', '+', '*', '(', ')'];
 
         public static List<string> GetEntriesFromLogicString(string input)
         {
             List<string> BrokenString = [];
             string currentItem = "";
+            bool InEscapeChar = false;
             foreach (var i in input)
             {
-                if (LogicChars.Contains(i))
+                if (i == '\\' && !InEscapeChar) { InEscapeChar = true; continue; }
+                if (LogicChars.Contains(i) && !InEscapeChar)
                 {
                     if (currentItem != "")
                     {
@@ -541,6 +543,7 @@ namespace MMR_Tracker_V3
                     else { BrokenString.Add(i.ToString()); }
                 }
                 else { currentItem += i.ToString(); }
+                if (InEscapeChar) { InEscapeChar = false; }
             }
             if (currentItem != "") { BrokenString.Add(currentItem); }
             return BrokenString;
@@ -581,7 +584,7 @@ namespace MMR_Tracker_V3
             }
 
             string Expression = string.Join("", ExpandedExptression);
-            //Console.WriteLine($"Expression = {Expression}");
+            //Debug.WriteLine($"Expression = {Expression}");
             try
             {
                 DataTable dt = new();
@@ -589,12 +592,12 @@ namespace MMR_Tracker_V3
                 if (!int.TryParse(Solution.ToString(), out int Result)) { return true; }
                 return Result > 0;
             }
-            catch { CurrentStringIsError = true; return true; }
+            catch { CurrentStringIsError = true; return false; }
         }
 
         private static string PerformLogicCheck(string i, SearchObject logic, string NameToCompare)
         {
-            if (LogicChars.Contains(i[0])) { return i; }
+            if (i.Length == 1 && LogicChars.Contains(i[0])) { return i; }
 
             char[] Modifiers = new char[] { '!', '=' };
 
