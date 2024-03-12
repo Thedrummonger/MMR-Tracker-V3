@@ -132,6 +132,27 @@ namespace MMR_Tracker_V3.Logic
             ConditionalItems = new List<List<string>>(),
             IsTrick = false
         };
+
+        public static void TransformLogicItems(MMRData.JsonFormatLogicItem entry, Func<string, string> Transformer)
+        {
+            List<List<string>> NewConditional = [];
+            List<string> NewReq = [];
+            foreach(var Cond in entry.ConditionalItems)
+            {
+                List<string> NewConditionalSet = [];
+                foreach (var item in Cond)
+                {
+                    NewConditionalSet.Add(Transformer(item));
+                }
+                NewConditional.Add(NewConditionalSet);
+            }
+            foreach (var Req in entry.RequiredItems)
+            {
+                NewReq.Add(Transformer(Req));
+            }
+            entry.RequiredItems = NewReq;
+            entry.ConditionalItems = NewConditional;
+        }
     }
     public static class LogicStringConverter
     {
@@ -312,6 +333,7 @@ namespace MMR_Tracker_V3.Logic
             return type switch
             {
                 OperatorType.CStyle => "&&",
+                OperatorType.CStlyeSingle => "&",
                 OperatorType.PyStyle => "and",
                 _ => "&&",
             };
@@ -322,6 +344,7 @@ namespace MMR_Tracker_V3.Logic
             return type switch
             {
                 OperatorType.CStyle => "||",
+                OperatorType.CStlyeSingle => "|",
                 OperatorType.PyStyle => "or",
                 _ => "||",
             };
@@ -375,6 +398,7 @@ namespace MMR_Tracker_V3.Logic
         public enum OperatorType
         {
             CStyle,
+            CStlyeSingle,
             PyStyle
         }
 

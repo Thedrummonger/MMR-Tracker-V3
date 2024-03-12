@@ -76,6 +76,7 @@ namespace TestingForm
                 new DevAction("Create TPR Data", GameFileCreation.TPRCreateData, UpdateDebugActions),
                 new DevAction("Create OOTMM Data", GameFileCreation.OOTMMCreateData, UpdateDebugActions),
                 new DevAction("Create PMR Data", GameFileCreation.PMRCreateData, UpdateDebugActions),
+                new DevAction("Create LAS Data", GameFileCreation.LASCreateData, UpdateDebugActions),
                 new DevAction("Open Web Client", OpenWebClient, UpdateDebugActions, () => { return CurrentNetClientForm is null && WinFormTesting.WinformInstanceLoaded();  }),
                 new DevAction("Test Random Stuff", RandomTests, UpdateDebugActions),
             };

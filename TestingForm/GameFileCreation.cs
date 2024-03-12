@@ -13,6 +13,10 @@ namespace TestingForm
 {
     internal class GameFileCreation
     {
+        public static void LASCreateData()
+        {
+            GameDataCreation.LinksAwakeningSwitch.Gen.GenData();
+        }
         public static void MMRCreateData()
         {
             MMRData.LogicFile CasualLogic = JsonConvert.DeserializeObject<MMRData.LogicFile>(File.ReadAllText(Path.Combine(TestingReferences.GetDevTestingPath(), "MMR 116", "REQ_CASUAL.txt")));
