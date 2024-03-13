@@ -155,6 +155,7 @@ namespace MMR_Tracker_V3.Logic
                     if (!int.TryParse(Parameters[1], out int ParamInt)) { return false; }
                     return IntOpt.Value == ParamInt != Inverse;
                 default:
+                    Debug.WriteLine($"Setting {Parameters[0]} was not found in setting list");
                     return false;
             }
         }

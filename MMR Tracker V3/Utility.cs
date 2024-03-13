@@ -1,4 +1,5 @@
-﻿using MMR_Tracker_V3.TrackerObjectExtensions;
+﻿using MathNet.Symbolics;
+using MMR_Tracker_V3.TrackerObjectExtensions;
 using MMR_Tracker_V3.TrackerObjects;
 using Newtonsoft.Json;
 using System;
@@ -355,12 +356,17 @@ namespace MMR_Tracker_V3
         /// </summary>
         /// <param name="Input">Source string</param>
         /// <returns></returns>
-        public static string ConvertToCamelCase(string Input)
+        public static string ConvertToCamelCase(this string Input)
         {
             string NiceName = Input.ToLower();
             TextInfo cultInfo = new CultureInfo("en-US", false).TextInfo;
             NiceName = cultInfo.ToTitleCase(NiceName);
             return NiceName;
+        }
+
+        public static string AddWordSpacing(this string Input)
+        {
+            return Regex.Replace(Input, "([a-z])([A-Z])", "$1 $2");
         }
 
     }

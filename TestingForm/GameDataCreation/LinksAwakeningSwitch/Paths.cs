@@ -8,9 +8,13 @@ namespace TestingForm.GameDataCreation.LinksAwakeningSwitch
 {
     internal class Paths
     {
+        public static string RandoTestFolderPath()
+        {
+            return Path.Combine(TestingReferences.GetDevTestingPath(), "LASRando");
+        }
         public static string RandoSourcePath() 
         {
-            return Path.Combine(TestingReferences.GetDevTestingPath(), "LAS-Randomizer-master");
+            return Path.Combine(RandoTestFolderPath(), "LAS-Randomizer-master");
         }
         public static string RandoDataPath()
         {

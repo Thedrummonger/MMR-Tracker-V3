@@ -10,20 +10,38 @@ using System.Threading.Tasks;
 using static TestingForm.GameDataCreation.LinksAwakeningSwitch.Data;
 using MMR_Tracker_V3.Logic;
 using MMR_Tracker_V3.TrackerObjects;
+using static MMR_Tracker_V3.TrackerObjects.OptionData;
 
 namespace TestingForm.GameDataCreation.LinksAwakeningSwitch
 {
     internal class Gen
     {
-        public static void GenData()
+        public static void GenData(out MMRData.LogicFile OutLogic, out LogicDictionaryData.LogicDictionary outDict)
         {
             var LogicFile = File.ReadAllText(Paths.RandoLogicFile());
             var LogicFileYamlString = TestingUtility.ConvertYamlStringToJsonString(LogicFile);
             var LogicFileObject = JsonConvert.DeserializeObject<Dictionary<string, Dictionary<string, string>>>(LogicFileYamlString);
 
             var ItemsFile = File.ReadAllText(Paths.RandoItemsFile());
-            var ItemsFileYamlString = TestingUtility.ConvertYamlStringToJsonString(ItemsFile);
-            var ItemsFileObject = JsonConvert.DeserializeObject<Dictionary<string, Dictionary<string, Dictionary<string, object>>>>(ItemsFileYamlString);
+            var ItemsFileYamlString = TestingUtility.ConvertYamlStringToJsonString(ItemsFile, true);
+            var ItemsFileObject = JsonConvert.DeserializeObject<LASItemPool>(ItemsFileYamlString);
+
+            var LocationsFile = File.ReadAllText(Paths.RandoLocationsFile());
+            var LocationsFileYamlString = TestingUtility.ConvertYamlStringToJsonString(LocationsFile, true);
+            var LocationsFileObject = JsonConvert.DeserializeObject<Dictionary<string, List<string>>>(LocationsFileYamlString);
+
+            LogicDictionaryData.LogicDictionary logicDictionary = new LogicDictionaryData.LogicDictionary()
+            {
+                GameCode = "LAS",
+                LogicVersion = 1,
+                WinCondition = "kill-nightmare",
+            };
+            MMRData.LogicFile LogicObject = new()
+            {
+                GameCode = "LAS",
+                Version = 1,
+                Logic = []
+            };
 
             //MMR_Tracker_V3.Utility.PrintObjectToConsole(LogicFileObject);
             List<ExpandedLogicEntry> expandedLogicEntries = new List<ExpandedLogicEntry>();
@@ -53,27 +71,14 @@ namespace TestingForm.GameDataCreation.LinksAwakeningSwitch
                             break;
                     }
                 }
-                string HighestLevelLogic = "true";
 
-                if (string.IsNullOrWhiteSpace(Entry.LogicBasic)) { Entry.LogicBasic = HighestLevelLogic; }
-                else { HighestLevelLogic = Entry.LogicBasic; }
-                Entry.LogicBasic = $"(setting{{logic, basic}} & ({Entry.LogicBasic}))";
-                string FinalLogicString = Entry.LogicBasic;
+                string FinalLogicString = string.IsNullOrWhiteSpace(Entry.LogicBasic) ? "true" : $"({Entry.LogicBasic})" ;
+                if (!string.IsNullOrWhiteSpace(Entry.LogicAdvanced)) { FinalLogicString += $" | (LogicIsAdvanced & {Entry.LogicAdvanced})"; }
+                if (!string.IsNullOrWhiteSpace(Entry.LogicGlitched)) { FinalLogicString += $" | (LogicIsGlitched & {Entry.LogicGlitched})"; }
+                if (!string.IsNullOrWhiteSpace(Entry.LogicHell)) { FinalLogicString += $" | (LogicIsHell & {Entry.LogicHell})"; }
 
-                if (string.IsNullOrWhiteSpace(Entry.LogicAdvanced)) { Entry.LogicAdvanced = HighestLevelLogic; }
-                else { HighestLevelLogic = Entry.LogicAdvanced; }
-                Entry.LogicAdvanced = $"(setting{{logic, advanced}} & ({Entry.LogicAdvanced}))";
-                FinalLogicString += $" | {Entry.LogicAdvanced}";
-
-                if (string.IsNullOrWhiteSpace(Entry.LogicGlitched)) { Entry.LogicGlitched = HighestLevelLogic; }
-                else { HighestLevelLogic = Entry.LogicGlitched; }
-                Entry.LogicGlitched = $"(setting{{logic, glitched}} & ({Entry.LogicGlitched}))";
-                FinalLogicString += $" | {Entry.LogicGlitched}";
-
-                if (string.IsNullOrWhiteSpace(Entry.LogicHell)) { Entry.LogicHell = HighestLevelLogic; }
-                else { HighestLevelLogic = Entry.LogicHell; }
-                Entry.LogicHell = $"(setting{{logic, hell}} & ({Entry.LogicHell}))";
-                FinalLogicString += $" | {Entry.LogicHell}";
+                string Region = LogicEntry.Value.TryGetValue("region", out string ValRegion) ? ValRegion : "true";
+                FinalLogicString = $"({Region} & ({FinalLogicString}))";
 
                 Entry.Logic = LogicStringConverter.ConvertLogicStringToConditional(logicParser, FinalLogicString, LogicEntry.Key);
                 expandedLogicEntries.Add(Entry);
@@ -90,12 +95,6 @@ namespace TestingForm.GameDataCreation.LinksAwakeningSwitch
                     expandedLogicEntries.Add(AugmentedEntry);
                 }
             }
-            MMRData.LogicFile LogicObject = new()
-            {
-                GameCode = "LAS",
-                Version = 1,
-                Logic = []
-            };
             foreach(var entry in expandedLogicEntries)
             {
                 MMRData.JsonFormatLogicItem logicItem = new()
@@ -107,6 +106,26 @@ namespace TestingForm.GameDataCreation.LinksAwakeningSwitch
                 LogicUtilities.RemoveRedundantConditionals(logicItem);
                 LogicUtilities.MakeCommonConditionalsRequirements(logicItem);
                 LogicUtilities.TransformLogicItems(logicItem, (x) => { return x.Replace(":", ", "); });
+                LogicUtilities.TransformLogicItems(logicItem, (x) => { return x == "tracey" ? "tracy" : x; });
+                LogicUtilities.TransformLogicItems(logicItem, (x) => { return x == "pegasus-boots" ? "boots" : x; });
+                LogicUtilities.TransformLogicItems(logicItem, (x) => { return x == "prairie" ? "plains" : x; });
+                LogicUtilities.TransformLogicItems(logicItem, (x) => { return x == "dash" ? "dash-jump" : x; });
+
+                LogicUtilities.TransformLogicItems(logicItem, (x) => { return x == "!classic-d2" ? "setting{classic-d2, false}" : x; });
+                LogicUtilities.TransformLogicItems(logicItem, (x) => { return x == "!shuffle-bombs" ? "setting{shuffle-bombs, false}" : x; });
+                LogicUtilities.TransformLogicItems(logicItem, (x) => { return x == "!shuffle-powder" ? "setting{shuffle-powder, false}" : x; });
+                LogicUtilities.TransformLogicItems(logicItem, (x) => { return x == "bad-pets" ? "setting{bad-pets}" : x; });
+                LogicUtilities.TransformLogicItems(logicItem, (x) => { return x == "fast-fishing" ? "setting{fast-fishing}" : x; });
+                LogicUtilities.TransformLogicItems(logicItem, (x) => { return x == "fast-master-stalfos" ? "setting{fast-master-stalfos}" : x; });
+                LogicUtilities.TransformLogicItems(logicItem, (x) => { return x == "fast-trendy" ? "setting{fast-trendy}" : x; });
+                LogicUtilities.TransformLogicItems(logicItem, (x) => { return x == "free-book" ? "setting{free-book}" : x; });
+                LogicUtilities.TransformLogicItems(logicItem, (x) => { return x == "free-shop" ? "setting{free-shop}" : x; });
+                LogicUtilities.TransformLogicItems(logicItem, (x) => { return x == "open-bridge" ? "setting{open-bridge}" : x; });
+                LogicUtilities.TransformLogicItems(logicItem, (x) => { return x == "open-kanalet" ? "setting{open-kanalet}" : x; });
+                LogicUtilities.TransformLogicItems(logicItem, (x) => { return x == "open-mamu" ? "setting{open-mamu}" : x; });
+                LogicUtilities.TransformLogicItems(logicItem, (x) => { return x == "reduced-farming" ? "setting{reduced-farming}" : x; });
+                LogicUtilities.TransformLogicItems(logicItem, (x) => { return x == "unlocked-bombs" ? "setting{unlocked-bombs}" : x; });
+
                 if (logicItem.ConditionalItems.All(x => x.Count == 1 && x.All(y => y.StartsWith("setting{logic, "))))
                 {
                     logicItem.ConditionalItems = [];
@@ -114,14 +133,146 @@ namespace TestingForm.GameDataCreation.LinksAwakeningSwitch
 
                 LogicObject.Logic.Add(logicItem);
             }
-            File.WriteAllText(Path.Combine(TestingReferences.GetDevTestingPath(), "LASLogic.json"), LogicObject.ToFormattedJson());
 
-            LogicDictionaryData.LogicDictionary logicDictionary = new LogicDictionaryData.LogicDictionary()
+            foreach(var i in ItemsFileObject.Item_Pool)
             {
-                GameCode = "LAS",
-                LogicVersion = 1,
-                WinCondition = "kill-nightmare",
+                LogicDictionaryData.DictionaryItemEntries itemEntry = new LogicDictionaryData.DictionaryItemEntries()
+                {
+                    ID = i.Key,
+                    MaxAmountInWorld = i.Value.TryGetValue("quantity", out object amount) ? int.Parse((string)amount) : -1,
+                    ItemTypes = ["item"],
+                    Name = i.Value.TryGetValue("item-key", out object itemKey) ? ((string)itemKey).AddWordSpacing() : i.Key.AddWordSpacing(),
+                    ValidStartingItem = ItemsFileObject.Starting_Items.Contains(i.Key)
+                };
+
+                if (itemEntry.Name.In("Compass", "Stone Beak", "Dungeon Map", "Small Key", "Nightmare Key"))
+                {
+                    itemEntry.Name += " " + itemEntry.ID.SplitOnce('-', true).Item2;
+                }
+                if (itemEntry.Name.StartsWith('$')) { itemEntry.Name = "Trap"; }
+                if (itemEntry.Name.Contains('_')) { itemEntry.Name = itemEntry.Name.Replace("_", " "); }
+
+                logicDictionary.ItemList[i.Key] = itemEntry;
+            }
+
+            foreach(var LogicEntry in LogicFileObject)
+            {
+                if (!LogicEntry.Value.TryGetValue("type", out string type) || type != "item") { continue; }
+                LogicDictionaryData.DictionaryLocationEntries locationEntry = new LogicDictionaryData.DictionaryLocationEntries()
+                {
+                    ID = LogicEntry.Key,
+                    Area = LogicEntry.Value["spoiler-region"],
+                    Name = LogicEntry.Key.Replace("-", " ").ConvertToCamelCase(),
+                    OriginalItem = LogicEntry.Value["content"],
+                    ValidItemTypes = ["item"],
+                    SpoilerData = new MMRData.SpoilerlogReference() { Tags = [LogicEntry.Value["type"], LogicEntry.Value["subtype"], LogicEntry.Value["region"]] }
+                };
+                if (locationEntry.OriginalItem == "powders-capacity") { locationEntry.OriginalItem = "powder-capacity"; }
+                logicDictionary.LocationList[LogicEntry.Key] = locationEntry;
+                var AdditionalData = LocationsFileObject.Where(x => x.Value.Contains(LogicEntry.Key)).Select(x => x.Key);
+                if (AdditionalData.Any())
+                {
+                    locationEntry.SpoilerData.Tags = [.. locationEntry.SpoilerData.Tags, AdditionalData.First()];
+                }
+            }
+
+            LogicObject.Logic.Add(new MMRData.JsonFormatLogicItem
+            {
+                Id = "LogicIsAdvanced",
+                ConditionalItems = [
+                    ["setting{logic, advanced}"],
+                    ["setting{logic, glitched}"],
+                    ["setting{logic, hell}"]
+                ]
+            });
+
+            LogicObject.Logic.Add(new MMRData.JsonFormatLogicItem
+            {
+                Id = "LogicIsGlitched",
+                ConditionalItems = [
+                    ["setting{logic, glitched}"],
+                    ["setting{logic, hell}"]
+                ]
+            });
+
+            LogicObject.Logic.Add(new MMRData.JsonFormatLogicItem
+            {
+                Id = "LogicIsHell",
+                RequiredItems = ["setting{logic, hell}"]
+            });
+
+            logicDictionary.ItemList.Add("rooster", new LogicDictionaryData.DictionaryItemEntries
+            {
+                ID = "rooster",
+                Name = "Rooster",
+                MaxAmountInWorld = 1,
+                ValidStartingItem = false,
+                ItemTypes = ["rooster"]
+            });
+            logicDictionary.ItemList.Add("bow-wow", new LogicDictionaryData.DictionaryItemEntries
+            {
+                ID = "bow-wow",
+                Name = "Bow Wow",
+                MaxAmountInWorld = 1,
+                ValidStartingItem = false,
+                ItemTypes = ["bow-wow"]
+            });
+            logicDictionary.LocationList.Add("moblin-cave", new LogicDictionaryData.DictionaryLocationEntries
+            {
+                ID = "moblin-cave",
+                Area = "taltal-heights",
+                Name = "Bow Wow Follower",
+                OriginalItem = "bow-wow",
+                ValidItemTypes = ["bow-wow"],
+            });
+            logicDictionary.LocationList.Add("rooster-statue", new LogicDictionaryData.DictionaryLocationEntries
+            {
+                ID = "rooster-statue",
+                Area = "mabe-village",
+                Name = "Rooster Follower",
+                OriginalItem = "rooster",
+                ValidItemTypes = ["rooster"],
+            });
+
+            CreateToggleOption("bad-pets", "Bad Pets");
+            CreateToggleOption("classic-d2", "Classic D2");
+            CreateToggleOption("fast-fishing", "Fast Fishing", true);
+            CreateToggleOption("fast-master-stalfos", "Fast Master Stalfos");
+            CreateToggleOption("fast-trendy", "Fast Trendy Game");
+            CreateToggleOption("free-book", "Free Book", true);
+            CreateToggleOption("free-shop", "Free Shop", true);
+            CreateToggleOption("open-bridge", "Completed Bridge", true);
+            CreateToggleOption("open-kanalet", "Open Kanalet", true);
+            CreateToggleOption("open-mamu", "OPen Mamu", true);
+            CreateToggleOption("reduced-farming", "Reduced Farming", true);
+            CreateToggleOption("shuffle-bombs", "Shuffle Bombs");
+            CreateToggleOption("shuffle-powder", "Shuffle Powder");
+            CreateToggleOption("unlocked-bombs", "Unlocked Bombs", true);
+
+            void CreateToggleOption(string ID, string Name, bool Default = false)
+            {
+                OptionData.ToggleOption toggleOption = new(null);
+                toggleOption.ID = ID;
+                toggleOption.Name = Name;
+                toggleOption.CreateSimpleValues();
+                toggleOption.SetValue(false);
+                logicDictionary.ToggleOptions.Add(ID, toggleOption);
+            }
+
+            var LogicOption = new OptionData.ChoiceOption(null)
+            {
+                ID = "logic",
+                Name = "Logic Mode",
             };
+            LogicOption.CreateSimpleValues("basic", "advanced", "glitched", "hell");
+            LogicOption.SetValue("basic");
+            logicDictionary.ChoiceOptions.Add(LogicOption.ID, LogicOption);
+
+
+            File.WriteAllText(Path.Combine(Paths.RandoTestFolderPath(), "LASLogic.json"), LogicObject.ToFormattedJson());
+            File.WriteAllText(Path.Combine(Paths.RandoTestFolderPath(), "LASDict.json"), logicDictionary.ToFormattedJson());
+            outDict = logicDictionary;
+            OutLogic = LogicObject;
         }
     }
 }

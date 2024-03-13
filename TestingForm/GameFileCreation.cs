@@ -15,7 +15,11 @@ namespace TestingForm
     {
         public static void LASCreateData()
         {
-            GameDataCreation.LinksAwakeningSwitch.Gen.GenData();
+            GameDataCreation.LinksAwakeningSwitch.Gen.GenData(out MMRData.LogicFile Logic, out LogicDictionaryData.LogicDictionary dictionary);
+            WinFormTesting.ActivateWinFormInterface();
+            WinFormInstanceCreation.CreateWinFormInstance(JsonConvert.SerializeObject(Logic), JsonConvert.SerializeObject(dictionary));
+            TestingUtility.TestLogicForInvalidItems(MainInterface.InstanceContainer);
+            TestingUtility.TestLocationsForInvalidVanillaItem(MainInterface.InstanceContainer);
         }
         public static void MMRCreateData()
         {

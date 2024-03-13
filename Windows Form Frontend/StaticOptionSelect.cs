@@ -182,7 +182,7 @@ namespace Windows_Form_Frontend
                     nud.ValueChanged += (sender, e) => { item.OnChange((int)nud.Value); Utility.PrintObjectToConsole(TempOptionFile); };
                     panel1.Controls.Add(nud);
                 }
-                else if (item.Value is string StringValD && item.ValidValues is List<string> ListVal)
+                else if (item.Value is string StringValD && item.ValidValues is IEnumerable<string> ListVal)
                 {
                     ComboBox comboBox = new ComboBox() { Location = new Point(XOffset(Description), y), Width = 100 };
                     int Ind = 0;
@@ -197,6 +197,8 @@ namespace Windows_Form_Frontend
                 }
                 else
                 {
+                    var test = item.Value;
+                    throw new Exception($"Could not handle value of type {test.GetType()}");
                     continue;
                 }
 

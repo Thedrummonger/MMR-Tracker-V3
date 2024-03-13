@@ -19,5 +19,10 @@ namespace TestingForm.GameDataCreation.LinksAwakeningSwitch
             public string LogicHell;
             public List<List<string>> Logic;
         }
+        public class LASItemPool
+        {
+            public Dictionary<string, Dictionary<string, object>> Item_Pool;
+            public List<string> Starting_Items;
+        }
     }
 }
