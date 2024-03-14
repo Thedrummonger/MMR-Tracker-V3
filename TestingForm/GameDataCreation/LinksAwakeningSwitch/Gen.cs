@@ -288,7 +288,7 @@ namespace TestingForm.GameDataCreation.LinksAwakeningSwitch
             CreateToggleOption("fast-stalfos", "Fast Master Stalfos");
             CreateToggleOption("fast-trendy", "Fast Trendy Game");
             CreateToggleOption("free-book", "Free Book", true);
-            CreateToggleOption("free-shop", "Free Shop", true);
+            CreateToggleOption("free-shop", "Free Shop", false);
             CreateToggleOption("open-bridge", "Completed Bridge", true);
             CreateToggleOption("open-kanalet", "Open Kanalet", true);
             CreateToggleOption("open-mamu", "OPen Mamu", true);

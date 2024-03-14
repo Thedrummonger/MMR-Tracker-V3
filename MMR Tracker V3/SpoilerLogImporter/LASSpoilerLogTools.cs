@@ -43,6 +43,14 @@ namespace MMR_Tracker_V3.SpoilerLogImporter
                 var DungeonExit = Instance.ItemPool[Data[1]];
                 DungeonEntrance.Randomizeditem.SpoilerLogGivenItem = DungeonExit.ID;
             }
+            foreach (var E in ExcludedLocations)
+            {
+                Instance.LocationPool[E.Trim()].SetRandomizedState(TrackerObjects.MiscData.RandomizedState.ForcedJunk);
+            }
+            foreach (var S in StartingItems)
+            {
+                Instance.GetItemToPlace(S, false, CheckItemID: true);
+            }
             Dictionary<string, string> Options = [];
             foreach (var D in Settings)
             {
@@ -53,6 +61,11 @@ namespace MMR_Tracker_V3.SpoilerLogImporter
             {
                 if (!Options.ContainsKey(t.Key)) { Debug.WriteLine($"{t.Key} was not found in log"); continue; }
                 t.Value.SetValue(bool.Parse(Options[t.Key]));
+            }
+            foreach (var t in Instance.ChoiceOptions)
+            {
+                if (!Options.ContainsKey(t.Key)) { Debug.WriteLine($"{t.Key} was not found in log"); continue; }
+                t.Value.SetValue(Options[t.Key]);
             }
         }
 
