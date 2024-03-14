@@ -158,7 +158,7 @@ namespace MMR_Tracker_V3.TrackerObjectExtensions
             return EnteredItems;
         }
 
-        public static ItemObject GetItemToPlace(this InstanceData.TrackerInstance instance, string Item, bool CheckSpoilerName = true, bool CheckItemName = false, bool CheckItemID = false, bool ForStartingPool = false, bool IgnoreMaxAmount = false, bool DoNameEdits = false)
+        public static ItemObject GetItemToPlace(this InstanceData.TrackerInstance instance, string Item, bool CheckSpoilerName = true, bool CheckItemName = false, bool CheckItemID = false, bool ForStartingPool = false, bool IgnoreMaxAmount = false, bool DoNameEdits = false, bool GetRandom = false)
         {
             List<ItemObject> ValidItem = new List<ItemObject>();
             if (CheckSpoilerName)
@@ -180,6 +180,7 @@ namespace MMR_Tracker_V3.TrackerObjectExtensions
                     x.ID == Item && (x.CanBePlaced() || IgnoreMaxAmount) && (x.ValidStartingItem() || !ForStartingPool))).ToList();
             }
             if (!ValidItem.Any()) { return null; }
+            if (GetRandom) { return ValidItem.PickRandom(); }
             return ValidItem[0];
         }
 

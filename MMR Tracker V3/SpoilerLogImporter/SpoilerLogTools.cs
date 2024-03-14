@@ -20,6 +20,7 @@ namespace MMR_Tracker_V3.SpoilerLogImporter
                 "OOTMM" => "OOT X MM Combo Rando Spoiler Log (*.txt)|*.txt",
                 "TPR" => "Twilight Princess Rando Spoiler Log|*.json",
                 "PMR" => "Paper Mario Rando Spoiler Log|*.txt",
+                "LAS" => "Links Awakening Switch Rando Spoiler Log|*.txt",
                 _ => "Majoras Mask Randomizer Text Spoiler Log|*.txt",
             };
         }
@@ -75,6 +76,11 @@ namespace MMR_Tracker_V3.SpoilerLogImporter
                 case "PMR":
                     container.Instance.SpoilerLog = new InstanceData.SpoilerLogFileData { FileName = OriginalFile, Log = spoilerLog };
                     PMRSpoilerLogTools.ParseSpoiler(container.Instance);
+                    container.Instance.SpoilerLog.GetStaticPlaythrough(container.Instance);
+                    break;
+                case "LAS":
+                    container.Instance.SpoilerLog = new InstanceData.SpoilerLogFileData { FileName = OriginalFile, Log = spoilerLog };
+                    LASSpoilerLogTools.ParseSpoiler(container.Instance);
                     container.Instance.SpoilerLog.GetStaticPlaythrough(container.Instance);
                     break;
                 default:
