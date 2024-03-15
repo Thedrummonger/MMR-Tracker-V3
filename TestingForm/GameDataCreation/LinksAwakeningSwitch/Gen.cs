@@ -199,6 +199,10 @@ namespace TestingForm.GameDataCreation.LinksAwakeningSwitch
                 LogicUtilities.TransformLogicItems(logicItem, (x) => { return x == "pegasus-boots" ? "boots" : x; });
                 LogicUtilities.TransformLogicItems(logicItem, (x) => { return x == "prairie" ? "plains" : x; });
                 LogicUtilities.TransformLogicItems(logicItem, (x) => { return x == "dash" ? "dash-jump" : x; });
+
+                //Not sure that these are errors but these rooms are not defined in logic. 1 room down seems like it's correct
+                LogicUtilities.TransformLogicItems(logicItem, (x) => { return x == "D6-4D" ? "D6-5D" : x; });
+                LogicUtilities.TransformLogicItems(logicItem, (x) => { return x == "D6-2A" ? "D6-3A" : x; });
             }
         }
 

@@ -14,11 +14,13 @@ namespace Windows_Form_Frontend
         List<object> _CheckList;
         public List<ManualCheckObjectResult> _Result = new List<ManualCheckObjectResult>();
         InstanceContainer _Container;
-        public CheckItemForm(IEnumerable<object> ManualChecks, InstanceContainer Container)
+        bool _RestrictItems;
+        public CheckItemForm(IEnumerable<object> ManualChecks, InstanceContainer Container, bool RestrictItems = true)
         {
             InitializeComponent();
             _CheckList = ManualChecks.ToList();
             _Container = Container;
+            _RestrictItems = RestrictItems;
         }
 
         private void CheckItemForm_Load(object sender, EventArgs e)
@@ -100,8 +102,8 @@ namespace Windows_Form_Frontend
         {
             FormatUIItems(_Container.netConnection.OnlineMode == NetData.OnlineMode.Multiworld, true, "Set Junk");
             this.Text = "Select Item at " + Location.GetDictEntry().GetName();
-            bool FoLocalPlayer = numericUpDown1.Value < 0 || numericUpDown1.Value == _Container.netConnection.PlayerID;
-            List<ItemData.ItemObject> EnteredItems = _Container.Instance.GetValidItemsForLocation(Location, textBox1.Text, !FoLocalPlayer);
+            bool FoLocalPlayer = (numericUpDown1.Value < 0 || numericUpDown1.Value == _Container.netConnection.PlayerID);
+            List<ItemData.ItemObject> EnteredItems = _Container.Instance.GetValidItemsForLocation(Location, textBox1.Text, (!FoLocalPlayer || !_RestrictItems));
             listBox1.DataSource = EnteredItems;
         }
 

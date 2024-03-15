@@ -168,6 +168,21 @@ namespace Windows_Form_Frontend
                     mainInterface.UpdateUI();
                 });
             }
+            if (CheckableLocations.Count == 1 && CheckableLocations.First() is LocationData.LocationObject LO1)
+            {
+                AddItem("Is Item at check?", () => {
+                    CheckItemForm checkItemForm = new([LO1], InstanceContainer, false);
+                    checkItemForm.ShowDialog();
+
+                    if (checkItemForm._Result.Count > 0) {
+                        string ItemID = checkItemForm._Result[0].GetItem<string>();
+                        var Item = InstanceContainer.Instance.GetItemByID(ItemID);
+                        bool Correct = LO1.GetItemAtCheck() == ItemID;
+                        if (Correct) { MessageBox.Show($"{LO1.GetName()} Contained {Item.GetDictEntry().GetName()}", "CORRECT", MessageBoxButtons.OK, MessageBoxIcon.Information); }
+                        else { MessageBox.Show($"{LO1.GetName()} did NOT Contain {Item.GetDictEntry().GetName()}", "INCORRECT", MessageBoxButtons.OK, MessageBoxIcon.Error); }
+                    }
+                });
+            }
 
 
             if (contextMenuStrip.Items.Count > 0)
