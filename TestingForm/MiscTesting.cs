@@ -1,4 +1,5 @@
-﻿using MMR_Tracker_V3.TrackerObjects;
+﻿using MMR_Tracker_V3;
+using MMR_Tracker_V3.TrackerObjects;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -13,12 +14,13 @@ namespace TestingForm
 
         public static void TestFuncParse()
         {
-            MMRData.JsonFormatLogicItem logicItem = new MMRData.JsonFormatLogicItem() { Id = "Test" };
-            string Test = "setting(hookshotAnywhereOot) && !setting(ageChange, none), small_keys_forest(5), small_keys_forest(2)";
-
-            string result = MMR_Tracker_V3.GameDataCreation.OOTMMV2.FunctionParsing.ParseCondFunc(Test, logicItem);
-
-            Debug.WriteLine(result);
+            string[] testStrings = ["Peanut", "Has(x)", "Hookshot", "Wallet(x, y, count)"];
+            foreach(string testString in testStrings)
+            {
+                var Result = GameDataCreation.OOTMMV3.OOTMMUtility.IsLogicFunction(testString);
+                if (Result is null) { Debug.WriteLine($"{testString} was not function"); }
+                else { Debug.WriteLine($"{testString}\n{Result.ToFormattedJson()}"); }
+            }
         }
     }
 }

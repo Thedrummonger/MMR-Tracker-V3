@@ -102,16 +102,7 @@ namespace TestingForm
 
         private void RandomTests()
         {
-            Settings |= settingTest.option1;
-            Debug.WriteLine(Settings.ToFormattedJson());
-            Settings |= settingTest.option2;
-            Debug.WriteLine(Settings.ToFormattedJson());
-            Settings |= settingTest.option3;
-            Debug.WriteLine(Settings.ToFormattedJson());
-            Settings &= ~settingTest.option1;
-            Debug.WriteLine(Settings.ToFormattedJson());
-            Settings &= ~settingTest.option3;
-            Debug.WriteLine(Settings.ToFormattedJson());
+            MiscTesting.TestFuncParse();
         }
 
         private void RegexTesting()

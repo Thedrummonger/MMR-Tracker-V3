@@ -66,6 +66,9 @@ namespace TestingForm
 
         public static void OOTMMCreateData()
         {
+            var Generator = new GameDataCreation.OOTMMV3.OOTMMDataGenerator();
+            Generator.GenerateOOTMMData();
+            /*
             WinFormTesting.ActivateWinFormInterface();
             MMR_Tracker_V3.GameDataCreation.OOTMMV2.GenData.ReadData(out MMRData.LogicFile Logic, out LogicDictionaryData.LogicDictionary dictionary);
             WinFormInstanceCreation.CreateWinFormInstance(JsonConvert.SerializeObject(Logic), JsonConvert.SerializeObject(dictionary));
@@ -77,6 +80,7 @@ namespace TestingForm
             MainInterface.CurrentProgram.UpdateUI();
             TestingUtility.TestLogicForInvalidItems(MainInterface.InstanceContainer);
             TestingUtility.TestLocationsForInvalidVanillaItem(MainInterface.InstanceContainer);
+            */
         }
     }
 }
