@@ -1,0 +1,4763 @@
+{
+  "items": [
+    "OOT_ICE_TRAP",
+    "OOT_BOTTLE_BLUE_FIRE",
+    "OOT_DEFENSE_UPGRADE",
+    "MM_DEFENSE_UPGRADE",
+    "SHARED_DEFENSE_UPGRADE",
+    "OOT_STICK_UPGRADE",
+    "OOT_NUT_UPGRADE",
+    "MM_BOMBER_NOTEBOOK",
+    "OOT_SPELL_WIND",
+    "OOT_SPELL_LOVE",
+    "OOT_HEART_PIECE",
+    "OOT_HEART_CONTAINER",
+    "MM_HEART_PIECE",
+    "MM_HEART_CONTAINER",
+    "SHARED_HEART_PIECE",
+    "SHARED_HEART_CONTAINER",
+    "MM_ARROW_FIRE",
+    "MM_ARROW_ICE",
+    "MM_ARROW_LIGHT",
+    "MM_ARROWS_10",
+    "MM_ARROWS_30",
+    "MM_ARROWS_40",
+    "MM_BOMB_BAG",
+    "MM_BOMB",
+    "MM_BOMBCHU",
+    "MM_BOMBCHU_10",
+    "MM_BOMBCHU_20",
+    "MM_BOMBCHU_5",
+    "MM_BOMBS_5",
+    "MM_BOMBS_10",
+    "MM_BOMBS_20",
+    "MM_BOMBS_30",
+    "MM_BOSS_KEY_GB",
+    "MM_BOSS_KEY_SH",
+    "MM_BOSS_KEY_ST",
+    "MM_BOSS_KEY_WF",
+    "MM_BOTTLE_CHATEAU",
+    "MM_BOTTLE_EMPTY",
+    "MM_BOTTLE_MILK",
+    "MM_BOTTLE_POTION_RED",
+    "MM_BOTTLE_POTION_GREEN",
+    "MM_BOTTLE_POTION_BLUE",
+    "MM_BOTTLED_GOLD_DUST",
+    "MM_BOW",
+    "MM_BUGS",
+    "MM_CHATEAU",
+    "MM_COMPASS_GB",
+    "MM_COMPASS_SH",
+    "MM_COMPASS_ST",
+    "MM_COMPASS_WF",
+    "MM_DEED_LAND",
+    "MM_DEED_MOUNTAIN",
+    "MM_DEED_OCEAN",
+    "MM_DEED_SWAMP",
+    "MM_FAIRY",
+    "MM_FISH",
+    "MM_GREAT_FAIRY_SWORD",
+    "MM_GS_TOKEN_OCEAN",
+    "MM_GS_TOKEN_SWAMP",
+    "MM_HOOKSHOT",
+    "MM_LENS",
+    "MM_LETTER_TO_KAFEI",
+    "MM_LETTER_TO_MAMA",
+    "MM_MAGIC_BEAN",
+    "MM_MAGIC_UPGRADE",
+    "MM_MAP_GB",
+    "MM_MAP_SH",
+    "MM_MAP_ST",
+    "MM_MAP_WF",
+    "MM_MASK_ALL_NIGHT",
+    "MM_MASK_BLAST",
+    "MM_MASK_BREMEN",
+    "MM_MASK_BUNNY",
+    "MM_MASK_CAPTAIN",
+    "MM_MASK_COUPLE",
+    "MM_MASK_DEKU",
+    "MM_MASK_DON_GERO",
+    "MM_MASK_FIERCE_DEITY",
+    "MM_MASK_GARO",
+    "MM_MASK_GIANT",
+    "MM_MASK_GIBDO",
+    "MM_MASK_GORON",
+    "MM_MASK_GREAT_FAIRY",
+    "MM_MASK_KAFEI",
+    "MM_MASK_KAMARO",
+    "MM_MASK_KEATON",
+    "MM_MASK_POSTMAN",
+    "MM_MASK_ROMANI",
+    "MM_MASK_SCENTS",
+    "MM_MASK_STONE",
+    "MM_MASK_TROUPE_LEADER",
+    "MM_MASK_TRUTH",
+    "MM_MASK_ZORA",
+    "MM_MILK",
+    "MM_MOON_TEAR",
+    "MM_NUT",
+    "MM_NUTS_5",
+    "MM_NUTS_10",
+    "MM_OCARINA",
+    "MM_OWL_CLOCK_TOWN",
+    "MM_OWL_GREAT_BAY",
+    "MM_OWL_IKANA_CANYON",
+    "MM_OWL_MILK_ROAD",
+    "MM_OWL_MOUNTAIN_VILLAGE",
+    "MM_OWL_SNOWHEAD",
+    "MM_OWL_SOUTHERN_SWAMP",
+    "MM_OWL_STONE_TOWER",
+    "MM_OWL_WOODFALL",
+    "MM_OWL_ZORA_CAPE",
+    "MM_PENDANT_OF_MEMORIES",
+    "MM_PICTOGRAPH_BOX",
+    "MM_POTION_BLUE",
+    "MM_POTION_GREEN",
+    "MM_POTION_RED",
+    "MM_POWDER_KEG",
+    "MM_RECOVERY_HEART",
+    "MM_REMAINS_GOHT",
+    "MM_REMAINS_GYORG",
+    "MM_REMAINS_ODOLWA",
+    "MM_REMAINS_TWINMOLD",
+    "MM_ROOM_KEY",
+    "MM_RUPEE_BLUE",
+    "MM_RUPEE_GOLD",
+    "MM_RUPEE_GREEN",
+    "MM_RUPEE_PURPLE",
+    "MM_RUPEE_RED",
+    "MM_RUPEE_SILVER",
+    "MM_SHIELD_HERO",
+    "MM_SHIELD_MIRROR",
+    "MM_SHIELD",
+    "MM_SMALL_KEY_GB",
+    "MM_SMALL_KEY_SH",
+    "MM_SMALL_KEY_ST",
+    "MM_SMALL_KEY_WF",
+    "MM_SONG_AWAKENING",
+    "MM_SONG_EMPTINESS",
+    "MM_SONG_EPONA",
+    "MM_SONG_GORON_HALF",
+    "MM_SONG_GORON",
+    "MM_SONG_HEALING",
+    "MM_SONG_ORDER",
+    "MM_SONG_SOARING",
+    "MM_SONG_STORMS",
+    "MM_SONG_SUN",
+    "MM_SONG_TIME",
+    "MM_SONG_ZORA",
+    "MM_SPIN_UPGRADE",
+    "MM_STICK",
+    "MM_STRAY_FAIRY_GB",
+    "MM_STRAY_FAIRY_SH",
+    "MM_STRAY_FAIRY_ST",
+    "MM_STRAY_FAIRY_TOWN",
+    "MM_STRAY_FAIRY_WF",
+    "MM_SWORD",
+    "MM_WALLET",
+    "MM_WORLD_MAP_CLOCK_TOWN",
+    "MM_WORLD_MAP_GREAT_BAY",
+    "MM_WORLD_MAP_ROMANI_RANCH",
+    "MM_WORLD_MAP_SNOWHEAD",
+    "MM_WORLD_MAP_STONE_TOWER",
+    "MM_WORLD_MAP_WOODFALL",
+    "OOT_ARROW_FIRE",
+    "OOT_ARROW_ICE",
+    "OOT_ARROW_LIGHT",
+    "OOT_ARROWS_10",
+    "OOT_ARROWS_30",
+    "OOT_ARROWS_5",
+    "OOT_BLUE_FIRE",
+    "OOT_BOMB_BAG",
+    "OOT_BOMB",
+    "OOT_BOMBCHU_10",
+    "OOT_BOMBCHU_20",
+    "OOT_BOMBCHU_5",
+    "OOT_BOMBS_10",
+    "OOT_BOMBS_20",
+    "OOT_BOMBS_30",
+    "OOT_BOMBS_5",
+    "OOT_BOOMERANG",
+    "OOT_BOOTS_HOVER",
+    "OOT_BOOTS_IRON",
+    "OOT_BOSS_KEY_FIRE",
+    "OOT_BOSS_KEY_FOREST",
+    "OOT_BOSS_KEY_GANON",
+    "OOT_BOSS_KEY_SHADOW",
+    "OOT_BOSS_KEY_SPIRIT",
+    "OOT_BOSS_KEY_WATER",
+    "OOT_BOTTLE_EMPTY",
+    "OOT_BOTTLE_MILK",
+    "OOT_BOW",
+    "OOT_BROKEN_GORON_SWORD",
+    "OOT_BUG",
+    "OOT_CHICKEN",
+    "OOT_CLAIM_CHECK",
+    "OOT_COJIRO",
+    "OOT_COMPASS_BOTW",
+    "OOT_COMPASS_DC",
+    "OOT_COMPASS_DT",
+    "OOT_COMPASS_FIRE",
+    "OOT_COMPASS_FOREST",
+    "OOT_COMPASS_IC",
+    "OOT_COMPASS_JJ",
+    "OOT_COMPASS_SHADOW",
+    "OOT_COMPASS_SPIRIT",
+    "OOT_COMPASS_WATER",
+    "OOT_DEKU_SEEDS_30",
+    "OOT_DEKU_SEEDS_5",
+    "OOT_EYE_DROPS",
+    "OOT_EYEBALL_FROG",
+    "OOT_FAIRY",
+    "OOT_FISH",
+    "OOT_GERUDO_CARD",
+    "OOT_GS_TOKEN",
+    "OOT_HAMMER",
+    "OOT_HOOKSHOT",
+    "OOT_LENS",
+    "OOT_MAGIC_BEAN",
+    "OOT_MAGIC_UPGRADE",
+    "OOT_MAP_BOTW",
+    "OOT_MAP_DC",
+    "OOT_MAP_DT",
+    "OOT_MAP_FIRE",
+    "OOT_MAP_FOREST",
+    "OOT_MAP_IC",
+    "OOT_MAP_JJ",
+    "OOT_MAP_SHADOW",
+    "OOT_MAP_SPIRIT",
+    "OOT_MAP_WATER",
+    "OOT_MASK_BUNNY",
+    "OOT_MASK_GERUDO",
+    "OOT_MASK_GORON",
+    "OOT_MASK_KEATON",
+    "OOT_MASK_SKULL",
+    "OOT_MASK_SPOOKY",
+    "OOT_MASK_TRUTH",
+    "OOT_MASK_ZORA",
+    "OOT_MEDALLION_FIRE",
+    "OOT_MEDALLION_FOREST",
+    "OOT_MEDALLION_LIGHT",
+    "OOT_MEDALLION_SHADOW",
+    "OOT_MEDALLION_SPIRIT",
+    "OOT_MEDALLION_WATER",
+    "OOT_MILK",
+    "OOT_NUTS_5",
+    "OOT_NUTS_5_ALT",
+    "OOT_NUTS_10",
+    "OOT_OCARINA",
+    "OOT_ODD_MUSHROOM",
+    "OOT_ODD_POTION",
+    "OOT_POACHER_SAW",
+    "OOT_POCKET_CUCCO",
+    "OOT_POCKET_EGG",
+    "OOT_POE",
+    "OOT_BIG_POE",
+    "OOT_POTION_BLUE",
+    "OOT_POTION_GREEN",
+    "OOT_POTION_RED",
+    "OOT_PRESCRIPTION",
+    "OOT_RECOVERY_HEART",
+    "OOT_RUPEE_BLUE",
+    "OOT_RUPEE_GREEN",
+    "OOT_RUPEE_HUGE",
+    "OOT_RUPEE_PURPLE",
+    "OOT_RUPEE_RED",
+    "OOT_RUTO_LETTER",
+    "OOT_SCALE",
+    "OOT_SHIELD_DEKU",
+    "OOT_SHIELD_HYLIAN",
+    "OOT_SHIELD_MIRROR",
+    "OOT_SHIELD",
+    "OOT_SLINGSHOT",
+    "OOT_SMALL_KEY_BOTW",
+    "OOT_SMALL_KEY_FIRE",
+    "OOT_SMALL_KEY_FOREST",
+    "OOT_SMALL_KEY_GANON",
+    "OOT_SMALL_KEY_GF",
+    "OOT_SMALL_KEY_GTG",
+    "OOT_SMALL_KEY_SHADOW",
+    "OOT_SMALL_KEY_SPIRIT",
+    "OOT_SMALL_KEY_WATER",
+    "OOT_SONG_EPONA",
+    "OOT_SONG_SARIA",
+    "OOT_SONG_STORMS",
+    "OOT_SONG_SUN",
+    "OOT_SONG_TIME",
+    "OOT_SONG_TP_FIRE",
+    "OOT_SONG_TP_FOREST",
+    "OOT_SONG_TP_LIGHT",
+    "OOT_SONG_TP_SHADOW",
+    "OOT_SONG_TP_SPIRIT",
+    "OOT_SONG_TP_WATER",
+    "OOT_SONG_ZELDA",
+    "OOT_SPELL_FIRE",
+    "OOT_STICK",
+    "OOT_STICKS_10",
+    "OOT_STICKS_5",
+    "OOT_STONE_EMERALD",
+    "OOT_STONE_OF_AGONY",
+    "OOT_STONE_RUBY",
+    "OOT_STONE_SAPPHIRE",
+    "OOT_STRENGTH",
+    "OOT_SWORD_BIGGORON",
+    "OOT_SWORD_GORON",
+    "OOT_SWORD_KNIFE",
+    "OOT_SWORD_KOKIRI",
+    "OOT_SWORD_MASTER",
+    "OOT_SWORD",
+    "OOT_TUNIC_GORON",
+    "OOT_TUNIC_ZORA",
+    "OOT_WALLET",
+    "OOT_WEIRD_EGG",
+    "OOT_ZELDA_LETTER",
+    "SHARED_ARROW_FIRE",
+    "SHARED_ARROW_ICE",
+    "SHARED_ARROW_LIGHT",
+    "SHARED_ARROWS_10",
+    "SHARED_ARROWS_30",
+    "SHARED_ARROWS_40",
+    "SHARED_ARROWS_5",
+    "SHARED_BOMB_BAG",
+    "SHARED_BOMB",
+    "SHARED_BOMBCHU",
+    "SHARED_BOMBCHU_5",
+    "SHARED_BOMBCHU_10",
+    "SHARED_BOMBCHU_20",
+    "SHARED_BOMBS_10",
+    "SHARED_BOMBS_20",
+    "SHARED_BOMBS_30",
+    "SHARED_BOMBS_5",
+    "SHARED_BOW",
+    "SHARED_HOOKSHOT",
+    "SHARED_LENS",
+    "SHARED_MAGIC_UPGRADE",
+    "SHARED_MASK_BUNNY",
+    "SHARED_MASK_GORON",
+    "SHARED_MASK_KEATON",
+    "SHARED_MASK_TRUTH",
+    "SHARED_MASK_ZORA",
+    "SHARED_NUT",
+    "SHARED_NUTS_10",
+    "SHARED_NUTS_5",
+    "SHARED_OCARINA",
+    "SHARED_RECOVERY_HEART",
+    "SHARED_RUPEE_BLUE",
+    "SHARED_RUPEE_GOLD",
+    "SHARED_RUPEE_GREEN",
+    "SHARED_RUPEE_PURPLE",
+    "SHARED_RUPEE_RED",
+    "SHARED_RUPEE_SILVER",
+    "SHARED_SONG_EPONA",
+    "SHARED_SONG_STORMS",
+    "SHARED_SONG_SUN",
+    "SHARED_SONG_TIME",
+    "SHARED_STICK",
+    "SHARED_STICKS_10",
+    "SHARED_STICKS_5",
+    "SHARED_WALLET",
+    "SHARED_TRIFORCE",
+    "SHARED_TRIFORCE_POWER",
+    "SHARED_TRIFORCE_COURAGE",
+    "SHARED_TRIFORCE_WISDOM",
+    "SHARED_SHIELD",
+    "SHARED_SHIELD_HYLIAN",
+    "SHARED_SHIELD_MIRROR",
+    "SHARED_SPELL_FIRE",
+    "SHARED_SPELL_LOVE",
+    "SHARED_SPELL_WIND",
+    "SHARED_BOOTS_IRON",
+    "SHARED_BOOTS_HOVER",
+    "SHARED_TUNIC_GORON",
+    "SHARED_TUNIC_ZORA",
+    "SHARED_SCALE",
+    "SHARED_STRENGTH",
+    "OOT_RUPEE_SILVER_DC",
+    "OOT_RUPEE_SILVER_BOTW",
+    "OOT_RUPEE_SILVER_SPIRIT_CHILD",
+    "OOT_RUPEE_SILVER_SPIRIT_SUN",
+    "OOT_RUPEE_SILVER_SPIRIT_BOULDERS",
+    "OOT_RUPEE_SILVER_SPIRIT_LOBBY",
+    "OOT_RUPEE_SILVER_SPIRIT_ADULT",
+    "OOT_RUPEE_SILVER_SHADOW_SCYTHE",
+    "OOT_RUPEE_SILVER_SHADOW_PIT",
+    "OOT_RUPEE_SILVER_SHADOW_SPIKES",
+    "OOT_RUPEE_SILVER_SHADOW_BLADES",
+    "OOT_RUPEE_SILVER_IC_SCYTHE",
+    "OOT_RUPEE_SILVER_IC_BLOCK",
+    "OOT_RUPEE_SILVER_GTG_SLOPES",
+    "OOT_RUPEE_SILVER_GTG_LAVA",
+    "OOT_RUPEE_SILVER_GTG_WATER",
+    "OOT_RUPEE_SILVER_GANON_SPIRIT",
+    "OOT_RUPEE_SILVER_GANON_LIGHT",
+    "OOT_RUPEE_SILVER_GANON_FIRE",
+    "OOT_RUPEE_SILVER_GANON_FOREST",
+    "OOT_RUPEE_SILVER_GANON_SHADOW",
+    "OOT_RUPEE_SILVER_GANON_WATER",
+    "OOT_POUCH_SILVER_DC",
+    "OOT_POUCH_SILVER_BOTW",
+    "OOT_POUCH_SILVER_SPIRIT_CHILD",
+    "OOT_POUCH_SILVER_SPIRIT_SUN",
+    "OOT_POUCH_SILVER_SPIRIT_BOULDERS",
+    "OOT_POUCH_SILVER_SPIRIT_LOBBY",
+    "OOT_POUCH_SILVER_SPIRIT_ADULT",
+    "OOT_POUCH_SILVER_SHADOW_SCYTHE",
+    "OOT_POUCH_SILVER_SHADOW_PIT",
+    "OOT_POUCH_SILVER_SHADOW_SPIKES",
+    "OOT_POUCH_SILVER_SHADOW_BLADES",
+    "OOT_POUCH_SILVER_IC_SCYTHE",
+    "OOT_POUCH_SILVER_IC_BLOCK",
+    "OOT_POUCH_SILVER_GTG_SLOPES",
+    "OOT_POUCH_SILVER_GTG_LAVA",
+    "OOT_POUCH_SILVER_GTG_WATER",
+    "OOT_POUCH_SILVER_GANON_SPIRIT",
+    "OOT_POUCH_SILVER_GANON_LIGHT",
+    "OOT_POUCH_SILVER_GANON_FIRE",
+    "OOT_POUCH_SILVER_GANON_FOREST",
+    "OOT_POUCH_SILVER_GANON_SHADOW",
+    "OOT_POUCH_SILVER_GANON_WATER",
+    "OOT_SOUL_ENEMY_STALFOS",
+    "OOT_SOUL_ENEMY_OCTOROK",
+    "OOT_SOUL_ENEMY_WALLMASTER",
+    "OOT_SOUL_ENEMY_DODONGO",
+    "OOT_SOUL_ENEMY_KEESE",
+    "OOT_SOUL_ENEMY_TEKTITE",
+    "OOT_SOUL_ENEMY_LEEVER",
+    "OOT_SOUL_ENEMY_PEAHAT",
+    "OOT_SOUL_ENEMY_LIZALFOS_DINALFOS",
+    "OOT_SOUL_ENEMY_GOHMA_LARVA",
+    "OOT_SOUL_ENEMY_SHABOM",
+    "OOT_SOUL_ENEMY_BABY_DODONGO",
+    "OOT_SOUL_ENEMY_DARK_LINK",
+    "OOT_SOUL_ENEMY_BIRI_BARI",
+    "OOT_SOUL_ENEMY_TAILPASARN",
+    "OOT_SOUL_ENEMY_PARASITE",
+    "OOT_SOUL_ENEMY_SKULLTULA",
+    "OOT_SOUL_ENEMY_TORCH_SLUG",
+    "OOT_SOUL_ENEMY_MOBLIN",
+    "OOT_SOUL_ENEMY_ARMOS",
+    "OOT_SOUL_ENEMY_DEKU_BABA",
+    "OOT_SOUL_ENEMY_DEKU_SCRUB",
+    "OOT_SOUL_ENEMY_BUBBLE",
+    "OOT_SOUL_ENEMY_BEAMOS",
+    "OOT_SOUL_ENEMY_FLOORMASTER",
+    "OOT_SOUL_ENEMY_REDEAD_GIBDO",
+    "OOT_SOUL_ENEMY_SKULLWALLTULA",
+    "OOT_SOUL_ENEMY_FLARE_DANCER",
+    "OOT_SOUL_ENEMY_DEAD_HAND",
+    "OOT_SOUL_ENEMY_SHELL_BLADE",
+    "OOT_SOUL_ENEMY_LIKE_LIKE",
+    "OOT_SOUL_ENEMY_SPIKE",
+    "OOT_SOUL_ENEMY_ANUBIS",
+    "OOT_SOUL_ENEMY_IRON_KNUCKLE",
+    "OOT_SOUL_ENEMY_SKULL_KID",
+    "OOT_SOUL_ENEMY_FLYING_POT",
+    "OOT_SOUL_ENEMY_FREEZARD",
+    "OOT_SOUL_ENEMY_STINGER",
+    "OOT_SOUL_ENEMY_WOLFOS",
+    "OOT_SOUL_ENEMY_STALCHILD",
+    "OOT_SOUL_ENEMY_GUAY",
+    "OOT_SOUL_BOSS_QUEEN_GOHMA",
+    "OOT_SOUL_BOSS_KING_DODONGO",
+    "OOT_SOUL_BOSS_BARINADE",
+    "OOT_SOUL_BOSS_PHANTOM_GANON",
+    "OOT_SOUL_BOSS_VOLVAGIA",
+    "OOT_SOUL_BOSS_MORPHA",
+    "OOT_SOUL_BOSS_BONGO_BONGO",
+    "OOT_SOUL_BOSS_TWINROVA",
+    "MM_SOUL_ENEMY_OCTOROK",
+    "MM_SOUL_ENEMY_WALLMASTER",
+    "MM_SOUL_ENEMY_DODONGO",
+    "MM_SOUL_ENEMY_KEESE",
+    "MM_SOUL_ENEMY_TEKTITE",
+    "MM_SOUL_ENEMY_PEAHAT",
+    "MM_SOUL_ENEMY_LIZALFOS_DINALFOS",
+    "MM_SOUL_ENEMY_SKULLTULA",
+    "MM_SOUL_ENEMY_ARMOS",
+    "MM_SOUL_ENEMY_DEKU_BABA",
+    "MM_SOUL_ENEMY_DEKU_SCRUB",
+    "MM_SOUL_ENEMY_BUBBLE",
+    "MM_SOUL_ENEMY_BEAMOS",
+    "MM_SOUL_ENEMY_REDEAD_GIBDO",
+    "MM_SOUL_ENEMY_SKULLWALLTULA",
+    "MM_SOUL_ENEMY_SHELL_BLADE",
+    "MM_SOUL_ENEMY_LIKE_LIKE",
+    "MM_SOUL_ENEMY_IRON_KNUCKLE",
+    "MM_SOUL_ENEMY_FREEZARD",
+    "MM_SOUL_ENEMY_WOLFOS",
+    "MM_SOUL_ENEMY_GUAY",
+    "MM_SOUL_ENEMY_FLYING_POT",
+    "MM_SOUL_ENEMY_FLOORMASTER",
+    "MM_SOUL_ENEMY_CHUCHU",
+    "MM_SOUL_ENEMY_DEEP_PYTHON",
+    "MM_SOUL_ENEMY_STALCHILD",
+    "MM_SOUL_ENEMY_LEEVER",
+    "MM_SOUL_ENEMY_SKULLFISH",
+    "MM_SOUL_ENEMY_DEXIHAND",
+    "MM_SOUL_ENEMY_DRAGONFLY",
+    "MM_SOUL_ENEMY_EENO",
+    "MM_SOUL_ENEMY_EYEGORE",
+    "MM_SOUL_ENEMY_HIPLOOP",
+    "MM_SOUL_ENEMY_REAL_BOMBCHU",
+    "MM_SOUL_ENEMY_TAKKURI",
+    "MM_SOUL_ENEMY_BOE",
+    "MM_SOUL_ENEMY_NEJIRON",
+    "MM_SOUL_ENEMY_BIO_BABA",
+    "MM_SOUL_ENEMY_GARO",
+    "MM_SOUL_ENEMY_WIZZROBE",
+    "MM_SOUL_ENEMY_GOMESS",
+    "MM_SOUL_ENEMY_GEKKO",
+    "MM_SOUL_ENEMY_BAD_BAT",
+    "MM_SOUL_ENEMY_SNAPPER",
+    "MM_SOUL_ENEMY_WART",
+    "MM_SOUL_ENEMY_CAPTAIN_KEETA",
+    "MM_SOUL_BOSS_ODOLWA",
+    "MM_SOUL_BOSS_GOHT",
+    "MM_SOUL_BOSS_GYORG",
+    "MM_SOUL_BOSS_TWINMOLD",
+    "MM_SOUL_BOSS_IGOS",
+    "SHARED_SOUL_ENEMY_OCTOROK",
+    "SHARED_SOUL_ENEMY_WALLMASTER",
+    "SHARED_SOUL_ENEMY_DODONGO",
+    "SHARED_SOUL_ENEMY_KEESE",
+    "SHARED_SOUL_ENEMY_TEKTITE",
+    "SHARED_SOUL_ENEMY_PEAHAT",
+    "SHARED_SOUL_ENEMY_LIZALFOS_DINALFOS",
+    "SHARED_SOUL_ENEMY_SKULLTULA",
+    "SHARED_SOUL_ENEMY_ARMOS",
+    "SHARED_SOUL_ENEMY_DEKU_BABA",
+    "SHARED_SOUL_ENEMY_DEKU_SCRUB",
+    "SHARED_SOUL_ENEMY_BUBBLE",
+    "SHARED_SOUL_ENEMY_BEAMOS",
+    "SHARED_SOUL_ENEMY_REDEAD_GIBDO",
+    "SHARED_SOUL_ENEMY_SKULLWALLTULA",
+    "SHARED_SOUL_ENEMY_SHELL_BLADE",
+    "SHARED_SOUL_ENEMY_LIKE_LIKE",
+    "SHARED_SOUL_ENEMY_IRON_KNUCKLE",
+    "SHARED_SOUL_ENEMY_FREEZARD",
+    "SHARED_SOUL_ENEMY_WOLFOS",
+    "SHARED_SOUL_ENEMY_GUAY",
+    "SHARED_SOUL_ENEMY_FLYING_POT",
+    "SHARED_SOUL_ENEMY_FLOORMASTER",
+    "SHARED_SOUL_ENEMY_LEEVER",
+    "SHARED_SOUL_ENEMY_STALCHILD",
+    "OOT_KEY_RING_FOREST",
+    "OOT_KEY_RING_FIRE",
+    "OOT_KEY_RING_WATER",
+    "OOT_KEY_RING_SPIRIT",
+    "OOT_KEY_RING_SHADOW",
+    "OOT_KEY_RING_BOTW",
+    "OOT_KEY_RING_GTG",
+    "OOT_KEY_RING_GANON",
+    "OOT_KEY_RING_GF",
+    "MM_KEY_RING_WF",
+    "MM_KEY_RING_SH",
+    "MM_KEY_RING_GB",
+    "MM_KEY_RING_ST",
+    "OOT_SKELETON_KEY",
+    "MM_SKELETON_KEY",
+    "SHARED_SKELETON_KEY",
+    "OOT_COIN_YELLOW",
+    "OOT_COIN_RED",
+    "OOT_COIN_GREEN",
+    "OOT_COIN_BLUE",
+    "OOT_RUPEE_MAGICAL",
+    "OOT_BUTTON_A",
+    "OOT_BUTTON_C_RIGHT",
+    "OOT_BUTTON_C_LEFT",
+    "OOT_BUTTON_C_UP",
+    "OOT_BUTTON_C_DOWN",
+    "MM_BUTTON_A",
+    "MM_BUTTON_C_RIGHT",
+    "MM_BUTTON_C_LEFT",
+    "MM_BUTTON_C_UP",
+    "MM_BUTTON_C_DOWN",
+    "SHARED_BUTTON_A",
+    "SHARED_BUTTON_C_RIGHT",
+    "SHARED_BUTTON_C_LEFT",
+    "SHARED_BUTTON_C_UP",
+    "SHARED_BUTTON_C_DOWN",
+    "OOT_SMALL_KEY_TCG",
+    "OOT_KEY_RING_TCG",
+    "OOT_SOUL_NPC_SARIA",
+    "OOT_SOUL_NPC_DARUNIA",
+    "OOT_SOUL_NPC_RUTO",
+    "OOT_SOUL_NPC_KING_ZORA",
+    "OOT_SOUL_NPC_ZELDA",
+    "OOT_SOUL_NPC_SHEIK",
+    "OOT_SOUL_NPC_CUCCO_LADY",
+    "OOT_SOUL_NPC_CARPENTERS",
+    "OOT_SOUL_NPC_GURU_GURU",
+    "OOT_SOUL_NPC_MIDO",
+    "OOT_SOUL_NPC_KOKIRI",
+    "OOT_SOUL_NPC_KOKIRI_SHOPKEEPER",
+    "OOT_SOUL_NPC_HYLIAN_GUARD",
+    "OOT_SOUL_NPC_HYLIAN_CITIZEN",
+    "OOT_SOUL_NPC_MALON",
+    "OOT_SOUL_NPC_TALON",
+    "OOT_SOUL_NPC_FISHING_POND_OWNER",
+    "OOT_SOUL_NPC_GORON",
+    "OOT_SOUL_NPC_MEDIGORON",
+    "OOT_SOUL_NPC_BIGGORON",
+    "OOT_SOUL_NPC_GORON_CHILD",
+    "OOT_SOUL_NPC_GORON_SHOPKEEPER",
+    "OOT_SOUL_NPC_ZORA",
+    "OOT_SOUL_NPC_ZORA_SHOPKEEPER",
+    "OOT_SOUL_NPC_BAZAAR_SHOPKEEPER",
+    "OOT_SOUL_NPC_BOMBCHU_SHOPKEEPER",
+    "OOT_SOUL_NPC_POTION_SHOPKEEPER",
+    "OOT_SOUL_NPC_BOMBCHU_BOWLING_LADY",
+    "OOT_SOUL_NPC_TRASURE_CHEST_GAME_OWNER",
+    "OOT_SOUL_NPC_SHOOTING_GALLERY_OWNER",
+    "OOT_SOUL_NPC_DAMPE",
+    "OOT_SOUL_NPC_GRAVEYARD_KID",
+    "OOT_SOUL_NPC_POE_COLLECTOR",
+    "OOT_BOTTLE_POTION_RED",
+    "OOT_BOTTLE_POTION_GREEN",
+    "OOT_BOTTLE_POTION_BLUE",
+    "OOT_FISHING_POND_CHILD_FISH",
+    "OOT_FISHING_POND_CHILD_FISH_2LBS",
+    "OOT_FISHING_POND_CHILD_FISH_3LBS",
+    "OOT_FISHING_POND_CHILD_FISH_4LBS",
+    "OOT_FISHING_POND_CHILD_FISH_5LBS",
+    "OOT_FISHING_POND_CHILD_FISH_6LBS",
+    "OOT_FISHING_POND_CHILD_FISH_7LBS",
+    "OOT_FISHING_POND_CHILD_FISH_8LBS",
+    "OOT_FISHING_POND_CHILD_FISH_9LBS",
+    "OOT_FISHING_POND_CHILD_FISH_10LBS",
+    "OOT_FISHING_POND_CHILD_FISH_11LBS",
+    "OOT_FISHING_POND_CHILD_FISH_12LBS",
+    "OOT_FISHING_POND_CHILD_FISH_13LBS",
+    "OOT_FISHING_POND_CHILD_FISH_14LBS",
+    "OOT_FISHING_POND_ADULT_FISH",
+    "OOT_FISHING_POND_ADULT_FISH_4LBS",
+    "OOT_FISHING_POND_ADULT_FISH_5LBS",
+    "OOT_FISHING_POND_ADULT_FISH_6LBS",
+    "OOT_FISHING_POND_ADULT_FISH_7LBS",
+    "OOT_FISHING_POND_ADULT_FISH_8LBS",
+    "OOT_FISHING_POND_ADULT_FISH_9LBS",
+    "OOT_FISHING_POND_ADULT_FISH_10LBS",
+    "OOT_FISHING_POND_ADULT_FISH_11LBS",
+    "OOT_FISHING_POND_ADULT_FISH_12LBS",
+    "OOT_FISHING_POND_ADULT_FISH_13LBS",
+    "OOT_FISHING_POND_ADULT_FISH_14LBS",
+    "OOT_FISHING_POND_ADULT_FISH_15LBS",
+    "OOT_FISHING_POND_ADULT_FISH_16LBS",
+    "OOT_FISHING_POND_ADULT_FISH_17LBS",
+    "OOT_FISHING_POND_ADULT_FISH_18LBS",
+    "OOT_FISHING_POND_ADULT_FISH_19LBS",
+    "OOT_FISHING_POND_ADULT_FISH_20LBS",
+    "OOT_FISHING_POND_ADULT_FISH_21LBS",
+    "OOT_FISHING_POND_ADULT_FISH_22LBS",
+    "OOT_FISHING_POND_ADULT_FISH_23LBS",
+    "OOT_FISHING_POND_ADULT_FISH_24LBS",
+    "OOT_FISHING_POND_ADULT_FISH_25LBS",
+    "OOT_FISHING_POND_CHILD_LOACH",
+    "OOT_FISHING_POND_CHILD_LOACH_14LBS",
+    "OOT_FISHING_POND_CHILD_LOACH_15LBS",
+    "OOT_FISHING_POND_CHILD_LOACH_16LBS",
+    "OOT_FISHING_POND_CHILD_LOACH_17LBS",
+    "OOT_FISHING_POND_CHILD_LOACH_18LBS",
+    "OOT_FISHING_POND_CHILD_LOACH_19LBS",
+    "OOT_FISHING_POND_ADULT_LOACH",
+    "OOT_FISHING_POND_ADULT_LOACH_29LBS",
+    "OOT_FISHING_POND_ADULT_LOACH_30LBS",
+    "OOT_FISHING_POND_ADULT_LOACH_31LBS",
+    "OOT_FISHING_POND_ADULT_LOACH_32LBS",
+    "OOT_FISHING_POND_ADULT_LOACH_33LBS",
+    "OOT_FISHING_POND_ADULT_LOACH_34LBS",
+    "OOT_FISHING_POND_ADULT_LOACH_35LBS",
+    "OOT_FISHING_POND_ADULT_LOACH_36LBS",
+    "OOT_BOTTLE_FAIRY",
+    "MM_BOTTLE_FAIRY",
+    "MM_POE",
+    "MM_BIG_POE",
+    "OOT_BOTTLE_POE",
+    "MM_BOTTLE_POE",
+    "OOT_BOTTLE_BIG_POE",
+    "MM_BOTTLE_BIG_POE",
+    "OOT_MAGIC_JAR_SMALL",
+    "OOT_MAGIC_JAR_LARGE",
+    "MM_MAGIC_JAR_SMALL",
+    "MM_MAGIC_JAR_LARGE",
+    "SHARED_MAGIC_JAR_SMALL",
+    "SHARED_MAGIC_JAR_LARGE",
+    "OOT_TRAP_RUPOOR",
+    "MM_TRAP_RUPOOR",
+    "SHARED_TRAP_RUPOOR",
+    "NOTHING",
+    "OOT_FAIRY_BIG",
+    "MM_FAIRY_BIG",
+    "SHARED_FAIRY_BIG",
+    "MM_SPELL_FIRE",
+    "MM_SPELL_WIND",
+    "MM_SPELL_LOVE",
+    "MM_BOOTS_IRON",
+    "MM_BOOTS_HOVER",
+    "MM_TUNIC_GORON",
+    "MM_TUNIC_ZORA",
+    "MM_SCALE",
+    "MM_STRENGTH",
+    "OOT_MASK_BLAST",
+    "SHARED_MASK_BLAST",
+    "OOT_MASK_STONE",
+    "SHARED_MASK_STONE",
+    "OOT_SONG_EMPTINESS",
+    "SHARED_SONG_EMPTINESS",
+    "MM_CLOCK",
+    "MM_CLOCK1",
+    "MM_CLOCK2",
+    "MM_CLOCK3",
+    "MM_CLOCK4",
+    "MM_CLOCK5",
+    "MM_CLOCK6"
+  ],
+  "mm_masks": [
+    "MM_MASK_CAPTAIN",
+    "MM_MASK_GIANT",
+    "MM_MASK_ALL_NIGHT",
+    "MM_MASK_BUNNY",
+    "MM_MASK_KEATON",
+    "MM_MASK_GARO",
+    "MM_MASK_ROMANI",
+    "MM_MASK_TROUPE_LEADER",
+    "MM_MASK_POSTMAN",
+    "MM_MASK_COUPLE",
+    "MM_MASK_GREAT_FAIRY",
+    "MM_MASK_GIBDO",
+    "MM_MASK_DON_GERO",
+    "MM_MASK_KAMARO",
+    "MM_MASK_TRUTH",
+    "MM_MASK_STONE",
+    "MM_MASK_BREMEN",
+    "MM_MASK_BLAST",
+    "MM_MASK_SCENTS",
+    "MM_MASK_KAFEI",
+    "SHARED_MASK_TRUTH",
+    "SHARED_MASK_BUNNY",
+    "SHARED_MASK_KEATON",
+    "SHARED_MASK_BLAST",
+    "SHARED_MASK_STONE"
+  ],
+  "oot_masks": [
+    "OOT_MASK_SKULL",
+    "OOT_MASK_SPOOKY",
+    "OOT_MASK_KEATON",
+    "OOT_MASK_BUNNY",
+    "OOT_MASK_TRUTH",
+    "OOT_MASK_GERUDO",
+    "OOT_MASK_GORON",
+    "OOT_MASK_ZORA",
+    "OOT_MASK_BLAST",
+    "OOT_MASK_STONE",
+    "SHARED_MASK_KEATON",
+    "SHARED_MASK_BUNNY",
+    "SHARED_MASK_TRUTH",
+    "SHARED_MASK_GORON",
+    "SHARED_MASK_ZORA",
+    "SHARED_MASK_BLAST",
+    "SHARED_MASK_STONE"
+  ],
+  "stones": [
+    "OOT_STONE_EMERALD",
+    "OOT_STONE_RUBY",
+    "OOT_STONE_SAPPHIRE"
+  ],
+  "medallions": [
+    "OOT_MEDALLION_LIGHT",
+    "OOT_MEDALLION_FOREST",
+    "OOT_MEDALLION_FIRE",
+    "OOT_MEDALLION_WATER",
+    "OOT_MEDALLION_SPIRIT",
+    "OOT_MEDALLION_SHADOW"
+  ],
+  "remains": [
+    "MM_REMAINS_ODOLWA",
+    "MM_REMAINS_GOHT",
+    "MM_REMAINS_GYORG",
+    "MM_REMAINS_TWINMOLD"
+  ],
+  "names": {
+    "MM_ARROW_FIRE": "Fire Arrows (MM)",
+    "MM_ARROW_ICE": "Ice Arrows (MM)",
+    "MM_ARROW_LIGHT": "Light Arrows (MM)",
+    "MM_ARROWS_10": "10 Arrows (MM)",
+    "MM_ARROWS_30": "30 Arrows (MM)",
+    "MM_ARROWS_40": "40 Arrows (MM)",
+    "MM_BOMB_BAG": "Bomb Bag (MM)",
+    "MM_BOMB": "Bomb (MM)",
+    "MM_BOMBCHU_10": "10 Bombchu (MM)",
+    "MM_BOMBCHU_20": "20 Bombchu (MM)",
+    "MM_BOMBCHU_5": "5 Bombchu (MM)",
+    "MM_BOMBCHU": "1 Bombchu (MM)",
+    "MM_BOMBER_NOTEBOOK": "Bombers' Notebook",
+    "MM_BOMBS_10": "10 Bombs (MM)",
+    "MM_BOMBS_20": "20 Bombs (MM)",
+    "MM_BOMBS_30": "30 Bombs (MM)",
+    "MM_BOMBS_5": "5 Bombs (MM)",
+    "MM_BOSS_KEY_GB": "Boss Key (Great Bay Temple)",
+    "MM_BOSS_KEY_SH": "Boss Key (Snowhead Temple)",
+    "MM_BOSS_KEY_ST": "Boss Key (Stone Tower Temple)",
+    "MM_BOSS_KEY_WF": "Boss Key (Woodfall Temple)",
+    "MM_BOTTLE_CHATEAU": "Bottle of Chateau Romani",
+    "MM_BOTTLE_EMPTY": "Empty Bottle (MM)",
+    "MM_BOTTLE_MILK": "Bottle of Milk (MM)",
+    "MM_BOTTLE_POTION_RED": "Bottle of Red Potion (MM)",
+    "MM_BOTTLE_POTION_GREEN": "Bottle of Green Potion (MM)",
+    "MM_BOTTLE_POTION_BLUE": "Bottle of Blue Potion (MM)",
+    "OOT_BOTTLE_POTION_RED": "Bottle of Red Potion (OoT)",
+    "OOT_BOTTLE_POTION_GREEN": "Bottle of Green Potion (OoT)",
+    "OOT_BOTTLE_POTION_BLUE": "Bottle of Blue Potion (OoT)",
+    "MM_BOTTLED_GOLD_DUST": "Bottle of Gold Dust",
+    "MM_BOW": "Hero's Bow (MM)",
+    "MM_BUGS": "Bugs (MM)",
+    "MM_CHATEAU": "Chateau Romani Refill (MM)",
+    "MM_COMPASS_GB": "Compass (Great Bay Temple)",
+    "MM_COMPASS_SH": "Compass (Snowhead Temple)",
+    "MM_COMPASS_ST": "Compass (Stone Tower Temple)",
+    "MM_COMPASS_WF": "Compass (Woodfall Temple)",
+    "MM_DEED_LAND": "Land Title Deed",
+    "MM_DEED_MOUNTAIN": "Mountain Title Deed",
+    "MM_DEED_OCEAN": "Ocean Title Deed",
+    "MM_DEED_SWAMP": "Swamp Title Deed",
+    "MM_DEFENSE_UPGRADE": "Double Defense (MM)",
+    "MM_FAIRY": "Fairy (MM)",
+    "MM_FISH": "Fish (MM)",
+    "MM_GREAT_FAIRY_SWORD": "Great Fairy's Sword",
+    "MM_GS_TOKEN_OCEAN": "Ocean Skulltula Token",
+    "MM_GS_TOKEN_SWAMP": "Swamp Skulltula Token",
+    "MM_HEART_CONTAINER": "Heart Container (MM)",
+    "MM_HEART_PIECE": "Piece of Heart (MM)",
+    "MM_HOOKSHOT": "Hookshot (MM)",
+    "MM_KEY_RING_GB": "Key Ring (Great Bay)",
+    "MM_KEY_RING_SH": "Key Ring (Snowhead)",
+    "MM_KEY_RING_ST": "Key Ring (Stone Tower)",
+    "MM_KEY_RING_WF": "Key Ring (Woodfall)",
+    "MM_LENS": "Lens of Truth (MM)",
+    "MM_LETTER_TO_KAFEI": "Letter to Kafei",
+    "MM_LETTER_TO_MAMA": "Letter to Mama",
+    "MM_MAGIC_BEAN": "Magic Bean (MM)",
+    "MM_MAGIC_UPGRADE": "Magic Upgrade (MM)",
+    "MM_MAP_GB": "Map (Great Bay Temple)",
+    "MM_MAP_SH": "Map (Snowhead Temple)",
+    "MM_MAP_ST": "Map (Stone Tower Temple)",
+    "MM_MAP_WF": "Map (Woodfall Temple)",
+    "MM_MASK_ALL_NIGHT": "All-Night Mask",
+    "MM_MASK_BLAST": "Blast Mask (MM)",
+    "MM_MASK_BREMEN": "Bremen Mask",
+    "MM_MASK_BUNNY": "Bunny Hood (MM)",
+    "MM_MASK_CAPTAIN": "Captain's Hat",
+    "MM_MASK_COUPLE": "Couple's Mask",
+    "MM_MASK_DEKU": "Deku Mask",
+    "MM_MASK_DON_GERO": "Don Gero's Mask",
+    "MM_MASK_FIERCE_DEITY": "Fierce Deity's Mask",
+    "MM_MASK_GARO": "Garo's Mask",
+    "MM_MASK_GIANT": "Giant's Mask",
+    "MM_MASK_GIBDO": "Gibdo Mask",
+    "MM_MASK_GORON": "Goron Mask (MM)",
+    "MM_MASK_GREAT_FAIRY": "Great Fairy's Mask",
+    "MM_MASK_KAFEI": "Kafei's Mask",
+    "MM_MASK_KAMARO": "Kamaro's Mask",
+    "MM_MASK_KEATON": "Keaton Mask",
+    "MM_MASK_POSTMAN": "Postman's Hat",
+    "MM_MASK_ROMANI": "Romani's Mask",
+    "MM_MASK_SCENTS": "Mask of Scents",
+    "MM_MASK_STONE": "Stone Mask (MM)",
+    "MM_MASK_TROUPE_LEADER": "Circus Leader's Mask",
+    "MM_MASK_TRUTH": "Mask of Truth (MM)",
+    "MM_MASK_ZORA": "Zora Mask (MM)",
+    "MM_MILK": "Romani Milk",
+    "MM_MOON_TEAR": "Moon's Tear",
+    "MM_NUT": "Nut (MM)",
+    "MM_NUTS_10": "10 Deku Nuts (MM)",
+    "MM_NUTS_5": "5 Deku Nuts (MM)",
+    "MM_OCARINA": "Ocarina (MM)",
+    "MM_OWL_CLOCK_TOWN": "Owl Statue (Clock Town)",
+    "MM_OWL_GREAT_BAY": "Owl Statue (Great Bay)",
+    "MM_OWL_IKANA_CANYON": "Owl Statue (Ikana Canyon)",
+    "MM_OWL_MILK_ROAD": "Owl Statue (Milk Road)",
+    "MM_OWL_MOUNTAIN_VILLAGE": "Owl Statue (Mountain Village)",
+    "MM_OWL_SNOWHEAD": "Owl Statue (Snowhead)",
+    "MM_OWL_SOUTHERN_SWAMP": "Owl Statue (Southern Swamp)",
+    "MM_OWL_STONE_TOWER": "Owl Statue (Stone Tower)",
+    "MM_OWL_WOODFALL": "Owl Statue (Woodfall)",
+    "MM_OWL_ZORA_CAPE": "Owl Statue (Zora Cape)",
+    "MM_PENDANT_OF_MEMORIES": "Pendant of Memories",
+    "MM_PICTOGRAPH_BOX": "Pictograph Box",
+    "MM_POTION_BLUE": "Blue Potion (MM)",
+    "MM_POTION_GREEN": "Green Potion (MM)",
+    "MM_POTION_RED": "Red Potion (MM)",
+    "MM_POWDER_KEG": "Powder Keg",
+    "MM_RECOVERY_HEART": "Recovery Heart (MM)",
+    "MM_REMAINS_GOHT": "Goht's Remains",
+    "MM_REMAINS_GYORG": "Gyorg's Remains",
+    "MM_REMAINS_ODOLWA": "Odolwa's Remains",
+    "MM_REMAINS_TWINMOLD": "Twinmold's Remains",
+    "MM_ROOM_KEY": "Room Key",
+    "MM_RUPEE_BLUE": "Blue Rupee (MM)",
+    "MM_RUPEE_GOLD": "Gold Rupee (MM)",
+    "MM_RUPEE_GREEN": "Green Rupee (MM)",
+    "MM_RUPEE_PURPLE": "Purple Rupee (MM)",
+    "MM_RUPEE_RED": "Red Rupee (MM)",
+    "MM_RUPEE_SILVER": "Silver Rupee (MM)",
+    "MM_SHIELD_HERO": "Hero's Shield",
+    "MM_SHIELD_MIRROR": "Mirror Shield (MM)",
+    "MM_SHIELD": "Progressive Shield (MM)",
+    "MM_SKELETON_KEY": "Skeleton Key (MM)",
+    "MM_SMALL_KEY_GB": "Small Key (Great Bay Temple)",
+    "MM_SMALL_KEY_SH": "Small Key (Snowhead Temple)",
+    "MM_SMALL_KEY_ST": "Small Key (Stone Tower Temple)",
+    "MM_SMALL_KEY_WF": "Small Key (Woodfall Temple)",
+    "MM_SONG_AWAKENING": "Sonata of Awakening",
+    "MM_SONG_EMPTINESS": "Elegy of Emptiness (MM)",
+    "MM_SONG_EPONA": "Epona's Song (MM)",
+    "MM_SONG_GORON_HALF": "Progressive Goron Lullaby",
+    "MM_SONG_GORON": "Goron Lullaby",
+    "MM_SONG_HEALING": "Song of Healing",
+    "MM_SONG_ORDER": "Oath to Order",
+    "MM_SONG_SOARING": "Song of Soaring",
+    "MM_SONG_STORMS": "Song of Storms (MM)",
+    "MM_SONG_SUN": "Sun's Song (MM)",
+    "MM_SONG_TIME": "Song of Time (MM)",
+    "MM_SONG_ZORA": "New Wave Bossa Nova",
+    "MM_SOUL_ENEMY_ARMOS": "Soul of Armos (MM)",
+    "MM_SOUL_ENEMY_BAD_BAT": "Soul of Bad Bats (MM)",
+    "MM_SOUL_ENEMY_BEAMOS": "Soul of Beamos (MM)",
+    "MM_SOUL_ENEMY_BIO_BABA": "Soul of Bio Babas (MM)",
+    "MM_SOUL_ENEMY_BOE": "Soul of Boes (MM)",
+    "MM_SOUL_ENEMY_BUBBLE": "Soul of Bubbles (MM)",
+    "MM_SOUL_ENEMY_CAPTAIN_KEETA": "Soul of Captain Keeta (MM)",
+    "MM_SOUL_ENEMY_CHUCHU": "Soul of Chuchus (MM)",
+    "MM_SOUL_ENEMY_DEEP_PYTHON": "Soul of Deep Python (MM)",
+    "MM_SOUL_ENEMY_DEKU_BABA": "Soul of Deku Babas (MM)",
+    "MM_SOUL_ENEMY_DEKU_SCRUB": "Soul of Deku Scrubs (MM)",
+    "MM_SOUL_ENEMY_DEXIHAND": "Soul of Dexihands (MM)",
+    "MM_SOUL_ENEMY_DODONGO": "Soul of Dodongos (MM)",
+    "MM_SOUL_ENEMY_DRAGONFLY": "Soul of Dragonflies (MM)",
+    "MM_SOUL_ENEMY_EENO": "Soul of Eenoes (MM)",
+    "MM_SOUL_ENEMY_EYEGORE": "Soul of Eyegores (MM)",
+    "MM_SOUL_ENEMY_FLOORMASTER": "Soul of Floormasters (MM)",
+    "MM_SOUL_ENEMY_FLYING_POT": "Soul of Flying Pots (MM)",
+    "MM_SOUL_ENEMY_FREEZARD": "Soul of Freezards (MM)",
+    "MM_SOUL_ENEMY_GARO": "Soul of Garo (MM)",
+    "MM_SOUL_ENEMY_GEKKO": "Soul of Gekkos (MM)",
+    "MM_SOUL_BOSS_GOHT": "Soul of Goht (MM)",
+    "MM_SOUL_ENEMY_GOMESS": "Soul of Gomess (MM)",
+    "MM_SOUL_ENEMY_GUAY": "Soul of Guays (MM)",
+    "MM_SOUL_BOSS_GYORG": "Soul of Gyorg (MM)",
+    "MM_SOUL_ENEMY_HIPLOOP": "Soul of Hiploops (MM)",
+    "MM_SOUL_BOSS_IGOS": "Soul of Igos (MM)",
+    "MM_SOUL_ENEMY_IRON_KNUCKLE": "Soul of Iron Knuckles (MM)",
+    "MM_SOUL_ENEMY_KEESE": "Soul of Keese (MM)",
+    "MM_SOUL_ENEMY_LEEVER": "Soul of Leevers (MM)",
+    "MM_SOUL_ENEMY_LIKE_LIKE": "Soul of Like Likes (MM)",
+    "MM_SOUL_ENEMY_LIZALFOS_DINALFOS": "Soul of Lizalfos/Dinolfos (MM)",
+    "MM_SOUL_ENEMY_NEJIRON": "Soul of Nejirons (MM)",
+    "MM_SOUL_ENEMY_OCTOROK": "Soul of Octoroks (MM)",
+    "MM_SOUL_BOSS_ODOLWA": "Soul of Odolwa (MM)",
+    "MM_SOUL_ENEMY_PEAHAT": "Soul of Peahats (MM)",
+    "MM_SOUL_ENEMY_REAL_BOMBCHU": "Soul of Real Bombchu (MM)",
+    "MM_SOUL_ENEMY_REDEAD_GIBDO": "Soul of ReDeads/Gibdos (MM)",
+    "MM_SOUL_ENEMY_SHELL_BLADE": "Soul of Shell Blades (MM)",
+    "MM_SOUL_ENEMY_SKULLFISH": "Soul of Skullfish (MM)",
+    "MM_SOUL_ENEMY_SKULLTULA": "Soul of Skulltulas (MM)",
+    "MM_SOUL_ENEMY_SKULLWALLTULA": "Soul of Skullwalltulas (MM)",
+    "MM_SOUL_ENEMY_SNAPPER": "Soul of Snappers (MM)",
+    "MM_SOUL_ENEMY_STALCHILD": "Soul of Stalchildren (MM)",
+    "MM_SOUL_ENEMY_TAKKURI": "Soul of Takkuri (MM)",
+    "MM_SOUL_ENEMY_TEKTITE": "Soul of Tektites (MM)",
+    "MM_SOUL_BOSS_TWINMOLD": "Soul of Twinmold (MM)",
+    "MM_SOUL_ENEMY_WALLMASTER": "Soul of Wallmasters (MM)",
+    "MM_SOUL_ENEMY_WART": "Soul of Warts (MM)",
+    "MM_SOUL_ENEMY_WIZZROBE": "Soul of Wizzrobes (MM)",
+    "MM_SOUL_ENEMY_WOLFOS": "Soul of Wolfos (MM)",
+    "MM_SPIN_UPGRADE": "Spin Attack",
+    "MM_STICK": "Deku Stick (MM)",
+    "MM_STRAY_FAIRY_GB": "Stray Fairy (Great Bay Temple)",
+    "MM_STRAY_FAIRY_SH": "Stray Fairy (Snowhead Temple)",
+    "MM_STRAY_FAIRY_ST": "Stray Fairy (Stone Tower Temple)",
+    "MM_STRAY_FAIRY_TOWN": "Stray Fairy (Clock Town)",
+    "MM_STRAY_FAIRY_WF": "Stray Fairy (Woodfall Temple)",
+    "MM_SWORD": "Progressive Sword (MM)",
+    "MM_WALLET": "Progressive Wallet (MM)",
+    "MM_WORLD_MAP_CLOCK_TOWN": "World Map of Clock Town",
+    "MM_WORLD_MAP_GREAT_BAY": "World Map of Great Bay",
+    "MM_WORLD_MAP_ROMANI_RANCH": "World Map of Ranch",
+    "MM_WORLD_MAP_SNOWHEAD": "World Map of Snowhead",
+    "MM_WORLD_MAP_STONE_TOWER": "World Map of Stone Tower",
+    "MM_WORLD_MAP_WOODFALL": "World Map of Woodfall",
+    "OOT_ARROW_FIRE": "Fire Arrows (OoT)",
+    "OOT_ARROW_ICE": "Ice Arrows (OoT)",
+    "OOT_ARROW_LIGHT": "Light Arrows (OoT)",
+    "OOT_ARROWS_10": "10 Arrows (OoT)",
+    "OOT_ARROWS_30": "30 Arrows (OoT)",
+    "OOT_ARROWS_5": "5 Arrows (OoT)",
+    "OOT_BLUE_FIRE": "Blue Fire",
+    "OOT_BOMB_BAG": "Bomb Bag (OoT)",
+    "OOT_BOMB": "Bomb (OoT)",
+    "OOT_BOMBCHU_10": "10 Bombchu (OoT)",
+    "OOT_BOMBCHU_20": "20 Bombchu (OoT)",
+    "OOT_BOMBCHU_5": "5 Bombchu (OoT)",
+    "OOT_BOMBS_10": "10 Bombs (OoT)",
+    "OOT_BOMBS_20": "20 Bombs (OoT)",
+    "OOT_BOMBS_30": "30 Bombs (OoT)",
+    "OOT_BOMBS_5": "5 Bombs (OoT)",
+    "OOT_BOOMERANG": "Boomerang",
+    "OOT_BOOTS_HOVER": "Hover Boots (OoT)",
+    "OOT_BOOTS_IRON": "Iron Boots (OoT)",
+    "OOT_BOSS_KEY_FIRE": "Boss Key (Fire Temple)",
+    "OOT_BOSS_KEY_FOREST": "Boss Key (Forest Temple)",
+    "OOT_BOSS_KEY_GANON": "Boss Key (Ganon's Castle)",
+    "OOT_BOSS_KEY_SHADOW": "Boss Key (Shadow Temple)",
+    "OOT_BOSS_KEY_SPIRIT": "Boss Key (Spirit Temple)",
+    "OOT_BOSS_KEY_WATER": "Boss Key (Water Temple)",
+    "OOT_BOTTLE_EMPTY": "Empty Bottle (OoT)",
+    "OOT_BOTTLE_MILK": "Bottle of Milk (OoT)",
+    "OOT_BOW": "Fairy Bow (OoT)",
+    "OOT_BROKEN_GORON_SWORD": "Broken Goron's Sword",
+    "OOT_BUG": "Bugs (OoT)",
+    "OOT_CHICKEN": "Chicken",
+    "OOT_CLAIM_CHECK": "Claim Check",
+    "OOT_COIN_BLUE": "Coin (Blue)",
+    "OOT_COIN_GREEN": "Coin (Green)",
+    "OOT_COIN_RED": "Coin (Red)",
+    "OOT_COIN_YELLOW": "Coin (Yellow)",
+    "OOT_COJIRO": "Cojiro",
+    "OOT_COMPASS_BOTW": "Compass (Bottom of the Well)",
+    "OOT_COMPASS_DC": "Compass (Dodongo's Cavern)",
+    "OOT_COMPASS_DT": "Compass (Deku Tree)",
+    "OOT_COMPASS_FIRE": "Compass (Fire Temple)",
+    "OOT_COMPASS_FOREST": "Compass (Forest Temple)",
+    "OOT_COMPASS_IC": "Compass (Ice Cavern)",
+    "OOT_COMPASS_JJ": "Compass (Jabu-Jabu's Belly)",
+    "OOT_COMPASS_SHADOW": "Compass (Shadow Temple)",
+    "OOT_COMPASS_SPIRIT": "Compass (Spirit Temple)",
+    "OOT_COMPASS_WATER": "Compass (Water Temple)",
+    "OOT_DEFENSE_UPGRADE": "Double Defense (OoT)",
+    "OOT_DEKU_SEEDS_30": "30 Deku Seeds",
+    "OOT_DEKU_SEEDS_5": "5 Deku Seeds (OoT)",
+    "OOT_EYE_DROPS": "Eye Drops",
+    "OOT_EYEBALL_FROG": "Eyeball Frog",
+    "OOT_FAIRY": "Fairy (OoT)",
+    "OOT_FISH": "Fish (OoT)",
+    "OOT_GERUDO_CARD": "Gerudo's Membership Card",
+    "OOT_GS_TOKEN": "Gold Skulltula Token",
+    "OOT_HAMMER": "Megaton Hammer",
+    "OOT_HEART_CONTAINER": "Heart Container (OoT)",
+    "OOT_HEART_PIECE": "Piece of Heart (OoT)",
+    "OOT_HOOKSHOT": "Progressive Hookshot (OoT)",
+    "OOT_ICE_TRAP": "Ice Trap (OoT)",
+    "OOT_KEY_RING_BOTW": "Key Ring (Well)",
+    "OOT_KEY_RING_FIRE": "Key Ring (Fire)",
+    "OOT_KEY_RING_FOREST": "Key Ring (Forest)",
+    "OOT_KEY_RING_GANON": "Key Ring (Ganon)",
+    "OOT_KEY_RING_GF": "Key Ring (Hideout)",
+    "OOT_KEY_RING_GTG": "Key Ring (GTG)",
+    "OOT_KEY_RING_TCG": "Key Ring (Chest Game)",
+    "OOT_KEY_RING_SHADOW": "Key Ring (Shadow)",
+    "OOT_KEY_RING_SPIRIT": "Key Ring (Spirit)",
+    "OOT_KEY_RING_WATER": "Key Ring (Water)",
+    "OOT_LENS": "Lens of Truth (OoT)",
+    "OOT_MAGIC_BEAN": "Magic Beans (OoT)",
+    "OOT_MAGIC_UPGRADE": "Magic Upgrade (OoT)",
+    "OOT_MAP_BOTW": "Map (Bottom of the Well)",
+    "OOT_MAP_DC": "Map (Dodongo's Cavern)",
+    "OOT_MAP_DT": "Map (Deku Tree)",
+    "OOT_MAP_FIRE": "Map (Fire Temple)",
+    "OOT_MAP_FOREST": "Map (Forest Temple)",
+    "OOT_MAP_IC": "Map (Ice Cavern)",
+    "OOT_MAP_JJ": "Map (Jabu-Jabu's Belly)",
+    "OOT_MAP_SHADOW": "Map (Shadow Temple)",
+    "OOT_MAP_SPIRIT": "Map (Spirit Temple)",
+    "OOT_MAP_WATER": "Map (Water Temple)",
+    "OOT_MASK_BUNNY": "Bunny Hood (OoT)",
+    "OOT_MASK_GERUDO": "Gerudo Mask",
+    "OOT_MASK_GORON": "Goron Mask (OoT)",
+    "OOT_MASK_KEATON": "Keaton Mask (OoT)",
+    "OOT_MASK_SKULL": "Skull Mask",
+    "OOT_MASK_SPOOKY": "Spooky Mask",
+    "OOT_MASK_TRUTH": "Mask of Truth (OoT)",
+    "OOT_MASK_ZORA": "Zora Mask (OoT)",
+    "OOT_MEDALLION_FIRE": "Fire Medallion",
+    "OOT_MEDALLION_FOREST": "Forest Medallion",
+    "OOT_MEDALLION_LIGHT": "Light Medallion",
+    "OOT_MEDALLION_SHADOW": "Shadow Medallion",
+    "OOT_MEDALLION_SPIRIT": "Spirit Medallion",
+    "OOT_MEDALLION_WATER": "Water Medallion",
+    "OOT_MILK": "Lon Lon Milk (OoT)",
+    "OOT_NUT_UPGRADE": "Deku Nut Upgrade",
+    "OOT_NUTS_10": "10 Deku Nuts (OoT)",
+    "OOT_NUTS_5_ALT": "5 Deku Nuts (OoT)",
+    "OOT_NUTS_5": "5 Deku Nuts (OoT)",
+    "OOT_OCARINA": "Progressive Ocarina (OoT)",
+    "OOT_ODD_MUSHROOM": "Odd Mushroom",
+    "OOT_ODD_POTION": "Odd Potion",
+    "OOT_POACHER_SAW": "Poacher's Saw",
+    "OOT_POCKET_CUCCO": "Pocket Cucco",
+    "OOT_POCKET_EGG": "Pocket Egg",
+    "OOT_POE": "Poe (OoT)",
+    "OOT_POTION_BLUE": "Blue Potion (OoT)",
+    "OOT_POTION_GREEN": "Green Potion (OoT)",
+    "OOT_POTION_RED": "Red Potion (OoT)",
+    "OOT_PRESCRIPTION": "Prescription",
+    "OOT_RECOVERY_HEART": "Recovery Heart (OoT)",
+    "OOT_RUPEE_BLUE": "Blue Rupee (OoT)",
+    "OOT_RUPEE_GREEN": "Green Rupee (OoT)",
+    "OOT_RUPEE_HUGE": "Gold Rupee (OoT)",
+    "OOT_RUPEE_PURPLE": "Purple Rupee (OoT)",
+    "OOT_RUPEE_RED": "Red Rupee (OoT)",
+    "OOT_RUPEE_SILVER_BOTW": "Silver Rupee (Bottom of the Well)",
+    "OOT_RUPEE_SILVER_DC": "Silver Rupee (Dodongo's Cavern)",
+    "OOT_RUPEE_SILVER_GANON_FIRE": "Silver Rupee (Ganon's Castle - Fire Trial)",
+    "OOT_RUPEE_SILVER_GANON_FOREST": "Silver Rupee (Ganon's Castle - Forest Trial)",
+    "OOT_RUPEE_SILVER_GANON_LIGHT": "Silver Rupee (Ganon's Castle - Light Trial)",
+    "OOT_RUPEE_SILVER_GANON_SHADOW": "Silver Rupee (Ganon's Castle - Shadow Trial)",
+    "OOT_RUPEE_SILVER_GANON_SPIRIT": "Silver Rupee (Ganon's Castle - Spirit Trial)",
+    "OOT_RUPEE_SILVER_GANON_WATER": "Silver Rupee (Ganon's Castle - Water Trial)",
+    "OOT_RUPEE_SILVER_GTG_LAVA": "Silver Rupee (Gerudo Training Ground - Lava)",
+    "OOT_RUPEE_SILVER_GTG_SLOPES": "Silver Rupee (Gerudo Training Ground - Slopes)",
+    "OOT_RUPEE_SILVER_GTG_WATER": "Silver Rupee (Gerudo Training Ground - Water)",
+    "OOT_RUPEE_SILVER_IC_BLOCK": "Silver Rupee (Ice Cavern - Block)",
+    "OOT_RUPEE_SILVER_IC_SCYTHE": "Silver Rupee (Ice Cavern - Scythe)",
+    "OOT_RUPEE_SILVER_SHADOW_BLADES": "Silver Rupee (Shadow Temple - Invisible Blades)",
+    "OOT_RUPEE_SILVER_SHADOW_PIT": "Silver Rupee (Shadow Temple - Large Pits)",
+    "OOT_RUPEE_SILVER_SHADOW_SCYTHE": "Silver Rupee (Shadow Temple - Scythe)",
+    "OOT_RUPEE_SILVER_SHADOW_SPIKES": "Silver Rupee (Shadow Temple - Spikes)",
+    "OOT_RUPEE_SILVER_SPIRIT_ADULT": "Silver Rupee (Spirit Temple - Adult)",
+    "OOT_RUPEE_SILVER_SPIRIT_BOULDERS": "Silver Rupee (Spirit Temple - Boulders)",
+    "OOT_RUPEE_SILVER_SPIRIT_CHILD": "Silver Rupee (Spirit Temple - Child)",
+    "OOT_RUPEE_SILVER_SPIRIT_LOBBY": "Silver Rupee (Spirit Temple - Lobby)",
+    "OOT_RUPEE_SILVER_SPIRIT_SUN": "Silver Rupee (Spirit Temple - Sun Block)",
+    "OOT_POUCH_SILVER_BOTW": "Silver Rupee Pouch (Bottom of the Well)",
+    "OOT_POUCH_SILVER_DC": "Silver Rupee Pouch (Dodongo's Cavern)",
+    "OOT_POUCH_SILVER_GANON_FIRE": "Silver Rupee Pouch (Ganon's Castle - Fire Trial)",
+    "OOT_POUCH_SILVER_GANON_FOREST": "Silver Rupee Pouch (Ganon's Castle - Forest Trial)",
+    "OOT_POUCH_SILVER_GANON_LIGHT": "Silver Rupee Pouch (Ganon's Castle - Light Trial)",
+    "OOT_POUCH_SILVER_GANON_SHADOW": "Silver Rupee Pouch (Ganon's Castle - Shadow Trial)",
+    "OOT_POUCH_SILVER_GANON_SPIRIT": "Silver Rupee Pouch (Ganon's Castle - Spirit Trial)",
+    "OOT_POUCH_SILVER_GANON_WATER": "Silver Rupee Pouch (Ganon's Castle - Water Trial)",
+    "OOT_POUCH_SILVER_GTG_LAVA": "Silver Rupee Pouch (Gerudo Training Ground - Lava)",
+    "OOT_POUCH_SILVER_GTG_SLOPES": "Silver Rupee Pouch (Gerudo Training Ground - Slopes)",
+    "OOT_POUCH_SILVER_GTG_WATER": "Silver Rupee Pouch (Gerudo Training Ground - Water)",
+    "OOT_POUCH_SILVER_IC_BLOCK": "Silver Rupee Pouch (Ice Cavern - Block)",
+    "OOT_POUCH_SILVER_IC_SCYTHE": "Silver Rupee Pouch (Ice Cavern - Scythe)",
+    "OOT_POUCH_SILVER_SHADOW_BLADES": "Silver Rupee Pouch (Shadow Temple - Invisible Blades)",
+    "OOT_POUCH_SILVER_SHADOW_PIT": "Silver Rupee Pouch (Shadow Temple - Large Pits)",
+    "OOT_POUCH_SILVER_SHADOW_SCYTHE": "Silver Rupee Pouch (Shadow Temple - Scythe)",
+    "OOT_POUCH_SILVER_SHADOW_SPIKES": "Silver Rupee Pouch (Shadow Temple - Spikes)",
+    "OOT_POUCH_SILVER_SPIRIT_ADULT": "Silver Rupee Pouch (Spirit Temple - Adult)",
+    "OOT_POUCH_SILVER_SPIRIT_BOULDERS": "Silver Rupee Pouch (Spirit Temple - Boulders)",
+    "OOT_POUCH_SILVER_SPIRIT_CHILD": "Silver Rupee Pouch (Spirit Temple - Child)",
+    "OOT_POUCH_SILVER_SPIRIT_LOBBY": "Silver Rupee Pouch (Spirit Temple - Lobby)",
+    "OOT_POUCH_SILVER_SPIRIT_SUN": "Silver Rupee Pouch (Spirit Temple - Sun Block)",
+    "OOT_RUPEE_MAGICAL": "Magical Silver Rupee",
+    "OOT_RUTO_LETTER": "Ruto's Letter",
+    "OOT_SCALE": "Progressive Scale (Oot)",
+    "OOT_SHIELD_DEKU": "Deku Shield",
+    "OOT_SHIELD_HYLIAN": "Hylian Shield",
+    "OOT_SHIELD_MIRROR": "Mirror Shield (OoT)",
+    "OOT_SHIELD": "Progressive Shield (OoT)",
+    "OOT_SKELETON_KEY": "Skeleton Key (OoT)",
+    "OOT_SLINGSHOT": "Fairy Slingshot",
+    "OOT_SMALL_KEY_BOTW": "Small Key (Bottom of the Well)",
+    "OOT_SMALL_KEY_FIRE": "Small Key (Fire Temple)",
+    "OOT_SMALL_KEY_FOREST": "Small Key (Forest Temple)",
+    "OOT_SMALL_KEY_GANON": "Small Key (Ganon's Castle)",
+    "OOT_SMALL_KEY_GF": "Small Key (Gerudo's Fortress)",
+    "OOT_SMALL_KEY_GTG": "Small Key (Gerudo's Training Ground)",
+    "OOT_SMALL_KEY_SHADOW": "Small Key (Shadow Temple)",
+    "OOT_SMALL_KEY_SPIRIT": "Small Key (Spirit Temple)",
+    "OOT_SMALL_KEY_WATER": "Small Key (Water Temple)",
+    "OOT_SMALL_KEY_TCG": "Small Key (Chest Game)",
+    "OOT_SONG_EPONA": "Epona's Song (OoT)",
+    "OOT_SONG_SARIA": "Saria's Song",
+    "OOT_SONG_STORMS": "Song of Storms (OoT)",
+    "OOT_SONG_SUN": "Sun's Song (OoT)",
+    "OOT_SONG_TIME": "Song of Time (OoT)",
+    "OOT_SONG_TP_FIRE": "Bolero of Fire",
+    "OOT_SONG_TP_FOREST": "Minuet of Forest",
+    "OOT_SONG_TP_LIGHT": "Prelude of Light",
+    "OOT_SONG_TP_SHADOW": "Nocturne of Shadow",
+    "OOT_SONG_TP_SPIRIT": "Requiem of Spirit",
+    "OOT_SONG_TP_WATER": "Serenade of Water",
+    "OOT_SONG_ZELDA": "Zelda's Lullaby",
+    "OOT_SOUL_ENEMY_ANUBIS": "Soul of Anubis",
+    "OOT_SOUL_ENEMY_ARMOS": "Soul of Armos (OoT)",
+    "OOT_SOUL_ENEMY_BABY_DODONGO": "Soul of Baby Dodongos",
+    "OOT_SOUL_BOSS_BARINADE": "Soul of Barinade",
+    "OOT_SOUL_ENEMY_BEAMOS": "Soul of Beamos (OoT)",
+    "OOT_SOUL_ENEMY_BIRI_BARI": "Soul of Biris/Baris",
+    "OOT_SOUL_BOSS_BONGO_BONGO": "Soul of Bongo Bongo",
+    "OOT_SOUL_ENEMY_BUBBLE": "Soul of Bubbles (OoT)",
+    "OOT_SOUL_ENEMY_DARK_LINK": "Soul of Dark Link",
+    "OOT_SOUL_ENEMY_DEAD_HAND": "Soul of Dead Hands",
+    "OOT_SOUL_ENEMY_DEKU_BABA": "Soul of Deku Babas (OoT)",
+    "OOT_SOUL_ENEMY_DEKU_SCRUB": "Soul of Deku Scrubs (OoT)",
+    "OOT_SOUL_ENEMY_DODONGO": "Soul of Dodongos (OoT)",
+    "OOT_SOUL_ENEMY_FLARE_DANCER": "Soul of Flare Dancers",
+    "OOT_SOUL_ENEMY_FLOORMASTER": "Soul of Floormasters (OoT)",
+    "OOT_SOUL_ENEMY_FLYING_POT": "Soul of Flying Pots (OoT)",
+    "OOT_SOUL_ENEMY_FREEZARD": "Soul of Freezards (OoT)",
+    "OOT_SOUL_ENEMY_GOHMA_LARVA": "Soul of Gohma Larvaes",
+    "OOT_SOUL_ENEMY_GUAY": "Soul of Guays (OoT)",
+    "OOT_SOUL_ENEMY_IRON_KNUCKLE": "Soul of Iron Knuckles (OoT)",
+    "OOT_SOUL_ENEMY_KEESE": "Soul of Keese (OoT)",
+    "OOT_SOUL_BOSS_KING_DODONGO": "Soul of King Dodongo",
+    "OOT_SOUL_ENEMY_LEEVER": "Soul of Leevers (OoT)",
+    "OOT_SOUL_ENEMY_LIKE_LIKE": "Soul of Like Likes (OoT)",
+    "OOT_SOUL_ENEMY_LIZALFOS_DINALFOS": "Soul of Lizalfos/Dinolfos (OoT)",
+    "OOT_SOUL_ENEMY_MOBLIN": "Soul of Moblins",
+    "OOT_SOUL_BOSS_MORPHA": "Soul of Morpha",
+    "OOT_SOUL_ENEMY_OCTOROK": "Soul of Octoroks (OoT)",
+    "OOT_SOUL_ENEMY_PARASITE": "Soul of Jabu-Jabu's Parasites",
+    "OOT_SOUL_ENEMY_PEAHAT": "Soul of Peahats (OoT)",
+    "OOT_SOUL_BOSS_PHANTOM_GANON": "Soul of Phantom Ganon",
+    "OOT_SOUL_BOSS_QUEEN_GOHMA": "Soul of Queen Gohma",
+    "OOT_SOUL_ENEMY_REDEAD_GIBDO": "Soul of ReDeads/Gibdos (OoT)",
+    "OOT_SOUL_ENEMY_SHABOM": "Soul of Shaboms",
+    "OOT_SOUL_ENEMY_SHELL_BLADE": "Soul of Shell Blades (OoT)",
+    "OOT_SOUL_ENEMY_SKULL_KID": "Soul of Skull Kids (OoT)",
+    "OOT_SOUL_ENEMY_SKULLTULA": "Soul of Skulltulas (OoT)",
+    "OOT_SOUL_ENEMY_SKULLWALLTULA": "Soul of Skullwalltulas (OoT)",
+    "OOT_SOUL_ENEMY_SPIKE": "Soul of Spikes",
+    "OOT_SOUL_ENEMY_STALCHILD": "Soul of Stalchildren (OoT)",
+    "OOT_SOUL_ENEMY_STALFOS": "Soul of Stalfos (OoT)",
+    "OOT_SOUL_ENEMY_STINGER": "Soul of Stingers",
+    "OOT_SOUL_ENEMY_TAILPASARN": "Soul of Tailpasarans",
+    "OOT_SOUL_ENEMY_TEKTITE": "Soul of Tektites (OoT)",
+    "OOT_SOUL_ENEMY_TORCH_SLUG": "Soul of Torch Slugs",
+    "OOT_SOUL_BOSS_TWINROVA": "Soul of Twinrova",
+    "OOT_SOUL_BOSS_VOLVAGIA": "Soul of Volvagia",
+    "OOT_SOUL_ENEMY_WALLMASTER": "Soul of Wallmasters (OoT)",
+    "OOT_SOUL_ENEMY_WOLFOS": "Soul of Wolfoses (OoT)",
+    "OOT_SPELL_FIRE": "Din's Fire (OoT)",
+    "OOT_SPELL_LOVE": "Nayru's Love (OoT)",
+    "OOT_SPELL_WIND": "Farore's Wind (OoT)",
+    "OOT_STICK_UPGRADE": "Deku Stick Upgrade",
+    "OOT_STICK": "Deku Stick (OoT)",
+    "OOT_STICKS_10": "10 Deku Sticks (OoT)",
+    "OOT_STICKS_5": "5 Deku Sticks (OoT)",
+    "OOT_STONE_EMERALD": "Kokiri's Emerald",
+    "OOT_STONE_OF_AGONY": "Stone of Agony",
+    "OOT_STONE_RUBY": "Goron's Ruby",
+    "OOT_STONE_SAPPHIRE": "Zora's Sapphire",
+    "OOT_STRENGTH": "Progressive Strength (OoT)",
+    "OOT_SWORD_BIGGORON": "Biggoron's Sword",
+    "OOT_SWORD_GORON": "Progressive Goron Sword",
+    "OOT_SWORD_KNIFE": "Giant's Knife",
+    "OOT_SWORD_KOKIRI": "Kokiri Sword (OoT)",
+    "OOT_SWORD_MASTER": "Master Sword",
+    "OOT_SWORD": "Progressive Sword (OoT)",
+    "OOT_TUNIC_GORON": "Goron Tunic (OoT)",
+    "OOT_TUNIC_ZORA": "Zora Tunic (OoT)",
+    "OOT_WALLET": "Progressive Wallet (OoT)",
+    "OOT_WEIRD_EGG": "Weird Egg",
+    "OOT_ZELDA_LETTER": "Zelda's Letter",
+    "SHARED_ARROW_FIRE": "Shared Fire Arrows",
+    "SHARED_ARROW_ICE": "Shared Ice Arrows",
+    "SHARED_ARROW_LIGHT": "Shared Light Arrows",
+    "SHARED_ARROWS_10": "10 Arrows",
+    "SHARED_ARROWS_30": "30 Arrows",
+    "SHARED_ARROWS_40": "40 Arrows",
+    "SHARED_ARROWS_5": "5 Arrows",
+    "SHARED_BOMB_BAG": "Shared Bomb Bag",
+    "SHARED_BOMB": "1 Bomb",
+    "SHARED_BOMBCHU_10": "10 Bombchu",
+    "SHARED_BOMBCHU_20": "20 Bombchu",
+    "SHARED_BOMBCHU_5": "5 Bombchu",
+    "SHARED_BOMBCHU": "Bombchu",
+    "SHARED_BOMBS_10": "10 Bombs",
+    "SHARED_BOMBS_20": "20 Bombs",
+    "SHARED_BOMBS_30": "30 Bombs",
+    "SHARED_BOMBS_5": "5 Bombs",
+    "SHARED_BOW": "Shared Bow",
+    "SHARED_DEFENSE_UPGRADE": "Double Defense",
+    "SHARED_HEART_CONTAINER": "Heart Container",
+    "SHARED_HEART_PIECE": "Piece of Heart",
+    "SHARED_HOOKSHOT": "Progressive Hookshot",
+    "SHARED_LENS": "Lens of Truth",
+    "SHARED_MAGIC_UPGRADE": "Shared Magic Upgrade",
+    "SHARED_MASK_BUNNY": "Bunny Hood",
+    "SHARED_MASK_GORON": "Goron Mask",
+    "SHARED_MASK_KEATON": "Keaton Mask",
+    "SHARED_MASK_TRUTH": "Mask of Truth",
+    "SHARED_MASK_ZORA": "Zora Mask",
+    "SHARED_NUT": "Deku Nut",
+    "SHARED_NUTS_10": "10 Deku Nuts",
+    "SHARED_NUTS_5": "5 Deku Nuts",
+    "SHARED_OCARINA": "Progressive Ocarina",
+    "SHARED_RECOVERY_HEART": "Recovery Heart",
+    "SHARED_RUPEE_BLUE": "Blue Rupee",
+    "SHARED_RUPEE_GOLD": "Gold Rupee",
+    "SHARED_RUPEE_GREEN": "Green Rupee",
+    "SHARED_RUPEE_PURPLE": "Purple Rupee",
+    "SHARED_RUPEE_RED": "Red Rupee",
+    "SHARED_RUPEE_SILVER": "Silver Rupee",
+    "SHARED_SKELETON_KEY": "Skeleton Key",
+    "SHARED_SONG_EPONA": "Epona's Song",
+    "SHARED_SONG_STORMS": "Song of Storms",
+    "SHARED_SONG_SUN": "Sun's Song",
+    "SHARED_SONG_TIME": "Song of Time",
+    "SHARED_SOUL_ENEMY_ARMOS": "Soul of Armos",
+    "SHARED_SOUL_ENEMY_BEAMOS": "Soul of Beamos",
+    "SHARED_SOUL_ENEMY_BUBBLE": "Soul of Bubbles",
+    "SHARED_SOUL_ENEMY_DEKU_BABA": "Soul of Deku Babas",
+    "SHARED_SOUL_ENEMY_DEKU_SCRUB": "Soul of Deku Scrubs",
+    "SHARED_SOUL_ENEMY_DODONGO": "Soul of Dodongos",
+    "SHARED_SOUL_ENEMY_FLOORMASTER": "Soul of Floormasters",
+    "SHARED_SOUL_ENEMY_FLYING_POT": "Soul of Flying Pots",
+    "SHARED_SOUL_ENEMY_FREEZARD": "Soul of Freezards",
+    "SHARED_SOUL_ENEMY_GUAY": "Soul of Guays",
+    "SHARED_SOUL_ENEMY_IRON_KNUCKLE": "Soul of Iron Knuckles",
+    "SHARED_SOUL_ENEMY_KEESE": "Soul of Keese",
+    "SHARED_SOUL_ENEMY_LEEVER": "Soul of Leevers",
+    "SHARED_SOUL_ENEMY_LIKE_LIKE": "Soul of Like Likes",
+    "SHARED_SOUL_ENEMY_LIZALFOS_DINALFOS": "Soul of Lizalfos/Dinolfos",
+    "SHARED_SOUL_ENEMY_OCTOROK": "Soul of Octoroks",
+    "SHARED_SOUL_ENEMY_PEAHAT": "Soul of Peahats",
+    "SHARED_SOUL_ENEMY_REDEAD_GIBDO": "Soul of ReDeads/Gibdos",
+    "SHARED_SOUL_ENEMY_SHELL_BLADE": "Soul of Shell Blades",
+    "SHARED_SOUL_ENEMY_SKULLTULA": "Soul of Skulltulas",
+    "SHARED_SOUL_ENEMY_SKULLWALLTULA": "Soul of Skullwalltulas",
+    "SHARED_SOUL_ENEMY_STALCHILD": "Soul of Stalchildren",
+    "SHARED_SOUL_ENEMY_TEKTITE": "Soul of Tektites",
+    "SHARED_SOUL_ENEMY_WALLMASTER": "Soul of Wallmasters",
+    "SHARED_SOUL_ENEMY_WOLFOS": "Soul of Wolfos",
+    "SHARED_STICK": "Deku Stick",
+    "SHARED_STICKS_10": "10 Deku Sticks",
+    "SHARED_STICKS_5": "5 Deku Sticks",
+    "SHARED_TRIFORCE_COURAGE": "Triforce of Courage",
+    "SHARED_TRIFORCE_POWER": "Triforce of Power",
+    "SHARED_TRIFORCE_WISDOM": "Triforce of Wisdom",
+    "SHARED_TRIFORCE": "Triforce Piece",
+    "SHARED_WALLET": "Progressive Wallet",
+    "SHARED_SPELL_FIRE": "Din's Fire",
+    "SHARED_SPELL_LOVE": "Nayru's Love",
+    "SHARED_SPELL_WIND": "Farore's Wind",
+    "SHARED_BOOTS_IRON": "Iron Boots",
+    "SHARED_BOOTS_HOVER": "Hover Boots",
+    "SHARED_TUNIC_GORON": "Goron Tunic",
+    "SHARED_TUNIC_ZORA": "Zora Tunic",
+    "SHARED_SCALE": "Progressive Scale",
+    "SHARED_STRENGTH": "Progressive Strength",
+    "OOT_BUTTON_A": "A Button (OoT)",
+    "OOT_BUTTON_C_RIGHT": "C-Right Button (OoT)",
+    "OOT_BUTTON_C_LEFT": "C-Left Button (OoT)",
+    "OOT_BUTTON_C_UP": "C-Up Button (OoT)",
+    "OOT_BUTTON_C_DOWN": "C-Down Button (OoT)",
+    "MM_BUTTON_A": "A Button (MM)",
+    "MM_BUTTON_C_RIGHT": "C-Right Button (MM)",
+    "MM_BUTTON_C_LEFT": "C-Left Button (MM)",
+    "MM_BUTTON_C_UP": "C-Up Button (MM)",
+    "MM_BUTTON_C_DOWN": "C-Down Button (MM)",
+    "SHARED_BUTTON_A": "A Button",
+    "SHARED_BUTTON_C_RIGHT": "C-Right Button",
+    "SHARED_BUTTON_C_LEFT": "C-Left Button",
+    "SHARED_BUTTON_C_UP": "C-Up Button",
+    "SHARED_BUTTON_C_DOWN": "C-Down Button",
+    "OOT_SOUL_NPC_SARIA": "Soul of Saria",
+    "OOT_SOUL_NPC_DARUNIA": "Soul of Darunia",
+    "OOT_SOUL_NPC_RUTO": "Soul of Ruto",
+    "OOT_SOUL_NPC_KING_ZORA": "Soul of King Zora",
+    "OOT_SOUL_NPC_ZELDA": "Soul of Zelda",
+    "OOT_SOUL_NPC_SHEIK": "Soul of Sheik",
+    "OOT_SOUL_NPC_CUCCO_LADY": "Soul of Cucco Lady",
+    "OOT_SOUL_NPC_CARPENTERS": "Soul of Carpenters",
+    "OOT_SOUL_NPC_GURU_GURU": "Soul of Guru-Guru",
+    "OOT_SOUL_NPC_MIDO": "Soul of Mido",
+    "OOT_SOUL_NPC_KOKIRI": "Soul of Kokiri",
+    "OOT_SOUL_NPC_KOKIRI_SHOPKEEPER": "Soul of Kokiri Shopkeeper",
+    "OOT_SOUL_NPC_HYLIAN_GUARD": "Soul of Hylian Guard",
+    "OOT_SOUL_NPC_HYLIAN_CITIZEN": "Soul of Hylian Citizen",
+    "OOT_SOUL_NPC_MALON": "Soul of Malon",
+    "OOT_SOUL_NPC_TALON": "Soul of Talon",
+    "OOT_SOUL_NPC_FISHING_POND_OWNER": "Soul of Fishing Pond Owner",
+    "OOT_SOUL_NPC_GORON": "Soul of Goron",
+    "OOT_SOUL_NPC_MEDIGORON": "Soul of Medigoron",
+    "OOT_SOUL_NPC_BIGGORON": "Soul of Biggoron",
+    "OOT_SOUL_NPC_GORON_CHILD": "Soul of Goron Child",
+    "OOT_SOUL_NPC_GORON_SHOPKEEPER": "Soul of Goron Shopkeeper",
+    "OOT_SOUL_NPC_ZORA": "Soul of Zora",
+    "OOT_SOUL_NPC_ZORA_SHOPKEEPER": "Soul of Zora Shopkeeper",
+    "OOT_SOUL_NPC_BAZAAR_SHOPKEEPER": "Soul of Bazaar Shopkeeper",
+    "OOT_SOUL_NPC_BOMBCHU_SHOPKEEPER": "Soul of Bombchu Shopkeeper",
+    "OOT_SOUL_NPC_POTION_SHOPKEEPER": "Soul of Potion Shopkeeper",
+    "OOT_SOUL_NPC_BOMBCHU_BOWLING_LADY": "Soul of Bombchu Bowling Lady",
+    "OOT_SOUL_NPC_TRASURE_CHEST_GAME_OWNER": "Soul of Treasure CHest Game Owner",
+    "OOT_SOUL_NPC_SHOOTING_GALLERY_OWNER": "Soul of Shooting Gallery Owner",
+    "OOT_SOUL_NPC_DAMPE": "Soul of Dampe",
+    "OOT_SOUL_NPC_GRAVEYARD_KID": "Soul of Graveyard Kid",
+    "OOT_SOUL_NPC_POE_COLLECTOR": "Soul of Poe Collector",
+    "OOT_FISHING_POND_CHILD_FISH": "Child Fish (Placeholder)",
+    "OOT_FISHING_POND_ADULT_FISH": "Adult Fish (Placeholder)",
+    "OOT_FISHING_POND_CHILD_LOACH": "Child Loach (Placeholder)",
+    "OOT_FISHING_POND_ADULT_LOACH": "Adult Loach (Placeholder)",
+    "OOT_FISHING_POND_CHILD_FISH_2LBS": "Child Fish (2 pounds)",
+    "OOT_FISHING_POND_CHILD_FISH_3LBS": "Child Fish (3 pounds)",
+    "OOT_FISHING_POND_CHILD_FISH_4LBS": "Child Fish (4 pounds)",
+    "OOT_FISHING_POND_CHILD_FISH_5LBS": "Child Fish (5 pounds)",
+    "OOT_FISHING_POND_CHILD_FISH_6LBS": "Child Fish (6 pounds)",
+    "OOT_FISHING_POND_CHILD_FISH_7LBS": "Child Fish (7 pounds)",
+    "OOT_FISHING_POND_CHILD_FISH_8LBS": "Child Fish (8 pounds)",
+    "OOT_FISHING_POND_CHILD_FISH_9LBS": "Child Fish (9 pounds)",
+    "OOT_FISHING_POND_CHILD_FISH_10LBS": "Child Fish (10 pounds)",
+    "OOT_FISHING_POND_CHILD_FISH_11LBS": "Child Fish (11 pounds)",
+    "OOT_FISHING_POND_CHILD_FISH_12LBS": "Child Fish (12 pounds)",
+    "OOT_FISHING_POND_CHILD_FISH_13LBS": "Child Fish (13 pounds)",
+    "OOT_FISHING_POND_CHILD_FISH_14LBS": "Child Fish (14 pounds)",
+    "OOT_FISHING_POND_ADULT_FISH_4LBS": "Adult Fish (4 pounds)",
+    "OOT_FISHING_POND_ADULT_FISH_5LBS": "Adult Fish (5 pounds)",
+    "OOT_FISHING_POND_ADULT_FISH_6LBS": "Adult Fish (6 pounds)",
+    "OOT_FISHING_POND_ADULT_FISH_7LBS": "Adult Fish (7 pounds)",
+    "OOT_FISHING_POND_ADULT_FISH_8LBS": "Adult Fish (8 pounds)",
+    "OOT_FISHING_POND_ADULT_FISH_9LBS": "Adult Fish (9 pounds)",
+    "OOT_FISHING_POND_ADULT_FISH_10LBS": "Adult Fish (10 pounds)",
+    "OOT_FISHING_POND_ADULT_FISH_11LBS": "Adult Fish (11 pounds)",
+    "OOT_FISHING_POND_ADULT_FISH_12LBS": "Adult Fish (12 pounds)",
+    "OOT_FISHING_POND_ADULT_FISH_13LBS": "Adult Fish (13 pounds)",
+    "OOT_FISHING_POND_ADULT_FISH_14LBS": "Adult Fish (14 pounds)",
+    "OOT_FISHING_POND_ADULT_FISH_15LBS": "Adult Fish (15 pounds)",
+    "OOT_FISHING_POND_ADULT_FISH_16LBS": "Adult Fish (16 pounds)",
+    "OOT_FISHING_POND_ADULT_FISH_17LBS": "Adult Fish (17 pounds)",
+    "OOT_FISHING_POND_ADULT_FISH_18LBS": "Adult Fish (18 pounds)",
+    "OOT_FISHING_POND_ADULT_FISH_19LBS": "Adult Fish (19 pounds)",
+    "OOT_FISHING_POND_ADULT_FISH_20LBS": "Adult Fish (20 pounds)",
+    "OOT_FISHING_POND_ADULT_FISH_21LBS": "Adult Fish (21 pounds)",
+    "OOT_FISHING_POND_ADULT_FISH_22LBS": "Adult Fish (22 pounds)",
+    "OOT_FISHING_POND_ADULT_FISH_23LBS": "Adult Fish (23 pounds)",
+    "OOT_FISHING_POND_ADULT_FISH_24LBS": "Adult Fish (24 pounds)",
+    "OOT_FISHING_POND_ADULT_FISH_25LBS": "Adult Fish (25 pounds)",
+    "OOT_FISHING_POND_CHILD_LOACH_14LBS": "Child Loach (14 pounds)",
+    "OOT_FISHING_POND_CHILD_LOACH_15LBS": "Child Loach (15 pounds)",
+    "OOT_FISHING_POND_CHILD_LOACH_16LBS": "Child Loach (16 pounds)",
+    "OOT_FISHING_POND_CHILD_LOACH_17LBS": "Child Loach (17 pounds)",
+    "OOT_FISHING_POND_CHILD_LOACH_18LBS": "Child Loach (18 pounds)",
+    "OOT_FISHING_POND_CHILD_LOACH_19LBS": "Child Loach (19 pounds)",
+    "OOT_FISHING_POND_ADULT_LOACH_29LBS": "Adult Loach (29 pounds)",
+    "OOT_FISHING_POND_ADULT_LOACH_30LBS": "Adult Loach (30 pounds)",
+    "OOT_FISHING_POND_ADULT_LOACH_31LBS": "Adult Loach (31 pounds)",
+    "OOT_FISHING_POND_ADULT_LOACH_32LBS": "Adult Loach (32 pounds)",
+    "OOT_FISHING_POND_ADULT_LOACH_33LBS": "Adult Loach (33 pounds)",
+    "OOT_FISHING_POND_ADULT_LOACH_34LBS": "Adult Loach (34 pounds)",
+    "OOT_FISHING_POND_ADULT_LOACH_35LBS": "Adult Loach (35 pounds)",
+    "OOT_FISHING_POND_ADULT_LOACH_36LBS": "Adult Loach (36 pounds)",
+    "SHARED_SHIELD_HYLIAN": "Hylian/Hero Shield",
+    "SHARED_SHIELD_MIRROR": "Mirror Shield",
+    "SHARED_SHIELD": "Progressive Shield",
+    "OOT_BOTTLE_FAIRY": "Bottled Fairy (OoT)",
+    "MM_BOTTLE_FAIRY": "Bottled Fairy (MM)",
+    "OOT_BOTTLE_POE": "Bottled Poe (OoT)",
+    "MM_BOTTLE_POE": "Bottled Poe (MM)",
+    "OOT_BOTTLE_BIG_POE": "Bottled Big Poe (OoT)",
+    "MM_BOTTLE_BIG_POE": "Bottled Big Poe (MM)",
+    "MM_POE": "Poe (MM)",
+    "OOT_BIG_POE": "Big Poe (OoT)",
+    "MM_BIG_POE": "Big Poe (MM)",
+    "OOT_MAGIC_JAR_SMALL": "Small Magic Jar (OoT)",
+    "OOT_MAGIC_JAR_LARGE": "Large Magic Jar (OoT)",
+    "MM_MAGIC_JAR_SMALL": "Small Magic Jar (MM)",
+    "MM_MAGIC_JAR_LARGE": "Large Magic Jar (MM)",
+    "SHARED_MAGIC_JAR_SMALL": "Small Magic Jar",
+    "SHARED_MAGIC_JAR_LARGE": "Large Magic Jar",
+    "NOTHING": "Nothing",
+    "OOT_FAIRY_BIG": "Big Fairy (OoT)",
+    "MM_FAIRY_BIG": "Big Fairy (MM)",
+    "SHARED_FAIRY_BIG": "Big Fairy",
+    "OOT_BOTTLE_BLUE_FIRE": "Bottle of Blue Fire",
+    "MM_SPELL_FIRE": "Din's Fire (MM)",
+    "MM_SPELL_LOVE": "Nayru's Love (MM)",
+    "MM_SPELL_WIND": "Farore's Wind (MM)",
+    "MM_BOOTS_IRON": "Iron Boots (MM)",
+    "MM_BOOTS_HOVER": "Hover Boots (MM)",
+    "MM_TUNIC_GORON": "Goron Tunic (MM)",
+    "MM_TUNIC_ZORA": "Zora Tunic (MM)",
+    "MM_SCALE": "Progressive Scale (MM)",
+    "MM_STRENGTH": "Progressive Strength (MM)",
+    "OOT_MASK_BLAST": "Blast Mask (OoT)",
+    "SHARED_MASK_BLAST": "Blast Mask",
+    "OOT_MASK_STONE": "Stone Mask (OoT)",
+    "SHARED_MASK_STONE": "Stone Mask",
+    "OOT_SONG_EMPTINESS": "Elegy of Emptiness (OoT)",
+    "SHARED_SONG_EMPTINESS": "Elegy of Emptiness",
+    "MM_CLOCK": "Progressive Clock",
+    "MM_CLOCK1": "Clock (Day 1)",
+    "MM_CLOCK2": "Clock (Night 1)",
+    "MM_CLOCK3": "Clock (Day 2)",
+    "MM_CLOCK4": "Clock (Night 2)",
+    "MM_CLOCK5": "Clock (Day 3)",
+    "MM_CLOCK6": "Clock (Night 3)",
+    "MM_TRAP_RUPOOR": "Rupoor (MM)",
+    "OOT_TRAP_RUPOOR": "Rupoor (OoT)",
+    "SHARED_TRAP_RUPOOR": "Rupoor"
+  },
+  "dungeons": {
+    "DT": "Deku Tree",
+    "DC": "Dodongo's Cavern",
+    "JJ": "Jabu-Jabu",
+    "Forest": "Forest Temple",
+    "Fire": "Fire Temple",
+    "Water": "Water Temple",
+    "Spirit": "Spirit Temple",
+    "Shadow": "Shadow Temple",
+    "BotW": "Bottom of the Well",
+    "IC": "Ice Cavern",
+    "GTG": "Gerudo Training Grounds",
+    "Ganon": "Ganon's Castle"
+  },
+  "glitches": {
+    "OOT_EQUIP_SWAP": "Equip Swap (OoT)",
+    "OOT_OCARINA_ITEMS": "Ocarina Items (OoT)",
+    "OOT_MEGAFLIP": "Megaflips (OoT)"
+  },
+  "tricks": {
+    "OOT_LENS": "Fewer Lens Requirements (OoT)",
+    "OOT_TUNICS": "Fewer Tunic Requirements (OoT)",
+    "OOT_HIDDEN_GROTTOS": "Hidden Grottos (OoT) without Stone of Agony",
+    "OOT_MIDO_SKIP": "Backflip Over Mido",
+    "OOT_MAN_ON_ROOF": "Man on Roof with Nothing",
+    "OOT_BLIND_WASTELAND": "Blind Wasteland Crossing",
+    "OOT_DEKU_SKIP": "Deku Tree B1 Skip",
+    "OOT_DC_JUMP": "Dodongo's Cavern Upper Adult Jump",
+    "OOT_FOREST_HOOK": "Forest Temple Garden Vines with Hookshot",
+    "OOT_HAMMER_WALLS": "Hammer Through Walls",
+    "OOT_VOLCANO_HOVERS": "Volcano Item with Hover Boots",
+    "OOT_NIGHT_GS": "Nighttime Gold Skulltulas without Sun's Song",
+    "OOT_DOMAIN_CUCCO": "Enter Child Zora's Domain with Cucco",
+    "OOT_DOMAIN_HOVER": "Enter Zora's Domain using Hover Boots",
+    "OOT_WATER_LONGSHOT": "Drain Water Temple using Longshot",
+    "OOT_SAND_RIVER_NOTHING": "Cross the River of Sand with Nothing",
+    "OOT_SHADOW_FIRE_ARROW": "Enter Shadow Temple using Fire Arrows",
+    "OOT_KZ_SKIP": "Skip King Zora as Adult",
+    "OOT_LOST_WOODS_ADULT_GS": "Lost Woods Adult GS without Bean",
+    "OOT_WINDMILL_HP_NOTHING": "Windmill HP as Adult with Nothing",
+    "OOT_LAB_DIVE_NO_GOLD_SCALE": "Laboratory Dive without Gold Scale",
+    "OOT_LAB_WALL_GS": "Laboratory Wall GS with Jump Slash",
+    "OOT_PASS_COLLISION": "Pass through Visible One-Way Collisions",
+    "OOT_DMT_RED_ROCK_GS": "DMT Red Rock Skulls without Hammer",
+    "OOT_DEAD_HAND_STICKS": "Child Dead Hand without Kokiri Sword",
+    "OOT_BFA_MUDWALLS": "Break Mud Walls with Blue Fire Arrows",
+    "OOT_JABU_BOSS_HOVER": "Access Jabu-Jabu Pre-Boss using Hover Boots",
+    "OOT_SPIRIT_CHILD_HOVER": "Access Adult Spirit as Child using Hover Boots",
+    "OOT_VALLEY_GATE_HOVER": "Reach Gerudo Fortress as Child using Hover Boots",
+    "OOT_MQ_ICE_SCARE_NOTHING": "MQ Ice Cavern GS without Scarecrow or Hover Boots",
+    "OOT_MQ_ICE_SCARE_HOVER": "MQ Ice Cavern GS using only Hover Boots",
+    "OOT_MQ_GTG_FLAMES": "MQ Gerudo Training Grounds Lava Room Walk along Flame Circles",
+    "OOT_FORTRESS_JUMPS": "Jump up to higher ledges outside Gerudo Fortress",
+    "OOT_COLOSSUS_GS_NO_BEAN": "Desert Colossus Plateau GS without Bean Plant",
+    "OOT_ENTER_JABU": "Enter Jabu-Jabu with Head Collision",
+    "OOT_JABU_BOSS_HIGH_SWITCH": "Jabu Boss Switch without Boomerang or Climb Anywhere",
+    "OOT_WATER_REVERSE_RIVER": "Water Temple Reverse River with Hookshot Anywhere",
+    "OOT_WATER_PIT_GS_CHU": "Water Temple Large Pit GS with Bombchu",
+    "OOT_SHADOW_BOAT_EARLY": "Reach Shadow Temple Boat with Climb Anywhere",
+    "OOT_SPIRIT_BOSS_CLIMB_NO_HOOK": "Reach Twinrova using Climb Anywhere and Hover Boots",
+    "OOT_ZR_FALLS_HOOK": "Use Hookshot Anywhere to get past the Zora's River Waterfall",
+    "OOT_DC_BOULDER": "Skip Dodongo Cavern's Boulder using Ageless Hookshot Anywhere",
+    "OOT_LAKE_SHORTCUT": "Move Between Lake Hylia and Zora's Domain with Ageless Hookshot Anywhere",
+    "OOT_JJB_BOXLESS": "Access Jabu-Jabu pre-boss without the box",
+    "OOT_TENT_CHILD": "Enter the Gerudo Valley Tent as Child",
+    "OOT_WELL_ADULT_TT": "Enter Bottom of the Well as Adult with Time Travel",
+    "OOT_ADULT_GALLERY_TT": "Enter Adult Shooting Gallery as Child with Time Travel",
+    "OOT_GTG_CHILD_TT": "Enter Gerudo Training Grounds as Child with Time Travel",
+    "OOT_REVERSE_DAMPE": "Navigate Dampe's Grave in Reverse",
+    "OOT_GANON_FAIRY_TT": "Ganon's Great Fairy with Age Swap and without Gold Gauntlets",
+    "OOT_GANON_CASTLE_ENTRY": "Enter Ganon's Castle with Longshot Anywhere",
+    "OOT_SHADOW_TEMPLE_STICKS": "Enter Shadow Temple with Sticks & Fire Arrows",
+    "OOT_WATER_GOLD_SCALE": "Enter Water Temple with Gold Scale and Longshot",
+    "MM_LENS": "Fewer Lens Requirements (MM)",
+    "MM_TUNICS": "Fewer Tunic Requirements (MM)",
+    "MM_PALACE_BEAN_SKIP": "Skip Planting Beans in Deku Palace",
+    "MM_DARMANI_WALL": "Climb Mountain Village Wall Blind",
+    "MM_NO_SEAHORSE": "Pinnacle Rock without Seahorse",
+    "MM_ZORA_HALL_HUMAN": "Swim to Zora Hall as Human",
+    "MM_ICELESS_IKANA": "Climb Ikana Canyon without Ice Arrows",
+    "MM_ONE_MASK_STONE_TOWER": "Climb Stone Tower with One Mask",
+    "MM_ISTT_EYEGORE": "Inverted Stone Tower Temple Eyegore Skips",
+    "MM_SCT_NOTHING": "South Clock Town Chest with Nothing",
+    "MM_GORON_BOMB_JUMP": "Bomb Jump Fences as Goron",
+    "MM_BOMBER_GUESS": "Guess Bomber Code",
+    "MM_CAPTAIN_SKIP": "Guess Oceanside Spider House Code",
+    "MM_ISTT_ENTRY_JUMP": "Inverted Stone Tower Temple Long Jump to Death Armos",
+    "MM_HARD_HOOKSHOT": "Precise Hookshot Usage",
+    "MM_PFI_BOAT_HOOK": "Enter Pirate Fortress Interior using Hookshot from the Boats",
+    "MM_PALACE_GUARD_SKIP": "Backflip over Deku Palace Guards",
+    "MM_SHT_FIRELESS": "Complete Snowhead Temple without Fire Arrows",
+    "MM_SHT_STICKS_RUN": "Access SHT Pillar Fireless with Precise Stick Run",
+    "MM_SHT_PILLARLESS": "Snowhead Temple Skip Raising Pillar",
+    "MM_KEG_EXPLOSIVES": "Use Powder Kegs as Explosives",
+    "MM_DOG_RACE_CHEST_NOTHING": "Doggy Racetrack Chest with Nothing",
+    "MM_MAJORA_LOGIC": "Fight Majora to Reset Time",
+    "MM_SOUTHERN_SWAMP_SCRUB_HP_GORON": "Southern Swamp Scrub HP as Goron",
+    "MM_ZORA_HALL_SCRUB_HP_NO_DEKU": "Zora Hall Scrub HP without Deku",
+    "MM_ZORA_HALL_DOORS": "Access the doors in Zora Hall using Short Hookshot Anywhere",
+    "MM_IKANA_ROOF_PARKOUR": "Jump from Ikana Castle's Roof Interior to Exterior",
+    "MM_IKANA_PILLAR_TO_ENTRANCE": "Jump from Ikana Castle's roof pillars to get over the entrance sun block with Nothing",
+    "MM_POST_OFFICE_GAME": "Post Office Timing Game without Bunny Hood",
+    "MM_WELL_HSW": "Well's Hot Spring Water without Killing Dexihand",
+    "MM_ISTT_CHUCHU_LESS": "ISTT Block Room without Chuchu jellies",
+    "MM_GBT_WATERWHEEL_GORON": "Cross GBT Waterwheel Room as Goron",
+    "MM_GBT_ENTRANCE_BOW": "Great Bay Temple Entrance Chest using only Bow",
+    "MM_OOB_MOVEMENT": "Walk Along Surfaces Out of Bounds",
+    "MM_ST_UPDRAFTS": "Stone Tower Updrafts without Deku Mask",
+    "MM_ESCAPE_CAGE": "Escape the Monkey Cage with Hookshot Anywhere",
+    "MM_GBT_FAIRY2_HOOK": "GBT First Underwater Fairy with Short Hookshot Anywhere",
+    "MM_GBT_CENTRAL_GEYSER": "GBT Central Room without Zora using Fire & Ice Arrows or an OoT Magic Spell",
+    "MM_BANK_ONE_WALLET": "Bank Rewards Require One Less Wallet",
+    "MM_BANK_NO_WALLET": "Bank Rewards Require No Wallets",
+    "MM_CLOCK_TOWER_WAIT": "Wait for the Clock Tower to Open When Shuffled",
+    "MM_WFT_RUPEES_ICE": "Collect the Pillar Rupees in Woodfall Temple using Ice Arrows",
+    "MM_ISTT_RUPEES_GORON": "Collect the Floating Rupees in ISTT as Goron",
+    "MM_BOMBER_BACKFLIP": "Backflip over the Bomber in East Clock Town",
+    "MM_NCT_TINGLE": "Jump slash Tingle in North Clock Town",
+    "MM_GBT_FIRELESS": "Great Bay Temple without Fire Arrows",
+    "MM_IGOS_DINS": "Burn Igos' curtains with Din's Fire",
+    "MM_BIO_BABA_CHU": "Destroy the Bio Baba Grotto Hive with a Bombchu",
+    "MM_BIO_BABA_LUCK": "Get lucky with the Bio Baba Grotto item landing on a lilypad",
+    "MM_WF_SHRINE_HOVERS": "Woodfall Owl Chest with Hover Boots and Jump Slash",
+    "MM_WFT_LOBBY_HOVERS": "Woodfall Temple Lobby with Damage Boost and Hover Boots",
+    "MM_SOARING_ZORA": "Zora Long Jump to the Soaring Tablet",
+    "MM_SOARING_HOVERS": "Jump Slash or Damage Boost to the Soaring Tablet with Hover Boots and Bunny Hood",
+    "MM_LULLABY_SKIP_IRONS": "Skip playing Goron Lullaby by using Iron Boots",
+    "MM_PATH_SNOWHEAD_HOVERS": "Cross Path to Snowhead using Hover Boots",
+    "MM_GBT_WATERWHEEL_HOVERS": "Cross GBT Waterwheel Room using Hover Boots",
+    "MM_GBT_CENTER_POT_IRONS": "Great Bay Temple Center Underwater Pot using only Iron Boots",
+    "MM_GBT_RED1_HOVERS": "Reach the first red pipe in GBT using Hover Boots, Bunny Hood, and a Jump Slash",
+    "MM_GBT_GREEN2_UPPER_HOVERS": "Reach the Upper Chest in GBT's Second Green Room using Hover Boots",
+    "MM_GYORG_IRONS": "Fight Gyorg as Human using Iron Boots and Hookshot",
+    "MM_STT_LAVA_BLOCK_HOVERS": "Stone Tower Temple Map Chest using Hover Boots",
+    "MM_ISTT_ENTRY_HOVER": "Inverted Stone Tower Temple Death Armos using Hover Boots and Bunny Hood",
+    "MM_GYORG_POTS_DIVE": "Dive down to the pots in Gyorg's Lair, break the pots with a Blast Mask explosion, and collect the item before it before it lands on the ground.",
+    "MM_STT_POT_BOMBCHU_DIVE": "Position yourself precisely to launch a Bombchu that breaks the shallow underwater pots, then collect the items with a dive.",
+    "MM_STOCK_POT_WAIT": "Wait outside Stock Pot Inn's roof for closing",
+    "MM_STAGE_LIGHTS_DIN": "Light the Zora Hall Stage Lights using Din's Fire, Bow, and Hookshot",
+    "MM_RANCH_FARORE": "Romani's Ranch locations using Farore's Wind and Time Reset",
+    "MM_EVAN_FARORE": "Evan's Piece of Heart using Farore's Wind and Time Reset"
+  },
+  "renewablelocations": [
+    "MM Southern Swamp Scrub Shop",
+    "MM Zora Hall Scrub Shop",
+    "MM Ikana Valley Scrub Shop",
+    "MM Gorman Track Milk Purchase",
+    "MM Milk Bar Purchase Milk",
+    "MM Milk Bar Purchase Chateau",
+    "MM Tingle Map Clock Town",
+    "MM Tingle Map Woodfall",
+    "MM Tingle Map Snowhead",
+    "MM Tingle Map Ranch",
+    "MM Tingle Map Great Bay",
+    "MM Tingle Map Ikana"
+  ],
+  "nonrenewablelocations": [
+    "OOT Lost Woods Scrub Sticks Upgrade",
+    "OOT Lost Woods Grotto Scrub Nuts Upgrade",
+    "OOT Hyrule Field Grotto Scrub HP"
+  ],
+  "renewabletypes": [
+    "shop",
+    "cow",
+    "scrub",
+    "fairy",
+    "fish",
+    "fairy_spot"
+  ],
+  "options": [
+    {
+      "key": "mode",
+      "name": "Mode",
+      "category": "main",
+      "type": "enum",
+      "description": "The game mode.",
+      "values": [
+        {
+          "value": "single",
+          "name": "Singleplayer",
+          "description": "A regular, one player seed"
+        },
+        {
+          "value": "coop",
+          "name": "Co-op",
+          "description": "Everyone plays the same seed, all items are shared"
+        },
+        {
+          "value": "multi",
+          "name": "Multiworld",
+          "description": "A multiplayer setting where players can find each other's items"
+        }
+      ],
+      "default": "single"
+    },
+    {
+      "key": "players",
+      "name": "Players",
+      "category": "main",
+      "type": "number",
+      "description": "For multiworld, how many players are in the game.",
+      "default": 1
+    },
+    {
+      "key": "distinctWorlds",
+      "name": "Distinct Worlds",
+      "category": "main",
+      "type": "boolean",
+      "description": "For multiworld, with settings that involve randomness, should the worlds have distinct properties (ER, MQ, price rando...).",
+      "default": false
+    },
+    {
+      "key": "goal",
+      "name": "Goal",
+      "category": "main",
+      "type": "enum",
+      "description": "The objective of the seed. The game will end when the specified goal is reached.",
+      "values": [
+        {
+          "value": "any",
+          "name": "Any Final Boss",
+          "description": "You can beat either Ganon or Majora."
+        },
+        {
+          "value": "ganon",
+          "name": "Ganon",
+          "description": "You must beat Ganon."
+        },
+        {
+          "value": "majora",
+          "name": "Majora",
+          "description": "You must beat Majora."
+        },
+        {
+          "value": "both",
+          "name": "Ganon & Majora",
+          "description": "You must beat Ganon AND Majora. You can do so in any order."
+        },
+        {
+          "value": "triforce",
+          "name": "Triforce Hunt",
+          "description": "You must collect Triforce Pieces to win."
+        },
+        {
+          "value": "triforce3",
+          "name": "Triforce Quest",
+          "description": "You must collect the three parts of the Triforce (Power, Courage and Wisdom) to win. Specific hints will guide you."
+        }
+      ],
+      "default": "both"
+    },
+    {
+      "key": "triforceGoal",
+      "name": "Triforce Goal",
+      "category": "main",
+      "type": "number",
+      "description": "The amount of Triforce Pieces that are required to win.",
+      "default": 20,
+      "min": 1
+    },
+    {
+      "key": "triforcePieces",
+      "name": "Triforce Pieces",
+      "category": "main",
+      "type": "number",
+      "description": "The total amount of Triforce Pieces in the item pool.",
+      "default": 30,
+      "min": 1,
+      "max": 999
+    },
+    {
+      "key": "logic",
+      "name": "Logic",
+      "category": "main",
+      "type": "enum",
+      "description": "The guarantees you have regarding reachability of locations.",
+      "values": [
+        {
+          "value": "allLocations",
+          "name": "All Locations",
+          "description": "Every location in the game can be reached. The seed can always be completed."
+        },
+        {
+          "value": "beatable",
+          "name": "Beatable Only",
+          "description": "Some items can be placed in locations that are never reacheable. The seed can always be completed."
+        },
+        {
+          "value": "none",
+          "name": "No Logic",
+          "description": "Items are placed completely at random. The seed might be unbeatable."
+        }
+      ],
+      "default": "allLocations"
+    },
+    {
+      "key": "itemPool",
+      "name": "Item Pool",
+      "category": "main",
+      "type": "enum",
+      "description": "Change the item pool.",
+      "values": [
+        {
+          "value": "plentiful",
+          "name": "Plentiful",
+          "description": "One extra copy of every major item. Heart containers only."
+        },
+        {
+          "value": "normal",
+          "name": "Normal",
+          "description": "The regular item count for each game."
+        },
+        {
+          "value": "scarce",
+          "name": "Scarce",
+          "description": "One less of every major item. No Heart Pieces."
+        },
+        {
+          "value": "minimal",
+          "name": "Minimal",
+          "description": "Only one of each major item. No Heart Pieces or Containers."
+        },
+        {
+          "value": "barren",
+          "name": "Barren",
+          "description": "Minimal item pool, plus every shuffled item that is not strictly required to reach the goal (beatable only) or any location (all locations) gets removed."
+        }
+      ],
+      "default": "normal"
+    },
+    {
+      "key": "generateSpoilerLog",
+      "name": "Generate Spoiler Log",
+      "category": "main",
+      "type": "boolean",
+      "description": "Generate an extra downloadable text file with the location of every item in the seed as well as other information. It is recommended to enable this option.",
+      "default": true
+    },
+    {
+      "key": "probabilisticFoolish",
+      "name": "Probabilistic Foolish Hints",
+      "category": "main",
+      "type": "boolean",
+      "description": "If you don't know what this is, leave it ON",
+      "default": true
+    },
+    {
+      "key": "noPlandoHints",
+      "name": "No Plando Hints",
+      "category": "main",
+      "type": "boolean",
+      "description": "Prevents items that are part of a plando from being hinted",
+      "default": true
+    },
+    {
+      "key": "hintImportance",
+      "name": "Hint Importance",
+      "category": "main",
+      "type": "boolean",
+      "description": "Hints will tell if an item is foolish, sometimes required, or always required",
+      "default": false
+    },
+    {
+      "key": "songs",
+      "name": "Song Shuffle",
+      "category": "main.shuffle",
+      "type": "enum",
+      "description": "Controls where songs can be obtained, in both games.",
+      "values": [
+        {
+          "value": "songLocations",
+          "name": "Song Locations",
+          "description": "Only locations that contain songs in the vanilla games will have songs."
+        },
+        {
+          "value": "anywhere",
+          "name": "Anywhere",
+          "description": "Songs can be placed anywhere."
+        }
+      ],
+      "default": "songLocations"
+    },
+    {
+      "key": "goldSkulltulaTokens",
+      "name": "Gold Skulltula Tokens Shuffle",
+      "category": "main.shuffle",
+      "type": "enum",
+      "description": "Controls how Gold Skulltulas will be shuffled",
+      "values": [
+        {
+          "value": "none",
+          "name": "No Shuffle",
+          "description": "All Gold Skulltula Tokens will be vanilla"
+        },
+        {
+          "value": "dungeons",
+          "name": "Dungeons Only",
+          "description": "Only the Gold Skulltulas within dungeons will be shuffled"
+        },
+        {
+          "value": "overworld",
+          "name": "Overworld Only",
+          "description": "Only the Gold Skulltulas outside of dungeons will be shuffled"
+        },
+        {
+          "value": "all",
+          "name": "All Tokens",
+          "description": "Every single Gold Skulltula will be shuffled"
+        }
+      ],
+      "default": "none"
+    },
+    {
+      "key": "housesSkulltulaTokens",
+      "name": "House Skulltula Tokens Shuffle",
+      "category": "main.shuffle",
+      "type": "enum",
+      "description": "Controls how Swamp and Ocean Skulltulas will be shuffled",
+      "values": [
+        {
+          "value": "none",
+          "name": "No Shuffle",
+          "description": "Swamp and Ocean Tokens will be vanilla"
+        },
+        {
+          "value": "cross",
+          "name": "Gold Skulltulas Only",
+          "description": "Any unshuffled Token can be found on any other unshuffled Skulltula"
+        },
+        {
+          "value": "all",
+          "name": "All Tokens",
+          "description": "Swamp and Ocean Tokens can be found anywhere"
+        }
+      ],
+      "default": "none"
+    },
+    {
+      "key": "tingleShuffle",
+      "name": "Tingle Maps Shuffle",
+      "category": "main.shuffle",
+      "type": "enum",
+      "description": "Controls where Tingle Maps are",
+      "values": [
+        {
+          "value": "vanilla",
+          "name": "Vanilla",
+          "description": "Tingle Maps can be bought at Tingle, in their original locations"
+        },
+        {
+          "value": "anywhere",
+          "name": "Anywhere",
+          "description": "Tingle Maps will be anywhere"
+        },
+        {
+          "value": "starting",
+          "name": "Starting Items",
+          "description": "Tingle Maps are in Link's pocket"
+        },
+        {
+          "value": "removed",
+          "name": "Removed",
+          "description": "Tingle Maps are fully removed and cannot be obtained"
+        }
+      ],
+      "default": "vanilla"
+    },
+    {
+      "key": "mapCompassShuffle",
+      "name": "Map / Compass Shuffle",
+      "category": "main.shuffle",
+      "type": "enum",
+      "description": "Controls where Maps and Compasses can be",
+      "values": [
+        {
+          "value": "ownDungeon",
+          "name": "Own Dungeon",
+          "description": " Maps and Compasses will be in their own dungeons"
+        },
+        {
+          "value": "anywhere",
+          "name": "Anywhere",
+          "description": " Maps and Compasses can be on any location"
+        },
+        {
+          "value": "starting",
+          "name": "Starting Items",
+          "description": " Maps and Compasses will be in Link's Pocket"
+        },
+        {
+          "value": "removed",
+          "name": "Removed",
+          "description": "Fully removed and cannot be obtained"
+        }
+      ],
+      "default": "ownDungeon"
+    },
+    {
+      "key": "smallKeyShuffleOot",
+      "name": "Small Key Shuffle (OoT)",
+      "category": "main.shuffle",
+      "type": "enum",
+      "description": "Controls where Small Keys (for Dungeons) can be in OoT",
+      "values": [
+        {
+          "value": "ownDungeon",
+          "name": "Own Dungeon",
+          "description": "Dungeon Small Keys can only be found in their own dungeons"
+        },
+        {
+          "value": "anywhere",
+          "name": "Anywhere",
+          "description": "Dungeon Small Keys can be found anywhere"
+        },
+        {
+          "value": "removed",
+          "name": "Removed",
+          "description": "Small keys are removed and small key doors are unlocked"
+        }
+      ],
+      "default": "ownDungeon"
+    },
+    {
+      "key": "smallKeyShuffleMm",
+      "name": "Small Key Shuffle (MM)",
+      "category": "main.shuffle",
+      "type": "enum",
+      "description": "Controls where Small Keys (for Dungeons) can be in MM",
+      "values": [
+        {
+          "value": "ownDungeon",
+          "name": "Own Dungeon",
+          "description": "Dungeon Small Keys can only be found in their own dungeons"
+        },
+        {
+          "value": "anywhere",
+          "name": "Anywhere",
+          "description": "Dungeon Small Keys can be found anywhere"
+        },
+        {
+          "value": "removed",
+          "name": "Removed",
+          "description": "Small keys are removed and small key doors are unlocked"
+        }
+      ],
+      "default": "ownDungeon"
+    },
+    {
+      "key": "smallKeyShuffleHideout",
+      "name": "Hideout Small Key Shuffle",
+      "category": "main.shuffle",
+      "type": "enum",
+      "description": "Controls where Hideout (Gerudo Fortress) Small Keys can be",
+      "values": [
+        {
+          "value": "vanilla",
+          "name": "Vanilla",
+          "description": "Hideout Small Keys are always on the guards"
+        },
+        {
+          "value": "ownDungeon",
+          "name": "Own Dungeon",
+          "description": "Hideout Small Keys can only be found within Gerudo Fortress INTERIOR"
+        },
+        {
+          "value": "anywhere",
+          "name": "Anywhere",
+          "description": "Hideout Small Keys can be found anywhere"
+        }
+      ],
+      "default": "ownDungeon"
+    },
+    {
+      "key": "smallKeyShuffleChestGame",
+      "name": "Chest Game Small Key Shuffle",
+      "category": "main.shuffle",
+      "type": "enum",
+      "description": "Controls where Chest Game Small Keys can be",
+      "values": [
+        {
+          "value": "vanilla",
+          "name": "Vanilla",
+          "description": "Chest Minigame will behave as in vanilla"
+        },
+        {
+          "value": "ownDungeon",
+          "name": "Own Minigame",
+          "description": "Chest Minigame Keys can be found inside the minigame"
+        },
+        {
+          "value": "anywhere",
+          "name": "Anywhere",
+          "description": "Chest Minigame Keys can be found anywhere"
+        }
+      ],
+      "default": "vanilla"
+    },
+    {
+      "key": "bossKeyShuffleOot",
+      "name": "Boss Key Shuffle (OoT)",
+      "category": "main.shuffle",
+      "type": "enum",
+      "description": "Controls where Boss Keys can be in OoT",
+      "values": [
+        {
+          "value": "ownDungeon",
+          "name": "Own Dungeon",
+          "description": "Boss Keys can only be in their own dungeons"
+        },
+        {
+          "value": "anywhere",
+          "name": "Anywhere",
+          "description": "Boss Keys can be found anywhere"
+        },
+        {
+          "value": "removed",
+          "name": "Removed",
+          "description": "Boss Keys are removed and boss doors are unlocked"
+        }
+      ],
+      "default": "ownDungeon"
+    },
+    {
+      "key": "bossKeyShuffleMm",
+      "name": "Boss Key Shuffle (MM)",
+      "category": "main.shuffle",
+      "type": "enum",
+      "description": "Controls where Boss Keys can be in MM",
+      "values": [
+        {
+          "value": "ownDungeon",
+          "name": "Own Dungeon",
+          "description": "Boss Keys can only be in their own dungeons"
+        },
+        {
+          "value": "anywhere",
+          "name": "Anywhere",
+          "description": "Boss Keys can be found anywhere"
+        },
+        {
+          "value": "removed",
+          "name": "Removed",
+          "description": "Boss Keys are removed and boss doors are unlocked"
+        }
+      ],
+      "default": "ownDungeon"
+    },
+    {
+      "key": "smallKeyRingOot",
+      "name": "Small Key Ring (OoT)",
+      "category": "main.shuffle",
+      "type": "set",
+      "description": "Controls the grouping of keys into key rings, for OoT",
+      "values": [
+        {
+          "value": "Forest",
+          "name": "Forest Temple"
+        },
+        {
+          "value": "Fire",
+          "name": "Fire Temple"
+        },
+        {
+          "value": "Water",
+          "name": "Water Temple"
+        },
+        {
+          "value": "Shadow",
+          "name": "Shadow Temple"
+        },
+        {
+          "value": "Spirit",
+          "name": "Spirit Temple"
+        },
+        {
+          "value": "BotW",
+          "name": "Bottom of the Well"
+        },
+        {
+          "value": "GTG",
+          "name": "Gerudo Training Grounds"
+        },
+        {
+          "value": "Ganon",
+          "name": "Ganon's Castle"
+        },
+        {
+          "value": "GF",
+          "name": "Hideout"
+        },
+        {
+          "value": "TCG",
+          "name": "Chest Game"
+        }
+      ],
+      "default": "none"
+    },
+    {
+      "key": "smallKeyRingMm",
+      "name": "Small Key Ring (MM)",
+      "category": "main.shuffle",
+      "type": "set",
+      "description": "Controls the grouping of keys into key rings, for MM",
+      "values": [
+        {
+          "value": "WF",
+          "name": "Woodfall Temple"
+        },
+        {
+          "value": "SH",
+          "name": "Snowhead Temple"
+        },
+        {
+          "value": "GB",
+          "name": "Great Bay Temple"
+        },
+        {
+          "value": "ST",
+          "name": "Stone Tower Temple"
+        }
+      ],
+      "default": "none"
+    },
+    {
+      "key": "silverRupeeShuffle",
+      "name": "Silver Rupee Shuffle",
+      "category": "main.shuffle",
+      "type": "enum",
+      "description": "Make silver rupees items that can be shuffled.",
+      "values": [
+        {
+          "value": "vanilla",
+          "name": "Vanilla",
+          "description": "Silver Rupees are vanilla"
+        },
+        {
+          "value": "ownDungeon",
+          "name": "Own Dungeon",
+          "description": "Silver Rupees are found within their own dungeon"
+        },
+        {
+          "value": "anywhere",
+          "name": "Anywhere",
+          "description": "Silver Rupees are shuffled in the item pool"
+        }
+      ],
+      "default": "vanilla"
+    },
+    {
+      "key": "silverRupeePouches",
+      "name": "Silver Rupee Pouches",
+      "category": "main.shuffle",
+      "type": "set",
+      "description": "Controls grouping of silver rupees into a single item.",
+      "values": [
+        {
+          "value": "DC",
+          "name": "Dodongo's Cavern"
+        },
+        {
+          "value": "BotW",
+          "name": "Bottom of the Well"
+        },
+        {
+          "value": "Spirit_Child",
+          "name": "Spirit Temple (Child)"
+        },
+        {
+          "value": "Spirit_Sun",
+          "name": "Spirit Temple (Sun)"
+        },
+        {
+          "value": "Spirit_Boulders",
+          "name": "Spirit Temple (Boulders)"
+        },
+        {
+          "value": "Spirit_Lobby",
+          "name": "Spirit Temple (Lobby)"
+        },
+        {
+          "value": "Spirit_Adult",
+          "name": "Spirit Temple (Adult)"
+        },
+        {
+          "value": "Shadow_Scythe",
+          "name": "Shadow Temple (Scythe)"
+        },
+        {
+          "value": "Shadow_Pit",
+          "name": "Shadow Temple (Pit)"
+        },
+        {
+          "value": "Shadow_Spikes",
+          "name": "Shadow Temple (Spikes)"
+        },
+        {
+          "value": "Shadow_Blades",
+          "name": "Shadow Temple (Blades)"
+        },
+        {
+          "value": "IC_Scythe",
+          "name": "Ice Cavern (Scythe)"
+        },
+        {
+          "value": "IC_Block",
+          "name": "Ice Cavern (Block)"
+        },
+        {
+          "value": "GTG_Slopes",
+          "name": "GTG (Slopes)"
+        },
+        {
+          "value": "GTG_Lava",
+          "name": "GTG (Lava)"
+        },
+        {
+          "value": "GTG_Water",
+          "name": "GTG (Water)"
+        },
+        {
+          "value": "Ganon_Light",
+          "name": "Ganon (Light)"
+        },
+        {
+          "value": "Ganon_Forest",
+          "name": "Ganon (Forest)"
+        },
+        {
+          "value": "Ganon_Fire",
+          "name": "Ganon (Fire)"
+        },
+        {
+          "value": "Ganon_Water",
+          "name": "Ganon (Water)"
+        },
+        {
+          "value": "Ganon_Shadow",
+          "name": "Ganon (Shadow)"
+        },
+        {
+          "value": "Ganon_Spirit",
+          "name": "Ganon (Spirit)"
+        }
+      ],
+      "default": "none"
+    },
+    {
+      "key": "townFairyShuffle",
+      "name": "Town Stray Fairy Shuffle",
+      "category": "main.shuffle",
+      "type": "enum",
+      "description": "Controls where the Clock Town Stray Fairy can be",
+      "values": [
+        {
+          "value": "vanilla",
+          "name": "Vanilla",
+          "description": "The Clock Town Stray Fairy will be at its original location"
+        },
+        {
+          "value": "anywhere",
+          "name": "Anywhere",
+          "description": "The Clock Town Stray Fairy can be found anywhere"
+        }
+      ],
+      "default": "vanilla"
+    },
+    {
+      "key": "strayFairyChestShuffle",
+      "name": "Dungeon Chest Fairy Shuffle",
+      "category": "main.shuffle",
+      "type": "enum",
+      "description": "Controls where the Dungeon Chest Stray Fairies can be",
+      "values": [
+        {
+          "value": "starting",
+          "name": "Starting",
+          "description": "Start with the fairies"
+        },
+        {
+          "value": "vanilla",
+          "name": "Vanilla",
+          "description": "The Dungeon Chest Stray Fairies will be at their original locations"
+        },
+        {
+          "value": "ownDungeon",
+          "name": "Own Dungeon",
+          "description": "All Dungeon Chest Stray Fairies are shuffled within their own dungeon"
+        },
+        {
+          "value": "anywhere",
+          "name": "Anywhere",
+          "description": "All Dungeon Chest Stray Fairies are shuffled anywhere"
+        }
+      ],
+      "default": "ownDungeon"
+    },
+    {
+      "key": "strayFairyOtherShuffle",
+      "name": "Dungeon Freestanding Fairy Shuffle",
+      "category": "main.shuffle",
+      "type": "enum",
+      "description": "Controls where the Dungeon Freestanding Stray Fairies can be",
+      "values": [
+        {
+          "value": "removed",
+          "name": "Removed",
+          "description": "Start with the fairies, and the bubbles are removed."
+        },
+        {
+          "value": "starting",
+          "name": "Starting",
+          "description": "Start with the fairies"
+        },
+        {
+          "value": "vanilla",
+          "name": "Vanilla",
+          "description": "The Dungeon Freestanding Stray Fairies will be at their original locations"
+        },
+        {
+          "value": "ownDungeon",
+          "name": "Own Dungeon",
+          "description": "All Dungeon Freestanding Stray Fairies are shuffled within their own dungeon"
+        },
+        {
+          "value": "anywhere",
+          "name": "Anywhere",
+          "description": "All Dungeon Freestanding Stray Fairies are shuffled anywhere"
+        }
+      ],
+      "default": "vanilla"
+    },
+    {
+      "key": "ganonBossKey",
+      "name": "Ganon Boss Key Shuffle",
+      "category": "main.shuffle",
+      "type": "enum",
+      "description": "Controls where Ganon Boss Key should be",
+      "values": [
+        {
+          "value": "removed",
+          "name": "Removed",
+          "description": "Ganon Boss Key is removed, and so is the lock on the door leading to Ganondorf"
+        },
+        {
+          "value": "vanilla",
+          "name": "Vanilla",
+          "description": "Ganon Boss Key will be in its original chest, within Ganon's Castle"
+        },
+        {
+          "value": "ganon",
+          "name": "Ganon's Castle",
+          "description": "Ganon Boss Key will be anywhere within Ganon's Castle"
+        },
+        {
+          "value": "anywhere",
+          "name": "Anywhere",
+          "description": "Ganon Boss Key can be found anywhere"
+        },
+        {
+          "value": "custom",
+          "name": "Custom",
+          "description": ""
+        }
+      ],
+      "default": "removed"
+    },
+    {
+      "key": "dungeonRewardShuffle",
+      "name": "Dungeon Reward Shuffle",
+      "category": "main.shuffle",
+      "type": "enum",
+      "description": "Controls where the dungeons rewards should be",
+      "values": [
+        {
+          "value": "dungeonBlueWarps",
+          "name": "Dungeon Blue Warps",
+          "description": "Only the blue warps will grant the rewards"
+        },
+        {
+          "value": "dungeonsLimited",
+          "name": "Dungeons (Max one per dungeon)",
+          "description": "Anywhere in dungeons (one max)"
+        },
+        {
+          "value": "dungeons",
+          "name": "Dungeons (Unrestricted)",
+          "description": "Anywhere in dungeons"
+        },
+        {
+          "value": "anywhere",
+          "name": "Anywhere",
+          "description": "Can be anywhere"
+        }
+      ],
+      "default": "dungeonBlueWarps"
+    },
+    {
+      "key": "scrubShuffleOot",
+      "name": "Scrub Shuffle (OoT)",
+      "category": "main.shuffle",
+      "type": "boolean",
+      "description": "Controls whether or not Business Scrubs are shuffled (OoT). If not, the one in Hyrule Field by Lake Hylia's fences, the one by the Bridge in Lost Woods, and the front one in the grotto near Sacred Forest Meadow will still be shuffled",
+      "default": false
+    },
+    {
+      "key": "scrubShuffleMm",
+      "name": "Scrub Shuffle (MM)",
+      "category": "main.shuffle",
+      "type": "boolean",
+      "description": "Controls whether or not Business Scrubs are shuffled (MM). If not, the one in Termina Field near the Observatory and the one in Goron Village will still be shuffled",
+      "default": false
+    },
+    {
+      "key": "cowShuffleOot",
+      "name": "Cow Shuffle (OoT)",
+      "category": "main.shuffle",
+      "type": "boolean",
+      "description": "Controls whether or not playing Epona's Song near cows will give an item (OOT)",
+      "default": false
+    },
+    {
+      "key": "cowShuffleMm",
+      "name": "Cow Shuffle (MM)",
+      "category": "main.shuffle",
+      "type": "boolean",
+      "description": "Controls whether or not playing Epona's Song near cows will give an item (MM)",
+      "default": false
+    },
+    {
+      "key": "shopShuffleOot",
+      "name": "Shop Shuffle (OoT)",
+      "category": "main.shuffle",
+      "type": "enum",
+      "description": "Controls whether or not shops in OOT should have their items shuffled",
+      "values": [
+        {
+          "value": "none",
+          "name": "None",
+          "description": "All the items are vanilla"
+        },
+        {
+          "value": "full",
+          "name": "Full",
+          "description": "All 8 items are shuffled"
+        }
+      ],
+      "default": "none"
+    },
+    {
+      "key": "shopShuffleMm",
+      "name": "Shop Shuffle (MM)",
+      "category": "main.shuffle",
+      "type": "enum",
+      "description": "Controls whether or not shops in MM should have their items shuffled. If not, the Bomb Bag purchases will still be shuffled",
+      "values": [
+        {
+          "value": "none",
+          "name": "None",
+          "description": "All the items are vanilla"
+        },
+        {
+          "value": "full",
+          "name": "Full",
+          "description": "All 8 items are shuffled"
+        }
+      ],
+      "default": "none"
+    },
+    {
+      "key": "owlShuffle",
+      "name": "Owl Statue Shuffle",
+      "category": "main.shuffle",
+      "type": "enum",
+      "description": "Make owl statue items that can be shuffled.",
+      "values": [
+        {
+          "value": "none",
+          "name": "None",
+          "description": "Owl statues are vanilla"
+        },
+        {
+          "value": "anywhere",
+          "name": "Anywhere",
+          "description": "Owl statues are shuffled in the item pool"
+        }
+      ],
+      "default": "none"
+    },
+    {
+      "key": "shufflePotsOot",
+      "name": "Pots Shuffle (OoT)",
+      "category": "main.shuffle",
+      "type": "boolean",
+      "description": "Controls whether or not the pots are shuffled (OoT).",
+      "default": false
+    },
+    {
+      "key": "shufflePotsMm",
+      "name": "Pots Shuffle (MM)",
+      "category": "main.shuffle",
+      "type": "boolean",
+      "description": "Controls whether or not the pots are shuffled (MM).",
+      "default": false
+    },
+    {
+      "key": "shuffleGrassOot",
+      "name": "Grass Shuffle (OoT)",
+      "category": "main.shuffle",
+      "type": "boolean",
+      "description": "Controls whether or not the grass is shuffled (OoT)",
+      "default": false
+    },
+    {
+      "key": "shuffleGrassMm",
+      "name": "Grass Shuffle (MM)",
+      "category": "main.shuffle",
+      "type": "boolean",
+      "description": "Controls whether or not the grass is shuffled (MM)",
+      "default": false
+    },
+    {
+      "key": "shuffleFreeRupeesOot",
+      "name": "Freestanding Rupees Shuffle (OoT)",
+      "category": "main.shuffle",
+      "type": "boolean",
+      "description": "Controls whether or not the freestanding rupees are shuffled (OoT)",
+      "default": false
+    },
+    {
+      "key": "shuffleFreeRupeesMm",
+      "name": "Freestanding Rupees Shuffle (MM)",
+      "category": "main.shuffle",
+      "type": "boolean",
+      "description": "Controls whether or not the freestanding rupees are shuffled (MM)",
+      "default": false
+    },
+    {
+      "key": "shuffleFreeHeartsOot",
+      "name": "Freestanding Hearts Shuffle (OoT)",
+      "category": "main.shuffle",
+      "type": "boolean",
+      "description": "Controls whether or not the freestanding hearts are shuffled (OoT)",
+      "default": false
+    },
+    {
+      "key": "shuffleFreeHeartsMm",
+      "name": "Freestanding Hearts Shuffle (MM)",
+      "category": "main.shuffle",
+      "type": "boolean",
+      "description": "Controls whether or not the freestanding hearts are shuffled (MM)",
+      "default": false
+    },
+    {
+      "key": "shuffleOcarinasOot",
+      "name": "Ocarina Shuffle (OoT)",
+      "category": "main.shuffle",
+      "type": "boolean",
+      "description": "Controls whether or not the two Ocarinas in OoT are shuffled",
+      "default": true
+    },
+    {
+      "key": "shuffleMasterSword",
+      "name": "Master Sword Shuffle",
+      "category": "main.shuffle",
+      "type": "boolean",
+      "description": "Controls whether or not the Master Sword is shuffled",
+      "default": true
+    },
+    {
+      "key": "shuffleGerudoCard",
+      "name": "Gerudo Card Shuffle",
+      "category": "main.shuffle",
+      "type": "boolean",
+      "description": "Controls whether or not the Gerudo Membership Card is shuffled",
+      "default": true
+    },
+    {
+      "key": "shuffleMerchantsMm",
+      "name": "Merchants Shuffle (MM)",
+      "category": "main.shuffle",
+      "type": "boolean",
+      "description": "Controls whether or not the Milk Bar and Gorman milk purchases in MM are shuffled",
+      "default": false
+    },
+    {
+      "key": "pondFishShuffle",
+      "name": "Fishing Pond Fish Shuffle",
+      "category": "main.shuffle",
+      "type": "boolean",
+      "description": "Controls whether or not the Fish (and the Loaches) in the Fishing Pond are shuffled amongst all the items.",
+      "default": false
+    },
+    {
+      "key": "divingGameRupeeShuffle",
+      "name": "Diving Game Rupee Shuffle",
+      "category": "main.shuffle",
+      "type": "boolean",
+      "description": "Controls whether or not the Zora's Domain Diving Game has 5 random items instead of green, blue, red, purple and 500 rupees.",
+      "default": false
+    },
+    {
+      "key": "fairyFountainFairyShuffleOot",
+      "name": "Fairy Fountain Fairy Shuffle (OoT)",
+      "category": "main.shuffle",
+      "type": "boolean",
+      "description": "Controls whether or not fairies in fairy fountains are shuffled (OoT).",
+      "default": false
+    },
+    {
+      "key": "fairyFountainFairyShuffleMm",
+      "name": "Fairy Fountain Fairy Shuffle (MM)",
+      "category": "main.shuffle",
+      "type": "boolean",
+      "description": "Controls whether or not fairies in fairy fountains are shuffled (MM).",
+      "default": false
+    },
+    {
+      "key": "fairySpotShuffleOot",
+      "name": "Fairy Spot Shuffle (OoT)",
+      "category": "main.shuffle",
+      "type": "boolean",
+      "description": "Controls whether or not big fairies in fairy spots are shuffled (OoT). Play either Song of Storms or Sun's Song",
+      "default": false
+    },
+    {
+      "key": "eggShuffle",
+      "name": "Weird / Pocket Egg Content Shuffle",
+      "category": "main.shuffle",
+      "type": "boolean",
+      "description": "Fun setting: should using the Weird/Pocket Eggs give an item? If not, they're entirely removed from the game",
+      "default": false
+    },
+    {
+      "type": "enum",
+      "values": [
+        {
+          "value": "affordable",
+          "name": "Affordable",
+          "description": "All prices are set to 10 rupees."
+        },
+        {
+          "value": "vanilla",
+          "name": "Vanilla",
+          "description": "All prices are set to their vanilla values."
+        },
+        {
+          "value": "weighted",
+          "name": "Weighted Random",
+          "description": "All prices are randomized, but lower prices are favored."
+        },
+        {
+          "value": "random",
+          "name": "Random",
+          "description": "All prices are randomized."
+        }
+      ],
+      "category": "main.prices",
+      "default": "vanilla",
+      "key": "priceOotShops",
+      "name": "OoT Shops Prices",
+      "description": "Sets the price of items inside OoT shops"
+    },
+    {
+      "type": "enum",
+      "values": [
+        {
+          "value": "affordable",
+          "name": "Affordable",
+          "description": "All prices are set to 10 rupees."
+        },
+        {
+          "value": "vanilla",
+          "name": "Vanilla",
+          "description": "All prices are set to their vanilla values."
+        },
+        {
+          "value": "weighted",
+          "name": "Weighted Random",
+          "description": "All prices are randomized, but lower prices are favored."
+        },
+        {
+          "value": "random",
+          "name": "Random",
+          "description": "All prices are randomized."
+        }
+      ],
+      "category": "main.prices",
+      "default": "vanilla",
+      "key": "priceOotScrubs",
+      "name": "OoT Scrubs Prices",
+      "description": "Sets the price of items sold by OoT scrubs"
+    },
+    {
+      "type": "enum",
+      "values": [
+        {
+          "value": "affordable",
+          "name": "Affordable",
+          "description": "All prices are set to 10 rupees."
+        },
+        {
+          "value": "vanilla",
+          "name": "Vanilla",
+          "description": "All prices are set to their vanilla values."
+        },
+        {
+          "value": "weighted",
+          "name": "Weighted Random",
+          "description": "All prices are randomized, but lower prices are favored."
+        },
+        {
+          "value": "random",
+          "name": "Random",
+          "description": "All prices are randomized."
+        }
+      ],
+      "category": "main.prices",
+      "default": "vanilla",
+      "key": "priceMmShops",
+      "name": "MM Shops Prices",
+      "description": "Sets the price of items sold inside MM shops"
+    },
+    {
+      "type": "enum",
+      "values": [
+        {
+          "value": "affordable",
+          "name": "Affordable",
+          "description": "All prices are set to 10 rupees."
+        },
+        {
+          "value": "vanilla",
+          "name": "Vanilla",
+          "description": "All prices are set to their vanilla values."
+        },
+        {
+          "value": "weighted",
+          "name": "Weighted Random",
+          "description": "All prices are randomized, but lower prices are favored."
+        },
+        {
+          "value": "random",
+          "name": "Random",
+          "description": "All prices are randomized."
+        }
+      ],
+      "category": "main.prices",
+      "default": "vanilla",
+      "key": "priceMmTingle",
+      "name": "MM Tingle Prices",
+      "description": "Sets the price of items sold by Tingle"
+    },
+    {
+      "key": "ganonTrials",
+      "name": "Ganon Trials",
+      "category": "main.events",
+      "type": "set",
+      "description": "Controls which trials in Ganon's Castle are enabled",
+      "values": [
+        {
+          "value": "Light",
+          "name": "Light Trial"
+        },
+        {
+          "value": "Forest",
+          "name": "Forest Trial"
+        },
+        {
+          "value": "Fire",
+          "name": "Fire Trial"
+        },
+        {
+          "value": "Water",
+          "name": "Water Trial"
+        },
+        {
+          "value": "Shadow",
+          "name": "Shadow Trial"
+        },
+        {
+          "value": "Spirit",
+          "name": "Spirit Trial"
+        }
+      ],
+      "default": "none"
+    },
+    {
+      "key": "moonCrash",
+      "name": "Moon Crash Behavior",
+      "category": "main.events",
+      "type": "enum",
+      "description": "Change the behavior of moon crashing",
+      "values": [
+        {
+          "value": "reset",
+          "name": "Reset",
+          "description": "Moon Crash will restore the last save. No progress will be kept."
+        },
+        {
+          "value": "cycle",
+          "name": "New Cycle",
+          "description": "Moon Crash will initiate a new cycle, keeping progress."
+        }
+      ],
+      "default": "reset"
+    },
+    {
+      "key": "startingAge",
+      "name": "Starting Age",
+      "category": "main.events",
+      "type": "enum",
+      "description": "Choose the starting age",
+      "values": [
+        {
+          "value": "child",
+          "name": "Child",
+          "description": "Link will start off as child"
+        },
+        {
+          "value": "adult",
+          "name": "Adult",
+          "description": "Link will start off as adult"
+        },
+        {
+          "value": "random",
+          "name": "Random",
+          "description": "Link will start off as either adult or child, with a 50/50 probability"
+        }
+      ],
+      "default": "child"
+    },
+    {
+      "key": "doorOfTime",
+      "name": "Door of Time",
+      "category": "main.events",
+      "type": "enum",
+      "description": "Alters the Door of Time state",
+      "values": [
+        {
+          "value": "closed",
+          "name": "Closed",
+          "description": "The Door will be closed, and you will need to play Song of Time in front of the Temple of Time altar to open it. (The Spiritual Stones and Ocarina of Time are NOT needed)"
+        },
+        {
+          "value": "open",
+          "name": "Open",
+          "description": "The Door is already open"
+        }
+      ],
+      "default": "closed"
+    },
+    {
+      "key": "ageChange",
+      "name": "Age Change upon Song of Time",
+      "category": "main.events",
+      "type": "enum",
+      "values": [
+        {
+          "value": "none",
+          "name": "None",
+          "description": "Cannot change age by playing Song of Time."
+        },
+        {
+          "value": "oot",
+          "name": "Ocarina of Time",
+          "description": "Can change age by playing Song of Time with the Ocarina of Time specifically."
+        },
+        {
+          "value": "always",
+          "name": "Always",
+          "description": "Can always change age by playing Song of Time."
+        }
+      ],
+      "description": "Allows you to switch ages by playing Song of Time, if you've been to Temple of Time as both ages",
+      "default": "none"
+    },
+    {
+      "key": "dekuTree",
+      "name": "Deku Tree",
+      "category": "main.events",
+      "type": "enum",
+      "description": "Controls the behavior of Mido blocking the Deku Tree as child",
+      "values": [
+        {
+          "value": "closed",
+          "name": "Closed",
+          "description": "Mido will block the way to the Deku Tree until you have a Deku Shield and the Kokiri Sword."
+        },
+        {
+          "value": "open",
+          "name": "Open",
+          "description": "The Deku Tree will be open from the start"
+        }
+      ],
+      "default": "open"
+    },
+    {
+      "key": "dekuTreeAdult",
+      "name": "Deku Tree as Adult",
+      "category": "main.events",
+      "type": "boolean",
+      "description": "Allows access to the Deku Tree as adult.",
+      "default": false
+    },
+    {
+      "key": "wellAdult",
+      "name": "Well as Adult",
+      "category": "main.events",
+      "type": "boolean",
+      "description": "Allows access to the Well as adult.",
+      "default": false
+    },
+    {
+      "key": "fireChild",
+      "name": "Fire Temple as Child",
+      "category": "main.events",
+      "type": "boolean",
+      "description": "Allows access to the Fire Temple as child.",
+      "default": false
+    },
+    {
+      "key": "openDungeonsMm",
+      "name": "Open Dungeons (MM)",
+      "category": "main.events",
+      "type": "set",
+      "description": "Controls whether or not MM dungeons will need their respective song. Takes priority over Clear State",
+      "values": [
+        {
+          "value": "WF",
+          "name": "Woodfall Temple"
+        },
+        {
+          "value": "SH",
+          "name": "Snowhead Temple"
+        },
+        {
+          "value": "GB",
+          "name": "Great Bay Temple"
+        },
+        {
+          "value": "ST",
+          "name": "Stone Tower Temples"
+        }
+      ],
+      "default": "none"
+    },
+    {
+      "key": "clearStateDungeonsMm",
+      "name": "Clear State Dungeons (MM)",
+      "category": "main.events",
+      "type": "enum",
+      "description": "Controls whether or not MM dungeons will need their respectives songs in the cleared state",
+      "values": [
+        {
+          "value": "none",
+          "name": "None"
+        },
+        {
+          "value": "WF",
+          "name": "Woodfall Temple"
+        },
+        {
+          "value": "GB",
+          "name": "Great Bay Temple"
+        },
+        {
+          "value": "both",
+          "name": "Both"
+        }
+      ],
+      "default": "none"
+    },
+    {
+      "key": "kakarikoGate",
+      "name": "Kakariko Gate",
+      "category": "main.events",
+      "type": "enum",
+      "description": "Controls the behavior of the gate in Kakariko blocking Death Mountain as child",
+      "values": [
+        {
+          "value": "closed",
+          "name": "Closed",
+          "description": "The gate will be closed until you show Zelda's Letter to the guard"
+        },
+        {
+          "value": "open",
+          "name": "Open",
+          "description": "The gate will be open from the start"
+        }
+      ],
+      "default": "closed"
+    },
+    {
+      "key": "openZdShortcut",
+      "name": "Open Zora's Domain Shortcut",
+      "category": "main.events",
+      "type": "boolean",
+      "description": "Removes the ice blocking Zora's Domain in Lake Hylia as adult",
+      "default": false
+    },
+    {
+      "key": "zoraKing",
+      "name": "King Zora",
+      "category": "main.events",
+      "type": "enum",
+      "description": "Controls the behavior of King Zora in Zora's Domain",
+      "values": [
+        {
+          "value": "vanilla",
+          "name": "Vanilla",
+          "description": "You will need to present him Ruto's Letter in order to enter Zora's Fountain as both Child and Adult"
+        },
+        {
+          "value": "adult",
+          "name": "Open (Adult Only)",
+          "description": "Already on the side as Adult, granting free Zora's Fountain access. Child still needs Ruto's Letter"
+        },
+        {
+          "value": "open",
+          "name": "Open",
+          "description": "He will already be on the side for both Child and Adult, and Ruto's Letter is replaced by an empty bottle"
+        }
+      ],
+      "default": "vanilla"
+    },
+    {
+      "key": "gerudoFortress",
+      "name": "Gerudo Fortress",
+      "category": "main.events",
+      "type": "enum",
+      "description": "Controls the behavior of the Carpenters in Gerudo Fortress",
+      "values": [
+        {
+          "value": "vanilla",
+          "name": "Vanilla",
+          "description": "You will need to rescue all carpenters."
+        },
+        {
+          "value": "single",
+          "name": "One Carpenter",
+          "description": "You will need to rescue only one carpenter."
+        },
+        {
+          "value": "open",
+          "name": "Open",
+          "description": "Carpenters are rescued from the start and the bridge in Gerudo Valley as adult is repaired."
+        }
+      ],
+      "default": "vanilla"
+    },
+    {
+      "key": "skipZelda",
+      "name": "Skip Child Zelda",
+      "category": "main.events",
+      "type": "boolean",
+      "description": "This changes the beginning of the child trade quest. True means you'll start having already met Zelda and got her item along with the one from Impa. The Chicken is also removed from the game, but Malon will still be at Hyrule Castle",
+      "default": false
+    },
+    {
+      "key": "openMoon",
+      "name": "Skip Oath to Order",
+      "category": "main.events",
+      "type": "boolean",
+      "description": "Skip playing Oath to Order to reach the Moon.",
+      "default": false
+    },
+    {
+      "key": "lacs",
+      "name": "Light Arrow Cutscene",
+      "category": "main.events",
+      "type": "enum",
+      "description": "Controls how the Light Arrow Cutscene should be triggered",
+      "values": [
+        {
+          "value": "vanilla",
+          "name": "Vanilla",
+          "description": "Triggers at Temple of Time with Shadow and Spirit Medallions"
+        },
+        {
+          "value": "custom",
+          "name": "Custom",
+          "description": "Triggers at Temple of Time with a special condition"
+        }
+      ],
+      "default": "vanilla"
+    },
+    {
+      "key": "rainbowBridge",
+      "name": "Rainbow Bridge",
+      "category": "main.events",
+      "type": "enum",
+      "description": "Controls how the Rainbow Bridge should be triggered",
+      "values": [
+        {
+          "value": "open",
+          "name": "Open",
+          "description": "The Rainbow Bridge is always open"
+        },
+        {
+          "value": "vanilla",
+          "name": "Vanilla",
+          "description": "Opens when you have the Light Arrows, Shadow Medallion, and Spirit Medallion"
+        },
+        {
+          "value": "medallions",
+          "name": "Medallions",
+          "description": "Opens when you have all Medallions"
+        },
+        {
+          "value": "custom",
+          "name": "Custom",
+          "description": "You will need to meet a special condition to open the bridge"
+        }
+      ],
+      "default": "medallions"
+    },
+    {
+      "key": "majoraChild",
+      "name": "Majora Child Requirements",
+      "category": "main.events",
+      "type": "enum",
+      "description": "Controls the requirements to enter Majora's arena",
+      "values": [
+        {
+          "value": "none",
+          "name": "None",
+          "description": "As soon as you have access to the Moon you can enter Majora's arena"
+        },
+        {
+          "value": "custom",
+          "name": "Custom",
+          "description": "You will need to meet a special condition to enter Majora's arena"
+        }
+      ],
+      "default": "none"
+    },
+    {
+      "key": "bossWarpPads",
+      "name": "Boss Warp Pads",
+      "category": "main.events",
+      "type": "enum",
+      "description": "Controls the behavior of the MM Boss Warp Pads.",
+      "values": [
+        {
+          "value": "bossBeaten",
+          "name": "Boss Beaten",
+          "description": "Enabled when the boss is beaten"
+        },
+        {
+          "value": "remains",
+          "name": "Remains",
+          "description": "Enabled when the matching remain is obtained"
+        }
+      ],
+      "default": "bossBeaten"
+    },
+    {
+      "key": "freeScarecrowOot",
+      "name": "Free Scarecrow (OoT)",
+      "category": "main.events",
+      "type": "boolean",
+      "description": "Allows to spawn Pierre the Scarecrow just by pulling the Ocarina out",
+      "default": false
+    },
+    {
+      "key": "preCompletedDungeons",
+      "name": "Pre-Completed Dungeons",
+      "category": "main.events",
+      "type": "boolean",
+      "description": "Allow dungeons to be pre-completed depending on rules.",
+      "default": false
+    },
+    {
+      "key": "preCompletedDungeonsMajor",
+      "name": "Pre-Completed Dungeons (Major)",
+      "category": "main.events",
+      "type": "number",
+      "min": 0,
+      "max": 12,
+      "description": "How many major dungeons sould be pre-completed. Can be combined with other pre-completed dungeon rules.",
+      "default": 0
+    },
+    {
+      "key": "preCompletedDungeonsStones",
+      "name": "Pre-Completed Dungeons (Stones)",
+      "category": "main.events",
+      "type": "number",
+      "min": 0,
+      "max": 3,
+      "description": "Pre-completes dungeons containing at least one stone, until it reaches that many stones. Can be combined with other pre-completed dungeon rules.",
+      "default": 0
+    },
+    {
+      "key": "preCompletedDungeonsMedallions",
+      "name": "Pre-Completed Dungeons (Medallions)",
+      "category": "main.events",
+      "type": "number",
+      "min": 0,
+      "max": 6,
+      "description": "Pre-completes dungeons containing at least one medallion, until it reaches that many medallions. Can be combined with other pre-completed dungeon rules.",
+      "default": 0
+    },
+    {
+      "key": "preCompletedDungeonsRemains",
+      "name": "Pre-Completed Dungeons (Remains)",
+      "category": "main.events",
+      "type": "number",
+      "min": 0,
+      "max": 4,
+      "description": "Pre-completes dungeons containing at least one remain, until in reaches that many remains. Can be combined with other pre-completed dungeon rules.",
+      "default": 0
+    },
+    {
+      "key": "openMaskShop",
+      "name": "Open Mask Shop at night",
+      "category": "main.events",
+      "type": "boolean",
+      "description": "Makes the Mask Shop in Market open during the night",
+      "default": false
+    },
+    {
+      "key": "crossAge",
+      "name": "Cross-Games Age",
+      "category": "main.cross",
+      "type": "boolean",
+      "description": "When you enter MM as Adult Link, you will be Adult Link in MM.",
+      "default": false
+    },
+    {
+      "key": "crossWarpOot",
+      "name": "Cross-Games OoT Warp Songs",
+      "category": "main.cross",
+      "type": "boolean",
+      "description": "Allows you to play OOT Warp Songs from MM to warp to their respective locations. Logic could even expect you to do so",
+      "default": false
+    },
+    {
+      "key": "crossWarpMm",
+      "name": "Cross-Games MM Song of Soaring",
+      "category": "main.cross",
+      "type": "enum",
+      "description": "Controls whether you can play Song of Soaring from OOT to warp to MM Owl Statues and how logic should be affected",
+      "values": [
+        {
+          "value": "none",
+          "name": "None",
+          "description": "Song of Soaring is fully disabled in OOT"
+        },
+        {
+          "value": "childOnly",
+          "name": "Child Only",
+          "description": "Song of Soaring in OOT is enabled and logical only for Child"
+        },
+        {
+          "value": "full",
+          "name": "Child & Adult",
+          "description": "Song of Soaring in OOT is enabled and logical for both Child and Adult"
+        }
+      ],
+      "default": "none"
+    },
+    {
+      "key": "csmc",
+      "name": "Container Appearance Matches Content",
+      "category": "main.misc",
+      "type": "enum",
+      "values": [
+        {
+          "value": "never",
+          "name": "Never",
+          "description": "Containers will be vanilla"
+        },
+        {
+          "value": "agony",
+          "name": "Stone of Agony",
+          "description": "Containers will match content when you have the Stone of Agony in OoT"
+        },
+        {
+          "value": "always",
+          "name": "Always",
+          "description": "Containers will always match content"
+        }
+      ],
+      "description": "Modifies the chest, grass, and pot appearance so that they match their content. Works for unique items, keys, fairies, and souls. Grass and pots will otherwise always be gold if the item has not been collected",
+      "default": "always"
+    },
+    {
+      "key": "csmcHearts",
+      "name": "CAMC for Heart Pieces/Containers",
+      "category": "main.misc",
+      "type": "boolean",
+      "default": true,
+      "description": "Use a specific texture for heart pieces/containers"
+    },
+    {
+      "key": "csmcExtra",
+      "name": "Skulltula CAMC",
+      "category": "main.misc",
+      "type": "boolean",
+      "default": false,
+      "description": "Enables CAMC for shuffled Gold, Swamp, and Ocean Skulltulas"
+    },
+    {
+      "key": "blastMaskCooldown",
+      "name": "Blast Mask Cooldown",
+      "category": "main.misc",
+      "type": "enum",
+      "description": "Changes the cooldown between each explostion of the Blast Mask",
+      "values": [
+        {
+          "value": "instant",
+          "name": "Instant (0s)"
+        },
+        {
+          "value": "veryshort",
+          "name": "Very Short (~2s)"
+        },
+        {
+          "value": "short",
+          "name": "Short (~6s)"
+        },
+        {
+          "value": "default",
+          "name": "Default (~15s)"
+        },
+        {
+          "value": "long",
+          "name": "Long (~25s)"
+        },
+        {
+          "value": "verylong",
+          "name": "Very Long (~51s)"
+        }
+      ],
+      "default": "default"
+    },
+    {
+      "key": "clockSpeed",
+      "name": "Clock Speed",
+      "category": "main.misc",
+      "type": "enum",
+      "description": "Alters the speed of the clock. Some options may render seeds unbeatable due to being unable to do time-related checks",
+      "values": [
+        {
+          "value": "veryslow",
+          "name": "Very Slow",
+          "description": "The time will flow 66% slower than usual"
+        },
+        {
+          "value": "slow",
+          "name": "Slow",
+          "description": "The time will flow 33% slower than usual"
+        },
+        {
+          "value": "default",
+          "name": "Default",
+          "description": "The normal clock speed"
+        },
+        {
+          "value": "fast",
+          "name": "Fast",
+          "description": "The clock speed will twice as fast than usual"
+        },
+        {
+          "value": "veryfast",
+          "name": "Very Fast",
+          "description": "USE AT OWN RISK!! - The clock speed will be 3x faster than usual, even on inverted"
+        },
+        {
+          "value": "superfast",
+          "name": "Super Fast",
+          "description": "USE AT OWN RISK!! - The clock speed will be 6x faster than usual, even on inverted"
+        }
+      ],
+      "default": "default"
+    },
+    {
+      "key": "autoInvert",
+      "name": "Auto-Invert Time (MM)",
+      "category": "main.misc",
+      "type": "enum",
+      "description": "Auto-inverts time at the start of a cycle",
+      "values": [
+        {
+          "value": "never",
+          "name": "Never"
+        },
+        {
+          "value": "firstCycle",
+          "name": "First Cycle"
+        },
+        {
+          "value": "always",
+          "name": "Always"
+        }
+      ],
+      "default": "never"
+    },
+    {
+      "key": "fierceDeityAnywhere",
+      "name": "Fierce Deity Anywhere in MM",
+      "category": "main.misc",
+      "type": "boolean",
+      "description": "Controls the ability to use Fierce Deity outside of boss lairs. No logical applications",
+      "default": false
+    },
+    {
+      "key": "hookshotAnywhereOot",
+      "name": "Hookshot Anywhere (OoT)",
+      "category": "main.misc",
+      "type": "enum",
+      "description": "Modifies all surfaces to be hooked onto and if it is expected in logic",
+      "values": [
+        {
+          "value": "off",
+          "name": "Off"
+        },
+        {
+          "value": "enabled",
+          "name": "On"
+        },
+        {
+          "value": "logical",
+          "name": "Logical"
+        }
+      ],
+      "default": "off"
+    },
+    {
+      "key": "hookshotAnywhereMm",
+      "name": "Hookshot Anywhere (MM)",
+      "category": "main.misc",
+      "type": "enum",
+      "description": "Modifies all surfaces to be hooked onto and if it is expected in logic",
+      "values": [
+        {
+          "value": "off",
+          "name": "Off"
+        },
+        {
+          "value": "enabled",
+          "name": "On"
+        },
+        {
+          "value": "logical",
+          "name": "Logical"
+        }
+      ],
+      "default": "off"
+    },
+    {
+      "key": "climbMostSurfacesOot",
+      "name": "Climb Most Surfaces (OoT)",
+      "category": "main.misc",
+      "type": "enum",
+      "description": "Modifies most surface to be climbable and if it is expected in logic",
+      "values": [
+        {
+          "value": "off",
+          "name": "Off"
+        },
+        {
+          "value": "enabled",
+          "name": "On"
+        },
+        {
+          "value": "logical",
+          "name": "Logical"
+        }
+      ],
+      "default": "off"
+    },
+    {
+      "key": "climbMostSurfacesMm",
+      "name": "Climb Most Surfaces (MM)",
+      "category": "main.misc",
+      "type": "boolean",
+      "description": "Modifies most surface to be climbable",
+      "default": false
+    },
+    {
+      "key": "fastBunnyHood",
+      "name": "Fast Bunny Hood",
+      "category": "main.misc",
+      "type": "boolean",
+      "description": "Modifies the Bunny Hood in OoT to give a speed increase",
+      "default": true
+    },
+    {
+      "key": "defaultHoldTarget",
+      "name": "Default Hold Target",
+      "category": "main.misc",
+      "type": "boolean",
+      "description": "Forces the default target system to HOLD instead of SWITCH",
+      "default": true
+    },
+    {
+      "key": "critWiggleDisable",
+      "name": "Disable Crit Wiggle",
+      "category": "main.misc",
+      "type": "boolean",
+      "description": "Disables the camera zoom-in and weird movements when low on health",
+      "default": true
+    },
+    {
+      "key": "restoreBrokenActors",
+      "name": "Restore Broken Actors",
+      "category": "main.misc",
+      "type": "boolean",
+      "description": "In vanilla OoT, some actors fails to load properly in some rooms due to errors in the room files. When this is on, these actors will load.",
+      "default": false
+    },
+    {
+      "key": "alterLostWoodsExits",
+      "name": "Alter Lost Woods Exits",
+      "category": "main.misc",
+      "type": "boolean",
+      "description": "There are unused exits in the Lost Woods that return you to the lost woods. When this is on, all the \"got lost\" exits in the Lost Woods that would normally take you to Kokiri Forest instead take you back to the Lost Woods, keeping your compass direction intact.",
+      "default": false
+    },
+    {
+      "key": "voidWarpMm",
+      "name": "Void Warp in MM",
+      "category": "main.misc",
+      "type": "boolean",
+      "description": "In vanilla OoT, various code only checks for transitionTrigger, but in MM it also checks for transitionMode. When this is on, MM will no longer check transitionMode in those circumstances.",
+      "default": false
+    },
+    {
+      "key": "fillWallets",
+      "name": "Fill Wallets",
+      "category": "items",
+      "type": "boolean",
+      "description": "Fills the wallet upon finding a new one",
+      "default": false
+    },
+    {
+      "key": "progressiveShieldsOot",
+      "name": "OoT Shields",
+      "category": "items.progressive",
+      "type": "enum",
+      "description": "Alters OOT Shields behavior",
+      "values": [
+        {
+          "value": "separate",
+          "name": "Separate",
+          "description": "They can be found independently from each other"
+        },
+        {
+          "value": "progressive",
+          "name": "Progressive",
+          "description": "Each Progressive Shield will grant you the next one: Deku Shield -> Hylian Shield -> Mirror Shield. Other Deku and Hylian Shields do not count towards this chain, only the Progressive Shield item."
+        }
+      ],
+      "default": "separate"
+    },
+    {
+      "key": "progressiveSwordsOot",
+      "name": "OoT Swords",
+      "category": "items.progressive",
+      "type": "enum",
+      "description": "Alters OOT Swords behavior",
+      "values": [
+        {
+          "value": "separate",
+          "name": "Separate",
+          "description": "They can be found independently from each other"
+        },
+        {
+          "value": "goron",
+          "name": "Progressive Knife and Biggoron",
+          "description": "Kokiri Sword and Master Sword are independent. However Giant's Knife and Biggoron Sword are progressive."
+        },
+        {
+          "value": "progressive",
+          "name": "Progressive",
+          "description": "Each Progressive Sword will grant you the next one: Kokiri Sword -> Master Sword -> Giant's Knife -> Biggoron Sword"
+        }
+      ],
+      "default": "goron"
+    },
+    {
+      "key": "progressiveShieldsMm",
+      "name": "MM Shields",
+      "category": "items.progressive",
+      "type": "enum",
+      "description": "Alters MM Shields behavior",
+      "values": [
+        {
+          "value": "separate",
+          "name": "Separate",
+          "description": "They can be found independently from each other"
+        },
+        {
+          "value": "progressive",
+          "name": "Progressive",
+          "description": "Each Progressive Shield will grant you the next one: Hero Shield -> Mirror Shield. Other Hero Shields do not count towards this chain, only the Progressive Shield item. If shields are shared, Hero Shield will be obtained alongside Hylian Shield"
+        }
+      ],
+      "default": "separate"
+    },
+    {
+      "key": "progressiveGFS",
+      "name": "MM Great Fairy Sword",
+      "category": "items.progressive",
+      "type": "enum",
+      "description": "Controls whether Great Fairy Sword is included in sword progression",
+      "values": [
+        {
+          "value": "separate",
+          "name": "Separate"
+        },
+        {
+          "value": "progressive",
+          "name": "Progressive"
+        }
+      ],
+      "default": "separate"
+    },
+    {
+      "key": "progressiveGoronLullaby",
+      "name": "MM Goron Lullaby",
+      "category": "items.progressive",
+      "type": "enum",
+      "description": "Alters the behavior of Goron Lullaby",
+      "values": [
+        {
+          "value": "single",
+          "name": "Full Lullaby Only",
+          "description": "Only the Goron Lullaby can be found, and when playing with Songs on Song Locations, Baby Goron in MM is no longer a Song Location"
+        },
+        {
+          "value": "progressive",
+          "name": "Progressive",
+          "description": "Lullaby Intro will be received first before getting the full song"
+        }
+      ],
+      "default": "progressive"
+    },
+    {
+      "key": "progressiveClocks",
+      "name": "Clocks",
+      "category": "items.progressive",
+      "type": "enum",
+      "description": "Alters the behavior of Clocks",
+      "values": [
+        {
+          "value": "separate",
+          "name": "Separate",
+          "description": "Clocks will be independant of each other. If you don\t select a starting clock, one will be given to you at random."
+        },
+        {
+          "value": "ascending",
+          "name": "Ascending",
+          "description": "Clocks will be received in ascending order."
+        },
+        {
+          "value": "descending",
+          "name": "Descending ",
+          "description": "Clocks will be received in descending order."
+        }
+      ],
+      "default": "ascending"
+    },
+    {
+      "key": "bottleContentShuffle",
+      "name": "Random Bottle Contents",
+      "category": "items.extensions",
+      "type": "boolean",
+      "description": "Randomize the content of the bottles",
+      "default": false
+    },
+    {
+      "key": "sunSongMm",
+      "name": "Sun's Song in MM",
+      "category": "items.extensions",
+      "type": "boolean",
+      "description": "Enables Sun's Song as an item in MM. If Songs are on Songs, you must share or start with at least one song",
+      "default": false
+    },
+    {
+      "key": "fairyOcarinaMm",
+      "name": "Fairy Ocarina in MM",
+      "category": "items.extensions",
+      "type": "boolean",
+      "description": "Functionally identical as the Ocarina of Time, but now there's 2 Ocarinas for Majora's Mask!",
+      "default": false
+    },
+    {
+      "key": "blueFireArrows",
+      "name": "Blue Fire Arrows",
+      "category": "items.extensions",
+      "type": "boolean",
+      "description": "Gives the OOT Ice Arrows the properties of Blue Fire",
+      "default": false
+    },
+    {
+      "key": "sunlightArrows",
+      "name": "Sunlight Arrows",
+      "category": "items.extensions",
+      "type": "boolean",
+      "description": "Gives the OOT Light Arrows the ability to activate most sun switches",
+      "default": false
+    },
+    {
+      "key": "shortHookshotMm",
+      "name": "Short Hookshot in MM",
+      "category": "items.extensions",
+      "type": "boolean",
+      "description": "Adds a short hookshot in MM (logic accounts for this). A trick is also there for some of the harder spots",
+      "default": false
+    },
+    {
+      "key": "childWallets",
+      "name": "Child Wallets",
+      "category": "items.extensions",
+      "type": "boolean",
+      "description": "Shuffles the starting Wallets... making it so you have to find it to hold anything!",
+      "default": false
+    },
+    {
+      "key": "colossalWallets",
+      "name": "Colossal Wallets",
+      "category": "items.extensions",
+      "type": "boolean",
+      "description": "Adds a Wallet that can hold up to 999 rupees in each game",
+      "default": false
+    },
+    {
+      "key": "bottomlessWallets",
+      "name": "Bottomless Wallets",
+      "category": "items.extensions",
+      "type": "boolean",
+      "description": "Adds a Wallet that can hold up to 9999 rupees in each game",
+      "default": false
+    },
+    {
+      "key": "skeletonKeyOot",
+      "name": "Skeleton Key (OoT)",
+      "category": "items.extensions",
+      "type": "boolean",
+      "description": "Adds a Skeleton Key that can open every small-key-locked door.",
+      "default": false
+    },
+    {
+      "key": "skeletonKeyMm",
+      "name": "Skeleton Key (MM)",
+      "category": "items.extensions",
+      "type": "boolean",
+      "description": "Adds a Skeleton Key that can open every small-key-locked door.",
+      "default": false
+    },
+    {
+      "key": "magicalRupee",
+      "name": "Magical Rupee",
+      "category": "items.extensions",
+      "type": "boolean",
+      "description": "Adds a Magical Rupee that can trigger every silver-rupee event.",
+      "default": false
+    },
+    {
+      "key": "bombchuBagOot",
+      "name": "Bombchu Bag (OoT)",
+      "category": "items.extensions",
+      "type": "boolean",
+      "description": "Turns the first out-of-shop bombchu pack you find into the bombchu bag. Has logical implications.",
+      "default": false
+    },
+    {
+      "key": "bombchuBagMm",
+      "name": "Bombchu Bag (MM)",
+      "category": "items.extensions",
+      "type": "boolean",
+      "description": "Turns the first out-of-shop bombchu pack you find into the bombchu bag. Has logical implications.",
+      "default": false
+    },
+    {
+      "key": "spellFireMm",
+      "name": "Din's Fire (MM)",
+      "category": "items.extensions",
+      "type": "boolean",
+      "description": "Adds Din's Fire in Majora's Mask.",
+      "default": false
+    },
+    {
+      "key": "spellWindMm",
+      "name": "Farore's Wind (MM)",
+      "category": "items.extensions",
+      "type": "boolean",
+      "description": "Adds Farore's Wind in Majora's Mask.",
+      "default": false
+    },
+    {
+      "key": "spellLoveMm",
+      "name": "Nayru's Love (MM)",
+      "category": "items.extensions",
+      "type": "boolean",
+      "description": "Adds Nayru's Love in Majora's Mask.",
+      "default": false
+    },
+    {
+      "key": "bootsIronMm",
+      "name": "Iron Boots (MM)",
+      "category": "items.extensions",
+      "type": "boolean",
+      "description": "Adds Iron Boots in Majora's Mask.",
+      "default": false
+    },
+    {
+      "key": "bootsHoverMm",
+      "name": "Hover Boots (MM)",
+      "category": "items.extensions",
+      "type": "boolean",
+      "description": "Adds Hover Boots in Majora's Mask.",
+      "default": false
+    },
+    {
+      "key": "tunicGoronMm",
+      "name": "Goron Tunic (MM)",
+      "category": "items.extensions",
+      "type": "boolean",
+      "description": "Adds Goron Tunic in Majora's Mask.",
+      "default": false
+    },
+    {
+      "key": "tunicZoraMm",
+      "name": "Zora Tunic (MM)",
+      "category": "items.extensions",
+      "type": "boolean",
+      "description": "Adds Zora Tunic in Majora's Mask.",
+      "default": false
+    },
+    {
+      "key": "scalesMm",
+      "name": "Scales (MM)",
+      "category": "items.extensions",
+      "type": "boolean",
+      "description": "Adds Silver Scale and Golden Scale in Majora's Mask.",
+      "default": false
+    },
+    {
+      "key": "strengthMm",
+      "name": "Strength (MM)",
+      "category": "items.extensions",
+      "type": "boolean",
+      "description": "Adds Goron's Bracelet, Silver Gauntlets, and Golden Gauntlets in Majora's Mask.",
+      "default": false
+    },
+    {
+      "key": "blastMaskOot",
+      "name": "Blast Mask (OoT)",
+      "category": "items.extensions",
+      "type": "boolean",
+      "description": "Add the Blast Mask in Ocarina of Time.",
+      "default": false
+    },
+    {
+      "key": "stoneMaskOot",
+      "name": "Stone Mask (OoT)",
+      "category": "items.extensions",
+      "type": "boolean",
+      "description": "Add the Stone Mask in Ocarina of Time.",
+      "default": false
+    },
+    {
+      "key": "elegyOot",
+      "name": "Elegy of Emptiness (OoT)",
+      "category": "items.extensions",
+      "type": "boolean",
+      "description": "Add the Elegy of Emptiness in Ocarina of Time.",
+      "default": false
+    },
+    {
+      "key": "ocarinaButtonsShuffleOot",
+      "name": "Ocarina Buttons Shuffle (OoT)",
+      "category": "items.extensions",
+      "type": "boolean",
+      "description": "Adds the Ocarina Buttons as items that are shuffled.",
+      "default": false
+    },
+    {
+      "key": "ocarinaButtonsShuffleMm",
+      "name": "Ocarina Buttons Shuffle (MM)",
+      "category": "items.extensions",
+      "type": "boolean",
+      "description": "Adds the Ocarina Buttons as items that are shuffled.",
+      "default": false
+    },
+    {
+      "key": "soulsEnemyOot",
+      "name": "Enemy Souls (OoT)",
+      "category": "items.extensions",
+      "type": "boolean",
+      "description": "Add enemy souls into the item pool. Enemies won't spawn unless their soul is obtained.",
+      "default": false
+    },
+    {
+      "key": "soulsEnemyMm",
+      "name": "Enemy Souls (MM)",
+      "category": "items.extensions",
+      "type": "boolean",
+      "description": "Add enemy souls into the item pool. Enemies won't spawn unless their soul is obtained.",
+      "default": false
+    },
+    {
+      "key": "soulsBossOot",
+      "name": "Boss Souls (OoT)",
+      "category": "items.extensions",
+      "type": "boolean",
+      "description": "Add boss souls into the item pool. Enemies won't spawn unless their soul is obtained.",
+      "default": false
+    },
+    {
+      "key": "soulsBossMm",
+      "name": "Boss Souls (MM)",
+      "category": "items.extensions",
+      "type": "boolean",
+      "description": "Add boss souls into the item pool. Enemies won't spawn unless their soul is obtained.",
+      "default": false
+    },
+    {
+      "key": "soulsNpcOot",
+      "name": "NPC Souls (OoT) (EXPERIMENTAL)",
+      "category": "items.extensions",
+      "type": "boolean",
+      "description": "Add NPC souls into the item pool. NPCs won't spawn unless their soul is obtained.",
+      "default": false
+    },
+    {
+      "key": "clocks",
+      "name": "Clocks as Items",
+      "category": "items.extensions",
+      "type": "boolean",
+      "description": "Add items representing every Majora's Mask half day into the pool. The moon will crash early unless you collect these items.",
+      "default": false
+    },
+    {
+      "key": "lenientSpikes",
+      "name": "Lenient Goron Spikes",
+      "category": "items.extensions",
+      "type": "boolean",
+      "description": "Goron spikes can charge midair and keep their charge. Minimum speed for goron spikes is removed.",
+      "default": true
+    },
+    {
+      "key": "menuNotebook",
+      "name": "Bombers' Tracker",
+      "category": "items.extensions",
+      "type": "boolean",
+      "description": "Locks the in-game tracker behind the Bombers' Notebook",
+      "default": false
+    },
+    {
+      "key": "coins",
+      "name": "Coins",
+      "category": "items.extensions",
+      "type": "boolean",
+      "description": "Enable the leftover coin items. These can be used for special conds",
+      "default": false
+    },
+    {
+      "key": "coinsRed",
+      "name": "Red Coins",
+      "category": "items.extensions",
+      "type": "number",
+      "description": "How many Red Coins to add to the item pool",
+      "default": 0,
+      "min": 0,
+      "max": 999
+    },
+    {
+      "key": "coinsGreen",
+      "name": "Green Coins",
+      "category": "items.extensions",
+      "type": "number",
+      "description": "How many Green Coins to add to the item pool",
+      "default": 0,
+      "min": 0,
+      "max": 999
+    },
+    {
+      "key": "coinsBlue",
+      "name": "Blue Coins",
+      "category": "items.extensions",
+      "type": "number",
+      "description": "How many Blue Coins to add to the item pool",
+      "default": 0,
+      "min": 0,
+      "max": 999
+    },
+    {
+      "key": "coinsYellow",
+      "name": "Yellow Coins",
+      "category": "items.extensions",
+      "type": "number",
+      "description": "How many Yellow Coins to add to the item pool",
+      "default": 0,
+      "min": 0,
+      "max": 999
+    },
+    {
+      "key": "trapRupoor",
+      "name": "Rupoors",
+      "category": "items.extensions",
+      "type": "boolean",
+      "description": "Add rupoors to the item pool. They remove 10 rupees when collected",
+      "default": false
+    },
+    {
+      "key": "sharedNutsSticks",
+      "name": "Shared Nuts & Sticks",
+      "category": "items.shared",
+      "type": "boolean",
+      "default": false
+    },
+    {
+      "key": "sharedBows",
+      "name": "Shared Bows",
+      "category": "items.shared",
+      "type": "boolean",
+      "default": false
+    },
+    {
+      "key": "sharedBombBags",
+      "name": "Shared Bomb Bags",
+      "category": "items.shared",
+      "type": "boolean",
+      "default": false
+    },
+    {
+      "key": "sharedMagic",
+      "name": "Shared Magic",
+      "category": "items.shared",
+      "type": "boolean",
+      "default": false
+    },
+    {
+      "key": "sharedMagicArrowFire",
+      "name": "Shared Fire Arrow",
+      "category": "items.shared",
+      "type": "boolean",
+      "default": false
+    },
+    {
+      "key": "sharedMagicArrowIce",
+      "name": "Shared Ice Arrow",
+      "category": "items.shared",
+      "type": "boolean",
+      "default": false
+    },
+    {
+      "key": "sharedMagicArrowLight",
+      "name": "Shared Light Arrow",
+      "category": "items.shared",
+      "type": "boolean",
+      "default": false
+    },
+    {
+      "key": "sharedSongEpona",
+      "name": "Shared Epona's Song",
+      "category": "items.shared",
+      "type": "boolean",
+      "default": false
+    },
+    {
+      "key": "sharedSongStorms",
+      "name": "Shared Song of Storms",
+      "category": "items.shared",
+      "type": "boolean",
+      "default": false
+    },
+    {
+      "key": "sharedSongTime",
+      "name": "Shared Song of Time",
+      "category": "items.shared",
+      "type": "boolean",
+      "default": false
+    },
+    {
+      "key": "sharedSongSun",
+      "name": "Shared Sun's Song",
+      "category": "items.shared",
+      "type": "boolean",
+      "default": false
+    },
+    {
+      "key": "sharedHookshot",
+      "name": "Shared Hookshots",
+      "category": "items.shared",
+      "type": "boolean",
+      "default": false
+    },
+    {
+      "key": "sharedLens",
+      "name": "Shared Lens of Truth",
+      "category": "items.shared",
+      "type": "boolean",
+      "default": false
+    },
+    {
+      "key": "sharedOcarina",
+      "name": "Shared Ocarina of Time",
+      "category": "items.shared",
+      "type": "boolean",
+      "default": false
+    },
+    {
+      "key": "sharedMaskGoron",
+      "name": "Shared Goron Mask",
+      "category": "items.shared",
+      "type": "boolean",
+      "default": false
+    },
+    {
+      "key": "sharedMaskZora",
+      "name": "Shared Zora Mask",
+      "category": "items.shared",
+      "type": "boolean",
+      "default": false
+    },
+    {
+      "key": "sharedMaskBunny",
+      "name": "Shared Bunny Hood",
+      "category": "items.shared",
+      "type": "boolean",
+      "default": false
+    },
+    {
+      "key": "sharedMaskKeaton",
+      "name": "Shared Keaton Mask",
+      "category": "items.shared",
+      "type": "boolean",
+      "default": false
+    },
+    {
+      "key": "sharedMaskTruth",
+      "name": "Shared Mask of Truth",
+      "category": "items.shared",
+      "type": "boolean",
+      "default": false
+    },
+    {
+      "key": "sharedMaskBlast",
+      "name": "Shared Blast Mask",
+      "category": "items.shared",
+      "type": "boolean",
+      "default": false
+    },
+    {
+      "key": "sharedMaskStone",
+      "name": "Shared Stone Mask",
+      "category": "items.shared",
+      "type": "boolean",
+      "default": false
+    },
+    {
+      "key": "sharedSongElegy",
+      "name": "Shared Elegy of Emptiness",
+      "category": "items.shared",
+      "type": "boolean",
+      "default": false
+    },
+    {
+      "key": "sharedWallets",
+      "name": "Shared Wallets",
+      "category": "items.shared",
+      "type": "boolean",
+      "default": false
+    },
+    {
+      "key": "sharedHealth",
+      "name": "Shared Health",
+      "category": "items.shared",
+      "type": "boolean",
+      "default": false
+    },
+    {
+      "key": "sharedShields",
+      "name": "Shared Shields",
+      "category": "items.shared",
+      "type": "boolean",
+      "default": false
+    },
+    {
+      "key": "sharedSoulsEnemy",
+      "name": "Shared Enemy Souls",
+      "category": "items.shared",
+      "type": "boolean",
+      "default": false
+    },
+    {
+      "key": "sharedOcarinaButtons",
+      "name": "Shared Ocarina Buttons",
+      "category": "items.shared",
+      "type": "boolean",
+      "default": false
+    },
+    {
+      "key": "sharedSkeletonKey",
+      "name": "Shared Skeleton Key",
+      "category": "items.shared",
+      "type": "boolean",
+      "default": false
+    },
+    {
+      "key": "sharedBombchuBags",
+      "name": "Shared Bombchu Bags",
+      "category": "items.shared",
+      "type": "boolean",
+      "default": false
+    },
+    {
+      "key": "sharedSpellFire",
+      "name": "Shared Din's Fire",
+      "category": "items.shared",
+      "type": "boolean",
+      "default": false
+    },
+    {
+      "key": "sharedSpellWind",
+      "name": "Shared Farore's Wind",
+      "category": "items.shared",
+      "type": "boolean",
+      "default": false
+    },
+    {
+      "key": "sharedSpellLove",
+      "name": "Shared Nayru's Love",
+      "category": "items.shared",
+      "type": "boolean",
+      "default": false
+    },
+    {
+      "key": "sharedBootsIron",
+      "name": "Shared Iron Boots",
+      "category": "items.shared",
+      "type": "boolean",
+      "default": false
+    },
+    {
+      "key": "sharedBootsHover",
+      "name": "Shared Hover Boots",
+      "category": "items.shared",
+      "type": "boolean",
+      "default": false
+    },
+    {
+      "key": "sharedTunicGoron",
+      "name": "Shared Goron Tunic",
+      "category": "items.shared",
+      "type": "boolean",
+      "default": false
+    },
+    {
+      "key": "sharedTunicZora",
+      "name": "Shared Zora Tunic",
+      "category": "items.shared",
+      "type": "boolean",
+      "default": false
+    },
+    {
+      "key": "sharedScales",
+      "name": "Shared Scales",
+      "category": "items.shared",
+      "type": "boolean",
+      "default": false
+    },
+    {
+      "key": "sharedStrength",
+      "name": "Shared Strength",
+      "category": "items.shared",
+      "type": "boolean",
+      "default": false
+    },
+    {
+      "key": "agelessSwords",
+      "name": "Ageless Swords",
+      "category": "items.ageless",
+      "type": "boolean",
+      "description": "Allows Link to use swords independently of his age",
+      "default": false
+    },
+    {
+      "key": "agelessShields",
+      "name": "Ageless Shields",
+      "category": "items.ageless",
+      "type": "boolean",
+      "description": "Allows Link to use shields independently of his age",
+      "default": false
+    },
+    {
+      "key": "agelessTunics",
+      "name": "Ageless Tunics",
+      "category": "items.ageless",
+      "type": "boolean",
+      "description": "Allows Link to use tunics independently of his age",
+      "default": false
+    },
+    {
+      "key": "agelessBoots",
+      "name": "Ageless Boots",
+      "category": "items.ageless",
+      "type": "boolean",
+      "description": "Allows Link to use boots independently of his age",
+      "default": false
+    },
+    {
+      "key": "agelessSticks",
+      "name": "Ageless Sticks",
+      "category": "items.ageless",
+      "type": "boolean",
+      "description": "Allows Link to use deku sticks independently of his age",
+      "default": false
+    },
+    {
+      "key": "agelessBoomerang",
+      "name": "Ageless Boomerang",
+      "category": "items.ageless",
+      "type": "boolean",
+      "description": "Allows Link to use the boomerang independently of his age",
+      "default": false
+    },
+    {
+      "key": "agelessHammer",
+      "name": "Ageless Hammer",
+      "category": "items.ageless",
+      "type": "boolean",
+      "description": "Allows Link to use the hammer independently of his age",
+      "default": false
+    },
+    {
+      "key": "agelessHookshot",
+      "name": "Ageless Hookshot",
+      "category": "items.ageless",
+      "type": "boolean",
+      "description": "Allows Link to use the hookshot independently of his age",
+      "default": false
+    },
+    {
+      "key": "agelessChildTrade",
+      "name": "Ageless Child Trade",
+      "category": "items.ageless",
+      "type": "boolean",
+      "description": "Allows Link to use the child trade items independently of his age",
+      "default": false
+    },
+    {
+      "key": "erBoss",
+      "name": "Boss Entrance Shuffle",
+      "category": "entrances",
+      "type": "enum",
+      "values": [
+        {
+          "value": "none",
+          "name": "None"
+        },
+        {
+          "value": "ownGame",
+          "name": "Own Game"
+        },
+        {
+          "value": "full",
+          "name": "Full"
+        }
+      ],
+      "description": "Shuffle bosses either within their own game or across both",
+      "default": "none"
+    },
+    {
+      "key": "erDungeons",
+      "name": "Dungeon Entrance Shuffle",
+      "category": "entrances",
+      "type": "enum",
+      "values": [
+        {
+          "value": "none",
+          "name": "None"
+        },
+        {
+          "value": "ownGame",
+          "name": "Own Game"
+        },
+        {
+          "value": "full",
+          "name": "Full"
+        }
+      ],
+      "description": "Enable the ability to shuffle dungeons within their own game or across both.",
+      "default": "none"
+    },
+    {
+      "key": "erWallmasters",
+      "name": "Wallmaster Shuffle",
+      "category": "entrances",
+      "type": "enum",
+      "values": [
+        {
+          "value": "none",
+          "name": "None"
+        },
+        {
+          "value": "ownGame",
+          "name": "Own Game"
+        },
+        {
+          "value": "full",
+          "name": "Full"
+        }
+      ],
+      "description": "Enables the ability for Wallmasters to take you to random locations within their own game or across both games, based on other entrance settings",
+      "default": "none"
+    },
+    {
+      "key": "erMajorDungeons",
+      "name": "Shuffle Major Dungeons with Dungeons",
+      "category": "entrances",
+      "type": "boolean",
+      "description": "If turned on, it means the boss-containing dungeons and uninverted Stone Tower Temple will be shuffled.",
+      "default": false
+    },
+    {
+      "key": "erMinorDungeons",
+      "name": "Shuffle OoT Minor Dungeons with Dungeons",
+      "category": "entrances",
+      "type": "boolean",
+      "description": "If turned on, it means Bottom of the Well, Ice Cavern and Gerudo Training Grounds are also shuffled",
+      "default": false
+    },
+    {
+      "key": "erGanonCastle",
+      "name": "Shuffle Ganon's Castle with Dungeons",
+      "category": "entrances",
+      "type": "boolean",
+      "default": false
+    },
+    {
+      "key": "erGanonTower",
+      "name": "Shuffle Ganon's Tower with Dungeons",
+      "category": "entrances",
+      "type": "boolean",
+      "default": false
+    },
+    {
+      "key": "erMoon",
+      "name": "Shuffle Clock Tower with Dungeons",
+      "category": "entrances",
+      "type": "boolean",
+      "description": "If paired with another dungeon shuffle, allows saving from the Quest Menu with L/C-Up while on the Clock Tower Roof.",
+      "default": false
+    },
+    {
+      "key": "erSpiderHouses",
+      "name": "Shuffle Spider Houses with Dungeons",
+      "category": "entrances",
+      "type": "boolean",
+      "default": false
+    },
+    {
+      "key": "erPirateFortress",
+      "name": "Shuffle Pirate Fortress with Dungeons",
+      "category": "entrances",
+      "type": "boolean",
+      "default": false
+    },
+    {
+      "key": "erBeneathWell",
+      "name": "Shuffle Beneath The Well with Dungeons",
+      "category": "entrances",
+      "type": "boolean",
+      "default": false
+    },
+    {
+      "key": "erIkanaCastle",
+      "name": "Shuffle Ikana Castle Interior with Dungeons",
+      "category": "entrances",
+      "type": "boolean",
+      "default": false
+    },
+    {
+      "key": "erSecretShrine",
+      "name": "Shuffle Secret Shrine with Dungeons",
+      "category": "entrances",
+      "type": "boolean",
+      "default": false
+    },
+    {
+      "key": "erRegions",
+      "name": "Shuffle Major Regions",
+      "category": "entrances",
+      "type": "enum",
+      "values": [
+        {
+          "value": "none",
+          "name": "None"
+        },
+        {
+          "value": "ownGame",
+          "name": "Own Game"
+        },
+        {
+          "value": "full",
+          "name": "Full"
+        }
+      ],
+      "default": "none",
+      "description": "- Every entrance to Hyrule Field except Market<br>- The entrance to Gerudo Fortress from Gerudo Valley<br>- The entrance to Death Mountain from Kakariko<br>- The entrances to the four main regions in MM<br>- The entrance to Romani Ranch"
+    },
+    {
+      "key": "erRegionsExtra",
+      "name": "Shuffle Market Entrance",
+      "category": "entrances",
+      "type": "boolean",
+      "description": "Shuffle Hyrule Field's Market entrance among the regions.",
+      "default": false
+    },
+    {
+      "key": "erRegionsShortcuts",
+      "name": "Shuffle Regional Shortcuts",
+      "category": "entrances",
+      "type": "boolean",
+      "description": "Shuffles the various shortcuts between regions.<br>- Lost Woods/Goron City<br>- Lost Woods/Zora's River<br>- Zora's Domain/Lake Hylia",
+      "default": false
+    },
+    {
+      "key": "erIndoors",
+      "name": "Shuffle Interiors",
+      "category": "entrances",
+      "type": "enum",
+      "values": [
+        {
+          "value": "none",
+          "name": "None"
+        },
+        {
+          "value": "ownGame",
+          "name": "Own Game"
+        },
+        {
+          "value": "full",
+          "name": "Full"
+        }
+      ],
+      "default": "none",
+      "description": "Enable the ability to shuffle interiors in their own game or across both games."
+    },
+    {
+      "key": "erIndoorsMajor",
+      "name": "Shuffle Most Interiors",
+      "category": "entrances",
+      "type": "boolean",
+      "description": "Shuffle most interiors with each other.",
+      "default": false
+    },
+    {
+      "key": "erIndoorsExtra",
+      "name": "Shuffle Extra Interiors",
+      "category": "entrances",
+      "type": "boolean",
+      "description": "Shuffle additional, more complex interiors. These include:<br>- OOT: Link's House, Temple of Time, Windmill, Kak Potion Shop<br>- MM: Stock Pot Inn, Astral Observatory/Bombers' Hideout, Swamp Tourist Hut, Ikana Spring Cave",
+      "default": false
+    },
+    {
+      "key": "erWarps",
+      "name": "Shuffle Warp Songs and Soaring",
+      "category": "entrances",
+      "type": "enum",
+      "values": [
+        {
+          "value": "none",
+          "name": "None",
+          "description": "Warp songs and soaring are not shuffled."
+        },
+        {
+          "value": "ootOnly",
+          "name": "OoT Only",
+          "description": "Shuffles only OoT's warp songs among each other."
+        },
+        {
+          "value": "mmOnly",
+          "name": "MM Only",
+          "description": "Shuffles only MM's soaring spots among each other."
+        },
+        {
+          "value": "ownGame",
+          "name": "Own Game",
+          "description": "Shuffles both warp songs and soaring spots within their own game."
+        },
+        {
+          "value": "full",
+          "name": "Full",
+          "description": "Shuffles both warp songs and soaring spots together."
+        }
+      ],
+      "description": "Allows separate shuffling of the warp songs and soaring spots. This setting is disabled if both are selected in \"Shuffle One-Way Entrances\".",
+      "default": "none"
+    },
+    {
+      "key": "erOneWays",
+      "name": "Shuffle One-Way Entrances",
+      "category": "entrances",
+      "type": "enum",
+      "values": [
+        {
+          "value": "none",
+          "name": "None",
+          "description": "One-Way entrances are not shuffled."
+        },
+        {
+          "value": "ownGame",
+          "name": "Own Game",
+          "description": "One-Way entrances are only shuffled among their own game."
+        },
+        {
+          "value": "full",
+          "name": "Full",
+          "description": "One-Way entrances can be shuffled among both games."
+        }
+      ],
+      "description": "Enables the option of shuffling various one-way entrances.",
+      "default": "none"
+    },
+    {
+      "key": "erOneWaysMajor",
+      "name": "Shuffle Standard One-Ways",
+      "category": "entrances",
+      "type": "boolean",
+      "description": "Shuffles the Gerudo Valley to Lake Hylia and Ikana Canyon to Southern Swamp entrances.",
+      "default": false
+    },
+    {
+      "key": "erOneWaysIkana",
+      "name": "Shuffle Ikana Castle One-Ways",
+      "category": "entrances",
+      "type": "boolean",
+      "description": "Shuffles the one-way entrances in Ikana Castle with the others. This is the keg-blocked entrance and the block moved by the switch.",
+      "default": false
+    },
+    {
+      "key": "erOneWaysSongs",
+      "name": "Shuffle One-Ways with Warp Songs",
+      "category": "entrances",
+      "type": "boolean",
+      "description": "Shuffles the warp songs from OOT among one-way entrances. This setting is disabled if the warp songs are shuffled with \"Shuffle Warp Songs and Soaring\".",
+      "default": false
+    },
+    {
+      "key": "erOneWaysStatues",
+      "name": "Shuffle One-Ways with Owl Statues",
+      "category": "entrances",
+      "type": "boolean",
+      "description": "Shuffles the owl statues from MM among one-way entrances. This setting is disabled if the soaring spots are shuffled with \"Shuffle Warp Songs and Soaring\".",
+      "default": false
+    },
+    {
+      "key": "erOneWaysOwls",
+      "name": "Shuffle Child Owl Flights",
+      "category": "entrances",
+      "type": "boolean",
+      "description": "Shuffle the two owl flights among one-way entrances.",
+      "default": false
+    },
+    {
+      "key": "erOneWaysWoods",
+      "name": "Shuffle Altered Lost Woods Exits",
+      "category": "entrances",
+      "type": "boolean",
+      "description": "Shuffle the Lost Woods entrances added by \"Alter Lost Woods Exits\" among one-way entrances.",
+      "default": false
+    }
+  ]
+}

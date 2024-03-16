@@ -1,7 +1,9 @@
-﻿using MMR_Tracker_V3;
+﻿using Microsoft.VisualBasic.Logging;
+using MMR_Tracker_V3;
 using MMR_Tracker_V3.TrackerObjects;
 using Newtonsoft.Json;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
@@ -68,6 +70,10 @@ namespace TestingForm
         {
             var Generator = new GameDataCreation.OOTMMV3.OOTMMDataGenerator();
             Generator.GenerateOOTMMData();
+            WinFormTesting.ActivateWinFormInterface();
+            WinFormInstanceCreation.CreateWinFormInstance(JsonConvert.SerializeObject(Generator.LogicFile), JsonConvert.SerializeObject(Generator.dictionary));
+            TestingUtility.TestLogicForInvalidItems(MainInterface.InstanceContainer);
+            TestingUtility.TestLocationsForInvalidVanillaItem(MainInterface.InstanceContainer);
             /*
             WinFormTesting.ActivateWinFormInterface();
             MMR_Tracker_V3.GameDataCreation.OOTMMV2.GenData.ReadData(out MMRData.LogicFile Logic, out LogicDictionaryData.LogicDictionary dictionary);

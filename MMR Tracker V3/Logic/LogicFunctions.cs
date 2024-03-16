@@ -21,11 +21,13 @@ namespace MMR_Tracker_V3.Logic
             { "trick", (instance, Function, Params, SubUnlockData) => { return CheckTrickEnabledFunction(instance, Function, Params); } },
             { "setting", (instance, Function, Params, SubUnlockData) => { return CheckOptionFunction(instance, Function, Params); } },
             { "option", (instance, Function, Params, SubUnlockData) => { return CheckOptionFunction(instance, Function, Params); } },
+            { "price", (instance, Function, Params, SubUnlockData) => { return CheckPriceFunction(instance, Function, Params); } },
             { "comment", (instance, Function, Params, SubUnlockData) => { return true; } }, //Comment Style Check. Will always return true but can state why its returning true and what it's expecting
             { "cmnt", (instance, Function, Params, SubUnlockData) => { return true; } },
             { "cc", (instance, Function, Params, SubUnlockData) => { return true; } },
             { "time", (instance, Function, Params, SubUnlockData) => { return true; } },//The tracker currently doesn't track time, but this can at least display the data for logic 
         };
+
         public static string[] GetParamList(string Param)
         {
             return Param.Split(',').Select(x => x.Trim()).ToArray();
@@ -208,6 +210,19 @@ namespace MMR_Tracker_V3.Logic
                 }
             }
             return inverse;
+        }
+
+        private static bool CheckPriceFunction(InstanceData.TrackerInstance instance, string function, string[] Parameters)
+        {
+            if (Parameters.Length < 2) { return false; } //Not enough Values Pased
+            bool inverse = Parameters.Length > 2 && bool.TryParse(Parameters[2], out bool inverseValue) && !inverseValue; //If a third param is passed and its a false bool, invert the result
+
+            bool litteral = Parameters[0].IsLiteralID(out string paramClean);
+            _ = instance.GetLocationEntryType(paramClean, litteral, out dynamic obj);
+            if (obj is not CheckableLocation CL) { return false; }
+            if (! int.TryParse(Parameters[1], out int Cost)) { return false; }
+            int LocationCost = CL.GetPrice().Item1;
+            return LocationCost <= Cost != inverse;
         }
     }
     internal class MMRSettingExpressionParser

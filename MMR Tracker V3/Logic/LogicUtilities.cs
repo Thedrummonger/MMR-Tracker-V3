@@ -187,6 +187,12 @@ namespace MMR_Tracker_V3.Logic
             return $"(({string.Join($") {Parser._OROP} (", Conditional.Select(x => string.Join($" {Parser._ANDOP} ", x)))}))";
         }
 
+        public static List<List<string>> ReParseConditional(LogicStringParser Parser, List<List<string>> Conditional, string LogicID)
+        {
+            var Stringify = ConvertConditionalToLogicString(Parser, Conditional);
+            return ConvertLogicStringToConditional(Parser, Stringify, LogicID);
+        }
+
         private static string ConvertLogicParserObjectToMathString(List<LogicStringParser.LogicItem> Logic, out Dictionary<string, string> Ref, out Dictionary<char, string> OperatorMap)
         {
             int CurrentLetterIndex = 1;

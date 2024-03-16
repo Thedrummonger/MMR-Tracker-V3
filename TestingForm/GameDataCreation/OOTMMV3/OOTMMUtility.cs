@@ -1,16 +1,14 @@
-﻿using Microsoft.VisualBasic.Logging;
+﻿using MathNet.Symbolics;
 using MMR_Tracker_V3;
-using System;
-using System.Collections.Generic;
-using System.Linq;
+using MMR_Tracker_V3.Logic;
+using Newtonsoft.Json;
 using System.Text;
 using System.Text.RegularExpressions;
-using System.Threading.Tasks;
-using static TestingForm.GameDataCreation.OOTMMV3.DataClasses;
+using static TestingForm.GameDataCreation.OOTMMV3.OOTMMDataClasses;
 
 namespace TestingForm.GameDataCreation.OOTMMV3
 {
-    internal class OOTMMUtility
+    public static class OOTMMUtility
     {
         public static string ReplaceVariableWithParam(string LogicLine, string Param, string Value)
         {
@@ -18,36 +16,120 @@ namespace TestingForm.GameDataCreation.OOTMMV3
         }
         public static OOTMMLogicFunction? IsLogicFunction(string Key)
         {
-            int Parlevel = 0;
-            int MaxParlevel = 0;
-            string Func = string.Empty;
-            string ParamString = string.Empty;
-            foreach (var i in Key)
-            {
-                if (i == '(') 
-                {  
-                    Parlevel++;
-                    if (MaxParlevel < Parlevel) { MaxParlevel = Parlevel; }
-                    continue;
-                }
-                if (i == ')') {  Parlevel--; continue; }
-                if (Parlevel > 0) { ParamString += i; }
-                else { Func += i; }
-            }
-            if (MaxParlevel != 1 || Parlevel != 0) { return null; }
-            return new OOTMMLogicFunction(Func, ParamString);
+            if (!Key.Contains('(') || !Key.EndsWith(')') || Key.StartsWith('(')) { return null; }
+            if (Key.Count(x => x == '(') != Key.Count(x => x == ')')) { return null; }
+
+            var Sections = Key.SplitOnce('(');
+            string Func = Sections.Item1;
+            string Parm = Sections.Item2[..^1];
+            return new OOTMMLogicFunction(Func, Parm);
         }
 
-        public static string GetMQString(OOTMMLocationArea data, bool ISMQ)
+        public static bool IsMathExpression(string input, out int result)
         {
-            if (data.boss || string.IsNullOrWhiteSpace(data.dungeon)) { return string.Empty; }
+            result = 0;
+            Expression LogicSet = Infix.ParseOrUndefined(input);
+            if (LogicSet == null) { return false; }
+            //var Output = Algebraic.Expand(LogicSet);
+            var Solved = Infix.Format(LogicSet);
+            if (!int.TryParse(Solved, out result)) { return false; }
+            return true;
+        }
+
+        public static string GetMQString(OOTMMLocationArea data, bool ISMQ, string GameCode)
+        {
+            if (data.boss || string.IsNullOrWhiteSpace(data.dungeon) || GameCode == "MM" || data.dungeon.In("TCG", "GF", "Tower")) { return string.Empty; }
             return $" && setting(MasterQuest, {data.dungeon}, {ISMQ})";
         }
 
-        public static string AddGameCodeToLogicID(string ID, string GameCode)
+        public static string AddGameCodeToLogicID(string ID, string GameCode, bool FillSpace = true)
         {
-            if (ID.StartsWith("MM ") || ID.StartsWith("OOT ")) { return ID; }
-            return $"{GameCode} {ID}";
+            string Spacer = FillSpace ? "_" : " ";
+            if (ID.StartsWith($"MM{Spacer}") || ID.StartsWith($"OOT{Spacer}") || ID.StartsWith($"SHARED{Spacer}")) { return ID; }
+            return $"{GameCode}{Spacer}{ID}";
+        }
+
+        public static string GetGamecode(string ID)
+        {
+            if (ID.StartsWith($"MM_") || ID.StartsWith($"MM ")) { return "MM"; }
+            else if (ID.StartsWith("OOT_") || ID.StartsWith("OOT ")) { return "OOT"; }
+            else if (ID.StartsWith("SHARED_") || ID.StartsWith("SHARED ")) { return "SHARED"; }
+            throw new Exception($"Could not find gamecode for {ID}");
+        }
+
+        public static bool HasGamecode(string ID)
+        {
+            if (ID.StartsWith($"MM_") || ID.StartsWith($"MM ")) { return true; }
+            else if (ID.StartsWith("OOT_") || ID.StartsWith("OOT ")) { return true; }
+            else if (ID.StartsWith("SHARED_") || ID.StartsWith("SHARED ")) { return true; }
+            return false;
+        }
+
+        public static string[] SplitParams(string Params, char Splitchar = ',', char openPar = '(', char closePar = ')')
+        {
+            List<string> result = [];
+            int Parlevel = 0;
+            StringBuilder CurrentString = new();
+            foreach (var i in Params)
+            {
+                if (i == openPar) { Parlevel++; }
+                if (i == closePar) { Parlevel--; }
+                if (i == Splitchar && Parlevel == 0) { result.Add(CurrentString.ToString().Trim()); CurrentString.Clear(); continue; }
+                CurrentString.Append(i);
+            }
+            result.Add(CurrentString.ToString().Trim());
+            return result.ToArray();
+        }
+        public static string ParseCondFunc(OOTMMLogicFunction Function, string ID, LogicStringParser Parser)
+        {
+            string Clause = Function.Param[0];
+            string IfTrue = Function.Param[1];
+            string IfFalse = Function.Param[2];
+            string FalseClause;
+            var ParsedClause = LogicStringConverter.ConvertLogicStringToConditional(Parser, Clause, ID, true);
+
+            for (var i = 0; i < ParsedClause.Count; i++)
+            {
+                for (var j = 0; j < ParsedClause[i].Count; j++)
+                {
+                    string Inverse = "false";
+                    string Item = ParsedClause[i][j];
+                    if (Item.StartsWith('!')) { Item = Item[1..]; Inverse = "true"; }
+
+                    if (Item.StartsWith("trick") || Item.StartsWith("setting")) { Item = Item[..^1] + $", {Inverse})"; }
+                    else if (Item == "is_adult") { Item = "is_child"; }
+                    else
+                    {
+                        string Gamecode = GetGamecode(ID);
+                        Item = $"available{{{Gamecode}_{Item}, {Inverse}}}";
+                    }
+                    ParsedClause[i][j] = Item;
+                }
+            }
+
+            FalseClause = LogicStringConverter.ConvertConditionalToLogicString(Parser, ParsedClause);
+
+            return $"((({Clause}) && ({IfTrue})) || (({FalseClause}) && ({IfFalse})))";
+        }
+
+        public static T DeserializeYAMLFile<T>(string Path)
+        {
+            var Json = TestingUtility.ConvertYamlStringToJsonString(File.ReadAllText(Path), true);
+            return JsonConvert.DeserializeObject<T>(Json);
+        }
+        public static T DeserializeCSVFile<T>(string Path)
+        {
+            var Json = TestingUtility.ConvertCsvFileToJsonObject(File.ReadAllLines(Path));
+            return JsonConvert.DeserializeObject<T>(Json);
+        }
+
+        public static bool IsLocationRenewable(this OOTMMPoolLocation location, string GameCode, ExtraData extraData)
+        {
+            var ID = AddGameCodeToLogicID(location.id, GameCode);
+            if (ID.In(extraData.nonrenewablelocations)) { return false; }
+            if (ID.In(extraData.renewablelocations)) { return true; }
+            if (location.type.In(extraData.renewabletypes)) { return true; }
+            return false;
         }
     }
 }
