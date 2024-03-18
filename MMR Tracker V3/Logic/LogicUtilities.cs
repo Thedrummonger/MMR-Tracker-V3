@@ -128,8 +128,16 @@ namespace MMR_Tracker_V3.Logic
         public static MMRData.JsonFormatLogicItem CreateInaccessibleLogic(string ID) => new()
         {
             Id = ID,
-            RequiredItems = new List<string> { "false" },
-            ConditionalItems = new List<List<string>>(),
+            RequiredItems = ["false"],
+            ConditionalItems = [],
+            IsTrick = false
+        };
+
+        public static MMRData.JsonFormatLogicItem CreateLogicEntryFromLogicLine(string ID, LogicStringParser Parser, string LogicLine) => new()
+        {
+            Id = ID,
+            RequiredItems = [],
+            ConditionalItems = LogicStringConverter.ConvertLogicStringToConditional(Parser, LogicLine, ID),
             IsTrick = false
         };
 

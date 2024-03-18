@@ -14,6 +14,7 @@ namespace TestingForm.GameDataCreation.OOTMMV3
         {
             public string[] items;
             public string[] mm_masks;
+            public string[] mm_masks_transformation;
             public string[] oot_masks;
             public string[] stones;
             public string[] medallions;
@@ -37,6 +38,8 @@ namespace TestingForm.GameDataCreation.OOTMMV3
             public OOTMMSettingValue[] values;
             [JsonProperty(PropertyName = "default")]
             public dynamic defaultvalue;
+            public int? min;
+            public int? max;
         }
         public class OOTMMSettingValue
         {

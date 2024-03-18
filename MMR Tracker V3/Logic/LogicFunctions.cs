@@ -110,13 +110,13 @@ namespace MMR_Tracker_V3.Logic
             bool litteral = Parameters[0].IsLiteralID(out string paramClean);
 
             var type = instance.GetLocationEntryType(paramClean, litteral, out dynamic obj);
-            if (obj is null) { Debug.WriteLine($"{Parameters[0]} is not a valid logic Entry"); return false; }
+            if (obj is not CheckableLocation CO) { Debug.WriteLine($"{Parameters[0]} is not a valid Checkable Location"); return false; }
 
-            if (Function == "check" && Utility.DynamicPropertyExist(obj, "RandomizedState") && obj.RandomizedState == RandomizedState.ForcedJunk) { Function = "available"; }
+            if (Function == "check" && CO.RandomizedState == RandomizedState.ForcedJunk) { Function = "available"; }
 
-            if (Function == "check" && Utility.DynamicPropertyExist(obj, "CheckState")) { return obj.CheckState == CheckState.Checked != Inverted; }
-            else if (Function == "available" && Utility.DynamicPropertyExist(obj, "Available")) { return obj.Available != Inverted; }
-            else if (Function == "available" && Utility.DynamicPropertyExist(obj, "Aquired")) { return obj.Aquired != Inverted; }
+            if (obj is MacroObject MO) { return MO.Available != Inverted; }
+            else if (Function == "check") { return CO.CheckState == CheckState.Checked != Inverted; }
+            else if (Function == "available") { return CO.Available != Inverted; }
             else { Debug.WriteLine($"{paramClean} could not be checked. Type: {type}"); }
             return false;
         }

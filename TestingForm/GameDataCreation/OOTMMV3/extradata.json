@@ -739,6 +739,14 @@
     "SHARED_MASK_BLAST",
     "SHARED_MASK_STONE"
   ],
+  "mm_masks_transformation": [
+    "MM_MASK_DEKU",
+    "MM_MASK_GORON",
+    "MM_MASK_ZORA",
+    "MM_MASK_FIERCE_DEITY",
+    "SHARED_MASK_GORON",
+    "SHARED_MASK_ZORA"
+  ],
   "oot_masks": [
     "OOT_MASK_SKULL",
     "OOT_MASK_SPOOKY",

@@ -8,12 +8,15 @@ using System.Text;
 using System.Threading.Tasks;
 using static MMR_Tracker_V3.TrackerObjects.MMRData;
 using static TestingForm.GameDataCreation.OOTMMV3.OOTMMDataClasses;
+using MMR_Tracker_V3.TrackerObjects;
 
 namespace TestingForm.GameDataCreation.OOTMMV3
 {
     internal class OOTMMLogicFileParsing(OOTMMDataGenerator generator)
     {
-        public void ReadLogicFiles()
+        public Dictionary<string, OOTMMLocationEntry> LogicEntries = [];
+        public Dictionary<string, OOTMMLogicFunction> MacroFunctions = [];
+        public void ReadAndParseWorldFiles()
         {
             foreach (var worldFile in Directory.GetFiles(OOTMMPaths.OOTWorldFolderPath))
             {
@@ -70,6 +73,19 @@ namespace TestingForm.GameDataCreation.OOTMMV3
             }
         }
 
+        public void AddEntriesToLogicFile()
+        {
+            foreach (var i in LogicEntries)
+            {
+                generator.LogicFile.Logic.Add(new JsonFormatLogicItem
+                {
+                    Id = i.Key,
+                    ConditionalItems = LogicStringConverter.ConvertLogicStringToConditional(generator.LogicStringParser, i.Value.Logic, i.Key)
+                });
+                LogicUtilities.RemoveRedundantConditionals(generator.LogicFile.Logic.Last());
+            }
+        }
+
         public void AddMacroEntry(string Key, string Logic, string GameCode)
         {
             var LogicFunction = OOTMMUtility.IsLogicFunction(Key);
@@ -77,11 +93,11 @@ namespace TestingForm.GameDataCreation.OOTMMV3
             {
                 LogicFunction.Logic = Logic;
                 LogicFunction.function = OOTMMUtility.AddGameCodeToLogicID(LogicFunction.function, GameCode);
-                generator.MacroFunctions.Add(LogicFunction.function, LogicFunction);
+                MacroFunctions.Add(LogicFunction.function, LogicFunction);
                 return;
             }
             string ID = OOTMMUtility.AddGameCodeToLogicID(Key, GameCode);
-            generator.LogicEntries.Add(ID, new OOTMMLocationEntry { Key = ID, Logic = Logic });
+            LogicEntries.Add(ID, new OOTMMLocationEntry { Key = ID, Logic = Logic });
         }
 
         public void AddLogicEntry(OOTMMLocationArea AreaData, string Area, string ID, string Logic, string GameCode, bool ISMQ, OOTMMDataType Type)
@@ -92,13 +108,13 @@ namespace TestingForm.GameDataCreation.OOTMMV3
             else if (Type == OOTMMDataType.Event) { ID = $"{ID}_EVENT"; }
 
             string FinalLogic = $"({Area}{OOTMMUtility.GetMQString(AreaData, ISMQ, GameCode)} && ({Logic}))";
-            if (generator.LogicEntries.TryGetValue(ID, out OOTMMLocationEntry? value))
+            if (LogicEntries.TryGetValue(ID, out OOTMMLocationEntry? value))
             {
                 value.Logic += $" || {FinalLogic}";
             }
             else
             {
-                generator.LogicEntries[ID] = new OOTMMLocationEntry() { Key = ID, Logic = FinalLogic };
+                LogicEntries[ID] = new OOTMMLocationEntry() { Key = ID, Logic = FinalLogic };
             }
         }
         public void ParseDownFunctions()
@@ -113,7 +129,7 @@ namespace TestingForm.GameDataCreation.OOTMMV3
                     LogicUtilities.TransformLogicItems(i, (x) =>
                     {
                         var LogicFuncData = OOTMMUtility.IsLogicFunction(x);
-                        if (LogicFuncData is not null && generator.MacroFunctions.TryGetValue(OOTMMUtility.AddGameCodeToLogicID(LogicFuncData.function, GameCode), out OOTMMLogicFunction Function))
+                        if (LogicFuncData is not null && MacroFunctions.TryGetValue(OOTMMUtility.AddGameCodeToLogicID(LogicFuncData.function, GameCode), out OOTMMLogicFunction Function))
                         {
                             ChangesMade = true;
                             if (Function.Param.Length != LogicFuncData.Param.Length) { throw new Exception($"Param Length MissMatch {x}"); }
@@ -212,7 +228,7 @@ namespace TestingForm.GameDataCreation.OOTMMV3
             }
             else if (logicFuncData.function == "masks")
             {
-                NewLogicItem = $"non_transformation_masks, {logicFuncData.RawParam}";
+                NewLogicItem = $"MM_masks, {logicFuncData.RawParam}";
             }
             else if (logicFuncData.function == "special")
             {
@@ -229,15 +245,43 @@ namespace TestingForm.GameDataCreation.OOTMMV3
                 string GameCode = OOTMMUtility.GetGamecode(i.Id);
                 LogicUtilities.TransformLogicItems(i, (x) =>
                 {
-                    if (!OOTMMUtility.HasGamecode(x) && !LogicFunctions.IsLogicFunction(x) && !bool.TryParse(x, out _))
-                    {
-                        ChangedEntries.Add(x);
-                        return OOTMMUtility.AddGameCodeToLogicID(x, GameCode);
-                    }
-                    return x;
+                    if (x.In("age_adult", "age_child", "is_goal_triforce")) { return x; }
+                    if (OOTMMUtility.HasGamecode(x)) { return x; }
+                    if (LogicFunctions.IsLogicFunction(x)) { return x; }
+                    if (bool.TryParse(x, out _)) { return x; }
+                    ChangedEntries.Add(x);
+                    string finalID = x;
+                    bool Negate = false;
+                    if (finalID.StartsWith('!')) { finalID = finalID[1..]; Negate = true; }
+                    finalID = OOTMMUtility.AddGameCodeToLogicID(finalID, GameCode);
+                    if (Negate) { finalID = $"!{finalID}"; }
+                    return finalID;
                 });
             }
             //Utility.PrintObjectToConsole(ChangedEntries);
+        }
+
+        public void HandleNegations()
+        {
+            foreach (var i in generator.LogicFile.Logic)
+            {
+                string GameCode = OOTMMUtility.GetGamecode(i.Id);
+                LogicUtilities.TransformLogicItems(i, (x) =>
+                {
+                    if (!x.StartsWith('!')) { return x; }
+                    string finalID = x; 
+                    finalID = finalID[1..];
+                    finalID = $"available{{{finalID}, false}}";
+                    return finalID;
+                });
+            }
+        }
+
+        public void AddMissingLogic()
+        {
+            generator.LogicFile.Logic.Add(LogicUtilities.CreateInaccessibleLogic("MM_BOMBCHU_EVENT"));
+            generator.LogicFile.Logic.Add(LogicUtilities.CreateInaccessibleLogic("MM_BOMBS_EVENT"));
+            generator.LogicFile.Logic.Add(LogicUtilities.CreateInaccessibleLogic("MM_CHATEAU_EVENT"));
         }
     }
 }
