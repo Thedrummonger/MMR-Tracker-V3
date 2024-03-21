@@ -1,6 +1,7 @@
 ﻿using MMR_Tracker_V3.TrackerObjectExtensions;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using static MMR_Tracker_V3.TrackerObjects.MiscData;
 
@@ -74,12 +75,12 @@ namespace MMR_Tracker_V3.TrackerObjects
             {
                 return (GetParent().GetLocationByID(ReferenceID));
             }
-            public object GetLogicInheritance()
+            public CheckableLocation GetLogicInheritance()
             {
                 var LogicId = GetDictEntry().LogicInheritance ?? ReferenceID;
                 bool Literal = LogicId.IsLiteralID(out LogicId);
                 GetParent().GetLocationEntryType(LogicId, Literal, out object Result);
-                return Result;
+                return Result as CheckableLocation;
             }
             public LogicDictionaryData.DictLocationProxy GetDictEntry()
             {
@@ -88,21 +89,21 @@ namespace MMR_Tracker_V3.TrackerObjects
                 var Entry = RefLocDict.LocationProxys.First(x => x.ID == this.ID);
                 return Entry;
             }
-            public new void GetPrice(out int outPrice, out char outCurrency)
+            public override void GetPrice(out int outPrice, out char outCurrency)
             {
                 dynamic Target = GetLogicInheritance();
                 Target.GetPrice(out outPrice, out outCurrency);
             }
-            public new void SetPrice(int inPrice, char inCurrency = '\0')
+            public override void SetPrice(int inPrice, char inCurrency = '\0')
             {
                 dynamic Target = GetLogicInheritance();
                 Target.SetPrice(inPrice, inCurrency);
             }
-            public new (int, char) GetPrice()
+            public override (int, char) GetPrice()
             {
                 dynamic Target = GetLogicInheritance();
-                Target.GetPrice(out int? outPrice, out char? outCurrency);
-                return (outPrice ?? -1, outCurrency ?? '$');
+                Target.GetPrice(out int outPrice, out char outCurrency);
+                return (outPrice, outCurrency);
             }
 
             public override string GetName()

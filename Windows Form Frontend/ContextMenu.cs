@@ -61,6 +61,10 @@ namespace Windows_Form_Frontend
             {
                 AddItem("Show Logic", () => { new ShowLogic(CheckableLocations[0].ID, InstanceContainer).Show(); });
             }
+            if (CheckableLocations.Count == 1 && CheckableLocations[0] is LocationData.LocationProxy LPO)
+            {
+                AddItem("Show Logic", () => { new ShowLogic(LPO.GetDictEntry().LogicInheritance ?? LPO.ReferenceID, InstanceContainer).Show(); });
+            }
             if (CheckableLocations.Count == 1 && InstanceContainer.logicCalculation.LogicUnlockData.ContainsKey(CheckableLocations[0].ID))
             {
                 AddItem("What Unlocked This", () => { ShowUnlockData(CheckableLocations[0].ID); });

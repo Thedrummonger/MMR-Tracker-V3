@@ -18,22 +18,22 @@ namespace MMR_Tracker_V3.TrackerObjects
         public string DisplayName { get; set; }
         public RandomizedState RandomizedState { get; set; } = RandomizedState.Randomized;
         public InstanceData.ReferenceData referenceData { get; set; } = new InstanceData.ReferenceData();
-        public void GetPrice(out int outPrice, out char outCurrency)
+        public virtual void GetPrice(out int outPrice, out char outCurrency)
         {
             outPrice = Price ?? -1;
             outCurrency = Currency ?? '$';
             return;
         }
-        public (int, char) GetPrice()
+        public virtual (int, char) GetPrice()
         {
             return (Price ?? -1, Currency ?? '$');
         }
-        public bool hasPrice()
+        public virtual bool hasPrice()
         {
             var (Price, Cur) = GetPrice();
             return Price >= 0;
         }
-        public void SetPrice(int inPrice, char inCurrency = '\0')
+        public virtual void SetPrice(int inPrice, char inCurrency = '\0')
         {
             if (inCurrency == '\0') { inCurrency = Currency ?? '$'; }
             Price = inPrice < 0 ? null : inPrice;
