@@ -35,6 +35,8 @@ namespace MMR_Tracker_V3.TrackerObjects
             }
 
             public override object GetAbstractDictEntry() => GetDictEntry();
+
+            public override CheckableLocationTypes LocationType() => CheckableLocationTypes.location;
         }
         [Serializable]
         public class RandomizeditemData
@@ -63,13 +65,8 @@ namespace MMR_Tracker_V3.TrackerObjects
             {
                 var LogicId = GetDictEntry().LogicInheritance ?? ReferenceID;
                 bool Literal = LogicId.IsLiteralID(out LogicId);
-                var type = GetParent().GetLocationEntryType(LogicId, Literal, out _);
-                return type switch
-                {
-                    LogicEntryType.location => GetParent().GetLocationByID(LogicId).Available,
-                    LogicEntryType.macro => GetParent().GetMacroByID(LogicId).Aquired,
-                    _ => false,
-                };
+                var location = GetParent().GetCheckableLocationByID(LogicId, Literal);
+                return location.Available;
             }
             public LocationObject GetReferenceLocation()
             {
@@ -79,8 +76,7 @@ namespace MMR_Tracker_V3.TrackerObjects
             {
                 var LogicId = GetDictEntry().LogicInheritance ?? ReferenceID;
                 bool Literal = LogicId.IsLiteralID(out LogicId);
-                GetParent().GetLocationEntryType(LogicId, Literal, out object Result);
-                return Result as CheckableLocation;
+                return GetParent().GetCheckableLocationByID(LogicId, Literal);
             }
             public LogicDictionaryData.DictLocationProxy GetDictEntry()
             {
@@ -91,17 +87,17 @@ namespace MMR_Tracker_V3.TrackerObjects
             }
             public override void GetPrice(out int outPrice, out char outCurrency)
             {
-                dynamic Target = GetLogicInheritance();
+                CheckableLocation Target = GetLogicInheritance();
                 Target.GetPrice(out outPrice, out outCurrency);
             }
             public override void SetPrice(int inPrice, char inCurrency = '\0')
             {
-                dynamic Target = GetLogicInheritance();
+                CheckableLocation Target = GetLogicInheritance();
                 Target.SetPrice(inPrice, inCurrency);
             }
             public override (int, char) GetPrice()
             {
-                dynamic Target = GetLogicInheritance();
+                CheckableLocation Target = GetLogicInheritance();
                 Target.GetPrice(out int outPrice, out char outCurrency);
                 return (outPrice, outCurrency);
             }
@@ -112,6 +108,8 @@ namespace MMR_Tracker_V3.TrackerObjects
             }
 
             public override object GetAbstractDictEntry() => GetDictEntry();
+
+            public override CheckableLocationTypes LocationType() => GetLogicInheritance().LocationType();
         }
     }
 }

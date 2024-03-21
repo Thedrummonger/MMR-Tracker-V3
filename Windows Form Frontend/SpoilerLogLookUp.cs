@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Data;
 using System.IO;
 using System.Linq;
+using System.Threading;
 using System.Windows.Forms;
 
 namespace Windows_Form_Frontend
@@ -51,51 +52,44 @@ namespace Windows_Form_Frontend
 
         private void SetDefaultWinCon()
         {
-            if (_instance.LogicDictionary.WinCondition is not null)
+            var LogicItemData = _instance.GetLogicItemData(_instance.LogicDictionary.WinCondition);
+            if (LogicItemData.Object is null) { return; }
+            foreach (var i in cmbWinCon.Items)
             {
-                var wincon = _instance.LogicDictionary.WinCondition;
-                bool Literal = wincon.IsLiteralID(out string ParsedWinCon);
-                var Itemtype = _instance.GetItemEntryType(ParsedWinCon, Literal, out object ItemOut);
-                var Locationtype = _instance.GetItemEntryType(ParsedWinCon, Literal, out object LocationOut);
-                var outitem = ItemOut ?? LocationOut ?? null;
-
-                foreach (var i in cmbWinCon.Items)
+                if (i is MiscData.StandardListBoxItem LBI)
                 {
-                    if (i is MiscData.StandardListBoxItem LBI && outitem is not null)
+                    if (LogicItemData.Object is ItemData.ItemObject && LBI.Tag is ItemData.ItemObject IO && IO.ID == LogicItemData.CleanID)
                     {
-                        if (outitem is ItemData.ItemObject && LBI.Tag is ItemData.ItemObject IO && IO.ID == ParsedWinCon)
-                        {
-                            cmbWinCon.SelectedItem = i;
-                            break;
-                        }
-                        else if (outitem is LocationData.LocationObject && LBI.Tag is LocationData.LocationObject LO && LO.ID == ParsedWinCon)
-                        {
-                            cmbWinCon.SelectedItem = i;
-                            break;
-                        }
-                        else if (outitem is MacroObject && LBI.Tag is MacroObject MO && MO.ID == ParsedWinCon)
-                        {
-                            cmbWinCon.SelectedItem = i;
-                            break;
-                        }
-                        else if (outitem is EntranceData.EntranceRandoArea && LBI.Tag is EntranceData.EntranceRandoArea AO && AO.ID == ParsedWinCon)
-                        {
-                            cmbWinCon.SelectedItem = i;
-                            break;
-                        }
+                        cmbWinCon.SelectedItem = i;
+                        break;
+                    }
+                    else if (LogicItemData.Object is LocationData.LocationObject && LBI.Tag is LocationData.LocationObject LO && LO.ID == LogicItemData.CleanID)
+                    {
+                        cmbWinCon.SelectedItem = i;
+                        break;
+                    }
+                    else if (LogicItemData.Object is MacroObject && LBI.Tag is MacroObject MO && MO.ID == LogicItemData.CleanID)
+                    {
+                        cmbWinCon.SelectedItem = i;
+                        break;
+                    }
+                    else if (LogicItemData.Object is EntranceData.EntranceRandoArea && LBI.Tag is EntranceData.EntranceRandoArea AO && AO.ID == LogicItemData.CleanID)
+                    {
+                        cmbWinCon.SelectedItem = i;
+                        break;
                     }
                 }
+            }
 
-                if (ItemOut != null && ItemOut is ItemData.ItemObject ItemObject)
-                {
-                    string displayName = ItemObject.GetDictEntry().Name ?? ItemObject.ID;
-                    SeedCheckRequiredItems.Add(new MiscData.StandardListBoxItem { Display = displayName, Tag = ItemObject.ID });
-                }
-                else if (ItemOut != null && ItemOut is MacroObject MacroObject)
-                {
-                    string displayName = MacroObject.GetDictEntry().Name ?? MacroObject.ID;
-                    SeedCheckRequiredItems.Add(new MiscData.StandardListBoxItem { Display = displayName, Tag = MacroObject.ID });
-                }
+            if (LogicItemData.Object is ItemData.ItemObject ItemObject)
+            {
+                string displayName = ItemObject.GetDictEntry().Name ?? ItemObject.ID;
+                SeedCheckRequiredItems.Add(new MiscData.StandardListBoxItem { Display = displayName, Tag = ItemObject.ID });
+            }
+            else if (LogicItemData.Object is MacroObject MacroObject)
+            {
+                string displayName = MacroObject.GetDictEntry().Name ?? MacroObject.ID;
+                SeedCheckRequiredItems.Add(new MiscData.StandardListBoxItem { Display = displayName, Tag = MacroObject.ID });
             }
         }
 
@@ -190,7 +184,7 @@ namespace Windows_Form_Frontend
                 if (!sucess) { MessageBox.Show($"Error {SelectedItem.Tag} Could not be reached this seed"); return; }
             }
 
-            var Result = playthroughGenerator.Playthrough.Where(x => x.Value.Important || (FullPlaythrough && x.Value.CheckType != MiscData.LogicEntryType.macro)).ToDictionary(x => x.Key, x => x.Value);
+            var Result = playthroughGenerator.Playthrough.Where(x => x.Value.Important || (FullPlaythrough && x.Value.CheckType != MiscData.CheckableLocationTypes.macro)).ToDictionary(x => x.Key, x => x.Value);
 
             SaveFileDialog dlg = new SaveFileDialog();
             dlg.FileName = "Playthrough";
@@ -518,12 +512,12 @@ namespace Windows_Form_Frontend
             SeedCheckResults.Clear();
             foreach (var i in requiredItems)
             {
-                var type = _instance.GetItemEntryType(i, false, out dynamic RequiredItemObj);
+                var data = _instance.GetLogicItemData(i);
                 string Dis = i;
-                if (RequiredItemObj is ItemData.ItemObject IO) { Dis = IO?.GetDictEntry()?.GetName() ?? i; }
-                else if (RequiredItemObj is MacroObject MO) { Dis = MO?.GetDictEntry()?.Name ?? i; }
+                if (data.Object is ItemData.ItemObject IO) { Dis = IO?.GetDictEntry()?.GetName() ?? i; }
+                else if (data.Object is MacroObject MO) { Dis = MO?.GetDictEntry()?.Name ?? i; }
 
-                bool ItemObtainable = SeedCheckPlaytrhough.FirstObtainedDict.ContainsKey(i) || (RequiredItemObj is ItemData.ItemObject IOS && (IOS?.AmountInStartingpool ?? 0) > 0);
+                bool ItemObtainable = SeedCheckPlaytrhough.FirstObtainedDict.ContainsKey(i) || (data.Object is ItemData.ItemObject IOS && (IOS?.AmountInStartingpool ?? 0) > 0);
 
                 SeedCheckResults.Add(new MiscData.StandardListBoxItem { Display = Dis, Tag = ItemObtainable });
             }
@@ -565,7 +559,7 @@ namespace Windows_Form_Frontend
             }
             var Source = sender as ToolStripMenuItem;
 
-            var PlaythroughLocations = SpoilerLookupPlaythrough.Where(x => x.Value.CheckType == MiscData.LogicEntryType.location);
+            var PlaythroughLocations = SpoilerLookupPlaythrough.Where(x => x.Value.CheckType == MiscData.CheckableLocationTypes.location);
             var ImportantLocations = PlaythroughLocations.Where(x => x.Value.Important);
             var AllLocationObj = PlaythroughLocations.Select(x => _instance.LocationPool[x.Key]).ToArray();
             var ImportantLocationsObj = ImportantLocations.Select(x => _instance.LocationPool[x.Key]).ToArray();

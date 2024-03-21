@@ -16,6 +16,7 @@ namespace MMR_Tracker_V3.TrackerObjectExtensions
     {
         public static LogicItemData GetLogicItemData(this InstanceData.TrackerInstance Instance, string LogicItem)
         {
+            if (LogicItem == null) { return new LogicItemData(); }
             bool MultiItem = Instance.MultipleItemEntry(LogicItem, out string _LogicItem, out int Amount);
             bool Literal = _LogicItem.IsLiteralID(out _LogicItem);
             var type = Instance.GetItemEntryType(_LogicItem, Literal, out object obj);
@@ -80,44 +81,50 @@ namespace MMR_Tracker_V3.TrackerObjectExtensions
             return instance.LogicEntryCollections[item];
         }
 
-        public static LogicEntryType GetLocationEntryType(this InstanceData.TrackerInstance instance, string ID, bool literal, out object Obj)
+        public static bool GetCheckableLocationByID(this TrackerInstance instance, string ID, bool literal, out CheckableLocation Result)
         {
-            if (literal && instance.LocationPool.ContainsKey(ID)) { Obj = instance.LocationPool[ID]; return LogicEntryType.location; }
-            if (literal && instance.EntrancePool.ExitLookupByID.ContainsKey(ID)) { Obj = instance.GetExitByLogicID(ID); return LogicEntryType.Exit; }
-            if (literal && instance.HintPool.ContainsKey(ID)) { Obj = instance.HintPool[ID]; return LogicEntryType.Hint; }
-            if (instance.MacroPool.ContainsKey(ID)) { Obj = instance.MacroPool[ID]; return LogicEntryType.macro; }
-            if (!literal && instance.LocationPool.ContainsKey(ID)) { Obj = instance.LocationPool[ID]; return LogicEntryType.location; }
-            if (!literal && instance.EntrancePool.ExitLookupByID.ContainsKey(ID)) { Obj = instance.GetExitByLogicID(ID); return LogicEntryType.Exit; }
-            if (!literal && instance.HintPool.ContainsKey(ID)) { Obj = instance.HintPool[ID]; return LogicEntryType.Hint; }
-
-            if (instance.ChoiceOptions.ContainsKey(ID)) { Obj = instance.ChoiceOptions[ID]; return LogicEntryType.ChoiceOption; }
-            if (instance.MultiSelectOptions.ContainsKey(ID)) { Obj = instance.MultiSelectOptions[ID]; return LogicEntryType.MultiSelectOption; }
-            if (instance.ToggleOptions.ContainsKey(ID)) { Obj = instance.ToggleOptions[ID]; return LogicEntryType.ToggleOption; }
-            if (instance.IntOptions.ContainsKey(ID)) { Obj = instance.IntOptions[ID]; return LogicEntryType.IntOption; }
-            if (instance.LogicEntryCollections.ContainsKey(ID)) { Obj = instance.LogicEntryCollections[ID]; return LogicEntryType.LogicEntryCollection; }
-            Obj = null;
-            return LogicEntryType.error;
+            Result = GetCheckableLocationByID(instance, ID, literal);
+            return Result != null;
+        }
+        public static CheckableLocation GetCheckableLocationByID(this TrackerInstance instance, string ID, bool literal)
+        {
+            if (literal && instance.LocationPool.ContainsKey(ID)) { return instance.LocationPool[ID]; }
+            if (literal && instance.EntrancePool.ExitLookupByID.ContainsKey(ID)) { return instance.GetExitByLogicID(ID); }
+            if (literal && instance.HintPool.ContainsKey(ID)) { return instance.HintPool[ID]; }
+            if (instance.MacroPool.ContainsKey(ID)) { return instance.MacroPool[ID]; }
+            if (!literal && instance.LocationPool.ContainsKey(ID)) { return instance.LocationPool[ID]; }
+            if (!literal && instance.EntrancePool.ExitLookupByID.ContainsKey(ID)) { return instance.GetExitByLogicID(ID); }
+            if (!literal && instance.HintPool.ContainsKey(ID)) { return instance.HintPool[ID]; }
+            return null;
+        }
+        public static bool GetLogicOptionByID(this TrackerInstance instance, string ID, out LogicOption Result)
+        {
+            Result = GetLogicOptionByID(instance, ID);
+            return Result != null;
+        }
+        public static LogicOption GetLogicOptionByID(this TrackerInstance instance, string ID)
+        {
+            if (instance.ChoiceOptions.ContainsKey(ID)) { return instance.ChoiceOptions[ID]; }
+            if (instance.MultiSelectOptions.ContainsKey(ID)) { return instance.MultiSelectOptions[ID]; }
+            if (instance.ToggleOptions.ContainsKey(ID)) { return instance.ToggleOptions[ID]; }
+            if (instance.IntOptions.ContainsKey(ID)) { return instance.IntOptions[ID]; }
+            return null;
         }
 
-        public static LogicEntryType GetItemEntryType(this InstanceData.TrackerInstance instance, string OriginalID, bool literal, out object obj)
+        private static LogicItemTypes GetItemEntryType(this InstanceData.TrackerInstance instance, string ID, bool literal, out object obj)
         {
-            instance.MultipleItemEntry(OriginalID, out string ID, out _);
-            if (literal && instance.ItemPool.ContainsKey(ID)) { obj = instance.ItemPool[ID]; return LogicEntryType.item; }
-            if (literal && instance.EntrancePool.AreaList.ContainsKey(ID)) { obj = instance.EntrancePool.AreaList[ID]; return LogicEntryType.Area; }
-            if (instance.MacroPool.ContainsKey(ID)) { obj = instance.MacroPool[ID]; return LogicEntryType.macro; }
-            if (!literal && instance.ItemPool.ContainsKey(ID)) { obj = instance.ItemPool[ID]; return LogicEntryType.item; }
-            if (!literal && instance.EntrancePool.AreaList.ContainsKey(ID)) { obj = instance.EntrancePool.AreaList[ID]; return LogicEntryType.Area; }
+            if (literal && instance.ItemPool.ContainsKey(ID)) { obj = instance.ItemPool[ID]; return LogicItemTypes.item; }
+            if (literal && instance.EntrancePool.AreaList.ContainsKey(ID)) { obj = instance.EntrancePool.AreaList[ID]; return LogicItemTypes.Area; }
+            if (instance.MacroPool.ContainsKey(ID)) { obj = instance.MacroPool[ID]; return LogicItemTypes.macro; }
+            if (!literal && instance.ItemPool.ContainsKey(ID)) { obj = instance.ItemPool[ID]; return LogicItemTypes.item; }
+            if (!literal && instance.EntrancePool.AreaList.ContainsKey(ID)) { obj = instance.EntrancePool.AreaList[ID]; return LogicItemTypes.Area; }
+            
+            if (instance.LogicEntryCollections.ContainsKey(ID)) { obj = instance.LogicEntryCollections[ID]; return LogicItemTypes.LogicEntryCollection; }
 
-            if (instance.ChoiceOptions.ContainsKey(ID)) { obj = instance.ChoiceOptions[ID]; return LogicEntryType.ChoiceOption; }
-            if (instance.MultiSelectOptions.ContainsKey(ID)) { obj = instance.MultiSelectOptions[ID]; return LogicEntryType.MultiSelectOption; }
-            if (instance.ToggleOptions.ContainsKey(ID)) { obj = instance.ToggleOptions[ID]; return LogicEntryType.ToggleOption; }
-            if (instance.IntOptions.ContainsKey(ID)) { obj = instance.IntOptions[ID]; return LogicEntryType.IntOption; }
-            if (instance.LogicEntryCollections.ContainsKey(ID)) { obj = instance.LogicEntryCollections[ID]; return LogicEntryType.LogicEntryCollection; }
-
-            if (bool.TryParse(ID, out bool result)) { obj = result; return LogicEntryType.Bool; }
+            if (bool.TryParse(ID, out bool result)) { obj = result; return LogicItemTypes.Boolean; }
             obj = null;
-            if (LogicFunctions.IsLogicFunction(OriginalID)) { return LogicEntryType.function; }
-            return LogicEntryType.error;
+            if (LogicFunctions.IsLogicFunction(ID)) { return LogicItemTypes.function; }
+            return LogicItemTypes.error;
         }
 
         public static List<ItemObject> GetValidItemsForLocation(this InstanceData.TrackerInstance _Instance, LocationData.LocationObject Location, string Filter = "", bool IgnorePlaceablility = false)
@@ -198,10 +205,10 @@ namespace MMR_Tracker_V3.TrackerObjectExtensions
         {
             actions ??= instance.GetOptionActions();
             bool Literal = OriginalID.IsLiteralID(out string ID);
-            LogicEntryType entryType = instance.GetLocationEntryType(ID, Literal, out dynamic Obj);
-            if (entryType == LogicEntryType.error || Obj is null || !Utility.DynamicPropertyExist(Obj, "referenceData")) { return null; }
-            LogicFileType LogicFile = Obj.referenceData.LogicList;
-            int LogicFileIndex = Obj.referenceData.LogicIndex;
+            CheckableLocation location = instance.GetCheckableLocationByID(ID, Literal);
+            if (location is null) { return null; }
+            LogicFileType LogicFile = location.referenceData.LogicList;
+            int LogicFileIndex = location.referenceData.LogicIndex;
             MMRData.JsonFormatLogicItem LogicFileEntry = null;
 
             switch (LogicFile)
@@ -219,13 +226,10 @@ namespace MMR_Tracker_V3.TrackerObjectExtensions
 
             Utility.DeepCloneLogic(LogicFileEntry.RequiredItems, LogicFileEntry.ConditionalItems, out List<string> CopyRequirements, out List<List<string>> CopyConditionals);
 
-            if (Obj is CheckableLocation checkableLocation)
+            location.GetPrice(out int p, out char c);
+            if (p > -1 && !instance.PriceData.GetCapacityMap(c).ContainsValue(ID) && DoEdits)
             {
-                checkableLocation.GetPrice(out int p, out char c);
-                if (p > -1 && !instance.PriceData.GetCapacityMap(c).ContainsValue(ID) && DoEdits)
-                {
-                    LogicEditing.HandlePriceLogic(instance, p, c, CopyRequirements, CopyConditionals, out CopyRequirements, out CopyConditionals);
-                }
+                LogicEditing.HandlePriceLogic(instance, p, c, CopyRequirements, CopyConditionals, out CopyRequirements, out CopyConditionals);
             }
 
             if (DoEdits)
@@ -262,8 +266,8 @@ namespace MMR_Tracker_V3.TrackerObjectExtensions
                 else { return false; }
             }
             var LogicItemData = instance.GetLogicItemData(LogicItem);
-            if (LogicItemData.Type == LogicEntryType.macro && ((MacroObject)LogicItemData.Object).isTrick() && !((MacroObject)LogicItemData.Object).TrickEnabled) { return true; }
-            if (LogicItemData.Type == LogicEntryType.Bool && !bool.Parse(LogicItemData.CleanID)) { return true; }
+            if (LogicItemData.Type == LogicItemTypes.macro && ((MacroObject)LogicItemData.Object).isTrick() && !((MacroObject)LogicItemData.Object).TrickEnabled) { return true; }
+            if (LogicItemData.Type == LogicItemTypes.Boolean && !bool.Parse(LogicItemData.CleanID)) { return true; }
             return false;
         }
 

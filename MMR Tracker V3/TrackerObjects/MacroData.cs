@@ -1,5 +1,6 @@
 ﻿using MMR_Tracker_V3.TrackerObjectExtensions;
 using System;
+using static MMR_Tracker_V3.TrackerObjects.MiscData;
 
 namespace MMR_Tracker_V3.TrackerObjects
 {
@@ -33,5 +34,7 @@ namespace MMR_Tracker_V3.TrackerObjects
         }
 
         public override object GetAbstractDictEntry() => GetDictEntry();
+
+        public override CheckableLocationTypes LocationType() => CheckableLocationTypes.macro;
     }
 }

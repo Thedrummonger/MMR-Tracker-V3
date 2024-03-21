@@ -135,11 +135,8 @@ namespace MMR_Tracker_V3.TrackerObjects
                 if (instance.LogicDictionary.WinCondition != null)
                 {
                     var wincon = instance.LogicDictionary.WinCondition;
-                    bool Literal = wincon.IsLiteralID(out string ParsedWinCon);
-                    instance.GetItemEntryType(ParsedWinCon, Literal, out object ItemOut);
-                    instance.GetItemEntryType(ParsedWinCon, Literal, out object LocationOut);
-                    var outitem = ItemOut ?? LocationOut ?? null;
-                    if (outitem is not null) { generator.FilterImportantPlaythrough(outitem); }
+                    var ItemData = instance.GetLogicItemData(wincon);
+                    if (ItemData.Object is not null) { generator.FilterImportantPlaythrough(ItemData.Object); }
                     Debug.WriteLine($"Seed Beatable: {generator.Playthrough.ContainsKey(instance.LogicDictionary.WinCondition)}");
                 }
                 Playthrough = generator.Playthrough;

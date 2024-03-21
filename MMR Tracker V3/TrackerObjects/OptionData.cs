@@ -21,6 +21,7 @@ namespace MMR_Tracker_V3.TrackerObjects
 
             public abstract string getOptionName();
             public abstract OptionValue GetValue(string _Value = null);
+            public abstract MiscData.OptionTypes OptionType();
         }
         public class ChoiceOption(InstanceData.TrackerInstance Parent) : LogicOption(Parent)
         {
@@ -54,6 +55,8 @@ namespace MMR_Tracker_V3.TrackerObjects
                 if (!ValueList.ContainsKey(_val ?? Value)) { return _val; }
                 return string.IsNullOrWhiteSpace(ValueList[_val ?? Value].Name) ? ValueList[_val ?? Value].ID : ValueList[_val ?? Value].Name;
             }
+
+            public override MiscData.OptionTypes OptionType() => MiscData.OptionTypes.ChoiceOption;
         }
 
         public class MultiSelectOption(InstanceData.TrackerInstance Parent) : LogicOption(Parent)
@@ -98,6 +101,7 @@ namespace MMR_Tracker_V3.TrackerObjects
                 if (!ValueList.ContainsKey(_val)) { return _val; }
                 return string.IsNullOrWhiteSpace(ValueList[_val].Name) ? ValueList[_val].ID : ValueList[_val].Name;
             }
+            public override MiscData.OptionTypes OptionType() => MiscData.OptionTypes.MultiSelectOption;
         }
         public class MultiSelectValueListDisplay
         {
@@ -165,6 +169,7 @@ namespace MMR_Tracker_V3.TrackerObjects
                 OptionValue selectedVal = Enabled.ID == Value ? Enabled : Disabled;
                 return string.IsNullOrWhiteSpace(selectedVal.Name) ? selectedVal.ID : selectedVal.Name;
             }
+            public override MiscData.OptionTypes OptionType() => MiscData.OptionTypes.ToggleOption;
 
         }
         public class IntOption(InstanceData.TrackerInstance Parent) : LogicOption(Parent)
@@ -193,6 +198,7 @@ namespace MMR_Tracker_V3.TrackerObjects
             {
                 return new OptionValue { ID = Value.ToString(), Name = Value.ToString(), Actions = new Action() };
             }
+            public override MiscData.OptionTypes OptionType() => MiscData.OptionTypes.IntOption;
 
         }
 

@@ -47,19 +47,19 @@ namespace MMR_Tracker_V3.Logic
 
             switch (LogicItem.Type)
             {
-                case LogicEntryType.Bool:
+                case LogicItemTypes.Boolean:
                     return bool.Parse(LogicItem.RawID);
-                case LogicEntryType.item:
+                case LogicItemTypes.item:
                     SubUnlockData.Add(LogicItem.RawID);
                     return container.Instance.GetItemByID(LogicItem.CleanID).Useable(LogicItem.Amount);
-                case LogicEntryType.macro:
+                case LogicItemTypes.macro:
                     SubUnlockData.Add(LogicItem.RawID);
                     return container.Instance.GetMacroByID(LogicItem.CleanID).Aquired;
-                case LogicEntryType.Area:
+                case LogicItemTypes.Area:
                     return AreaReached(LogicItem.CleanID, SubUnlockData);
-                case LogicEntryType.LogicEntryCollection:
+                case LogicItemTypes.LogicEntryCollection:
                     return CheckItemArray(LogicItem.CleanID, LogicItem.Amount, SubUnlockData, out int _);
-                case LogicEntryType.function:
+                case LogicItemTypes.function:
                     return LogicFunctions.LogicFunctionAquired(container.Instance, LogicItem.RawID, SubUnlockData);
                 default:
                     Debug.WriteLine($"{LogicItem.RawID} Was not a valid Logic Entry");
@@ -94,10 +94,10 @@ namespace MMR_Tracker_V3.Logic
                 {
                     var LogicItem = container.Instance.GetLogicItemData(i);
 
-                    if (LogicItem.Type == LogicEntryType.LogicEntryCollection) { LoopVarEntry((LogicItem.Object as OptionData.LogicEntryCollection).GetValue(container.Instance)); }
+                    if (LogicItem.Type == LogicItemTypes.LogicEntryCollection) { LoopVarEntry((LogicItem.Object as OptionData.LogicEntryCollection).GetValue(container.Instance)); }
                     else
                     {
-                        if (LogicItem.Type == LogicEntryType.item && !LogicItem.HadItemCount)
+                        if (LogicItem.Type == LogicItemTypes.item && !LogicItem.HadItemCount)
                         { UsableItems.AddRange(Enumerable.Repeat(LogicItem.CleanID, (LogicItem.Object as ItemData.ItemObject).GetTotalUsable())); }
                         else if (LogicEntryAquired(i, SubUnlockData)) { UsableItems.Add(i); }
                     }

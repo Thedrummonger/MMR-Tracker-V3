@@ -103,9 +103,9 @@ namespace Windows_Form_Frontend
                 var AlteredLogic = IC.Instance.GetLogic(CurrentID, true);
                 var UnAlteredLogic = IC.Instance.GetLogic(CurrentID, false);
                 bool Literal = CurrentID.IsLiteralID(out string LogicItem);
-                var type = IC.Instance.GetLocationEntryType(LogicItem, Literal, out dynamic LogicItemObject);
-                string Availablility = GetAvailable(AlteredLogic, type, LogicItem) ? "*" : "";
-                string typeDisplay = type == LogicEntryType.macro && UnAlteredLogic.IsTrick ? "Trick" : type.ToString();
+                var LogicItemObject = IC.Instance.GetCheckableLocationByID(LogicItem, Literal);
+                string Availablility = LogicItemObject.Available ? "*" : "";
+                string typeDisplay = GetObjectTypeString(LogicItemObject);
                 bool hasTimeLogic = UnAlteredLogic.TimeAvailable != TimeOfDay.None || UnAlteredLogic.TimeSetup != TimeOfDay.None;
                 bool ShowTimeLogic = hasTimeLogic && chkShowTime.Checked;
                 //Title
@@ -162,10 +162,15 @@ namespace Windows_Form_Frontend
             Updating = false;
         }
 
-        public bool GetAvailable(MMRData.JsonFormatLogicItem Logic, LogicEntryType type, string id)
+        public string GetObjectTypeString(CheckableLocation CO)
         {
-            string Area = type == LogicEntryType.Exit ? IC.Instance.GetExitByLogicID(id).GetParentArea().ID : null;
-            return IC.logicCalculation.CalculatReqAndCond(Logic, id, Area);
+            return CO.LocationType().ToString().ConvertToCamelCase();
+        }
+
+        public bool GetAvailable(MMRData.JsonFormatLogicItem Logic, CheckableLocation co)
+        {
+            string Area = co is EntranceData.EntranceRandoExit EO ? EO.GetParentArea().ID : null;
+            return IC.logicCalculation.CalculatReqAndCond(Logic, co.ID, Area);
         }
 
         private void ShowLogic_Load(object sender, EventArgs e)
@@ -223,7 +228,7 @@ namespace Windows_Form_Frontend
             lbCond.Items.Clear();
             var Logic = IC.Instance.GetLogic(CurrentID, !chkShowUnaltered.Checked);
             bool Literal = CurrentID.IsLiteralID(out string LogicItem);
-            var type = IC.Instance.GetLocationEntryType(LogicItem, Literal, out object LocationObject);
+            var LocationObject = IC.Instance.GetCheckableLocationByID(LogicItem, Literal);
             UpdateTimeCheckboxes(Logic);
 
             numericUpDown1.Value = AllLogicIDs.ToList().IndexOf(CurrentID);
@@ -272,7 +277,7 @@ namespace Windows_Form_Frontend
 
             foreach (var i in AllLogicIDs)
             {
-                IC.Instance.GetLocationEntryType(i, false, out object entry);
+                var entry = IC.Instance.GetCheckableLocationByID(i, false);
                 if (!SearchStringParser.FilterSearch(IC.Instance, entry, textBox1.Text, i)) { continue; }
                 LBReq.Items.Add(i);
             }
@@ -299,18 +304,17 @@ namespace Windows_Form_Frontend
 
         private List<object> CreatGotoList(List<string> set, out List<object> DataEntriesOnly)
         {
-            Dictionary<string, LogicEntryType> LogicItems = new Dictionary<string, LogicEntryType>();
+            Dictionary<string, LogicItemTypes> LogicItems = new Dictionary<string, LogicItemTypes>();
             foreach (var i in set)
             {
-                bool ReqItemIsLitteral = i.IsLiteralID(out string ReqLogicItem);
-                LogicItems[i] = IC.Instance.GetItemEntryType(ReqLogicItem, ReqItemIsLitteral, out _);
+                LogicItems[i] = IC.Instance.GetLogicItemData(i).Type;
             }
             var GotoData = CreateGotoDataFromList(LogicItems);
             DataEntriesOnly = GotoData.Where(x => x is StandardListBoxItem).ToList();
             return GotoData;
         }
 
-        private List<object> CreateGotoDataFromList(Dictionary<string, LogicEntryType> GotoList)
+        private List<object> CreateGotoDataFromList(Dictionary<string, LogicItemTypes> GotoList)
         {
             foreach (var i in AddItemsFromFunction(GotoList))
             {
@@ -318,7 +322,7 @@ namespace Windows_Form_Frontend
             }
             GotoList = GotoList.OrderBy(x => x.Value).ThenBy(x => x.Key).ToDictionary(x => x.Key, x => x.Value);
             List<object> list = new List<object>();
-            LogicEntryType CurrentType = LogicEntryType.error;
+            LogicItemTypes CurrentType = LogicItemTypes.error;
             foreach (var i in GotoList)
             {
                 var Checks = GetChecksContainingSelectedID(i.Key, out _, out string CleanedID);
@@ -333,15 +337,15 @@ namespace Windows_Form_Frontend
                     var LitEntry = new StandardListBoxItem();
                     switch (CurrentType)
                     {
-                        case LogicEntryType.Area:
+                        case LogicItemTypes.Area:
                             LitEntry.Tag = c;
                             LitEntry.Display = $"{CleanedID}: {c}";
                             break;
-                        case LogicEntryType.item:
+                        case LogicItemTypes.item:
                             LitEntry.Tag = c;
                             LitEntry.Display = $"{IC.Instance.GetItemByID(CleanedID)?.GetDictEntry()?.GetName() ?? CleanedID}: {IC.Instance.GetLocationByID(c)?.GetDictEntry()?.GetName() ?? c}";
                             break;
-                        case LogicEntryType.macro:
+                        case LogicItemTypes.macro:
                         default:
                             LitEntry.Tag = c;
                             LitEntry.Display = CleanedID;
@@ -350,22 +354,23 @@ namespace Windows_Form_Frontend
                     list.Add(LitEntry);
                 }
             }
-            Dictionary<string, LogicEntryType> LocationsGotoList = GetLocationsFromFunctions(GotoList).OrderBy(x => x.Value).ThenBy(x => x.Key).ToDictionary(x => x.Key, x => x.Value);
+            CheckableLocationTypes? checkableLocationTypes = null;
+            Dictionary<string, CheckableLocationTypes> LocationsGotoList = GetLocationsFromFunctions(GotoList).OrderBy(x => x.Value).ThenBy(x => x.Key).ToDictionary(x => x.Key, x => x.Value);
             foreach (var i in LocationsGotoList)
             {
-                if (CurrentType != i.Value)
+                if (checkableLocationTypes is null || checkableLocationTypes != i.Value)
                 {
                     list.Add(WinFormUtils.CreateDivider(lbCond, $"{i.Value}"));
-                    CurrentType = i.Value;
+                    checkableLocationTypes = i.Value;
                 }
                 var LitEntry = new StandardListBoxItem();
-                switch (CurrentType)
+                switch (checkableLocationTypes)
                 {
-                    case LogicEntryType.location:
+                    case CheckableLocationTypes.location:
                         LitEntry.Tag = i.Key;
                         LitEntry.Display = IC.Instance.GetLocationByID(i.Key)?.GetDictEntry()?.GetName() ?? i.Key;
                         break;
-                    case LogicEntryType.Exit:
+                    case CheckableLocationTypes.Exit:
                     default:
                         LitEntry.Tag = i.Key;
                         LitEntry.Display = i.Key;
@@ -376,36 +381,22 @@ namespace Windows_Form_Frontend
             return list;
         }
 
-        private Dictionary<string, LogicEntryType> GetLocationsFromFunctions(Dictionary<string, LogicEntryType> CurrentList)
+        private Dictionary<string, CheckableLocationTypes> GetLocationsFromFunctions(Dictionary<string, LogicItemTypes> CurrentList)
         {
-            Dictionary<string, LogicEntryType> NewList = new Dictionary<string, LogicEntryType>();
-            foreach (var i in CurrentList.Where(x => x.Value == LogicEntryType.function))
+            Dictionary<string, CheckableLocationTypes> NewList = new Dictionary<string, CheckableLocationTypes>();
+            foreach (var i in CurrentList.Where(x => x.Value == LogicItemTypes.function))
             {
                 LogicFunctions.IsLogicFunction(i.Key, out string Func, out string Param);
-                if (Func == "contains")
+                if (Func.In("contains", "check", "available"))
                 {
                     var Data = Param.Split(',').Select(x => x.Trim()).ToArray();
-                    var ItemType = IC.Instance.GetLocationEntryType(Data[0], false, out object obj);
-                    if (ItemType == LogicEntryType.LogicEntryCollection)
+                    if (IC.Instance.GetLogicEntryCollectionByID(Data[0]) is not null)
                     {
                         AddFromVariable(Data[0]);
                     }
                     else if (!CurrentList.ContainsKey(Data[0]))
                     {
-                        NewList[Data[0]] = ItemType;
-                    }
-                }
-                else if (Func == "check" || Func == "available")
-                {
-                    var Data = Param.Split(',').Select(x => x.Trim()).ToArray();
-                    var ItemType = IC.Instance.GetLocationEntryType(Data[0], false, out object obj);
-                    if (ItemType == LogicEntryType.LogicEntryCollection)
-                    {
-                        AddFromVariable(Data[0]);
-                    }
-                    else if (!CurrentList.ContainsKey(Data[0]))
-                    {
-                        NewList[Data[0]] = ItemType;
+                        if (IC.Instance.GetCheckableLocationByID(Data[0], false, out CheckableLocation CO)) { NewList[Data[0]] = CO.LocationType(); }
                     }
                 }
             }
@@ -416,23 +407,22 @@ namespace Windows_Form_Frontend
                 if (!IC.Instance.LogicEntryCollections.TryGetValue(LogicItem, out OptionData.LogicEntryCollection variable)) { return; }
                 foreach (string varEntry in variable.GetValue(IC.Instance))
                 {
-                    var ItemType = IC.Instance.GetItemEntryType(varEntry, false, out object obj);
-                    NewList[varEntry] = ItemType;
+                    if (IC.Instance.GetCheckableLocationByID(varEntry, false, out CheckableLocation CO)) { NewList[varEntry] = CO.LocationType(); }
                 }
             }
         }
 
-        private Dictionary<string, LogicEntryType> AddItemsFromFunction(Dictionary<string, LogicEntryType> CurrentList)
+        private Dictionary<string, LogicItemTypes> AddItemsFromFunction(Dictionary<string, LogicItemTypes> CurrentList)
         {
-            Dictionary<string, LogicEntryType> NewList = new Dictionary<string, LogicEntryType>();
-            foreach (var i in CurrentList.Where(x => x.Value == LogicEntryType.function))
+            Dictionary<string, LogicItemTypes> NewList = new Dictionary<string, LogicItemTypes>();
+            foreach (var i in CurrentList.Where(x => x.Value == LogicItemTypes.function))
             {
                 LogicFunctions.IsLogicFunction(i.Key, out string Func, out string Param);
                 if (Func == "contains")
                 {
                     var Data = Param.Split(',').Select(x => x.Trim()).ToArray();
-                    var ItemType = IC.Instance.GetItemEntryType(Data[1], false, out object obj);
-                    if (ItemType == LogicEntryType.LogicEntryCollection)
+                    var ItemType = IC.Instance.GetLogicItemData(Data[1]).Type;
+                    if (ItemType == LogicItemTypes.LogicEntryCollection)
                     {
                         AddFromVariable(Data[1]);
                     }
@@ -442,7 +432,7 @@ namespace Windows_Form_Frontend
                     }
                 }
             }
-            foreach (var i in CurrentList.Where(x => x.Value == LogicEntryType.LogicEntryCollection))
+            foreach (var i in CurrentList.Where(x => x.Value == LogicItemTypes.LogicEntryCollection))
             {
                 AddFromVariable(i.Key);
             }
@@ -454,7 +444,7 @@ namespace Windows_Form_Frontend
                 if (!IC.Instance.LogicEntryCollections.TryGetValue(LogicItem, out OptionData.LogicEntryCollection variable)) { return; }
                 foreach (string varEntry in variable.GetValue(IC.Instance))
                 {
-                    var ItemType = IC.Instance.GetItemEntryType(varEntry, false, out object obj);
+                    var ItemType = IC.Instance.GetLogicItemData(varEntry).Type;
                     NewList[varEntry] = ItemType;
                 }
             }
@@ -470,14 +460,14 @@ namespace Windows_Form_Frontend
                 Index++;
             }
         }
-        private List<string> GetChecksContainingSelectedID(string ID, out LogicEntryType Type, out string OutCleanedID)
+        private List<string> GetChecksContainingSelectedID(string ID, out LogicItemTypes Type, out string OutCleanedID)
         {
             var LogicItem = IC.Instance.GetLogicItemData(ID);
             OutCleanedID = LogicItem.CleanID;
             Type = LogicItem.Type;
             switch (LogicItem.Type)
             {
-                case LogicEntryType.Area:
+                case LogicItemTypes.Area:
                     var ValidLoadingZoneExits = IC.Instance.EntrancePool.AreaList.Values.SelectMany(x => x.RandomizableExits().Values.Where(x =>
                         (x.DestinationExit is not null && x.DestinationExit.region == LogicItem.CleanID && x.CheckState != MiscData.CheckState.Unchecked) ||
                         (x.IsUnrandomized() && x.GetVanillaDestination().region == LogicItem.CleanID)));
@@ -486,12 +476,12 @@ namespace Windows_Form_Frontend
                         x.GetVanillaDestination().region == LogicItem.CleanID));
                     var ValidExits = ValidLoadingZoneExits.Concat(ValidMacroExits);
                     return ValidExits.Select(x => x.ID).ToList();
-                case LogicEntryType.item:
+                case LogicItemTypes.item:
                     var ValidLocations = IC.Instance.LocationPool.Values.Where(x =>
                         (x.Randomizeditem.Item is not null && x.Randomizeditem.Item == LogicItem.CleanID && x.CheckState != MiscData.CheckState.Unchecked) ||
                         ((x.IsUnrandomized() || x.SingleValidItem is not null) && x.GetItemAtCheck() == LogicItem.CleanID));
                     return ValidLocations.Select(x => x.ID).ToList();
-                case LogicEntryType.macro:
+                case LogicItemTypes.macro:
                     return new List<string> { LogicItem.CleanID };
                 default:
                     return new List<string>();

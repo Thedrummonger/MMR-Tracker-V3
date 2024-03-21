@@ -26,7 +26,7 @@ namespace MMR_Tracker_V3
         {
             public string id { get; set; }
             public int sphere { get; set; }
-            public MiscData.LogicEntryType CheckType { get; set; }
+            public MiscData.CheckableLocationTypes CheckType { get; set; }
             public string ItemObtained { get; set; }
             public List<string> UsedItems { get; set; }
             public bool Important { get; set; }
@@ -68,7 +68,7 @@ namespace MMR_Tracker_V3
                         id = i.ID,
                         ItemObtained = i.GetDestinationAtExit().region,
                         UsedItems = Container.logicCalculation.LogicUnlockData[i.ID],
-                        CheckType = MiscData.LogicEntryType.Exit,
+                        CheckType = MiscData.CheckableLocationTypes.Exit,
                         sphere = Sphere
                     };
                     if (!FirstObtainedDict.ContainsKey(playthroughObject.ItemObtained)) { FirstObtainedDict.Add(playthroughObject.ItemObtained, new List<Tuple<object, PlaythroughObject>>()); }
@@ -89,7 +89,7 @@ namespace MMR_Tracker_V3
                         id = i.ID,
                         ItemObtained = i.GetItemAtCheck(),
                         UsedItems = Container.logicCalculation.LogicUnlockData[i.ID],
-                        CheckType = MiscData.LogicEntryType.location,
+                        CheckType = MiscData.CheckableLocationTypes.location,
                         sphere = Sphere
                     };
                     if (!FirstObtainedDict.ContainsKey(playthroughObject.ItemObtained)) { FirstObtainedDict.Add(playthroughObject.ItemObtained, new List<Tuple<object, PlaythroughObject>>()); }
@@ -103,7 +103,7 @@ namespace MMR_Tracker_V3
                         id = i.ID,
                         ItemObtained = i.ID,
                         UsedItems = Container.logicCalculation.LogicUnlockData[i.ID],
-                        CheckType = MiscData.LogicEntryType.macro,
+                        CheckType = MiscData.CheckableLocationTypes.macro,
                         sphere = Sphere
                     };
                     if (!FirstObtainedDict.ContainsKey(playthroughObject.ItemObtained)) { FirstObtainedDict.Add(playthroughObject.ItemObtained, new List<Tuple<object, PlaythroughObject>>()); }
@@ -356,21 +356,21 @@ namespace MMR_Tracker_V3
                 {
                     var logicItem = instance.GetLogicItemData(i);
 
-                    if (logicItem.Type == MiscData.LogicEntryType.macro && !Data.MacrosUsed.Contains(logicItem.CleanID))
+                    if (logicItem.Type == MiscData.LogicItemTypes.macro && !Data.MacrosUsed.Contains(logicItem.CleanID))
                     {
                         Data.MacrosUsed.Add(logicItem.CleanID);
                         ParseRequirements(logicItem.CleanID);
                     }
-                    else if (logicItem.Type == MiscData.LogicEntryType.function && !Data.OptionsUsed.Contains(logicItem.CleanID))
+                    else if (logicItem.Type == MiscData.LogicItemTypes.function && !Data.OptionsUsed.Contains(logicItem.CleanID))
                     {
                         Data.OptionsUsed.Add(logicItem.CleanID);
                     }
-                    else if (logicItem.Type == MiscData.LogicEntryType.item)
+                    else if (logicItem.Type == MiscData.LogicItemTypes.item)
                     {
                         if (Data.RealItemsUsed.ContainsKey(logicItem.CleanID)) { if (logicItem.Amount > Data.RealItemsUsed[logicItem.CleanID]) { Data.RealItemsUsed[logicItem.CleanID] = logicItem.Amount; } }
                         else { Data.RealItemsUsed.Add(logicItem.CleanID, logicItem.Amount); }
                     }
-                    else if (logicItem.Type == MiscData.LogicEntryType.Area && !Data.AreasAccessed.Contains(logicItem.CleanID))
+                    else if (logicItem.Type == MiscData.LogicItemTypes.Area && !Data.AreasAccessed.Contains(logicItem.CleanID))
                     {
                         GetAreaData(logicItem.CleanID, playthroughObject, instance, out List<EntranceData.EntranceAreaPair> path, out List<string> areasVisited);
                         Data.AreasAccessed.AddRange(areasVisited);
@@ -539,8 +539,7 @@ namespace MMR_Tracker_V3
 
             foreach (var i in playthroughGenerator.Playthrough)
             {
-                var Location = Instance.GetLocationEntryType(i.Value.id, false, out object OBJ);
-                if (OBJ is null || OBJ is not LocationData.LocationObject loc) { continue; }
+                if (!Instance.LocationPool.TryGetValue(i.Value.id, out LocationData.LocationObject loc)) { continue; }
                 if (!ShereBreakdown.ContainsKey(i.Value.sphere)) { ShereBreakdown[i.Value.sphere] = new List<LocationData.LocationObject>(); }
                 ShereBreakdown[i.Value.sphere].Add(loc);
             }

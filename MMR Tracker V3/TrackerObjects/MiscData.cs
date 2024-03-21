@@ -174,7 +174,7 @@ namespace MMR_Tracker_V3.TrackerObjects
             public int Amount;
             public bool Literal;
             public bool HadItemCount;
-            public LogicEntryType Type;
+            public LogicItemTypes Type;
         }
 
         [Serializable]
@@ -257,22 +257,29 @@ namespace MMR_Tracker_V3.TrackerObjects
             Night3 = 32,
         }
         [Serializable]
-        public enum LogicEntryType
+        public enum CheckableLocationTypes
+        {
+            location,
+            Exit,
+            Hint,
+            macro
+        }
+        public enum LogicItemTypes
         {
             item,
-            location,
-            macro,
-            Hint,
-            Bool,
             Area,
-            Exit,
+            macro,
+            LogicEntryCollection,
+            Boolean,
+            function,
+            error
+        }
+        public enum OptionTypes
+        {
             ChoiceOption,
             MultiSelectOption,
             ToggleOption,
             IntOption,
-            LogicEntryCollection,
-            function,
-            error
         }
         public static string GetDescription<T>(this T e) where T : IConvertible
         {

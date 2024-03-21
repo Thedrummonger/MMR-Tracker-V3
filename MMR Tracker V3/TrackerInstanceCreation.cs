@@ -261,19 +261,10 @@ namespace MMR_Tracker_V3
                 foreach (var Manual in DefSet.ManualRandomizationState)
                 {
                     bool Litteral = Manual.Key.IsLiteralID(out string LocationObjectID);
-                    var EntryType = instance.GetLocationEntryType(LocationObjectID, Litteral, out _);
-                    switch (EntryType)
-                    {
-                        case LogicEntryType.location:
-                            instance.GetLocationByID(LocationObjectID).SetRandomizedState(Manual.Value);
-                            break;
-                        case LogicEntryType.Hint:
-                            instance.GetHintByID(LocationObjectID).RandomizedState = Manual.Value;
-                            break;
-                        case LogicEntryType.Exit:
-                            instance.GetExitByLogicID(LocationObjectID).RandomizedState = Manual.Value;
-                            break;
-                    }
+                    var Location = instance.GetCheckableLocationByID(LocationObjectID, Litteral);
+                    if (Location is LocationData.LocationObject LO) { LO.SetRandomizedState(Manual.Value); }
+                    if (Location is HintData.HintObject HO) { HO.RandomizedState = Manual.Value; }
+                    if (Location is EntranceData.EntranceRandoExit EO) { EO.RandomizedState = Manual.Value; }
                 }
             }
             if (DefSet.EnabledTricks is not null)

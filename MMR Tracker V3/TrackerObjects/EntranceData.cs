@@ -98,6 +98,8 @@ namespace MMR_Tracker_V3.TrackerObjects
             }
 
             public override object GetAbstractDictEntry() => GetDictEntry();
+
+            public override CheckableLocationTypes LocationType() => CheckableLocationTypes.Exit;
         }
         public class EntranceRandoDestination
         {

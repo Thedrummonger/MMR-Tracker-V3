@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
+using System.Xml.Linq;
 using static MMR_Tracker_V3.TrackerObjects.MiscData;
 
 namespace MMR_Tracker_V3.Logic
@@ -90,9 +91,8 @@ namespace MMR_Tracker_V3.Logic
         {
             bool Inverse = Parameters.Length > 1 && bool.TryParse(Parameters[1], out bool InverseParam) && !InverseParam;
             bool IsLitteral = Parameters[0].IsLiteralID(out string CleanedID);
-            instance.GetLocationEntryType(CleanedID, IsLitteral, out dynamic OBJ);
-            if (OBJ is null) { Debug.WriteLine($"{Parameters[0]} is not a valid logic Entry"); return false; }
-            if (OBJ is not CheckableLocation CLO) { Debug.WriteLine($"{Parameters[0]} is not a randomizable entry"); return false; }
+            var CLO = instance.GetCheckableLocationByID(CleanedID, IsLitteral);
+            if (CLO is null) { Debug.WriteLine($"{Parameters[0]} is not a randomizable entry"); return false; }
             return CLO.RandomizedState == RandomizedState.Randomized != Inverse;
         }
 
@@ -109,15 +109,15 @@ namespace MMR_Tracker_V3.Logic
             bool Inverted = Parameters.Length > 1 && bool.TryParse(Parameters[1], out bool IsInverted) && !IsInverted;
             bool litteral = Parameters[0].IsLiteralID(out string paramClean);
 
-            var type = instance.GetLocationEntryType(paramClean, litteral, out dynamic obj);
-            if (obj is not CheckableLocation CO) { Debug.WriteLine($"{Parameters[0]} is not a valid Checkable Location"); return false; }
+            var CO = instance.GetCheckableLocationByID(paramClean, litteral);
+            if (CO is null) { Debug.WriteLine($"{Parameters[0]} is not a valid Checkable Location"); return false; }
 
             if (Function == "check" && CO.RandomizedState == RandomizedState.ForcedJunk) { Function = "available"; }
 
-            if (obj is MacroObject MO) { return MO.Available != Inverted; }
+            if (CO is MacroObject MO) { return MO.Available != Inverted; }
             else if (Function == "check") { return CO.CheckState == CheckState.Checked != Inverted; }
             else if (Function == "available") { return CO.Available != Inverted; }
-            else { Debug.WriteLine($"{paramClean} could not be checked. Type: {type}"); }
+            else { Debug.WriteLine($"{paramClean} could not be checked"); }
             return false;
         }
 
@@ -125,41 +125,41 @@ namespace MMR_Tracker_V3.Logic
         {
             if (Parameters.Length < 1) { return false; } //No Values Pased
 
-            var OptionType = instance.GetLocationEntryType(Parameters[0], false, out _);
+            var OptionType = instance.GetLogicOptionByID(Parameters[0]);
             bool Inverse = Parameters.Length > 2 && bool.TryParse(Parameters[2], out bool inverseValue) && !inverseValue;
 
-            switch (OptionType)
+            if (OptionType is OptionData.ToggleOption TogOpt)
             {
-                case LogicEntryType.ToggleOption:
-                    var TogOpt = instance.ToggleOptions[Parameters[0]];
-                    if (Parameters.Length < 2 || TogOpt.Enabled.ID == Parameters[1]) { return TogOpt.GetValue() == TogOpt.Enabled != Inverse; }
-                    else if (TogOpt.Disabled.ID == Parameters[1]) { return TogOpt.GetValue() == TogOpt.Disabled != Inverse; }
-                    else if (TogOpt.Enabled.ID == Parameters[1]) { return TogOpt.GetValue() == TogOpt.Enabled != Inverse; }
-                    else if (bool.TryParse(Parameters[1], out bool ParamBool))
-                    {
-                        if (ParamBool) { return TogOpt.GetValue() == TogOpt.Enabled != Inverse; }
-                        else { return TogOpt.GetValue() == TogOpt.Disabled != Inverse; }
-                    }
-                    else { return false; }
-                case LogicEntryType.ChoiceOption:
-                    var ChoiceOpt = instance.ChoiceOptions[Parameters[0]];
-                    if (Parameters.Length < 2) { return false; } //Not enough values passed
-                    if (!ChoiceOpt.ValueList.ContainsKey(Parameters[1])) { Debug.WriteLine($"{Parameters[1]} was not a valid Value for option {ChoiceOpt.ID}"); }
-                    return ChoiceOpt.GetValue().ID == Parameters[1] != Inverse;
-                case LogicEntryType.MultiSelectOption:
-                    var MultiOpt = instance.MultiSelectOptions[Parameters[0]];
-                    if (Parameters.Length < 2) { return false; } //Not enough values passed
-                    if (!MultiOpt.ValueList.ContainsKey(Parameters[1])) { Debug.WriteLine($"{Parameters[1]} was not a valid Value for option {MultiOpt.ID}"); }
-                    return MultiOpt.EnabledValues.Contains(Parameters[1]) != Inverse;
-                case LogicEntryType.IntOption:
-                    var IntOpt = instance.IntOptions[Parameters[0]];
-                    if (Parameters.Length < 2) { return false; } //Not enough values passed
-                    if (!int.TryParse(Parameters[1], out int ParamInt)) { return false; }
-                    return IntOpt.Value == ParamInt != Inverse;
-                default:
-                    Debug.WriteLine($"Setting {Parameters[0]} was not found in setting list");
-                    return false;
+                if (Parameters.Length < 2 || TogOpt.Enabled.ID == Parameters[1]) { return TogOpt.GetValue() == TogOpt.Enabled != Inverse; }
+                else if (TogOpt.Disabled.ID == Parameters[1]) { return TogOpt.GetValue() == TogOpt.Disabled != Inverse; }
+                else if (TogOpt.Enabled.ID == Parameters[1]) { return TogOpt.GetValue() == TogOpt.Enabled != Inverse; }
+                else if (bool.TryParse(Parameters[1], out bool ParamBool))
+                {
+                    if (ParamBool) { return TogOpt.GetValue() == TogOpt.Enabled != Inverse; }
+                    else { return TogOpt.GetValue() == TogOpt.Disabled != Inverse; }
+                }
+                else { return false; }
             }
+            else if (OptionType is OptionData.ChoiceOption ChoiceOpt)
+            {
+                if (Parameters.Length < 2) { return false; } //Not enough values passed
+                if (!ChoiceOpt.ValueList.ContainsKey(Parameters[1])) { Debug.WriteLine($"{Parameters[1]} was not a valid Value for option {ChoiceOpt.ID}"); }
+                return ChoiceOpt.GetValue().ID == Parameters[1] != Inverse;
+            }
+            else if (OptionType is OptionData.MultiSelectOption MultiOpt)
+            {
+                if (Parameters.Length < 2) { return false; } //Not enough values passed
+                if (!MultiOpt.ValueList.ContainsKey(Parameters[1])) { Debug.WriteLine($"{Parameters[1]} was not a valid Value for option {MultiOpt.ID}"); }
+                return MultiOpt.EnabledValues.Contains(Parameters[1]) != Inverse;
+            }
+            else if (OptionType is OptionData.IntOption IntOpt)
+            {
+                if (Parameters.Length < 2) { return false; } //Not enough values passed
+                if (!int.TryParse(Parameters[1], out int ParamInt)) { return false; }
+                return IntOpt.Value == ParamInt != Inverse;
+            }
+            Debug.WriteLine($"Setting {Parameters[0]} was not found in setting list");
+            return false;
         }
 
         private static bool CheckContainsFunction(InstanceData.TrackerInstance instance, string Function, string[] Parameters)
@@ -186,18 +186,14 @@ namespace MMR_Tracker_V3.Logic
             List<CheckableLocation> ValidEntries = [];
             foreach (var currentOption in OptionList)
             {
-                var CurrentOptionType = instance.GetLocationEntryType(currentOption, false, out object CurrentOptionEntry);
-                if (CurrentOptionType == LogicEntryType.location && 
-                    CurrentOptionEntry is CheckableLocation CLO && 
-                    (CurrentOptionEntry as LocationData.LocationObject).GetItemAtCheck() is not null)
+                var Location = instance.GetCheckableLocationByID(currentOption, false);
+                if (Location is LocationData.LocationObject LO && LO.GetItemAtCheck() is not null)
                 {
-                    ValidEntries.Add(CLO);
+                    ValidEntries.Add(LO);
                 }
-                else if (CurrentOptionType == LogicEntryType.Exit && 
-                    CurrentOptionEntry is CheckableLocation CLE && 
-                    (CurrentOptionEntry as EntranceData.EntranceRandoExit).DestinationExit is not null)
+                else if (Location is EntranceData.EntranceRandoExit EO && EO.DestinationExit is not null)
                 {
-                    ValidEntries.Add(CLE);
+                    ValidEntries.Add(EO);
                 }
             }
             if (ValidEntries.Count == 0) { return false; }
@@ -218,9 +214,9 @@ namespace MMR_Tracker_V3.Logic
             bool inverse = Parameters.Length > 2 && bool.TryParse(Parameters[2], out bool inverseValue) && !inverseValue; //If a third param is passed and its a false bool, invert the result
 
             bool litteral = Parameters[0].IsLiteralID(out string paramClean);
-            _ = instance.GetLocationEntryType(paramClean, litteral, out dynamic obj);
-            if (obj is not CheckableLocation CL) { return false; }
-            if (! int.TryParse(Parameters[1], out int Cost)) { return false; }
+            var CL = instance.GetCheckableLocationByID(paramClean, litteral);
+            if (CL is null) { return false; }
+            if (!int.TryParse(Parameters[1], out int Cost)) { return false; }
             int LocationCost = CL.GetPrice().Item1;
             return LocationCost <= Cost != inverse;
         }
