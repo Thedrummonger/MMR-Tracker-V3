@@ -71,7 +71,8 @@ namespace TestingForm.GameDataCreation.OOTMMV3
                 SubCategory = Utility.ConvertToCamelCase(Setting.category.Replace(".", "/")),
                 EnabledValues = [],
                 ValueList = [],
-                Priority = OptionPriority
+                Priority = OptionPriority,
+                Description = Setting.description,
             };
 
             foreach(OOTMMDataClasses.OOTMMSettingValue i in Setting.values)
@@ -96,6 +97,7 @@ namespace TestingForm.GameDataCreation.OOTMMV3
                 SubCategory = Utility.ConvertToCamelCase(Setting.category.Replace(".", "/")),
                 Value = Setting.defaultvalue.ToString(),
                 ValueList = new Dictionary<string, OptionData.OptionValue>(),
+                Description = Setting.description,
                 Priority = OptionPriority
             };
             option.CreateSimpleValues(Setting.values.Select(x => x.value).ToArray());
@@ -111,6 +113,7 @@ namespace TestingForm.GameDataCreation.OOTMMV3
                 ID = Setting.key,
                 Name = Setting.name,
                 SubCategory = Utility.ConvertToCamelCase(Setting.category.Replace(".", "/")),
+                Description = Setting.description,
                 Priority = OptionPriority
             };
             option.CreateSimpleValues();
@@ -128,6 +131,7 @@ namespace TestingForm.GameDataCreation.OOTMMV3
                 SubCategory = Utility.ConvertToCamelCase(Setting.category.Replace(".", "/")),
                 Value = (int)Setting.defaultvalue,
                 Priority = OptionPriority,
+                Description = Setting.description,
                 Min = 0
             };
             if (Setting.min is not null) { option.Min = (int)Setting.min; }

@@ -62,8 +62,8 @@ namespace TestingForm.GameDataCreation.OOTMMV3
             SettingCreation.CleanSettings();
             CleanLogic();
 
-            File.WriteAllText(Path.Combine(OOTMMPaths.OOTMMTestingFolderPath, "OOTMMLogicV3.json"), LogicFile.ToFormattedJson());
-            File.WriteAllText(Path.Combine(OOTMMPaths.OOTMMTestingFolderPath, "OOTMMDictV3.json"), dictionary.ToFormattedJson());
+            File.WriteAllText(Path.Combine(TestingReferences.GetTestingLogicPresetsPath(), "DEV-OOTMM Casual.json"), LogicFile.ToFormattedJson());
+            File.WriteAllText(Path.Combine(TestingReferences.GetTestingDictionaryPath(), "OOTMM V3.json"), dictionary.ToFormattedJson());
         }
 
         public void CleanLogic()

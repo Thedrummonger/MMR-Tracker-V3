@@ -695,6 +695,8 @@ namespace Windows_Form_Frontend
                         UpdateUI();
                     };
                     ToolStripMenuItem menuItem = new() { Name = $"{ChoiceOption.ID}Menu", Text = ChoiceOption.getOptionName() };
+                    menuItem.ToolTipText = ChoiceOption.Description;
+                    menuItem.AutoToolTip = true;
                     menuItem.DropDownItems.Add(toolStripComboBox);
                     OptionTree.MenuItems.Add(menuItem);
                 }
@@ -703,6 +705,8 @@ namespace Windows_Form_Frontend
                     var OptionTree = GetOptionTree(o);
                     if (!InstanceContainer.logicCalculation.ConditionalsMet(MultiSelectOption.Conditionals, new List<string>())) { continue; }
                     ToolStripMenuItem menuItem = new() { Name = $"{MultiSelectOption.ID}Menu", Text = MultiSelectOption.getOptionName() };
+                    menuItem.ToolTipText = MultiSelectOption.Description;
+                    menuItem.AutoToolTip = true;
                     foreach (var i in MultiSelectOption.ValueList)
                     {
                         ToolStripMenuItem SubMenuItem = new() { Name = $"{MultiSelectOption.ID}{i.Key}Menu", Checked = MultiSelectOption.EnabledValues.Contains(i.Key), Text = i.Value.Name };
@@ -724,6 +728,8 @@ namespace Windows_Form_Frontend
                     var OptionTree = GetOptionTree(o);
                     if (!InstanceContainer.logicCalculation.ConditionalsMet(ToggleOption.Conditionals, new List<string>())) { continue; }
                     ToolStripMenuItem menuItem = new() { Name = $"{ToggleOption.ID}Menu", Checked = ToggleOption.Enabled.ID == ToggleOption.Value, Text = ToggleOption.getOptionName() };
+                    menuItem.ToolTipText = ToggleOption.Description;
+                    menuItem.AutoToolTip = true;
                     menuItem.Click += delegate (object sender, EventArgs e)
                     {
                         SaveTrackerState(InstanceContainer.Instance.ToJson(JSONType.UTF8));
@@ -741,6 +747,8 @@ namespace Windows_Form_Frontend
                     if (!InstanceContainer.logicCalculation.ConditionalsMet(IntOption.Conditionals, new List<string>())) { continue; }
                     string DisplayName = IntOption.ToString();
                     ToolStripMenuItem menuItem = new() { Name = $"{IntOption.ID}Menu", Text = IntOption.ToString() };
+                    menuItem.ToolTipText = IntOption.Description;
+                    menuItem.AutoToolTip = true;
                     menuItem.Click += delegate (object sender, EventArgs e)
                     {
                         HandleItemSelect(new List<OptionData.IntOption> { IntOption }, MiscData.CheckState.Checked);
