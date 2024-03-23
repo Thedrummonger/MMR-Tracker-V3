@@ -166,7 +166,7 @@ namespace MMR_Tracker_V3
                 {
                     var DictEntry = Instance.LogicDictionary.EntranceList.First(x => x.Key == i.Id);
                     var ParentArea = Instance.EntrancePool.AreaList[DictEntry.Value.Area];
-                    var ExitObject = new EntranceData.EntranceRandoExit(ParentArea)
+                    var ExitObject = new EntranceData.EntranceRandoExit(Instance, ParentArea)
                     {
                         ID = i.Id,
                         ExitID = DictEntry.Value.Exit,

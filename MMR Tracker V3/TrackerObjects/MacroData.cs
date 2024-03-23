@@ -7,7 +7,6 @@ namespace MMR_Tracker_V3.TrackerObjects
     [Serializable]
     public class MacroObject(InstanceData.TrackerInstance Parent) : CheckableLocation(Parent)
     {
-        public bool Aquired { get; set; } = false;
         public bool TrickEnabled { get; set; } = true;
 
         public LogicDictionaryData.DictionaryMacroEntry GetDictEntry()

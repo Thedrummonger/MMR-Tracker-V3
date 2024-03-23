@@ -142941,6 +142941,50 @@
       "Priority": 1,
       "Conditionals": []
     },
+    "mode": {
+      "Value": "single",
+      "ValueList": {
+        "single": {
+          "ID": "single",
+          "Name": "Singleplayer",
+          "Actions": {
+            "LogicReplacements": [],
+            "AdditionalLogic": [],
+            "ItemNameOverride": {},
+            "ItemMaxAmountEdit": {},
+            "VariableEdit": {}
+          }
+        },
+        "coop": {
+          "ID": "coop",
+          "Name": "Co-op",
+          "Actions": {
+            "LogicReplacements": [],
+            "AdditionalLogic": [],
+            "ItemNameOverride": {},
+            "ItemMaxAmountEdit": {},
+            "VariableEdit": {}
+          }
+        },
+        "multi": {
+          "ID": "multi",
+          "Name": "Multiworld",
+          "Actions": {
+            "LogicReplacements": [],
+            "AdditionalLogic": [],
+            "ItemNameOverride": {},
+            "ItemMaxAmountEdit": {},
+            "VariableEdit": {}
+          }
+        }
+      },
+      "ID": "mode",
+      "Name": "Mode",
+      "Description": "The game mode.",
+      "SubCategory": "Main",
+      "Priority": 2,
+      "Conditionals": []
+    },
     "goal": {
       "Value": "both",
       "ValueList": {
@@ -143016,6 +143060,358 @@
       "Description": "The objective of the seed. The game will end when the specified goal is reached.",
       "SubCategory": "Main",
       "Priority": 5,
+      "Conditionals": []
+    },
+    "logic": {
+      "Value": "allLocations",
+      "ValueList": {
+        "allLocations": {
+          "ID": "allLocations",
+          "Name": "All Locations",
+          "Actions": {
+            "LogicReplacements": [],
+            "AdditionalLogic": [],
+            "ItemNameOverride": {},
+            "ItemMaxAmountEdit": {},
+            "VariableEdit": {}
+          }
+        },
+        "beatable": {
+          "ID": "beatable",
+          "Name": "Beatable Only",
+          "Actions": {
+            "LogicReplacements": [],
+            "AdditionalLogic": [],
+            "ItemNameOverride": {},
+            "ItemMaxAmountEdit": {},
+            "VariableEdit": {}
+          }
+        },
+        "none": {
+          "ID": "none",
+          "Name": "No Logic",
+          "Actions": {
+            "LogicReplacements": [],
+            "AdditionalLogic": [],
+            "ItemNameOverride": {},
+            "ItemMaxAmountEdit": {},
+            "VariableEdit": {}
+          }
+        }
+      },
+      "ID": "logic",
+      "Name": "Logic",
+      "Description": "The guarantees you have regarding reachability of locations.",
+      "SubCategory": "Main",
+      "Priority": 8,
+      "Conditionals": []
+    },
+    "itemPool": {
+      "Value": "normal",
+      "ValueList": {
+        "plentiful": {
+          "ID": "plentiful",
+          "Name": "Plentiful",
+          "Actions": {
+            "LogicReplacements": [],
+            "AdditionalLogic": [],
+            "ItemNameOverride": {},
+            "ItemMaxAmountEdit": {},
+            "VariableEdit": {}
+          }
+        },
+        "normal": {
+          "ID": "normal",
+          "Name": "Normal",
+          "Actions": {
+            "LogicReplacements": [],
+            "AdditionalLogic": [],
+            "ItemNameOverride": {},
+            "ItemMaxAmountEdit": {},
+            "VariableEdit": {}
+          }
+        },
+        "scarce": {
+          "ID": "scarce",
+          "Name": "Scarce",
+          "Actions": {
+            "LogicReplacements": [],
+            "AdditionalLogic": [],
+            "ItemNameOverride": {},
+            "ItemMaxAmountEdit": {},
+            "VariableEdit": {}
+          }
+        },
+        "minimal": {
+          "ID": "minimal",
+          "Name": "Minimal",
+          "Actions": {
+            "LogicReplacements": [],
+            "AdditionalLogic": [],
+            "ItemNameOverride": {},
+            "ItemMaxAmountEdit": {},
+            "VariableEdit": {}
+          }
+        },
+        "barren": {
+          "ID": "barren",
+          "Name": "Barren",
+          "Actions": {
+            "LogicReplacements": [],
+            "AdditionalLogic": [],
+            "ItemNameOverride": {},
+            "ItemMaxAmountEdit": {},
+            "VariableEdit": {}
+          }
+        }
+      },
+      "ID": "itemPool",
+      "Name": "Item Pool",
+      "Description": "Change the item pool.",
+      "SubCategory": "Main",
+      "Priority": 9,
+      "Conditionals": []
+    },
+    "songs": {
+      "Value": "songLocations",
+      "ValueList": {
+        "songLocations": {
+          "ID": "songLocations",
+          "Name": "Song Locations",
+          "Actions": {
+            "LogicReplacements": [],
+            "AdditionalLogic": [],
+            "ItemNameOverride": {},
+            "ItemMaxAmountEdit": {},
+            "VariableEdit": {}
+          }
+        },
+        "anywhere": {
+          "ID": "anywhere",
+          "Name": "Anywhere",
+          "Actions": {
+            "LogicReplacements": [],
+            "AdditionalLogic": [],
+            "ItemNameOverride": {},
+            "ItemMaxAmountEdit": {},
+            "VariableEdit": {}
+          }
+        }
+      },
+      "ID": "songs",
+      "Name": "Song Shuffle",
+      "Description": "Controls where songs can be obtained, in both games.",
+      "SubCategory": "Main/Shuffle",
+      "Priority": 14,
+      "Conditionals": []
+    },
+    "goldSkulltulaTokens": {
+      "Value": "none",
+      "ValueList": {
+        "none": {
+          "ID": "none",
+          "Name": "No Shuffle",
+          "Actions": {
+            "LogicReplacements": [],
+            "AdditionalLogic": [],
+            "ItemNameOverride": {},
+            "ItemMaxAmountEdit": {},
+            "VariableEdit": {}
+          }
+        },
+        "dungeons": {
+          "ID": "dungeons",
+          "Name": "Dungeons Only",
+          "Actions": {
+            "LogicReplacements": [],
+            "AdditionalLogic": [],
+            "ItemNameOverride": {},
+            "ItemMaxAmountEdit": {},
+            "VariableEdit": {}
+          }
+        },
+        "overworld": {
+          "ID": "overworld",
+          "Name": "Overworld Only",
+          "Actions": {
+            "LogicReplacements": [],
+            "AdditionalLogic": [],
+            "ItemNameOverride": {},
+            "ItemMaxAmountEdit": {},
+            "VariableEdit": {}
+          }
+        },
+        "all": {
+          "ID": "all",
+          "Name": "All Tokens",
+          "Actions": {
+            "LogicReplacements": [],
+            "AdditionalLogic": [],
+            "ItemNameOverride": {},
+            "ItemMaxAmountEdit": {},
+            "VariableEdit": {}
+          }
+        }
+      },
+      "ID": "goldSkulltulaTokens",
+      "Name": "Gold Skulltula Tokens Shuffle",
+      "Description": "Controls how Gold Skulltulas will be shuffled",
+      "SubCategory": "Main/Shuffle",
+      "Priority": 15,
+      "Conditionals": []
+    },
+    "housesSkulltulaTokens": {
+      "Value": "none",
+      "ValueList": {
+        "none": {
+          "ID": "none",
+          "Name": "No Shuffle",
+          "Actions": {
+            "LogicReplacements": [],
+            "AdditionalLogic": [],
+            "ItemNameOverride": {},
+            "ItemMaxAmountEdit": {},
+            "VariableEdit": {}
+          }
+        },
+        "cross": {
+          "ID": "cross",
+          "Name": "Gold Skulltulas Only",
+          "Actions": {
+            "LogicReplacements": [],
+            "AdditionalLogic": [],
+            "ItemNameOverride": {},
+            "ItemMaxAmountEdit": {},
+            "VariableEdit": {}
+          }
+        },
+        "all": {
+          "ID": "all",
+          "Name": "All Tokens",
+          "Actions": {
+            "LogicReplacements": [],
+            "AdditionalLogic": [],
+            "ItemNameOverride": {},
+            "ItemMaxAmountEdit": {},
+            "VariableEdit": {}
+          }
+        }
+      },
+      "ID": "housesSkulltulaTokens",
+      "Name": "House Skulltula Tokens Shuffle",
+      "Description": "Controls how Swamp and Ocean Skulltulas will be shuffled",
+      "SubCategory": "Main/Shuffle",
+      "Priority": 16,
+      "Conditionals": []
+    },
+    "tingleShuffle": {
+      "Value": "vanilla",
+      "ValueList": {
+        "vanilla": {
+          "ID": "vanilla",
+          "Name": "Vanilla",
+          "Actions": {
+            "LogicReplacements": [],
+            "AdditionalLogic": [],
+            "ItemNameOverride": {},
+            "ItemMaxAmountEdit": {},
+            "VariableEdit": {}
+          }
+        },
+        "anywhere": {
+          "ID": "anywhere",
+          "Name": "Anywhere",
+          "Actions": {
+            "LogicReplacements": [],
+            "AdditionalLogic": [],
+            "ItemNameOverride": {},
+            "ItemMaxAmountEdit": {},
+            "VariableEdit": {}
+          }
+        },
+        "starting": {
+          "ID": "starting",
+          "Name": "Starting Items",
+          "Actions": {
+            "LogicReplacements": [],
+            "AdditionalLogic": [],
+            "ItemNameOverride": {},
+            "ItemMaxAmountEdit": {},
+            "VariableEdit": {}
+          }
+        },
+        "removed": {
+          "ID": "removed",
+          "Name": "Removed",
+          "Actions": {
+            "LogicReplacements": [],
+            "AdditionalLogic": [],
+            "ItemNameOverride": {},
+            "ItemMaxAmountEdit": {},
+            "VariableEdit": {}
+          }
+        }
+      },
+      "ID": "tingleShuffle",
+      "Name": "Tingle Maps Shuffle",
+      "Description": "Controls where Tingle Maps are",
+      "SubCategory": "Main/Shuffle",
+      "Priority": 17,
+      "Conditionals": []
+    },
+    "mapCompassShuffle": {
+      "Value": "ownDungeon",
+      "ValueList": {
+        "ownDungeon": {
+          "ID": "ownDungeon",
+          "Name": "Own Dungeon",
+          "Actions": {
+            "LogicReplacements": [],
+            "AdditionalLogic": [],
+            "ItemNameOverride": {},
+            "ItemMaxAmountEdit": {},
+            "VariableEdit": {}
+          }
+        },
+        "anywhere": {
+          "ID": "anywhere",
+          "Name": "Anywhere",
+          "Actions": {
+            "LogicReplacements": [],
+            "AdditionalLogic": [],
+            "ItemNameOverride": {},
+            "ItemMaxAmountEdit": {},
+            "VariableEdit": {}
+          }
+        },
+        "starting": {
+          "ID": "starting",
+          "Name": "Starting Items",
+          "Actions": {
+            "LogicReplacements": [],
+            "AdditionalLogic": [],
+            "ItemNameOverride": {},
+            "ItemMaxAmountEdit": {},
+            "VariableEdit": {}
+          }
+        },
+        "removed": {
+          "ID": "removed",
+          "Name": "Removed",
+          "Actions": {
+            "LogicReplacements": [],
+            "AdditionalLogic": [],
+            "ItemNameOverride": {},
+            "ItemMaxAmountEdit": {},
+            "VariableEdit": {}
+          }
+        }
+      },
+      "ID": "mapCompassShuffle",
+      "Name": "Map / Compass Shuffle",
+      "Description": "Controls where Maps and Compasses can be",
+      "SubCategory": "Main/Shuffle",
+      "Priority": 18,
       "Conditionals": []
     },
     "smallKeyShuffleOot": {
@@ -143104,6 +143500,50 @@
       "Description": "Controls where Small Keys (for Dungeons) can be in MM",
       "SubCategory": "Main/Shuffle",
       "Priority": 20,
+      "Conditionals": []
+    },
+    "smallKeyShuffleHideout": {
+      "Value": "ownDungeon",
+      "ValueList": {
+        "vanilla": {
+          "ID": "vanilla",
+          "Name": "Vanilla",
+          "Actions": {
+            "LogicReplacements": [],
+            "AdditionalLogic": [],
+            "ItemNameOverride": {},
+            "ItemMaxAmountEdit": {},
+            "VariableEdit": {}
+          }
+        },
+        "ownDungeon": {
+          "ID": "ownDungeon",
+          "Name": "Own Dungeon",
+          "Actions": {
+            "LogicReplacements": [],
+            "AdditionalLogic": [],
+            "ItemNameOverride": {},
+            "ItemMaxAmountEdit": {},
+            "VariableEdit": {}
+          }
+        },
+        "anywhere": {
+          "ID": "anywhere",
+          "Name": "Anywhere",
+          "Actions": {
+            "LogicReplacements": [],
+            "AdditionalLogic": [],
+            "ItemNameOverride": {},
+            "ItemMaxAmountEdit": {},
+            "VariableEdit": {}
+          }
+        }
+      },
+      "ID": "smallKeyShuffleHideout",
+      "Name": "Hideout Small Key Shuffle",
+      "Description": "Controls where Hideout (Gerudo Fortress) Small Keys can be",
+      "SubCategory": "Main/Shuffle",
+      "Priority": 21,
       "Conditionals": []
     },
     "smallKeyShuffleChestGame": {
@@ -143238,6 +143678,204 @@
       "Priority": 24,
       "Conditionals": []
     },
+    "silverRupeeShuffle": {
+      "Value": "vanilla",
+      "ValueList": {
+        "vanilla": {
+          "ID": "vanilla",
+          "Name": "Vanilla",
+          "Actions": {
+            "LogicReplacements": [],
+            "AdditionalLogic": [],
+            "ItemNameOverride": {},
+            "ItemMaxAmountEdit": {},
+            "VariableEdit": {}
+          }
+        },
+        "ownDungeon": {
+          "ID": "ownDungeon",
+          "Name": "Own Dungeon",
+          "Actions": {
+            "LogicReplacements": [],
+            "AdditionalLogic": [],
+            "ItemNameOverride": {},
+            "ItemMaxAmountEdit": {},
+            "VariableEdit": {}
+          }
+        },
+        "anywhere": {
+          "ID": "anywhere",
+          "Name": "Anywhere",
+          "Actions": {
+            "LogicReplacements": [],
+            "AdditionalLogic": [],
+            "ItemNameOverride": {},
+            "ItemMaxAmountEdit": {},
+            "VariableEdit": {}
+          }
+        }
+      },
+      "ID": "silverRupeeShuffle",
+      "Name": "Silver Rupee Shuffle",
+      "Description": "Make silver rupees items that can be shuffled.",
+      "SubCategory": "Main/Shuffle",
+      "Priority": 27,
+      "Conditionals": []
+    },
+    "townFairyShuffle": {
+      "Value": "vanilla",
+      "ValueList": {
+        "vanilla": {
+          "ID": "vanilla",
+          "Name": "Vanilla",
+          "Actions": {
+            "LogicReplacements": [],
+            "AdditionalLogic": [],
+            "ItemNameOverride": {},
+            "ItemMaxAmountEdit": {},
+            "VariableEdit": {}
+          }
+        },
+        "anywhere": {
+          "ID": "anywhere",
+          "Name": "Anywhere",
+          "Actions": {
+            "LogicReplacements": [],
+            "AdditionalLogic": [],
+            "ItemNameOverride": {},
+            "ItemMaxAmountEdit": {},
+            "VariableEdit": {}
+          }
+        }
+      },
+      "ID": "townFairyShuffle",
+      "Name": "Town Stray Fairy Shuffle",
+      "Description": "Controls where the Clock Town Stray Fairy can be",
+      "SubCategory": "Main/Shuffle",
+      "Priority": 29,
+      "Conditionals": []
+    },
+    "strayFairyChestShuffle": {
+      "Value": "ownDungeon",
+      "ValueList": {
+        "starting": {
+          "ID": "starting",
+          "Name": "Starting",
+          "Actions": {
+            "LogicReplacements": [],
+            "AdditionalLogic": [],
+            "ItemNameOverride": {},
+            "ItemMaxAmountEdit": {},
+            "VariableEdit": {}
+          }
+        },
+        "vanilla": {
+          "ID": "vanilla",
+          "Name": "Vanilla",
+          "Actions": {
+            "LogicReplacements": [],
+            "AdditionalLogic": [],
+            "ItemNameOverride": {},
+            "ItemMaxAmountEdit": {},
+            "VariableEdit": {}
+          }
+        },
+        "ownDungeon": {
+          "ID": "ownDungeon",
+          "Name": "Own Dungeon",
+          "Actions": {
+            "LogicReplacements": [],
+            "AdditionalLogic": [],
+            "ItemNameOverride": {},
+            "ItemMaxAmountEdit": {},
+            "VariableEdit": {}
+          }
+        },
+        "anywhere": {
+          "ID": "anywhere",
+          "Name": "Anywhere",
+          "Actions": {
+            "LogicReplacements": [],
+            "AdditionalLogic": [],
+            "ItemNameOverride": {},
+            "ItemMaxAmountEdit": {},
+            "VariableEdit": {}
+          }
+        }
+      },
+      "ID": "strayFairyChestShuffle",
+      "Name": "Dungeon Chest Fairy Shuffle",
+      "Description": "Controls where the Dungeon Chest Stray Fairies can be",
+      "SubCategory": "Main/Shuffle",
+      "Priority": 30,
+      "Conditionals": []
+    },
+    "strayFairyOtherShuffle": {
+      "Value": "vanilla",
+      "ValueList": {
+        "removed": {
+          "ID": "removed",
+          "Name": "Removed",
+          "Actions": {
+            "LogicReplacements": [],
+            "AdditionalLogic": [],
+            "ItemNameOverride": {},
+            "ItemMaxAmountEdit": {},
+            "VariableEdit": {}
+          }
+        },
+        "starting": {
+          "ID": "starting",
+          "Name": "Starting",
+          "Actions": {
+            "LogicReplacements": [],
+            "AdditionalLogic": [],
+            "ItemNameOverride": {},
+            "ItemMaxAmountEdit": {},
+            "VariableEdit": {}
+          }
+        },
+        "vanilla": {
+          "ID": "vanilla",
+          "Name": "Vanilla",
+          "Actions": {
+            "LogicReplacements": [],
+            "AdditionalLogic": [],
+            "ItemNameOverride": {},
+            "ItemMaxAmountEdit": {},
+            "VariableEdit": {}
+          }
+        },
+        "ownDungeon": {
+          "ID": "ownDungeon",
+          "Name": "Own Dungeon",
+          "Actions": {
+            "LogicReplacements": [],
+            "AdditionalLogic": [],
+            "ItemNameOverride": {},
+            "ItemMaxAmountEdit": {},
+            "VariableEdit": {}
+          }
+        },
+        "anywhere": {
+          "ID": "anywhere",
+          "Name": "Anywhere",
+          "Actions": {
+            "LogicReplacements": [],
+            "AdditionalLogic": [],
+            "ItemNameOverride": {},
+            "ItemMaxAmountEdit": {},
+            "VariableEdit": {}
+          }
+        }
+      },
+      "ID": "strayFairyOtherShuffle",
+      "Name": "Dungeon Freestanding Fairy Shuffle",
+      "Description": "Controls where the Dungeon Freestanding Stray Fairies can be",
+      "SubCategory": "Main/Shuffle",
+      "Priority": 31,
+      "Conditionals": []
+    },
     "ganonBossKey": {
       "Value": "removed",
       "ValueList": {
@@ -143302,6 +143940,380 @@
       "Description": "Controls where Ganon Boss Key should be",
       "SubCategory": "Main/Shuffle",
       "Priority": 32,
+      "Conditionals": []
+    },
+    "dungeonRewardShuffle": {
+      "Value": "dungeonBlueWarps",
+      "ValueList": {
+        "dungeonBlueWarps": {
+          "ID": "dungeonBlueWarps",
+          "Name": "Dungeon Blue Warps",
+          "Actions": {
+            "LogicReplacements": [],
+            "AdditionalLogic": [],
+            "ItemNameOverride": {},
+            "ItemMaxAmountEdit": {},
+            "VariableEdit": {}
+          }
+        },
+        "dungeonsLimited": {
+          "ID": "dungeonsLimited",
+          "Name": "Dungeons (Max one per dungeon)",
+          "Actions": {
+            "LogicReplacements": [],
+            "AdditionalLogic": [],
+            "ItemNameOverride": {},
+            "ItemMaxAmountEdit": {},
+            "VariableEdit": {}
+          }
+        },
+        "dungeons": {
+          "ID": "dungeons",
+          "Name": "Dungeons (Unrestricted)",
+          "Actions": {
+            "LogicReplacements": [],
+            "AdditionalLogic": [],
+            "ItemNameOverride": {},
+            "ItemMaxAmountEdit": {},
+            "VariableEdit": {}
+          }
+        },
+        "anywhere": {
+          "ID": "anywhere",
+          "Name": "Anywhere",
+          "Actions": {
+            "LogicReplacements": [],
+            "AdditionalLogic": [],
+            "ItemNameOverride": {},
+            "ItemMaxAmountEdit": {},
+            "VariableEdit": {}
+          }
+        }
+      },
+      "ID": "dungeonRewardShuffle",
+      "Name": "Dungeon Reward Shuffle",
+      "Description": "Controls where the dungeons rewards should be",
+      "SubCategory": "Main/Shuffle",
+      "Priority": 33,
+      "Conditionals": []
+    },
+    "shopShuffleOot": {
+      "Value": "none",
+      "ValueList": {
+        "none": {
+          "ID": "none",
+          "Name": "None",
+          "Actions": {
+            "LogicReplacements": [],
+            "AdditionalLogic": [],
+            "ItemNameOverride": {},
+            "ItemMaxAmountEdit": {},
+            "VariableEdit": {}
+          }
+        },
+        "full": {
+          "ID": "full",
+          "Name": "Full",
+          "Actions": {
+            "LogicReplacements": [],
+            "AdditionalLogic": [],
+            "ItemNameOverride": {},
+            "ItemMaxAmountEdit": {},
+            "VariableEdit": {}
+          }
+        }
+      },
+      "ID": "shopShuffleOot",
+      "Name": "Shop Shuffle (OoT)",
+      "Description": "Controls whether or not shops in OOT should have their items shuffled",
+      "SubCategory": "Main/Shuffle",
+      "Priority": 38,
+      "Conditionals": []
+    },
+    "shopShuffleMm": {
+      "Value": "none",
+      "ValueList": {
+        "none": {
+          "ID": "none",
+          "Name": "None",
+          "Actions": {
+            "LogicReplacements": [],
+            "AdditionalLogic": [],
+            "ItemNameOverride": {},
+            "ItemMaxAmountEdit": {},
+            "VariableEdit": {}
+          }
+        },
+        "full": {
+          "ID": "full",
+          "Name": "Full",
+          "Actions": {
+            "LogicReplacements": [],
+            "AdditionalLogic": [],
+            "ItemNameOverride": {},
+            "ItemMaxAmountEdit": {},
+            "VariableEdit": {}
+          }
+        }
+      },
+      "ID": "shopShuffleMm",
+      "Name": "Shop Shuffle (MM)",
+      "Description": "Controls whether or not shops in MM should have their items shuffled. If not, the Bomb Bag purchases will still be shuffled",
+      "SubCategory": "Main/Shuffle",
+      "Priority": 39,
+      "Conditionals": []
+    },
+    "owlShuffle": {
+      "Value": "none",
+      "ValueList": {
+        "none": {
+          "ID": "none",
+          "Name": "None",
+          "Actions": {
+            "LogicReplacements": [],
+            "AdditionalLogic": [],
+            "ItemNameOverride": {},
+            "ItemMaxAmountEdit": {},
+            "VariableEdit": {}
+          }
+        },
+        "anywhere": {
+          "ID": "anywhere",
+          "Name": "Anywhere",
+          "Actions": {
+            "LogicReplacements": [],
+            "AdditionalLogic": [],
+            "ItemNameOverride": {},
+            "ItemMaxAmountEdit": {},
+            "VariableEdit": {}
+          }
+        }
+      },
+      "ID": "owlShuffle",
+      "Name": "Owl Statue Shuffle",
+      "Description": "Make owl statue items that can be shuffled.",
+      "SubCategory": "Main/Shuffle",
+      "Priority": 40,
+      "Conditionals": []
+    },
+    "priceOotShops": {
+      "Value": "vanilla",
+      "ValueList": {
+        "affordable": {
+          "ID": "affordable",
+          "Name": "Affordable",
+          "Actions": {
+            "LogicReplacements": [],
+            "AdditionalLogic": [],
+            "ItemNameOverride": {},
+            "ItemMaxAmountEdit": {},
+            "VariableEdit": {}
+          }
+        },
+        "vanilla": {
+          "ID": "vanilla",
+          "Name": "Vanilla",
+          "Actions": {
+            "LogicReplacements": [],
+            "AdditionalLogic": [],
+            "ItemNameOverride": {},
+            "ItemMaxAmountEdit": {},
+            "VariableEdit": {}
+          }
+        },
+        "weighted": {
+          "ID": "weighted",
+          "Name": "Weighted Random",
+          "Actions": {
+            "LogicReplacements": [],
+            "AdditionalLogic": [],
+            "ItemNameOverride": {},
+            "ItemMaxAmountEdit": {},
+            "VariableEdit": {}
+          }
+        },
+        "random": {
+          "ID": "random",
+          "Name": "Random",
+          "Actions": {
+            "LogicReplacements": [],
+            "AdditionalLogic": [],
+            "ItemNameOverride": {},
+            "ItemMaxAmountEdit": {},
+            "VariableEdit": {}
+          }
+        }
+      },
+      "ID": "priceOotShops",
+      "Name": "OoT Shops Prices",
+      "Description": "Sets the price of items inside OoT shops",
+      "SubCategory": "Main/Prices",
+      "Priority": 59,
+      "Conditionals": []
+    },
+    "priceOotScrubs": {
+      "Value": "vanilla",
+      "ValueList": {
+        "affordable": {
+          "ID": "affordable",
+          "Name": "Affordable",
+          "Actions": {
+            "LogicReplacements": [],
+            "AdditionalLogic": [],
+            "ItemNameOverride": {},
+            "ItemMaxAmountEdit": {},
+            "VariableEdit": {}
+          }
+        },
+        "vanilla": {
+          "ID": "vanilla",
+          "Name": "Vanilla",
+          "Actions": {
+            "LogicReplacements": [],
+            "AdditionalLogic": [],
+            "ItemNameOverride": {},
+            "ItemMaxAmountEdit": {},
+            "VariableEdit": {}
+          }
+        },
+        "weighted": {
+          "ID": "weighted",
+          "Name": "Weighted Random",
+          "Actions": {
+            "LogicReplacements": [],
+            "AdditionalLogic": [],
+            "ItemNameOverride": {},
+            "ItemMaxAmountEdit": {},
+            "VariableEdit": {}
+          }
+        },
+        "random": {
+          "ID": "random",
+          "Name": "Random",
+          "Actions": {
+            "LogicReplacements": [],
+            "AdditionalLogic": [],
+            "ItemNameOverride": {},
+            "ItemMaxAmountEdit": {},
+            "VariableEdit": {}
+          }
+        }
+      },
+      "ID": "priceOotScrubs",
+      "Name": "OoT Scrubs Prices",
+      "Description": "Sets the price of items sold by OoT scrubs",
+      "SubCategory": "Main/Prices",
+      "Priority": 60,
+      "Conditionals": []
+    },
+    "priceMmShops": {
+      "Value": "vanilla",
+      "ValueList": {
+        "affordable": {
+          "ID": "affordable",
+          "Name": "Affordable",
+          "Actions": {
+            "LogicReplacements": [],
+            "AdditionalLogic": [],
+            "ItemNameOverride": {},
+            "ItemMaxAmountEdit": {},
+            "VariableEdit": {}
+          }
+        },
+        "vanilla": {
+          "ID": "vanilla",
+          "Name": "Vanilla",
+          "Actions": {
+            "LogicReplacements": [],
+            "AdditionalLogic": [],
+            "ItemNameOverride": {},
+            "ItemMaxAmountEdit": {},
+            "VariableEdit": {}
+          }
+        },
+        "weighted": {
+          "ID": "weighted",
+          "Name": "Weighted Random",
+          "Actions": {
+            "LogicReplacements": [],
+            "AdditionalLogic": [],
+            "ItemNameOverride": {},
+            "ItemMaxAmountEdit": {},
+            "VariableEdit": {}
+          }
+        },
+        "random": {
+          "ID": "random",
+          "Name": "Random",
+          "Actions": {
+            "LogicReplacements": [],
+            "AdditionalLogic": [],
+            "ItemNameOverride": {},
+            "ItemMaxAmountEdit": {},
+            "VariableEdit": {}
+          }
+        }
+      },
+      "ID": "priceMmShops",
+      "Name": "MM Shops Prices",
+      "Description": "Sets the price of items sold inside MM shops",
+      "SubCategory": "Main/Prices",
+      "Priority": 61,
+      "Conditionals": []
+    },
+    "priceMmTingle": {
+      "Value": "vanilla",
+      "ValueList": {
+        "affordable": {
+          "ID": "affordable",
+          "Name": "Affordable",
+          "Actions": {
+            "LogicReplacements": [],
+            "AdditionalLogic": [],
+            "ItemNameOverride": {},
+            "ItemMaxAmountEdit": {},
+            "VariableEdit": {}
+          }
+        },
+        "vanilla": {
+          "ID": "vanilla",
+          "Name": "Vanilla",
+          "Actions": {
+            "LogicReplacements": [],
+            "AdditionalLogic": [],
+            "ItemNameOverride": {},
+            "ItemMaxAmountEdit": {},
+            "VariableEdit": {}
+          }
+        },
+        "weighted": {
+          "ID": "weighted",
+          "Name": "Weighted Random",
+          "Actions": {
+            "LogicReplacements": [],
+            "AdditionalLogic": [],
+            "ItemNameOverride": {},
+            "ItemMaxAmountEdit": {},
+            "VariableEdit": {}
+          }
+        },
+        "random": {
+          "ID": "random",
+          "Name": "Random",
+          "Actions": {
+            "LogicReplacements": [],
+            "AdditionalLogic": [],
+            "ItemNameOverride": {},
+            "ItemMaxAmountEdit": {},
+            "VariableEdit": {}
+          }
+        }
+      },
+      "ID": "priceMmTingle",
+      "Name": "MM Tingle Prices",
+      "Description": "Sets the price of items sold by Tingle",
+      "SubCategory": "Main/Prices",
+      "Priority": 62,
       "Conditionals": []
     },
     "moonCrash": {
@@ -143865,6 +144877,204 @@
       "Priority": 93,
       "Conditionals": []
     },
+    "csmc": {
+      "Value": "always",
+      "ValueList": {
+        "never": {
+          "ID": "never",
+          "Name": "Never",
+          "Actions": {
+            "LogicReplacements": [],
+            "AdditionalLogic": [],
+            "ItemNameOverride": {},
+            "ItemMaxAmountEdit": {},
+            "VariableEdit": {}
+          }
+        },
+        "agony": {
+          "ID": "agony",
+          "Name": "Stone of Agony",
+          "Actions": {
+            "LogicReplacements": [],
+            "AdditionalLogic": [],
+            "ItemNameOverride": {},
+            "ItemMaxAmountEdit": {},
+            "VariableEdit": {}
+          }
+        },
+        "always": {
+          "ID": "always",
+          "Name": "Always",
+          "Actions": {
+            "LogicReplacements": [],
+            "AdditionalLogic": [],
+            "ItemNameOverride": {},
+            "ItemMaxAmountEdit": {},
+            "VariableEdit": {}
+          }
+        }
+      },
+      "ID": "csmc",
+      "Name": "Container Appearance Matches Content",
+      "Description": "Modifies the chest, grass, and pot appearance so that they match their content. Works for unique items, keys, fairies, and souls. Grass and pots will otherwise always be gold if the item has not been collected",
+      "SubCategory": "Main/Misc",
+      "Priority": 94,
+      "Conditionals": []
+    },
+    "blastMaskCooldown": {
+      "Value": "default",
+      "ValueList": {
+        "instant": {
+          "ID": "instant",
+          "Name": "Instant (0s)",
+          "Actions": {
+            "LogicReplacements": [],
+            "AdditionalLogic": [],
+            "ItemNameOverride": {},
+            "ItemMaxAmountEdit": {},
+            "VariableEdit": {}
+          }
+        },
+        "veryshort": {
+          "ID": "veryshort",
+          "Name": "Very Short (~2s)",
+          "Actions": {
+            "LogicReplacements": [],
+            "AdditionalLogic": [],
+            "ItemNameOverride": {},
+            "ItemMaxAmountEdit": {},
+            "VariableEdit": {}
+          }
+        },
+        "short": {
+          "ID": "short",
+          "Name": "Short (~6s)",
+          "Actions": {
+            "LogicReplacements": [],
+            "AdditionalLogic": [],
+            "ItemNameOverride": {},
+            "ItemMaxAmountEdit": {},
+            "VariableEdit": {}
+          }
+        },
+        "default": {
+          "ID": "default",
+          "Name": "Default (~15s)",
+          "Actions": {
+            "LogicReplacements": [],
+            "AdditionalLogic": [],
+            "ItemNameOverride": {},
+            "ItemMaxAmountEdit": {},
+            "VariableEdit": {}
+          }
+        },
+        "long": {
+          "ID": "long",
+          "Name": "Long (~25s)",
+          "Actions": {
+            "LogicReplacements": [],
+            "AdditionalLogic": [],
+            "ItemNameOverride": {},
+            "ItemMaxAmountEdit": {},
+            "VariableEdit": {}
+          }
+        },
+        "verylong": {
+          "ID": "verylong",
+          "Name": "Very Long (~51s)",
+          "Actions": {
+            "LogicReplacements": [],
+            "AdditionalLogic": [],
+            "ItemNameOverride": {},
+            "ItemMaxAmountEdit": {},
+            "VariableEdit": {}
+          }
+        }
+      },
+      "ID": "blastMaskCooldown",
+      "Name": "Blast Mask Cooldown",
+      "Description": "Changes the cooldown between each explostion of the Blast Mask",
+      "SubCategory": "Main/Misc",
+      "Priority": 97,
+      "Conditionals": []
+    },
+    "clockSpeed": {
+      "Value": "default",
+      "ValueList": {
+        "veryslow": {
+          "ID": "veryslow",
+          "Name": "Very Slow",
+          "Actions": {
+            "LogicReplacements": [],
+            "AdditionalLogic": [],
+            "ItemNameOverride": {},
+            "ItemMaxAmountEdit": {},
+            "VariableEdit": {}
+          }
+        },
+        "slow": {
+          "ID": "slow",
+          "Name": "Slow",
+          "Actions": {
+            "LogicReplacements": [],
+            "AdditionalLogic": [],
+            "ItemNameOverride": {},
+            "ItemMaxAmountEdit": {},
+            "VariableEdit": {}
+          }
+        },
+        "default": {
+          "ID": "default",
+          "Name": "Default",
+          "Actions": {
+            "LogicReplacements": [],
+            "AdditionalLogic": [],
+            "ItemNameOverride": {},
+            "ItemMaxAmountEdit": {},
+            "VariableEdit": {}
+          }
+        },
+        "fast": {
+          "ID": "fast",
+          "Name": "Fast",
+          "Actions": {
+            "LogicReplacements": [],
+            "AdditionalLogic": [],
+            "ItemNameOverride": {},
+            "ItemMaxAmountEdit": {},
+            "VariableEdit": {}
+          }
+        },
+        "veryfast": {
+          "ID": "veryfast",
+          "Name": "Very Fast",
+          "Actions": {
+            "LogicReplacements": [],
+            "AdditionalLogic": [],
+            "ItemNameOverride": {},
+            "ItemMaxAmountEdit": {},
+            "VariableEdit": {}
+          }
+        },
+        "superfast": {
+          "ID": "superfast",
+          "Name": "Super Fast",
+          "Actions": {
+            "LogicReplacements": [],
+            "AdditionalLogic": [],
+            "ItemNameOverride": {},
+            "ItemMaxAmountEdit": {},
+            "VariableEdit": {}
+          }
+        }
+      },
+      "ID": "clockSpeed",
+      "Name": "Clock Speed",
+      "Description": "Alters the speed of the clock. Some options may render seeds unbeatable due to being unable to do time-related checks",
+      "SubCategory": "Main/Misc",
+      "Priority": 98,
+      "Conditionals": []
+    },
     "autoInvert": {
       "Value": "never",
       "ValueList": {
@@ -144151,6 +145361,39 @@
       "Priority": 114,
       "Conditionals": []
     },
+    "progressiveGFS": {
+      "Value": "separate",
+      "ValueList": {
+        "separate": {
+          "ID": "separate",
+          "Name": "Separate",
+          "Actions": {
+            "LogicReplacements": [],
+            "AdditionalLogic": [],
+            "ItemNameOverride": {},
+            "ItemMaxAmountEdit": {},
+            "VariableEdit": {}
+          }
+        },
+        "progressive": {
+          "ID": "progressive",
+          "Name": "Progressive",
+          "Actions": {
+            "LogicReplacements": [],
+            "AdditionalLogic": [],
+            "ItemNameOverride": {},
+            "ItemMaxAmountEdit": {},
+            "VariableEdit": {}
+          }
+        }
+      },
+      "ID": "progressiveGFS",
+      "Name": "MM Great Fairy Sword",
+      "Description": "Controls whether Great Fairy Sword is included in sword progression",
+      "SubCategory": "Items/Progressive",
+      "Priority": 115,
+      "Conditionals": []
+    },
     "progressiveGoronLullaby": {
       "Value": "progressive",
       "ValueList": {
@@ -144404,6 +145647,50 @@
       "Priority": 220,
       "Conditionals": []
     },
+    "erIndoors": {
+      "Value": "none",
+      "ValueList": {
+        "none": {
+          "ID": "none",
+          "Name": "None",
+          "Actions": {
+            "LogicReplacements": [],
+            "AdditionalLogic": [],
+            "ItemNameOverride": {},
+            "ItemMaxAmountEdit": {},
+            "VariableEdit": {}
+          }
+        },
+        "ownGame": {
+          "ID": "ownGame",
+          "Name": "Own Game",
+          "Actions": {
+            "LogicReplacements": [],
+            "AdditionalLogic": [],
+            "ItemNameOverride": {},
+            "ItemMaxAmountEdit": {},
+            "VariableEdit": {}
+          }
+        },
+        "full": {
+          "ID": "full",
+          "Name": "Full",
+          "Actions": {
+            "LogicReplacements": [],
+            "AdditionalLogic": [],
+            "ItemNameOverride": {},
+            "ItemMaxAmountEdit": {},
+            "VariableEdit": {}
+          }
+        }
+      },
+      "ID": "erIndoors",
+      "Name": "Shuffle Interiors",
+      "Description": "Enable the ability to shuffle interiors in their own game or across both games.",
+      "SubCategory": "Entrances",
+      "Priority": 223,
+      "Conditionals": []
+    },
     "erWarps": {
       "Value": "none",
       "ValueList": {
@@ -144468,6 +145755,50 @@
       "Description": "Allows separate shuffling of the warp songs and soaring spots. This setting is disabled if both are selected in \"Shuffle One-Way Entrances\".",
       "SubCategory": "Entrances",
       "Priority": 226,
+      "Conditionals": []
+    },
+    "erOneWays": {
+      "Value": "none",
+      "ValueList": {
+        "none": {
+          "ID": "none",
+          "Name": "None",
+          "Actions": {
+            "LogicReplacements": [],
+            "AdditionalLogic": [],
+            "ItemNameOverride": {},
+            "ItemMaxAmountEdit": {},
+            "VariableEdit": {}
+          }
+        },
+        "ownGame": {
+          "ID": "ownGame",
+          "Name": "Own Game",
+          "Actions": {
+            "LogicReplacements": [],
+            "AdditionalLogic": [],
+            "ItemNameOverride": {},
+            "ItemMaxAmountEdit": {},
+            "VariableEdit": {}
+          }
+        },
+        "full": {
+          "ID": "full",
+          "Name": "Full",
+          "Actions": {
+            "LogicReplacements": [],
+            "AdditionalLogic": [],
+            "ItemNameOverride": {},
+            "ItemMaxAmountEdit": {},
+            "VariableEdit": {}
+          }
+        }
+      },
+      "ID": "erOneWays",
+      "Name": "Shuffle One-Way Entrances",
+      "Description": "Enables the option of shuffling various one-way entrances.",
+      "SubCategory": "Entrances",
+      "Priority": 227,
       "Conditionals": []
     }
   },
@@ -145176,6 +146507,316 @@
     }
   },
   "ToggleOptions": {
+    "distinctWorlds": {
+      "Value": "False",
+      "Enabled": {
+        "ID": "True",
+        "Name": "True",
+        "Actions": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {}
+        }
+      },
+      "Disabled": {
+        "ID": "False",
+        "Name": "False",
+        "Actions": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {}
+        }
+      },
+      "ID": "distinctWorlds",
+      "Name": "Distinct Worlds",
+      "Description": "For multiworld, with settings that involve randomness, should the worlds have distinct properties (ER, MQ, price rando...).",
+      "SubCategory": "Main",
+      "Priority": 4,
+      "Conditionals": []
+    },
+    "generateSpoilerLog": {
+      "Value": "True",
+      "Enabled": {
+        "ID": "True",
+        "Name": "True",
+        "Actions": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {}
+        }
+      },
+      "Disabled": {
+        "ID": "False",
+        "Name": "False",
+        "Actions": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {}
+        }
+      },
+      "ID": "generateSpoilerLog",
+      "Name": "Generate Spoiler Log",
+      "Description": "Generate an extra downloadable text file with the location of every item in the seed as well as other information. It is recommended to enable this option.",
+      "SubCategory": "Main",
+      "Priority": 10,
+      "Conditionals": []
+    },
+    "probabilisticFoolish": {
+      "Value": "True",
+      "Enabled": {
+        "ID": "True",
+        "Name": "True",
+        "Actions": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {}
+        }
+      },
+      "Disabled": {
+        "ID": "False",
+        "Name": "False",
+        "Actions": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {}
+        }
+      },
+      "ID": "probabilisticFoolish",
+      "Name": "Probabilistic Foolish Hints",
+      "Description": "If you don't know what this is, leave it ON",
+      "SubCategory": "Main",
+      "Priority": 11,
+      "Conditionals": []
+    },
+    "noPlandoHints": {
+      "Value": "True",
+      "Enabled": {
+        "ID": "True",
+        "Name": "True",
+        "Actions": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {}
+        }
+      },
+      "Disabled": {
+        "ID": "False",
+        "Name": "False",
+        "Actions": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {}
+        }
+      },
+      "ID": "noPlandoHints",
+      "Name": "No Plando Hints",
+      "Description": "Prevents items that are part of a plando from being hinted",
+      "SubCategory": "Main",
+      "Priority": 12,
+      "Conditionals": []
+    },
+    "hintImportance": {
+      "Value": "False",
+      "Enabled": {
+        "ID": "True",
+        "Name": "True",
+        "Actions": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {}
+        }
+      },
+      "Disabled": {
+        "ID": "False",
+        "Name": "False",
+        "Actions": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {}
+        }
+      },
+      "ID": "hintImportance",
+      "Name": "Hint Importance",
+      "Description": "Hints will tell if an item is foolish, sometimes required, or always required",
+      "SubCategory": "Main",
+      "Priority": 13,
+      "Conditionals": []
+    },
+    "scrubShuffleOot": {
+      "Value": "False",
+      "Enabled": {
+        "ID": "True",
+        "Name": "True",
+        "Actions": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {}
+        }
+      },
+      "Disabled": {
+        "ID": "False",
+        "Name": "False",
+        "Actions": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {}
+        }
+      },
+      "ID": "scrubShuffleOot",
+      "Name": "Scrub Shuffle (OoT)",
+      "Description": "Controls whether or not Business Scrubs are shuffled (OoT). If not, the one in Hyrule Field by Lake Hylia's fences, the one by the Bridge in Lost Woods, and the front one in the grotto near Sacred Forest Meadow will still be shuffled",
+      "SubCategory": "Main/Shuffle",
+      "Priority": 34,
+      "Conditionals": []
+    },
+    "scrubShuffleMm": {
+      "Value": "False",
+      "Enabled": {
+        "ID": "True",
+        "Name": "True",
+        "Actions": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {}
+        }
+      },
+      "Disabled": {
+        "ID": "False",
+        "Name": "False",
+        "Actions": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {}
+        }
+      },
+      "ID": "scrubShuffleMm",
+      "Name": "Scrub Shuffle (MM)",
+      "Description": "Controls whether or not Business Scrubs are shuffled (MM). If not, the one in Termina Field near the Observatory and the one in Goron Village will still be shuffled",
+      "SubCategory": "Main/Shuffle",
+      "Priority": 35,
+      "Conditionals": []
+    },
+    "cowShuffleOot": {
+      "Value": "False",
+      "Enabled": {
+        "ID": "True",
+        "Name": "True",
+        "Actions": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {}
+        }
+      },
+      "Disabled": {
+        "ID": "False",
+        "Name": "False",
+        "Actions": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {}
+        }
+      },
+      "ID": "cowShuffleOot",
+      "Name": "Cow Shuffle (OoT)",
+      "Description": "Controls whether or not playing Epona's Song near cows will give an item (OOT)",
+      "SubCategory": "Main/Shuffle",
+      "Priority": 36,
+      "Conditionals": []
+    },
+    "cowShuffleMm": {
+      "Value": "False",
+      "Enabled": {
+        "ID": "True",
+        "Name": "True",
+        "Actions": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {}
+        }
+      },
+      "Disabled": {
+        "ID": "False",
+        "Name": "False",
+        "Actions": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {}
+        }
+      },
+      "ID": "cowShuffleMm",
+      "Name": "Cow Shuffle (MM)",
+      "Description": "Controls whether or not playing Epona's Song near cows will give an item (MM)",
+      "SubCategory": "Main/Shuffle",
+      "Priority": 37,
+      "Conditionals": []
+    },
+    "shufflePotsOot": {
+      "Value": "False",
+      "Enabled": {
+        "ID": "True",
+        "Name": "True",
+        "Actions": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {}
+        }
+      },
+      "Disabled": {
+        "ID": "False",
+        "Name": "False",
+        "Actions": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {}
+        }
+      },
+      "ID": "shufflePotsOot",
+      "Name": "Pots Shuffle (OoT)",
+      "Description": "Controls whether or not the pots are shuffled (OoT).",
+      "SubCategory": "Main/Shuffle",
+      "Priority": 41,
+      "Conditionals": []
+    },
     "shufflePotsMm": {
       "Value": "False",
       "Enabled": {
@@ -145207,6 +146848,316 @@
       "Priority": 42,
       "Conditionals": []
     },
+    "shuffleGrassOot": {
+      "Value": "False",
+      "Enabled": {
+        "ID": "True",
+        "Name": "True",
+        "Actions": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {}
+        }
+      },
+      "Disabled": {
+        "ID": "False",
+        "Name": "False",
+        "Actions": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {}
+        }
+      },
+      "ID": "shuffleGrassOot",
+      "Name": "Grass Shuffle (OoT)",
+      "Description": "Controls whether or not the grass is shuffled (OoT)",
+      "SubCategory": "Main/Shuffle",
+      "Priority": 43,
+      "Conditionals": []
+    },
+    "shuffleGrassMm": {
+      "Value": "False",
+      "Enabled": {
+        "ID": "True",
+        "Name": "True",
+        "Actions": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {}
+        }
+      },
+      "Disabled": {
+        "ID": "False",
+        "Name": "False",
+        "Actions": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {}
+        }
+      },
+      "ID": "shuffleGrassMm",
+      "Name": "Grass Shuffle (MM)",
+      "Description": "Controls whether or not the grass is shuffled (MM)",
+      "SubCategory": "Main/Shuffle",
+      "Priority": 44,
+      "Conditionals": []
+    },
+    "shuffleFreeRupeesOot": {
+      "Value": "False",
+      "Enabled": {
+        "ID": "True",
+        "Name": "True",
+        "Actions": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {}
+        }
+      },
+      "Disabled": {
+        "ID": "False",
+        "Name": "False",
+        "Actions": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {}
+        }
+      },
+      "ID": "shuffleFreeRupeesOot",
+      "Name": "Freestanding Rupees Shuffle (OoT)",
+      "Description": "Controls whether or not the freestanding rupees are shuffled (OoT)",
+      "SubCategory": "Main/Shuffle",
+      "Priority": 45,
+      "Conditionals": []
+    },
+    "shuffleFreeRupeesMm": {
+      "Value": "False",
+      "Enabled": {
+        "ID": "True",
+        "Name": "True",
+        "Actions": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {}
+        }
+      },
+      "Disabled": {
+        "ID": "False",
+        "Name": "False",
+        "Actions": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {}
+        }
+      },
+      "ID": "shuffleFreeRupeesMm",
+      "Name": "Freestanding Rupees Shuffle (MM)",
+      "Description": "Controls whether or not the freestanding rupees are shuffled (MM)",
+      "SubCategory": "Main/Shuffle",
+      "Priority": 46,
+      "Conditionals": []
+    },
+    "shuffleFreeHeartsOot": {
+      "Value": "False",
+      "Enabled": {
+        "ID": "True",
+        "Name": "True",
+        "Actions": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {}
+        }
+      },
+      "Disabled": {
+        "ID": "False",
+        "Name": "False",
+        "Actions": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {}
+        }
+      },
+      "ID": "shuffleFreeHeartsOot",
+      "Name": "Freestanding Hearts Shuffle (OoT)",
+      "Description": "Controls whether or not the freestanding hearts are shuffled (OoT)",
+      "SubCategory": "Main/Shuffle",
+      "Priority": 47,
+      "Conditionals": []
+    },
+    "shuffleFreeHeartsMm": {
+      "Value": "False",
+      "Enabled": {
+        "ID": "True",
+        "Name": "True",
+        "Actions": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {}
+        }
+      },
+      "Disabled": {
+        "ID": "False",
+        "Name": "False",
+        "Actions": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {}
+        }
+      },
+      "ID": "shuffleFreeHeartsMm",
+      "Name": "Freestanding Hearts Shuffle (MM)",
+      "Description": "Controls whether or not the freestanding hearts are shuffled (MM)",
+      "SubCategory": "Main/Shuffle",
+      "Priority": 48,
+      "Conditionals": []
+    },
+    "shuffleOcarinasOot": {
+      "Value": "True",
+      "Enabled": {
+        "ID": "True",
+        "Name": "True",
+        "Actions": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {}
+        }
+      },
+      "Disabled": {
+        "ID": "False",
+        "Name": "False",
+        "Actions": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {}
+        }
+      },
+      "ID": "shuffleOcarinasOot",
+      "Name": "Ocarina Shuffle (OoT)",
+      "Description": "Controls whether or not the two Ocarinas in OoT are shuffled",
+      "SubCategory": "Main/Shuffle",
+      "Priority": 49,
+      "Conditionals": []
+    },
+    "shuffleMasterSword": {
+      "Value": "True",
+      "Enabled": {
+        "ID": "True",
+        "Name": "True",
+        "Actions": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {}
+        }
+      },
+      "Disabled": {
+        "ID": "False",
+        "Name": "False",
+        "Actions": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {}
+        }
+      },
+      "ID": "shuffleMasterSword",
+      "Name": "Master Sword Shuffle",
+      "Description": "Controls whether or not the Master Sword is shuffled",
+      "SubCategory": "Main/Shuffle",
+      "Priority": 50,
+      "Conditionals": []
+    },
+    "shuffleGerudoCard": {
+      "Value": "True",
+      "Enabled": {
+        "ID": "True",
+        "Name": "True",
+        "Actions": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {}
+        }
+      },
+      "Disabled": {
+        "ID": "False",
+        "Name": "False",
+        "Actions": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {}
+        }
+      },
+      "ID": "shuffleGerudoCard",
+      "Name": "Gerudo Card Shuffle",
+      "Description": "Controls whether or not the Gerudo Membership Card is shuffled",
+      "SubCategory": "Main/Shuffle",
+      "Priority": 51,
+      "Conditionals": []
+    },
+    "shuffleMerchantsMm": {
+      "Value": "False",
+      "Enabled": {
+        "ID": "True",
+        "Name": "True",
+        "Actions": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {}
+        }
+      },
+      "Disabled": {
+        "ID": "False",
+        "Name": "False",
+        "Actions": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {}
+        }
+      },
+      "ID": "shuffleMerchantsMm",
+      "Name": "Merchants Shuffle (MM)",
+      "Description": "Controls whether or not the Milk Bar and Gorman milk purchases in MM are shuffled",
+      "SubCategory": "Main/Shuffle",
+      "Priority": 52,
+      "Conditionals": []
+    },
     "pondFishShuffle": {
       "Value": "False",
       "Enabled": {
@@ -145236,6 +147187,161 @@
       "Description": "Controls whether or not the Fish (and the Loaches) in the Fishing Pond are shuffled amongst all the items.",
       "SubCategory": "Main/Shuffle",
       "Priority": 53,
+      "Conditionals": []
+    },
+    "divingGameRupeeShuffle": {
+      "Value": "False",
+      "Enabled": {
+        "ID": "True",
+        "Name": "True",
+        "Actions": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {}
+        }
+      },
+      "Disabled": {
+        "ID": "False",
+        "Name": "False",
+        "Actions": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {}
+        }
+      },
+      "ID": "divingGameRupeeShuffle",
+      "Name": "Diving Game Rupee Shuffle",
+      "Description": "Controls whether or not the Zora's Domain Diving Game has 5 random items instead of green, blue, red, purple and 500 rupees.",
+      "SubCategory": "Main/Shuffle",
+      "Priority": 54,
+      "Conditionals": []
+    },
+    "fairyFountainFairyShuffleOot": {
+      "Value": "False",
+      "Enabled": {
+        "ID": "True",
+        "Name": "True",
+        "Actions": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {}
+        }
+      },
+      "Disabled": {
+        "ID": "False",
+        "Name": "False",
+        "Actions": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {}
+        }
+      },
+      "ID": "fairyFountainFairyShuffleOot",
+      "Name": "Fairy Fountain Fairy Shuffle (OoT)",
+      "Description": "Controls whether or not fairies in fairy fountains are shuffled (OoT).",
+      "SubCategory": "Main/Shuffle",
+      "Priority": 55,
+      "Conditionals": []
+    },
+    "fairyFountainFairyShuffleMm": {
+      "Value": "False",
+      "Enabled": {
+        "ID": "True",
+        "Name": "True",
+        "Actions": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {}
+        }
+      },
+      "Disabled": {
+        "ID": "False",
+        "Name": "False",
+        "Actions": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {}
+        }
+      },
+      "ID": "fairyFountainFairyShuffleMm",
+      "Name": "Fairy Fountain Fairy Shuffle (MM)",
+      "Description": "Controls whether or not fairies in fairy fountains are shuffled (MM).",
+      "SubCategory": "Main/Shuffle",
+      "Priority": 56,
+      "Conditionals": []
+    },
+    "fairySpotShuffleOot": {
+      "Value": "False",
+      "Enabled": {
+        "ID": "True",
+        "Name": "True",
+        "Actions": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {}
+        }
+      },
+      "Disabled": {
+        "ID": "False",
+        "Name": "False",
+        "Actions": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {}
+        }
+      },
+      "ID": "fairySpotShuffleOot",
+      "Name": "Fairy Spot Shuffle (OoT)",
+      "Description": "Controls whether or not big fairies in fairy spots are shuffled (OoT). Play either Song of Storms or Sun's Song",
+      "SubCategory": "Main/Shuffle",
+      "Priority": 57,
+      "Conditionals": []
+    },
+    "eggShuffle": {
+      "Value": "False",
+      "Enabled": {
+        "ID": "True",
+        "Name": "True",
+        "Actions": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {}
+        }
+      },
+      "Disabled": {
+        "ID": "False",
+        "Name": "False",
+        "Actions": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {}
+        }
+      },
+      "ID": "eggShuffle",
+      "Name": "Weird / Pocket Egg Content Shuffle",
+      "Description": "Fun setting: should using the Weird/Pocket Eggs give an item? If not, they're entirely removed from the game",
+      "SubCategory": "Main/Shuffle",
+      "Priority": 58,
       "Conditionals": []
     },
     "dekuTreeAdult": {
@@ -145455,6 +147561,37 @@
       "Priority": 84,
       "Conditionals": []
     },
+    "preCompletedDungeons": {
+      "Value": "False",
+      "Enabled": {
+        "ID": "True",
+        "Name": "True",
+        "Actions": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {}
+        }
+      },
+      "Disabled": {
+        "ID": "False",
+        "Name": "False",
+        "Actions": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {}
+        }
+      },
+      "ID": "preCompletedDungeons",
+      "Name": "Pre-Completed Dungeons",
+      "Description": "Allow dungeons to be pre-completed depending on rules.",
+      "SubCategory": "Main/Events",
+      "Priority": 85,
+      "Conditionals": []
+    },
     "openMaskShop": {
       "Value": "False",
       "Enabled": {
@@ -145548,6 +147685,223 @@
       "Priority": 92,
       "Conditionals": []
     },
+    "csmcHearts": {
+      "Value": "True",
+      "Enabled": {
+        "ID": "True",
+        "Name": "True",
+        "Actions": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {}
+        }
+      },
+      "Disabled": {
+        "ID": "False",
+        "Name": "False",
+        "Actions": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {}
+        }
+      },
+      "ID": "csmcHearts",
+      "Name": "CAMC for Heart Pieces/Containers",
+      "Description": "Use a specific texture for heart pieces/containers",
+      "SubCategory": "Main/Misc",
+      "Priority": 95,
+      "Conditionals": []
+    },
+    "csmcExtra": {
+      "Value": "False",
+      "Enabled": {
+        "ID": "True",
+        "Name": "True",
+        "Actions": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {}
+        }
+      },
+      "Disabled": {
+        "ID": "False",
+        "Name": "False",
+        "Actions": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {}
+        }
+      },
+      "ID": "csmcExtra",
+      "Name": "Skulltula CAMC",
+      "Description": "Enables CAMC for shuffled Gold, Swamp, and Ocean Skulltulas",
+      "SubCategory": "Main/Misc",
+      "Priority": 96,
+      "Conditionals": []
+    },
+    "fierceDeityAnywhere": {
+      "Value": "False",
+      "Enabled": {
+        "ID": "True",
+        "Name": "True",
+        "Actions": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {}
+        }
+      },
+      "Disabled": {
+        "ID": "False",
+        "Name": "False",
+        "Actions": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {}
+        }
+      },
+      "ID": "fierceDeityAnywhere",
+      "Name": "Fierce Deity Anywhere in MM",
+      "Description": "Controls the ability to use Fierce Deity outside of boss lairs. No logical applications",
+      "SubCategory": "Main/Misc",
+      "Priority": 100,
+      "Conditionals": []
+    },
+    "climbMostSurfacesMm": {
+      "Value": "False",
+      "Enabled": {
+        "ID": "True",
+        "Name": "True",
+        "Actions": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {}
+        }
+      },
+      "Disabled": {
+        "ID": "False",
+        "Name": "False",
+        "Actions": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {}
+        }
+      },
+      "ID": "climbMostSurfacesMm",
+      "Name": "Climb Most Surfaces (MM)",
+      "Description": "Modifies most surface to be climbable",
+      "SubCategory": "Main/Misc",
+      "Priority": 104,
+      "Conditionals": []
+    },
+    "fastBunnyHood": {
+      "Value": "True",
+      "Enabled": {
+        "ID": "True",
+        "Name": "True",
+        "Actions": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {}
+        }
+      },
+      "Disabled": {
+        "ID": "False",
+        "Name": "False",
+        "Actions": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {}
+        }
+      },
+      "ID": "fastBunnyHood",
+      "Name": "Fast Bunny Hood",
+      "Description": "Modifies the Bunny Hood in OoT to give a speed increase",
+      "SubCategory": "Main/Misc",
+      "Priority": 105,
+      "Conditionals": []
+    },
+    "defaultHoldTarget": {
+      "Value": "True",
+      "Enabled": {
+        "ID": "True",
+        "Name": "True",
+        "Actions": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {}
+        }
+      },
+      "Disabled": {
+        "ID": "False",
+        "Name": "False",
+        "Actions": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {}
+        }
+      },
+      "ID": "defaultHoldTarget",
+      "Name": "Default Hold Target",
+      "Description": "Forces the default target system to HOLD instead of SWITCH",
+      "SubCategory": "Main/Misc",
+      "Priority": 106,
+      "Conditionals": []
+    },
+    "critWiggleDisable": {
+      "Value": "True",
+      "Enabled": {
+        "ID": "True",
+        "Name": "True",
+        "Actions": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {}
+        }
+      },
+      "Disabled": {
+        "ID": "False",
+        "Name": "False",
+        "Actions": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {}
+        }
+      },
+      "ID": "critWiggleDisable",
+      "Name": "Disable Crit Wiggle",
+      "Description": "Disables the camera zoom-in and weird movements when low on health",
+      "SubCategory": "Main/Misc",
+      "Priority": 107,
+      "Conditionals": []
+    },
     "restoreBrokenActors": {
       "Value": "False",
       "Enabled": {
@@ -145608,6 +147962,130 @@
       "Description": "There are unused exits in the Lost Woods that return you to the lost woods. When this is on, all the \"got lost\" exits in the Lost Woods that would normally take you to Kokiri Forest instead take you back to the Lost Woods, keeping your compass direction intact.",
       "SubCategory": "Main/Misc",
       "Priority": 109,
+      "Conditionals": []
+    },
+    "voidWarpMm": {
+      "Value": "False",
+      "Enabled": {
+        "ID": "True",
+        "Name": "True",
+        "Actions": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {}
+        }
+      },
+      "Disabled": {
+        "ID": "False",
+        "Name": "False",
+        "Actions": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {}
+        }
+      },
+      "ID": "voidWarpMm",
+      "Name": "Void Warp in MM",
+      "Description": "In vanilla OoT, various code only checks for transitionTrigger, but in MM it also checks for transitionMode. When this is on, MM will no longer check transitionMode in those circumstances.",
+      "SubCategory": "Main/Misc",
+      "Priority": 110,
+      "Conditionals": []
+    },
+    "fillWallets": {
+      "Value": "False",
+      "Enabled": {
+        "ID": "True",
+        "Name": "True",
+        "Actions": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {}
+        }
+      },
+      "Disabled": {
+        "ID": "False",
+        "Name": "False",
+        "Actions": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {}
+        }
+      },
+      "ID": "fillWallets",
+      "Name": "Fill Wallets",
+      "Description": "Fills the wallet upon finding a new one",
+      "SubCategory": "Items",
+      "Priority": 111,
+      "Conditionals": []
+    },
+    "bottleContentShuffle": {
+      "Value": "False",
+      "Enabled": {
+        "ID": "True",
+        "Name": "True",
+        "Actions": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {}
+        }
+      },
+      "Disabled": {
+        "ID": "False",
+        "Name": "False",
+        "Actions": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {}
+        }
+      },
+      "ID": "bottleContentShuffle",
+      "Name": "Random Bottle Contents",
+      "Description": "Randomize the content of the bottles",
+      "SubCategory": "Items/Extensions",
+      "Priority": 118,
+      "Conditionals": []
+    },
+    "sunSongMm": {
+      "Value": "False",
+      "Enabled": {
+        "ID": "True",
+        "Name": "True",
+        "Actions": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {}
+        }
+      },
+      "Disabled": {
+        "ID": "False",
+        "Name": "False",
+        "Actions": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {}
+        }
+      },
+      "ID": "sunSongMm",
+      "Name": "Sun's Song in MM",
+      "Description": "Enables Sun's Song as an item in MM. If Songs are on Songs, you must share or start with at least one song",
+      "SubCategory": "Items/Extensions",
+      "Priority": 119,
       "Conditionals": []
     },
     "fairyOcarinaMm": {
@@ -146323,6 +148801,37 @@
       "Priority": 142,
       "Conditionals": []
     },
+    "elegyOot": {
+      "Value": "False",
+      "Enabled": {
+        "ID": "True",
+        "Name": "True",
+        "Actions": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {}
+        }
+      },
+      "Disabled": {
+        "ID": "False",
+        "Name": "False",
+        "Actions": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {}
+        }
+      },
+      "ID": "elegyOot",
+      "Name": "Elegy of Emptiness (OoT)",
+      "Description": "Add the Elegy of Emptiness in Ocarina of Time.",
+      "SubCategory": "Items/Extensions",
+      "Priority": 143,
+      "Conditionals": []
+    },
     "ocarinaButtonsShuffleOot": {
       "Value": "False",
       "Enabled": {
@@ -146571,6 +149080,130 @@
       "Priority": 151,
       "Conditionals": []
     },
+    "lenientSpikes": {
+      "Value": "True",
+      "Enabled": {
+        "ID": "True",
+        "Name": "True",
+        "Actions": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {}
+        }
+      },
+      "Disabled": {
+        "ID": "False",
+        "Name": "False",
+        "Actions": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {}
+        }
+      },
+      "ID": "lenientSpikes",
+      "Name": "Lenient Goron Spikes",
+      "Description": "Goron spikes can charge midair and keep their charge. Minimum speed for goron spikes is removed.",
+      "SubCategory": "Items/Extensions",
+      "Priority": 152,
+      "Conditionals": []
+    },
+    "menuNotebook": {
+      "Value": "False",
+      "Enabled": {
+        "ID": "True",
+        "Name": "True",
+        "Actions": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {}
+        }
+      },
+      "Disabled": {
+        "ID": "False",
+        "Name": "False",
+        "Actions": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {}
+        }
+      },
+      "ID": "menuNotebook",
+      "Name": "Bombers' Tracker",
+      "Description": "Locks the in-game tracker behind the Bombers' Notebook",
+      "SubCategory": "Items/Extensions",
+      "Priority": 153,
+      "Conditionals": []
+    },
+    "coins": {
+      "Value": "False",
+      "Enabled": {
+        "ID": "True",
+        "Name": "True",
+        "Actions": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {}
+        }
+      },
+      "Disabled": {
+        "ID": "False",
+        "Name": "False",
+        "Actions": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {}
+        }
+      },
+      "ID": "coins",
+      "Name": "Coins",
+      "Description": "Enable the leftover coin items. These can be used for special conds",
+      "SubCategory": "Items/Extensions",
+      "Priority": 154,
+      "Conditionals": []
+    },
+    "trapRupoor": {
+      "Value": "False",
+      "Enabled": {
+        "ID": "True",
+        "Name": "True",
+        "Actions": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {}
+        }
+      },
+      "Disabled": {
+        "ID": "False",
+        "Name": "False",
+        "Actions": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {}
+        }
+      },
+      "ID": "trapRupoor",
+      "Name": "Rupoors",
+      "Description": "Add rupoors to the item pool. They remove 10 rupees when collected",
+      "SubCategory": "Items/Extensions",
+      "Priority": 159,
+      "Conditionals": []
+    },
     "sharedNutsSticks": {
       "Value": "False",
       "Enabled": {
@@ -146691,6 +149324,276 @@
       "Priority": 163,
       "Conditionals": []
     },
+    "sharedMagicArrowFire": {
+      "Value": "False",
+      "Enabled": {
+        "ID": "True",
+        "Name": "True",
+        "Actions": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {}
+        }
+      },
+      "Disabled": {
+        "ID": "False",
+        "Name": "False",
+        "Actions": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {}
+        }
+      },
+      "ID": "sharedMagicArrowFire",
+      "Name": "Shared Fire Arrow",
+      "SubCategory": "Items/Shared",
+      "Priority": 164,
+      "Conditionals": []
+    },
+    "sharedMagicArrowIce": {
+      "Value": "False",
+      "Enabled": {
+        "ID": "True",
+        "Name": "True",
+        "Actions": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {}
+        }
+      },
+      "Disabled": {
+        "ID": "False",
+        "Name": "False",
+        "Actions": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {}
+        }
+      },
+      "ID": "sharedMagicArrowIce",
+      "Name": "Shared Ice Arrow",
+      "SubCategory": "Items/Shared",
+      "Priority": 165,
+      "Conditionals": []
+    },
+    "sharedMagicArrowLight": {
+      "Value": "False",
+      "Enabled": {
+        "ID": "True",
+        "Name": "True",
+        "Actions": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {}
+        }
+      },
+      "Disabled": {
+        "ID": "False",
+        "Name": "False",
+        "Actions": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {}
+        }
+      },
+      "ID": "sharedMagicArrowLight",
+      "Name": "Shared Light Arrow",
+      "SubCategory": "Items/Shared",
+      "Priority": 166,
+      "Conditionals": []
+    },
+    "sharedSongEpona": {
+      "Value": "False",
+      "Enabled": {
+        "ID": "True",
+        "Name": "True",
+        "Actions": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {}
+        }
+      },
+      "Disabled": {
+        "ID": "False",
+        "Name": "False",
+        "Actions": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {}
+        }
+      },
+      "ID": "sharedSongEpona",
+      "Name": "Shared Epona's Song",
+      "SubCategory": "Items/Shared",
+      "Priority": 167,
+      "Conditionals": []
+    },
+    "sharedSongStorms": {
+      "Value": "False",
+      "Enabled": {
+        "ID": "True",
+        "Name": "True",
+        "Actions": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {}
+        }
+      },
+      "Disabled": {
+        "ID": "False",
+        "Name": "False",
+        "Actions": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {}
+        }
+      },
+      "ID": "sharedSongStorms",
+      "Name": "Shared Song of Storms",
+      "SubCategory": "Items/Shared",
+      "Priority": 168,
+      "Conditionals": []
+    },
+    "sharedSongTime": {
+      "Value": "False",
+      "Enabled": {
+        "ID": "True",
+        "Name": "True",
+        "Actions": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {}
+        }
+      },
+      "Disabled": {
+        "ID": "False",
+        "Name": "False",
+        "Actions": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {}
+        }
+      },
+      "ID": "sharedSongTime",
+      "Name": "Shared Song of Time",
+      "SubCategory": "Items/Shared",
+      "Priority": 169,
+      "Conditionals": []
+    },
+    "sharedSongSun": {
+      "Value": "False",
+      "Enabled": {
+        "ID": "True",
+        "Name": "True",
+        "Actions": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {}
+        }
+      },
+      "Disabled": {
+        "ID": "False",
+        "Name": "False",
+        "Actions": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {}
+        }
+      },
+      "ID": "sharedSongSun",
+      "Name": "Shared Sun's Song",
+      "SubCategory": "Items/Shared",
+      "Priority": 170,
+      "Conditionals": []
+    },
+    "sharedHookshot": {
+      "Value": "False",
+      "Enabled": {
+        "ID": "True",
+        "Name": "True",
+        "Actions": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {}
+        }
+      },
+      "Disabled": {
+        "ID": "False",
+        "Name": "False",
+        "Actions": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {}
+        }
+      },
+      "ID": "sharedHookshot",
+      "Name": "Shared Hookshots",
+      "SubCategory": "Items/Shared",
+      "Priority": 171,
+      "Conditionals": []
+    },
+    "sharedLens": {
+      "Value": "False",
+      "Enabled": {
+        "ID": "True",
+        "Name": "True",
+        "Actions": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {}
+        }
+      },
+      "Disabled": {
+        "ID": "False",
+        "Name": "False",
+        "Actions": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {}
+        }
+      },
+      "ID": "sharedLens",
+      "Name": "Shared Lens of Truth",
+      "SubCategory": "Items/Shared",
+      "Priority": 172,
+      "Conditionals": []
+    },
     "sharedOcarina": {
       "Value": "False",
       "Enabled": {
@@ -146719,6 +149622,156 @@
       "Name": "Shared Ocarina of Time",
       "SubCategory": "Items/Shared",
       "Priority": 173,
+      "Conditionals": []
+    },
+    "sharedMaskGoron": {
+      "Value": "False",
+      "Enabled": {
+        "ID": "True",
+        "Name": "True",
+        "Actions": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {}
+        }
+      },
+      "Disabled": {
+        "ID": "False",
+        "Name": "False",
+        "Actions": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {}
+        }
+      },
+      "ID": "sharedMaskGoron",
+      "Name": "Shared Goron Mask",
+      "SubCategory": "Items/Shared",
+      "Priority": 174,
+      "Conditionals": []
+    },
+    "sharedMaskZora": {
+      "Value": "False",
+      "Enabled": {
+        "ID": "True",
+        "Name": "True",
+        "Actions": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {}
+        }
+      },
+      "Disabled": {
+        "ID": "False",
+        "Name": "False",
+        "Actions": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {}
+        }
+      },
+      "ID": "sharedMaskZora",
+      "Name": "Shared Zora Mask",
+      "SubCategory": "Items/Shared",
+      "Priority": 175,
+      "Conditionals": []
+    },
+    "sharedMaskBunny": {
+      "Value": "False",
+      "Enabled": {
+        "ID": "True",
+        "Name": "True",
+        "Actions": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {}
+        }
+      },
+      "Disabled": {
+        "ID": "False",
+        "Name": "False",
+        "Actions": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {}
+        }
+      },
+      "ID": "sharedMaskBunny",
+      "Name": "Shared Bunny Hood",
+      "SubCategory": "Items/Shared",
+      "Priority": 176,
+      "Conditionals": []
+    },
+    "sharedMaskKeaton": {
+      "Value": "False",
+      "Enabled": {
+        "ID": "True",
+        "Name": "True",
+        "Actions": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {}
+        }
+      },
+      "Disabled": {
+        "ID": "False",
+        "Name": "False",
+        "Actions": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {}
+        }
+      },
+      "ID": "sharedMaskKeaton",
+      "Name": "Shared Keaton Mask",
+      "SubCategory": "Items/Shared",
+      "Priority": 177,
+      "Conditionals": []
+    },
+    "sharedMaskTruth": {
+      "Value": "False",
+      "Enabled": {
+        "ID": "True",
+        "Name": "True",
+        "Actions": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {}
+        }
+      },
+      "Disabled": {
+        "ID": "False",
+        "Name": "False",
+        "Actions": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {}
+        }
+      },
+      "ID": "sharedMaskTruth",
+      "Name": "Shared Mask of Truth",
+      "SubCategory": "Items/Shared",
+      "Priority": 178,
       "Conditionals": []
     },
     "sharedMaskBlast": {
@@ -146841,6 +149894,36 @@
       "Priority": 182,
       "Conditionals": []
     },
+    "sharedHealth": {
+      "Value": "False",
+      "Enabled": {
+        "ID": "True",
+        "Name": "True",
+        "Actions": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {}
+        }
+      },
+      "Disabled": {
+        "ID": "False",
+        "Name": "False",
+        "Actions": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {}
+        }
+      },
+      "ID": "sharedHealth",
+      "Name": "Shared Health",
+      "SubCategory": "Items/Shared",
+      "Priority": 183,
+      "Conditionals": []
+    },
     "sharedShields": {
       "Value": "False",
       "Enabled": {
@@ -146869,6 +149952,36 @@
       "Name": "Shared Shields",
       "SubCategory": "Items/Shared",
       "Priority": 184,
+      "Conditionals": []
+    },
+    "sharedSoulsEnemy": {
+      "Value": "False",
+      "Enabled": {
+        "ID": "True",
+        "Name": "True",
+        "Actions": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {}
+        }
+      },
+      "Disabled": {
+        "ID": "False",
+        "Name": "False",
+        "Actions": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {}
+        }
+      },
+      "ID": "sharedSoulsEnemy",
+      "Name": "Shared Enemy Souls",
+      "SubCategory": "Items/Shared",
+      "Priority": 185,
       "Conditionals": []
     },
     "sharedOcarinaButtons": {
@@ -147813,6 +150926,68 @@
       "Priority": 219,
       "Conditionals": []
     },
+    "erRegionsExtra": {
+      "Value": "False",
+      "Enabled": {
+        "ID": "True",
+        "Name": "True",
+        "Actions": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {}
+        }
+      },
+      "Disabled": {
+        "ID": "False",
+        "Name": "False",
+        "Actions": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {}
+        }
+      },
+      "ID": "erRegionsExtra",
+      "Name": "Shuffle Market Entrance",
+      "Description": "Shuffle Hyrule Field's Market entrance among the regions.",
+      "SubCategory": "Entrances",
+      "Priority": 221,
+      "Conditionals": []
+    },
+    "erRegionsShortcuts": {
+      "Value": "False",
+      "Enabled": {
+        "ID": "True",
+        "Name": "True",
+        "Actions": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {}
+        }
+      },
+      "Disabled": {
+        "ID": "False",
+        "Name": "False",
+        "Actions": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {}
+        }
+      },
+      "ID": "erRegionsShortcuts",
+      "Name": "Shuffle Regional Shortcuts",
+      "Description": "Shuffles the various shortcuts between regions.<br>- Lost Woods/Goron City<br>- Lost Woods/Zora's River<br>- Zora's Domain/Lake Hylia",
+      "SubCategory": "Entrances",
+      "Priority": 222,
+      "Conditionals": []
+    },
     "erIndoorsMajor": {
       "Value": "False",
       "Enabled": {
@@ -148028,6 +151203,37 @@
       "Description": "Shuffle the two owl flights among one-way entrances.",
       "SubCategory": "Entrances",
       "Priority": 232,
+      "Conditionals": []
+    },
+    "erOneWaysWoods": {
+      "Value": "False",
+      "Enabled": {
+        "ID": "True",
+        "Name": "True",
+        "Actions": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {}
+        }
+      },
+      "Disabled": {
+        "ID": "False",
+        "Name": "False",
+        "Actions": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {}
+        }
+      },
+      "ID": "erOneWaysWoods",
+      "Name": "Shuffle Altered Lost Woods Exits",
+      "Description": "Shuffle the Lost Woods entrances added by \"Alter Lost Woods Exits\" among one-way entrances.",
+      "SubCategory": "Entrances",
+      "Priority": 233,
       "Conditionals": []
     },
     "moon_stones": {
@@ -152050,6 +155256,17 @@
     }
   },
   "IntOptions": {
+    "players": {
+      "Value": 1,
+      "Min": 0,
+      "Max": 2147483647,
+      "ID": "players",
+      "Name": "Players",
+      "Description": "For multiworld, how many players are in the game.",
+      "SubCategory": "Main",
+      "Priority": 3,
+      "Conditionals": []
+    },
     "triforceGoal": {
       "Value": 20,
       "Min": 1,
@@ -152059,6 +155276,105 @@
       "Description": "The amount of Triforce Pieces that are required to win.",
       "SubCategory": "Main",
       "Priority": 6,
+      "Conditionals": []
+    },
+    "triforcePieces": {
+      "Value": 30,
+      "Min": 1,
+      "Max": 999,
+      "ID": "triforcePieces",
+      "Name": "Triforce Pieces",
+      "Description": "The total amount of Triforce Pieces in the item pool.",
+      "SubCategory": "Main",
+      "Priority": 7,
+      "Conditionals": []
+    },
+    "preCompletedDungeonsMajor": {
+      "Value": 0,
+      "Min": 0,
+      "Max": 12,
+      "ID": "preCompletedDungeonsMajor",
+      "Name": "Pre-Completed Dungeons (Major)",
+      "Description": "How many major dungeons sould be pre-completed. Can be combined with other pre-completed dungeon rules.",
+      "SubCategory": "Main/Events",
+      "Priority": 86,
+      "Conditionals": []
+    },
+    "preCompletedDungeonsStones": {
+      "Value": 0,
+      "Min": 0,
+      "Max": 3,
+      "ID": "preCompletedDungeonsStones",
+      "Name": "Pre-Completed Dungeons (Stones)",
+      "Description": "Pre-completes dungeons containing at least one stone, until it reaches that many stones. Can be combined with other pre-completed dungeon rules.",
+      "SubCategory": "Main/Events",
+      "Priority": 87,
+      "Conditionals": []
+    },
+    "preCompletedDungeonsMedallions": {
+      "Value": 0,
+      "Min": 0,
+      "Max": 6,
+      "ID": "preCompletedDungeonsMedallions",
+      "Name": "Pre-Completed Dungeons (Medallions)",
+      "Description": "Pre-completes dungeons containing at least one medallion, until it reaches that many medallions. Can be combined with other pre-completed dungeon rules.",
+      "SubCategory": "Main/Events",
+      "Priority": 88,
+      "Conditionals": []
+    },
+    "preCompletedDungeonsRemains": {
+      "Value": 0,
+      "Min": 0,
+      "Max": 4,
+      "ID": "preCompletedDungeonsRemains",
+      "Name": "Pre-Completed Dungeons (Remains)",
+      "Description": "Pre-completes dungeons containing at least one remain, until in reaches that many remains. Can be combined with other pre-completed dungeon rules.",
+      "SubCategory": "Main/Events",
+      "Priority": 89,
+      "Conditionals": []
+    },
+    "coinsRed": {
+      "Value": 0,
+      "Min": 0,
+      "Max": 999,
+      "ID": "coinsRed",
+      "Name": "Red Coins",
+      "Description": "How many Red Coins to add to the item pool",
+      "SubCategory": "Items/Extensions",
+      "Priority": 155,
+      "Conditionals": []
+    },
+    "coinsGreen": {
+      "Value": 0,
+      "Min": 0,
+      "Max": 999,
+      "ID": "coinsGreen",
+      "Name": "Green Coins",
+      "Description": "How many Green Coins to add to the item pool",
+      "SubCategory": "Items/Extensions",
+      "Priority": 156,
+      "Conditionals": []
+    },
+    "coinsBlue": {
+      "Value": 0,
+      "Min": 0,
+      "Max": 999,
+      "ID": "coinsBlue",
+      "Name": "Blue Coins",
+      "Description": "How many Blue Coins to add to the item pool",
+      "SubCategory": "Items/Extensions",
+      "Priority": 157,
+      "Conditionals": []
+    },
+    "coinsYellow": {
+      "Value": 0,
+      "Min": 0,
+      "Max": 999,
+      "ID": "coinsYellow",
+      "Name": "Yellow Coins",
+      "Description": "How many Yellow Coins to add to the item pool",
+      "SubCategory": "Items/Extensions",
+      "Priority": 158,
       "Conditionals": []
     },
     "moon_count": {

@@ -51,10 +51,10 @@ namespace MMR_Tracker_V3.Logic
                     return bool.Parse(LogicItem.RawID);
                 case LogicItemTypes.item:
                     SubUnlockData.Add(LogicItem.RawID);
-                    return container.Instance.GetItemByID(LogicItem.CleanID).Useable(LogicItem.Amount);
+                    return ((ItemData.ItemObject)LogicItem.Object).Useable(LogicItem.Amount);
                 case LogicItemTypes.macro:
                     SubUnlockData.Add(LogicItem.RawID);
-                    return container.Instance.GetMacroByID(LogicItem.CleanID).Aquired;
+                    return ((MacroObject)LogicItem.Object).Available;
                 case LogicItemTypes.Area:
                     return AreaReached(LogicItem.CleanID, SubUnlockData);
                 case LogicItemTypes.LogicEntryCollection:
@@ -233,7 +233,7 @@ namespace MMR_Tracker_V3.Logic
             }
             foreach (var i in container.Instance.MacroPool.Values)
             {
-                if (!i.Aquired && LogicUnlockData.ContainsKey(i.ID)) { LogicUnlockData.Remove(i.ID); }
+                if (!i.Available && LogicUnlockData.ContainsKey(i.ID)) { LogicUnlockData.Remove(i.ID); }
             }
         }
 
@@ -291,10 +291,10 @@ namespace MMR_Tracker_V3.Logic
                     if (Available) { AutoObtainedObjects[i.Value] = itterations; }
                 }
 
-                if (Available != i.Value.Aquired)
+                if (Available != i.Value.Available)
                 {
                     MacroStateChanged = true;
-                    i.Value.Aquired = Available;
+                    i.Value.Available = Available;
                 }
             }
             return MacroStateChanged;

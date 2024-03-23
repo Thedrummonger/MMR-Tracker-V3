@@ -63,10 +63,7 @@ namespace MMR_Tracker_V3.TrackerObjects
             }
             public bool ProxyAvailable()
             {
-                var LogicId = GetDictEntry().LogicInheritance ?? ReferenceID;
-                bool Literal = LogicId.IsLiteralID(out LogicId);
-                var location = GetParent().GetCheckableLocationByID(LogicId, Literal);
-                return location.Available;
+                return GetLogicInheritance().Available;
             }
             public LocationObject GetReferenceLocation()
             {

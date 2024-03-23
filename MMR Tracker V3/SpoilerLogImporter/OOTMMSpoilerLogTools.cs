@@ -30,11 +30,11 @@ namespace MMR_Tracker_V3.SpoilerLogImporter
             ResetInstanceData(Instance);
             Dictionary<string, string> LocationData = GetDictionaryFromSpoiler(Instance, "Location List", true);
             Dictionary<string, string> SettingData = GetDictionaryFromSpoiler(Instance, "Settings");
-            Dictionary<string, int> StartingItemData = GetDictionaryFromSpoiler(Instance, "Starting Items").ToDictionary(x => x.Key, x => int.TryParse(x.Value, out int SIC) ? SIC : -1);
+            Dictionary<string, int> StartingItemData = GetDictionaryFromSpoiler(Instance, "Starting Items").ToDictionary(x => x.Key, x => int.Parse(x.Value));
             Dictionary<string, string> ExitData = GetEntranceListFromSpoiler(Instance, "Entrances");
             List<string> HintData = GetListFromSpoiler(Instance, "Hints");
             List<string> WorldFlagData = GetListFromSpoiler(Instance, "World Flags");
-            List<string> TrickData = GetListFromSpoiler(Instance, "Tricks").Concat(GetListFromSpoiler(Instance, "Glitches")).ToList();
+            List<string> TrickData = [.. GetListFromSpoiler(Instance, "Tricks"), .. GetListFromSpoiler(Instance, "Glitches")];
             List<string> JunkLocationData = GetListFromSpoiler(Instance, "Junk Locations");
             List<string> MQDungeons = GetListFromSpoiler(Instance, "MQ Dungeons");
             List<string> AccessConditions = GetListFromSpoiler(Instance, "Special Conditions");
@@ -245,6 +245,7 @@ namespace MMR_Tracker_V3.SpoilerLogImporter
                 }
                 else
                 {
+                    throw new Exception($"Setting {setting.Key} did not exist");
                     Debug.WriteLine($"Setting {setting.Key} did not exist");
                 }
 
@@ -277,28 +278,28 @@ namespace MMR_Tracker_V3.SpoilerLogImporter
                 }
                 if (setting.Key == "shufflePotsOot" && setting.Value == "false")
                 {
-                    foreach (var location in instance.LocationPool.Where(x => x.Value.GetDictEntry().ValidItemTypes.Contains("pot") && x.Key.StartsWith("OOT ")))
+                    foreach (var location in instance.LocationPool.Where(x => x.Value.GetDictEntry().SpoilerData.Tags.Contains("pot") && x.Key.StartsWith("OOT ")))
                     {
                         location.Value.SetRandomizedState(MiscData.RandomizedState.Unrandomized);
                     }
                 }
                 if (setting.Key == "shufflePotsMm" && setting.Value == "false")
                 {
-                    foreach (var location in instance.LocationPool.Where(x => x.Value.GetDictEntry().ValidItemTypes.Contains("pot") && x.Key.StartsWith("MM ")))
+                    foreach (var location in instance.LocationPool.Where(x => x.Value.GetDictEntry().SpoilerData.Tags.Contains("pot") && x.Key.StartsWith("MM ")))
                     {
                         location.Value.SetRandomizedState(MiscData.RandomizedState.Unrandomized);
                     }
                 }
                 if (setting.Key == "shuffleGrassOot" && setting.Value == "false")
                 {
-                    foreach (var location in instance.LocationPool.Where(x => x.Value.GetDictEntry().ValidItemTypes.Contains("grass") && x.Key.StartsWith("OOT ")))
+                    foreach (var location in instance.LocationPool.Where(x => x.Value.GetDictEntry().SpoilerData.Tags.Contains("grass") && x.Key.StartsWith("OOT ")))
                     {
                         location.Value.SetRandomizedState(MiscData.RandomizedState.Unrandomized);
                     }
                 }
                 if (setting.Key == "shuffleGrassMm" && setting.Value == "false")
                 {
-                    foreach (var location in instance.LocationPool.Where(x => x.Value.GetDictEntry().ValidItemTypes.Contains("grass") && x.Key.StartsWith("MM ")))
+                    foreach (var location in instance.LocationPool.Where(x => x.Value.GetDictEntry().SpoilerData.Tags.Contains("grass") && x.Key.StartsWith("MM ")))
                     {
                         location.Value.SetRandomizedState(MiscData.RandomizedState.Unrandomized);
                     }

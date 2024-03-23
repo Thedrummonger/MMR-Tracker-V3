@@ -347,7 +347,7 @@ namespace Windows_Form_Frontend
             }
             foreach (var macro in Instance.MacroPool.Values)
             {
-                trackerState.MacroValues[macro.ID] = macro.Aquired;
+                trackerState.MacroValues[macro.ID] = macro.Available;
             }
             foreach (var option in Instance.ChoiceOptions.Values)
             {

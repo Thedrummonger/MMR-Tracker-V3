@@ -4,6 +4,7 @@ using MMR_Tracker_V3.TrackerObjects;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.IO;
 using System.Linq;
 
 namespace MMR_Tracker_V3
@@ -19,6 +20,7 @@ namespace MMR_Tracker_V3
             Container.CopyAndLoadInstance(instance);
             _IngoredChecks = IngoredChecks ?? new List<string>();
             Container.logicCalculation = new LogicCalculation(Container);
+            Container.logicCalculation.CompileOptionActionEdits();
         }
 
         [Serializable]
@@ -45,7 +47,7 @@ namespace MMR_Tracker_V3
 
             var AvailableLocations = Container.Instance.LocationPool.Values.Where(x => x.Available && x.CheckState == MiscData.CheckState.Unchecked && x.IsRandomized());
             var AvailableEntrances = getAllAvailableEntrances(Container.Instance, Container.logicCalculation.AutoObtainedObjects);
-            var AquiredMacros = Container.Instance.MacroPool.Values.Where(x => x.Aquired && !Playthrough.ContainsKey(x.ID));
+            var AquiredMacros = Container.Instance.MacroPool.Values.Where(x => x.Available && !Playthrough.ContainsKey(x.ID));
 
             while (AvailableLocations.Any() || AvailableEntrances.Any() || AquiredMacros.Any())
             {
@@ -114,14 +116,14 @@ namespace MMR_Tracker_V3
                 Container.logicCalculation.CalculateLogic(MiscData.CheckState.Checked);
                 AvailableLocations = Container.Instance.LocationPool.Values.Where(x => x.Available && x.CheckState == MiscData.CheckState.Unchecked && x.IsRandomized());
                 AvailableEntrances = getAllAvailableEntrances(Container.Instance, Container.logicCalculation.AutoObtainedObjects);
-                AquiredMacros = Container.Instance.MacroPool.Values.Where(x => x.Aquired && !Playthrough.ContainsKey(x.ID));
+                AquiredMacros = Container.Instance.MacroPool.Values.Where(x => x.Available && !Playthrough.ContainsKey(x.ID));
 
 
                 Sphere++;
             }
             Utility.TimeCodeExecution(stopwatch, "Generate Playthough", -1);
             GetRealItemData();
-            //File.WriteAllText(@"D:\Testing\Playtrhough.txt", Newtonsoft.Json.JsonConvert.SerializeObject(Playthrough, Testing._NewtonsoftJsonSerializerOptions));
+            //File.WriteAllText(@"D:\Testing\Playtrhough.txt", Newtonsoft.Json.JsonConvert.SerializeObject(Playthrough, Utility.DefaultSerializerSettings));
         }
 
         public bool FilterImportantPlaythrough(object WinObj)
@@ -278,7 +280,7 @@ namespace MMR_Tracker_V3
             }
             foreach (var i in Container.Instance.MacroPool.Values)
             {
-                i.Aquired = false;
+                i.Available = false;
             }
         }
 

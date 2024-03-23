@@ -236,7 +236,7 @@ namespace MMR_Tracker_V3.TrackerObjects
                 foreach (var i in _Instance.EntrancePool.AreaList.Values)
                 {
                     i.SetParent(_Instance);
-                    foreach (var j in i.Exits.Values) { j.SetParent(i); }
+                    foreach (var j in i.Exits.Values) { j.SetParent(_Instance); j.SetParentArea(i); }
                 }
                 Instance.LogicDictionary.SetParentContainer(Instance);
                 foreach (var i in Instance.LogicDictionary.LocationList) { i.Value.ID = i.Key; i.Value.SetParent(Instance.LogicDictionary); }

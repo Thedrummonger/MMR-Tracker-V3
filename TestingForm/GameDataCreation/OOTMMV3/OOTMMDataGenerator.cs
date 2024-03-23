@@ -59,7 +59,7 @@ namespace TestingForm.GameDataCreation.OOTMMV3
             HandleTingle();
             AddLogicTricks();
             FixAreaClearLogic();
-            SettingCreation.CleanSettings();
+            //SettingCreation.CleanSettings();
             CleanLogic();
 
             File.WriteAllText(Path.Combine(TestingReferences.GetTestingLogicPresetsPath(), "DEV-OOTMM Casual.json"), LogicFile.ToFormattedJson());

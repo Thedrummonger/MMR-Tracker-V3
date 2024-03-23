@@ -64,9 +64,7 @@ namespace MMR_Tracker_V3.SpoilerLogImporter
                 case "MMR":
                     container.Instance.SpoilerLog = new InstanceData.SpoilerLogFileData { FileName = OriginalFile, Log = spoilerLog };
                     MMRSpoilerLogTools.ReadAndApplySpoilerLog(container);
-                    //container.Instance.EntrancePool.IsEntranceRando = container.Instance.EntrancePool.CheckForRandomEntrances(container.Instance);
                     container.Instance.SpoilerLog.GetStaticPlaythrough(container.Instance);
-                    //container.Instance.SpoilerLog = null;
                     break;
                 case "TPR":
                     container.Instance.SpoilerLog = new InstanceData.SpoilerLogFileData { FileName = OriginalFile, Log = spoilerLog };
