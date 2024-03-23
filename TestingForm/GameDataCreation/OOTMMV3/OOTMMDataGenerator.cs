@@ -55,8 +55,11 @@ namespace TestingForm.GameDataCreation.OOTMMV3
             SettingCreation.WorldEventRequirementOptions();
             SettingCreation.AddMasterQuestDungeons();
 
+            AddGameClearChecks();
             HandleTingle();
             AddLogicTricks();
+            FixAreaClearLogic();
+            SettingCreation.CleanSettings();
             CleanLogic();
 
             File.WriteAllText(Path.Combine(OOTMMPaths.OOTMMTestingFolderPath, "OOTMMLogicV3.json"), LogicFile.ToFormattedJson());
@@ -69,6 +72,11 @@ namespace TestingForm.GameDataCreation.OOTMMV3
             {
                 RemoveRedundantConditionals(i);
                 MakeCommonConditionalsRequirements(i);
+                for(var ind = 0; ind < i.ConditionalItems.Count; ind++ )
+                {
+                    i.ConditionalItems[ind] = [.. i.ConditionalItems[ind].OrderBy(x => !LogicFunctions.IsLogicFunction(x)).ThenBy(x => x)];
+                }
+                i.ConditionalItems = [.. i.ConditionalItems.OrderBy(x => x.Count).ThenBy(x => string.Join(" ", x))];
             }
         }
 
@@ -146,5 +154,110 @@ namespace TestingForm.GameDataCreation.OOTMMV3
 
         }
 
+        private void AddGameClearChecks()
+        {
+            dictionary.LocationList.Add("MM_BOSS_MAJORA", new LogicDictionaryData.DictionaryLocationEntries
+            {
+                ID = "MM_BOSS_MAJORA",
+                Name = "Majora",
+                Area = "The Moon",
+                OriginalItem = "MM_MASK_MAJORA",
+                ValidItemTypes = ["Majora"],
+                SpoilerData = new MMRData.SpoilerlogReference()
+            });
+            LogicFile.Logic.Add(new MMRData.JsonFormatLogicItem
+            {
+                Id = "MM_BOSS_MAJORA",
+                RequiredItems = ["MM_MAJORA_EVENT"]
+            });
+
+            dictionary.ItemList.Add("MM_MASK_MAJORA", new LogicDictionaryData.DictionaryItemEntries
+            {
+                ID = "MM_MASK_MAJORA",
+                Name = "Majoras Mask",
+                ValidStartingItem = false,
+                MaxAmountInWorld = 1,
+                ItemTypes = ["Majora"],
+                SpoilerData = new MMRData.SpoilerlogReference()
+            });
+
+            dictionary.LocationList.Add("OOT_BOSS_GANON", new LogicDictionaryData.DictionaryLocationEntries
+            {
+                ID = "OOT_BOSS_GANON",
+                Name = "Ganon",
+                Area = "Ganon's Castle",
+                OriginalItem = "OOT_TRIFORCE",
+                ValidItemTypes = ["Ganon"],
+                SpoilerData = new MMRData.SpoilerlogReference()
+            });
+
+            LogicFile.Logic.Add(new MMRData.JsonFormatLogicItem
+            {
+                Id = "OOT_BOSS_GANON",
+                RequiredItems = ["OOT_GANON_EVENT"]
+            });
+
+            dictionary.ItemList.Add("OOT_TRIFORCE", new LogicDictionaryData.DictionaryItemEntries
+            {
+                ID = "OOT_TRIFORCE",
+                Name = "Triforce",
+                ValidStartingItem = false,
+                MaxAmountInWorld = 1,
+                ItemTypes = ["Ganon"],
+                SpoilerData = new MMRData.SpoilerlogReference()
+            });
+
+            //Game Clear
+
+            string GameClearLogic =
+                "(setting{goal, any} && (OOT_TRIFORCE || MM_MASK_MAJORA)) || " +
+                "(setting{goal, both} && OOT_TRIFORCE && MM_MASK_MAJORA) || " +
+                "(setting{goal, ganon} && OOT_TRIFORCE) || " +
+                "(setting{goal, majora} && MM_MASK_MAJORA) || " +
+                "(setting{goal, triforce} && SHARED_TRIFORCE, triforceGoal) || " +
+                "(setting{goal, triforce3} && SHARED_TRIFORCE_POWER && SHARED_TRIFORCE_COURAGE && SHARED_TRIFORCE_WISDOM)";
+
+            LogicFile.Logic.Add(new MMRData.JsonFormatLogicItem { Id = "Game_Clear", ConditionalItems = LogicStringConverter.ConvertLogicStringToConditional(LogicStringParser, GameClearLogic, "Game_Clear") });
+            dictionary.MacroList.Add("Game_Clear", new LogicDictionaryData.DictionaryMacroEntry { ID = "Game_Clear", Name = "Both Games Cleared" });
+            dictionary.WinCondition = "Game_Clear";
+        }
+
+        public void FixAreaClearLogic()
+        {
+            var MM_BOSS_GREAT_BAY = LogicFile.Logic.First(x => x.Id == "MM_BOSS_GREAT_BAY_EVENT");
+            var MM_BOSS_SNOWHEAD = LogicFile.Logic.First(x => x.Id == "MM_BOSS_SNOWHEAD_EVENT");
+            var MM_CLEAN_SWAMP = LogicFile.Logic.First(x => x.Id == "MM_CLEAN_SWAMP_EVENT");
+            var OOT_EVENT_WATER_TEMPLE_CLEARED = LogicFile.Logic.First(x => x.Id == "OOT_WATER_TEMPLE_CLEARED_EVENT");
+
+            Dictionary<string, string> RandoAreaClear = new(){
+                  {"OOT Deku Tree Boss", "OOT Deku Tree After Boss"},
+                  {"OOT Dodongo Cavern Boss", "OOT Dodongo Cavern After Boss"},
+                  {"OOT Jabu-Jabu Boss", "OOT Jabu-Jabu After Boss"},
+                  {"OOT Forest Temple Boss", "OOT Forest Temple After Boss"},
+                  {"OOT Fire Temple Boss", "OOT Fire Temple After Boss"},
+                  {"OOT Water Temple Boss", "OOT Water Temple After Boss"},
+                  {"OOT Spirit Temple Boss", "OOT Spirit Temple After Boss"},
+                  {"OOT Shadow Temple Boss", "OOT Shadow Temple After Boss"},
+                  {"MM Woodfall Temple Boss", "MM Woodfall Temple After Boss"},
+                  {"MM Great Bay Temple Boss", "MM Great Bay Temple After Boss"},
+                  {"MM Snowhead Temple Boss", "MM Snowhead Temple After Boss"},
+                  {"MM Stone Tower Temple Boss", "MM Stone Tower After Boss"}
+            };
+
+            CreateLogic(MM_BOSS_GREAT_BAY, "MM Great Bay Temple Boss Access", "MM Great Bay Temple Boss");
+            CreateLogic(MM_BOSS_SNOWHEAD, "MM Snowhead Temple Boss Access", "MM Snowhead Temple Boss");
+            CreateLogic(MM_CLEAN_SWAMP, "MM Woodfall Temple Boss Access", "MM Woodfall Temple Boss");
+            CreateLogic(OOT_EVENT_WATER_TEMPLE_CLEARED, "OOT Water Temple Antichamber", "OOT Water Temple Boss");
+
+            void CreateLogic(MMRData.JsonFormatLogicItem Item, string DungeonArea, string BossDoor)
+            {
+                Item.RequiredItems = new List<string>();
+                Item.ConditionalItems = new List<List<string>>();
+                foreach (var i in RandoAreaClear)
+                {
+                    Item.ConditionalItems.Add([$"contains{{{DungeonArea} => {BossDoor}, {i.Key}}}", $"{i.Value}"]);
+                }
+            }
+        }
     }
 }

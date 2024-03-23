@@ -2,11 +2,13 @@
 using MMR_Tracker_V3.Logic;
 using MMR_Tracker_V3.TrackerObjects;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
+using static MMR_Tracker_V3.TrackerObjects.MMRData;
 
 namespace TestingForm.GameDataCreation.OOTMMV3
 {
@@ -194,22 +196,22 @@ namespace TestingForm.GameDataCreation.OOTMMV3
                 { "Spiritual Stones|stones", Generator.extraData.stones},
                 { "Medallions|medallions", Generator.extraData.medallions },
                 { "Boss Remains|remains", Generator.extraData.remains },
-                { "Gold Skulltulas Tokens|skullsGold", new string[] { "OOT_GS_TOKEN" } },
-                { "Swamp Skulltulas Tokens|skullsSwamp", new string[] { "MM_GS_TOKEN_SWAMP" } },
-                { "Ocean Skulltulas Tokens|skullsOcean", new string[] { "MM_GS_TOKEN_OCEAN" } },
-                { "Stray Fairies (Woodfall)|fairiesWF", new string[] { "MM_STRAY_FAIRY_WF" } },
-                { "Stray Fairies (Snowhead)|fairiesSH", new string[] { "MM_STRAY_FAIRY_SH" } },
-                { "Stray Fairies (Great Bay)|fairiesGB", new string[] { "MM_STRAY_FAIRY_GB" } },
-                { "Stray Fairies (Stone Tower)|fairiesST", new string[] { "MM_STRAY_FAIRY_ST" } },
-                { "Stray Fairy (Clock Town)|fairyTown", new string[] { "MM_STRAY_FAIRY_TOWN" } },
+                { "Gold Skulltulas Tokens|skullsGold", ["OOT_GS_TOKEN"] },
+                { "Swamp Skulltulas Tokens|skullsSwamp", ["MM_GS_TOKEN_SWAMP"] },
+                { "Ocean Skulltulas Tokens|skullsOcean", ["MM_GS_TOKEN_OCEAN"] },
+                { "Stray Fairies (Woodfall)|fairiesWF", ["MM_STRAY_FAIRY_WF"] },
+                { "Stray Fairies (Snowhead)|fairiesSH", ["MM_STRAY_FAIRY_SH"] },
+                { "Stray Fairies (Great Bay)|fairiesGB", ["MM_STRAY_FAIRY_GB"] },
+                { "Stray Fairies (Stone Tower)|fairiesST", ["MM_STRAY_FAIRY_ST"] },
+                { "Stray Fairy (Clock Town)|fairyTown", ["MM_STRAY_FAIRY_TOWN"] },
                 { "Regular Masks (MM)|masksRegular", Generator.extraData.mm_masks },
                 { "Transformation Masks (MM)|masksTransform", Generator.extraData.mm_masks_transformation },
                 { "Masks (OoT)|masksOot", Generator.extraData.oot_masks },
-                { "Triforce Pieces|triforce", new string[] { "SHARED_TRIFORCE" } },
-                { "Coins (Red)|coinsRed", new string[]{ "OOT_COIN_RED" } },
-                { "Coins (Green)|coinsGreen", new string[]{ "OOT_COIN_GREEN" } },
-                { "Coins (Blue)|coinsBlue", new string[]{ "OOT_COIN_BLUE" } },
-                { "Coins (Yellow)|coinsYellow", new string[]{ "OOT_COIN_YELLOW" } },
+                { "Triforce Pieces|triforce", ["SHARED_TRIFORCE"] },
+                { "Coins (Red)|coinsRed", ["OOT_COIN_RED"] },
+                { "Coins (Green)|coinsGreen", ["OOT_COIN_GREEN"] },
+                { "Coins (Blue)|coinsBlue", ["OOT_COIN_BLUE"] },
+                { "Coins (Yellow)|coinsYellow", ["OOT_COIN_YELLOW"] },
             };
 
             AddCondition("moon", "mm", "Moon Access Conditions", "Boss Remains", 4);
@@ -220,7 +222,7 @@ namespace TestingForm.GameDataCreation.OOTMMV3
 
             void AddCondition(string ID, string Game, string Category, string DefaultValue = null, int DefaultCount = 0, string Logic = null)
             {
-                Generator.dictionary.AdditionalLogic.Add(new MMRData.JsonFormatLogicItem
+                Generator.LogicFile.Logic.Add(new MMRData.JsonFormatLogicItem
                 {
                     Id = $"{Game.ToUpper()}_HAS_SPECIAL_{ID.ToUpper()}",
                     RequiredItems = [$"{ID.ToLower()}_req, {ID.ToLower()}_count"]
@@ -246,23 +248,85 @@ namespace TestingForm.GameDataCreation.OOTMMV3
                     Generator.dictionary.ToggleOptions.Add(Requirement.ID, Requirement);
                     OptionPriority++;
                 }
-                OptionData.LogicEntryCollection ReqVar = new OptionData.LogicEntryCollection();
-                ReqVar.ID = $"{ID.ToLower()}_req";
-                ReqVar.Entries = new List<string>();
+                OptionData.LogicEntryCollection ReqVar = new()
+                {
+                    ID = $"{ID.ToLower()}_req",
+                    Entries = new List<string>()
+                };
                 Generator.dictionary.LogicEntryCollections.Add(ReqVar.ID, ReqVar);
 
-                OptionData.IntOption req_count = new OptionData.IntOption(null);
-                req_count.SubCategory = Category;
-                req_count.Name = "Items Required";
-                req_count.ID = $"{ID.ToLower()}_count";
-                req_count.Value = DefaultCount;
-                req_count.Conditionals = Logic is null ? new List<List<string>>() : LogicStringConverter.ConvertLogicStringToConditional(Generator.LogicStringParser, Logic, ID);
-                req_count.Priority = OptionPriority;
-                req_count.Min = 0;
+                OptionData.IntOption req_count = new(null)
+                {
+                    SubCategory = Category,
+                    Name = "Items Required",
+                    ID = $"{ID.ToLower()}_count",
+                    Value = DefaultCount,
+                    Conditionals = Logic is null ? [] : LogicStringConverter.ConvertLogicStringToConditional(Generator.LogicStringParser, Logic, ID),
+                    Priority = OptionPriority,
+                    Min = 0
+                };
                 Generator.dictionary.IntOptions.Add(req_count.ID, req_count);
                 OptionPriority++;
             }
 
+        }
+
+        public void CleanSettings()
+        {
+            HashSet<string> logicAlteringSettings = [];
+            foreach (var entry in Generator.LogicFile.Logic)
+            {
+                LogicUtilities.TransformLogicItems(entry, x =>
+                {
+                    if (LogicFunctions.IsLogicFunction(x, out _, out string param))
+                    {
+                        logicAlteringSettings.Add(param.TrimSplit(",")[0]);
+                    }
+                    else if (x.TrimSplit(",").Length > 1 && Generator.dictionary.IntOptions.ContainsKey(x.TrimSplit(",")[1]))
+                    {
+                        logicAlteringSettings.Add(x.TrimSplit(",")[1]);
+                    }
+                    return x;
+                });
+            }
+            Utility.PrintObjectToConsole(logicAlteringSettings);
+            foreach (var key in Generator.dictionary.ChoiceOptions.Keys)
+            {
+                var entry = Generator.dictionary.ChoiceOptions[key];
+                if (entry.ValueList.Any(x => HasActions(x.Value.Actions))) { continue; }
+                if (logicAlteringSettings.Contains(key)) { continue; }
+                Generator.dictionary.ChoiceOptions.Remove(key);
+            }
+            foreach (var key in Generator.dictionary.MultiSelectOptions.Keys)
+            {
+                var entry = Generator.dictionary.MultiSelectOptions[key];
+                if (entry.ValueList.Any(x => HasActions(x.Value.Actions))) { continue; }
+                if (logicAlteringSettings.Contains(key)) { continue; }
+                Generator.dictionary.MultiSelectOptions.Remove(key);
+            }
+            foreach (var key in Generator.dictionary.ToggleOptions.Keys)
+            {
+                var entry = Generator.dictionary.ToggleOptions[key];
+                if (HasActions(entry.Enabled.Actions)) { continue; }
+                if (HasActions(entry.Disabled.Actions)) { continue; }
+                if (logicAlteringSettings.Contains(key)) { continue; }
+                Generator.dictionary.ToggleOptions.Remove(key);
+            }
+            foreach (var key in Generator.dictionary.IntOptions.Keys)
+            {
+                var entry = Generator.dictionary.IntOptions[key];
+                if (logicAlteringSettings.Contains(key)) { continue; }
+                Generator.dictionary.IntOptions.Remove(key);
+            }
+
+            bool HasActions(OptionData.Action action)
+            {
+                if (action.LogicReplacements.Length != 0) { return true; }
+                if (action.ItemMaxAmountEdit.Count != 0) { return true; }
+                if (action.ItemNameOverride.Count != 0) { return true; }
+                if (action.VariableEdit.Count != 0) { return true; }
+                return false;
+            }
         }
     }
 }
