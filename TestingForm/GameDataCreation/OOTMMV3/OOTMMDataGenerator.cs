@@ -61,6 +61,7 @@ namespace TestingForm.GameDataCreation.OOTMMV3
             FixAreaClearLogic();
             //SettingCreation.CleanSettings();
             CleanLogic();
+            FixAreas();
 
             File.WriteAllText(Path.Combine(TestingReferences.GetTestingLogicPresetsPath(), "DEV-OOTMM Casual.json"), LogicFile.ToFormattedJson());
             File.WriteAllText(Path.Combine(TestingReferences.GetTestingDictionaryPath(), "OOTMM V3.json"), dictionary.ToFormattedJson());
@@ -257,6 +258,43 @@ namespace TestingForm.GameDataCreation.OOTMMV3
                 {
                     Item.ConditionalItems.Add([$"contains{{{DungeonArea} => {BossDoor}, {i.Key}}}", $"{i.Value}"]);
                 }
+            }
+        }
+
+        public void FixAreas()
+        {
+            Dictionary<string, string> Areas = [];
+            var VanillaSPL = File.ReadAllLines(Path.Combine(OOTMMPaths.OOTMMTestingFolderPath, "AreaSpoilers", "AreaListVanilla.txt"));
+            var MQSPL = File.ReadAllLines(Path.Combine(OOTMMPaths.OOTMMTestingFolderPath, "AreaSpoilers", "AreaListMQ.txt"));
+            Read(VanillaSPL);
+            Read(MQSPL);
+            void Read(string[] VanillaSPL)
+            {
+                bool AtData = false;
+                string CurrentArea = "";
+                foreach (var i in VanillaSPL)
+                {
+                    if (string.IsNullOrWhiteSpace(i)) { continue; }
+                    if (i.StartsWith("Location List (")) { AtData = true; continue; }
+                    if (!AtData) { continue; }
+                    if (i.EndsWith(':'))
+                    {
+                        CurrentArea = i.TrimSplit("(")[0];
+                        continue;
+                    }
+                    var data = i.TrimSplit(":");
+                    Areas[data[0]] = CurrentArea;
+                }
+            }
+            Debug.WriteLine($"Missing Area Locations:");
+            foreach (var l in dictionary.LocationList.Values)
+            {
+                if (!Areas.ContainsKey(l.ID))
+                {
+                    Debug.WriteLine(l.ID);
+                    continue;
+                }
+                l.Area = Areas[l.ID];
             }
         }
     }

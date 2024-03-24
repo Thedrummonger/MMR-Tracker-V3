@@ -174,7 +174,6 @@ namespace MMR_Tracker_V3
                         IsWarp = DictEntry.Value.AlwaysAccessable,
                         referenceData = new ReferenceData { LogicIndex = Index, LogicList = Source }
                     };
-                    Instance.EntrancePool.ExitLookupByID[i.Id] = ExitObject;
                     ParentArea.Exits.Add(ExitObject.ExitID, ExitObject);
                 }
                 else

@@ -1,4 +1,5 @@
-﻿using MMR_Tracker_V3.TrackerObjectExtensions;
+﻿using MathNet.Numerics;
+using MMR_Tracker_V3.TrackerObjectExtensions;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,8 +14,6 @@ namespace MMR_Tracker_V3.TrackerObjects
             private InstanceData.TrackerInstance _parent = Parent;
             public InstanceData.TrackerInstance GetParent() { return _parent; }
             public void SetParent(InstanceData.TrackerInstance parent) { _parent = parent; }
-
-            public Dictionary<string, EntranceData.EntranceRandoExit> ExitLookupByID { get; set; } = [];
 
             //All Areas in the game and the exits they contain
             public Dictionary<string, EntranceRandoArea> AreaList { get; set; } = [];
@@ -38,6 +37,10 @@ namespace MMR_Tracker_V3.TrackerObjects
             public EntranceRandoExit[] GetAllRandomizedExits()
             {
                 return GetAllRandomizableExits().Where(y => y.IsRandomized()).ToArray();
+            }
+            public Dictionary<string, EntranceRandoExit> GetExitLogicIDMap()
+            {
+                return _parent.EntrancePool.AreaList.Values.SelectMany(x => x.Exits).ToDictionary(x => x.Value.ID, x => x.Value);
             }
         }
         public class EntranceRandoArea(InstanceData.TrackerInstance Parent)

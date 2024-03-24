@@ -52,8 +52,9 @@ namespace MMR_Tracker_V3.TrackerObjectExtensions
         public static EntranceRandoExit GetExitByLogicID(this InstanceData.TrackerInstance instance, string item)
         {
             if (item is null) { return null; }
-            if (!instance.EntrancePool.ExitLookupByID.ContainsKey(item)) { return null; }
-            return instance.EntrancePool.ExitLookupByID[item];
+            var Map = instance.EntrancePool.GetExitLogicIDMap();
+            if (!Map.ContainsKey(item)) { return null; }
+            return Map[item];
         }
 
         public static ChoiceOption GetChoiceOptionByID(this InstanceData.TrackerInstance instance, string item)
@@ -89,11 +90,11 @@ namespace MMR_Tracker_V3.TrackerObjectExtensions
         public static CheckableLocation GetCheckableLocationByID(this TrackerInstance instance, string ID, bool literal)
         {
             if (literal && instance.LocationPool.ContainsKey(ID)) { return instance.LocationPool[ID]; }
-            if (literal && instance.EntrancePool.ExitLookupByID.ContainsKey(ID)) { return instance.GetExitByLogicID(ID); }
+            if (literal && instance.EntrancePool.GetExitLogicIDMap().ContainsKey(ID)) { return instance.GetExitByLogicID(ID); }
             if (literal && instance.HintPool.ContainsKey(ID)) { return instance.HintPool[ID]; }
             if (instance.MacroPool.ContainsKey(ID)) { return instance.MacroPool[ID]; }
             if (!literal && instance.LocationPool.ContainsKey(ID)) { return instance.LocationPool[ID]; }
-            if (!literal && instance.EntrancePool.ExitLookupByID.ContainsKey(ID)) { return instance.GetExitByLogicID(ID); }
+            if (!literal && instance.EntrancePool.GetExitLogicIDMap().ContainsKey(ID)) { return instance.GetExitByLogicID(ID); }
             if (!literal && instance.HintPool.ContainsKey(ID)) { return instance.HintPool[ID]; }
             return null;
         }
