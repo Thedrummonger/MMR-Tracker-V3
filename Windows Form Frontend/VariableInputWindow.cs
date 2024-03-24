@@ -61,18 +61,19 @@ namespace Windows_Form_Frontend
         }
         private void button1_Click(object sender, EventArgs e)
         {
+            var result = new ManualCheckObjectResult();
             switch (varType)
             {
                 case VarType.Gossip:
-                    _Result.Add(new(_InputItems[0] as HintData.HintObject, textBox1.Text));
+                    _Result.Add(result.SetGossipHint(_InputItems[0] as HintData.HintObject, textBox1.Text));
                     //(_InputItems[0] as HintData.HintObject).HintText = textBox1.Text;
                     break;
                 case VarType.Number:
-                    _Result.Add(new(_InputItems[0] as OptionData.IntOption, (int)numericUpDown1.Value));
+                    _Result.Add(result.SetIntOption(_InputItems[0] as OptionData.IntOption, (int)numericUpDown1.Value));
                     //(_InputItems[0] as OptionData.IntOption).Value = (int)numericUpDown1.Value;
                     break;
                 case VarType.Price:
-                    _Result.Add(new((_InputItems[0] as PriceContainer).SourceLocation, (int)numericUpDown1.Value));
+                    _Result.Add(result.SetPricedLocation((_InputItems[0] as PriceContainer).SourceLocation, (int)numericUpDown1.Value));
                     //(_InputItems[0] as OptionData.IntOption).Value = (int)numericUpDown1.Value;
                     break;
             }

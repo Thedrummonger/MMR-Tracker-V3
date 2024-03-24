@@ -115,13 +115,46 @@ namespace MMR_Tracker_V3.TrackerObjects
 
 
         }
-        public class ManualCheckObjectResult(object _Check, object _Item, int _OwningPlayer = -1)
+        public class ManualCheckObjectResult()
         {
-            public object Check = _Check;
-            public object Item = _Item;
-            public int OwningPlayer = _OwningPlayer;
-            public T GetCheck<T>() { return (T)Check; }
-            public T GetItem<T>() { return (T)Item; }
+            private object _Check;
+            private object _Result;
+            private int _OwningPlayer;
+            public ManualCheckObjectResult SetLocation(object location, object Result, int OwningPlayer = -1)
+            {
+                _Check = location;
+                _OwningPlayer = OwningPlayer;
+                _Result = Result; 
+                return this;
+            }
+            public ManualCheckObjectResult SetItemLocation(LocationData.LocationObject location, string ItemID, int OwningPlayer = -1)
+                => SetLocation(location, ItemID, OwningPlayer);
+            public ManualCheckObjectResult SetExitDestination(EntranceData.EntranceRandoExit Exit, EntranceData.EntranceRandoDestination destination)
+                => SetLocation(Exit, destination);
+            public ManualCheckObjectResult SetGossipHint(HintData.HintObject HintLocation, string Hint)
+                => SetLocation(HintLocation, Hint);
+            public ManualCheckObjectResult SetIntOption(OptionData.IntOption intOption, int value)
+                => SetLocation(intOption, value);
+            public ManualCheckObjectResult SetChoiceOption(OptionData.ChoiceOption ChoiceOption, string value)
+                => SetLocation(ChoiceOption, value);
+            public ManualCheckObjectResult SetPricedLocation(CheckableLocation Location, int Price)
+                => SetLocation(Location, Price);
+            public (TC, TR, int) GetLocation<TC,TR>()
+            {
+                return ((TC)_Check, (TR)_Result, _OwningPlayer);
+            }
+            public (LocationData.LocationObject Check, string ItemID, int Player) GetItemLocation() 
+                => ((LocationData.LocationObject)_Check, (string)_Result, _OwningPlayer);
+            public (EntranceData.EntranceRandoExit Exit, EntranceData.EntranceRandoDestination Destination) GetExitDestination() 
+                => ((EntranceData.EntranceRandoExit)_Check, (EntranceData.EntranceRandoDestination)_Result);
+            public (HintData.HintObject HintCheck, string HintText) GetGossipHint()
+                => ((HintData.HintObject)_Check, (string)_Result);
+            public (OptionData.IntOption IntOption, int Val) GetIntOption()
+                => ((OptionData.IntOption)_Check, (int)_Result);
+            public (OptionData.ChoiceOption ChoiceOption, string Val) GetChoiceOption()
+                => ((OptionData.ChoiceOption)_Check, (string)_Result);
+            public (CheckableLocation Location, int Price) GetPricedLocation()
+                => ((CheckableLocation)_Check, (int)_Result);
         }
 
         public class NetConnection

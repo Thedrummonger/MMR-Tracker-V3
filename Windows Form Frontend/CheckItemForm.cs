@@ -109,28 +109,29 @@ namespace Windows_Form_Frontend
 
         private void ApplySelection(bool ButtonClick = false)
         {
+            var Result = new ManualCheckObjectResult();
             if ((listBox1.SelectedIndex < 0 || listBox1.SelectedItem is MiscData.Areaheader || listBox1.SelectedItem is MiscData.Divider) && !ButtonClick) { return; }
             if (_CheckList[0] is LocationData.LocationObject LocationObject)
             {
                 if (ButtonClick)
                 {
-                    _Result.Add(new(LocationObject, "JUNK"));
+                    _Result.Add(Result.SetItemLocation(LocationObject, "JUNK"));
                 }
                 else
                 {
                     int OwningPlayer = (int)numericUpDown1.Value;
                     if (_Container.netConnection.PlayerID > -1 && _Container.netConnection.PlayerID == OwningPlayer) { OwningPlayer = -1; }
-                    _Result.Add(new(LocationObject, ((ItemData.ItemObject)listBox1.SelectedItem).ID, OwningPlayer));
+                    _Result.Add(Result.SetItemLocation(LocationObject, ((ItemData.ItemObject)listBox1.SelectedItem).ID, OwningPlayer));
                 }
             }
             else if (_CheckList[0] is OptionData.ChoiceOption OptionObject)
             {
                 OptionData.OptionValue SelectedValue = listBox1.SelectedItem as OptionData.OptionValue;
-                _Result.Add(new(OptionObject, SelectedValue.ID));
+                _Result.Add(Result.SetChoiceOption(OptionObject, SelectedValue.ID));
             }
             else if (_CheckList[0] is EntranceData.EntranceRandoExit ExitObject)
             {
-                _Result.Add(new(ExitObject, (EntranceData.EntranceRandoDestination)listBox1.SelectedItem));
+                _Result.Add(Result.SetExitDestination(ExitObject, (EntranceData.EntranceRandoDestination)listBox1.SelectedItem));
             }
             _CheckList.RemoveAt(0);
             WriteNextItem();

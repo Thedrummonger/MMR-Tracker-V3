@@ -135,7 +135,7 @@ namespace Windows_Form_Frontend
                 AddItem("Edit Price", () => {
                     VariableInputWindow PriceInput = new(PricedLocations, InstanceContainer);
                     PriceInput.ShowDialog();
-                    foreach(var i in PriceInput._Result) { i.GetCheck<CheckableLocation>().SetPrice(i.GetItem<int>()); }
+                    foreach(var i in PriceInput._Result) { i.GetPricedLocation().Location.SetPrice(i.GetPricedLocation().Price); }
                     InstanceContainer.logicCalculation.CompileOptionActionEdits();
                     InstanceContainer.logicCalculation.CalculateLogic();
                     mainInterface.UpdateUI();
@@ -179,7 +179,7 @@ namespace Windows_Form_Frontend
                     checkItemForm.ShowDialog();
 
                     if (checkItemForm._Result.Count > 0) {
-                        string ItemID = checkItemForm._Result[0].GetItem<string>();
+                        string ItemID = checkItemForm._Result[0].GetItemLocation().ItemID;
                         var Item = InstanceContainer.Instance.GetItemByID(ItemID);
                         bool Correct = LO1.GetItemAtCheck() == ItemID;
                         if (Correct) { MessageBox.Show($"{LO1.GetName()} Contained {Item.GetDictEntry().GetName()}", "CORRECT", MessageBoxButtons.OK, MessageBoxIcon.Information); }

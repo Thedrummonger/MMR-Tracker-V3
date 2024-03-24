@@ -96,12 +96,12 @@ namespace MMR_Tracker_V3
             if (choiceOptions.Any())
             {
                 var Result = Options.CheckChoiceOptions(choiceOptions, instanceContainer);
-                foreach (var O in Result) { O.GetCheck<OptionData.ChoiceOption>().SetValue(O.GetItem<string>()); }
+                foreach (var O in Result) { O.GetChoiceOption().ChoiceOption.SetValue(O.GetChoiceOption().Val); }
             }
             if (IntOptions.Any())
             {
                 var Result = Options.CheckIntOptions(IntOptions, instanceContainer);
-                foreach (var O in Result) { O.GetCheck<OptionData.IntOption>().SetValue(O.GetItem<int>()); }
+                foreach (var O in Result) { O.GetIntOption().IntOption.SetValue(O.GetIntOption().Val); }
             }
 
             UpdatedObjects.AddRange(choiceOptions);
@@ -136,7 +136,7 @@ namespace MMR_Tracker_V3
             if (ManualLocationChecks.Any())
             {
                 var Result = Options.CheckUnassignedLocations(ManualLocationChecks, instanceContainer);
-                foreach (var O in Result) { O.GetCheck<LocationObject>().Randomizeditem.Item = O.GetItem<string>(); O.GetCheck<LocationObject>().Randomizeditem.OwningPlayer = O.OwningPlayer; }
+                foreach (var O in Result) { O.GetItemLocation().Check.Randomizeditem.Item = O.GetItemLocation().ItemID; O.GetItemLocation().Check.Randomizeditem.OwningPlayer = O.GetItemLocation().Player; }
             }
             foreach (LocationObject LocationObject in locationObjects)
             {
@@ -168,7 +168,7 @@ namespace MMR_Tracker_V3
             if (ManualExitChecks.Any())
             {
                 var Result = Options.CheckUnassignedEntrances(ManualExitChecks, instanceContainer);
-                foreach (var O in Result) { O.GetCheck<EntranceRandoExit>().DestinationExit = O.GetItem<EntranceRandoDestination>(); }
+                foreach (var O in Result) { O.GetExitDestination().Exit.DestinationExit = O.GetExitDestination().Destination; }
             }
             foreach (EntranceRandoExit ExitObject in ExitObjects)
             {
@@ -196,7 +196,7 @@ namespace MMR_Tracker_V3
             if (UncheckedVariableObjects.Any())
             {
                 var Result = Options.CheckUnassignedHints(UncheckedVariableObjects, instanceContainer);
-                foreach (var O in Result) { O.GetCheck<HintObject>().HintText = O.GetItem<string>(); }
+                foreach (var O in Result) { O.GetGossipHint().HintCheck.HintText = O.GetGossipHint().HintText; }
             }
             foreach (HintObject hintObject in HintObjects)
             {

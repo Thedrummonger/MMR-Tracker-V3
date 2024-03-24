@@ -375,7 +375,7 @@ namespace TestingForm
                 foreach (var obj in O)
                 {
                     LocationData.LocationObject location = obj as LocationData.LocationObject;
-                    Results.Add(new ManualCheckObjectResult(location, LocationDataToProcess[location.ID]));
+                    Results.Add(new ManualCheckObjectResult().SetLocation(location, LocationDataToProcess[location.ID]));
                 }
                 return Results;
             });
