@@ -10,38 +10,62 @@ namespace MMR_Tracker_V3.Logic
     public class LogicCalculation(InstanceData.InstanceContainer _container)
     {
         public readonly InstanceData.InstanceContainer container = _container;
-        public Dictionary<string, List<string>> LogicUnlockData = [];
         public Dictionary<string, MMRData.JsonFormatLogicItem> LogicMap = [];
-        public Dictionary<object, int> AutoObtainedObjects = [];
+        public HashSet<object> AutoObtainedObjects = [];
+        public Dictionary<string, Dictionary<string, LogicItemData>> UnlockData = [];
         public bool ReCompileLogicOnCalculation = false;
 
-        private bool RequirementsMet(List<string> Requirements, List<string> TempUnlockData)
+        public static void CommitUnlockData(Dictionary<string, LogicItemData> Main, Dictionary<string, LogicItemData> Sub)
         {
-            List<string> SubUnlockData = [];
+            if (Main is null) { return; }
+            foreach(var i in Sub)
+            {
+                if (!Main.TryGetValue(i.Key, out LogicItemData value) || value.Amount < i.Value.Amount) 
+                {
+                    Main[i.Key] = i.Value; 
+                }
+            }
+        }
+
+        public bool CalculatReqAndCond(MMRData.JsonFormatLogicItem Logic, string ID, string Area, bool UpdateUnlockData = false)
+        {
+            Dictionary<string, LogicItemData> SubUnlockData = [];
+            bool Available =
+                (Area == null || AreaReached(Area)) &&
+                RequirementsMet(Logic.RequiredItems, SubUnlockData) &&
+                ConditionalsMet(Logic.ConditionalItems, SubUnlockData);
+            if (Available && UpdateUnlockData && !UnlockData.ContainsKey(ID)) { UnlockData[ID] = SubUnlockData; }
+            return Available;
+        }
+        private bool RequirementsMet(List<string> Requirements, Dictionary<string, LogicItemData> UnlockData = null)
+        {
+            Dictionary<string, LogicItemData> TempUnlockData = [];
             foreach (var Req in Requirements)
             {
+                Dictionary<string, LogicItemData> SubUnlockData = [];
                 if (!LogicEntryAquired(Req, SubUnlockData)) { return false; }
+                CommitUnlockData(TempUnlockData, SubUnlockData);
             }
-            TempUnlockData?.AddRange(SubUnlockData);
+            CommitUnlockData(UnlockData, TempUnlockData);
             return true;
         }
 
-        public bool ConditionalsMet(List<List<string>> Conditionals, List<string> TempUnlockData)
+        public bool ConditionalsMet(List<List<string>> Conditionals, Dictionary<string, LogicItemData> UnlockData = null)
         {
             if (Conditionals.Count == 0) { return true; }
-            List<string> SubUnlockData = [];
             foreach (var Set in Conditionals)
             {
+                Dictionary<string, LogicItemData> SubUnlockData = [];
                 if (RequirementsMet(Set, SubUnlockData))
                 {
-                    TempUnlockData.AddRange(SubUnlockData);
+                    CommitUnlockData(UnlockData, SubUnlockData);
                     return true;
                 }
             }
             return false;
         }
 
-        public bool LogicEntryAquired(string i, List<string> SubUnlockData)
+        public bool LogicEntryAquired(string i, Dictionary<string, LogicItemData> UnlockData = null)
         {
             var LogicItem = container.Instance.GetLogicItemData(i);
 
@@ -50,87 +74,98 @@ namespace MMR_Tracker_V3.Logic
                 case LogicItemTypes.Boolean:
                     return bool.Parse(LogicItem.RawID);
                 case LogicItemTypes.item:
-                    SubUnlockData.Add(LogicItem.RawID);
+                    UnlockData?.Add(LogicItem.CleanID, LogicItem);
                     return ((ItemData.ItemObject)LogicItem.Object).Useable(LogicItem.Amount);
                 case LogicItemTypes.macro:
-                    SubUnlockData.Add(LogicItem.RawID);
+                    UnlockData?.Add(LogicItem.CleanID, LogicItem);
                     return ((MacroObject)LogicItem.Object).Available;
                 case LogicItemTypes.Area:
-                    return AreaReached(LogicItem.CleanID, SubUnlockData);
+                    return AreaReached(LogicItem.CleanID, UnlockData);
                 case LogicItemTypes.LogicEntryCollection:
-                    return CheckItemArray(LogicItem.CleanID, LogicItem.Amount, SubUnlockData, out int _);
+                    return CheckItemArray(LogicItem.CleanID, LogicItem.Amount, UnlockData);
                 case LogicItemTypes.function:
-                    return LogicFunctions.LogicFunctionAquired(container.Instance, LogicItem.RawID, SubUnlockData);
+                    UnlockData?.Add(LogicItem.CleanID, LogicItem);
+                    return LogicFunctions.LogicFunctionAquired(container.Instance, LogicItem.RawID);
                 default:
                     Debug.WriteLine($"{LogicItem.RawID} Was not a valid Logic Entry");
                     return false;
             }
         }
 
-        public bool CheckItemArray(string ArrVar, int amount, List<string> SubUnlockData, out int TotalUsable)
+        public bool CheckItemArray(string ArrVar, int amount, Dictionary<string, LogicItemData> UnlockData = null)
         {
             var EditActions = container.Instance.GetOptionActions();
-            TotalUsable = 0;
             if (!container.Instance.LogicEntryCollections.TryGetValue(ArrVar, out OptionData.LogicEntryCollection value)) { return false; }
             List<string> VariableEntries = value.GetValue(container.Instance);
+            VariableEntries = ExpandSubCollections(VariableEntries);
 
-            List<string> UsableItems = [];
-            Dictionary<string, int> ItemTracking = [];
-            LoopVarEntry(VariableEntries);
-            bool CountMet = UsableItems.Count >= amount;
-            TotalUsable = UsableItems.Count;
-
-            foreach (var i in UsableItems.Take(amount))
+            List<string> ExpandedList = [];
+            foreach (string VariableEntry in VariableEntries)
             {
-                ItemTracking.SetIfEmpty(i, 0);
-                ItemTracking[i]++;
-            }
-            if (CountMet) { foreach (var x in ItemTracking) { SubUnlockData.Add($"{x.Key}, {x.Value}"); } }
-            return CountMet;
-
-            void LoopVarEntry(List<string> VarList)
-            {
-                foreach (var i in VarList)
+                var LogicItem = container.Instance.GetLogicItemData(VariableEntry);
+                if (LogicItem.Type == LogicItemTypes.item)
                 {
-                    var LogicItem = container.Instance.GetLogicItemData(i);
-
-                    if (LogicItem.Type == LogicItemTypes.LogicEntryCollection) { LoopVarEntry((LogicItem.Object as OptionData.LogicEntryCollection).GetValue(container.Instance)); }
-                    else
-                    {
-                        if (LogicItem.Type == LogicItemTypes.item && !LogicItem.HadItemCount)
-                        { UsableItems.AddRange(Enumerable.Repeat(LogicItem.CleanID, (LogicItem.Object as ItemData.ItemObject).GetTotalUsable())); }
-                        else if (LogicEntryAquired(i, SubUnlockData)) { UsableItems.Add(i); }
-                    }
+                    var Item = LogicItem.Object as ItemData.ItemObject;
+                    if (LogicItem.HadItemCount && Item.GetTotalUsable() >= LogicItem.Amount) { ExpandedList.Add(VariableEntry); }
+                    else { ExpandedList.AddRange(Enumerable.Repeat(LogicItem.CleanID, Item.GetTotalUsable()).ToList()); }
+                };
+            }
+            if (ExpandedList.Count < amount) { return false; }
+            IEnumerable<string> UsedItems = ExpandedList.Take(amount);
+            Dictionary<string, LogicItemData> ItemCounts = [];
+            Dictionary<string, LogicItemData> HasAmountEntries = [];
+            foreach (var i in UsedItems)
+            {
+                var LogicItem = container.Instance.GetLogicItemData(i);
+                if (LogicItem.HadItemCount) 
+                {
+                    if (!HasAmountEntries.ContainsKey(LogicItem.CleanID)) { HasAmountEntries[LogicItem.CleanID] = LogicItem; }
+                    else if (HasAmountEntries[LogicItem.CleanID].Amount < LogicItem.Amount) { HasAmountEntries[LogicItem.CleanID] = LogicItem; }
+                }
+                else
+                {
+                    if (ItemCounts.ContainsKey(LogicItem.CleanID)) { ItemCounts[LogicItem.CleanID].Amount++; }
+                    else { ItemCounts.SetIfEmpty(LogicItem.CleanID, LogicItem); }
                 }
             }
+            foreach(var i in HasAmountEntries)
+            {
+                if (!ItemCounts.ContainsKey(i.Key)) { ItemCounts[i.Key] = i.Value; }
+                else if (ItemCounts[i.Key].Amount < i.Value.Amount) { ItemCounts[i.Key] = i.Value; }
+            }
+            CommitUnlockData(UnlockData, ItemCounts);
+            return true;
+
         }
 
-        private bool AreaReached(string Area, List<string> TempUnlockData = null)
+        private List<string> ExpandSubCollections(List<string> list)
         {
+            List<string> FinalCollection = new List<string>();
+            foreach(var i in list)
+            {
+                var LogicItem = container.Instance.GetLogicItemData(i);
+                if (LogicItem.Type == LogicItemTypes.LogicEntryCollection) 
+                {
+                    FinalCollection.AddRange(ExpandSubCollections((LogicItem.Object as OptionData.LogicEntryCollection).GetValue(container.Instance))); 
+                }
+                else
+                {
+                    FinalCollection.Add(i);
+                }
+            }
+            return FinalCollection;
+        }
+
+        private bool AreaReached(string Area, Dictionary<string, LogicItemData> UnlockData = null)
+        {
+            Dictionary<string, LogicItemData> TempUnlockData = [];
             if (!container.Instance.AreaPool.ContainsKey(Area)) { return false; }
             var AreaObj = container.Instance.AreaPool[Area];
+            TempUnlockData.Add(AreaObj.ID, new LogicItemData { Type = LogicItemTypes.Area, Amount = 1, CleanID = Area, RawID = Area, HadItemCount = false, Literal = false, Object = AreaObj });
             bool Reachable = AreaObj.ExitsAcessibleFrom > 0 || AreaObj.IsRoot;
-            if (TempUnlockData != null && Reachable)
-            {
-                TempUnlockData.Add(AreaObj.ID);
-            }
+            if (!Reachable) { return false; }
+            CommitUnlockData(UnlockData, TempUnlockData);
             return Reachable;
-        }
-
-        public bool CalculatReqAndCond(MMRData.JsonFormatLogicItem Logic, string ID, string Area)
-        {
-            List<string> UnlockedWith = [];
-            bool Available =
-                (Area == null || AreaReached(Area, UnlockedWith)) &&
-                RequirementsMet(Logic.RequiredItems, UnlockedWith) &&
-                ConditionalsMet(Logic.ConditionalItems, UnlockedWith);
-
-            if (!LogicUnlockData.ContainsKey(ID) && Available)
-            {
-                LogicUnlockData[ID] = UnlockedWith.Distinct().ToList();
-            }
-
-            return Available;
         }
 
         public void CompileOptionActionEdits()
@@ -167,6 +202,7 @@ namespace MMR_Tracker_V3.Logic
                     MaxAmount = i.Value.GetDictEntry().GetOptionEditDefinedMaxAmountInWorld(Actions)
                 };
             }
+            CleanUnlockData();
         }
 
         public void CalculateLogic(CheckState checkState = CheckState.Unchecked)
@@ -188,17 +224,17 @@ namespace MMR_Tracker_V3.Logic
             foreach (var i in container.Instance.LocationPool.Values.Where(x => !x.IsUnrandomized(UnrandState.Unrand)))
             {
                 var Logic = LogicMap[i.ID];
-                i.Available = CalculatReqAndCond(Logic, i.ID, null);
+                i.Available = CalculatReqAndCond(Logic, i.ID, null, true);
             }
             foreach (var i in container.Instance.ExitPool.Values.Where(x => x.IsRandomizableEntrance() && !x.IsUnrandomized(UnrandState.Unrand)))
             {
                 var Logic = LogicMap[i.ID];
-                i.Available = CalculatReqAndCond(Logic, i.ID, i.ParentAreaID);
+                i.Available = CalculatReqAndCond(Logic, i.ID, i.ParentAreaID, true);
             }
             foreach (var i in container.Instance.HintPool)
             {
                 var Logic = LogicMap[i.Key];
-                i.Value.Available = CalculatReqAndCond(Logic, i.Key, null);
+                i.Value.Available = CalculatReqAndCond(Logic, i.Key, null, true);
             }
 
             if (checkState == CheckState.Unchecked) { CleanUnlockData(); }
@@ -211,19 +247,19 @@ namespace MMR_Tracker_V3.Logic
             //become unckecked and rechecked during logic calculation and we don't want them resetting their unlock data when this happens.
             foreach (var i in container.Instance.LocationPool.Values)
             {
-                if (!i.Available && LogicUnlockData.ContainsKey(i.ID)) { LogicUnlockData.Remove(i.ID); }
+                if (!i.Available && UnlockData.ContainsKey(i.ID)) { UnlockData.Remove(i.ID); }
             }
-            foreach(var i in container.Instance.ExitPool.Values)
+            foreach (var i in container.Instance.ExitPool.Values)
             {
-                if (!i.Available && LogicUnlockData.ContainsKey(i.ID)) { LogicUnlockData.Remove(i.ID); }
+                if (!i.Available && UnlockData.ContainsKey(i.ID)) { UnlockData.Remove(i.ID); }
             }
             foreach (var i in container.Instance.HintPool.Values)
             {
-                if (!i.Available && LogicUnlockData.ContainsKey(i.ID)) { LogicUnlockData.Remove(i.ID); }
+                if (!i.Available && UnlockData.ContainsKey(i.ID)) { UnlockData.Remove(i.ID); }
             }
             foreach (var i in container.Instance.MacroPool.Values)
             {
-                if (!i.Available && LogicUnlockData.ContainsKey(i.ID)) { LogicUnlockData.Remove(i.ID); }
+                if (!i.Available && UnlockData.ContainsKey(i.ID)) { UnlockData.Remove(i.ID); }
             }
         }
 
@@ -246,7 +282,7 @@ namespace MMR_Tracker_V3.Logic
             foreach (var i in container.Instance.GetAllUnrandomizedAndMacroExits(UnrandState.Unrand))
             {
                 var Logic = LogicMap[i.ID];
-                var Available = CalculatReqAndCond(Logic, i.ID, i.ParentAreaID);
+                var Available = CalculatReqAndCond(Logic, i.ID, i.ParentAreaID, true);
                 bool ShouldBeChecked = Available && i.CheckState != CheckState.Checked;
                 bool ShouldBeUnChecked = !Available && i.CheckState == CheckState.Checked;
                 if (ShouldBeChecked || ShouldBeUnChecked)
@@ -256,7 +292,7 @@ namespace MMR_Tracker_V3.Logic
                     CheckState checkState = i.Available ? CheckState.Checked : CheckState.Unchecked;
                     if (checkState == CheckState.Checked) { i.DestinationExit = i.GetVanillaDestination(); }
                     i.ToggleExitChecked(checkState);
-                    if (Available) { AutoObtainedObjects[i] = itterations; }
+                    if (Available) { AutoObtainedObjects.Add(i); }
                 }
             }
             return ItemStateChanged;
@@ -272,8 +308,8 @@ namespace MMR_Tracker_V3.Logic
                 if (Logic.IsTrick && !i.Value.TrickEnabled) { Available = false; }
                 else
                 {
-                    Available = CalculatReqAndCond(Logic, i.Key, null);
-                    if (Available) { AutoObtainedObjects[i.Value] = itterations; }
+                    Available = CalculatReqAndCond(Logic, i.Key, null, true);
+                    if (Available) { AutoObtainedObjects.Add(i.Value); }
                 }
 
                 if (Available != i.Value.Available)
@@ -292,7 +328,7 @@ namespace MMR_Tracker_V3.Logic
             {
                 if (string.IsNullOrWhiteSpace(i.Value.GetDictEntry().OriginalItem)) { continue; }
                 var Logic = LogicMap[i.Key];
-                var Available = CalculatReqAndCond(Logic, i.Key, null);
+                var Available = CalculatReqAndCond(Logic, i.Key, null, true);
                 bool ShouldBeChecked = Available && i.Value.CheckState != CheckState.Checked;
                 bool ShouldBeUnChecked = !Available && i.Value.CheckState == CheckState.Checked;
                 if (ShouldBeChecked || ShouldBeUnChecked)
@@ -302,7 +338,7 @@ namespace MMR_Tracker_V3.Logic
                     CheckState checkState = i.Value.Available ? CheckState.Checked : CheckState.Unchecked;
                     if (checkState == CheckState.Checked) { i.Value.Randomizeditem.Item = i.Value.GetDictEntry().OriginalItem; }
                     i.Value.ToggleChecked(checkState);
-                    if (Available) { AutoObtainedObjects[i.Value] = itterations; }
+                    if (Available) { AutoObtainedObjects.Add(i.Value); }
                 }
             }
             return ItemStateChanged;

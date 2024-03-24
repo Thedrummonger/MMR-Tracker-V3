@@ -130,18 +130,10 @@ namespace MMR_Tracker_V3.TrackerObjects
             public string FileName { get; set; }
             public string[] Log { get; set; }
             public Dictionary<string, PlaythroughGenerator.PlaythroughObject> Playthrough { get; set; }
+
             public void GetStaticPlaythrough(TrackerInstance instance)
             {
-                PlaythroughGenerator generator = new(instance);
-                generator.GeneratePlaythrough();
-                if (instance.LogicDictionary.WinCondition != null)
-                {
-                    var wincon = instance.LogicDictionary.WinCondition;
-                    var ItemData = instance.GetLogicItemData(wincon);
-                    if (ItemData.Object is not null) { generator.FilterImportantPlaythrough(ItemData.Object); }
-                    Debug.WriteLine($"Seed Beatable: {generator.Playthrough.ContainsKey(instance.LogicDictionary.WinCondition)}");
-                }
-                Playthrough = generator.Playthrough;
+                throw new NotImplementedException();
             }
         }
 

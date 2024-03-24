@@ -489,7 +489,7 @@ namespace Windows_Form_Frontend
         }
         private string GetDisplayName(string i)
         {
-            return i + (IC.logicCalculation.LogicEntryAquired(i, new List<string>()) ? "*" : "");
+            return i + (IC.logicCalculation.LogicEntryAquired(i) ? "*" : "");
         }
 
         private void btnGoTo_Click(object sender, EventArgs e)

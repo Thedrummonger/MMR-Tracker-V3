@@ -30,7 +30,7 @@ namespace TestingForm
                 var logicitems = i.ConditionalItems.SelectMany(x => x).Concat(i.RequiredItems).ToArray();
                 foreach (var l in logicitems)
                 {
-                    Container.logicCalculation.LogicEntryAquired(l, new List<string>());
+                    Container.logicCalculation.LogicEntryAquired(l);
                 }
             }
         }

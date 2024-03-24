@@ -293,7 +293,7 @@ namespace MMR_Tracker_V3
             Dictionary<string, List<dynamic>> Categorized = new Dictionary<string, List<dynamic>>();
             foreach (var item in All)
             {
-                if (!Data.InstanceContainer.logicCalculation.ConditionalsMet(item.Conditionals, new List<string>())) { continue; }
+                if (!Data.InstanceContainer.logicCalculation.ConditionalsMet(item.Conditionals)) { continue; }
                 string Sub = item.SubCategory;
                 Sub ??= "";
                 if (!Categorized.ContainsKey(Sub)) { Categorized.Add(Sub, new List<dynamic>()); }

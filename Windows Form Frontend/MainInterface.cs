@@ -672,7 +672,7 @@ namespace Windows_Form_Frontend
                 if (o is OptionData.ChoiceOption ChoiceOption)
                 {
                     var OptionTree = GetOptionTree(o);
-                    if (!InstanceContainer.logicCalculation.ConditionalsMet(ChoiceOption.Conditionals, new List<string>())) { continue; }
+                    if (!InstanceContainer.logicCalculation.ConditionalsMet(ChoiceOption.Conditionals)) { continue; }
                     if (ChoiceOption.ValueList.Count < 2) { continue; }
 
                     ToolStripComboBox toolStripComboBox = new();
@@ -703,7 +703,7 @@ namespace Windows_Form_Frontend
                 else if (o is OptionData.MultiSelectOption MultiSelectOption)
                 {
                     var OptionTree = GetOptionTree(o);
-                    if (!InstanceContainer.logicCalculation.ConditionalsMet(MultiSelectOption.Conditionals, new List<string>())) { continue; }
+                    if (!InstanceContainer.logicCalculation.ConditionalsMet(MultiSelectOption.Conditionals)) { continue; }
                     ToolStripMenuItem menuItem = new() { Name = $"{MultiSelectOption.ID}Menu", Text = MultiSelectOption.getOptionName() };
                     menuItem.ToolTipText = MultiSelectOption.Description;
                     menuItem.AutoToolTip = true;
@@ -726,7 +726,7 @@ namespace Windows_Form_Frontend
                 else if (o is OptionData.ToggleOption ToggleOption)
                 {
                     var OptionTree = GetOptionTree(o);
-                    if (!InstanceContainer.logicCalculation.ConditionalsMet(ToggleOption.Conditionals, new List<string>())) { continue; }
+                    if (!InstanceContainer.logicCalculation.ConditionalsMet(ToggleOption.Conditionals)) { continue; }
                     ToolStripMenuItem menuItem = new() { Name = $"{ToggleOption.ID}Menu", Checked = ToggleOption.IsEnabled(), Text = ToggleOption.getOptionName() };
                     menuItem.ToolTipText = ToggleOption.Description;
                     menuItem.AutoToolTip = true;
@@ -744,7 +744,7 @@ namespace Windows_Form_Frontend
                 else if (o is OptionData.IntOption IntOption)
                 {
                     var OptionTree = GetOptionTree(o);
-                    if (!InstanceContainer.logicCalculation.ConditionalsMet(IntOption.Conditionals, new List<string>())) { continue; }
+                    if (!InstanceContainer.logicCalculation.ConditionalsMet(IntOption.Conditionals)) { continue; }
                     string DisplayName = IntOption.ToString();
                     ToolStripMenuItem menuItem = new() { Name = $"{IntOption.ID}Menu", Text = IntOption.ToString() };
                     menuItem.ToolTipText = IntOption.Description;

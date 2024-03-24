@@ -56,6 +56,12 @@ namespace MMR_Tracker_V3.Logic
             if (!Functions.ContainsKey(Func)) { return false; }
             return true;
         }
+        public static bool IsLogicFunction(string i, out string Func, out string[] Params, Tuple<char, char> functionCasing = null, string ParamSeparator = ",")
+        {
+            bool Check = IsLogicFunction(i, out Func, out string Param, functionCasing);
+            Params = Param.TrimSplit(ParamSeparator);
+            return Check;
+        }
 
         public static bool LogicFunctionAquired(InstanceData.TrackerInstance instance, string i, List<string> SubUnlockData = null)
         {

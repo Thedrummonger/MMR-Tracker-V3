@@ -9,6 +9,7 @@ using static MMR_Tracker_V3.TrackerObjects.InstanceData;
 using static MMR_Tracker_V3.TrackerObjects.MiscData;
 using MMR_Tracker_V3.TrackerObjectExtensions;
 using MMR_Tracker_V3;
+using System.Diagnostics;
 
 namespace Windows_Form_Frontend
 {
@@ -65,15 +66,12 @@ namespace Windows_Form_Frontend
             {
                 AddItem("Show Logic", () => { new ShowLogic(LPO.GetDictEntry().LogicInheritance ?? LPO.ReferenceID, InstanceContainer).Show(); });
             }
-            if (CheckableLocations.Count == 1 && InstanceContainer.logicCalculation.LogicUnlockData.ContainsKey(CheckableLocations[0].ID))
+            if (CheckableLocations.Count == 1 && InstanceContainer.logicCalculation.UnlockData.ContainsKey(CheckableLocations[0].ID))
             {
-                AddItem("What Unlocked This", () => { ShowUnlockData(CheckableLocations[0].ID); });
-            }
-            if (CheckableLocations.Count == 1 && 
-                !InstanceContainer.logicCalculation.LogicUnlockData.ContainsKey(CheckableLocations[0].ID) && 
-                InstanceContainer.Instance.SpoilerLog is not null)
-            {
-                AddItem("Show Missing Items", ShowWhatsMissing);
+                AddItem("What Unlocked This", () => {
+                    Utility.PrintObjectToConsole(PlaythroughTools.GetAdvancedUnlockData(
+                        CheckableLocations[0].ID, InstanceContainer.logicCalculation.UnlockData, InstanceContainer.Instance));
+                });
             }
             if (NotCheckedLocations.Count > 0)
             {
@@ -243,50 +241,6 @@ namespace Windows_Form_Frontend
             TextBox.Text = string.Empty;
             foreach (var item in CheckableLocations) { item.Starred = false; }
             mainInterface.PrintToListBox();
-        }
-        private void ShowUnlockData(string iD)
-        {
-            if (!InstanceContainer.logicCalculation.LogicUnlockData.ContainsKey(iD)) { return; }
-            var AdvancedUnlockData = PlaythroughTools.GetAdvancedUnlockData(iD, InstanceContainer.logicCalculation.LogicUnlockData, InstanceContainer.Instance);
-            var DataDisplay = PlaythroughTools.FormatAdvancedUnlockData(AdvancedUnlockData, InstanceContainer.logicCalculation.LogicUnlockData);
-
-            List<dynamic> Items = new List<dynamic>();
-            foreach (var i in DataDisplay)
-            {
-                var FLI = new MiscData.StandardListBoxItem
-                {
-                    Display = i is MiscData.Divider DVIx ? DVIx.Display : i.ToString(),
-                    Tag = i is MiscData.Divider DVIy ? DVIy : i.ToString(),
-                    tagFunc = i is MiscData.Divider ? ShowUnlockSubFunction : null
-                };
-                Items.Add(FLI);
-            }
-
-            BasicDisplay basicDisplay = new BasicDisplay(Items);
-            basicDisplay.Text = $"Unlock Data for {iD}";
-            basicDisplay.Show();
-        }
-
-        private void ShowWhatsMissing()
-        {
-            var missingitems = PlaythroughTools.GetMissingItems(CheckableLocations[0].ID, InstanceContainer.Instance);
-            if (missingitems == null) { MessageBox.Show($"{CheckableLocations[0].ID} Can not be obtained"); return; }
-            MessageBox.Show($"The Following items are still needed for {CheckableLocations[0].ID}\n\n{string.Join("\n", missingitems)}");
-        }
-
-        private dynamic ShowUnlockSubFunction(dynamic dynamic)
-        {
-            if (dynamic is not ValueTuple<List<ValueTuple<object, bool>>, object> TO || TO.Item2 is not MiscData.Divider DIV) { return null; }
-            List<ValueTuple<object, bool>> Return = new();
-            bool Toggleing = false;
-            foreach (var i in TO.Item1)
-            {
-                bool IsDivider = i.Item1 is MiscData.StandardListBoxItem FLI && FLI.Tag is MiscData.Divider;
-                Toggleing = IsDivider ? ((i.Item1 as MiscData.StandardListBoxItem).Tag as MiscData.Divider).Display == DIV.Display : Toggleing;
-                bool Shown = (Toggleing ? !i.Item2 : i.Item2) || IsDivider;
-                Return.Add((i.Item1, Shown));
-            }
-            return Return;
         }
 
         private void Initialize()
