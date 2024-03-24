@@ -155,7 +155,7 @@ namespace MMR_Tracker_V3.GameDataCreation.PaperMarioRando
 
             LogicDictionaryData.LogicDictionary PMRDict = new LogicDictionaryData.LogicDictionary()
             {
-                RootArea = "Spawn",
+                RootAreas = ["Spawn"],
                 GameCode = "PMR",
                 WinCondition = "YOUWIN",
                 LogicVersion = 1

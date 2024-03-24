@@ -2,6 +2,7 @@
 using MMR_Tracker_V3.TrackerObjects;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using static MMR_Tracker_V3.TrackerObjects.EntranceData;
 using static MMR_Tracker_V3.TrackerObjects.HintData;
@@ -236,6 +237,7 @@ namespace MMR_Tracker_V3
                 if (exit.CheckState != CheckState.Checked) { continue; } //Doesn't support unchecking pairs
                 if (!exit.IsRandomizableEntrance() || exit.EntrancePair is null) { continue; }
                 //Get the Pair of the exits destination
+                Debug.WriteLine(exit.DestinationExit.ToFormattedJson());
                 var PairExit = exit.DestinationExit.AsExit(instanceContainer.Instance).EntrancePair?.AsExit(instanceContainer.Instance);
                 if (PairExit == null) { continue; }
                 //If the pair has already been checked or if it's already in the state it needs to be skip it

@@ -101,7 +101,7 @@ namespace MMR_Tracker_V3
             //dataSets.ProxyStateIsNOTChecked = instance.LocationProxyData.LocationProxies.Values.Where(x => x.GetReferenceLocation(instance).CheckState != MiscData.CheckState.Checked).ToList();
             //dataSets.ProxyStateIsMarkedAndAvailable = dataSets.ProxyStateIsNOTChecked.Where(x => x.ProxyAvailable(instance) || x.GetReferenceLocation(instance).CheckState == MiscData.CheckState.Marked).ToList();
 
-            var AllExits = instance.EntrancePool.AreaList.Values.SelectMany(x => x.RandomizableExits().Values);
+            var AllExits = instance.GetAllRandomizableExits();
             foreach (var i in AllExits)
             {
                 switch (i.CheckState)

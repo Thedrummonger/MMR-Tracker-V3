@@ -336,7 +336,7 @@ namespace MMR_Tracker_V3.GameDataCreation.TPRando
         {
             Dictionary<string, int> ItemCounts = GetItemCOunts(checkData);
             TRPLogic = new() { GameCode = "TPR", Logic = new List<MMRData.JsonFormatLogicItem>(), Version = 1 };
-            TRPDictionary = new() { LogicVersion = 1, GameCode = "TPR", RootArea = "Ordon Province", WinCondition = "Triforce" };
+            TRPDictionary = new() { LogicVersion = 1, GameCode = "TPR", RootAreas = ["Ordon Province"], WinCondition = "Triforce" };
             foreach (var graph in worldGRaph)
             {
                 foreach(var loc in graph.Value.Locations)

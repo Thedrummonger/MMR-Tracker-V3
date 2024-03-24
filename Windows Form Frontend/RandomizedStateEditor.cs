@@ -28,7 +28,7 @@ namespace Windows_Form_Frontend
         private void RandomizedStateEditor_Load(object sender, EventArgs e)
         {
             cmbLocationType.Items.Add("Item Locations");
-            if (_Instance.EntrancePool.AreaList.Any())
+            if (_Instance.GetAllRandomizableExits().Count > 0)
             {
                 cmbLocationType.Items.Add("Entrances");
             }
@@ -161,27 +161,24 @@ namespace Windows_Form_Frontend
         private void PrintExitData()
         {
             List<ListViewItem> TempList = new List<ListViewItem>();
-            foreach (var area in _Instance.EntrancePool.AreaList)
+            foreach (var i in _Instance.GetAllRandomizableExits())
             {
-                foreach (var i in area.Value.RandomizableExits())
-                {
-                    if (i.Value.IsRandomized() && !chkShowRand.Checked) { continue; }
-                    if (i.Value.IsUnrandomized(MiscData.UnrandState.Unrand) && !chkShowUnrand.Checked) { continue; }
-                    if (i.Value.IsUnrandomized(MiscData.UnrandState.Manual) && !chkShowManual.Checked) { continue; }
-                    if (i.Value.IsJunk() && !chkShowJunk.Checked) { continue; }
-                    i.Value.DisplayName = i.Value.GetParentArea().ID + " => " + i.Value.ExitID;
-                    if (!SearchStringParser.FilterSearch(_Instance, i.Value, TxtLocationSearch.Text, i.Value.DisplayName)) { continue; }
-                    string VanillaItemText = i.Value.ExitID + " <= " + i.Value.GetParentArea().ID;
+                if (i.IsRandomized() && !chkShowRand.Checked) { continue; }
+                if (i.IsUnrandomized(MiscData.UnrandState.Unrand) && !chkShowUnrand.Checked) { continue; }
+                if (i.IsUnrandomized(MiscData.UnrandState.Manual) && !chkShowManual.Checked) { continue; }
+                if (i.IsJunk() && !chkShowJunk.Checked) { continue; }
+                i.DisplayName = i.GetParentArea().ID + " => " + i.ExitID;
+                if (!SearchStringParser.FilterSearch(_Instance, i, TxtLocationSearch.Text, i.DisplayName)) { continue; }
+                string VanillaItemText = i.ExitID + " <= " + i.GetParentArea().ID;
 
-                    string[] row = { i.Value.DisplayName, VanillaItemText, i.Value.RandomizedState.GetDescription() };
-                    ListViewItem listViewItem = new(row)
-                    {
-                        Tag = i.Value,
-                        Checked = CheckedExitItems.Contains(i.Value),
-                        ToolTipText = $"Exit: {i.Value.DisplayName} \nVanilla Destination: {VanillaItemText} \nRandomized State: {i.Value.RandomizedState}"
-                    };
-                    TempList.Add(listViewItem);
-                }
+                string[] row = { i.DisplayName, VanillaItemText, i.RandomizedState.GetDescription() };
+                ListViewItem listViewItem = new(row)
+                {
+                    Tag = i,
+                    Checked = CheckedExitItems.Contains(i),
+                    ToolTipText = $"Exit: {i.DisplayName} \nVanilla Destination: {VanillaItemText} \nRandomized State: {i.RandomizedState}"
+                };
+                TempList.Add(listViewItem);
             }
             lvLocationList.Items.AddRange(TempList.ToArray());
             lvLocationList.CheckBoxes = true;

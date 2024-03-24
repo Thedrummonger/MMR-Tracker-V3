@@ -62,8 +62,6 @@ namespace TestingForm
             string AnyBug = string.Join(" or ", Bugs);
             Debug.WriteLine(AnyBug);
 
-            string Root = MainInterface.InstanceContainer.Instance.EntrancePool.RootArea;
-            Debug.WriteLine($"Root Area {Root} Valid {MainInterface.InstanceContainer.Instance.EntrancePool.AreaList.ContainsKey(Root)} Aquired {MainInterface.InstanceContainer.logicCalculation.LogicEntryAquired(Root, new List<string>())}");
         }
 
         public static void OOTMMCreateData()

@@ -24,7 +24,7 @@ namespace TestingForm.GameDataCreation.OOTMMV3
         public MMRData.LogicFile LogicFile = new() { GameCode = "OOTMM", Logic = [], Version = 3 };
         public LogicDictionaryData.LogicDictionary dictionary = new LogicDictionaryData.LogicDictionary()
         {
-            RootArea = "OOT SPAWN",
+            RootAreas = ["OOT SPAWN"],
             WinCondition = "Game_Clear",
             GameCode = "OOTMM",
             LogicVersion = 3

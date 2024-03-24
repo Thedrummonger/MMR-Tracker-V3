@@ -77,11 +77,13 @@ namespace MMR_Tracker_V3
                         string Area = stop.Key;
                         string Exit = stop.Value;
 
-                        bool ExitValid = instance.EntrancePool.AreaList.ContainsKey(Area) && instance.EntrancePool.AreaList[Area].Exits.ContainsKey(Exit);
+                        var ExitObject = instance.GetExitByAreaIDAndExitID(Area, Exit);
+
+                        bool ExitValid = ExitObject is not null;
                         bool IsDestination = string.IsNullOrWhiteSpace(Exit);
                         bool IsRandomizedExit = ExitValid &&
-                            instance.EntrancePool.AreaList[Area].Exits[Exit].IsRandomizableEntrance() &&
-                            (instance.EntrancePool.AreaList[Area].Exits[Exit].IsRandomized() || instance.EntrancePool.AreaList[Area].Exits[Exit].IsUnrandomized(MiscData.UnrandState.Manual));
+                            ExitObject.IsRandomizableEntrance() && 
+                            (ExitObject.IsRandomized() || ExitObject.IsUnrandomized(MiscData.UnrandState.Manual));
 
                         if (IsRandomizedExit || IsDestination || ShowMacro) { FormattedPath.Add(Area, Exit); }
                         Index++;
@@ -104,10 +106,10 @@ namespace MMR_Tracker_V3
             EntranceMap.Clear();
             Warps.Clear();
 
-            foreach (var i in instance.EntrancePool.AreaList.Values)
+            foreach (var i in instance.AreaPool.Values)
             {
                 if (!EntranceMap.ContainsKey(i.ID)) { EntranceMap[i.ID] = new Dictionary<string, EntranceData.EntranceRandoDestination>(); }
-                foreach (var j in i.Exits)
+                foreach (var j in i.GetAllExits())
                 {
                     if (j.Value.CheckState != MiscData.CheckState.Checked) { continue; }
                     if (j.Value.IsWarp) { Warps[j.Key] = j.Value.DestinationExit; }
@@ -131,9 +133,9 @@ namespace MMR_Tracker_V3
         {
             HashSet<string> result = [];
             bool CanMacro = Instance.StaticOptions.OptionFile.ShowMacroExitsPathfinder;
-            foreach (var i in Instance.EntrancePool.AreaList)
+            foreach (var i in Instance.AreaPool)
             {
-                var ExitsToCheck = CanMacro ? i.Value.Exits.Values : i.Value.RandomizableExits().Values;
+                var ExitsToCheck = CanMacro ? i.Value.GetAllExits().Values : i.Value.GetAllRandomizableExits().Values;
                 if (!ExitsToCheck.Any(x => x.CheckState == MiscData.CheckState.Checked)) { continue; }
                 result.Add(i.Key);
             }
@@ -143,8 +145,8 @@ namespace MMR_Tracker_V3
         {
             HashSet<string> result = [];
             bool CanMacro = Instance.StaticOptions.OptionFile.ShowMacroExitsPathfinder;
-            var AllExits = Instance.EntrancePool.AreaList.Values.SelectMany(x => x.Exits.Values);
-            var ExitsToCheck = CanMacro ? AllExits : Instance.EntrancePool.GetAllRandomizableExits();
+            var AllExits = Instance.ExitPool.Values;
+            var ExitsToCheck = CanMacro ? AllExits : Instance.ExitPool.Where(x => x.Value.IsRandomizableEntrance()).Select(x => x.Value);
             foreach (var i in ExitsToCheck)
             {
                 if (i.CheckState != MiscData.CheckState.Checked) { continue; }

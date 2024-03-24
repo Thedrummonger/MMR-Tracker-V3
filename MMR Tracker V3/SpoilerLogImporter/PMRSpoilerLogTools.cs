@@ -136,9 +136,9 @@ namespace MMR_Tracker_V3.SpoilerLogImporter
 
             Dictionary<string, string[]> SuperBlocksLocations = new Dictionary<string, string[]>();
 
-            foreach (var loc in Instance.EntrancePool.AreaList.Values.SelectMany(x => x.RandomizableExits()))
+            foreach (var loc in Instance.GetAllRandomizableExits())
             {
-                loc.Value.SpoilerDefinedDestinationExit = loc.Value.GetVanillaDestination();
+                loc.SpoilerDefinedDestinationExit = loc.GetVanillaDestination();
             }
 
             foreach (var i in LogObject)
@@ -155,8 +155,8 @@ namespace MMR_Tracker_V3.SpoilerLogImporter
                     foreach (var entrance in EntranceData)
                     {
                         Debug.WriteLine($"Checking Entrance {entrance.entrance}");
-                        var Ent = Instance.EntrancePool.AreaList.First(x => x.Key.Replace("'", "") == entrance.entrance).Value.RandomizableExits().First();
-                        var Dest = Instance.EntrancePool.AreaList.First(x => x.Key.Replace("'", "") == entrance.exit).Value.RandomizableExits().First();
+                        var Ent = Instance.AreaPool.First(x => x.Key.Replace("'", "") == entrance.entrance).Value.GetAllRandomizableExits().First();
+                        var Dest = Instance.AreaPool.First(x => x.Key.Replace("'", "") == entrance.exit).Value.GetAllRandomizableExits().First();
                         Ent.Value.SpoilerDefinedDestinationExit = Dest.Value.EntrancePair.AsDestination();
                         Dest.Value.SpoilerDefinedDestinationExit = Ent.Value.EntrancePair.AsDestination();
                     }

@@ -186,7 +186,7 @@ namespace Windows_Form_Frontend
                 state = FormState.GoTo;
                 List<string> ItemIds = IC.Instance.ItemPool.Keys.ToList();
                 List<string> MacroIds = IC.Instance.MacroPool.Keys.ToList();
-                List<string> AreaIds = IC.Instance.EntrancePool.AreaList.Keys.ToList();
+                List<string> AreaIds = IC.Instance.AreaPool.Keys.ToList();
                 PrintGotoData(CreatGotoList(ItemIds.Concat(MacroIds).Concat(AreaIds).ToList(), out _));
             }
             UpdateUI();
@@ -468,12 +468,12 @@ namespace Windows_Form_Frontend
             switch (LogicItem.Type)
             {
                 case LogicItemTypes.Area:
-                    var ValidLoadingZoneExits = IC.Instance.EntrancePool.AreaList.Values.SelectMany(x => x.RandomizableExits().Values.Where(x =>
+                    var ValidLoadingZoneExits = IC.Instance.GetAllRandomizableExits().Where(x =>
                         (x.DestinationExit is not null && x.DestinationExit.region == LogicItem.CleanID && x.CheckState != MiscData.CheckState.Unchecked) ||
-                        (x.IsUnrandomized() && x.GetVanillaDestination().region == LogicItem.CleanID)));
-                    var ValidMacroExits = IC.Instance.EntrancePool.AreaList.Values.SelectMany(x => x.NonRandomizableExits().Values.Where(x =>
+                        (x.IsUnrandomized() && x.GetVanillaDestination().region == LogicItem.CleanID));
+                    var ValidMacroExits = IC.Instance.GetMacroExits().Where(x =>
                         (x.DestinationExit is not null && x.DestinationExit.region == LogicItem.CleanID) ||
-                        x.GetVanillaDestination().region == LogicItem.CleanID));
+                        x.GetVanillaDestination().region == LogicItem.CleanID);
                     var ValidExits = ValidLoadingZoneExits.Concat(ValidMacroExits);
                     return ValidExits.Select(x => x.ID).ToList();
                 case LogicItemTypes.item:

@@ -1,8 +1,10 @@
 {
   "LogicVersion": 3,
   "GameCode": "OOTMM",
-  "RootArea": "OOT SPAWN",
   "WinCondition": "Game_Clear",
+  "RootAreas": [
+    "OOT SPAWN"
+  ],
   "LocationList": {
     "OOT Hatch Chicken": {
       "ID": "OOT Hatch Chicken",

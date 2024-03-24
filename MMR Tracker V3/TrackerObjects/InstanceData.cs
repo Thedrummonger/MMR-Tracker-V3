@@ -32,7 +32,9 @@ namespace MMR_Tracker_V3.TrackerObjects
             public Dictionary<string, ToggleOption> ToggleOptions { get; set; } = [];
             public Dictionary<string, IntOption> IntOptions { get; set; } = [];
             public Dictionary<string, LogicEntryCollection> LogicEntryCollections { get; set; } = [];
-            public EntranceData.EntrancePool EntrancePool { get; set; } = new EntranceData.EntrancePool(null);
+            public Dictionary<string, EntranceData.EntranceRandoExit> ExitPool { get; set; } = [];
+            public Dictionary<string, EntranceData.EntranceRandoArea> AreaPool { get; set; } = [];
+            //public EntranceData.EntranceDepricated EntrancePool { get; set; } = new EntranceData.EntranceDepricated(null);
             public LogicDictionary LogicDictionary { get; set; } = new LogicDictionary();
             public LogicFile LogicFile { get; set; } = new LogicFile();
             public SpoilerLogFileData SpoilerLog { get; set; } = null;
@@ -232,12 +234,8 @@ namespace MMR_Tracker_V3.TrackerObjects
                 foreach (var i in _Instance.MultiSelectOptions.Values) { i.SetParent(_Instance); }
                 foreach (var i in _Instance.ToggleOptions.Values) { i.SetParent(_Instance); }
                 foreach (var i in _Instance.IntOptions.Values) { i.SetParent(_Instance); }
-                _Instance.EntrancePool.SetParent(_Instance);
-                foreach (var i in _Instance.EntrancePool.AreaList.Values)
-                {
-                    i.SetParent(_Instance);
-                    foreach (var j in i.Exits.Values) { j.SetParent(_Instance); j.SetParentArea(i); }
-                }
+                foreach (var i in _Instance.AreaPool.Values) { i.SetParent(_Instance); }
+                foreach (var i in _Instance.ExitPool.Values) { i.SetParent(_Instance); }
                 Instance.LogicDictionary.SetParentContainer(Instance);
                 foreach (var i in Instance.LogicDictionary.LocationList) { i.Value.ID = i.Key; i.Value.SetParent(Instance.LogicDictionary); }
                 foreach (var i in Instance.LogicDictionary.ItemList) { i.Value.ID = i.Key; i.Value.SetParent(Instance.LogicDictionary); }

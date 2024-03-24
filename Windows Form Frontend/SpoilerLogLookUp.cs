@@ -112,7 +112,7 @@ namespace Windows_Form_Frontend
             var Items = _instance.ItemPool.Values.Where(x => SearchStringParser.FilterSearch(_instance, x, txtWinConFilter.Text, x.GetDictEntry().GetName())).OrderBy(x => x.GetDictEntry().GetName());
             var Locations = _instance.LocationPool.Values.Where(x => SearchStringParser.FilterSearch(_instance, x, txtWinConFilter.Text, x.GetDictEntry().GetName())).OrderBy(x => x.GetDictEntry().GetName());
             var Macros = _instance.MacroPool.Values.Where(x => SearchStringParser.FilterSearch(_instance, x, txtWinConFilter.Text, x.GetDictEntry().Name ?? x.ID)).OrderBy(x => x.GetDictEntry().Name ?? x.ID);
-            var Areas = _instance.EntrancePool.AreaList.Values.Where(x => SearchStringParser.FilterSearch(_instance, x, txtWinConFilter.Text, x.ID)).OrderBy(x => x.ID);
+            var Areas = _instance.AreaPool.Values.Where(x => SearchStringParser.FilterSearch(_instance, x, txtWinConFilter.Text, x.ID)).OrderBy(x => x.ID);
 
             int CMBWidth = cmbWinCon.DropDownWidth;
             var Graphic = cmbWinCon.CreateGraphics();

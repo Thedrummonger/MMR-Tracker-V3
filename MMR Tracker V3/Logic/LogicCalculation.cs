@@ -107,12 +107,12 @@ namespace MMR_Tracker_V3.Logic
 
         private bool AreaReached(string Area, List<string> TempUnlockData = null)
         {
-            bool IsRoot = Area is null || Area == container.Instance.EntrancePool.RootArea;
-            string TargetArea = Area ?? container.Instance.EntrancePool.RootArea;
-            bool Reachable = IsRoot || container.Instance.EntrancePool.AreaList.ContainsKey(Area) && container.Instance.EntrancePool.AreaList[Area].ExitsAcessibleFrom > 0;
+            if (!container.Instance.AreaPool.ContainsKey(Area)) { return false; }
+            var AreaObj = container.Instance.AreaPool[Area];
+            bool Reachable = AreaObj.ExitsAcessibleFrom > 0 || AreaObj.IsRoot;
             if (TempUnlockData != null && Reachable)
             {
-                TempUnlockData.Add(TargetArea);
+                TempUnlockData.Add(AreaObj.ID);
             }
             return Reachable;
         }
@@ -150,12 +150,9 @@ namespace MMR_Tracker_V3.Logic
             {
                 LogicMap[i.Key] = container.Instance.GetLogic(i.Key, actions: Actions);
             }
-            foreach (var Area in container.Instance.EntrancePool.AreaList)
+            foreach (var i in container.Instance.ExitPool)
             {
-                foreach (var i in Area.Value.Exits)
-                {
-                    LogicMap[i.Value.ID] = container.Instance.GetLogic(i.Value.ID, actions: Actions);
-                }
+                LogicMap[i.Key] = container.Instance.GetLogic(i.Key, actions: Actions);
             }
             container.Instance.InstanceReference.OptionActionItemEdits.Clear();
             foreach (var i in container.Instance.LogicEntryCollections)
@@ -183,7 +180,7 @@ namespace MMR_Tracker_V3.Logic
             while (true)
             {
                 bool UnrandomizedItemChecked = CheckUrandomizedLocations(Itterations);
-                bool UnrandomizedExitChecked = CheckUrandomizedExits(Itterations);
+                bool UnrandomizedExitChecked = CheckAutoCheckedExits(Itterations);
                 bool MacroChanged = CalculateMacros(Itterations);
                 Itterations++;
                 if (!MacroChanged && !UnrandomizedItemChecked && !UnrandomizedExitChecked) { break; }
@@ -193,13 +190,10 @@ namespace MMR_Tracker_V3.Logic
                 var Logic = LogicMap[i.ID];
                 i.Available = CalculatReqAndCond(Logic, i.ID, null);
             }
-            foreach (var Area in container.Instance.EntrancePool.AreaList)
+            foreach (var i in container.Instance.ExitPool.Values.Where(x => x.IsRandomizableEntrance() && !x.IsUnrandomized(UnrandState.Unrand)))
             {
-                foreach (var i in Area.Value.RandomizableExits().Where(x => !x.Value.IsUnrandomized(UnrandState.Unrand)))
-                {
-                    var Logic = LogicMap[i.Value.ID];
-                    i.Value.Available = CalculatReqAndCond(Logic, i.Value.ID, Area.Key);
-                }
+                var Logic = LogicMap[i.ID];
+                i.Available = CalculatReqAndCond(Logic, i.ID, i.ParentAreaID);
             }
             foreach (var i in container.Instance.HintPool)
             {
@@ -219,13 +213,9 @@ namespace MMR_Tracker_V3.Logic
             {
                 if (!i.Available && LogicUnlockData.ContainsKey(i.ID)) { LogicUnlockData.Remove(i.ID); }
             }
-            foreach (var Area in container.Instance.EntrancePool.AreaList)
+            foreach(var i in container.Instance.ExitPool.Values)
             {
-                foreach (var i in Area.Value.Exits.Values)
-                {
-                    var ID = i.ID;
-                    if (!i.Available && LogicUnlockData.ContainsKey(ID)) { LogicUnlockData.Remove(ID); }
-                }
+                if (!i.Available && LogicUnlockData.ContainsKey(i.ID)) { LogicUnlockData.Remove(i.ID); }
             }
             foreach (var i in container.Instance.HintPool.Values)
             {
@@ -239,12 +229,9 @@ namespace MMR_Tracker_V3.Logic
 
         public void ResetAutoObtainedItems()
         {
-            foreach (var Area in container.Instance.EntrancePool.AreaList)
+            foreach (var i in container.Instance.GetAllUnrandomizedAndMacroExits(UnrandState.Unrand))
             {
-                foreach (var i in Area.Value.Exits.Where(x => x.Value.IsUnrandomized(UnrandState.Unrand) || !x.Value.IsRandomizableEntrance()))
-                {
-                    i.Value.ToggleExitChecked(CheckState.Unchecked);
-                }
+                i.ToggleExitChecked(CheckState.Unchecked);
             }
             foreach (var i in container.Instance.LocationPool.Where(x => x.Value.IsUnrandomized(UnrandState.Unrand)))
             {
@@ -252,26 +239,24 @@ namespace MMR_Tracker_V3.Logic
             }
         }
 
-        private bool CheckUrandomizedExits(int itterations)
+        private bool CheckAutoCheckedExits(int itterations)
         {
             bool ItemStateChanged = false;
-            foreach (var Area in container.Instance.EntrancePool.AreaList)
+
+            foreach (var i in container.Instance.GetAllUnrandomizedAndMacroExits(UnrandState.Unrand))
             {
-                foreach (var i in Area.Value.Exits.Where(x => x.Value.IsUnrandomized(UnrandState.Unrand) || !x.Value.IsRandomizableEntrance()))
+                var Logic = LogicMap[i.ID];
+                var Available = CalculatReqAndCond(Logic, i.ID, i.ParentAreaID);
+                bool ShouldBeChecked = Available && i.CheckState != CheckState.Checked;
+                bool ShouldBeUnChecked = !Available && i.CheckState == CheckState.Checked;
+                if (ShouldBeChecked || ShouldBeUnChecked)
                 {
-                    var Logic = LogicMap[i.Value.ID];
-                    var Available = CalculatReqAndCond(Logic, i.Value.ID, Area.Key);
-                    bool ShouldBeChecked = Available && i.Value.CheckState != CheckState.Checked;
-                    bool ShouldBeUnChecked = !Available && i.Value.CheckState == CheckState.Checked;
-                    if (ShouldBeChecked || ShouldBeUnChecked)
-                    {
-                        ItemStateChanged = true;
-                        i.Value.Available = Available;
-                        CheckState checkState = i.Value.Available ? CheckState.Checked : CheckState.Unchecked;
-                        if (checkState == CheckState.Checked) { i.Value.DestinationExit = i.Value.GetVanillaDestination(); }
-                        i.Value.ToggleExitChecked(checkState);
-                        if (Available) { AutoObtainedObjects[i.Value] = itterations; }
-                    }
+                    ItemStateChanged = true;
+                    i.Available = Available;
+                    CheckState checkState = i.Available ? CheckState.Checked : CheckState.Unchecked;
+                    if (checkState == CheckState.Checked) { i.DestinationExit = i.GetVanillaDestination(); }
+                    i.ToggleExitChecked(checkState);
+                    if (Available) { AutoObtainedObjects[i] = itterations; }
                 }
             }
             return ItemStateChanged;

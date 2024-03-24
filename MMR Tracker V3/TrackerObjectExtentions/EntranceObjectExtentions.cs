@@ -101,13 +101,13 @@ namespace MMR_Tracker_V3.TrackerObjectExtensions
             }
             else if (CurrentState == CheckState.Checked)
             {
-                var Destination = exit.GetParent().EntrancePool.AreaList[exit.DestinationExit.region];
+                var Destination = exit.GetParent().AreaPool[exit.DestinationExit.region];
                 Destination.ExitsAcessibleFrom--;
             }
             else if (NewState == CheckState.Checked)
             {
                 if (exit.DestinationExit == null) { return false; }
-                var Destination = exit.GetParent().EntrancePool.AreaList[exit.DestinationExit.region];
+                var Destination = exit.GetParent().AreaPool[exit.DestinationExit.region];
                 Destination.ExitsAcessibleFrom++;
             }
             else if (CurrentState == CheckState.Unchecked && NewState == CheckState.Marked)
@@ -132,12 +132,12 @@ namespace MMR_Tracker_V3.TrackerObjectExtensions
 
         public static EntranceRandoExit AsExit(this EntranceRandoDestination destination, InstanceData.TrackerInstance ParentInstance)
         {
-            return ParentInstance.EntrancePool.AreaList[destination.from].GetExit(destination.region);
+            return ParentInstance.GetExitByAreaIDAndExitID(destination.from, destination.region);
         }
 
         public static EntranceRandoExit AsExit(this EntranceAreaPair Pair, InstanceData.TrackerInstance ParentInstance)
         {
-            return ParentInstance.EntrancePool.AreaList[Pair.Area].GetExit(Pair.Exit);
+            return ParentInstance.GetExitByAreaIDAndExitID(Pair.Area, Pair.Exit);
         }
     }
 }

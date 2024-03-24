@@ -9,6 +9,7 @@ using static MMR_Tracker_V3.TrackerObjects.InstanceData;
 using static MMR_Tracker_V3.TrackerObjects.ItemData;
 using static MMR_Tracker_V3.TrackerObjects.LocationData;
 using static MMR_Tracker_V3.TrackerObjects.OptionData;
+using System.ComponentModel;
 
 namespace MMR_Tracker_V3.TrackerObjectExtensions
 {
@@ -49,12 +50,24 @@ namespace MMR_Tracker_V3.TrackerObjectExtensions
             return instance.HintPool[item];
         }
 
+        public static EntranceRandoArea GetAreaByLogicID(this InstanceData.TrackerInstance instance, string item)
+        {
+            if (item is null) { return null; }
+            if (!instance.AreaPool.ContainsKey(item)) { return null; }
+            return instance.AreaPool[item];
+        }
+
         public static EntranceRandoExit GetExitByLogicID(this InstanceData.TrackerInstance instance, string item)
         {
             if (item is null) { return null; }
-            var Map = instance.EntrancePool.GetExitLogicIDMap();
-            if (!Map.ContainsKey(item)) { return null; }
-            return Map[item];
+            if (!instance.ExitPool.ContainsKey(item)) { return null; }
+            return instance.ExitPool[item];
+        }
+        public static EntranceRandoExit GetExitByAreaIDAndExitID(this InstanceData.TrackerInstance instance, string AreaID, string ExitID)
+        {
+            var area = instance.GetAreaByLogicID(AreaID);
+            if (area is null) { return null; }
+            return area.GetExitFromExitID(ExitID);
         }
 
         public static ChoiceOption GetChoiceOptionByID(this InstanceData.TrackerInstance instance, string item)
@@ -90,11 +103,11 @@ namespace MMR_Tracker_V3.TrackerObjectExtensions
         public static CheckableLocation GetCheckableLocationByID(this TrackerInstance instance, string ID, bool literal)
         {
             if (literal && instance.LocationPool.ContainsKey(ID)) { return instance.LocationPool[ID]; }
-            if (literal && instance.EntrancePool.GetExitLogicIDMap().ContainsKey(ID)) { return instance.GetExitByLogicID(ID); }
+            if (literal && instance.ExitPool.ContainsKey(ID)) { return instance.ExitPool[ID]; }
             if (literal && instance.HintPool.ContainsKey(ID)) { return instance.HintPool[ID]; }
             if (instance.MacroPool.ContainsKey(ID)) { return instance.MacroPool[ID]; }
             if (!literal && instance.LocationPool.ContainsKey(ID)) { return instance.LocationPool[ID]; }
-            if (!literal && instance.EntrancePool.GetExitLogicIDMap().ContainsKey(ID)) { return instance.GetExitByLogicID(ID); }
+            if (!literal && instance.ExitPool.ContainsKey(ID)) { return instance.ExitPool[ID]; }
             if (!literal && instance.HintPool.ContainsKey(ID)) { return instance.HintPool[ID]; }
             return null;
         }
@@ -115,10 +128,10 @@ namespace MMR_Tracker_V3.TrackerObjectExtensions
         private static LogicItemTypes GetItemEntryType(this InstanceData.TrackerInstance instance, string ID, bool literal, out object obj)
         {
             if (literal && instance.ItemPool.ContainsKey(ID)) { obj = instance.ItemPool[ID]; return LogicItemTypes.item; }
-            if (literal && instance.EntrancePool.AreaList.ContainsKey(ID)) { obj = instance.EntrancePool.AreaList[ID]; return LogicItemTypes.Area; }
+            if (literal && instance.AreaPool.ContainsKey(ID)) { obj = instance.AreaPool[ID]; return LogicItemTypes.Area; }
             if (instance.MacroPool.ContainsKey(ID)) { obj = instance.MacroPool[ID]; return LogicItemTypes.macro; }
             if (!literal && instance.ItemPool.ContainsKey(ID)) { obj = instance.ItemPool[ID]; return LogicItemTypes.item; }
-            if (!literal && instance.EntrancePool.AreaList.ContainsKey(ID)) { obj = instance.EntrancePool.AreaList[ID]; return LogicItemTypes.Area; }
+            if (!literal && instance.AreaPool.ContainsKey(ID)) { obj = instance.AreaPool[ID]; return LogicItemTypes.Area; }
             
             if (instance.LogicEntryCollections.ContainsKey(ID)) { obj = instance.LogicEntryCollections[ID]; return LogicItemTypes.LogicEntryCollection; }
 
@@ -152,18 +165,36 @@ namespace MMR_Tracker_V3.TrackerObjectExtensions
         {
             var Names = new List<string>();
             var EnteredItems = new List<EntranceRandoDestination>();
-            foreach (var area in _Instance.EntrancePool.AreaList.Values.Where(x => x.RandomizableExits().Any()).ToList().SelectMany(x => x.RandomizableExits()).OrderBy(x => x.Value.ExitID))
+            foreach (var area in _Instance.GetAllRandomizableExits().OrderBy(x => x.ExitID))
             {
                 var Entry = new EntranceRandoDestination
                 {
-                    region = area.Value.ExitID,
-                    from = area.Value.GetParentArea().ID,
+                    region = area.ExitID,
+                    from = area.ParentAreaID,
                 };
                 if (!SearchStringParser.FilterSearch(_Instance, Entry, Filter, Entry.ToString())) { continue; }
                 EnteredItems.Add(Entry);
             }
 
             return EnteredItems;
+        }
+
+        public static List<EntranceRandoExit> GetAllRandomizableExits(this InstanceData.TrackerInstance _Instance)
+        {
+            return _Instance.ExitPool.Where(x => x.Value.IsRandomizableEntrance()).Select(x => x.Value).ToList();
+        }
+        public static List<EntranceRandoExit> GetMacroExits(this InstanceData.TrackerInstance _Instance)
+        {
+            return _Instance.ExitPool.Where(x => !x.Value.IsRandomizableEntrance()).Select(x => x.Value).ToList();
+        }
+        public static List<EntranceRandoExit> GetAllUnrandomizedExits(this InstanceData.TrackerInstance _Instance, UnrandState state = UnrandState.Any)
+        {
+            var UnrandomizedExits = _Instance.GetAllRandomizableExits().Where(x => x.IsUnrandomized(state));
+            return [.. UnrandomizedExits];
+        }
+        public static List<EntranceRandoExit> GetAllUnrandomizedAndMacroExits(this InstanceData.TrackerInstance _Instance, UnrandState state = UnrandState.Any)
+        {
+            return [.. _Instance.GetAllUnrandomizedExits(state), .. _Instance.GetMacroExits()];
         }
 
         public static ItemObject GetItemToPlace(this InstanceData.TrackerInstance instance, string Item, bool CheckSpoilerName = true, bool CheckItemName = false, bool CheckItemID = false, bool ForStartingPool = false, bool IgnoreMaxAmount = false, bool DoNameEdits = false, bool GetRandom = false)
@@ -343,7 +374,7 @@ namespace MMR_Tracker_V3.TrackerObjectExtensions
         public static bool CombineEntrancesWithLocations(this InstanceData.TrackerInstance Instance)
         {
             if (Instance == null) { return true; }
-            return !Instance.StaticOptions.OptionFile.EntranceRandoFeatures || !Instance.EntrancePool.HasAnyRandomizedEntrances();
+            return !Instance.StaticOptions.OptionFile.EntranceRandoFeatures || !Instance.GetAllRandomizableExits().Any(x => x.IsRandomized());
         }
     }
 }

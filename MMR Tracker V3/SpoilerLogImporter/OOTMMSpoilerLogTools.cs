@@ -103,13 +103,13 @@ namespace MMR_Tracker_V3.SpoilerLogImporter
 
         private static void ApplyEntrances(InstanceData.TrackerInstance instance, Dictionary<string, string> exitData)
         {
-            var AllRandomizableExits = instance.EntrancePool.AreaList.Values.SelectMany(x => x.RandomizableExits());
+            var AllRandomizableExits = instance.GetAllRandomizableExits();
             foreach (var Entrance in exitData)
             {
-                var SpoilerEntrance = AllRandomizableExits.First(x => x.Value.GetDictEntry().SpoilerData.SpoilerLogNames.Contains(Entrance.Key));
-                var SpoilerExit = AllRandomizableExits.First(x => x.Value.GetDictEntry().SpoilerData.SpoilerLogNames.Contains(Entrance.Value));
-                SpoilerEntrance.Value.RandomizedState = MiscData.RandomizedState.Randomized;
-                SpoilerEntrance.Value.SpoilerDefinedDestinationExit = new EntranceData.EntranceRandoDestination { region = SpoilerExit.Value.ExitID, from = SpoilerExit.Value.GetParentArea().ID };
+                var SpoilerEntrance = AllRandomizableExits.First(x => x.GetDictEntry().SpoilerData.SpoilerLogNames.Contains(Entrance.Key));
+                var SpoilerExit = AllRandomizableExits.First(x => x.GetDictEntry().SpoilerData.SpoilerLogNames.Contains(Entrance.Value));
+                SpoilerEntrance.RandomizedState = MiscData.RandomizedState.Randomized;
+                SpoilerEntrance.SpoilerDefinedDestinationExit = new EntranceData.EntranceRandoDestination { region = SpoilerExit.ExitID, from = SpoilerExit.ParentAreaID };
             }
         }
 
@@ -298,9 +298,9 @@ namespace MMR_Tracker_V3.SpoilerLogImporter
         private static void ResetInstanceData(InstanceData.TrackerInstance Instance)
         {
             Instance.ToggleAllTricks(false);
-            foreach (var i in Instance.EntrancePool.AreaList.SelectMany(x => x.Value.RandomizableExits()))
+            foreach (var i in Instance.GetAllRandomizableExits())
             {
-                i.Value.RandomizedState = MiscData.RandomizedState.Unrandomized;
+                i.RandomizedState = MiscData.RandomizedState.Unrandomized;
             }
             foreach (var i in Instance.LocationPool.Values)
             {

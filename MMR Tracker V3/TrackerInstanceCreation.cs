@@ -101,7 +101,11 @@ namespace MMR_Tracker_V3
 
             foreach (var i in Instance.LogicDictionary.GetAreas())
             {
-                if (!Instance.EntrancePool.AreaList.ContainsKey(i)) { Instance.EntrancePool.AreaList.Add(i, new EntranceData.EntranceRandoArea(Instance) { ID = i }); }
+                Instance.AreaPool.Add(i, new EntranceData.EntranceRandoArea(Instance) { ID = i });
+            }
+            foreach (var i in Instance.LogicDictionary.RootAreas ?? [])
+            {
+                Instance.AreaPool[i].IsRoot = true;
             }
 
             Index = 0;
@@ -165,16 +169,18 @@ namespace MMR_Tracker_V3
                 else if (Instance.LogicDictionary.EntranceList.Any(x => x.Key == i.Id))
                 {
                     var DictEntry = Instance.LogicDictionary.EntranceList.First(x => x.Key == i.Id);
-                    var ParentArea = Instance.EntrancePool.AreaList[DictEntry.Value.Area];
-                    var ExitObject = new EntranceData.EntranceRandoExit(Instance, ParentArea)
+                    var ParentArea = Instance.AreaPool[DictEntry.Value.Area];
+                    var ExitObject = new EntranceData.EntranceRandoExit(Instance)
                     {
                         ID = i.Id,
                         ExitID = DictEntry.Value.Exit,
+                        ParentAreaID = DictEntry.Value.Area,
                         EntrancePair = DictEntry.Value.RandomizableEntrance ? DictEntry.Value.EntrancePairID : null,
                         IsWarp = DictEntry.Value.AlwaysAccessable,
                         referenceData = new ReferenceData { LogicIndex = Index, LogicList = Source }
                     };
-                    ParentArea.Exits.Add(ExitObject.ExitID, ExitObject);
+                    Instance.ExitPool.Add(i.Id, ExitObject);
+                    ParentArea.Exits.Add(ExitObject.ExitID, ExitObject.ID);
                 }
                 else
                 {
@@ -218,8 +224,6 @@ namespace MMR_Tracker_V3
             }
 
             Instance.PriceData.Initialized = true;
-
-            Instance.EntrancePool.RootArea = Instance.LogicDictionary.RootArea ?? "Root";
 
             new Areaheader { Area = "Hidden Locations" }.SetMinimized(DisplayListType.Locations, Instance.StaticOptions, true);
 

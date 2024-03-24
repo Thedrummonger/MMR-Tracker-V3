@@ -391,7 +391,7 @@ namespace Windows_Form_Frontend
             if (InstanceContainer is null || InstanceContainer.Instance is null) { tlpMaster.Visible = false; return; }
             tlpMaster.Visible = true;
 
-            PathFinderToolStripMenuItem.Visible = InstanceContainer.Instance.EntrancePool.HasRandomizableEntrances();
+            PathFinderToolStripMenuItem.Visible = InstanceContainer.Instance.GetAllRandomizableExits().Count > 0;
 
             redoToolStripMenuItem.Enabled = InstanceContainer.RedoStringList.Any();
             undoToolStripMenuItem.Enabled = InstanceContainer.UndoStringList.Any();
@@ -602,7 +602,7 @@ namespace Windows_Form_Frontend
             SaveAsToolStripMenuItem.Visible = (InstanceContainer.Instance != null) && !string.IsNullOrWhiteSpace(InstanceContainer.CurrentSavePath);
             spoilerLogToolsToolStripMenuItem.Visible = (InstanceContainer.Instance != null);
             importSpoilerLogToolStripMenuItem.Visible = (InstanceContainer.Instance != null);
-            PathFinderToolStripMenuItem.Visible = (InstanceContainer.Instance != null && InstanceContainer.Instance.EntrancePool.HasRandomizableEntrances());
+            PathFinderToolStripMenuItem.Visible = (InstanceContainer.Instance != null && InstanceContainer.Instance.GetAllRandomizableExits().Count > 0);
 
             viewToolStripMenuItem.Visible = (InstanceContainer.Instance != null && InstanceContainer.Instance.StaticOptions.OptionFile.WinformData.UILayout == UILayout.Compact);
             

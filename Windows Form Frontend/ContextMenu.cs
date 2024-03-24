@@ -36,7 +36,7 @@ namespace Windows_Form_Frontend
         {
             Initialize();
             AddItem("refresh", () => { mainInterface.PrintToListBox([listBox]); });
-            if (NavigatableAreas.Count == 1 && InstanceContainer.Instance.EntrancePool.HasRandomizableEntrances())
+            if (NavigatableAreas.Count == 1 && InstanceContainer.Instance.GetAllRandomizableExits().Count > 0)
             {
                 AddItem("Navigate To this area", () => { mainInterface.CMBEnd.SelectedItem = NavigatableAreas[0].Area; });
             }
@@ -296,7 +296,7 @@ namespace Windows_Form_Frontend
             if (listBox == mainInterface.LBCheckedLocations) { displayList = DisplayListType.Checked; TextBox = mainInterface.TXTCheckedSearch; }
             SelectedItems = listBox.SelectedItems.Cast<object>().ToList();
             AreaHeaders = SelectedItems.Where(x => x is Areaheader).Cast<Areaheader>().ToList();
-            NavigatableAreas = AreaHeaders.Where(x => InstanceContainer.Instance.EntrancePool.AreaList.ContainsKey(x.Area)).ToList();
+            NavigatableAreas = AreaHeaders.Where(x => InstanceContainer.Instance.AreaPool.ContainsKey(x.Area)).ToList();
             CheckableLocations = SelectedItems.OfType<CheckableLocation>().ToList();
             CheckedLocations = CheckableLocations.Where(x => x.CheckState == MiscData.CheckState.Checked).ToList();
             MarkedLocations = CheckableLocations.Where(x => x.CheckState == MiscData.CheckState.Marked).ToList();

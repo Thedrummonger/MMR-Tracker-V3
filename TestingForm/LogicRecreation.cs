@@ -42,7 +42,7 @@ namespace MMR_Tracker_V3
                     OwningPlayer = i.Value.Randomizeditem.OwningPlayer
                 });
             }
-            foreach (var i in InstanceContainer.Instance.EntrancePool.AreaList.Values.SelectMany(x => x.RandomizableExits().Values))
+            foreach (var i in InstanceContainer.Instance.GetAllRandomizableExits())
             {
                 state.Exits.Add(i.ID, new RecData()
                 {

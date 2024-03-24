@@ -18,7 +18,7 @@ namespace MMR_Tracker_V3.GameDataCreation.OOTMMV2
         public static LogicDictionaryData.LogicDictionary CreateDictionary(OOTMMParserData OTTMMPaths)
         {
 
-            LogicDictionaryData.LogicDictionary logicDictionaryData = new LogicDictionaryData.LogicDictionary() { GameCode = "OOTMM", RootArea = "OOT SPAWN", LogicVersion = 2 };
+            LogicDictionaryData.LogicDictionary logicDictionaryData = new LogicDictionaryData.LogicDictionary() { GameCode = "OOTMM", LogicVersion = 2 };
 
             List<MMROOTLocation> OOTPool = JsonConvert.DeserializeObject<List<MMROOTLocation>>(TestingUtility.ConvertCsvFileToJsonObject(File.ReadAllLines(OTTMMPaths.OOTPoolFile)));
             List<MMROOTLocation> MMPool = JsonConvert.DeserializeObject<List<MMROOTLocation>>(TestingUtility.ConvertCsvFileToJsonObject(File.ReadAllLines(OTTMMPaths.MMPoolFile)));
