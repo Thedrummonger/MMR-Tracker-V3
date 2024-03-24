@@ -1,4 +1,5 @@
-﻿using MMR_Tracker_V3.TrackerObjectExtensions;
+﻿using MathNet.Numerics;
+using MMR_Tracker_V3.TrackerObjectExtensions;
 using MMR_Tracker_V3.TrackerObjects;
 using System;
 using System.Collections.Generic;
@@ -61,8 +62,6 @@ namespace MMR_Tracker_V3.SpoilerLogImporter
             Debug.WriteLine("\nSetting Special Conditions");
             ToggleSpecialConditions(Instance, AccessConditions);
 
-            Debug.WriteLine(WorldFlagData.ToFormattedJson());
-
         }
 
         private static void ApplyWorldFlagSettings(InstanceData.TrackerInstance instance, List<string> worldFlagData)
@@ -77,7 +76,7 @@ namespace MMR_Tracker_V3.SpoilerLogImporter
                     SetOptions.SetIfEmpty(CurrentSet, new List<string>());
                 }
                 else if (key.StartsWith("- ")) {
-                    SetOptions[CurrentSet].Add(CurrentSet + key[2..]);
+                    SetOptions[CurrentSet].Add(key[2..]);
                 }
                 else if (key.Contains(':'))
                 {
@@ -85,7 +84,7 @@ namespace MMR_Tracker_V3.SpoilerLogImporter
                     switch (Data[1])
                     {
                         case "all":
-                            SetOptions.SetIfEmpty(Data[0], instance.ToggleOptions.Where(x => x.Key.StartsWith(Data[0]) && x.Key != Data[0]).Select(x => x.Key).ToList());
+                            SetOptions.SetIfEmpty(Data[0], instance.MultiSelectOptions[Data[0]].ValueList.Keys.ToList());
                             break;
                         case "none":
                         case "random":
@@ -96,13 +95,8 @@ namespace MMR_Tracker_V3.SpoilerLogImporter
             }
             foreach (var SetOption in SetOptions)
             {
-                var Sets = instance.ToggleOptions.Where(x => x.Key.StartsWith(SetOption.Key) && x.Key != SetOption.Key).Select(x => x.Value);
-                Debug.WriteLine($"Option {SetOption.Key} had child options");
-                foreach(var i in Sets)
-                {
-                    i.SetValue(SetOption.Value.Contains(i.ID));
-                    Debug.WriteLine($"{i.ID}: {i.Value}");
-                }
+                var MultiSelectOption = instance.MultiSelectOptions[SetOption.Key];
+                MultiSelectOption.SetValues(SetOption.Value);
             }
 
         }
@@ -121,15 +115,14 @@ namespace MMR_Tracker_V3.SpoilerLogImporter
 
         private static void HandleMQChecks(InstanceData.TrackerInstance instance, List<string> mQDungeons)
         {
-            foreach (var i in instance.ToggleOptions.Where(x => x.Value.SubCategory == "Master Quest Dungeons"))
+            var MQSetting = instance.MultiSelectOptions["MasterQuest"];
+            MQSetting.SetValues(mQDungeons);
+            foreach (var i in MQSetting.ValueList.Keys)
             {
-                bool ISMQ = mQDungeons.Any(x => i.Key.ToLower().StartsWith(x.ToLower()));
-                i.Value.Value = ISMQ.ToString();
+                bool ISMQ = MQSetting.EnabledValues.Contains(i);
 
-                string DungeonCode = i.Key[..^2];
-
-                Debug.WriteLine($"{DungeonCode} MQ {ISMQ}");
-                string OppositeLogic = ISMQ ? $"var{{{i.Key}, false}}" : $"var{{{i.Key}}}";
+                Debug.WriteLine($"{i} MQ {ISMQ}");
+                string OppositeLogic = ISMQ ? $"setting{{MasterQuest, {i}, False}}" : $"setting{{MasterQuest, {i}}}";
                 var JunkChecks = instance.LocationPool.Values.Where(x => instance.GetLogic(x.ID).RequiredItems.Contains(OppositeLogic));
                 foreach (var Check in JunkChecks)
                 {
@@ -276,33 +269,28 @@ namespace MMR_Tracker_V3.SpoilerLogImporter
                     instance.ItemPool.Values.First(x => x.ID == "MM_STRAY_FAIRY_SH").AmountInStartingpool += 8;
                     instance.ItemPool.Values.First(x => x.ID == "MM_STRAY_FAIRY_GB").AmountInStartingpool += 9;
                 }
-                if (setting.Key == "shufflePotsOot" && setting.Value == "false")
+
+            }
+            JunkLocationBySetting("shuffleFreeRupeesOot", "rupee", "OOT");
+            JunkLocationBySetting("shuffleFreeRupeesMm", "rupee", "MM");
+            JunkLocationBySetting("shuffleFreeHeartsOot", "heart", "OOT");
+            JunkLocationBySetting("shuffleFreeHeartsMm", "heart", "MM");
+            JunkLocationBySetting("shufflePotsOot", "pot", "OOT");
+            JunkLocationBySetting("shufflePotsMm", "pot", "MM");
+            JunkLocationBySetting("shuffleGrassOot", "grass", "OOT");
+            JunkLocationBySetting("shuffleGrassMm", "grass", "MM");
+            JunkLocationBySetting("pondFishShuffle", "fish", "OOT");
+            JunkLocationBySetting("fairyFountainFairyShuffleOot", "fairy", "OOT");
+            JunkLocationBySetting("fairyFountainFairyShuffleMm", "fairy", "MM");
+            JunkLocationBySetting("fairySpotShuffleOot", "fairy_spot", "OOT");
+            void JunkLocationBySetting(string optionKey, string tag, string GameCode)
+            {
+                var option = instance.ToggleOptions[optionKey];
+                if (option.GetValue() == option.Enabled) { return; }
+                foreach (var location in instance.LocationPool.Where(x =>
+                    x.Value.GetDictEntry().SpoilerData.Tags.Contains(tag) && x.Key.StartsWith(GameCode)))
                 {
-                    foreach (var location in instance.LocationPool.Where(x => x.Value.GetDictEntry().SpoilerData.Tags.Contains("pot") && x.Key.StartsWith("OOT ")))
-                    {
-                        location.Value.SetRandomizedState(MiscData.RandomizedState.Unrandomized);
-                    }
-                }
-                if (setting.Key == "shufflePotsMm" && setting.Value == "false")
-                {
-                    foreach (var location in instance.LocationPool.Where(x => x.Value.GetDictEntry().SpoilerData.Tags.Contains("pot") && x.Key.StartsWith("MM ")))
-                    {
-                        location.Value.SetRandomizedState(MiscData.RandomizedState.Unrandomized);
-                    }
-                }
-                if (setting.Key == "shuffleGrassOot" && setting.Value == "false")
-                {
-                    foreach (var location in instance.LocationPool.Where(x => x.Value.GetDictEntry().SpoilerData.Tags.Contains("grass") && x.Key.StartsWith("OOT ")))
-                    {
-                        location.Value.SetRandomizedState(MiscData.RandomizedState.Unrandomized);
-                    }
-                }
-                if (setting.Key == "shuffleGrassMm" && setting.Value == "false")
-                {
-                    foreach (var location in instance.LocationPool.Where(x => x.Value.GetDictEntry().SpoilerData.Tags.Contains("grass") && x.Key.StartsWith("MM ")))
-                    {
-                        location.Value.SetRandomizedState(MiscData.RandomizedState.Unrandomized);
-                    }
+                    location.Value.SetRandomizedState(MiscData.RandomizedState.Unrandomized);
                 }
             }
         }

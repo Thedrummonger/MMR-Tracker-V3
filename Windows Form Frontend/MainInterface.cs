@@ -727,7 +727,7 @@ namespace Windows_Form_Frontend
                 {
                     var OptionTree = GetOptionTree(o);
                     if (!InstanceContainer.logicCalculation.ConditionalsMet(ToggleOption.Conditionals, new List<string>())) { continue; }
-                    ToolStripMenuItem menuItem = new() { Name = $"{ToggleOption.ID}Menu", Checked = ToggleOption.Enabled.ID == ToggleOption.Value, Text = ToggleOption.getOptionName() };
+                    ToolStripMenuItem menuItem = new() { Name = $"{ToggleOption.ID}Menu", Checked = ToggleOption.IsEnabled(), Text = ToggleOption.getOptionName() };
                     menuItem.ToolTipText = ToggleOption.Description;
                     menuItem.AutoToolTip = true;
                     menuItem.Click += delegate (object sender, EventArgs e)

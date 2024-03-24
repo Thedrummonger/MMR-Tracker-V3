@@ -467,9 +467,9 @@ namespace MMR_Tracker_V3.GameDataCreation.PaperMarioRando
             PMRDict.IntOptions.Add("StarWaySpiritsNeededCnt", new OptionData.IntOption(null) { ID = "StarWaySpiritsNeededCnt", Name = "StarWay Spirits Needed", Value = 7 });
 
             AddToggleoption("BlueHouseOpen", Display: "Open Blue House");
-            AddToggleoption("Ch7BridgeVisible", "true", "Ch.7 Bridge Visible ");
+            AddToggleoption("Ch7BridgeVisible", true, "Ch.7 Bridge Visible ");
             AddToggleoption("CookWithoutFryingPan", Display: "Cook Without Frying Pan");
-            AddToggleoption("ForeverForestOpen", "true", "Open Forever Forest");
+            AddToggleoption("ForeverForestOpen", true, "Open Forever Forest");
             AddToggleoption("MtRuggedOpen", Display: "Open Mt. Rugged");
             AddToggleoption("PartnersAlwaysUsable", Display: "Partners Always Usable");
             AddToggleoption("PrologueOpen", Display: "Open Prologue");
@@ -490,7 +490,7 @@ namespace MMR_Tracker_V3.GameDataCreation.PaperMarioRando
                 PMRDict.ChoiceOptions.Add(ID, option);
             }
 
-            void AddToggleoption(string ID, string defval = "false", string Display = null, string Logic = null)
+            void AddToggleoption(string ID, bool defval = false, string Display = null, string Logic = null)
             {
                 var option = new OptionData.ToggleOption(null) { ID = ID, Name = Display??ID, Value = defval };
                 if (Logic is not null) { option.Conditionals = LogicStringConverter.ConvertLogicStringToConditional(PMRParser, Logic, ID); }

@@ -43,7 +43,7 @@ namespace MMR_Tracker_V3.GameDataCreation.OOTMMV2
                         ID = Setting.key,
                         Name = Setting.name,
                         SubCategory= Utility.ConvertToCamelCase(Setting.category.Replace(".", " ")),
-                        Value = ((bool)Setting.defaultvalue).ToString(),
+                        Value = ((bool)Setting.defaultvalue),
                         Priority= Priority
                     };
                     IntSettingDictEntry.CreateSimpleValues();
@@ -99,7 +99,7 @@ namespace MMR_Tracker_V3.GameDataCreation.OOTMMV2
                     ID = setting,
                     Name = Utility.ConvertToCamelCase(setting.Replace("_", " ")),
                     SubCategory= "Master Quest Dungeons",
-                    Value = false.ToString(),
+                    Value = false,
                     Priority= Priority
                 };
                 IntSettingDictEntry.CreateSimpleValues();
@@ -226,7 +226,7 @@ namespace MMR_Tracker_V3.GameDataCreation.OOTMMV2
                     Requirement.ID = $"{ID.ToLower()}_{namedata[1]}";
                     Requirement.Name = namedata[0];
                     Requirement.SubCategory = Category;
-                    Requirement.Value = DefaultValue is null ? "false" : (namedata[0] == DefaultValue).ToString().ToLower();
+                    Requirement.Value = DefaultValue is null ? false : (namedata[0] == DefaultValue);
                     Requirement.CreateSimpleValues(true);
                     Requirement.Conditionals = Logic is null ? new List<List<string>>() : LogicStringConverter.ConvertLogicStringToConditional(GenData.OOTMMLogicStringParser, Logic, ID);
                     Requirement.Enabled.Actions = new OptionData.Action();

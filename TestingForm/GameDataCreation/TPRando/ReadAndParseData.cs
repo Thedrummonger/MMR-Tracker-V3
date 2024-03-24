@@ -238,7 +238,7 @@ namespace MMR_Tracker_V3.GameDataCreation.TPRando
                         Enabled = new OptionData.OptionValue { ID = true.ToString(), Name = true.ToString() },
                         Disabled = new OptionData.OptionValue { ID = false.ToString(), Name = false.ToString() },
                         ID= ID,
-                        Value = false.ToString()
+                        Value = false
                     });
                 }
                 else

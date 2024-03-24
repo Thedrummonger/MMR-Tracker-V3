@@ -137,7 +137,7 @@ namespace TestingForm.GameDataCreation.MMR
             void AddSimpleToggle(string ID, string Name, string Category, bool Default)
             {
                 SettingPriority++;
-                MMRDictV16.ToggleOptions.Add(ID, new OptionData.ToggleOption(null) { ID = ID, Value = Default.ToString().ToLower(), Name = Name, SubCategory = Category, Priority = SettingPriority }.CreateSimpleValues(true));
+                MMRDictV16.ToggleOptions.Add(ID, new OptionData.ToggleOption(null) { ID = ID, Value = Default, Name = Name, SubCategory = Category, Priority = SettingPriority }.CreateSimpleValues(true));
             }
             void AddSimpleMultiSelect(string ID, string Name, string Category, params string[] Values)
             {

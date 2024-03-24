@@ -239,7 +239,7 @@ namespace TestingForm.GameDataCreation.OOTMMV3
                     Requirement.ID = $"{ID.ToLower()}_{namedata[1]}";
                     Requirement.Name = namedata[0];
                     Requirement.SubCategory = Category;
-                    Requirement.Value = DefaultValue is null ? "false" : (namedata[0] == DefaultValue).ToString().ToLower();
+                    Requirement.Value = DefaultValue is null ? false : (namedata[0] == DefaultValue);
                     Requirement.CreateSimpleValues(true);
                     Requirement.Conditionals = Logic is null ? [] : LogicStringConverter.ConvertLogicStringToConditional(Generator.LogicStringParser, Logic, ID);
                     Requirement.Enabled.Actions = new OptionData.Action();

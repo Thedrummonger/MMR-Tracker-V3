@@ -83,6 +83,22 @@ namespace MMR_Tracker_V3.TrackerObjects
                 if (!EnabledValues.Contains(_Value)) { EnabledValues.Add(_Value); }
                 else if (EnabledValues.Contains(_Value)) { EnabledValues.Remove(_Value); }
             }
+            public void SetValue(string _Value, bool State)
+            {
+                if (!ValueList.ContainsKey(_Value)) { throw new Exception($"{_Value} was not a valid value for Option {ID}"); }
+
+                if (State) { EnabledValues.Add(_Value); }
+                else { EnabledValues.Remove(_Value); }
+            }
+            public void SetValues(IEnumerable<string> _Values)
+            {
+                EnabledValues.Clear();
+                foreach (var _Value in _Values)
+                {
+                    if (!ValueList.ContainsKey(_Value)) { throw new Exception($"{_Value} was not a valid value for Option {ID}"); }
+                    EnabledValues.Add(_Value);
+                }
+            }
             public MultiSelectOption CreateSimpleValues(params string[] Values)
             {
                 ValueList = Values.ToDictionary(x => x, x => new OptionValue { ID = x, Name = x });
@@ -114,40 +130,30 @@ namespace MMR_Tracker_V3.TrackerObjects
         }
         public class ToggleOption(InstanceData.TrackerInstance Parent) : LogicOption(Parent)
         {
-            public string Value { get; set; }
+            public bool Value { get; set; }
             public OptionValue Enabled { get; set; }
             public OptionValue Disabled { get; set; }
             public override OptionValue GetValue(string _Value = null)
             {
-                string v = _Value ?? Value;
-                OptionValue vo;
-                if (Enabled.ID == v) { vo = Enabled; }
-                else if (Disabled.ID == v) { vo = Disabled; }
-                else { vo = null; }
-
-                if (vo is null) { throw new Exception($"{_Value ?? Value} was not a valid value for Option {ID}"); }
-                return vo;
+                if (_Value is null) { return GetValue(Value); }
+                if (!bool.TryParse(_Value, out bool val)) { throw new Exception($"{_Value} was not a valid value for Option {ID}"); }
+                return GetValue(val);
             }
+            public OptionValue GetValue(bool _Value) => _Value ? Enabled : Disabled;
             public void SetValue(bool _Value)
             {
-                Value = _Value ? Enabled.ID : Disabled.ID;
+                Value = _Value;
             }
             public void SetValue(string _Value)
             {
-                string v = _Value;
-                OptionValue vo;
-                if (Enabled.ID == v) { vo = Enabled; }
-                else if (Disabled.ID == v) { vo = Disabled; }
-                else { vo = null; }
-
-                if (vo is null) { throw new Exception($"{_Value ?? Value} was not a valid value for Option {ID}"); }
-                Value = vo.ID;
+                if (!bool.TryParse(_Value, out bool val)) { throw new Exception($"{_Value} was not a valid value for Option {ID}"); }
+                Value = val;
             }
             public void ToggleValue()
             {
-                if (Value == Disabled.ID) { Value = Enabled.ID; }
-                else { Value = Disabled.ID; }
+                Value = !Value;
             }
+            public bool IsEnabled() => Value;
             public ToggleOption CreateSimpleValues(bool Lower = false)
             {
                 string EID = Lower ? true.ToString().ToLower() : true.ToString();
@@ -166,7 +172,7 @@ namespace MMR_Tracker_V3.TrackerObjects
             }
             public string getValueName()
             {
-                OptionValue selectedVal = Enabled.ID == Value ? Enabled : Disabled;
+                OptionValue selectedVal = GetValue();
                 return string.IsNullOrWhiteSpace(selectedVal.Name) ? selectedVal.ID : selectedVal.Name;
             }
             public override MiscData.OptionTypes OptionType() => MiscData.OptionTypes.ToggleOption;

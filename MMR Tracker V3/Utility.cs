@@ -762,8 +762,8 @@ namespace MMR_Tracker_V3
                 OutObject.ID = ToggleOptionObject.ID;
                 OutObject.Area = "Options";
                 OutObject.Name = ToggleOptionObject.Name;
-                OutObject.OriginalItem = ToggleOptionObject.Value;
-                OutObject.Randomizeditem = ToggleOptionObject.Value;
+                OutObject.OriginalItem = ToggleOptionObject.GetValue().ID;
+                OutObject.Randomizeditem = ToggleOptionObject.GetValue().ID;
                 OutObject.Starred = true;
                 List<string> ItemTypes = ["Option", "Toggle"];
                 OutObject.ValidItemTypes = [.. ItemTypes];
