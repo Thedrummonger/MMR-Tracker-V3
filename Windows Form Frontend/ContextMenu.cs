@@ -179,7 +179,7 @@ namespace Windows_Form_Frontend
                     checkItemForm.ShowDialog();
 
                     if (checkItemForm._Result.Count > 0) {
-                        string ItemID = checkItemForm._Result[0].GetItemLocation().ItemID;
+                        string ItemID = checkItemForm._Result[0].GetItemLocation().ItemData.ItemID;
                         var Item = InstanceContainer.Instance.GetItemByID(ItemID);
                         bool Correct = LO1.GetItemAtCheck() == ItemID;
                         if (Correct) { MessageBox.Show($"{LO1.GetName()} Contained {Item.GetDictEntry().GetName()}", "CORRECT", MessageBoxButtons.OK, MessageBoxIcon.Information); }

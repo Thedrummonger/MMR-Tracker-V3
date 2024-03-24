@@ -119,16 +119,14 @@ namespace MMR_Tracker_V3.TrackerObjects
         {
             private object _Check;
             private object _Result;
-            private int _OwningPlayer;
-            public ManualCheckObjectResult SetLocation(object location, object Result, int OwningPlayer = -1)
+            public ManualCheckObjectResult SetLocation(object location, object Result)
             {
                 _Check = location;
-                _OwningPlayer = OwningPlayer;
-                _Result = Result; 
+                _Result = Result;
                 return this;
             }
             public ManualCheckObjectResult SetItemLocation(LocationData.LocationObject location, string ItemID, int OwningPlayer = -1)
-                => SetLocation(location, ItemID, OwningPlayer);
+                => SetLocation(location, new ItemResult(ItemID, OwningPlayer));
             public ManualCheckObjectResult SetExitDestination(EntranceData.EntranceRandoExit Exit, EntranceData.EntranceRandoDestination destination)
                 => SetLocation(Exit, destination);
             public ManualCheckObjectResult SetGossipHint(HintData.HintObject HintLocation, string Hint)
@@ -139,12 +137,12 @@ namespace MMR_Tracker_V3.TrackerObjects
                 => SetLocation(ChoiceOption, value);
             public ManualCheckObjectResult SetPricedLocation(CheckableLocation Location, int Price)
                 => SetLocation(Location, Price);
-            public (TC, TR, int) GetLocation<TC,TR>()
+            public (TC, TR) GetLocation<TC,TR>()
             {
-                return ((TC)_Check, (TR)_Result, _OwningPlayer);
+                return ((TC)_Check, (TR)_Result);
             }
-            public (LocationData.LocationObject Check, string ItemID, int Player) GetItemLocation() 
-                => ((LocationData.LocationObject)_Check, (string)_Result, _OwningPlayer);
+            public (LocationData.LocationObject Check, ItemResult ItemData) GetItemLocation() 
+                => ((LocationData.LocationObject)_Check, (ItemResult)_Result);
             public (EntranceData.EntranceRandoExit Exit, EntranceData.EntranceRandoDestination Destination) GetExitDestination() 
                 => ((EntranceData.EntranceRandoExit)_Check, (EntranceData.EntranceRandoDestination)_Result);
             public (HintData.HintObject HintCheck, string HintText) GetGossipHint()
@@ -155,6 +153,14 @@ namespace MMR_Tracker_V3.TrackerObjects
                 => ((OptionData.ChoiceOption)_Check, (string)_Result);
             public (CheckableLocation Location, int Price) GetPricedLocation()
                 => ((CheckableLocation)_Check, (int)_Result);
+        }
+
+        public class ItemResult
+        {
+            public ItemResult(string I, int P) { ItemID = I; Player = P; }
+            public ItemResult(string I) { ItemID = I; Player = -1; }
+            public string ItemID;
+            public int Player;
         }
 
         public class NetConnection
