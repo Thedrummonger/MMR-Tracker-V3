@@ -3,7 +3,9 @@ using MMR_Tracker_V3.TrackerObjectExtensions;
 using MMR_Tracker_V3.TrackerObjects;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Threading;
@@ -507,19 +509,33 @@ namespace Windows_Form_Frontend
             {
                 requiredItems = _instance.ItemPool.Values.Select(x => x.ID).ToList();
             }
+            Debug.WriteLine($"Genning Seed Check Playthrough");
             PlaythroughGenerator SeedCheckPlaytrhough = new PlaythroughGenerator(_instance, IgnoredChecks);
+            var Yest = _instance.AreaPool;
+            var test = SeedCheckPlaytrhough.container.Instance.AreaPool;
             SeedCheckPlaytrhough.GeneratePlaythrough();
             SeedCheckResults.Clear();
             foreach (var i in requiredItems)
             {
+                bool ItemObtainable = false;
                 var data = _instance.GetLogicItemData(i);
                 string Dis = i;
-                if (data.Object is ItemData.ItemObject IO) { Dis = IO?.GetDictEntry()?.GetName() ?? i; }
-                else if (data.Object is MacroObject MO) { Dis = MO?.GetDictEntry()?.Name ?? i; }
-
-                bool ItemObtainable = false;
-                //bool ItemObtainable = SeedCheckPlaytrhough.FirstObtainedDict.ContainsKey(i) || (data.Object is ItemData.ItemObject IOS && (IOS?.AmountInStartingpool ?? 0) > 0);
-
+                if (data.Type == MiscData.LogicItemTypes.macro)
+                {
+                    var MacroObject = data.Object as MacroObject;
+                    ItemObtainable = SeedCheckPlaytrhough.Playthrough.Any(x =>
+                        x.Value.CheckType == MiscData.CheckableLocationTypes.macro && x.Key == data.CleanID);
+                    Dis = MacroObject?.GetDictEntry()?.Name ?? i;
+                }
+                else if (data.Type == MiscData.LogicItemTypes.item)
+                {
+                    var ItemObject = data.Object as ItemData.ItemObject;
+                    ItemObtainable = SeedCheckPlaytrhough.Playthrough.Any(x =>
+                        x.Value.CheckType == MiscData.CheckableLocationTypes.location && 
+                        ((LocationData.LocationObject)x.Value.GetCheckableLocation(SeedCheckPlaytrhough.container.Instance)).Randomizeditem.Item == data.CleanID) ||
+                        ItemObject.AmountInStartingpool > 0;
+                    Dis = ItemObject?.GetDictEntry()?.GetName() ?? i;
+                }
                 SeedCheckResults.Add(new MiscData.StandardListBoxItem { Display = Dis, Tag = ItemObtainable });
             }
         }

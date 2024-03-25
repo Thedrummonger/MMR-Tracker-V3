@@ -68,8 +68,7 @@ namespace MMR_Tracker_V3
                 {
                     id = item.ID,
                     CheckType = CheckableLocationTypes.location,
-                    sphere = Sphere,
-                    Check = item
+                    sphere = Sphere
                 });
             }
             foreach (var item in playthroughData.NewExits())
@@ -78,8 +77,7 @@ namespace MMR_Tracker_V3
                 {
                     id = item.ID,
                     CheckType = CheckableLocationTypes.Exit,
-                    sphere = Sphere,
-                    Check = item
+                    sphere = Sphere
                 });
             }
             foreach (var item in playthroughData.NewMacros())
@@ -88,8 +86,7 @@ namespace MMR_Tracker_V3
                 {
                     id = item.ID,
                     CheckType = CheckableLocationTypes.macro,
-                    sphere = Sphere,
-                    Check = item
+                    sphere = Sphere
                 });
             }
         }
@@ -170,7 +167,7 @@ namespace MMR_Tracker_V3
                     if (ItemsNeeded < 1) { continue; }
                     foreach(var playobj in Playthrough.Where(x => x.Value.CheckType == CheckableLocationTypes.location))
                     {
-                        var loc = playobj.Value.Check as LocationObject;
+                        var loc = playobj.Value.GetCheckableLocation(container.Instance) as LocationObject;
                         if (loc.Randomizeditem.Item == i.Key)
                         {
                             playobj.Value.Important = true;
@@ -183,7 +180,7 @@ namespace MMR_Tracker_V3
                 {
                     foreach(var playobj in Playthrough.Where(x => x.Value.CheckType == CheckableLocationTypes.Exit))
                     {
-                        var exit = playobj.Value.Check as EntranceRandoExit;
+                        var exit = playobj.Value.GetCheckableLocation(container.Instance) as EntranceRandoExit;
                         if (exit.IsRandomizableEntrance() && exit.IsRandomized()) 
                         { 
                             playobj.Value.Important = true;
@@ -199,7 +196,7 @@ namespace MMR_Tracker_V3
                         bool IsNegated = Params.Length > 1 && bool.TryParse(Params[1], out bool NegateBool) && !NegateBool;
                         foreach(var playobj in Playthrough.Where(x => x.Value.CheckType == CheckableLocationTypes.location))
                         {
-                            var loc = playobj.Value.Check as LocationObject;
+                            var loc = playobj.Value.GetCheckableLocation(container.Instance) as LocationObject;
                             if (loc.GetDictEntry().Repeatable == !IsNegated && loc.Randomizeditem.Item == Params[0])
                             {
                                 playobj.Value.Important = true;
@@ -221,7 +218,7 @@ namespace MMR_Tracker_V3
             {
                 foreach (var p in Playthrough.Where(x => x.Value.CheckType == CheckableLocationTypes.location))
                 {
-                    LocationData.LocationObject locationObject = p.Value.Check as LocationData.LocationObject;
+                    LocationData.LocationObject locationObject = p.Value.GetCheckableLocation(container.Instance) as LocationData.LocationObject;
                     if (locationObject.Randomizeditem.Item == itemWin.ID) { p.Value.Important = true; return p.Value; }
                 }
             }
@@ -229,7 +226,7 @@ namespace MMR_Tracker_V3
             {
                 foreach (var p in Playthrough.Where(x => x.Value.CheckType == CheckableLocationTypes.Exit))
                 {
-                    EntranceData.EntranceRandoExit EntranceRandoExit = p.Value.Check as EntranceData.EntranceRandoExit;
+                    EntranceData.EntranceRandoExit EntranceRandoExit = p.Value.GetCheckableLocation(container.Instance) as EntranceData.EntranceRandoExit;
                     if (EntranceRandoExit.DestinationExit.region == AreaWin.ID) { p.Value.Important = true; return p.Value; }
                 }
             }
@@ -251,9 +248,53 @@ namespace MMR_Tracker_V3
             return null;
         }
 
-        public IEnumerable<string> CreateReadablePlaythrough(Dictionary<string, PlaythroughObject> result)
+        public List<string> CreateReadablePlaythrough(Dictionary<string, PlaythroughObject> FormatPlaythrough)
         {
-            throw new NotImplementedException();
+            List<string> readablePlaythrough = new List<string>();
+            int sphere = -1;
+            foreach (var p in FormatPlaythrough)
+            {
+                string Display;
+                if (p.Value.CheckType == CheckableLocationTypes.location)
+                {
+                    var Location = p.Value.GetCheckableLocation(container.Instance) as LocationObject;
+                    var LocationDisplay = $"{Location.GetDictEntry().Area} - {Location.GetName()}";
+                    var ItemName = container.Instance.GetItemByID(Location.Randomizeditem.Item)?.GetDictEntry()?.GetName() ?? Location.Randomizeditem.Item;
+                    Display = $"Check [{LocationDisplay.ToUpper()}] to obtain [{ItemName.ToUpper()}]";
+                }
+                else if (p.Value.CheckType == CheckableLocationTypes.Exit)
+                {
+                    var exit = p.Value.GetCheckableLocation(container.Instance) as EntranceData.EntranceRandoExit;
+                    var LocationDisplay = $"{exit.DisplayArea()} - {exit.DisplayExit()}";
+                    var ItemName = exit.DestinationExit.region;
+                    Display = $"Check [{LocationDisplay.ToUpper()}] to obtain [{ItemName.ToUpper()}]";
+                }
+                else if (p.Value.CheckType == CheckableLocationTypes.macro)
+                {
+                    var macro = p.Value.GetCheckableLocation(container.Instance) as MacroObject;
+                    var LocationDisplay = macro.GetDictEntry().Name ?? macro.ID;
+                    Display = $"Obtain [{LocationDisplay.ToUpper()}]";
+                }
+                else { continue; }
+                if (sphere != p.Value.sphere)
+                {
+                    if (sphere > -1) { readablePlaythrough.Add(String.Empty); }
+                    readablePlaythrough.Add($"SPHERE: {p.Value.sphere}");
+                    sphere = p.Value.sphere;
+                }
+                List<string> RealItems = new List<string>();
+
+                foreach (var i in p.Value.advancedUnlockData.RealItemsUsed)
+                {
+                    string display = container.Instance.GetItemByID(i.Key)?.GetDictEntry()?.GetName() ?? i.Key;
+                    if (i.Value > 1) { display += $" X{i.Value}"; }
+                    RealItems.Add(display);
+                }
+
+                readablePlaythrough.Add(Display);
+                if (RealItems.Any()) { readablePlaythrough.Add($"   Using: [{string.Join(", ", RealItems)}]"); }
+            }
+            return readablePlaythrough;
         }
 
         public class PlaythroughObject
@@ -261,10 +302,10 @@ namespace MMR_Tracker_V3
             public string id { get; set; }
             public int sphere { get; set; }
             public MiscData.CheckableLocationTypes CheckType { get; set; }
-            public CheckableLocation Check { get; set; }
             public List<string> UsedItems { get; set; }
             public bool Important { get; set; }
             public PlaythroughTools.AdvancedUnlockData advancedUnlockData { get; set; }
+            public CheckableLocation GetCheckableLocation(InstanceData.TrackerInstance i) => i.GetCheckableLocationByID(id, false);
         }
 
         public class PlaythroughData()

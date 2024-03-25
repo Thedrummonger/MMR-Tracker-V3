@@ -133,7 +133,15 @@ namespace MMR_Tracker_V3.TrackerObjects
 
             public void GetStaticPlaythrough(TrackerInstance instance)
             {
-                throw new NotImplementedException();
+                PlaythroughGenerator generator = new(instance);
+                generator.GeneratePlaythrough();
+                if (instance.LogicDictionary.WinCondition != null)
+                {
+                    var wincon = PlaythroughTools.GetDefaultWincon(instance);
+                    if (wincon is not null) { generator.FilterImportantPlaythrough(wincon); }
+                    Debug.WriteLine($"Seed Beatable: {generator.Playthrough.ContainsKey(instance.LogicDictionary.WinCondition)}");
+                }
+                Playthrough = generator.Playthrough;
             }
         }
 
