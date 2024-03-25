@@ -149,15 +149,12 @@ namespace MMR_Tracker_V3
             List<PlaythroughObject> ImportantChecks() { return Playthrough.Values.Where(x => x.Important).ToList(); }
             List<PlaythroughObject> UnhandledImportantChecks() { return ImportantChecks().Where(x => !HandledImportantChecks.Contains(x)).ToList(); }
 
-            while (UnhandledImportantChecks().Any())
+            while (UnhandledImportantChecks().Count > 0)
             {
-                foreach (var i in UnhandledImportantChecks())
-                {
-                    MarkCheckwithRequiredItems(i);
-                }
+                foreach (var i in UnhandledImportantChecks()) { MarkCheckWithRequiredItems(i); }
             }
 
-            void MarkCheckwithRequiredItems(PlaythroughObject ImportantCheck)
+            void MarkCheckWithRequiredItems(PlaythroughObject ImportantCheck)
             {
                 foreach (var i in ImportantCheck.advancedUnlockData.RealItemsUsed)
                 {
@@ -202,6 +199,14 @@ namespace MMR_Tracker_V3
                                 playobj.Value.Important = true;
                                 break;
                             }
+                        }
+                    }
+                    if (func == "check")
+                    {
+                        bool IsNegated = Params.Length > 1 && bool.TryParse(Params[1], out bool NegateBool) && !NegateBool;
+                        if (!IsNegated && Playthrough.TryGetValue(Params[0], out PlaythroughObject po))
+                        {
+                            po.Important = true;
                         }
                     }
                 }
@@ -250,7 +255,7 @@ namespace MMR_Tracker_V3
 
         public List<string> CreateReadablePlaythrough(Dictionary<string, PlaythroughObject> FormatPlaythrough)
         {
-            List<string> readablePlaythrough = new List<string>();
+            List<string> readablePlaythrough = [];
             int sphere = -1;
             foreach (var p in FormatPlaythrough)
             {
@@ -282,7 +287,7 @@ namespace MMR_Tracker_V3
                     readablePlaythrough.Add($"SPHERE: {p.Value.sphere}");
                     sphere = p.Value.sphere;
                 }
-                List<string> RealItems = new List<string>();
+                List<string> RealItems = [];
 
                 foreach (var i in p.Value.advancedUnlockData.RealItemsUsed)
                 {
@@ -292,7 +297,7 @@ namespace MMR_Tracker_V3
                 }
 
                 readablePlaythrough.Add(Display);
-                if (RealItems.Any()) { readablePlaythrough.Add($"   Using: [{string.Join(", ", RealItems)}]"); }
+                if (RealItems.Count > 0) { readablePlaythrough.Add($"   Using: [{string.Join(", ", RealItems)}]"); }
             }
             return readablePlaythrough;
         }
@@ -335,10 +340,76 @@ namespace MMR_Tracker_V3
 
             return null;
         }
-        public static IEnumerable<object> FormatAdvancedUnlockData(object advancedUnlockData, Dictionary<string, List<string>> logicUnlockData)
+        public static List<object> FormatAdvancedUnlockData(AdvancedUnlockData ADVUnlockData, InstanceData.InstanceContainer IC, string Divider = "")
         {
-            throw new NotImplementedException();
+            List<object> ReturnList =
+            [
+                ADVUnlockData.Name,
+                new MiscData.Divider(Divider),
+                new MiscData.Divider("LOGIC USED:"),
+                .. ADVUnlockData.LogicUsed,
+                new MiscData.Divider(Divider),
+                new MiscData.Divider("REAL ITEMS USED:"),
+            ];
+            Dictionary<string, int> TempRealItems = [];
+            foreach (var i in ADVUnlockData.RealItemsUsed)
+            {
+                var ItemData = IC.Instance.GetItemByID(i.Key);
+                string Display = ItemData?.GetDictEntry()?.GetName() ?? i.Key;
+                if (!TempRealItems.ContainsKey(i.Key)) { TempRealItems.Add(Display, 0); }
+                TempRealItems[Display] += i.Value;
+            }
+            foreach (var i in ADVUnlockData.OptionsUsed)
+            {
+                if (LogicFunctions.IsLogicFunction(i, out string func, out string[] param) && func == "renewable")
+                {
+                    var ItemData = IC.Instance.GetItemByID(param[0]);
+                    string Display = ItemData?.GetDictEntry()?.GetName() ?? param[0];
+                    string RenewableItemName = $"Renewable {Display}";
+                    if (!TempRealItems.ContainsKey(RenewableItemName)) { TempRealItems.Add(RenewableItemName, 0); }
+                }
+            }
+            foreach (var i in TempRealItems)
+            {
+                ReturnList.Add(i.Value > 0 ? $"{i.Key}, {i.Value}" : i.Key);
+            }
+            ReturnList.Add(new MiscData.Divider(Divider));
+            ReturnList.Add(new MiscData.Divider("MACROS USED:"));
+            foreach (var i in ADVUnlockData.MacrosUsed)
+            {
+                var ItemData = IC.Instance.GetMacroByID(i.Key);
+                string Display = ItemData?.GetDictEntry()?.Name ?? i.Key;
+                ReturnList.Add(i.Key);
+                ReturnList.Add($"    Unlocked With: {string.Join(" | ", i.Value)}");
+            }
+            ReturnList.Add(new MiscData.Divider(Divider));
+            ReturnList.Add(new MiscData.Divider("FUNCTIONS USED:"));
+            foreach (var i in ADVUnlockData.OptionsUsed)
+            {
+                ReturnList.Add(i);
+            }
+            ReturnList.Add(new MiscData.Divider(Divider));
+            ReturnList.Add(new MiscData.Divider("EXITS TAKEN:"));
+            foreach (var i in ADVUnlockData.ExitsTaken)
+            {
+                var ExitData = IC.Instance.GetExitByLogicID(i.Key);
+                string Display = i.Key;
+                if (ExitData is not null) { Display = $"{ExitData.DisplayArea()} => {ExitData.DisplayExit}"; }
+                ReturnList.Add(i.Key);
+                ReturnList.Add($"    Unlocked With: {string.Join(" | ", i.Value)}");
+            }
+            if (ADVUnlockData.Unknown.Count != 0)
+            {
+                ReturnList.Add(new MiscData.Divider(Divider));
+                ReturnList.Add(new MiscData.Divider("UNKNOWN:"));
+                foreach (var i in ADVUnlockData.Unknown)
+                {
+                    ReturnList.Add(i);
+                }
+            }
+            return ReturnList;
         }
+
 
         public static AdvancedUnlockData GetAdvancedUnlockData(string ID, Dictionary<string, Dictionary<string, LogicItemData>> logicUnlockData, InstanceData.TrackerInstance instance)
         {
@@ -346,9 +417,11 @@ namespace MMR_Tracker_V3
             Dictionary<CheckableLocation, Dictionary<string, LogicItemData>> logicUnlockDataWithLocation =
                 logicUnlockData.ToDictionary(x => instance.GetCheckableLocationByID(x.Key, false), x => x.Value);
             Dictionary<string, LogicItemData> SelectedItemUnlockData = new Dictionary<string, LogicItemData>(logicUnlockData[ID]);
-            AdvancedUnlockData AdvUnlockData = new();
-
-            AdvUnlockData.LogicUsed = logicUnlockData[ID].Select(x => x.Value.Type == LogicItemTypes.item ? $"{x.Key}, {x.Value.Amount}" : x.Key).ToList();
+            AdvancedUnlockData AdvUnlockData = new()
+            {
+                LogicUsed = logicUnlockData[ID].Select(x => x.Value.Type == LogicItemTypes.item ? $"{x.Key}, {x.Value.Amount}" : x.Key).ToList(),
+                Name = ID,
+            };
 
             LogicCalculation.CommitUnlockData(SelectedItemUnlockData, ParseDownMacros(ID, logicUnlockData, instance, out HashSet<string> ExitsTaken));
 

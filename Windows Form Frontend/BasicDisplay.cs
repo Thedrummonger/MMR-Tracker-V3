@@ -10,25 +10,25 @@ namespace Windows_Form_Frontend
 {
     public partial class BasicDisplay : Form
     {
-        List<ValueTuple<dynamic, bool>> _displayItems = new List<ValueTuple<dynamic, bool>>();
-        public BasicDisplay(List<ValueTuple<dynamic, bool>> Display)
+        List<ValueTuple<object, bool>> _displayItems = [];
+        public BasicDisplay(List<ValueTuple<object, bool>> Display)
         {
             InitializeComponent();
             CreateDisplayItems(Display);
         }
-        public BasicDisplay(List<dynamic> Display)
+        public BasicDisplay(List<object> Display)
         {
             InitializeComponent();
             CreateDisplayItems(Display);
         }
 
-        private void CreateDisplayItems(dynamic In)
+        private void CreateDisplayItems(object In)
         {
-            if (In is List<ValueTuple<dynamic, bool>> LT) { _displayItems = LT; }
-            else if (In is List<dynamic> GT)
+            if (In is List<ValueTuple<object, bool>> LT) { _displayItems = LT; }
+            else if (In is List<object> GT)
             {
                 _displayItems.Clear();
-                GT.ForEach(i => _displayItems.Add(new ValueTuple<dynamic, bool>(i, true)));
+                GT.ForEach(i => _displayItems.Add(new ValueTuple<object, bool>(i, true)));
             }
         }
 

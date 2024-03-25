@@ -65,7 +65,7 @@ namespace MMR_Tracker_V3.TrackerObjects
             public StandardListBoxItem() { }
             public string Display { get; set; }
             public object Tag { get; set; }
-            public Func<dynamic, dynamic> tagFunc { get; set; }
+            public Func<object, object> tagFunc { get; set; }
             public Action tagAction { get; set; }
             public override string ToString()
             {

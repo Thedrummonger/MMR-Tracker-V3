@@ -1,4 +1,6 @@
-﻿using MMR_Tracker_V3.TrackerObjectExtensions;
+﻿using MathNet.Numerics;
+using MMR_Tracker_V3;
+using MMR_Tracker_V3.TrackerObjectExtensions;
 using MMR_Tracker_V3.TrackerObjects;
 using System;
 using System.Collections.Generic;
@@ -71,6 +73,10 @@ namespace Windows_Form_Frontend
             {
                 WriteTrackerExits(ExitObject);
             }
+            else if (_CheckList[0] is null)
+            {
+                WriteBasicItemSelect();
+            }
             else
             {
                 _CheckList.RemoveAt(0);
@@ -107,6 +113,26 @@ namespace Windows_Form_Frontend
             listBox1.DataSource = EnteredItems;
         }
 
+        private void WriteBasicItemSelect()
+        {
+            FormatUIItems(false, false, "");
+            this.Text = "Select Item";
+            List<ItemData.ItemObject> EnteredItems = [];
+            List<string> Names = [];
+            foreach (var i in _Container.Instance.ItemPool.Values)
+            {
+                if (string.IsNullOrWhiteSpace(i.GetDictEntry().GetName())) { continue; }
+                i.DisplayName = i.GetDictEntry().GetName();
+                if (!SearchStringParser.FilterSearch(_Container.Instance, i, textBox1.Text, i.DisplayName)) { continue; }
+                if (!EnteredItems.Contains(i) && !Names.Contains(i.ToString()))
+                {
+                    Names.Add(i.ToString());
+                    EnteredItems.Add(i);
+                }
+            }
+            listBox1.DataSource = EnteredItems;
+        }
+
         private void ApplySelection(bool ButtonClick = false)
         {
             var Result = new ManualCheckObjectResult();
@@ -132,6 +158,10 @@ namespace Windows_Form_Frontend
             else if (_CheckList[0] is EntranceData.EntranceRandoExit ExitObject)
             {
                 _Result.Add(Result.SetExitDestination(ExitObject, (EntranceData.EntranceRandoDestination)listBox1.SelectedItem));
+            }
+            else if (_CheckList[0] is null)
+            {
+                _Result.Add(Result.SetItemLocation(null, ((ItemData.ItemObject)listBox1.SelectedItem).ID, -1));
             }
             _CheckList.RemoveAt(0);
             WriteNextItem();
