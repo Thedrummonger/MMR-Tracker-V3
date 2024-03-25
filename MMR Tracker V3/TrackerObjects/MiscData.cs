@@ -84,6 +84,7 @@ namespace MMR_Tracker_V3.TrackerObjects
                 CheckUnassignedHints = Copy.CheckUnassignedHints;
                 CheckChoiceOptions = Copy.CheckChoiceOptions;
                 CheckIntOptions = Copy.CheckIntOptions;
+                CheckEntrancePairs = Copy.CheckEntrancePairs;
             }
             public CheckItemSetting(CheckState _TargetCheckState)
             {
@@ -95,6 +96,7 @@ namespace MMR_Tracker_V3.TrackerObjects
             }
             public CheckState TargetCheckState;
             public bool EnforceMarkAction = false;
+            public bool CheckEntrancePairs = true;
             public Func<IEnumerable<object>, InstanceContainer, List<ManualCheckObjectResult>> CheckUnassignedLocations =
                 (O, C) => { throw new NotImplementedException("CheckUnassignedLocations was not assigned"); };
             public Func<IEnumerable<object>, InstanceContainer, List<ManualCheckObjectResult>> CheckUnassignedEntrances =
@@ -107,6 +109,7 @@ namespace MMR_Tracker_V3.TrackerObjects
                 (O, C) => { throw new NotImplementedException("CheckIntOptions was not assigned"); };
             public CheckItemSetting SetTargetCheckState(CheckState _TargetCheckState) { TargetCheckState = _TargetCheckState; return this; }
             public CheckItemSetting SetEnforceMarkAction(bool _EnforceMarkAction) { EnforceMarkAction = _EnforceMarkAction; return this; }
+            public CheckItemSetting SetCheckEntrancePairs(bool _CheckEntrancePairs) { CheckEntrancePairs = _CheckEntrancePairs; return this; }
             public CheckItemSetting SetCheckUnassignedLocations(Func<IEnumerable<object>, InstanceContainer, List<ManualCheckObjectResult>> func) { CheckUnassignedLocations = func; return this; }
             public CheckItemSetting SetCheckUnassignedEntrances(Func<IEnumerable<object>, InstanceContainer, List<ManualCheckObjectResult>> func) { CheckUnassignedEntrances = func; return this; }
             public CheckItemSetting SetCheckUnassignedHints(Func<IEnumerable<object>, InstanceContainer, List<ManualCheckObjectResult>> func) { CheckUnassignedHints = func; return this; }

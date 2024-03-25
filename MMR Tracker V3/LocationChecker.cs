@@ -52,7 +52,7 @@ namespace MMR_Tracker_V3
             UpdatedHintObjects.AddRange(UpdatedHints);
             UpdatedLogicObjects.AddRange(UpdatedHintedLocations);
 
-            if (UpdatedExits.Any() && Options.TargetCheckState == MiscData.CheckState.Checked)
+            if (Options.CheckEntrancePairs && UpdatedExits.Count > 0 && Options.TargetCheckState == MiscData.CheckState.Checked)
             {
                 Dictionary<EntranceRandoExit, EntranceRandoDestination> PairedExits = GetEntrancePairsToUpdate(UpdatedExits, instanceContainer);
                 foreach (var i in PairedExits) { if (i.Key.GetDestinationAtExit() is null) { i.Key.DestinationExit = i.Value; } }

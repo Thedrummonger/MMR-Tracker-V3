@@ -3,33 +3,252 @@ using MMR_Tracker_V3.TrackerObjectExtensions;
 using MMR_Tracker_V3.TrackerObjects;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
+using static MMR_Tracker_V3.PlaythroughGenerator;
+using static MMR_Tracker_V3.TrackerObjects.EntranceData;
+using static MMR_Tracker_V3.TrackerObjects.LocationData;
 using static MMR_Tracker_V3.TrackerObjects.MiscData;
 
 namespace MMR_Tracker_V3
 {
     public class PlaythroughGenerator
     {
-        private InstanceData.TrackerInstance instance;
-        public List<string> _IngoredChecks;
-        public Dictionary<string, List<Tuple<object, PlaythroughObject>>> FirstObtainedDict = new Dictionary<string, List<Tuple<object, PlaythroughObject>>>();
-        public Dictionary<string, PlaythroughObject> Playthrough = new Dictionary<string, PlaythroughObject>();
+        public InstanceData.InstanceContainer container;
+        public List<string> ignoredChecks;
+        public Dictionary<string, PlaythroughObject> Playthrough = [];
         public PlaythroughGenerator(InstanceData.TrackerInstance instance, List<string> ignoredChecks = null)
         {
-            this.instance = instance;
-            _IngoredChecks = ignoredChecks ?? [];
-        }
-
-        public bool FilterImportantPlaythrough(object tag)
-        {
-            throw new NotImplementedException();
+            container = new();
+            container.CopyAndLoadInstance(instance);
+            this.ignoredChecks = ignoredChecks ?? [];
         }
 
         public void GeneratePlaythrough()
         {
-            throw new NotImplementedException();
+            PlaythroughData playthroughData = new();
+            int Sphere = 0;
+            ResetInstance();
+            Playthrough.Clear();
+            container.logicCalculation.CompileOptionActionEdits();
+            container.logicCalculation.CalculateLogic(MiscData.CheckState.Checked);
+            ScanLocationsThisSphere(playthroughData);
+
+            while (playthroughData.NewLocations().Count > 0 || playthroughData.NewMacros().Count > 0 || playthroughData.NewExits().Count > 0)
+            {
+                IEnumerable<CheckableLocation> LocationsToCheck = [
+                    ..playthroughData.NewLocations().Where(x => x.CheckState == CheckState.Unchecked),
+                    ..playthroughData.NewExits().Where(x => x.CheckState == CheckState.Unchecked && x.IsRandomized())];
+
+                AddNewItemsToPlaythrough(playthroughData, Sphere);
+
+                foreach (var i in playthroughData.NewLocations()) { playthroughData.CheckedLocations.Add(i); }
+                foreach (var i in playthroughData.NewExits()) { playthroughData.CheckedExits.Add(i); }
+                foreach (var i in playthroughData.NewMacros()) { playthroughData.CheckedMacros.Add(i); }
+
+                LocationChecker.CheckSelectedItems(LocationsToCheck, container, new CheckItemSetting(CheckState.Checked).SetCheckEntrancePairs(false));
+
+                ScanLocationsThisSphere(playthroughData);
+                Sphere++;
+            }
+
+            foreach(var i in Playthrough)
+            {
+                i.Value.advancedUnlockData = PlaythroughTools.GetAdvancedUnlockData(i.Key, container.logicCalculation.UnlockData, container.Instance);
+            }
+        }
+
+        private void AddNewItemsToPlaythrough(PlaythroughData playthroughData, int Sphere)
+        {
+            foreach (var item in playthroughData.NewLocations())
+            {
+                Playthrough.Add(item.ID, new PlaythroughObject()
+                {
+                    id = item.ID,
+                    CheckType = CheckableLocationTypes.location,
+                    sphere = Sphere,
+                    Check = item
+                });
+            }
+            foreach (var item in playthroughData.NewExits())
+            {
+                Playthrough.Add(item.ID, new PlaythroughObject()
+                {
+                    id = item.ID,
+                    CheckType = CheckableLocationTypes.Exit,
+                    sphere = Sphere,
+                    Check = item
+                });
+            }
+            foreach (var item in playthroughData.NewMacros())
+            {
+                Playthrough.Add(item.ID, new PlaythroughObject()
+                {
+                    id = item.ID,
+                    CheckType = CheckableLocationTypes.macro,
+                    sphere = Sphere,
+                    Check = item
+                });
+            }
+        }
+
+        private void ScanLocationsThisSphere(PlaythroughData playthroughData)
+        {
+            playthroughData.LocationsThisSphere = container.Instance.LocationPool.Values.Where(x =>
+                x.Available && !x.IsJunk()).ToHashSet();
+            playthroughData.ExitsThisSphere = container.Instance.ExitPool.Values.Where(x =>
+                x.Available && !x.IsJunk()).ToHashSet();
+            playthroughData.MacrosThisSphere = container.Instance.MacroPool.Values.Where(x =>
+                x.Available).ToHashSet();
+        }
+
+        private void ResetInstance()
+        {
+            foreach (var i in container.Instance.AreaPool.Values) { i.ExitsAcessibleFrom = 0; }
+            foreach (var i in container.Instance.ItemPool.Values) { i.AmountAquiredLocally = 0; }
+            foreach (var i in container.Instance.LocationPool.Values) 
+            {
+                i.Available = false;
+                i.CheckState = MiscData.CheckState.Unchecked;
+                if (ignoredChecks.Contains(i.ID) || i.GetItemAtCheck() == null) { i.RandomizedState = MiscData.RandomizedState.ForcedJunk; }
+                else
+                {
+                    i.Randomizeditem.Item = i.GetItemAtCheck();
+                    if (i.IsUnrandomized()) { i.RandomizedState = MiscData.RandomizedState.Randomized; }
+                }
+            }
+            foreach (var i in container.Instance.GetAllRandomizableExits())
+            {
+                i.Available = false;
+                i.CheckState = MiscData.CheckState.Unchecked;
+                if (ignoredChecks.Contains(i.ID) || i.GetDestinationAtExit() == null) { i.RandomizedState = MiscData.RandomizedState.ForcedJunk; }
+                else
+                {
+                    i.DestinationExit = i.GetDestinationAtExit();
+                    if (i.RandomizedState == MiscData.RandomizedState.UnrandomizedManual) { i.RandomizedState = MiscData.RandomizedState.Randomized; }
+                }
+            }
+            foreach (var i in container.Instance.GetMacroExits())
+            {
+                i.Available = false;
+                i.CheckState = MiscData.CheckState.Unchecked;
+                i.DestinationExit = i.GetDestinationAtExit();
+            }
+            foreach (var i in container.Instance.MacroPool.Values)
+            {
+                i.Available = false;
+            }
+            container.logicCalculation.UnlockData.Clear();
+        }
+
+        public bool FilterImportantPlaythrough(object WinCon)
+        {
+            PlaythroughObject WinConLoc = SetWinConImportant(WinCon);
+            if (WinConLoc is null) {  return false; }
+
+            List<PlaythroughObject> HandledImportantChecks = new List<PlaythroughObject>();
+            List<PlaythroughObject> ImportantChecks() { return Playthrough.Values.Where(x => x.Important).ToList(); }
+            List<PlaythroughObject> UnhandledImportantChecks() { return ImportantChecks().Where(x => !HandledImportantChecks.Contains(x)).ToList(); }
+
+            while (UnhandledImportantChecks().Any())
+            {
+                foreach (var i in UnhandledImportantChecks())
+                {
+                    MarkCheckwithRequiredItems(i);
+                }
+            }
+
+            void MarkCheckwithRequiredItems(PlaythroughObject ImportantCheck)
+            {
+                foreach (var i in ImportantCheck.advancedUnlockData.RealItemsUsed)
+                {
+                    int StartingAmount = container.Instance.GetItemByID(i.Key)?.AmountInStartingpool ?? 0;
+                    int ItemsNeeded = i.Value;
+                    ItemsNeeded -= StartingAmount;
+                    if (ItemsNeeded < 1) { continue; }
+                    foreach(var playobj in Playthrough.Where(x => x.Value.CheckType == CheckableLocationTypes.location))
+                    {
+                        var loc = playobj.Value.Check as LocationObject;
+                        if (loc.Randomizeditem.Item == i.Key)
+                        {
+                            playobj.Value.Important = true;
+                            ItemsNeeded--;
+                        }
+                        if (ItemsNeeded < 1) { break; }
+                    }
+                }
+                foreach (var i in ImportantCheck.advancedUnlockData.AreasAccessed)
+                {
+                    foreach(var playobj in Playthrough.Where(x => x.Value.CheckType == CheckableLocationTypes.Exit))
+                    {
+                        var exit = playobj.Value.Check as EntranceRandoExit;
+                        if (exit.IsRandomizableEntrance() && exit.IsRandomized()) 
+                        { 
+                            playobj.Value.Important = true;
+                            break;
+                        }
+                    }
+                }
+                foreach (var i in ImportantCheck.advancedUnlockData.OptionsUsed)
+                {
+                    LogicFunctions.IsLogicFunction(i, out string func, out string[] Params);
+                    if (func == "renewable")
+                    {
+                        bool IsNegated = Params.Length > 1 && bool.TryParse(Params[1], out bool NegateBool) && !NegateBool;
+                        foreach(var playobj in Playthrough.Where(x => x.Value.CheckType == CheckableLocationTypes.location))
+                        {
+                            var loc = playobj.Value.Check as LocationObject;
+                            if (loc.GetDictEntry().Repeatable == !IsNegated && loc.Randomizeditem.Item == Params[0])
+                            {
+                                playobj.Value.Important = true;
+                                break;
+                            }
+                        }
+                    }
+                }
+                HandledImportantChecks.Add(ImportantCheck);
+            }
+
+            return true;
+
+        }
+
+        private PlaythroughObject SetWinConImportant(object WinObj)
+        {
+            if (WinObj is ItemData.ItemObject itemWin)
+            {
+                foreach (var p in Playthrough.Where(x => x.Value.CheckType == CheckableLocationTypes.location))
+                {
+                    LocationData.LocationObject locationObject = p.Value.Check as LocationData.LocationObject;
+                    if (locationObject.Randomizeditem.Item == itemWin.ID) { p.Value.Important = true; return p.Value; }
+                }
+            }
+            if (WinObj is EntranceData.EntranceRandoArea AreaWin)
+            {
+                foreach (var p in Playthrough.Where(x => x.Value.CheckType == CheckableLocationTypes.Exit))
+                {
+                    EntranceData.EntranceRandoExit EntranceRandoExit = p.Value.Check as EntranceData.EntranceRandoExit;
+                    if (EntranceRandoExit.DestinationExit.region == AreaWin.ID) { p.Value.Important = true; return p.Value; }
+                }
+            }
+            if (WinObj is MacroObject MacroWin)
+            {
+                var MacroPlaythrough = Playthrough.Where(x => x.Value.CheckType == CheckableLocationTypes.macro).ToDictionary();
+                if (Playthrough.TryGetValue(MacroWin.ID, out PlaythroughObject po)) { po.Important = true; return po; }
+            }
+            if (WinObj is LocationData.LocationObject LocWin)
+            {
+                var LocPlaythrough = Playthrough.Where(x => x.Value.CheckType == CheckableLocationTypes.location).ToDictionary();
+                if (Playthrough.TryGetValue(LocWin.ID, out PlaythroughObject po)) { po.Important = true; return po; }
+            }
+            if (WinObj is EntranceRandoExit ExitWin)
+            {
+                var MacroPlaythrough = Playthrough.Where(x => x.Value.CheckType == CheckableLocationTypes.Exit).ToDictionary();
+                if (Playthrough.TryGetValue(ExitWin.ID, out PlaythroughObject po)) { po.Important = true; return po; }
+            }
+            return null;
         }
 
         public IEnumerable<string> CreateReadablePlaythrough(Dictionary<string, PlaythroughObject> result)
@@ -42,21 +261,45 @@ namespace MMR_Tracker_V3
             public string id { get; set; }
             public int sphere { get; set; }
             public MiscData.CheckableLocationTypes CheckType { get; set; }
-            public string ItemObtained { get; set; }
+            public CheckableLocation Check { get; set; }
             public List<string> UsedItems { get; set; }
             public bool Important { get; set; }
             public PlaythroughTools.AdvancedUnlockData advancedUnlockData { get; set; }
         }
 
+        public class PlaythroughData()
+        {
+            public HashSet<LocationData.LocationObject> CheckedLocations = [];
+            public HashSet<LocationData.LocationObject> LocationsThisSphere = [];
+            public HashSet<LocationData.LocationObject> NewLocations() => LocationsThisSphere.Where(x => !CheckedLocations.Contains(x)).ToHashSet();
+            public HashSet<EntranceData.EntranceRandoExit> CheckedExits = [];
+            public HashSet<EntranceData.EntranceRandoExit> ExitsThisSphere = [];
+            public HashSet<EntranceData.EntranceRandoExit> NewExits() => ExitsThisSphere.Where(x => !CheckedExits.Contains(x)).ToHashSet();
+            public HashSet<MacroObject> CheckedMacros = [];
+            public HashSet<MacroObject> MacrosThisSphere = [];
+            public HashSet<MacroObject> NewMacros() => MacrosThisSphere.Where(x => !CheckedMacros.Contains(x)).ToHashSet();
+        }
+
     }
     public static class PlaythroughTools
     {
+
+        public static object GetDefaultWincon(InstanceData.TrackerInstance instance)
+        {
+            var WinConAsItem = instance.GetLogicItemData(instance.LogicDictionary.WinCondition);
+            if (WinConAsItem.Type.In(LogicItemTypes.item, LogicItemTypes.Area, LogicItemTypes.macro)) { return WinConAsItem.Object; }
+
+            var WinConAsLocation = instance.GetCheckableLocationByID(instance.LogicDictionary.WinCondition, false);
+            if (WinConAsLocation is not null) { return WinConAsLocation; }
+
+            return null;
+        }
         public static IEnumerable<object> FormatAdvancedUnlockData(object advancedUnlockData, Dictionary<string, List<string>> logicUnlockData)
         {
             throw new NotImplementedException();
         }
 
-        public static object GetAdvancedUnlockData(string ID, Dictionary<string, Dictionary<string, LogicItemData>> logicUnlockData, InstanceData.TrackerInstance instance)
+        public static AdvancedUnlockData GetAdvancedUnlockData(string ID, Dictionary<string, Dictionary<string, LogicItemData>> logicUnlockData, InstanceData.TrackerInstance instance)
         {
             if (!logicUnlockData.ContainsKey(ID)) { return null; }
             Dictionary<CheckableLocation, Dictionary<string, LogicItemData>> logicUnlockDataWithLocation =
@@ -73,15 +316,15 @@ namespace MMR_Tracker_V3
                 switch (i.Value.Type)
                 {
                     case LogicItemTypes.item:
-                        AdvUnlockData.RealItemsUsed.Add(((ItemData.ItemObject)i.Value.Object).GetDictEntry().GetName(), i.Value.Amount);
+                        AdvUnlockData.RealItemsUsed.Add(i.Key, i.Value.Amount);
                         break;
                     case LogicItemTypes.Area:
-                        AdvUnlockData.AreasAccessed.Add(((EntranceData.EntranceRandoArea)i.Value.Object).ID);
+                        AdvUnlockData.AreasAccessed.Add(i.Key);
                         break;
                     case LogicItemTypes.macro:
                         string[] UsedMacroLogicString = logicUnlockData.TryGetValue(i.Key, out Dictionary<string, LogicItemData> UsedMacroUnlockData) ?
                             GetUsedLogicList(UsedMacroUnlockData) : [];
-                        AdvUnlockData.MacrosUsed.Add(((MacroObject)i.Value.Object).GetName(), UsedMacroLogicString);
+                        AdvUnlockData.MacrosUsed.Add(i.Key, UsedMacroLogicString);
                         break;
                     case LogicItemTypes.function:
                         AdvUnlockData.OptionsUsed.Add(i.Key);

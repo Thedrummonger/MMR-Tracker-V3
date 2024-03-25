@@ -517,7 +517,8 @@ namespace Windows_Form_Frontend
                 if (data.Object is ItemData.ItemObject IO) { Dis = IO?.GetDictEntry()?.GetName() ?? i; }
                 else if (data.Object is MacroObject MO) { Dis = MO?.GetDictEntry()?.Name ?? i; }
 
-                bool ItemObtainable = SeedCheckPlaytrhough.FirstObtainedDict.ContainsKey(i) || (data.Object is ItemData.ItemObject IOS && (IOS?.AmountInStartingpool ?? 0) > 0);
+                bool ItemObtainable = false;
+                //bool ItemObtainable = SeedCheckPlaytrhough.FirstObtainedDict.ContainsKey(i) || (data.Object is ItemData.ItemObject IOS && (IOS?.AmountInStartingpool ?? 0) > 0);
 
                 SeedCheckResults.Add(new MiscData.StandardListBoxItem { Display = Dis, Tag = ItemObtainable });
             }

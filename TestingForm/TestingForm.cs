@@ -102,7 +102,15 @@ namespace TestingForm
 
         private void RandomTests()
         {
-            MiscTesting.TestFuncParse();
+            PlaythroughGenerator playthroughGenerator = new PlaythroughGenerator(MainInterface.InstanceContainer.Instance);
+            playthroughGenerator.GeneratePlaythrough();
+            var Wincon = PlaythroughTools.GetDefaultWincon(MainInterface.InstanceContainer.Instance);
+            bool Filtered = playthroughGenerator.FilterImportantPlaythrough(Wincon);
+            var Playthrough = playthroughGenerator.Playthrough;
+            if (Filtered) { Playthrough = Playthrough.Where(x => x.Value.Important).ToDictionary(); }
+            else { Debug.WriteLine($"Game_Clear NOT OBTAINABLE"); }
+            File.WriteAllText(Path.Combine(TestingReferences.GetDevTestingPath(), "TestPlaythrough.json"), Playthrough.ToFormattedJson());
+            //MiscTesting.TestFuncParse();
         }
 
         private void RegexTesting()
