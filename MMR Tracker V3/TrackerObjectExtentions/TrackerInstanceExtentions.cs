@@ -150,7 +150,7 @@ namespace MMR_Tracker_V3.TrackerObjectExtensions
                 if (string.IsNullOrWhiteSpace(i.GetDictEntry().GetName())) { continue; }
                 i.DisplayName = i.GetDictEntry().GetName();
                 if (!SearchStringParser.FilterSearch(_Instance, i, Filter, i.DisplayName)) { continue; }
-                if ((i.CanBePlaced() || IgnorePlaceablility) && Location.CanContainItem(i) && !EnteredItems.Contains(i) && !Names.Contains(i.ToString()))
+                if ((i.CanBePlaced() || IgnorePlaceablility) && (Location is null || Location.CanContainItem(i)) && !EnteredItems.Contains(i) && !Names.Contains(i.ToString()))
                 {
                     Names.Add(i.ToString());
                     EnteredItems.Add(i);

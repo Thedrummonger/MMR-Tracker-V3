@@ -140,7 +140,7 @@ namespace CLIFrontEnd
             string hint = Console.ReadLine();
             return new MiscData.ManualCheckObjectResult().SetGossipHint(HintSpot, hint);
         }
-        private static void PrintItems<T>(Dictionary<int, T> Items)
+        public static void PrintItems<T>(Dictionary<int, T> Items)
         {
             if (Items.Count == 0) { return; }
             int Padding = Items.Keys.Max().ToString().Length;

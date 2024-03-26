@@ -66,12 +66,21 @@ namespace Windows_Form_Frontend
             {
                 mainInterface.HandleItemSelect(contextMenu.ItemGroupings.MarkedLocations, MiscData.CheckState.Unchecked, LB: Sender);
             });
-            contextMenu.AddNewMenuItem("Edit Selected Options", new ContextMenu.ContextMenuItem(contextMenu)
-            {
-                Action = () => { mainInterface.HandleItemSelect(contextMenu.ItemGroupings.AllOptions, MiscData.CheckState.Unchecked, LB: Sender); },
-                Display = "Edit Selected Options",
-                Condition = () => { return contextMenu.ItemGroupings.AllOptions.Any() && AmountOptionTypesSelected(contextMenu) > 1; }
-            });
+            ContextMenuBuilder.AddBasic("Edit Selected Options",
+                () => { mainInterface.HandleItemSelect(contextMenu.ItemGroupings.AllOptions, MiscData.CheckState.Unchecked, LB: Sender); },
+                () => { return contextMenu.ItemGroupings.AllOptions.Any() && AmountOptionTypesSelected(contextMenu) > 1; });
+            ContextMenuBuilder.AddBasic("Edit Selected Choice Options",
+                () => { mainInterface.HandleItemSelect(contextMenu.ItemGroupings.ChoiceOptions, MiscData.CheckState.Unchecked, LB: Sender); },
+                () => { return contextMenu.ItemGroupings.ChoiceOptions.Any(); });
+            ContextMenuBuilder.AddBasic("Edit Selected Toggle Options",
+                () => { mainInterface.HandleItemSelect(contextMenu.ItemGroupings.ToggleOptions, MiscData.CheckState.Unchecked, LB: Sender); },
+                () => { return contextMenu.ItemGroupings.ToggleOptions.Any(); });
+            ContextMenuBuilder.AddBasic("Edit Selected Multi Select Options",
+                () => { mainInterface.HandleItemSelect(contextMenu.ItemGroupings.MultiOptions, MiscData.CheckState.Unchecked, LB: Sender); },
+                () => { return contextMenu.ItemGroupings.MultiOptions.Any(); });
+            ContextMenuBuilder.AddBasic("Edit Selected Int Options",
+                () => { mainInterface.HandleItemSelect(contextMenu.ItemGroupings.IntOptions, MiscData.CheckState.Unchecked, LB: Sender); },
+                () => { return contextMenu.ItemGroupings.IntOptions.Any(); });
             ContextMenuBuilder.AddEditPriceAction(() =>
             {
                 var PricedLocations = contextMenu.ItemGroupings.CheckableLocations.Select(x => new VariableInputWindow.PriceContainer(x));

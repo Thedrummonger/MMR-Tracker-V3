@@ -74,7 +74,7 @@ namespace MMR_Tracker_V3
         }
         public class DefaultActionBuilder(LocationListContextMenu Parent)
         {
-            private void AddBasic(string ID, Action action, Func<bool> Condition)
+            public void AddBasic(string ID, Action action, Func<bool> Condition)
             {
                 Parent.AddNewMenuItem(ID, new ContextMenuItem(Parent)
                 {

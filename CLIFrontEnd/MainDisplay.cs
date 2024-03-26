@@ -2,7 +2,6 @@
 using MMR_Tracker_V3.SpoilerLogImporter;
 using MMR_Tracker_V3.TrackerObjectExtensions;
 using MMR_Tracker_V3.TrackerObjects;
-using System.ComponentModel;
 using static CLIFrontEnd.CLIUtility;
 using static MMR_Tracker_V3.TrackerDataHandling;
 using static MMR_Tracker_V3.TrackerObjects.InstanceData;
@@ -10,11 +9,12 @@ using static MMR_Tracker_V3.TrackerObjects.MiscData;
 
 namespace CLIFrontEnd
 {
-    internal class MainDisplay(InstanceContainer instanceContainer)
+    internal class MainDisplay(InstanceContainer _instanceContainer)
     {
-        CLIDisplayListType displayType = CLIDisplayListType.Locations;
-        bool ShowHelp = true;
-        string Filter = "";
+        public InstanceContainer instanceContainer = _instanceContainer;
+        public CLIDisplayListType displayType = CLIDisplayListType.Locations;
+        public bool ShowHelp = true;
+        public string Filter = "";
 
         public void Display()
         {
@@ -68,8 +68,7 @@ namespace CLIFrontEnd
                     Console.WriteLine("Example: 1,12,18-25");
                     Console.WriteLine("Add one of the following Prefixes to change the action");
                     Console.WriteLine(@"#: Mark the selected location");
-                    Console.WriteLine(@"$: Set the price of the selected locations.");
-                    Console.WriteLine(@"%: Hide the selected locations.");
+                    Console.WriteLine(@"@: Opens a context menu for the selected items containing additional actions.");
                     Console.WriteLine("\nAdditional Commands:");
                     foreach (var i in Options)
                     {
@@ -113,29 +112,37 @@ namespace CLIFrontEnd
                     Filter = InputData.ParsedInput;
                     continue;
                 }
-                else if (InputData.Prefixes.Contains('$'))
+                else if (InputData.Prefixes.Contains('@'))
                 {
-                    instanceContainer.SaveState();
-                    SetLocationPrice(InputData.Indexes, Objects);
-                    instanceContainer.logicCalculation.CompileOptionActionEdits();
-                    continue;
-                }
-                else if (InputData.Prefixes.Contains('%'))
-                {
-                    instanceContainer.SaveState();
-                    HideLocations(InputData.Indexes, Objects);
-                    continue;
+                    CLIContextMenu.OpenContextMenu(this, InputData, Objects);
                 }
                 else
                 {
                     CheckState checkState = displayType == CLIDisplayListType.Checked ? CheckState.Unchecked : CheckState.Checked;
                     if (InputData.Prefixes.Contains('#')) { checkState = CheckState.Marked; }
+                    if (CheckForAreaHeaderFilterSelection(InputData.Indexes, Objects) is string S) { Filter = S; continue; }
                     instanceContainer.SaveState();
                     CheckItems(InputData.Indexes, Objects, checkState, displayType);
                     if (displayType == CLIDisplayListType.Options) { instanceContainer.logicCalculation.CompileOptionActionEdits(); }
                 }
 
             }
+        }
+
+        private string? CheckForAreaHeaderFilterSelection(List<int> Indexes, Dictionary<int, object> reference)
+        {
+            DisplayListType? Source = displayType.ToStandardDisplayListType();
+            if (Source is not null && Indexes.All(x => reference.TryGetValue(x, out object? value) && value is MiscData.Areaheader))
+            {
+                List<string> areas = [];
+                foreach(int index in Indexes)
+                {
+                    var Area = (Areaheader)reference[index];
+                    areas.Add(Area.Area);
+                }
+                return string.Join(" || ", areas.Select(x => $"#{x}"));
+            }
+            return null;
         }
 
         private void SaveInstance()
@@ -192,14 +199,6 @@ namespace CLIFrontEnd
 
         private void CheckItems(List<int> Indexes, Dictionary<int, object> reference, CheckState checkState, CLIDisplayListType displayType)
         {
-            DisplayListType? Source = displayType.ToStandardDisplayListType();
-            if (Source is not null && Indexes.Count == 1 && reference.TryGetValue(Indexes[0], out object? value) && value is MiscData.Areaheader AH)
-            {
-                bool CurrentMinimizeState = AH.IsMinimized((DisplayListType)Source, instanceContainer.Instance.StaticOptions);
-                AH.SetMinimized((DisplayListType)Source, instanceContainer.Instance.StaticOptions, !CurrentMinimizeState);
-                return;
-            }
-
             List<object> CheckObjects = Indexes.Where(x => reference.ContainsKey(x)).Select(x => reference[x]).ToList();
             var CheckObjectOptions = new MiscData.CheckItemSetting(checkState)
                             .SetCheckUnassignedLocations(LocationChecking.HandleUnAssignedLocations)
