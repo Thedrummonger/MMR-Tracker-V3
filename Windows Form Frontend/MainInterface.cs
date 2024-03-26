@@ -336,8 +336,7 @@ namespace Windows_Form_Frontend
                 if ((ModifierKeys & Keys.Control) != Keys.Control) { LB.SelectedItems.Clear(); }
                 LB.SetSelected(index, true);
                 //ShowContextMenu(LB);
-                LocationListContextMenu menu = new(this, LB, InstanceContainer);
-                menu.Show();
+                WinformContextMenu.BuildContextMenu(this, LB);
             }
         }
 

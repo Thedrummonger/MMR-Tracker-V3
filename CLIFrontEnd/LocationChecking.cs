@@ -60,7 +60,7 @@ namespace CLIFrontEnd
                         Console.WriteLine($"Enter value for {IO.getOptionName()} (Current: {IO.Value}) (Range: {IO.Min} - {IO.Max})");
                         if (int.TryParse(Console.ReadLine(), out int SelectedVal) && SelectedVal <= IO.Max && SelectedVal >= IO.Min) { Val = SelectedVal; }
                     }
-                    Result.Add(new(IO, Val));
+                    Result.Add(new MiscData.ManualCheckObjectResult().SetIntOption(IO, (int)Val));
                 }
             }
             return Result;
@@ -79,7 +79,7 @@ namespace CLIFrontEnd
                 var input = Console.ReadLine() ?? "";
                 if (int.TryParse(input, out int index) && Items.TryGetValue(index, out ItemData.ItemObject? value))
                 {
-                    return new MiscData.ManualCheckObjectResult(Location, value.ID);
+                    return new MiscData.ManualCheckObjectResult().SetItemLocation(Location, value.ID);
                 }
                 else if (input.StartsWith(@"\"))
                 {
@@ -102,7 +102,7 @@ namespace CLIFrontEnd
                 var input = Console.ReadLine() ?? "";
                 if (int.TryParse(input, out int index) && EnteredItems.TryGetValue(index, out EntranceData.EntranceRandoDestination? value))
                 {
-                    return new MiscData.ManualCheckObjectResult(Exit, value);
+                    return new MiscData.ManualCheckObjectResult().SetExitDestination(Exit, value);
                 }
                 else if (input.StartsWith(@"\"))
                 {
@@ -125,7 +125,7 @@ namespace CLIFrontEnd
                 var input = Console.ReadLine() ?? "";
                 if (int.TryParse(input, out int index) && Items.TryGetValue(index, out OptionData.OptionValue? value))
                 {
-                    return new MiscData.ManualCheckObjectResult(Option, value.ID);
+                    return new MiscData.ManualCheckObjectResult().SetChoiceOption(Option, value.ID);
                 }
                 else if (input.StartsWith(@"\"))
                 {
@@ -138,7 +138,7 @@ namespace CLIFrontEnd
             Console.Clear();
             Console.WriteLine($"Enter Hint at {HintSpot.ID}");
             string hint = Console.ReadLine();
-            return new MiscData.ManualCheckObjectResult(HintSpot, hint);
+            return new MiscData.ManualCheckObjectResult().SetGossipHint(HintSpot, hint);
         }
         private static void PrintItems<T>(Dictionary<int, T> Items)
         {

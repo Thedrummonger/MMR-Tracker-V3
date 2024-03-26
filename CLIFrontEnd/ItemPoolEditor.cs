@@ -31,7 +31,7 @@ namespace CLIFrontEnd
                     new("Starting Item Pool", PoolEditType.StartingItemPool), 
                     new("Tricks", PoolEditType.TrickPool)
                 ];
-            if (container.Instance.EntrancePool.HasRandomizableEntrances()) { Options.Insert(1, new("Entrance Pool", PoolEditType.EntrancePool)); }
+            if (container.Instance.GetAllRandomizableExits().Count > 0) { Options.Insert(1, new("Entrance Pool", PoolEditType.EntrancePool)); }
             if (container.Instance.HintPool.Count > 0) { Options.Insert(1, new("Hint Pool", PoolEditType.HintPool)); }
             CLISelectMenu Mode = new(Options);
             var Result = (StandardListBoxItem)Mode.Run();
@@ -41,7 +41,7 @@ namespace CLIFrontEnd
                     LoopLocationStateChange(container, [.. container.Instance.LocationPool.Values]);
                     break;
                 case PoolEditType.EntrancePool:
-                    LoopLocationStateChange(container, [.. container.Instance.EntrancePool.GetAllRandomizableExits()]);
+                    LoopLocationStateChange(container, [.. container.Instance.GetAllRandomizableExits()]);
                     break;
                 case PoolEditType.HintPool:
                     LoopLocationStateChange(container, [.. container.Instance.HintPool.Values]);

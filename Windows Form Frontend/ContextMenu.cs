@@ -11,209 +11,112 @@ using MMR_Tracker_V3.TrackerObjectExtensions;
 using MMR_Tracker_V3;
 using System.Diagnostics;
 using Microsoft.VisualBasic.Logging;
+using Octokit;
 
 namespace Windows_Form_Frontend
 {
-    internal class LocationListContextMenu(MainInterface mainInterface, ListBox listBox, InstanceContainer InstanceContainer)
+    public class WinformContextMenu
     {
-        ContextMenuStrip contextMenuStrip = new();
-        List<object> SelectedItems = [];
-        List<CheckableLocation> CheckableLocations = [];
-        List<CheckableLocation> CheckableLocationsProxyAsLocation = [];
-        List<CheckableLocation> CheckableLocationsProxyAsLogicRef = [];
-        List<CheckableLocation> PricedLocations = [];
-        List<CheckableLocation> CheckedLocations = [];
-        List<CheckableLocation> MarkedLocations = [];
-        List<CheckableLocation> NotCheckedLocations = [];
-        List<CheckableLocation> NotMarkedLocations = [];
-        List<MiscData.Areaheader> AreaHeaders = [];
-        List<MiscData.Areaheader> NavigatableAreas = [];
-        List<OptionData.ChoiceOption> ChoiceOptions = [];
-        List<OptionData.ToggleOption> ToggleOptions = [];
-        List<OptionData.MultiSelectOption> MultiOptions = [];
-        List<OptionData.IntOption> IntOptions = [];
-        List<OptionData.LogicOption> AllOptions = [];
-
-        DisplayListType displayList = DisplayListType.Locations;
-        TextBox TextBox = null;
-        public void Show()
+        public static void BuildContextMenu(MainInterface mainInterface, ListBox Sender)
         {
-            Initialize();
-            AddItem("refresh", () => { mainInterface.PrintToListBox([listBox]); });
-            if (NavigatableAreas.Count == 1 && InstanceContainer.Instance.GetAllRandomizableExits().Count > 0)
+            IEnumerable<object> SelectedItems = Sender.SelectedItems.Cast<object>().ToList();
+            var IC = MainInterface.InstanceContainer;
+            DisplayListType displayList = DisplayListType.Locations;
+            TextBox TextBox = null;
+            if (Sender == mainInterface.LBValidLocations) { displayList = DisplayListType.Locations; TextBox = mainInterface.TXTLocSearch; }
+            if (Sender == mainInterface.LBValidEntrances) { displayList = DisplayListType.Entrances; TextBox = mainInterface.TXTEntSearch; }
+            if (Sender == mainInterface.LBCheckedLocations) { displayList = DisplayListType.Checked; TextBox = mainInterface.TXTCheckedSearch; }
+
+            var contextMenu = new ContextMenu.LocationListContextMenu(IC, SelectedItems);
+            var ContextMenuBuilder = new ContextMenu.DefaultActionBuilder(contextMenu);
+            ContextMenuBuilder.AddRefreshAction(() => { mainInterface.PrintToListBox([Sender]); });
+            ContextMenuBuilder.AddNavigateToAction(() => 
+                { mainInterface.CMBEnd.SelectedItem = contextMenu.ItemGroupings.NavigatableAreas[0].Area; });
+            ContextMenuBuilder.AddFilterAreasAction(() =>
             {
-                AddItem("Navigate To this area", () => { mainInterface.CMBEnd.SelectedItem = NavigatableAreas[0].Area; });
-            }
-            if (AreaHeaders.Count > 0)
-            {
-                AddItem("Filter Areas", FilterAreas) ;
-                if (AreaHeaders.Any(x => !x.IsMinimized(displayList, InstanceContainer.Instance.StaticOptions)))
+                TextBox.Text = string.Empty;
+                foreach (var item in contextMenu.ItemGroupings.AreaHeaders)
                 {
-                    AddItem("Minimize Areas", MinimizeAreas);
+                    if (string.IsNullOrWhiteSpace(TextBox.Text)) { TextBox.Text = $"#{item.Area}"; }
+                    else { TextBox.Text += $"|#{item.Area}"; };
                 }
-                if (AreaHeaders.Any(x => x.IsMinimized(displayList, InstanceContainer.Instance.StaticOptions)))
+            });
+            ContextMenuBuilder.AddMinimizeHeaderAction(() => mainInterface.PrintToListBox(), displayList);
+            ContextMenuBuilder.AddMaximizeHeaderAction(() => mainInterface.PrintToListBox(), displayList);
+            ContextMenuBuilder.AddStarAction(() => mainInterface.PrintToListBox());
+            ContextMenuBuilder.AddUnstarAction(() => mainInterface.PrintToListBox());
+            ContextMenuBuilder.AddHideAction(() => mainInterface.PrintToListBox());
+            ContextMenuBuilder.AddUnHideAction(() => mainInterface.PrintToListBox());
+            ContextMenuBuilder.AddShowLogicAction(() => 
+                { new ShowLogic(contextMenu.ItemGroupings.CheckableLocationsProxyAsLogicRef[0].ID, IC).Show(); });
+            ContextMenuBuilder.AddWhatUnlockedAction(() => { ShowUnlockData(contextMenu.ItemGroupings.CheckableLocationsProxyAsLogicRef[0].ID, IC); });
+            ContextMenuBuilder.AddCheckUnCheckedAction(() =>
+            {
+                mainInterface.HandleItemSelect(contextMenu.ItemGroupings.NotCheckedLocations, MiscData.CheckState.Checked, LB: Sender);
+            });
+            ContextMenuBuilder.AddUnCheckCheckedAction(() =>
+            {
+                mainInterface.HandleItemSelect(contextMenu.ItemGroupings.CheckedLocations, MiscData.CheckState.Unchecked, LB: Sender);
+            });
+            ContextMenuBuilder.AddMarkUnMarkedAction(() =>
+            {
+                mainInterface.HandleItemSelect(contextMenu.ItemGroupings.NotMarkedLocations, MiscData.CheckState.Marked, true, LB: Sender);
+            });
+            ContextMenuBuilder.AddUnMarkMarkedAction(() =>
+            {
+                mainInterface.HandleItemSelect(contextMenu.ItemGroupings.MarkedLocations, MiscData.CheckState.Unchecked, LB: Sender);
+            });
+            contextMenu.AddNewMenuItem("Edit Selected Options", new ContextMenu.ContextMenuItem(contextMenu)
+            {
+                Action = () => { mainInterface.HandleItemSelect(contextMenu.ItemGroupings.AllOptions, MiscData.CheckState.Unchecked, LB: Sender); },
+                Display = "Edit Selected Options",
+                Condition = () => { return contextMenu.ItemGroupings.AllOptions.Any() && AmountOptionTypesSelected(contextMenu) > 1; }
+            });
+            ContextMenuBuilder.AddEditPriceAction(() =>
+            {
+                var PricedLocations = contextMenu.ItemGroupings.CheckableLocations.Select(x => new VariableInputWindow.PriceContainer(x));
+                VariableInputWindow PriceInput = new(PricedLocations, IC);
+                PriceInput.ShowDialog();
+                return PriceInput._Result;
+            }, () => mainInterface.PrintToListBox());
+            ContextMenuBuilder.AddClearPriceAction(() => mainInterface.PrintToListBox());
+            ContextMenuBuilder.AddItemAtCheckAction(SelectItemFunc, PrintCheckItemResult);
+            ContextMenuBuilder.AddItemInAreaAction(SelectItemFunc, PrintCheckItemResult);
+
+            ContextMenuStrip contextMenuStrip = new ContextMenuStrip();
+            foreach (var i in contextMenu.GetMenu())
+            {
+                if (!i.Value.Condition()) { continue; }
+                var MenuItem = new ToolStripMenuItem
                 {
-                    AddItem("UnMinimize Areas", UnMinimizeAreas);
-                }
+                    Text = i.Value.Display
+                };
+                MenuItem.Click += (sender, e) => { i.Value.Action(); };
+                contextMenuStrip.Items.Add(MenuItem);
             }
-            if (CheckableLocations.Count > 0)
-            {
-                if (CheckableLocations.Any(x => !x.Starred)) { AddItem("Star Locations", StarObjects); }
-                if (CheckableLocations.Any(x => x.Starred)) { AddItem("UnStar Locations", UnStarObjects); }
-            }
-            if (CheckableLocationsProxyAsLogicRef.Count == 1 && InstanceContainer.Instance.GetLogic(CheckableLocationsProxyAsLogicRef[0].ID) is not null)
-            {
-                AddItem("Show Logic", () => { new ShowLogic(CheckableLocationsProxyAsLogicRef[0].ID, InstanceContainer).Show(); });
-            }
-            if (CheckableLocationsProxyAsLogicRef.Count == 1 && InstanceContainer.logicCalculation.UnlockData.ContainsKey(CheckableLocationsProxyAsLogicRef[0].ID))
-            {
-                AddItem("What Unlocked This", () => { ShowUnlockData(CheckableLocationsProxyAsLogicRef[0].ID); });
-            }
-            if (NotCheckedLocations.Count > 0)
-            {
-                AddItem("Check Selected Locations", () => { 
-                    mainInterface.HandleItemSelect(NotCheckedLocations, MiscData.CheckState.Checked, LB: listBox); 
-                });
-            }
-            if (CheckedLocations.Count > 0)
-            {
-                AddItem("UnCheck Selected Locations", () => {
-                    mainInterface.HandleItemSelect(CheckedLocations, MiscData.CheckState.Unchecked, LB: listBox);
-                });
-            }
-            if (NotMarkedLocations.Count > 0)
-            {
-                AddItem("Mark Selected Locations", () => {
-                    mainInterface.HandleItemSelect(NotMarkedLocations, MiscData.CheckState.Marked, true, listBox);
-                });
-            }
-            if (MarkedLocations.Count > 0)
-            {
-                AddItem("UnMark Selected Locations", () => {
-                    mainInterface.HandleItemSelect(MarkedLocations, MiscData.CheckState.Unchecked, LB: listBox);
-                });
-            }
-            if (AllOptions.Any() && AmountOptionTypesSelected() > 1)
-            {
-                AddItem("Edit Selected Options", () => {
-                    mainInterface.HandleItemSelect(AllOptions, MiscData.CheckState.Unchecked, LB: listBox);
-                });
-            }
-            if (ChoiceOptions.Any())
-            {
-                AddItem("Edit Selected Choice Options", () => {
-                    mainInterface.HandleItemSelect(ChoiceOptions, MiscData.CheckState.Unchecked, LB: listBox);
-                });
-            }
-            if (MultiOptions.Any())
-            {
-                AddItem("Edit Selected MultiSelect Options", () => {
-                    mainInterface.HandleItemSelect(MultiOptions, MiscData.CheckState.Unchecked, LB: listBox);
-                });
-            }
-            if (ToggleOptions.Any())
-            {
-                AddItem("Edit Selected Toggle Options", () => {
-                    mainInterface.HandleItemSelect(ToggleOptions, MiscData.CheckState.Unchecked, LB: listBox);
-                });
-            }
-            if (IntOptions.Any())
-            {
-                AddItem("Edit Selected Int Options", () => {
-                    mainInterface.HandleItemSelect(IntOptions, MiscData.CheckState.Unchecked, LB: listBox);
-                });
-            }
-            if (CheckableLocations.Any())
-            {
-                var PricedLocations = CheckableLocations.Select(x => new VariableInputWindow.PriceContainer(x));
-                AddItem("Edit Price", () => {
-                    VariableInputWindow PriceInput = new(PricedLocations, InstanceContainer);
-                    PriceInput.ShowDialog();
-                    foreach(var i in PriceInput._Result) { i.GetPricedLocation().Location.SetPrice(i.GetPricedLocation().Price); }
-                    InstanceContainer.logicCalculation.CompileOptionActionEdits();
-                    InstanceContainer.logicCalculation.CalculateLogic();
-                    mainInterface.UpdateUI();
-                });
-            }
-
-            if (PricedLocations.Any())
-            {
-                AddItem("Clear Price", () => {
-                    foreach (var location in PricedLocations) { location.SetPrice(-1); }
-                    InstanceContainer.logicCalculation.CompileOptionActionEdits();
-                    InstanceContainer.logicCalculation.CalculateLogic();
-                    mainInterface.UpdateUI();
-                });
-            }
-
-            if (CheckableLocations.Any(x => !x.Hidden))
-            {
-                AddItem("Hide Locations", () => {
-                    foreach (var location in CheckableLocations)
-                    {
-                        location.Hidden = true;
-                    }
-                    mainInterface.UpdateUI();
-                });
-            }
-            if (CheckableLocations.Any(x => x.Hidden))
-            {
-                AddItem("UnHide Locations", () => {
-                    foreach (var location in CheckableLocations)
-                    {
-                        location.Hidden = false;
-                    }
-                    mainInterface.UpdateUI();
-                });
-            }
-            if (CheckableLocationsProxyAsLocation.Count == 1 && 
-                CheckableLocationsProxyAsLocation.First() is LocationData.LocationObject LO1 && 
-                LO1.CheckState == MiscData.CheckState.Unchecked && 
-                InstanceContainer.Instance.GetItemByID(LO1.GetItemAtCheck()) is not null)
-            {
-                AddItem("Is Item at check?", () => {
-                    CheckItemForm checkItemForm = new([LO1], InstanceContainer, false);
-                    checkItemForm.ShowDialog();
-                    if (checkItemForm._Result.Count == 0) { return; }
-                    string ItemID = checkItemForm._Result[0].GetItemLocation().ItemData.ItemID;
-                    var Item = InstanceContainer.Instance.GetItemByID(ItemID);
-                    var ItemAtCheck = InstanceContainer.Instance.GetItemByID(LO1.GetItemAtCheck());
-                    bool ItemFound = Item.GetDictEntry().GetName() == ItemAtCheck.GetDictEntry().GetName();
-                    if (ItemFound) { MessageBox.Show($"{Item.GetDictEntry().GetName()} Can be found at {LO1.GetName()}", "Item Found", MessageBoxButtons.OK, MessageBoxIcon.Information); }
-                    else { MessageBox.Show($"{Item.GetDictEntry().GetName()} Can NOT be found at {LO1.GetName()}", "Item Not Found", MessageBoxButtons.OK, MessageBoxIcon.Error); }
-                });
-            }
-            if (AreaHeaders.Count == 1 && AreaHeaders.First() is MiscData.Areaheader AH1)
-            {
-                AddItem("Is Item in area?", () => {
-                    CheckItemForm checkItemForm = new([null], InstanceContainer, false);
-                    checkItemForm.ShowDialog();
-                    if (checkItemForm._Result.Count == 0) { return; }
-                    string ItemID = checkItemForm._Result[0].GetItemLocation().ItemData.ItemID;
-                    var Item = InstanceContainer.Instance.GetItemByID(ItemID);
-                    bool ItemFound = false;
-                    foreach(var loc in InstanceContainer.Instance.LocationPool.Values)
-                    {
-                        var ItemAtCheck = InstanceContainer.Instance.GetItemByID(loc.GetItemAtCheck());
-                        if (ItemAtCheck is null) { continue; }
-                        if (loc.GetDictEntry().Area == AH1.Area && Item.GetDictEntry().GetName() == ItemAtCheck.GetDictEntry().GetName()) { ItemFound = true; }
-                    }
-                    if (ItemFound) { MessageBox.Show($"{Item.GetDictEntry().GetName()} can be found at {AH1.Area}", "Item Found", MessageBoxButtons.OK, MessageBoxIcon.Information); }
-                    else { MessageBox.Show($"{Item.GetDictEntry().GetName()} can NOT be found at {AH1.Area}", "Item Not Found", MessageBoxButtons.OK, MessageBoxIcon.Error); }
-                });
-            }
-
             if (contextMenuStrip.Items.Count > 0)
             {
                 contextMenuStrip.Show(Cursor.Position);
             }
-        }
 
-        private void ShowUnlockData(string iD)
+            string SelectItemFunc()
+            {
+                CheckItemForm checkItemForm = new([null], IC, false);
+                checkItemForm.ShowDialog();
+                if (checkItemForm._Result.Count == 0) { return null; }
+                return checkItemForm._Result[0].GetItemLocation().ItemData.ItemID;
+            }
+            void PrintCheckItemResult(bool found, string location, string item)
+            {
+                if (found) { MessageBox.Show($"{item} Can be found at {location}", "Item Found", MessageBoxButtons.OK, MessageBoxIcon.Information); }
+                else { MessageBox.Show($"{item} Can NOT be found at {location}", "Item Not Found", MessageBoxButtons.OK, MessageBoxIcon.Error); }
+            }
+        }
+        private static void ShowUnlockData(string iD, InstanceContainer IC)
         {
-            if (!InstanceContainer.logicCalculation.UnlockData.ContainsKey(iD)) { return; }
-            var AdvancedUnlockData = PlaythroughTools.GetAdvancedUnlockData(iD, InstanceContainer.logicCalculation.UnlockData, InstanceContainer.Instance);
-            var DataDisplay = PlaythroughTools.FormatAdvancedUnlockData(AdvancedUnlockData, InstanceContainer);
+            if (!IC.logicCalculation.UnlockData.ContainsKey(iD)) { return; }
+            var AdvancedUnlockData = PlaythroughTools.GetAdvancedUnlockData(iD, IC.logicCalculation.UnlockData, IC.Instance);
+            var DataDisplay = PlaythroughTools.FormatAdvancedUnlockData(AdvancedUnlockData, IC);
             List<dynamic> Items = new List<dynamic>();
             foreach (var i in DataDisplay)
             {
@@ -229,57 +132,7 @@ namespace Windows_Form_Frontend
             basicDisplay.Text = $"Unlock Data for {iD}";
             basicDisplay.Show();
         }
-
-        private int AmountOptionTypesSelected()
-        {
-            int count = 0;
-            if (ChoiceOptions.Count > 0) { count++; }
-            if (IntOptions.Count > 0) { count++; }
-            if (ToggleOptions.Count > 0) { count++; }
-            if (MultiOptions.Count > 0) { count++; }
-            return count;
-        }
-
-        private void FilterAreas()
-        {
-            TextBox.Text = string.Empty;
-            foreach (var item in AreaHeaders)
-            {
-                if (string.IsNullOrWhiteSpace(TextBox.Text)) { TextBox.Text = $"#{item.Area}"; }
-                else { TextBox.Text += $"|#{item.Area}"; };
-            }
-        }
-        private void MinimizeAreas()
-        {
-            TextBox.Text = string.Empty;
-            foreach (var item in AreaHeaders)
-            {
-                item.SetMinimized(displayList, InstanceContainer.Instance.StaticOptions, true);
-            }
-            mainInterface.PrintToListBox();
-        }
-        private void UnMinimizeAreas()
-        {
-            TextBox.Text = string.Empty;
-            foreach (var item in AreaHeaders)
-            {
-                item.SetMinimized(displayList, InstanceContainer.Instance.StaticOptions, false);
-            }
-            mainInterface.PrintToListBox();
-        }
-        private void StarObjects()
-        {
-            TextBox.Text = string.Empty;
-            foreach (var item in CheckableLocations) { item.Starred = true; }
-            mainInterface.PrintToListBox();
-        }
-        private void UnStarObjects()
-        {
-            TextBox.Text = string.Empty;
-            foreach (var item in CheckableLocations) { item.Starred = false; }
-            mainInterface.PrintToListBox();
-        }
-        private dynamic ShowUnlockSubFunction(dynamic dynamic)
+        private static dynamic ShowUnlockSubFunction(dynamic dynamic)
         {
             if (dynamic is not ValueTuple<List<ValueTuple<object, bool>>, object> TO || TO.Item2 is not MiscData.Divider DIV) { return null; }
             List<ValueTuple<object, bool>> Return = new();
@@ -293,36 +146,14 @@ namespace Windows_Form_Frontend
             }
             return Return;
         }
-
-        private void Initialize()
+        private static int AmountOptionTypesSelected(ContextMenu.LocationListContextMenu contextMenu)
         {
-            if (listBox == mainInterface.LBValidLocations) { displayList = DisplayListType.Locations; TextBox = mainInterface.TXTLocSearch; }
-            if (listBox == mainInterface.LBValidEntrances) { displayList = DisplayListType.Entrances; TextBox = mainInterface.TXTEntSearch; }
-            if (listBox == mainInterface.LBCheckedLocations) { displayList = DisplayListType.Checked; TextBox = mainInterface.TXTCheckedSearch; }
-            SelectedItems = listBox.SelectedItems.Cast<object>().ToList();
-            AreaHeaders = SelectedItems.Where(x => x is Areaheader).Cast<Areaheader>().ToList();
-            NavigatableAreas = AreaHeaders.Where(x => InstanceContainer.Instance.AreaPool.ContainsKey(x.Area)).ToList();
-            CheckableLocations = SelectedItems.OfType<CheckableLocation>().ToList();
-            CheckableLocationsProxyAsLocation = CheckableLocations.Select(x => x is LocationData.LocationProxy PRO ? PRO.GetReferenceLocation() : x ).ToList();
-            CheckableLocationsProxyAsLogicRef = CheckableLocations.Select(x => x is LocationData.LocationProxy PRO ? PRO.GetLogicInheritance() : x).ToList();
-            CheckedLocations = CheckableLocations.Where(x => x.CheckState == MiscData.CheckState.Checked).ToList();
-            MarkedLocations = CheckableLocations.Where(x => x.CheckState == MiscData.CheckState.Marked).ToList();
-            NotCheckedLocations = CheckableLocations.Where(x => x.CheckState != MiscData.CheckState.Checked).ToList();
-            NotMarkedLocations = CheckableLocations.Where(x => x.CheckState != MiscData.CheckState.Marked).ToList();
-            PricedLocations = CheckableLocations.Where(x => x.hasPrice()).ToList();
-
-            AllOptions = SelectedItems.OfType<OptionData.LogicOption>().ToList();
-            ChoiceOptions = SelectedItems.OfType<OptionData.ChoiceOption>().ToList();
-            ToggleOptions = SelectedItems.OfType<OptionData.ToggleOption>().ToList();
-            MultiOptions = SelectedItems.OfType<OptionData.MultiSelectOption>().ToList();
-            IntOptions = SelectedItems.OfType<OptionData.IntOption>().ToList();
-        }
-
-        private ToolStripItem AddItem(string Title, Action OnClick)
-        {
-            ToolStripItem ContextItem = contextMenuStrip.Items.Add(Title);
-            ContextItem.Click += (sender, e) => OnClick();
-            return ContextItem;
+            int count = 0;
+            if (contextMenu.ItemGroupings.ChoiceOptions.Count > 0) { count++; }
+            if (contextMenu.ItemGroupings.IntOptions.Count > 0) { count++; }
+            if (contextMenu.ItemGroupings.ToggleOptions.Count > 0) { count++; }
+            if (contextMenu.ItemGroupings.MultiOptions.Count > 0) { count++; }
+            return count;
         }
     }
 }
