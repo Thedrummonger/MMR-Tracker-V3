@@ -3352,6 +3352,33 @@
       "IsTrick": false
     },
     {
+      "Id": "OOT Dodongo Cavern Gossip",
+      "RequiredItems": [
+        "OOT Dodongo Cavern Main"
+      ],
+      "ConditionalItems": [
+        [
+          "setting{MasterQuest, DC, False}"
+        ],
+        [
+          "setting{MasterQuest, DC, True}",
+          "OOT_can_hammer"
+        ],
+        [
+          "setting{MasterQuest, DC, True}",
+          "OOT_has_blue_fire_arrows_mudwall"
+        ],
+        [
+          "setting{MasterQuest, DC, True}",
+          "OOT_has_bombflowers"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
       "Id": "OOT Dodongo Cavern Main => OOT Dodongo Cavern",
       "RequiredItems": [
         "OOT Dodongo Cavern Main"
@@ -17540,6 +17567,17 @@
       "IsTrick": false
     },
     {
+      "Id": "OOT Kokiri Gossip Near Lost Woods Open",
+      "RequiredItems": [
+        "OOT Kokiri Forest"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
       "Id": "OOT Kokiri Forest => OOT Link's House",
       "RequiredItems": [
         "OOT Kokiri Forest"
@@ -17788,6 +17826,28 @@
       "Id": "OOT Kokiri Forest Rupee Adult 7",
       "RequiredItems": [
         "OOT Kokiri Forest Adult Rupees"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT Kokiri Gossip Left of Deku Tree",
+      "RequiredItems": [
+        "OOT Kokiri Forest Near Deku Tree"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT Kokiri Gossip Right of Deku Tree",
+      "RequiredItems": [
+        "OOT Kokiri Forest Near Deku Tree"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -20486,6 +20546,17 @@
       "IsTrick": false
     },
     {
+      "Id": "OOT Kokiri Gossip Near Lost Woods Grotto",
+      "RequiredItems": [
+        "OOT Kokiri Forest Storms Grotto"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
       "Id": "OOT Kokiri Forest Storms Grotto => OOT Kokiri Forest",
       "RequiredItems": [
         "OOT Kokiri Forest Storms Grotto"
@@ -21686,6 +21757,17 @@
       "IsTrick": false
     },
     {
+      "Id": "OOT Hyrule Field Gossip Near Lake Hylia",
+      "RequiredItems": [
+        "OOT Hyrule Field Open Grotto"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
       "Id": "OOT Hyrule Field Open Grotto => OOT Hyrule Field",
       "RequiredItems": [
         "OOT Hyrule Field Open Grotto"
@@ -21756,6 +21838,17 @@
       "IsTrick": false
     },
     {
+      "Id": "OOT Hyrule Field Gossip Southeast Grotto",
+      "RequiredItems": [
+        "OOT Hyrule Field Southeast Grotto"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
       "Id": "OOT Hyrule Field Southeast Grotto => OOT Hyrule Field",
       "RequiredItems": [
         "OOT Hyrule Field Southeast Grotto"
@@ -21818,6 +21911,17 @@
       "RequiredItems": [
         "OOT Hyrule Field Grotto Near Market",
         "OOT_can_cut_grass"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT Hyrule Field Gossip Near Castle Town",
+      "RequiredItems": [
+        "OOT Hyrule Field Grotto Near Market"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -21934,6 +22038,18 @@
         "OOT Hyrule Field Grotto Near GV",
         "OOT_has_fire",
         "OOT_can_cut_grass"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT Hyrule Field Gossip Near Gerudo Valley",
+      "RequiredItems": [
+        "OOT Hyrule Field Grotto Near GV",
+        "OOT_has_fire"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -30757,6 +30873,50 @@
       "IsTrick": false
     },
     {
+      "Id": "OOT Market Gossip Outside Temple Leftmost",
+      "RequiredItems": [
+        "OOT Temple of Time Entryway"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT Market Gossip Outside Temple Left-Center",
+      "RequiredItems": [
+        "OOT Temple of Time Entryway"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT Market Gossip Outside Temple Right-Center",
+      "RequiredItems": [
+        "OOT Temple of Time Entryway"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT Market Gossip Outside Temple Rightmost",
+      "RequiredItems": [
+        "OOT Temple of Time Entryway"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
       "Id": "OOT Temple of Time Entryway => OOT Market",
       "RequiredItems": [
         "OOT Temple of Time Entryway"
@@ -31723,6 +31883,28 @@
       "IsTrick": false
     },
     {
+      "Id": "OOT Hyrule Castle Gossip After Climb",
+      "RequiredItems": [
+        "OOT Hyrule Castle"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT Hyrule Castle Gossip Before Moat",
+      "RequiredItems": [
+        "OOT Hyrule Castle"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
       "Id": "OOT Hyrule Castle => OOT Market Castle Entry",
       "RequiredItems": [
         "OOT Hyrule Castle"
@@ -31991,6 +32173,18 @@
     },
     {
       "Id": "OOT Hyrule Castle Grotto Pot 4",
+      "RequiredItems": [
+        "OOT Hyrule Castle Grotto",
+        "OOT_has_explosives_or_hammer"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT Hyrule Castle Gossip Grotto",
       "RequiredItems": [
         "OOT Hyrule Castle Grotto",
         "OOT_has_explosives_or_hammer"
@@ -32484,6 +32678,17 @@
       "IsTrick": false
     },
     {
+      "Id": "OOT Lost Woods Gossip Under Bridge",
+      "RequiredItems": [
+        "OOT Lost Woods"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
       "Id": "OOT Lost Woods => OOT Kokiri Forest",
       "RequiredItems": [
         "OOT Lost Woods"
@@ -32797,6 +33002,17 @@
       "RequiredItems": [
         "OOT Lost Woods Generic Grotto",
         "OOT_can_cut_grass"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT Lost Woods Gossip Grotto",
+      "RequiredItems": [
+        "OOT Lost Woods Generic Grotto"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -33897,6 +34113,39 @@
           "OOT_has_ranged_weapon"
         ]
       ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT Sacred Meadow Gossip Near Forest Temple",
+      "RequiredItems": [
+        "OOT Sacred Meadow"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT Sacred Meadow Gossip Atop Maze Woods Side",
+      "RequiredItems": [
+        "OOT Sacred Meadow"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT Sacred Meadow Gossip Atop Maze Temple Side",
+      "RequiredItems": [
+        "OOT Sacred Meadow"
+      ],
+      "ConditionalItems": [],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -40510,6 +40759,17 @@
       "IsTrick": false
     },
     {
+      "Id": "OOT Kakariko Gossip Grotto",
+      "RequiredItems": [
+        "OOT Kakariko Generic Grotto"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
       "Id": "OOT Kakariko Generic Grotto => OOT Kakariko Back",
       "RequiredItems": [
         "OOT Kakariko Generic Grotto"
@@ -40886,6 +41146,17 @@
       "RequiredItems": [
         "OOT Graveyard",
         "OOT_can_use_beans"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT Graveyard Gossip",
+      "RequiredItems": [
+        "OOT Graveyard Upper"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -41812,6 +42083,17 @@
       "IsTrick": false
     },
     {
+      "Id": "OOT Death Mountain Trail Gossip on Climb",
+      "RequiredItems": [
+        "OOT Death Mountain Summit"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
       "Id": "OOT Death Mountain Summit => OOT Death Mountain",
       "RequiredItems": [
         "OOT Death Mountain Summit"
@@ -41909,6 +42191,17 @@
       "RequiredItems": [
         "OOT Death Mountain Storms Grotto",
         "OOT_can_cut_grass"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT Death Mountain Trail Gossip Grotto",
+      "RequiredItems": [
+        "OOT Death Mountain Storms Grotto"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -42551,6 +42844,48 @@
     },
     {
       "Id": "OOT Goron City Pot Medigoron Room",
+      "RequiredItems": [
+        "OOT Goron City"
+      ],
+      "ConditionalItems": [
+        [
+          "OOT_can_hammer"
+        ],
+        [
+          "OOT_has_bombflowers"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT Goron City Gossip Boulder Maze",
+      "RequiredItems": [
+        "OOT Goron City"
+      ],
+      "ConditionalItems": [
+        [
+          "OOT_can_lift_silver"
+        ],
+        [
+          "OOT_climb_anywhere"
+        ],
+        [
+          "OOT_has_explosives_or_hammer"
+        ],
+        [
+          "OOT_hookshot_anywhere"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT Goron City Gossip Near Medigoron",
       "RequiredItems": [
         "OOT Goron City"
       ],
@@ -46105,6 +46440,28 @@
       "IsTrick": false
     },
     {
+      "Id": "OOT Zora River Gossip High Pillar",
+      "RequiredItems": [
+        "OOT Zora River"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT Zora River Gossip Near Domain",
+      "RequiredItems": [
+        "OOT Zora River"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
       "Id": "OOT Zora River => OOT Zora River Front",
       "RequiredItems": [
         "OOT Zora River"
@@ -46554,6 +46911,17 @@
       "RequiredItems": [
         "OOT Zora River Open Grotto",
         "OOT_can_cut_grass"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT Zora River Gossip Grotto",
+      "RequiredItems": [
+        "OOT Zora River Open Grotto"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -47045,6 +47413,17 @@
     },
     {
       "Id": "OOT Zora Domain Pot 5",
+      "RequiredItems": [
+        "OOT Zora Domain"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT Zora Domain Gossip",
       "RequiredItems": [
         "OOT Zora Domain"
       ],
@@ -50490,6 +50869,39 @@
       "IsTrick": false
     },
     {
+      "Id": "OOT Lake Hylia Gossip Near River",
+      "RequiredItems": [
+        "OOT Lake Hylia"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT Lake Hylia Gossip Southeast Lake",
+      "RequiredItems": [
+        "OOT Lake Hylia"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT Lake Hylia Gossip Southwest Lake",
+      "RequiredItems": [
+        "OOT Lake Hylia"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
       "Id": "OOT Lake Hylia => OOT Hyrule Field",
       "RequiredItems": [
         "OOT Lake Hylia"
@@ -53025,6 +53437,28 @@
       "IsTrick": false
     },
     {
+      "Id": "OOT Zora Fountain Gossip Northwest",
+      "RequiredItems": [
+        "OOT Zora Fountain"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT Zora Fountain Gossip Near Fairy",
+      "RequiredItems": [
+        "OOT Zora Fountain"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
       "Id": "OOT Zora Fountain => OOT Zora Domain Back",
       "RequiredItems": [
         "OOT Zora Fountain"
@@ -53687,6 +54121,18 @@
           "SHARED_WALLET, 5"
         ]
       ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT Death Mountain Crater Gossip Wall",
+      "RequiredItems": [
+        "OOT Death Mountain Crater Top",
+        "OOT_has_explosives"
+      ],
+      "ConditionalItems": [],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -54383,6 +54829,17 @@
       "IsTrick": false
     },
     {
+      "Id": "OOT Death Mountain Crater Gossip Grotto",
+      "RequiredItems": [
+        "OOT Death Mountain Crater Generic Grotto"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
       "Id": "OOT Death Mountain Crater Generic Grotto => OOT Death Mountain Crater Top",
       "RequiredItems": [
         "OOT Death Mountain Crater Generic Grotto"
@@ -54940,6 +55397,17 @@
         "OOT Gerudo Valley",
         "OOT_is_child",
         "OOT_can_play_epona"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT Gerudo Valley Gossip",
+      "RequiredItems": [
+        "OOT Gerudo Valley"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -56768,6 +57236,17 @@
       "RequiredItems": [
         "OOT Desert Colossus",
         "OOT_can_play_storms"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT Desert Colossus Gossip",
+      "RequiredItems": [
+        "OOT Desert Colossus"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -88858,6 +89337,108 @@
       "IsTrick": false
     },
     {
+      "Id": "MM Moon Trial Deku Gossip Front-Left",
+      "RequiredItems": [
+        "MM Moon Trial Deku Entrance"
+      ],
+      "ConditionalItems": [
+        [
+          "MM_has_hover_boots"
+        ],
+        [
+          "MM_MASK_DEKU"
+        ],
+        [
+          "MM_short_hook_anywhere"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "MM Moon Trial Deku Gossip Front-Right",
+      "RequiredItems": [
+        "MM Moon Trial Deku Entrance"
+      ],
+      "ConditionalItems": [
+        [
+          "MM_has_hover_boots"
+        ],
+        [
+          "MM_MASK_DEKU"
+        ],
+        [
+          "MM_short_hook_anywhere"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "MM Moon Trial Deku Gossip Mid-Left",
+      "RequiredItems": [
+        "MM Moon Trial Deku Entrance"
+      ],
+      "ConditionalItems": [
+        [
+          "MM_has_hover_boots"
+        ],
+        [
+          "MM_MASK_DEKU"
+        ],
+        [
+          "MM_short_hook_anywhere"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "MM Moon Trial Deku Gossip Mid-Right",
+      "RequiredItems": [
+        "MM Moon Trial Deku Entrance"
+      ],
+      "ConditionalItems": [
+        [
+          "MM_has_hover_boots"
+        ],
+        [
+          "MM_MASK_DEKU"
+        ],
+        [
+          "MM_short_hook_anywhere"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "MM Moon Trial Deku Gossip Back",
+      "RequiredItems": [
+        "MM Moon Trial Deku Entrance"
+      ],
+      "ConditionalItems": [
+        [
+          "MM_hookshot_anywhere"
+        ],
+        [
+          "MM_MASK_DEKU"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
       "Id": "MM Moon Trial Deku Entrance => MM Moon",
       "RequiredItems": [
         "MM Moon Trial Deku Entrance"
@@ -89175,6 +89756,96 @@
       "IsTrick": false
     },
     {
+      "Id": "MM Moon Trial Goron Gossip Center Left",
+      "RequiredItems": [
+        "MM Moon Trial Goron Entrance"
+      ],
+      "ConditionalItems": [
+        [
+          "MM_goron_fast_roll"
+        ],
+        [
+          "MM_hookshot_anywhere"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "MM Moon Trial Goron Gossip Center Right",
+      "RequiredItems": [
+        "MM Moon Trial Goron Entrance"
+      ],
+      "ConditionalItems": [
+        [
+          "MM_goron_fast_roll"
+        ],
+        [
+          "MM_hookshot_anywhere"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "MM Moon Trial Goron Gossip West Left",
+      "RequiredItems": [
+        "MM Moon Trial Goron Entrance"
+      ],
+      "ConditionalItems": [
+        [
+          "MM_goron_fast_roll"
+        ],
+        [
+          "MM_hookshot_anywhere"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "MM Moon Trial Goron Gossip West Right",
+      "RequiredItems": [
+        "MM Moon Trial Goron Entrance"
+      ],
+      "ConditionalItems": [
+        [
+          "MM_goron_fast_roll"
+        ],
+        [
+          "MM_hookshot_anywhere"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "MM Moon Trial Goron Gossip By Heart Piece",
+      "RequiredItems": [
+        "MM Moon Trial Goron Entrance"
+      ],
+      "ConditionalItems": [
+        [
+          "MM_goron_fast_roll"
+        ],
+        [
+          "MM_hookshot_anywhere"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
       "Id": "MM Moon Trial Goron Entrance => MM Moon",
       "RequiredItems": [
         "MM Moon Trial Goron Entrance"
@@ -89239,6 +89910,96 @@
     },
     {
       "Id": "MM Moon Trial Zora HP",
+      "RequiredItems": [
+        "MM Moon Trial Zora"
+      ],
+      "ConditionalItems": [
+        [
+          "MM_can_dive_small"
+        ],
+        [
+          "MM_underwater_walking"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "MM Moon Trial Zora Gossip Outer Left",
+      "RequiredItems": [
+        "MM Moon Trial Zora"
+      ],
+      "ConditionalItems": [
+        [
+          "MM_can_dive_small"
+        ],
+        [
+          "MM_underwater_walking"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "MM Moon Trial Zora Gossip Middle Left",
+      "RequiredItems": [
+        "MM Moon Trial Zora"
+      ],
+      "ConditionalItems": [
+        [
+          "MM_can_dive_small"
+        ],
+        [
+          "MM_underwater_walking"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "MM Moon Trial Zora Gossip Inner Right",
+      "RequiredItems": [
+        "MM Moon Trial Zora"
+      ],
+      "ConditionalItems": [
+        [
+          "MM_can_dive_small"
+        ],
+        [
+          "MM_underwater_walking"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "MM Moon Trial Zora Gossip Middle Right",
+      "RequiredItems": [
+        "MM Moon Trial Zora"
+      ],
+      "ConditionalItems": [
+        [
+          "MM_can_dive_small"
+        ],
+        [
+          "MM_underwater_walking"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "MM Moon Trial Zora Gossip Outer Right",
       "RequiredItems": [
         "MM Moon Trial Zora"
       ],
@@ -89439,6 +90200,17 @@
       "IsTrick": false
     },
     {
+      "Id": "MM Moon Trial Link Gossip 1",
+      "RequiredItems": [
+        "MM Moon Trial Link Rest 1"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
       "Id": "MM Moon Trial Link Rest 1 => MM Moon Trial Link Dinalfos Fight",
       "RequiredItems": [
         "MM Moon Trial Link Rest 1"
@@ -89595,6 +90367,17 @@
       "IsTrick": false
     },
     {
+      "Id": "MM Moon Trial Link Gossip 2",
+      "RequiredItems": [
+        "MM Moon Trial Link Rest 2"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
       "Id": "MM Moon Trial Link Rest 2 => MM Moon Trial Link Garo Fight",
       "RequiredItems": [
         "MM Moon Trial Link Rest 2"
@@ -89638,6 +90421,44 @@
         [
           "MM_has_mask_blast",
           "MM_masks, 5"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "MM Moon Trial Link Gossip Left",
+      "RequiredItems": [
+        "MM Moon Trial Link Iron Knuckle Fight"
+      ],
+      "ConditionalItems": [
+        [
+          "MM_short_hook_anywhere"
+        ],
+        [
+          "MM_has_arrows",
+          "MM_has_bombchu"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "MM Moon Trial Link Gossip Right",
+      "RequiredItems": [
+        "MM Moon Trial Link Iron Knuckle Fight"
+      ],
+      "ConditionalItems": [
+        [
+          "MM_short_hook_anywhere"
+        ],
+        [
+          "MM_has_arrows",
+          "MM_has_bombchu"
         ]
       ],
       "TimeNeeded": "None",
@@ -89714,6 +90535,17 @@
     },
     {
       "Id": "MM Moon Trial Link HP",
+      "RequiredItems": [
+        "MM Moon Trial Link Rest 3"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "MM Moon Trial Link Gossip Last",
       "RequiredItems": [
         "MM Moon Trial Link Rest 3"
       ],
@@ -97552,6 +98384,17 @@
       "IsTrick": false
     },
     {
+      "Id": "MM Termina Field Gossip Near Observatory",
+      "RequiredItems": [
+        "MM Astral Observatory Balcony"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
       "Id": "MM Astral Observatory Balcony => MM Termina Field",
       "RequiredItems": [
         "MM Astral Observatory Balcony"
@@ -100044,6 +100887,61 @@
       "IsTrick": false
     },
     {
+      "Id": "MM Termina Field Gossip Southeast",
+      "RequiredItems": [
+        "MM Termina Field"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "MM Termina Field Gossip Southwest",
+      "RequiredItems": [
+        "MM Termina Field"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "MM Termina Field Gossip Northeast",
+      "RequiredItems": [
+        "MM Termina Field"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "MM Termina Field Gossip Near Mountain",
+      "RequiredItems": [
+        "MM Termina Field"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "MM Termina Field Gossip Near Kamaro",
+      "RequiredItems": [
+        "MM Termina Field"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
       "Id": "MM Termina Field => MM Clock Town South",
       "RequiredItems": [
         "MM Termina Field"
@@ -101898,6 +102796,94 @@
       "IsTrick": false
     },
     {
+      "Id": "MM Termina Field Gossip Grotto Leftmost",
+      "RequiredItems": [],
+      "ConditionalItems": [
+        [
+          "MM Canyon Gossip Grotto"
+        ],
+        [
+          "MM Mountain Gossip Grotto"
+        ],
+        [
+          "MM Ocean Gossip Grotto"
+        ],
+        [
+          "MM Swamp Gossip Grotto"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "MM Termina Field Gossip Grotto Left-Center",
+      "RequiredItems": [],
+      "ConditionalItems": [
+        [
+          "MM Canyon Gossip Grotto"
+        ],
+        [
+          "MM Mountain Gossip Grotto"
+        ],
+        [
+          "MM Ocean Gossip Grotto"
+        ],
+        [
+          "MM Swamp Gossip Grotto"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "MM Termina Field Gossip Grotto Right-Center",
+      "RequiredItems": [],
+      "ConditionalItems": [
+        [
+          "MM Canyon Gossip Grotto"
+        ],
+        [
+          "MM Mountain Gossip Grotto"
+        ],
+        [
+          "MM Ocean Gossip Grotto"
+        ],
+        [
+          "MM Swamp Gossip Grotto"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "MM Termina Field Gossip Grotto Rightmost",
+      "RequiredItems": [],
+      "ConditionalItems": [
+        [
+          "MM Canyon Gossip Grotto"
+        ],
+        [
+          "MM Mountain Gossip Grotto"
+        ],
+        [
+          "MM Ocean Gossip Grotto"
+        ],
+        [
+          "MM Swamp Gossip Grotto"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
       "Id": "MM Swamp Gossip Grotto => MM Termina Field",
       "RequiredItems": [
         "MM Swamp Gossip Grotto"
@@ -102380,6 +103366,17 @@
     },
     {
       "Id": "MM Road to Southern Swamp Grass 2",
+      "RequiredItems": [
+        "MM Road to Southern Swamp"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "MM Road to Southern Swamp Gossip",
       "RequiredItems": [
         "MM Road to Southern Swamp"
       ],
@@ -103360,6 +104357,17 @@
           "MM_short_hook_anywhere"
         ]
       ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "MM Southern Swamp Gossip",
+      "RequiredItems": [
+        "MM Swamp Front"
+      ],
+      "ConditionalItems": [],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -107632,6 +108640,17 @@
       "IsTrick": false
     },
     {
+      "Id": "MM Mountain Village Path Gossip",
+      "RequiredItems": [
+        "MM Mountain Village Path Lower"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
       "Id": "MM Mountain Village Path Lower => MM Behind Large Icicles",
       "RequiredItems": [
         "MM Mountain Village Path Lower"
@@ -108228,6 +109247,37 @@
         "MM_has_mask_goron"
       ],
       "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "MM Mountain Village Gossip Outside",
+      "RequiredItems": [
+        "MM Mountain Village",
+        "MM_BOSS_SNOWHEAD_EVENT"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "MM Mountain Village Gossip Tunnel",
+      "RequiredItems": [
+        "MM Mountain Village",
+        "MM_BOSS_SNOWHEAD_EVENT"
+      ],
+      "ConditionalItems": [
+        [
+          "MM_has_mask_goron"
+        ],
+        [
+          "MM_short_hook_anywhere"
+        ]
+      ],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -111492,6 +112542,17 @@
       "IsTrick": false
     },
     {
+      "Id": "MM Milk Road Gossip",
+      "RequiredItems": [
+        "MM Milk Road"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
       "Id": "MM Milk Road => MM Termina Field",
       "RequiredItems": [
         "MM Milk Road"
@@ -112313,6 +113374,39 @@
       "IsTrick": false
     },
     {
+      "Id": "MM Romani Ranch Gossip Entrance",
+      "RequiredItems": [
+        "MM Romani Ranch"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "MM Romani Ranch Gossip Behind House",
+      "RequiredItems": [
+        "MM Romani Ranch"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "MM Romani Ranch Gossip Near Tree",
+      "RequiredItems": [
+        "MM Romani Ranch"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
       "Id": "MM Romani Ranch => MM Near Romani Ranch",
       "RequiredItems": [
         "MM Romani Ranch"
@@ -112461,6 +113555,17 @@
       "IsTrick": false
     },
     {
+      "Id": "MM Cucco Shack Gossip",
+      "RequiredItems": [
+        "MM Cucco Shack"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
       "Id": "MM Cucco Shack => MM Romani Ranch",
       "RequiredItems": [
         "MM Cucco Shack"
@@ -112555,6 +113660,17 @@
     },
     {
       "Id": "MM Doggy Racetrack Pot 4",
+      "RequiredItems": [
+        "MM Doggy Racetrack"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "MM Doggy Racetrack Gossip",
       "RequiredItems": [
         "MM Doggy Racetrack"
       ],
@@ -113172,6 +114288,17 @@
     },
     {
       "Id": "MM Great Bay Coast Grass 5",
+      "RequiredItems": [
+        "MM Great Bay Coast"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "MM Great Bay Coast Gossip",
       "RequiredItems": [
         "MM Great Bay Coast"
       ],
@@ -114857,6 +115984,22 @@
         ],
         [
           "MM_has_weapon"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "MM Zora Cape Gossip",
+      "RequiredItems": [],
+      "ConditionalItems": [
+        [
+          "MM Zora Cape"
+        ],
+        [
+          "MM Zora Cape Grotto"
         ]
       ],
       "TimeNeeded": "None",
@@ -116808,6 +117951,17 @@
       "IsTrick": false
     },
     {
+      "Id": "MM Road to Ikana Gossip",
+      "RequiredItems": [
+        "MM Road to Ikana Center"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
       "Id": "MM Road to Ikana Center => MM Road to Ikana Front",
       "RequiredItems": [
         "MM Road to Ikana Center"
@@ -117961,6 +119115,37 @@
       "IsTrick": false
     },
     {
+      "Id": "MM Ikana Valley Gossip Lower",
+      "RequiredItems": [
+        "MM Ikana Valley"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "MM Ikana Valley Gossip Scrub",
+      "RequiredItems": [
+        "MM Ikana Valley"
+      ],
+      "ConditionalItems": [
+        [
+          "MM_hookshot_anywhere"
+        ],
+        [
+          "MM_DEED_OCEAN",
+          "MM_has_mask_zora",
+          "MM_MASK_DEKU"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
       "Id": "MM Ikana Valley => MM Road to Ikana Top",
       "RequiredItems": [
         "MM Ikana Valley"
@@ -118305,6 +119490,17 @@
           "MM_has_explosives"
         ]
       ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "MM Ikana Canyon Gossip Upper",
+      "RequiredItems": [
+        "MM Ikana Canyon"
+      ],
+      "ConditionalItems": [],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -130369,6 +131565,17 @@
     },
     {
       "Id": "MM Swamp Spider House Pot Jar Room 7",
+      "RequiredItems": [
+        "MM Swamp Spider House Main"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "MM Swamp Spider House Gossip",
       "RequiredItems": [
         "MM Swamp Spider House Main"
       ],

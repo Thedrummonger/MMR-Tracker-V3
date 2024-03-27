@@ -16,6 +16,8 @@ namespace TestingForm.GameDataCreation.OOTMMV3
         public OOTMMDataGenerator generator;
         public List<OOTMMPoolLocation> OOTPool;
         public List<OOTMMPoolLocation> MMPool;
+        public List<OOTMMPoolLocation> OOTHints;
+        public List<OOTMMPoolLocation> MMHints;
         public Dictionary<string, OOTMMEntranceFileData> Entrances;
         public OOTMMDictionaryCreation(OOTMMDataGenerator Maingenerator)
         {
@@ -23,18 +25,18 @@ namespace TestingForm.GameDataCreation.OOTMMV3
             OOTPool = OOTMMUtility.DeserializeCSVFile<List<OOTMMPoolLocation>>(OOTMMPaths.OOTPoolFile);
             MMPool = OOTMMUtility.DeserializeCSVFile<List<OOTMMPoolLocation>>(OOTMMPaths.MMPoolFile);
             Entrances = OOTMMUtility.DeserializeYAMLFile<Dictionary<string, OOTMMEntranceFileData>>(OOTMMPaths.EntranceFile);
-
+            OOTHints = OOTMMUtility.DeserializeCSVFile<List<OOTMMPoolLocation>>(OOTMMPaths.OOTHintsFile);
+            MMHints = OOTMMUtility.DeserializeCSVFile<List<OOTMMPoolLocation>>(OOTMMPaths.MMHintsFile);
         }
         public void CreateDictLocations()
         {
-            foreach (var location in OOTPool)
-            {
-                AddPoolLocation(location, "OOT");
-            }
-            foreach (var location in MMPool)
-            {
-                AddPoolLocation(location, "MM");
-            }
+            foreach (var location in OOTPool) { AddPoolLocation(location, "OOT"); }
+            foreach (var location in MMPool) { AddPoolLocation(location, "MM"); }
+        }
+        public void CreateDictHints()
+        {
+            foreach (var hint in OOTHints) { AddPoolHint(hint, "OOT"); }
+            foreach (var hint in MMHints) { AddPoolHint(hint, "MM"); }
         }
         public void CreateDictItems()
         {
@@ -82,6 +84,21 @@ namespace TestingForm.GameDataCreation.OOTMMV3
                 generator.dictionary.EntranceList.Add(EntranceEntry.ID, EntranceEntry);
             }
         }
+        private void AddPoolHint(OOTMMPoolLocation location, string GameCode)
+        {
+            string ID = OOTMMUtility.AddGameCodeToLogicID(location.location, GameCode, false);
+            LogicDictionaryData.DictionaryHintEntries locationEntries = new LogicDictionaryData.DictionaryHintEntries()
+            {
+                ID = ID,
+                Name = ID,
+                SpoilerData = new MMRData.SpoilerlogReference()
+                {
+                    SpoilerLogNames = [ID],
+                    Tags = [location.type]
+                }
+            };
+            generator.dictionary.HintSpots.Add(locationEntries.ID, locationEntries);
+        }
         private void AddPoolLocation(OOTMMPoolLocation location, string GameCode)
         {
             string ID = OOTMMUtility.AddGameCodeToLogicID(location.location, GameCode, false);
@@ -100,9 +117,7 @@ namespace TestingForm.GameDataCreation.OOTMMV3
                     GossipHintNames = [location.hint]
                 }
             };
-            if (locationEntries.OriginalItem.In("OOT_FLEXIBLE", "OOT_RANDOM")) { 
-                locationEntries.OriginalItem = OOTMMUtility.AddGameCodeToLogicID("RUPEE_GREEN", GameCode); }
-            if (locationEntries.OriginalItem.In("MM_???", "MM_RANDOM")) { 
+            if (locationEntries.OriginalItem.In("OOT_FLEXIBLE", "OOT_RANDOM", "MM_???", "MM_RANDOM")) { 
                 locationEntries.OriginalItem = OOTMMUtility.AddGameCodeToLogicID("RUPEE_GREEN", GameCode); }
             if (locationEntries.OriginalItem.In("MM_ARROWS_20")) { 
                 locationEntries.OriginalItem = OOTMMUtility.AddGameCodeToLogicID("ARROWS_30", GameCode); }

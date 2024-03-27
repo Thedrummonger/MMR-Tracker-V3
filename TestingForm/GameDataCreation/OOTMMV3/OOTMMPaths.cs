@@ -18,6 +18,8 @@ namespace TestingForm.GameDataCreation.OOTMMV3
         public static string OOTMacroFile { get { return Path.Combine(DataSRCFolderPath, "macros", "macros_oot.yml"); } }
         public static string OOTPoolFile { get { return Path.Combine(DataSRCFolderPath, "pool", "pool_oot.csv"); } }
         public static string MMPoolFile { get { return Path.Combine(DataSRCFolderPath, "pool", "pool_mm.csv"); } }
+        public static string OOTHintsFile { get { return Path.Combine(DataSRCFolderPath, "hints", "hints_oot.csv"); } }
+        public static string MMHintsFile { get { return Path.Combine(DataSRCFolderPath, "hints", "hints_mm.csv"); } }
         public static string EntranceFile { get { return Path.Combine(DataSRCFolderPath, "defs", "entrances.yml"); } }
         public static string ExtraDataFile { get { return Path.Combine(TestingReferences.GetOtherGameDataPath("OOTMMV3"), "extradata.json"); } }
     }

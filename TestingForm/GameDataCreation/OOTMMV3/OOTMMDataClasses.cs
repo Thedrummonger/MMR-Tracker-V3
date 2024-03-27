@@ -93,6 +93,7 @@ namespace TestingForm.GameDataCreation.OOTMMV3
             public Dictionary<string, string> exits = [];
             public Dictionary<string, string> events = [];
             public Dictionary<string, string> locations = [];
+            public Dictionary<string, string> gossip = [];
         }
         public class OOTMMLocationEntry
         {

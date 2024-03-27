@@ -47,6 +47,7 @@ namespace TestingForm.GameDataCreation.OOTMMV3
 
             DictCreation.CreateDictItems();
             DictCreation.CreateDictLocations();
+            DictCreation.CreateDictHints();
             DictCreation.CreateDictEntrances();
 
             SettingCreation.AddAgeLogic();

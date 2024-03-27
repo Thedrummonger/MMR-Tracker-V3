@@ -25,6 +25,7 @@ namespace TestingForm.GameDataCreation.OOTMMV3
                 foreach (var area in locationArea)
                 {
                     foreach (var locLogic in area.Value.locations) { AddLogicEntry(area.Value, area.Key, locLogic.Key, locLogic.Value, "OOT", false, OOTMMDataType.location); }
+                    foreach (var locLogic in area.Value.gossip) { AddLogicEntry(area.Value, area.Key, locLogic.Key, locLogic.Value, "OOT", false, OOTMMDataType.location); }
                     foreach (var locLogic in area.Value.exits) { AddLogicEntry(area.Value, area.Key, locLogic.Key, locLogic.Value, "OOT", false, OOTMMDataType.Exit); }
                     foreach (var locLogic in area.Value.events) { AddLogicEntry(area.Value, area.Key, locLogic.Key, locLogic.Value, "OOT", false, OOTMMDataType.Event); }
                 }
@@ -36,6 +37,7 @@ namespace TestingForm.GameDataCreation.OOTMMV3
                 foreach (var area in locationArea)
                 {
                     foreach (var locLogic in area.Value.locations) { AddLogicEntry(area.Value, area.Key, locLogic.Key, locLogic.Value, "OOT", true, OOTMMDataType.location); }
+                    foreach (var locLogic in area.Value.gossip) { AddLogicEntry(area.Value, area.Key, locLogic.Key, locLogic.Value, "OOT", true, OOTMMDataType.location); }
                     foreach (var locLogic in area.Value.exits) { AddLogicEntry(area.Value, area.Key, locLogic.Key, locLogic.Value, "OOT", true, OOTMMDataType.Exit); }
                     foreach (var locLogic in area.Value.events) { AddLogicEntry(area.Value, area.Key, locLogic.Key, locLogic.Value, "OOT", true, OOTMMDataType.Event); }
                 }
@@ -47,6 +49,7 @@ namespace TestingForm.GameDataCreation.OOTMMV3
                 foreach (var area in locationArea)
                 {
                     foreach (var locLogic in area.Value.locations) { AddLogicEntry(area.Value, area.Key, locLogic.Key, locLogic.Value, "MM", false, OOTMMDataType.location); }
+                    foreach (var locLogic in area.Value.gossip) { AddLogicEntry(area.Value, area.Key, locLogic.Key, locLogic.Value, "MM", false, OOTMMDataType.location); }
                     foreach (var locLogic in area.Value.exits) { AddLogicEntry(area.Value, area.Key, locLogic.Key, locLogic.Value, "MM", false, OOTMMDataType.Exit); }
                     foreach (var locLogic in area.Value.events) { AddLogicEntry(area.Value, area.Key, locLogic.Key, locLogic.Value, "MM", false, OOTMMDataType.Event); }
                 }
