@@ -76,6 +76,7 @@ namespace CLIFrontEnd
                 PrintItems(Items);
                 Console.WriteLine(CLIUtility.CreateDivider());
                 Console.WriteLine("Select Item at " + Location.GetDictEntry().GetName());
+                if (!string.IsNullOrWhiteSpace(Filter)) { Console.WriteLine($"FILTER: {Filter}"); }
                 var input = Console.ReadLine() ?? "";
                 if (int.TryParse(input, out int index) && Items.TryGetValue(index, out ItemData.ItemObject? value))
                 {
@@ -99,6 +100,7 @@ namespace CLIFrontEnd
                 PrintItems(EnteredItems);
                 Console.WriteLine(CLIUtility.CreateDivider());
                 Console.WriteLine("Select Destination at Exit " + Exit.GetParentArea().ID + " -> " + Exit.ExitID);
+                if (!string.IsNullOrWhiteSpace(Filter)) { Console.WriteLine($"FILTER: {Filter}"); }
                 var input = Console.ReadLine() ?? "";
                 if (int.TryParse(input, out int index) && EnteredItems.TryGetValue(index, out EntranceData.EntranceRandoDestination? value))
                 {
@@ -122,6 +124,7 @@ namespace CLIFrontEnd
                 PrintItems(Items);
                 Console.WriteLine(CLIUtility.CreateDivider());
                 Console.WriteLine("Select Value for " + Option.getOptionName() + $" Current: {Option.Value}");
+                if (!string.IsNullOrWhiteSpace(Filter)) { Console.WriteLine($"FILTER: {Filter}"); }
                 var input = Console.ReadLine() ?? "";
                 if (int.TryParse(input, out int index) && Items.TryGetValue(index, out OptionData.OptionValue? value))
                 {

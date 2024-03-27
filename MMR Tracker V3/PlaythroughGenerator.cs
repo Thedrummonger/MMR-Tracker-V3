@@ -56,7 +56,7 @@ namespace MMR_Tracker_V3
 
             foreach(var i in Playthrough)
             {
-                i.Value.advancedUnlockData = PlaythroughTools.GetAdvancedUnlockData(i.Key, container.logicCalculation.UnlockData, container.Instance);
+                i.Value.advancedUnlockData = PlaythroughTools.GetAdvancedUnlockData(i.Key, container.Instance.UnlockData, container.Instance);
             }
         }
 
@@ -137,7 +137,7 @@ namespace MMR_Tracker_V3
             {
                 i.Available = false;
             }
-            container.logicCalculation.UnlockData.Clear();
+            container.Instance.UnlockData.Clear();
         }
 
         public bool FilterImportantPlaythrough(object WinCon)

@@ -43,6 +43,7 @@ namespace MMR_Tracker_V3.TrackerObjects
             public Options StaticOptions { get; set; } = new Options();
             public PriceData PriceData { get; set; } = new PriceData();
             public InstanceReference InstanceReference { get; set; } = new InstanceReference();
+            public Dictionary<string, Dictionary<string, LogicItemData>> UnlockData { get; set; } = [];
             public override string ToString()
             {
                 return Newtonsoft.Json.JsonConvert.SerializeObject(this, _NewtonsoftJsonSerializerOptions);

@@ -64212,9 +64212,9 @@
       },
       "LocationProxys": []
     },
-    "MM Woods of Mystery Grass NW 1": {
-      "ID": "MM Woods of Mystery Grass NW 1",
-      "Name": "MM Woods of Mystery Grass NW 1",
+    "MM Woods of Mystery Grass SW 1": {
+      "ID": "MM Woods of Mystery Grass SW 1",
+      "Name": "MM Woods of Mystery Grass SW 1",
       "OriginalItem": "MM_RUPEE_GREEN",
       "Area": "Southern Swamp",
       "ValidItemTypes": [
@@ -64223,7 +64223,7 @@
       "Repeatable": false,
       "SpoilerData": {
         "SpoilerLogNames": [
-          "MM Woods of Mystery Grass NW 1"
+          "MM Woods of Mystery Grass SW 1"
         ],
         "GossipHintNames": [
           "NONE"
@@ -64236,9 +64236,9 @@
       },
       "LocationProxys": []
     },
-    "MM Woods of Mystery Grass NW 2": {
-      "ID": "MM Woods of Mystery Grass NW 2",
-      "Name": "MM Woods of Mystery Grass NW 2",
+    "MM Woods of Mystery Grass SW 2": {
+      "ID": "MM Woods of Mystery Grass SW 2",
+      "Name": "MM Woods of Mystery Grass SW 2",
       "OriginalItem": "MM_RUPEE_GREEN",
       "Area": "Southern Swamp",
       "ValidItemTypes": [
@@ -64247,7 +64247,103 @@
       "Repeatable": false,
       "SpoilerData": {
         "SpoilerLogNames": [
-          "MM Woods of Mystery Grass NW 2"
+          "MM Woods of Mystery Grass SW 2"
+        ],
+        "GossipHintNames": [
+          "NONE"
+        ],
+        "PriceDataNames": [],
+        "Tags": [
+          "WOODS_MYSTERY",
+          "grass"
+        ]
+      },
+      "LocationProxys": []
+    },
+    "MM Woods of Mystery Grass S 1": {
+      "ID": "MM Woods of Mystery Grass S 1",
+      "Name": "MM Woods of Mystery Grass S 1",
+      "OriginalItem": "MM_RUPEE_GREEN",
+      "Area": "Southern Swamp",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "Repeatable": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "MM Woods of Mystery Grass S 1"
+        ],
+        "GossipHintNames": [
+          "NONE"
+        ],
+        "PriceDataNames": [],
+        "Tags": [
+          "WOODS_MYSTERY",
+          "grass"
+        ]
+      },
+      "LocationProxys": []
+    },
+    "MM Woods of Mystery Grass S 2": {
+      "ID": "MM Woods of Mystery Grass S 2",
+      "Name": "MM Woods of Mystery Grass S 2",
+      "OriginalItem": "MM_RUPEE_GREEN",
+      "Area": "Southern Swamp",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "Repeatable": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "MM Woods of Mystery Grass S 2"
+        ],
+        "GossipHintNames": [
+          "NONE"
+        ],
+        "PriceDataNames": [],
+        "Tags": [
+          "WOODS_MYSTERY",
+          "grass"
+        ]
+      },
+      "LocationProxys": []
+    },
+    "MM Woods of Mystery Grass S 3": {
+      "ID": "MM Woods of Mystery Grass S 3",
+      "Name": "MM Woods of Mystery Grass S 3",
+      "OriginalItem": "MM_RUPEE_GREEN",
+      "Area": "Southern Swamp",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "Repeatable": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "MM Woods of Mystery Grass S 3"
+        ],
+        "GossipHintNames": [
+          "NONE"
+        ],
+        "PriceDataNames": [],
+        "Tags": [
+          "WOODS_MYSTERY",
+          "grass"
+        ]
+      },
+      "LocationProxys": []
+    },
+    "MM Woods of Mystery Grass SE": {
+      "ID": "MM Woods of Mystery Grass SE",
+      "Name": "MM Woods of Mystery Grass SE",
+      "OriginalItem": "MM_RUPEE_GREEN",
+      "Area": "Southern Swamp",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "Repeatable": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "MM Woods of Mystery Grass SE"
         ],
         "GossipHintNames": [
           "NONE"
@@ -64296,102 +64392,6 @@
       "SpoilerData": {
         "SpoilerLogNames": [
           "MM Woods of Mystery Grass W 2"
-        ],
-        "GossipHintNames": [
-          "NONE"
-        ],
-        "PriceDataNames": [],
-        "Tags": [
-          "WOODS_MYSTERY",
-          "grass"
-        ]
-      },
-      "LocationProxys": []
-    },
-    "MM Woods of Mystery Grass W 3": {
-      "ID": "MM Woods of Mystery Grass W 3",
-      "Name": "MM Woods of Mystery Grass W 3",
-      "OriginalItem": "MM_RUPEE_GREEN",
-      "Area": "Southern Swamp",
-      "ValidItemTypes": [
-        "item"
-      ],
-      "Repeatable": false,
-      "SpoilerData": {
-        "SpoilerLogNames": [
-          "MM Woods of Mystery Grass W 3"
-        ],
-        "GossipHintNames": [
-          "NONE"
-        ],
-        "PriceDataNames": [],
-        "Tags": [
-          "WOODS_MYSTERY",
-          "grass"
-        ]
-      },
-      "LocationProxys": []
-    },
-    "MM Woods of Mystery Grass SW": {
-      "ID": "MM Woods of Mystery Grass SW",
-      "Name": "MM Woods of Mystery Grass SW",
-      "OriginalItem": "MM_RUPEE_GREEN",
-      "Area": "Southern Swamp",
-      "ValidItemTypes": [
-        "item"
-      ],
-      "Repeatable": false,
-      "SpoilerData": {
-        "SpoilerLogNames": [
-          "MM Woods of Mystery Grass SW"
-        ],
-        "GossipHintNames": [
-          "NONE"
-        ],
-        "PriceDataNames": [],
-        "Tags": [
-          "WOODS_MYSTERY",
-          "grass"
-        ]
-      },
-      "LocationProxys": []
-    },
-    "MM Woods of Mystery Grass N 1": {
-      "ID": "MM Woods of Mystery Grass N 1",
-      "Name": "MM Woods of Mystery Grass N 1",
-      "OriginalItem": "MM_RUPEE_GREEN",
-      "Area": "Southern Swamp",
-      "ValidItemTypes": [
-        "item"
-      ],
-      "Repeatable": false,
-      "SpoilerData": {
-        "SpoilerLogNames": [
-          "MM Woods of Mystery Grass N 1"
-        ],
-        "GossipHintNames": [
-          "NONE"
-        ],
-        "PriceDataNames": [],
-        "Tags": [
-          "WOODS_MYSTERY",
-          "grass"
-        ]
-      },
-      "LocationProxys": []
-    },
-    "MM Woods of Mystery Grass N 2": {
-      "ID": "MM Woods of Mystery Grass N 2",
-      "Name": "MM Woods of Mystery Grass N 2",
-      "OriginalItem": "MM_RUPEE_GREEN",
-      "Area": "Southern Swamp",
-      "ValidItemTypes": [
-        "item"
-      ],
-      "Repeatable": false,
-      "SpoilerData": {
-        "SpoilerLogNames": [
-          "MM Woods of Mystery Grass N 2"
         ],
         "GossipHintNames": [
           "NONE"
@@ -64500,9 +64500,9 @@
       },
       "LocationProxys": []
     },
-    "MM Woods of Mystery Grass S 1": {
-      "ID": "MM Woods of Mystery Grass S 1",
-      "Name": "MM Woods of Mystery Grass S 1",
+    "MM Woods of Mystery Grass E 1": {
+      "ID": "MM Woods of Mystery Grass E 1",
+      "Name": "MM Woods of Mystery Grass E 1",
       "OriginalItem": "MM_RUPEE_GREEN",
       "Area": "Southern Swamp",
       "ValidItemTypes": [
@@ -64511,7 +64511,7 @@
       "Repeatable": false,
       "SpoilerData": {
         "SpoilerLogNames": [
-          "MM Woods of Mystery Grass S 1"
+          "MM Woods of Mystery Grass E 1"
         ],
         "GossipHintNames": [
           "NONE"
@@ -64524,9 +64524,9 @@
       },
       "LocationProxys": []
     },
-    "MM Woods of Mystery Grass S 2": {
-      "ID": "MM Woods of Mystery Grass S 2",
-      "Name": "MM Woods of Mystery Grass S 2",
+    "MM Woods of Mystery Grass E 2": {
+      "ID": "MM Woods of Mystery Grass E 2",
+      "Name": "MM Woods of Mystery Grass E 2",
       "OriginalItem": "MM_RUPEE_GREEN",
       "Area": "Southern Swamp",
       "ValidItemTypes": [
@@ -64535,7 +64535,103 @@
       "Repeatable": false,
       "SpoilerData": {
         "SpoilerLogNames": [
-          "MM Woods of Mystery Grass S 2"
+          "MM Woods of Mystery Grass E 2"
+        ],
+        "GossipHintNames": [
+          "NONE"
+        ],
+        "PriceDataNames": [],
+        "Tags": [
+          "WOODS_MYSTERY",
+          "grass"
+        ]
+      },
+      "LocationProxys": []
+    },
+    "MM Woods of Mystery Grass NW 1": {
+      "ID": "MM Woods of Mystery Grass NW 1",
+      "Name": "MM Woods of Mystery Grass NW 1",
+      "OriginalItem": "MM_RUPEE_GREEN",
+      "Area": "Southern Swamp",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "Repeatable": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "MM Woods of Mystery Grass NW 1"
+        ],
+        "GossipHintNames": [
+          "NONE"
+        ],
+        "PriceDataNames": [],
+        "Tags": [
+          "WOODS_MYSTERY",
+          "grass"
+        ]
+      },
+      "LocationProxys": []
+    },
+    "MM Woods of Mystery Grass NW 2": {
+      "ID": "MM Woods of Mystery Grass NW 2",
+      "Name": "MM Woods of Mystery Grass NW 2",
+      "OriginalItem": "MM_RUPEE_GREEN",
+      "Area": "Southern Swamp",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "Repeatable": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "MM Woods of Mystery Grass NW 2"
+        ],
+        "GossipHintNames": [
+          "NONE"
+        ],
+        "PriceDataNames": [],
+        "Tags": [
+          "WOODS_MYSTERY",
+          "grass"
+        ]
+      },
+      "LocationProxys": []
+    },
+    "MM Woods of Mystery Grass N 1": {
+      "ID": "MM Woods of Mystery Grass N 1",
+      "Name": "MM Woods of Mystery Grass N 1",
+      "OriginalItem": "MM_RUPEE_GREEN",
+      "Area": "Southern Swamp",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "Repeatable": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "MM Woods of Mystery Grass N 1"
+        ],
+        "GossipHintNames": [
+          "NONE"
+        ],
+        "PriceDataNames": [],
+        "Tags": [
+          "WOODS_MYSTERY",
+          "grass"
+        ]
+      },
+      "LocationProxys": []
+    },
+    "MM Woods of Mystery Grass N 2": {
+      "ID": "MM Woods of Mystery Grass N 2",
+      "Name": "MM Woods of Mystery Grass N 2",
+      "OriginalItem": "MM_RUPEE_GREEN",
+      "Area": "Southern Swamp",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "Repeatable": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "MM Woods of Mystery Grass N 2"
         ],
         "GossipHintNames": [
           "NONE"
@@ -64596,18 +64692,18 @@
       },
       "LocationProxys": []
     },
-    "MM Woods of Mystery Grass E 1": {
-      "ID": "MM Woods of Mystery Grass E 1",
-      "Name": "MM Woods of Mystery Grass E 1",
+    "MM Woods of Mystery Grass NE 3": {
+      "ID": "MM Woods of Mystery Grass NE 3",
+      "Name": "MM Woods of Mystery Grass NE 3",
       "OriginalItem": "MM_RUPEE_GREEN",
-      "Area": "Southern Swamp",
+      "Area": "WOODS_MYSTERY",
       "ValidItemTypes": [
         "item"
       ],
       "Repeatable": false,
       "SpoilerData": {
         "SpoilerLogNames": [
-          "MM Woods of Mystery Grass E 1"
+          "MM Woods of Mystery Grass NE 3"
         ],
         "GossipHintNames": [
           "NONE"
@@ -64620,18 +64716,18 @@
       },
       "LocationProxys": []
     },
-    "MM Woods of Mystery Grass E 2": {
-      "ID": "MM Woods of Mystery Grass E 2",
-      "Name": "MM Woods of Mystery Grass E 2",
+    "MM Woods of Mystery Grass NE 4": {
+      "ID": "MM Woods of Mystery Grass NE 4",
+      "Name": "MM Woods of Mystery Grass NE 4",
       "OriginalItem": "MM_RUPEE_GREEN",
-      "Area": "Southern Swamp",
+      "Area": "WOODS_MYSTERY",
       "ValidItemTypes": [
         "item"
       ],
       "Repeatable": false,
       "SpoilerData": {
         "SpoilerLogNames": [
-          "MM Woods of Mystery Grass E 2"
+          "MM Woods of Mystery Grass NE 4"
         ],
         "GossipHintNames": [
           "NONE"
@@ -64644,114 +64740,18 @@
       },
       "LocationProxys": []
     },
-    "MM Woods of Mystery Grass SE 1": {
-      "ID": "MM Woods of Mystery Grass SE 1",
-      "Name": "MM Woods of Mystery Grass SE 1",
+    "MM Woods of Mystery Grass NE 5": {
+      "ID": "MM Woods of Mystery Grass NE 5",
+      "Name": "MM Woods of Mystery Grass NE 5",
       "OriginalItem": "MM_RUPEE_GREEN",
-      "Area": "Southern Swamp",
+      "Area": "WOODS_MYSTERY",
       "ValidItemTypes": [
         "item"
       ],
       "Repeatable": false,
       "SpoilerData": {
         "SpoilerLogNames": [
-          "MM Woods of Mystery Grass SE 1"
-        ],
-        "GossipHintNames": [
-          "NONE"
-        ],
-        "PriceDataNames": [],
-        "Tags": [
-          "WOODS_MYSTERY",
-          "grass"
-        ]
-      },
-      "LocationProxys": []
-    },
-    "MM Woods of Mystery Grass SE 2": {
-      "ID": "MM Woods of Mystery Grass SE 2",
-      "Name": "MM Woods of Mystery Grass SE 2",
-      "OriginalItem": "MM_RUPEE_GREEN",
-      "Area": "Southern Swamp",
-      "ValidItemTypes": [
-        "item"
-      ],
-      "Repeatable": false,
-      "SpoilerData": {
-        "SpoilerLogNames": [
-          "MM Woods of Mystery Grass SE 2"
-        ],
-        "GossipHintNames": [
-          "NONE"
-        ],
-        "PriceDataNames": [],
-        "Tags": [
-          "WOODS_MYSTERY",
-          "grass"
-        ]
-      },
-      "LocationProxys": []
-    },
-    "MM Woods of Mystery Grass SE 3": {
-      "ID": "MM Woods of Mystery Grass SE 3",
-      "Name": "MM Woods of Mystery Grass SE 3",
-      "OriginalItem": "MM_RUPEE_GREEN",
-      "Area": "Southern Swamp",
-      "ValidItemTypes": [
-        "item"
-      ],
-      "Repeatable": false,
-      "SpoilerData": {
-        "SpoilerLogNames": [
-          "MM Woods of Mystery Grass SE 3"
-        ],
-        "GossipHintNames": [
-          "NONE"
-        ],
-        "PriceDataNames": [],
-        "Tags": [
-          "WOODS_MYSTERY",
-          "grass"
-        ]
-      },
-      "LocationProxys": []
-    },
-    "MM Woods of Mystery Grass SE 4": {
-      "ID": "MM Woods of Mystery Grass SE 4",
-      "Name": "MM Woods of Mystery Grass SE 4",
-      "OriginalItem": "MM_RUPEE_GREEN",
-      "Area": "Southern Swamp",
-      "ValidItemTypes": [
-        "item"
-      ],
-      "Repeatable": false,
-      "SpoilerData": {
-        "SpoilerLogNames": [
-          "MM Woods of Mystery Grass SE 4"
-        ],
-        "GossipHintNames": [
-          "NONE"
-        ],
-        "PriceDataNames": [],
-        "Tags": [
-          "WOODS_MYSTERY",
-          "grass"
-        ]
-      },
-      "LocationProxys": []
-    },
-    "MM Woods of Mystery Grass SE 5": {
-      "ID": "MM Woods of Mystery Grass SE 5",
-      "Name": "MM Woods of Mystery Grass SE 5",
-      "OriginalItem": "MM_RUPEE_GREEN",
-      "Area": "Southern Swamp",
-      "ValidItemTypes": [
-        "item"
-      ],
-      "Repeatable": false,
-      "SpoilerData": {
-        "SpoilerLogNames": [
-          "MM Woods of Mystery Grass SE 5"
+          "MM Woods of Mystery Grass NE 5"
         ],
         "GossipHintNames": [
           "NONE"

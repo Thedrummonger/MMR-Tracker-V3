@@ -12,7 +12,6 @@ namespace MMR_Tracker_V3.Logic
         public readonly InstanceData.InstanceContainer container = _container;
         public Dictionary<string, MMRData.JsonFormatLogicItem> LogicMap = [];
         public HashSet<object> AutoObtainedObjects = [];
-        public Dictionary<string, Dictionary<string, LogicItemData>> UnlockData = [];
         public bool ReCompileLogicOnCalculation = false;
 
         public static void CommitUnlockData(Dictionary<string, LogicItemData> Main, Dictionary<string, LogicItemData> Sub)
@@ -34,7 +33,7 @@ namespace MMR_Tracker_V3.Logic
                 (Area == null || AreaReached(Area)) &&
                 RequirementsMet(Logic.RequiredItems, SubUnlockData) &&
                 ConditionalsMet(Logic.ConditionalItems, SubUnlockData);
-            if (Available && UpdateUnlockData && !UnlockData.ContainsKey(ID)) { UnlockData[ID] = SubUnlockData; }
+            if (Available && UpdateUnlockData && !container.Instance.UnlockData.ContainsKey(ID)) { container.Instance.UnlockData[ID] = SubUnlockData; }
             return Available;
         }
         private bool RequirementsMet(List<string> Requirements, Dictionary<string, LogicItemData> UnlockData = null)
@@ -247,19 +246,19 @@ namespace MMR_Tracker_V3.Logic
             //become unckecked and rechecked during logic calculation and we don't want them resetting their unlock data when this happens.
             foreach (var i in container.Instance.LocationPool.Values)
             {
-                if (!i.Available && UnlockData.ContainsKey(i.ID)) { UnlockData.Remove(i.ID); }
+                if (!i.Available && container.Instance.UnlockData.ContainsKey(i.ID)) { container.Instance.UnlockData.Remove(i.ID); }
             }
             foreach (var i in container.Instance.ExitPool.Values)
             {
-                if (!i.Available && UnlockData.ContainsKey(i.ID)) { UnlockData.Remove(i.ID); }
+                if (!i.Available && container.Instance.UnlockData.ContainsKey(i.ID)) { container.Instance.UnlockData.Remove(i.ID); }
             }
             foreach (var i in container.Instance.HintPool.Values)
             {
-                if (!i.Available && UnlockData.ContainsKey(i.ID)) { UnlockData.Remove(i.ID); }
+                if (!i.Available && container.Instance.UnlockData.ContainsKey(i.ID)) { container.Instance.UnlockData.Remove(i.ID); }
             }
             foreach (var i in container.Instance.MacroPool.Values)
             {
-                if (!i.Available && UnlockData.ContainsKey(i.ID)) { UnlockData.Remove(i.ID); }
+                if (!i.Available && container.Instance.UnlockData.ContainsKey(i.ID)) { container.Instance.UnlockData.Remove(i.ID); }
             }
         }
 

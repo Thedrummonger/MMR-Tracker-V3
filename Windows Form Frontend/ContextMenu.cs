@@ -123,8 +123,8 @@ namespace Windows_Form_Frontend
         }
         private static void ShowUnlockData(string iD, InstanceContainer IC)
         {
-            if (!IC.logicCalculation.UnlockData.ContainsKey(iD)) { return; }
-            var AdvancedUnlockData = PlaythroughTools.GetAdvancedUnlockData(iD, IC.logicCalculation.UnlockData, IC.Instance);
+            if (!IC.Instance.UnlockData.ContainsKey(iD)) { return; }
+            var AdvancedUnlockData = PlaythroughTools.GetAdvancedUnlockData(iD, IC.Instance.UnlockData, IC.Instance);
             var DataDisplay = PlaythroughTools.FormatAdvancedUnlockData(AdvancedUnlockData, IC);
             List<dynamic> Items = new List<dynamic>();
             foreach (var i in DataDisplay)

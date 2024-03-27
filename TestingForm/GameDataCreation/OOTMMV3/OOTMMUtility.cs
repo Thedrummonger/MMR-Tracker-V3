@@ -2,6 +2,8 @@
 using MMR_Tracker_V3;
 using MMR_Tracker_V3.Logic;
 using Newtonsoft.Json;
+using System.Diagnostics;
+using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
 using static TestingForm.GameDataCreation.OOTMMV3.OOTMMDataClasses;
@@ -130,6 +132,69 @@ namespace TestingForm.GameDataCreation.OOTMMV3
             if (ID.In(extraData.renewablelocations)) { return true; }
             if (location.type.In(extraData.renewabletypes)) { return true; }
             return false;
+        }
+
+        public static class CLockLogicHandling
+        {
+            static Dictionary<string, string> map = new Dictionary<string, string> 
+            {
+                { "DAY1", "clock_day1" },
+                { "NIGHT1", "clock_night1" },
+                { "DAY2", "clock_day2" },
+                { "NIGHT2", "clock_night2" },
+                { "DAY3", "clock_day3" },
+                { "NIGHT3", "clock_night3" },
+            };
+
+            public static string GetTimeAt(string TimeString)
+            {
+                string Time = TimeString.Split("_")[0];
+                return map[Time];
+            }
+
+            public static string GetTimeBefore(string TimeString)
+            {
+                string Time = TimeString.Split("_")[0];
+                if (Time == "NIGHT3") { return "true"; }
+                List<string> Times = [];
+                foreach(var i in map.Keys)
+                {
+                    Times.Add(map[i]);
+                    if (i == Time) { break; }
+                }
+                return $"({string.Join(" || ", Times)})";
+            }
+
+            public static string GetTimeAfter(string TimeString)
+            {
+                string Time = TimeString.Split("_")[0];
+                if (Time == "DAY1") { return "true"; }
+                List<string> Times = [];
+                foreach (var i in map.Keys.Reverse())
+                {
+                    Times.Add(map[i]);
+                    if (i == Time) { break; }
+                }
+                return $"({string.Join(" || ", Times)})";
+            }
+
+            public static string GetTimeBetween(string StartTimeString, string EndTimeString)
+            {
+                string StartTime = StartTimeString.Split("_")[0];
+                string EndTime = EndTimeString.Split("_")[0];
+                List<string> Times = [];
+                bool AtTime = false;
+                foreach (var i in map.Keys)
+                {
+                    if (i == StartTime) { AtTime = true; }
+                    if (!AtTime) { continue; }
+                    Times.Add(map[i]);
+                    if (i == EndTime) { break; }
+                }
+                Debug.WriteLine($"Between({StartTimeString}, {EndTimeString}) Parsed to\n({string.Join(" || ", Times)})");
+                return $"({string.Join(" || ", Times)})";
+            }
+
         }
     }
 }

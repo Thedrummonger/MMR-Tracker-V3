@@ -176,7 +176,7 @@ namespace MMR_Tracker_V3
             {
                 AddBasic("What Unlocked This?", action, () => { return
                     Parent.ItemGroupings.CheckableLocationsProxyAsLogicRef.Count == 1 &&
-                    Parent.ParentInstanceContainer.logicCalculation.UnlockData.ContainsKey(Parent.ItemGroupings.CheckableLocationsProxyAsLogicRef[0].ID);
+                    Parent.ParentInstanceContainer.Instance.UnlockData.ContainsKey(Parent.ItemGroupings.CheckableLocationsProxyAsLogicRef[0].ID);
                 });
                 return this;
             }

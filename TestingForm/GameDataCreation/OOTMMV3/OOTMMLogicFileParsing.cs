@@ -214,9 +214,18 @@ namespace TestingForm.GameDataCreation.OOTMMV3
             {
                 NewLogicItem = $"price{{{LogicItem.Id}, {logicFuncData.Param[2]}}}";
             }
-            else if (logicFuncData.function.In("mm_time", "oot_time"))
+            else if (logicFuncData.function.In("oot_time"))
             {
                 NewLogicItem = $"time{{{logicFuncData.function}, {logicFuncData.RawParam}}}";
+            }
+            else if (logicFuncData.function.In("mm_time"))
+            {
+                if (logicFuncData.Param[0] == "at") { NewLogicItem = OOTMMUtility.CLockLogicHandling.GetTimeAt(logicFuncData.Param[1]); }
+                else if (logicFuncData.Param[0] == "after") { NewLogicItem = OOTMMUtility.CLockLogicHandling.GetTimeAfter(logicFuncData.Param[1]); }
+                else if (logicFuncData.Param[0] == "before") { NewLogicItem = OOTMMUtility.CLockLogicHandling.GetTimeBefore(logicFuncData.Param[1]); }
+                else if (logicFuncData.Param[0] == "between") { 
+                    NewLogicItem = OOTMMUtility.CLockLogicHandling.GetTimeBetween(logicFuncData.Param[1], logicFuncData.Param[2]); 
+                }
             }
             else if (logicFuncData.function == "age")
             {

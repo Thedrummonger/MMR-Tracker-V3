@@ -51,8 +51,8 @@ namespace CLIFrontEnd
             {
                 Console.Clear();
                 var SelectedItem = contextMenu.ItemGroupings.CheckableLocationsProxyAsLogicRef[0].ID;
-                if (!IC.logicCalculation.UnlockData.ContainsKey(SelectedItem)) { return; }
-                var AdvancedUnlockData = PlaythroughTools.GetAdvancedUnlockData(SelectedItem, IC.logicCalculation.UnlockData, IC.Instance);
+                if (!IC.Instance.UnlockData.ContainsKey(SelectedItem)) { return; }
+                var AdvancedUnlockData = PlaythroughTools.GetAdvancedUnlockData(SelectedItem, IC.Instance.UnlockData, IC.Instance);
                 var DataDisplay = PlaythroughTools.FormatAdvancedUnlockData(AdvancedUnlockData, IC);
                 foreach(var i in DataDisplay) { Console.WriteLine(i.ToString()); }
                 Console.ReadLine();
@@ -65,24 +65,8 @@ namespace CLIFrontEnd
                 return contextMenu.ItemGroupings.CheckableLocations.Count > 0;
             });
             build.AddClearPriceAction(null);
-            build.AddItemAtCheckAction(() =>
-            {
-                return LoopAnyItemSelect(IC);
-            }, (ItemFound, location, Item) =>
-            {
-                Console.Clear();
-                Console.WriteLine($"{location} {(ItemFound ? "contained" : "did NOT contain")} {Item}");
-                Console.ReadLine();
-            });
-            build.AddItemInAreaAction(() =>
-            {
-                return LoopAnyItemSelect(IC);
-            }, (ItemFound, location, Item) =>
-            {
-                Console.Clear();
-                Console.WriteLine($"{location} {(ItemFound ? "contained" : "did NOT contain")} {Item}");
-                Console.ReadLine();
-            });
+            build.AddItemAtCheckAction(() => { return LoopAnyItemSelect(IC); }, DisplayCheckItemResult);
+            build.AddItemInAreaAction(() => { return LoopAnyItemSelect(IC); }, DisplayCheckItemResult);
 
             var MenuItems = contextMenu.GetMenu();
             if (MenuItems.Count > 0)
@@ -92,6 +76,13 @@ namespace CLIFrontEnd
                 ContextMenu.Run();
                 if (ContextMenu.SelectedObject is not StandardListBoxItem SLI || SLI.Tag is not ContextMenu.ContextMenuItem CMI) { return; }
                 CMI.Action?.Invoke();
+            }
+
+            void DisplayCheckItemResult(bool ItemFound, string location, string Item)
+            {
+                Console.Clear();
+                Console.WriteLine($"{location} {(ItemFound ? "contained" : "did NOT contain")} {Item}");
+                Console.ReadLine();
             }
         }
         private static void CheckLocations(InstanceData.InstanceContainer instanceContainer, IEnumerable<object> CheckObjects, MiscData.CheckState checkState)

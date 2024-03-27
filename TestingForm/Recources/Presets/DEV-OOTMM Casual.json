@@ -32082,7 +32082,8 @@
       "Id": "OOT Ganon Castle Exterior After Bridge => OOT Hyrule Castle Courtyard",
       "RequiredItems": [
         "OOT Ganon Castle Exterior After Bridge",
-        "OOT_is_child"
+        "OOT_is_child",
+        "trick{OOT_COURTYARD_FROM_GANON}"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -91780,7 +91781,7 @@
       "Id": "MM Clock Tower Platform => MM Clock Tower Roof",
       "RequiredItems": [
         "MM Clock Tower Platform",
-        "time{mm_time, after, NIGHT3_AM_12_00}",
+        "MM_clock_night3",
         "MM_clock_filter"
       ],
       "ConditionalItems": [
@@ -92036,18 +92037,44 @@
       "Id": "MM_MAIL_LETTER_EVENT",
       "RequiredItems": [
         "MM_LETTER_TO_KAFEI",
-        "time{mm_time, before, DAY2_AM_11_30}",
         "MM_clock_filter"
       ],
       "ConditionalItems": [
         [
-          "MM Clock Town East"
+          "MM Clock Town East",
+          "MM_clock_day1"
         ],
         [
-          "MM Clock Town North"
+          "MM Clock Town East",
+          "MM_clock_day2"
         ],
         [
-          "MM Clock Town South"
+          "MM Clock Town East",
+          "MM_clock_night1"
+        ],
+        [
+          "MM Clock Town North",
+          "MM_clock_day1"
+        ],
+        [
+          "MM Clock Town North",
+          "MM_clock_day2"
+        ],
+        [
+          "MM Clock Town North",
+          "MM_clock_night1"
+        ],
+        [
+          "MM Clock Town South",
+          "MM_clock_day1"
+        ],
+        [
+          "MM Clock Town South",
+          "MM_clock_day2"
+        ],
+        [
+          "MM Clock Town South",
+          "MM_clock_night1"
         ]
       ],
       "TimeNeeded": "None",
@@ -92483,7 +92510,7 @@
       "RequiredItems": [
         "MM Clock Town North",
         "MM_can_fight",
-        "time{mm_time, at, NIGHT1_AM_12_00}",
+        "MM_clock_night1",
         "MM_clock_filter"
       ],
       "ConditionalItems": [],
@@ -92496,7 +92523,7 @@
       "Id": "MM_SAKON_BOOM_EVENT",
       "RequiredItems": [
         "MM Clock Town North",
-        "time{mm_time, at, NIGHT1_AM_12_00}",
+        "MM_clock_night1",
         "MM_clock_filter"
       ],
       "ConditionalItems": [
@@ -92741,13 +92768,19 @@
       ],
       "ConditionalItems": [
         [
-          "time{mm_time, after, NIGHT3_PM_10_00}"
+          "MM_clock_day2"
         ],
         [
-          "time{mm_time, between, NIGHT1_PM_10_00, DAY2_AM_06_00}"
+          "MM_clock_day3"
         ],
         [
-          "time{mm_time, between, NIGHT2_PM_10_00, DAY3_AM_06_00}"
+          "MM_clock_night1"
+        ],
+        [
+          "MM_clock_night2"
+        ],
+        [
+          "MM_clock_night3"
         ]
       ],
       "TimeNeeded": "None",
@@ -92765,12 +92798,16 @@
           "MM_is_night3"
         ],
         [
-          "time{mm_time, between, DAY1_PM_03_00, NIGHT1_AM_12_00}",
+          "MM_clock_day1",
           "MM_clock_filter"
         ],
         [
-          "time{mm_time, between, NIGHT2_PM_06_00, NIGHT2_AM_12_00}",
           "MM_clock_filter",
+          "MM_clock_night1"
+        ],
+        [
+          "MM_clock_filter",
+          "MM_clock_night2",
           "MM_MAIL_LETTER_EVENT"
         ]
       ],
@@ -92792,12 +92829,12 @@
           "MM_second_day"
         ],
         [
-          "time{mm_time, after, NIGHT3_AM_12_00}",
+          "MM_clock_day3",
           "MM_clock_filter"
         ],
         [
-          "time{mm_time, between, DAY3_AM_06_00, NIGHT3_PM_11_00}",
-          "MM_clock_filter"
+          "MM_clock_filter",
+          "MM_clock_night3"
         ]
       ],
       "TimeNeeded": "None",
@@ -92815,18 +92852,23 @@
           "MM_is_day"
         ],
         [
-          "time{mm_time, before, NIGHT1_PM_11_00}",
+          "MM_clock_day1",
           "MM_clock_filter",
           "MM_PLAY_LOTTERY_EVENT"
         ],
         [
-          "time{mm_time, between, NIGHT2_PM_06_00, NIGHT2_PM_11_00}",
           "MM_clock_filter",
+          "MM_clock_night1",
           "MM_PLAY_LOTTERY_EVENT"
         ],
         [
-          "time{mm_time, between, NIGHT3_PM_06_00, NIGHT3_PM_11_00}",
           "MM_clock_filter",
+          "MM_clock_night2",
+          "MM_PLAY_LOTTERY_EVENT"
+        ],
+        [
+          "MM_clock_filter",
+          "MM_clock_night3",
           "MM_PLAY_LOTTERY_EVENT"
         ]
       ],
@@ -92887,7 +92929,7 @@
       "RequiredItems": [
         "MM Clock Town East",
         "MM_POSTMAN_FREEDOM_EVENT",
-        "time{mm_time, between, NIGHT3_PM_06_00, NIGHT3_AM_05_00}",
+        "MM_clock_night3",
         "MM_clock_filter"
       ],
       "ConditionalItems": [],
@@ -92937,13 +92979,22 @@
       ],
       "ConditionalItems": [
         [
-          "time{mm_time, after, DAY3_AM_10_00}"
+          "MM_clock_day1"
         ],
         [
-          "time{mm_time, between, DAY1_AM_10_00, NIGHT1_PM_08_00}"
+          "MM_clock_day2"
         ],
         [
-          "time{mm_time, between, DAY2_AM_10_00, NIGHT2_PM_08_00}"
+          "MM_clock_day3"
+        ],
+        [
+          "MM_clock_night1"
+        ],
+        [
+          "MM_clock_night2"
+        ],
+        [
+          "MM_clock_night3"
         ]
       ],
       "TimeNeeded": "None",
@@ -92959,13 +93010,22 @@
       ],
       "ConditionalItems": [
         [
-          "time{mm_time, before, NIGHT1_PM_10_00}"
+          "MM_clock_day1"
         ],
         [
-          "time{mm_time, between, DAY2_AM_06_00, NIGHT2_PM_10_00}"
+          "MM_clock_day2"
         ],
         [
-          "time{mm_time, between, DAY3_AM_06_00, NIGHT3_PM_10_00}"
+          "MM_clock_day3"
+        ],
+        [
+          "MM_clock_night1"
+        ],
+        [
+          "MM_clock_night2"
+        ],
+        [
+          "MM_clock_night3"
         ]
       ],
       "TimeNeeded": "None",
@@ -92981,13 +93041,22 @@
       ],
       "ConditionalItems": [
         [
-          "time{mm_time, before, NIGHT1_PM_10_00}"
+          "MM_clock_day1"
         ],
         [
-          "time{mm_time, between, DAY2_AM_06_00, NIGHT2_PM_10_00}"
+          "MM_clock_day2"
         ],
         [
-          "time{mm_time, between, DAY3_AM_06_00, NIGHT3_PM_10_00}"
+          "MM_clock_day3"
+        ],
+        [
+          "MM_clock_night1"
+        ],
+        [
+          "MM_clock_night2"
+        ],
+        [
+          "MM_clock_night3"
         ]
       ],
       "TimeNeeded": "None",
@@ -93003,13 +93072,22 @@
       ],
       "ConditionalItems": [
         [
-          "time{mm_time, before, NIGHT1_PM_10_00}"
+          "MM_clock_day1"
         ],
         [
-          "time{mm_time, between, DAY2_AM_06_00, NIGHT2_PM_10_00}"
+          "MM_clock_day2"
         ],
         [
-          "time{mm_time, between, DAY3_AM_06_00, NIGHT3_PM_10_00}"
+          "MM_clock_day3"
+        ],
+        [
+          "MM_clock_night1"
+        ],
+        [
+          "MM_clock_night2"
+        ],
+        [
+          "MM_clock_night3"
         ]
       ],
       "TimeNeeded": "None",
@@ -93027,16 +93105,28 @@
           "MM_ROOM_KEY"
         ],
         [
-          "time{mm_time, after, DAY3_AM_08_00}",
+          "MM_clock_day1",
           "MM_clock_filter"
         ],
         [
-          "time{mm_time, between, DAY1_AM_08_00, NIGHT1_PM_08_00}",
+          "MM_clock_day2",
           "MM_clock_filter"
         ],
         [
-          "time{mm_time, between, DAY2_AM_08_00, NIGHT2_PM_08_00}",
+          "MM_clock_day3",
           "MM_clock_filter"
+        ],
+        [
+          "MM_clock_filter",
+          "MM_clock_night1"
+        ],
+        [
+          "MM_clock_filter",
+          "MM_clock_night2"
+        ],
+        [
+          "MM_clock_filter",
+          "MM_clock_night3"
         ]
       ],
       "TimeNeeded": "None",
@@ -93076,25 +93166,22 @@
       ],
       "ConditionalItems": [
         [
-          "time{mm_time, between, DAY1_AM_10_00, NIGHT1_PM_09_00}"
+          "MM_clock_day1"
         ],
         [
-          "time{mm_time, between, DAY2_AM_10_00, NIGHT2_PM_09_00}"
+          "MM_clock_day2"
         ],
         [
-          "time{mm_time, between, DAY3_AM_10_00, NIGHT3_PM_09_00}"
+          "MM_clock_day3"
         ],
         [
-          "time{mm_time, after, NIGHT3_PM_10_00}",
-          "MM_MASK_ROMANI"
+          "MM_clock_night1"
         ],
         [
-          "time{mm_time, between, NIGHT1_PM_10_00, NIGHT1_AM_05_00}",
-          "MM_MASK_ROMANI"
+          "MM_clock_night2"
         ],
         [
-          "time{mm_time, between, NIGHT2_PM_10_00, NIGHT2_AM_05_00}",
-          "MM_MASK_ROMANI"
+          "MM_clock_night3"
         ]
       ],
       "TimeNeeded": "None",
@@ -93431,11 +93518,19 @@
       ],
       "ConditionalItems": [
         [
-          "time{mm_time, between, DAY2_PM_02_00, NIGHT2_PM_10_00}",
+          "MM_clock_day2",
           "MM_MAIL_LETTER_EVENT"
         ],
         [
-          "time{mm_time, between, DAY3_PM_01_00, NIGHT3_PM_10_00}",
+          "MM_clock_day3",
+          "MM_MEET_KAFEI_EVENT"
+        ],
+        [
+          "MM_clock_night2",
+          "MM_MAIL_LETTER_EVENT"
+        ],
+        [
+          "MM_clock_night3",
           "MM_MEET_KAFEI_EVENT"
         ]
       ],
@@ -94316,7 +94411,6 @@
       "Id": "MM Trading Post Item 1",
       "RequiredItems": [
         "MM Trading Post",
-        "time{mm_time, before, NIGHT3_PM_09_00}",
         "MM_clock_filter"
       ],
       "ConditionalItems": [
@@ -94454,7 +94548,6 @@
       "Id": "MM Trading Post Item 2",
       "RequiredItems": [
         "MM Trading Post",
-        "time{mm_time, before, NIGHT3_PM_09_00}",
         "MM_clock_filter"
       ],
       "ConditionalItems": [
@@ -94592,7 +94685,6 @@
       "Id": "MM Trading Post Item 3",
       "RequiredItems": [
         "MM Trading Post",
-        "time{mm_time, before, NIGHT3_PM_09_00}",
         "MM_clock_filter"
       ],
       "ConditionalItems": [
@@ -94730,7 +94822,6 @@
       "Id": "MM Trading Post Item 4",
       "RequiredItems": [
         "MM Trading Post",
-        "time{mm_time, before, NIGHT3_PM_09_00}",
         "MM_clock_filter"
       ],
       "ConditionalItems": [
@@ -94868,7 +94959,6 @@
       "Id": "MM Trading Post Item 5",
       "RequiredItems": [
         "MM Trading Post",
-        "time{mm_time, before, NIGHT3_PM_09_00}",
         "MM_clock_filter"
       ],
       "ConditionalItems": [
@@ -95006,7 +95096,6 @@
       "Id": "MM Trading Post Item 6",
       "RequiredItems": [
         "MM Trading Post",
-        "time{mm_time, before, NIGHT3_PM_09_00}",
         "MM_clock_filter"
       ],
       "ConditionalItems": [
@@ -95144,7 +95233,6 @@
       "Id": "MM Trading Post Item 7",
       "RequiredItems": [
         "MM Trading Post",
-        "time{mm_time, before, NIGHT3_PM_09_00}",
         "MM_clock_filter"
       ],
       "ConditionalItems": [
@@ -95282,7 +95370,6 @@
       "Id": "MM Trading Post Item 8",
       "RequiredItems": [
         "MM Trading Post",
-        "time{mm_time, before, NIGHT3_PM_09_00}",
         "MM_clock_filter"
       ],
       "ConditionalItems": [
@@ -95784,10 +95871,16 @@
       "RequiredItems": [
         "MM Kafei Hideout",
         "MM_MAIL_LETTER_EVENT",
-        "time{mm_time, between, DAY2_PM_02_00, NIGHT2_PM_10_00}",
         "MM_clock_filter"
       ],
-      "ConditionalItems": [],
+      "ConditionalItems": [
+        [
+          "MM_clock_day2"
+        ],
+        [
+          "MM_clock_night2"
+        ]
+      ],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -95797,10 +95890,16 @@
       "Id": "MM Kafei Hideout Owner Reward 1",
       "RequiredItems": [
         "MM Kafei Hideout",
-        "time{mm_time, between, DAY3_AM_06_00, NIGHT3_PM_10_00}",
         "MM_clock_filter"
       ],
-      "ConditionalItems": [],
+      "ConditionalItems": [
+        [
+          "MM_clock_day3"
+        ],
+        [
+          "MM_clock_night3"
+        ]
+      ],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -95810,10 +95909,16 @@
       "Id": "MM Kafei Hideout Owner Reward 2",
       "RequiredItems": [
         "MM Kafei Hideout",
-        "time{mm_time, between, DAY3_AM_06_00, NIGHT3_PM_10_00}",
         "MM_clock_filter"
       ],
-      "ConditionalItems": [],
+      "ConditionalItems": [
+        [
+          "MM_clock_day3"
+        ],
+        [
+          "MM_clock_night3"
+        ]
+      ],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -95835,10 +95940,16 @@
       "RequiredItems": [
         "MM Kafei Hideout",
         "MM_MAIL_LETTER_EVENT",
-        "time{mm_time, between, DAY2_PM_02_00, NIGHT2_PM_10_00}",
         "MM_clock_filter"
       ],
-      "ConditionalItems": [],
+      "ConditionalItems": [
+        [
+          "MM_clock_day2"
+        ],
+        [
+          "MM_clock_night2"
+        ]
+      ],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -95852,21 +95963,29 @@
       ],
       "ConditionalItems": [
         [
-          "time{mm_time, between, DAY1_PM_03_00, NIGHT1_AM_12_00}",
+          "MM_clock_day1",
           "MM_has_mask_bunny"
         ],
         [
-          "time{mm_time, between, DAY1_PM_03_00, NIGHT1_AM_12_00}",
-          "trick{MM_POST_OFFICE_GAME}"
+          "MM_clock_night1",
+          "MM_has_mask_bunny"
         ],
         [
-          "time{mm_time, between, NIGHT2_PM_06_00, NIGHT2_AM_12_00}",
+          "trick{MM_POST_OFFICE_GAME}",
+          "MM_clock_day1"
+        ],
+        [
+          "trick{MM_POST_OFFICE_GAME}",
+          "MM_clock_night1"
+        ],
+        [
+          "MM_clock_night2",
           "MM_has_mask_bunny",
           "MM_MAIL_LETTER_EVENT"
         ],
         [
-          "time{mm_time, between, NIGHT2_PM_06_00, NIGHT2_AM_12_00}",
           "trick{MM_POST_OFFICE_GAME}",
+          "MM_clock_night2",
           "MM_MAIL_LETTER_EVENT"
         ]
       ],
@@ -95905,7 +96024,6 @@
         "MM Swordsman School",
         "MM_SWORD",
         "MM_has_rupees",
-        "time{mm_time, before, NIGHT3_PM_11_00}",
         "MM_clock_filter"
       ],
       "ConditionalItems": [
@@ -95931,7 +96049,7 @@
       "RequiredItems": [
         "MM Swordsman School",
         "MM_SWORD",
-        "time{mm_time, after, NIGHT3_AM_12_00}",
+        "MM_clock_night3",
         "MM_clock_filter"
       ],
       "ConditionalItems": [],
@@ -95945,7 +96063,7 @@
       "RequiredItems": [
         "MM Swordsman School",
         "MM_SWORD",
-        "time{mm_time, after, NIGHT3_AM_12_00}",
+        "MM_clock_night3",
         "MM_clock_filter"
       ],
       "ConditionalItems": [],
@@ -95959,7 +96077,7 @@
       "RequiredItems": [
         "MM Swordsman School",
         "MM_SWORD",
-        "time{mm_time, after, NIGHT3_AM_12_00}",
+        "MM_clock_night3",
         "MM_clock_filter"
       ],
       "ConditionalItems": [],
@@ -95973,7 +96091,7 @@
       "RequiredItems": [
         "MM Swordsman School",
         "MM_SWORD",
-        "time{mm_time, after, NIGHT3_AM_12_00}",
+        "MM_clock_night3",
         "MM_clock_filter"
       ],
       "ConditionalItems": [],
@@ -95987,7 +96105,7 @@
       "RequiredItems": [
         "MM Swordsman School",
         "MM_SWORD",
-        "time{mm_time, after, NIGHT3_AM_12_00}",
+        "MM_clock_night3",
         "MM_clock_filter"
       ],
       "ConditionalItems": [],
@@ -96051,10 +96169,16 @@
       ],
       "ConditionalItems": [
         [
-          "time{mm_time, between, DAY1_AM_10_00, NIGHT1_PM_08_00}"
+          "MM_clock_day1"
         ],
         [
-          "time{mm_time, between, DAY2_AM_10_00, NIGHT2_PM_08_00}"
+          "MM_clock_day2"
+        ],
+        [
+          "MM_clock_night1"
+        ],
+        [
+          "MM_clock_night2"
         ]
       ],
       "TimeNeeded": "None",
@@ -96071,13 +96195,22 @@
       ],
       "ConditionalItems": [
         [
-          "time{mm_time, between, DAY1_AM_10_00, NIGHT1_PM_08_00}"
+          "MM_clock_day1"
         ],
         [
-          "time{mm_time, between, DAY2_AM_10_00, NIGHT2_PM_08_00}"
+          "MM_clock_day2"
         ],
         [
-          "time{mm_time, between, DAY3_AM_10_00, NIGHT3_PM_06_00}"
+          "MM_clock_day3"
+        ],
+        [
+          "MM_clock_night1"
+        ],
+        [
+          "MM_clock_night2"
+        ],
+        [
+          "MM_clock_night3"
         ]
       ],
       "TimeNeeded": "None",
@@ -96108,10 +96241,10 @@
       ],
       "ConditionalItems": [
         [
-          "time{mm_time, between, NIGHT1_PM_10_00, NIGHT1_AM_05_00}"
+          "MM_clock_night1"
         ],
         [
-          "time{mm_time, between, NIGHT2_PM_10_00, NIGHT2_AM_05_00}"
+          "MM_clock_night2"
         ]
       ],
       "TimeNeeded": "None",
@@ -96125,16 +96258,10 @@
         "MM Milk Bar",
         "MM_MASK_KAFEI",
         "MM_LETTER_TO_MAMA",
+        "MM_clock_night3",
         "MM_clock_filter"
       ],
-      "ConditionalItems": [
-        [
-          "time{mm_time, after, NIGHT3_PM_10_00}"
-        ],
-        [
-          "time{mm_time, between, NIGHT3_PM_06_00, NIGHT3_PM_09_00}"
-        ]
-      ],
+      "ConditionalItems": [],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -96151,58 +96278,72 @@
       "ConditionalItems": [
         [
           "setting{childWallets, false}",
-          "time{mm_time, after, NIGHT3_PM_10_00}"
+          "MM_clock_day2"
         ],
         [
           "setting{childWallets, false}",
-          "time{mm_time, between, NIGHT1_PM_10_00, DAY2_AM_06_00}"
+          "MM_clock_day3"
         ],
         [
           "setting{childWallets, false}",
-          "time{mm_time, between, NIGHT2_PM_10_00, DAY3_AM_06_00}"
+          "MM_clock_night1"
         ],
         [
           "setting{childWallets, false}",
-          "time{mm_time, between, NIGHT3_PM_06_00, NIGHT3_PM_09_00}"
+          "MM_clock_night2"
+        ],
+        [
+          "setting{childWallets, false}",
+          "MM_clock_night3"
         ],
         [
           "setting{childWallets}",
-          "time{mm_time, after, NIGHT3_PM_10_00}",
+          "MM_clock_day2",
           "MM_WALLET, 1"
         ],
         [
           "setting{childWallets}",
-          "time{mm_time, after, NIGHT3_PM_10_00}",
+          "MM_clock_day2",
           "SHARED_WALLET, 1"
         ],
         [
           "setting{childWallets}",
-          "time{mm_time, between, NIGHT1_PM_10_00, DAY2_AM_06_00}",
+          "MM_clock_day3",
           "MM_WALLET, 1"
         ],
         [
           "setting{childWallets}",
-          "time{mm_time, between, NIGHT1_PM_10_00, DAY2_AM_06_00}",
+          "MM_clock_day3",
           "SHARED_WALLET, 1"
         ],
         [
           "setting{childWallets}",
-          "time{mm_time, between, NIGHT2_PM_10_00, DAY3_AM_06_00}",
+          "MM_clock_night1",
           "MM_WALLET, 1"
         ],
         [
           "setting{childWallets}",
-          "time{mm_time, between, NIGHT2_PM_10_00, DAY3_AM_06_00}",
+          "MM_clock_night1",
           "SHARED_WALLET, 1"
         ],
         [
           "setting{childWallets}",
-          "time{mm_time, between, NIGHT3_PM_06_00, NIGHT3_PM_09_00}",
+          "MM_clock_night2",
           "MM_WALLET, 1"
         ],
         [
           "setting{childWallets}",
-          "time{mm_time, between, NIGHT3_PM_06_00, NIGHT3_PM_09_00}",
+          "MM_clock_night2",
+          "SHARED_WALLET, 1"
+        ],
+        [
+          "setting{childWallets}",
+          "MM_clock_night3",
+          "MM_WALLET, 1"
+        ],
+        [
+          "setting{childWallets}",
+          "MM_clock_night3",
           "SHARED_WALLET, 1"
         ]
       ],
@@ -96222,82 +96363,102 @@
       "ConditionalItems": [
         [
           "setting{childWallets, false}",
-          "time{mm_time, after, NIGHT3_PM_10_00}",
+          "MM_clock_day2",
           "MM_WALLET, 1"
         ],
         [
           "setting{childWallets, false}",
-          "time{mm_time, after, NIGHT3_PM_10_00}",
+          "MM_clock_day2",
           "SHARED_WALLET, 1"
         ],
         [
           "setting{childWallets, false}",
-          "time{mm_time, between, NIGHT1_PM_10_00, DAY2_AM_06_00}",
+          "MM_clock_day3",
           "MM_WALLET, 1"
         ],
         [
           "setting{childWallets, false}",
-          "time{mm_time, between, NIGHT1_PM_10_00, DAY2_AM_06_00}",
+          "MM_clock_day3",
           "SHARED_WALLET, 1"
         ],
         [
           "setting{childWallets, false}",
-          "time{mm_time, between, NIGHT2_PM_10_00, DAY3_AM_06_00}",
+          "MM_clock_night1",
           "MM_WALLET, 1"
         ],
         [
           "setting{childWallets, false}",
-          "time{mm_time, between, NIGHT2_PM_10_00, DAY3_AM_06_00}",
+          "MM_clock_night1",
           "SHARED_WALLET, 1"
         ],
         [
           "setting{childWallets, false}",
-          "time{mm_time, between, NIGHT3_PM_06_00, NIGHT3_PM_09_00}",
+          "MM_clock_night2",
           "MM_WALLET, 1"
         ],
         [
           "setting{childWallets, false}",
-          "time{mm_time, between, NIGHT3_PM_06_00, NIGHT3_PM_09_00}",
+          "MM_clock_night2",
+          "SHARED_WALLET, 1"
+        ],
+        [
+          "setting{childWallets, false}",
+          "MM_clock_night3",
+          "MM_WALLET, 1"
+        ],
+        [
+          "setting{childWallets, false}",
+          "MM_clock_night3",
           "SHARED_WALLET, 1"
         ],
         [
           "setting{childWallets}",
-          "time{mm_time, after, NIGHT3_PM_10_00}",
+          "MM_clock_day2",
           "MM_WALLET, 2"
         ],
         [
           "setting{childWallets}",
-          "time{mm_time, after, NIGHT3_PM_10_00}",
+          "MM_clock_day2",
           "SHARED_WALLET, 2"
         ],
         [
           "setting{childWallets}",
-          "time{mm_time, between, NIGHT1_PM_10_00, DAY2_AM_06_00}",
+          "MM_clock_day3",
           "MM_WALLET, 2"
         ],
         [
           "setting{childWallets}",
-          "time{mm_time, between, NIGHT1_PM_10_00, DAY2_AM_06_00}",
+          "MM_clock_day3",
           "SHARED_WALLET, 2"
         ],
         [
           "setting{childWallets}",
-          "time{mm_time, between, NIGHT2_PM_10_00, DAY3_AM_06_00}",
+          "MM_clock_night1",
           "MM_WALLET, 2"
         ],
         [
           "setting{childWallets}",
-          "time{mm_time, between, NIGHT2_PM_10_00, DAY3_AM_06_00}",
+          "MM_clock_night1",
           "SHARED_WALLET, 2"
         ],
         [
           "setting{childWallets}",
-          "time{mm_time, between, NIGHT3_PM_06_00, NIGHT3_PM_09_00}",
+          "MM_clock_night2",
           "MM_WALLET, 2"
         ],
         [
           "setting{childWallets}",
-          "time{mm_time, between, NIGHT3_PM_06_00, NIGHT3_PM_09_00}",
+          "MM_clock_night2",
+          "SHARED_WALLET, 2"
+        ],
+        [
+          "setting{childWallets}",
+          "MM_clock_night3",
+          "MM_WALLET, 2"
+        ],
+        [
+          "setting{childWallets}",
+          "MM_clock_night3",
           "SHARED_WALLET, 2"
         ]
       ],
@@ -96328,44 +96489,86 @@
       "ConditionalItems": [
         [
           "setting{childWallets, false}",
-          "time{mm_time, before, NIGHT1_PM_10_00}"
+          "MM_clock_day1"
         ],
         [
           "setting{childWallets, false}",
-          "time{mm_time, between, DAY2_AM_06_00, NIGHT2_PM_10_00}"
+          "MM_clock_day2"
         ],
         [
           "setting{childWallets, false}",
-          "time{mm_time, between, DAY3_AM_06_00, NIGHT3_PM_10_00}"
+          "MM_clock_day3"
+        ],
+        [
+          "setting{childWallets, false}",
+          "MM_clock_night1"
+        ],
+        [
+          "setting{childWallets, false}",
+          "MM_clock_night2"
+        ],
+        [
+          "setting{childWallets, false}",
+          "MM_clock_night3"
         ],
         [
           "setting{childWallets}",
-          "time{mm_time, before, NIGHT1_PM_10_00}",
+          "MM_clock_day1",
           "MM_WALLET, 1"
         ],
         [
           "setting{childWallets}",
-          "time{mm_time, before, NIGHT1_PM_10_00}",
+          "MM_clock_day1",
           "SHARED_WALLET, 1"
         ],
         [
           "setting{childWallets}",
-          "time{mm_time, between, DAY2_AM_06_00, NIGHT2_PM_10_00}",
+          "MM_clock_day2",
           "MM_WALLET, 1"
         ],
         [
           "setting{childWallets}",
-          "time{mm_time, between, DAY2_AM_06_00, NIGHT2_PM_10_00}",
+          "MM_clock_day2",
           "SHARED_WALLET, 1"
         ],
         [
           "setting{childWallets}",
-          "time{mm_time, between, DAY3_AM_06_00, NIGHT3_PM_10_00}",
+          "MM_clock_day3",
           "MM_WALLET, 1"
         ],
         [
           "setting{childWallets}",
-          "time{mm_time, between, DAY3_AM_06_00, NIGHT3_PM_10_00}",
+          "MM_clock_day3",
+          "SHARED_WALLET, 1"
+        ],
+        [
+          "setting{childWallets}",
+          "MM_clock_night1",
+          "MM_WALLET, 1"
+        ],
+        [
+          "setting{childWallets}",
+          "MM_clock_night1",
+          "SHARED_WALLET, 1"
+        ],
+        [
+          "setting{childWallets}",
+          "MM_clock_night2",
+          "MM_WALLET, 1"
+        ],
+        [
+          "setting{childWallets}",
+          "MM_clock_night2",
+          "SHARED_WALLET, 1"
+        ],
+        [
+          "setting{childWallets}",
+          "MM_clock_night3",
+          "MM_WALLET, 1"
+        ],
+        [
+          "setting{childWallets}",
+          "MM_clock_night3",
           "SHARED_WALLET, 1"
         ]
       ],
@@ -96385,44 +96588,86 @@
       "ConditionalItems": [
         [
           "setting{childWallets, false}",
-          "time{mm_time, before, NIGHT1_PM_10_00}"
+          "MM_clock_day1"
         ],
         [
           "setting{childWallets, false}",
-          "time{mm_time, between, DAY2_AM_06_00, NIGHT2_PM_10_00}"
+          "MM_clock_day2"
         ],
         [
           "setting{childWallets, false}",
-          "time{mm_time, between, DAY3_AM_06_00, NIGHT3_PM_10_00}"
+          "MM_clock_day3"
+        ],
+        [
+          "setting{childWallets, false}",
+          "MM_clock_night1"
+        ],
+        [
+          "setting{childWallets, false}",
+          "MM_clock_night2"
+        ],
+        [
+          "setting{childWallets, false}",
+          "MM_clock_night3"
         ],
         [
           "setting{childWallets}",
-          "time{mm_time, before, NIGHT1_PM_10_00}",
+          "MM_clock_day1",
           "MM_WALLET, 1"
         ],
         [
           "setting{childWallets}",
-          "time{mm_time, before, NIGHT1_PM_10_00}",
+          "MM_clock_day1",
           "SHARED_WALLET, 1"
         ],
         [
           "setting{childWallets}",
-          "time{mm_time, between, DAY2_AM_06_00, NIGHT2_PM_10_00}",
+          "MM_clock_day2",
           "MM_WALLET, 1"
         ],
         [
           "setting{childWallets}",
-          "time{mm_time, between, DAY2_AM_06_00, NIGHT2_PM_10_00}",
+          "MM_clock_day2",
           "SHARED_WALLET, 1"
         ],
         [
           "setting{childWallets}",
-          "time{mm_time, between, DAY3_AM_06_00, NIGHT3_PM_10_00}",
+          "MM_clock_day3",
           "MM_WALLET, 1"
         ],
         [
           "setting{childWallets}",
-          "time{mm_time, between, DAY3_AM_06_00, NIGHT3_PM_10_00}",
+          "MM_clock_day3",
+          "SHARED_WALLET, 1"
+        ],
+        [
+          "setting{childWallets}",
+          "MM_clock_night1",
+          "MM_WALLET, 1"
+        ],
+        [
+          "setting{childWallets}",
+          "MM_clock_night1",
+          "SHARED_WALLET, 1"
+        ],
+        [
+          "setting{childWallets}",
+          "MM_clock_night2",
+          "MM_WALLET, 1"
+        ],
+        [
+          "setting{childWallets}",
+          "MM_clock_night2",
+          "SHARED_WALLET, 1"
+        ],
+        [
+          "setting{childWallets}",
+          "MM_clock_night3",
+          "MM_WALLET, 1"
+        ],
+        [
+          "setting{childWallets}",
+          "MM_clock_night3",
           "SHARED_WALLET, 1"
         ]
       ],
@@ -96456,15 +96701,25 @@
         ],
         [
           "setting{childWallets, false}",
-          "time{mm_time, before, NIGHT1_PM_10_00}",
+          "MM_clock_day1",
           "MM_clock_filter"
         ],
         [
           "setting{childWallets, false}",
-          "time{mm_time, between, DAY2_AM_06_00, NIGHT2_PM_10_00}",
+          "MM_clock_day2",
           "MM_clock_filter"
         ],
         [
+          "setting{childWallets, false}",
+          "MM_clock_filter",
+          "MM_clock_night1"
+        ],
+        [
+          "setting{childWallets, false}",
+          "MM_clock_filter",
+          "MM_clock_night2"
+        ],
+        [
           "setting{childWallets}",
           "MM_is_day3",
           "MM_WALLET, 1"
@@ -96476,26 +96731,50 @@
         ],
         [
           "setting{childWallets}",
-          "time{mm_time, before, NIGHT1_PM_10_00}",
+          "MM_clock_day1",
           "MM_clock_filter",
           "MM_WALLET, 1"
         ],
         [
           "setting{childWallets}",
-          "time{mm_time, before, NIGHT1_PM_10_00}",
+          "MM_clock_day1",
           "MM_clock_filter",
           "SHARED_WALLET, 1"
         ],
         [
           "setting{childWallets}",
-          "time{mm_time, between, DAY2_AM_06_00, NIGHT2_PM_10_00}",
+          "MM_clock_day2",
           "MM_clock_filter",
           "MM_WALLET, 1"
         ],
         [
           "setting{childWallets}",
-          "time{mm_time, between, DAY2_AM_06_00, NIGHT2_PM_10_00}",
+          "MM_clock_day2",
           "MM_clock_filter",
+          "SHARED_WALLET, 1"
+        ],
+        [
+          "setting{childWallets}",
+          "MM_clock_filter",
+          "MM_clock_night1",
+          "MM_WALLET, 1"
+        ],
+        [
+          "setting{childWallets}",
+          "MM_clock_filter",
+          "MM_clock_night1",
+          "SHARED_WALLET, 1"
+        ],
+        [
+          "setting{childWallets}",
+          "MM_clock_filter",
+          "MM_clock_night2",
+          "MM_WALLET, 1"
+        ],
+        [
+          "setting{childWallets}",
+          "MM_clock_filter",
+          "MM_clock_night2",
           "SHARED_WALLET, 1"
         ]
       ],
@@ -96613,14 +96892,23 @@
       "Id": "MM_HD_REWARD_1_EVENT",
       "RequiredItems": [
         "MM Honey & Darling Game",
-        "time{mm_time, before, NIGHT1_PM_10_00}",
         "MM_clock_filter"
       ],
       "ConditionalItems": [
         [
+          "MM_clock_day1",
           "MM_has_bomb_bag"
         ],
         [
+          "MM_clock_day1",
+          "MM_has_bombchu_license"
+        ],
+        [
+          "MM_clock_night1",
+          "MM_has_bomb_bag"
+        ],
+        [
+          "MM_clock_night1",
           "MM_has_bombchu_license"
         ]
       ],
@@ -96634,10 +96922,16 @@
       "RequiredItems": [
         "MM Honey & Darling Game",
         "MM_has_bomb_bag",
-        "time{mm_time, between, DAY2_AM_06_00, NIGHT2_PM_10_00}",
         "MM_clock_filter"
       ],
-      "ConditionalItems": [],
+      "ConditionalItems": [
+        [
+          "MM_clock_day2"
+        ],
+        [
+          "MM_clock_night2"
+        ]
+      ],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -96690,7 +96984,7 @@
       "Id": "MM Stock Pot Inn Room Key",
       "RequiredItems": [
         "MM Stock Pot Inn",
-        "time{mm_time, between, DAY1_PM_01_45, DAY1_PM_04_00}",
+        "MM_clock_day1",
         "MM_clock_filter"
       ],
       "ConditionalItems": [],
@@ -96718,7 +97012,7 @@
         "MM_SUN_MASK_EVENT",
         "MM_DELIVER_PENDANT_EVENT",
         "MM_MEET_ANJU_EVENT",
-        "time{mm_time, after, NIGHT3_AM_04_00}",
+        "MM_clock_night3",
         "MM_clock_filter"
       ],
       "ConditionalItems": [],
@@ -96833,10 +97127,16 @@
       "RequiredItems": [
         "MM Stock Pot Inn",
         "MM_MASK_KAFEI",
-        "time{mm_time, between, DAY1_PM_01_45, NIGHT1_PM_09_00}",
         "MM_clock_filter"
       ],
-      "ConditionalItems": [],
+      "ConditionalItems": [
+        [
+          "MM_clock_day1"
+        ],
+        [
+          "MM_clock_night1"
+        ]
+      ],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -96847,32 +97147,66 @@
       "RequiredItems": [
         "MM Stock Pot Inn",
         "MM_SETUP_MEET_EVENT",
-        "time{mm_time, between, NIGHT1_AM_12_00, DAY2_AM_06_00}",
         "MM_clock_filter"
       ],
       "ConditionalItems": [
         [
-          "setting{erIndoorsExtra}"
+          "setting{erIndoorsExtra}",
+          "MM_clock_day2"
+        ],
+        [
+          "setting{erIndoorsExtra}",
+          "MM_clock_night1"
         ],
         [
           "setting{erIndoorsExtra, false}",
+          "MM_clock_day2",
           "MM_has_hover_boots"
         ],
         [
           "setting{erIndoorsExtra, false}",
+          "MM_clock_day2",
           "MM_MASK_DEKU"
         ],
         [
           "setting{erIndoorsExtra, false}",
+          "MM_clock_day2",
           "MM_ROOM_KEY"
         ],
         [
           "setting{erIndoorsExtra, false}",
+          "MM_clock_day2",
           "MM_SPI_ROOF_FARORE_EVENT"
         ],
         [
           "setting{erIndoorsExtra, false}",
-          "trick{MM_STOCK_POT_WAIT}"
+          "MM_clock_night1",
+          "MM_has_hover_boots"
+        ],
+        [
+          "setting{erIndoorsExtra, false}",
+          "MM_clock_night1",
+          "MM_MASK_DEKU"
+        ],
+        [
+          "setting{erIndoorsExtra, false}",
+          "MM_clock_night1",
+          "MM_ROOM_KEY"
+        ],
+        [
+          "setting{erIndoorsExtra, false}",
+          "MM_clock_night1",
+          "MM_SPI_ROOF_FARORE_EVENT"
+        ],
+        [
+          "setting{erIndoorsExtra, false}",
+          "trick{MM_STOCK_POT_WAIT}",
+          "MM_clock_day2"
+        ],
+        [
+          "setting{erIndoorsExtra, false}",
+          "trick{MM_STOCK_POT_WAIT}",
+          "MM_clock_night1"
         ]
       ],
       "TimeNeeded": "None",
@@ -96889,10 +97223,13 @@
       ],
       "ConditionalItems": [
         [
-          "time{mm_time, between, DAY2_AM_06_00, NIGHT2_PM_09_00}"
+          "MM_clock_day2"
         ],
         [
-          "time{mm_time, between, DAY3_AM_06_00, DAY3_AM_11_30}"
+          "MM_clock_day3"
+        ],
+        [
+          "MM_clock_night2"
         ]
       ],
       "TimeNeeded": "None",
@@ -97105,10 +97442,16 @@
       "Id": "MM_DEKU_REWARD_1_EVENT",
       "RequiredItems": [
         "MM Deku Playground",
-        "time{mm_time, between, DAY1_AM_06_00, NIGHT1_AM_12_00}",
         "MM_clock_filter"
       ],
-      "ConditionalItems": [],
+      "ConditionalItems": [
+        [
+          "MM_clock_day1"
+        ],
+        [
+          "MM_clock_night1"
+        ]
+      ],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -97118,10 +97461,16 @@
       "Id": "MM_DEKU_REWARD_2_EVENT",
       "RequiredItems": [
         "MM Deku Playground",
-        "time{mm_time, between, DAY2_AM_06_00, NIGHT2_AM_12_00}",
         "MM_clock_filter"
       ],
-      "ConditionalItems": [],
+      "ConditionalItems": [
+        [
+          "MM_clock_day2"
+        ],
+        [
+          "MM_clock_night2"
+        ]
+      ],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -97131,10 +97480,16 @@
       "Id": "MM_DEKU_REWARD_3_EVENT",
       "RequiredItems": [
         "MM Deku Playground",
-        "time{mm_time, between, DAY3_AM_06_00, NIGHT3_AM_12_00}",
         "MM_clock_filter"
       ],
-      "ConditionalItems": [],
+      "ConditionalItems": [
+        [
+          "MM_clock_day3"
+        ],
+        [
+          "MM_clock_night3"
+        ]
+      ],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -102064,13 +102419,22 @@
       ],
       "ConditionalItems": [
         [
-          "time{mm_time, before, NIGHT1_PM_10_00}"
+          "MM_clock_day1"
         ],
         [
-          "time{mm_time, between, DAY2_AM_06_00, NIGHT2_PM_10_00}"
+          "MM_clock_day2"
         ],
         [
-          "time{mm_time, between, DAY3_AM_06_00, NIGHT3_PM_10_00}"
+          "MM_clock_day3"
+        ],
+        [
+          "MM_clock_night1"
+        ],
+        [
+          "MM_clock_night2"
+        ],
+        [
+          "MM_clock_night3"
         ]
       ],
       "TimeNeeded": "None",
@@ -102112,44 +102476,86 @@
       "ConditionalItems": [
         [
           "setting{childWallets, false}",
-          "time{mm_time, before, NIGHT1_PM_10_00}"
+          "MM_clock_day1"
         ],
         [
           "setting{childWallets, false}",
-          "time{mm_time, between, DAY2_AM_06_00, NIGHT2_PM_10_00}"
+          "MM_clock_day2"
         ],
         [
           "setting{childWallets, false}",
-          "time{mm_time, between, DAY3_AM_06_00, NIGHT3_PM_10_00}"
+          "MM_clock_day3"
+        ],
+        [
+          "setting{childWallets, false}",
+          "MM_clock_night1"
+        ],
+        [
+          "setting{childWallets, false}",
+          "MM_clock_night2"
+        ],
+        [
+          "setting{childWallets, false}",
+          "MM_clock_night3"
         ],
         [
           "setting{childWallets}",
-          "time{mm_time, before, NIGHT1_PM_10_00}",
+          "MM_clock_day1",
           "MM_WALLET, 1"
         ],
         [
           "setting{childWallets}",
-          "time{mm_time, before, NIGHT1_PM_10_00}",
+          "MM_clock_day1",
           "SHARED_WALLET, 1"
         ],
         [
           "setting{childWallets}",
-          "time{mm_time, between, DAY2_AM_06_00, NIGHT2_PM_10_00}",
+          "MM_clock_day2",
           "MM_WALLET, 1"
         ],
         [
           "setting{childWallets}",
-          "time{mm_time, between, DAY2_AM_06_00, NIGHT2_PM_10_00}",
+          "MM_clock_day2",
           "SHARED_WALLET, 1"
         ],
         [
           "setting{childWallets}",
-          "time{mm_time, between, DAY3_AM_06_00, NIGHT3_PM_10_00}",
+          "MM_clock_day3",
           "MM_WALLET, 1"
         ],
         [
           "setting{childWallets}",
-          "time{mm_time, between, DAY3_AM_06_00, NIGHT3_PM_10_00}",
+          "MM_clock_day3",
+          "SHARED_WALLET, 1"
+        ],
+        [
+          "setting{childWallets}",
+          "MM_clock_night1",
+          "MM_WALLET, 1"
+        ],
+        [
+          "setting{childWallets}",
+          "MM_clock_night1",
+          "SHARED_WALLET, 1"
+        ],
+        [
+          "setting{childWallets}",
+          "MM_clock_night2",
+          "MM_WALLET, 1"
+        ],
+        [
+          "setting{childWallets}",
+          "MM_clock_night2",
+          "SHARED_WALLET, 1"
+        ],
+        [
+          "setting{childWallets}",
+          "MM_clock_night3",
+          "MM_WALLET, 1"
+        ],
+        [
+          "setting{childWallets}",
+          "MM_clock_night3",
           "SHARED_WALLET, 1"
         ]
       ],
@@ -102169,44 +102575,86 @@
       "ConditionalItems": [
         [
           "setting{childWallets, false}",
-          "time{mm_time, before, NIGHT1_PM_10_00}"
+          "MM_clock_day1"
         ],
         [
           "setting{childWallets, false}",
-          "time{mm_time, between, DAY2_AM_06_00, NIGHT2_PM_10_00}"
+          "MM_clock_day2"
         ],
         [
           "setting{childWallets, false}",
-          "time{mm_time, between, DAY3_AM_06_00, NIGHT3_PM_10_00}"
+          "MM_clock_day3"
+        ],
+        [
+          "setting{childWallets, false}",
+          "MM_clock_night1"
+        ],
+        [
+          "setting{childWallets, false}",
+          "MM_clock_night2"
+        ],
+        [
+          "setting{childWallets, false}",
+          "MM_clock_night3"
         ],
         [
           "setting{childWallets}",
-          "time{mm_time, before, NIGHT1_PM_10_00}",
+          "MM_clock_day1",
           "MM_WALLET, 1"
         ],
         [
           "setting{childWallets}",
-          "time{mm_time, before, NIGHT1_PM_10_00}",
+          "MM_clock_day1",
           "SHARED_WALLET, 1"
         ],
         [
           "setting{childWallets}",
-          "time{mm_time, between, DAY2_AM_06_00, NIGHT2_PM_10_00}",
+          "MM_clock_day2",
           "MM_WALLET, 1"
         ],
         [
           "setting{childWallets}",
-          "time{mm_time, between, DAY2_AM_06_00, NIGHT2_PM_10_00}",
+          "MM_clock_day2",
           "SHARED_WALLET, 1"
         ],
         [
           "setting{childWallets}",
-          "time{mm_time, between, DAY3_AM_06_00, NIGHT3_PM_10_00}",
+          "MM_clock_day3",
           "MM_WALLET, 1"
         ],
         [
           "setting{childWallets}",
-          "time{mm_time, between, DAY3_AM_06_00, NIGHT3_PM_10_00}",
+          "MM_clock_day3",
+          "SHARED_WALLET, 1"
+        ],
+        [
+          "setting{childWallets}",
+          "MM_clock_night1",
+          "MM_WALLET, 1"
+        ],
+        [
+          "setting{childWallets}",
+          "MM_clock_night1",
+          "SHARED_WALLET, 1"
+        ],
+        [
+          "setting{childWallets}",
+          "MM_clock_night2",
+          "MM_WALLET, 1"
+        ],
+        [
+          "setting{childWallets}",
+          "MM_clock_night2",
+          "SHARED_WALLET, 1"
+        ],
+        [
+          "setting{childWallets}",
+          "MM_clock_night3",
+          "MM_WALLET, 1"
+        ],
+        [
+          "setting{childWallets}",
+          "MM_clock_night3",
           "SHARED_WALLET, 1"
         ]
       ],
@@ -103698,10 +104146,10 @@
       "IsTrick": false
     },
     {
-      "Id": "MM Woods of Mystery Grass NW 1",
+      "Id": "MM Woods of Mystery Grass SW 1",
       "RequiredItems": [
         "MM Woods of Mystery",
-        "MM_final_day"
+        "MM_first_day"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -103710,10 +104158,55 @@
       "IsTrick": false
     },
     {
-      "Id": "MM Woods of Mystery Grass NW 2",
+      "Id": "MM Woods of Mystery Grass SW 2",
       "RequiredItems": [
         "MM Woods of Mystery",
-        "MM_final_day"
+        "MM_first_day"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "MM Woods of Mystery Grass S 1",
+      "RequiredItems": [
+        "MM Woods of Mystery"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "MM Woods of Mystery Grass S 2",
+      "RequiredItems": [
+        "MM Woods of Mystery"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "MM Woods of Mystery Grass S 3",
+      "RequiredItems": [
+        "MM Woods of Mystery"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "MM Woods of Mystery Grass SE",
+      "RequiredItems": [
+        "MM Woods of Mystery",
+        "MM_second_day"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -103734,51 +104227,6 @@
     },
     {
       "Id": "MM Woods of Mystery Grass W 2",
-      "RequiredItems": [
-        "MM Woods of Mystery"
-      ],
-      "ConditionalItems": [],
-      "TimeNeeded": "None",
-      "TimeAvailable": "None",
-      "TimeSetup": "None",
-      "IsTrick": false
-    },
-    {
-      "Id": "MM Woods of Mystery Grass W 3",
-      "RequiredItems": [
-        "MM Woods of Mystery"
-      ],
-      "ConditionalItems": [],
-      "TimeNeeded": "None",
-      "TimeAvailable": "None",
-      "TimeSetup": "None",
-      "IsTrick": false
-    },
-    {
-      "Id": "MM Woods of Mystery Grass SW",
-      "RequiredItems": [
-        "MM Woods of Mystery",
-        "MM_first_day"
-      ],
-      "ConditionalItems": [],
-      "TimeNeeded": "None",
-      "TimeAvailable": "None",
-      "TimeSetup": "None",
-      "IsTrick": false
-    },
-    {
-      "Id": "MM Woods of Mystery Grass N 1",
-      "RequiredItems": [
-        "MM Woods of Mystery"
-      ],
-      "ConditionalItems": [],
-      "TimeNeeded": "None",
-      "TimeAvailable": "None",
-      "TimeSetup": "None",
-      "IsTrick": false
-    },
-    {
-      "Id": "MM Woods of Mystery Grass N 2",
       "RequiredItems": [
         "MM Woods of Mystery"
       ],
@@ -103833,7 +104281,7 @@
       "IsTrick": false
     },
     {
-      "Id": "MM Woods of Mystery Grass S 1",
+      "Id": "MM Woods of Mystery Grass E 1",
       "RequiredItems": [
         "MM Woods of Mystery"
       ],
@@ -103844,7 +104292,53 @@
       "IsTrick": false
     },
     {
-      "Id": "MM Woods of Mystery Grass S 2",
+      "Id": "MM Woods of Mystery Grass E 2",
+      "RequiredItems": [
+        "MM Woods of Mystery"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "MM Woods of Mystery Grass NW 1",
+      "RequiredItems": [
+        "MM Woods of Mystery",
+        "MM_final_day"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "MM Woods of Mystery Grass NW 2",
+      "RequiredItems": [
+        "MM Woods of Mystery",
+        "MM_final_day"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "MM Woods of Mystery Grass N 1",
+      "RequiredItems": [
+        "MM Woods of Mystery"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "MM Woods of Mystery Grass N 2",
       "RequiredItems": [
         "MM Woods of Mystery"
       ],
@@ -103877,7 +104371,7 @@
       "IsTrick": false
     },
     {
-      "Id": "MM Woods of Mystery Grass E 1",
+      "Id": "MM Woods of Mystery Grass NE 3",
       "RequiredItems": [
         "MM Woods of Mystery"
       ],
@@ -103888,7 +104382,7 @@
       "IsTrick": false
     },
     {
-      "Id": "MM Woods of Mystery Grass E 2",
+      "Id": "MM Woods of Mystery Grass NE 4",
       "RequiredItems": [
         "MM Woods of Mystery"
       ],
@@ -103899,58 +104393,9 @@
       "IsTrick": false
     },
     {
-      "Id": "MM Woods of Mystery Grass SE 1",
+      "Id": "MM Woods of Mystery Grass NE 5",
       "RequiredItems": [
-        "MM Woods of Mystery",
-        "MM_second_day"
-      ],
-      "ConditionalItems": [],
-      "TimeNeeded": "None",
-      "TimeAvailable": "None",
-      "TimeSetup": "None",
-      "IsTrick": false
-    },
-    {
-      "Id": "MM Woods of Mystery Grass SE 2",
-      "RequiredItems": [
-        "MM Woods of Mystery",
-        "MM_second_day"
-      ],
-      "ConditionalItems": [],
-      "TimeNeeded": "None",
-      "TimeAvailable": "None",
-      "TimeSetup": "None",
-      "IsTrick": false
-    },
-    {
-      "Id": "MM Woods of Mystery Grass SE 3",
-      "RequiredItems": [
-        "MM Woods of Mystery",
-        "MM_second_day"
-      ],
-      "ConditionalItems": [],
-      "TimeNeeded": "None",
-      "TimeAvailable": "None",
-      "TimeSetup": "None",
-      "IsTrick": false
-    },
-    {
-      "Id": "MM Woods of Mystery Grass SE 4",
-      "RequiredItems": [
-        "MM Woods of Mystery",
-        "MM_second_day"
-      ],
-      "ConditionalItems": [],
-      "TimeNeeded": "None",
-      "TimeAvailable": "None",
-      "TimeSetup": "None",
-      "IsTrick": false
-    },
-    {
-      "Id": "MM Woods of Mystery Grass SE 5",
-      "RequiredItems": [
-        "MM Woods of Mystery",
-        "MM_second_day"
+        "MM Woods of Mystery"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -111089,8 +111534,12 @@
           "MM_can_use_keg"
         ],
         [
-          "time{mm_time, after, DAY3_AM_06_00}",
+          "MM_clock_day3",
           "MM_clock_filter"
+        ],
+        [
+          "MM_clock_filter",
+          "MM_clock_night3"
         ],
         [
           "trick{MM_OOB_MOVEMENT}",
@@ -111150,8 +111599,12 @@
           "MM_can_use_keg"
         ],
         [
-          "time{mm_time, after, DAY3_AM_06_00}",
+          "MM_clock_day3",
           "MM_clock_filter"
+        ],
+        [
+          "MM_clock_filter",
+          "MM_clock_night3"
         ],
         [
           "trick{MM_OOB_MOVEMENT}",
@@ -111181,8 +111634,12 @@
       ],
       "ConditionalItems": [
         [
-          "time{mm_time, before, NIGHT1_PM_06_00}",
+          "MM_clock_day1",
           "MM_clock_filter"
+        ],
+        [
+          "MM_clock_filter",
+          "MM_clock_night1"
         ],
         [
           "trick{MM_RANCH_FARORE}",
@@ -111211,17 +111668,16 @@
       "Id": "MM Romani Ranch Cremia Escort",
       "RequiredItems": [
         "MM Romani Ranch",
-        "MM_ALIENS_EVENT"
+        "MM_ALIENS_EVENT",
+        "MM_clock_night2"
       ],
       "ConditionalItems": [
         [
-          "time{mm_time, at, NIGHT2_PM_06_00}",
           "MM_clock_filter"
         ],
         [
           "trick{MM_RANCH_FARORE}",
-          "MM_can_use_farore",
-          "MM_clock_night2"
+          "MM_can_use_farore"
         ]
       ],
       "TimeNeeded": "None",
@@ -111875,13 +112331,22 @@
       ],
       "ConditionalItems": [
         [
-          "time{mm_time, between, DAY1_AM_06_00, NIGHT1_PM_08_00}"
+          "MM_clock_day1"
         ],
         [
-          "time{mm_time, between, DAY2_AM_06_00, NIGHT2_PM_08_00}"
+          "MM_clock_day2"
         ],
         [
-          "time{mm_time, between, DAY3_AM_06_00, NIGHT3_PM_08_00}"
+          "MM_clock_day3"
+        ],
+        [
+          "MM_clock_night1"
+        ],
+        [
+          "MM_clock_night2"
+        ],
+        [
+          "MM_clock_night3"
         ]
       ],
       "TimeNeeded": "None",
@@ -111897,13 +112362,22 @@
       ],
       "ConditionalItems": [
         [
-          "time{mm_time, between, DAY1_AM_06_00, NIGHT1_PM_08_00}"
+          "MM_clock_day1"
         ],
         [
-          "time{mm_time, between, DAY2_AM_06_00, NIGHT2_PM_08_00}"
+          "MM_clock_day2"
         ],
         [
-          "time{mm_time, between, DAY3_AM_06_00, NIGHT3_PM_08_00}"
+          "MM_clock_day3"
+        ],
+        [
+          "MM_clock_night1"
+        ],
+        [
+          "MM_clock_night2"
+        ],
+        [
+          "MM_clock_night3"
         ]
       ],
       "TimeNeeded": "None",
@@ -111930,13 +112404,22 @@
       ],
       "ConditionalItems": [
         [
-          "time{mm_time, between, DAY1_AM_06_00, NIGHT1_PM_08_00}"
+          "MM_clock_day1"
         ],
         [
-          "time{mm_time, between, DAY2_AM_06_00, NIGHT2_PM_08_00}"
+          "MM_clock_day2"
         ],
         [
-          "time{mm_time, between, DAY3_AM_06_00, NIGHT3_PM_08_00}"
+          "MM_clock_day3"
+        ],
+        [
+          "MM_clock_night1"
+        ],
+        [
+          "MM_clock_night2"
+        ],
+        [
+          "MM_clock_night3"
         ]
       ],
       "TimeNeeded": "None",
@@ -111948,17 +112431,16 @@
       "Id": "MM_ALIENS_EVENT",
       "RequiredItems": [
         "MM Romani Ranch",
+        "MM_clock_night1",
         "MM_has_arrows"
       ],
       "ConditionalItems": [
         [
-          "time{mm_time, at, NIGHT1_AM_02_30}",
           "MM_clock_filter"
         ],
         [
           "trick{MM_RANCH_FARORE}",
-          "MM_can_use_farore",
-          "MM_clock_night1"
+          "MM_can_use_farore"
         ]
       ],
       "TimeNeeded": "None",
@@ -112104,8 +112586,8 @@
           "MM_ALIENS_EVENT"
         ],
         [
-          "time{mm_time, between, NIGHT1_PM_06_00, NIGHT1_AM_02_30}",
-          "MM_clock_filter"
+          "MM_clock_filter",
+          "MM_clock_night1"
         ]
       ],
       "TimeNeeded": "None",
@@ -112124,8 +112606,8 @@
           "MM_ALIENS_EVENT"
         ],
         [
-          "time{mm_time, between, NIGHT1_PM_06_00, NIGHT1_AM_02_30}",
-          "MM_clock_filter"
+          "MM_clock_filter",
+          "MM_clock_night1"
         ]
       ],
       "TimeNeeded": "None",
@@ -112144,8 +112626,8 @@
           "MM_ALIENS_EVENT"
         ],
         [
-          "time{mm_time, between, NIGHT1_PM_06_00, NIGHT1_AM_02_30}",
-          "MM_clock_filter"
+          "MM_clock_filter",
+          "MM_clock_night1"
         ]
       ],
       "TimeNeeded": "None",
@@ -112250,104 +112732,206 @@
       "ConditionalItems": [
         [
           "setting{childWallets, false}",
-          "time{mm_time, between, DAY1_AM_07_00, NIGHT1_AM_04_00}",
-          "MM_can_hookshot_short"
+          "MM_can_hookshot_short",
+          "MM_clock_day1"
         ],
         [
           "setting{childWallets, false}",
-          "time{mm_time, between, DAY1_AM_07_00, NIGHT1_AM_04_00}",
-          "MM_can_use_ice_arrows"
+          "MM_can_hookshot_short",
+          "MM_clock_day2"
         ],
         [
           "setting{childWallets, false}",
-          "time{mm_time, between, DAY2_AM_07_00, NIGHT2_AM_04_00}",
-          "MM_can_hookshot_short"
+          "MM_can_hookshot_short",
+          "MM_clock_day3"
         ],
         [
           "setting{childWallets, false}",
-          "time{mm_time, between, DAY2_AM_07_00, NIGHT2_AM_04_00}",
-          "MM_can_use_ice_arrows"
+          "MM_can_hookshot_short",
+          "MM_clock_night1"
         ],
         [
           "setting{childWallets, false}",
-          "time{mm_time, between, DAY3_AM_07_00, NIGHT3_AM_04_00}",
-          "MM_can_hookshot_short"
+          "MM_can_hookshot_short",
+          "MM_clock_night2"
         ],
         [
           "setting{childWallets, false}",
-          "time{mm_time, between, DAY3_AM_07_00, NIGHT3_AM_04_00}",
-          "MM_can_use_ice_arrows"
+          "MM_can_hookshot_short",
+          "MM_clock_night3"
+        ],
+        [
+          "setting{childWallets, false}",
+          "MM_can_use_ice_arrows",
+          "MM_clock_day1"
+        ],
+        [
+          "setting{childWallets, false}",
+          "MM_can_use_ice_arrows",
+          "MM_clock_day2"
+        ],
+        [
+          "setting{childWallets, false}",
+          "MM_can_use_ice_arrows",
+          "MM_clock_day3"
+        ],
+        [
+          "setting{childWallets, false}",
+          "MM_can_use_ice_arrows",
+          "MM_clock_night1"
+        ],
+        [
+          "setting{childWallets, false}",
+          "MM_can_use_ice_arrows",
+          "MM_clock_night2"
+        ],
+        [
+          "setting{childWallets, false}",
+          "MM_can_use_ice_arrows",
+          "MM_clock_night3"
         ],
         [
           "setting{childWallets}",
-          "time{mm_time, between, DAY1_AM_07_00, NIGHT1_AM_04_00}",
           "MM_can_hookshot_short",
+          "MM_clock_day1",
           "MM_WALLET, 1"
         ],
         [
           "setting{childWallets}",
-          "time{mm_time, between, DAY1_AM_07_00, NIGHT1_AM_04_00}",
           "MM_can_hookshot_short",
+          "MM_clock_day1",
           "SHARED_WALLET, 1"
         ],
         [
           "setting{childWallets}",
-          "time{mm_time, between, DAY1_AM_07_00, NIGHT1_AM_04_00}",
-          "MM_can_use_ice_arrows",
+          "MM_can_hookshot_short",
+          "MM_clock_day2",
           "MM_WALLET, 1"
         ],
         [
           "setting{childWallets}",
-          "time{mm_time, between, DAY1_AM_07_00, NIGHT1_AM_04_00}",
-          "MM_can_use_ice_arrows",
+          "MM_can_hookshot_short",
+          "MM_clock_day2",
           "SHARED_WALLET, 1"
         ],
         [
           "setting{childWallets}",
-          "time{mm_time, between, DAY2_AM_07_00, NIGHT2_AM_04_00}",
           "MM_can_hookshot_short",
+          "MM_clock_day3",
           "MM_WALLET, 1"
         ],
         [
           "setting{childWallets}",
-          "time{mm_time, between, DAY2_AM_07_00, NIGHT2_AM_04_00}",
           "MM_can_hookshot_short",
+          "MM_clock_day3",
           "SHARED_WALLET, 1"
         ],
         [
           "setting{childWallets}",
-          "time{mm_time, between, DAY2_AM_07_00, NIGHT2_AM_04_00}",
-          "MM_can_use_ice_arrows",
+          "MM_can_hookshot_short",
+          "MM_clock_night1",
           "MM_WALLET, 1"
         ],
         [
           "setting{childWallets}",
-          "time{mm_time, between, DAY2_AM_07_00, NIGHT2_AM_04_00}",
-          "MM_can_use_ice_arrows",
+          "MM_can_hookshot_short",
+          "MM_clock_night1",
           "SHARED_WALLET, 1"
         ],
         [
           "setting{childWallets}",
-          "time{mm_time, between, DAY3_AM_07_00, NIGHT3_AM_04_00}",
           "MM_can_hookshot_short",
+          "MM_clock_night2",
           "MM_WALLET, 1"
         ],
         [
           "setting{childWallets}",
-          "time{mm_time, between, DAY3_AM_07_00, NIGHT3_AM_04_00}",
           "MM_can_hookshot_short",
+          "MM_clock_night2",
           "SHARED_WALLET, 1"
         ],
         [
           "setting{childWallets}",
-          "time{mm_time, between, DAY3_AM_07_00, NIGHT3_AM_04_00}",
-          "MM_can_use_ice_arrows",
+          "MM_can_hookshot_short",
+          "MM_clock_night3",
           "MM_WALLET, 1"
         ],
         [
           "setting{childWallets}",
-          "time{mm_time, between, DAY3_AM_07_00, NIGHT3_AM_04_00}",
+          "MM_can_hookshot_short",
+          "MM_clock_night3",
+          "SHARED_WALLET, 1"
+        ],
+        [
+          "setting{childWallets}",
           "MM_can_use_ice_arrows",
+          "MM_clock_day1",
+          "MM_WALLET, 1"
+        ],
+        [
+          "setting{childWallets}",
+          "MM_can_use_ice_arrows",
+          "MM_clock_day1",
+          "SHARED_WALLET, 1"
+        ],
+        [
+          "setting{childWallets}",
+          "MM_can_use_ice_arrows",
+          "MM_clock_day2",
+          "MM_WALLET, 1"
+        ],
+        [
+          "setting{childWallets}",
+          "MM_can_use_ice_arrows",
+          "MM_clock_day2",
+          "SHARED_WALLET, 1"
+        ],
+        [
+          "setting{childWallets}",
+          "MM_can_use_ice_arrows",
+          "MM_clock_day3",
+          "MM_WALLET, 1"
+        ],
+        [
+          "setting{childWallets}",
+          "MM_can_use_ice_arrows",
+          "MM_clock_day3",
+          "SHARED_WALLET, 1"
+        ],
+        [
+          "setting{childWallets}",
+          "MM_can_use_ice_arrows",
+          "MM_clock_night1",
+          "MM_WALLET, 1"
+        ],
+        [
+          "setting{childWallets}",
+          "MM_can_use_ice_arrows",
+          "MM_clock_night1",
+          "SHARED_WALLET, 1"
+        ],
+        [
+          "setting{childWallets}",
+          "MM_can_use_ice_arrows",
+          "MM_clock_night2",
+          "MM_WALLET, 1"
+        ],
+        [
+          "setting{childWallets}",
+          "MM_can_use_ice_arrows",
+          "MM_clock_night2",
+          "SHARED_WALLET, 1"
+        ],
+        [
+          "setting{childWallets}",
+          "MM_can_use_ice_arrows",
+          "MM_clock_night3",
+          "MM_WALLET, 1"
+        ],
+        [
+          "setting{childWallets}",
+          "MM_can_use_ice_arrows",
+          "MM_clock_night3",
           "SHARED_WALLET, 1"
         ]
       ],
@@ -117427,7 +118011,7 @@
       "RequiredItems": [
         "MM Ikana Valley",
         "MM_MEET_KAFEI_EVENT",
-        "time{mm_time, at, NIGHT3_PM_06_00}",
+        "MM_clock_night3",
         "MM_clock_filter"
       ],
       "ConditionalItems": [],
@@ -132187,7 +132771,6 @@
     {
       "Id": "MM_is_day1",
       "RequiredItems": [
-        "time{mm_time, before, NIGHT1_PM_06_00}",
         "MM_clock_day1"
       ],
       "ConditionalItems": [],
@@ -132199,7 +132782,6 @@
     {
       "Id": "MM_is_night1",
       "RequiredItems": [
-        "time{mm_time, between, NIGHT1_PM_06_00, DAY2_AM_06_00}",
         "MM_clock_night1"
       ],
       "ConditionalItems": [],
@@ -132211,7 +132793,6 @@
     {
       "Id": "MM_is_day2",
       "RequiredItems": [
-        "time{mm_time, between, DAY2_AM_06_00, NIGHT2_PM_06_00}",
         "MM_clock_day2"
       ],
       "ConditionalItems": [],
@@ -132223,7 +132804,6 @@
     {
       "Id": "MM_is_night2",
       "RequiredItems": [
-        "time{mm_time, between, NIGHT2_PM_06_00, DAY3_AM_06_00}",
         "MM_clock_night2"
       ],
       "ConditionalItems": [],
@@ -132235,7 +132815,6 @@
     {
       "Id": "MM_is_day3",
       "RequiredItems": [
-        "time{mm_time, between, DAY3_AM_06_00, NIGHT3_PM_06_00}",
         "MM_clock_day3"
       ],
       "ConditionalItems": [],
@@ -132247,7 +132826,6 @@
     {
       "Id": "MM_is_night3",
       "RequiredItems": [
-        "time{mm_time, after, NIGHT3_PM_06_00}",
         "MM_clock_night3"
       ],
       "ConditionalItems": [],
@@ -132380,13 +132958,19 @@
       ],
       "ConditionalItems": [
         [
-          "time{mm_time, after, NIGHT3_AM_12_00}"
+          "MM_clock_day2"
         ],
         [
-          "time{mm_time, between, NIGHT1_AM_12_00, DAY2_AM_06_00}"
+          "MM_clock_day3"
         ],
         [
-          "time{mm_time, between, NIGHT2_AM_12_00, DAY3_AM_06_00}"
+          "MM_clock_night1"
+        ],
+        [
+          "MM_clock_night2"
+        ],
+        [
+          "MM_clock_night3"
         ]
       ],
       "TimeNeeded": "None",
@@ -134215,7 +134799,6 @@
         [
           "setting{erMoon}",
           "setting{moonCrash, cycle}",
-          "time{mm_time, before, NIGHT3_AM_12_00}",
           "MM_clock_filter"
         ],
         [
@@ -134235,7 +134818,6 @@
         [
           "available{MM_is_goal_triforce, false}",
           "setting{erMoon}",
-          "time{mm_time, before, NIGHT3_AM_12_00}",
           "trick{MM_MAJORA_LOGIC}",
           "MM_clock_filter",
           "MM_MAJORA_EVENT"

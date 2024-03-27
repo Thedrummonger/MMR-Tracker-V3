@@ -83,6 +83,8 @@ namespace CLIFrontEnd
                     Console.WriteLine("Use h to show Help Menu");
                 }
 
+                if (!string.IsNullOrWhiteSpace(Filter)) { Console.WriteLine($"FILTER: {Filter}"); }
+
                 var input = Console.ReadLine() ?? "";
                 if (input.Equals("x", StringComparison.CurrentCultureIgnoreCase))
                 {
