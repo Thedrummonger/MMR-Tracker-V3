@@ -191,7 +191,6 @@ namespace TestingForm.GameDataCreation.OOTMMV3
                     Times.Add(map[i]);
                     if (i == EndTime) { break; }
                 }
-                Debug.WriteLine($"Between({StartTimeString}, {EndTimeString}) Parsed to\n({string.Join(" || ", Times)})");
                 return $"({string.Join(" || ", Times)})";
             }
 

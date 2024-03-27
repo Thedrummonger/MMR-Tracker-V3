@@ -145031,6 +145031,16 @@
       "TrickCategory": "OOT Tricks"
     },
     {
+      "Id": "OOT_COURTYARD_FROM_GANON",
+      "RequiredItems": [],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": true,
+      "TrickCategory": "OOT Tricks"
+    },
+    {
       "Id": "OOT_DOMAIN_HOVER",
       "RequiredItems": [],
       "ConditionalItems": [],
