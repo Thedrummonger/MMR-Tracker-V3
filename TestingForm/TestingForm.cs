@@ -93,13 +93,15 @@ namespace TestingForm
 
         private void Archipelago()
         {
-            ArchipelagoConnector archipelago = new ArchipelagoConnector("Ocarina of Time", "OOT", null, "archipelago.gg", 32949);
+            ArchipelagoConnector archipelago = 
+                new(Interaction.InputBox("Enter Game"), Interaction.InputBox("Enter Slot ID"), Interaction.InputBox("Enter Password"), Interaction.InputBox("Enter Server Address"));
             if (!archipelago.WasConnectionSuccess(out string Error)) {
                 MessageBox.Show(Error);
                 return;
             }
             Debug.WriteLine(archipelago.GetLoginSuccessInfo().ToFormattedJson());
             Debug.WriteLine(archipelago.GetAllLocations().ToFormattedJson());
+            Debug.WriteLine(archipelago.GetAllItems().ToFormattedJson());
         }
 
         [Flags]
