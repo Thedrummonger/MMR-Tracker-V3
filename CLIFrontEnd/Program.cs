@@ -5,7 +5,6 @@ namespace CLIFrontEnd
 {
     public static class Program
     {
-        public static event Action CloseForm;
         public static void Main(string[] args)
         {
             while (true)
@@ -41,7 +40,6 @@ namespace CLIFrontEnd
                 MainDisplay mainDisplay = new(container);
                 mainDisplay.Display();
             }
-            CloseForm?.Invoke();
         }
 
         private static (bool, string) LoadFromSaveFile(InstanceData.InstanceContainer container)

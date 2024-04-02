@@ -36,7 +36,7 @@ namespace TestingForm
             UpdateDebugActions();
             DLLImport.AllocConsole();
             DLLImport.ShowWindow(DLLImport.GetConsoleWindow(), DLLImport.SW_HIDE);
-            CLIFrontEnd.Program.CloseForm += CLITrackerTesting.Program_CloseForm;
+            CLITrackerTesting.CLIDebugListener = new(Console.Out);
         }
 
         public class DevAction
@@ -68,6 +68,8 @@ namespace TestingForm
             List<DevAction> DevFunctions = new List<DevAction>()
             {
                 new DevAction("Open WinForm Tracker Debug", WinFormTesting.ActivateWinFormInterface, UpdateDebugActions, () => !WinFormTesting.WinformLoaded()),
+                new DevAction("Print Debug to Console", CLITrackerTesting.AddCLIDebugListener, UpdateDebugActions, CLITrackerTesting.IsCLIDebugListenerInactive),
+                new DevAction("Stop Printing Debug to Console", CLITrackerTesting.RemoveCLIDebugListener, UpdateDebugActions, CLITrackerTesting.IsCLIDebugListenerActive),
                 new DevAction("Open CLI Tracker Debug", CLITrackerTesting.OpenCLITracker, UpdateDebugActions),
                 new DevAction("Save Tracker State", WinFormTesting.SaveWinformTrackerState, UpdateDebugActions, WinFormTesting.CanSaveWinformTrackerState),
                 new DevAction("Load Tracker State", WinFormTesting.LoadWinformTrackerState, UpdateDebugActions, WinFormTesting.CanLoadWinformTrackerState),
@@ -79,7 +81,6 @@ namespace TestingForm
                 new DevAction("Create LAS Data", GameFileCreation.LASCreateData, UpdateDebugActions),
                 new DevAction("Open Web Client", OpenWebClient, UpdateDebugActions, () => { return CurrentNetClientForm is null && WinFormTesting.WinformInstanceLoaded();  }),
                 new DevAction("Test Archipelago", Archipelago, UpdateDebugActions),
-                new DevAction("Print Winform output to CLI", PrintWinformCLI, UpdateDebugActions),
                 new DevAction("Test Random Stuff", RandomTests, UpdateDebugActions),
             };
 

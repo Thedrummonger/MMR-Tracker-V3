@@ -104,10 +104,12 @@ namespace MMR_Tracker_V3.SpoilerLogImporter
         private static void ApplyEntrances(InstanceData.TrackerInstance instance, Dictionary<string, string> exitData)
         {
             var AllRandomizableExits = instance.GetAllRandomizableExits();
-            foreach (var Entrance in exitData)
+            foreach (var Line in exitData)
             {
-                var SpoilerEntrance = AllRandomizableExits.First(x => x.GetDictEntry().SpoilerData.SpoilerLogNames.Contains(Entrance.Key));
-                var SpoilerExit = AllRandomizableExits.First(x => x.GetDictEntry().SpoilerData.SpoilerLogNames.Contains(Entrance.Value));
+                string Exit = Line.Key.TrimSplit("(")[1][..^1];
+                string Dest = Line.Value.TrimSplit("(")[1][..^1];
+                var SpoilerEntrance = AllRandomizableExits.First(x => x.GetDictEntry().SpoilerData.SpoilerLogNames.Contains(Exit));
+                var SpoilerExit = AllRandomizableExits.First(x => x.GetDictEntry().SpoilerData.SpoilerLogNames.Contains(Dest));
                 SpoilerEntrance.RandomizedState = MiscData.RandomizedState.Randomized;
                 SpoilerEntrance.SpoilerDefinedDestinationExit = new EntranceData.EntranceRandoDestination { region = SpoilerExit.ExitID, from = SpoilerExit.ParentAreaID };
             }
@@ -122,7 +124,7 @@ namespace MMR_Tracker_V3.SpoilerLogImporter
                 bool ISMQ = MQSetting.EnabledValues.Contains(i);
 
                 Debug.WriteLine($"{i} MQ {ISMQ}");
-                string OppositeLogic = ISMQ ? $"setting{{MasterQuest, {i}, False}}" : $"setting{{MasterQuest, {i}}}";
+                string OppositeLogic = ISMQ ? $"setting{{MasterQuest, {i}, False}}" : $"setting{{MasterQuest, {i}, True}}";
                 var JunkChecks = instance.LocationPool.Values.Where(x => instance.GetLogic(x.ID).RequiredItems.Contains(OppositeLogic));
                 foreach (var Check in JunkChecks)
                 {

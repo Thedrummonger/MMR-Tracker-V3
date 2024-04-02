@@ -30,79 +30,71 @@ namespace Windows_Form_Frontend
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(VariableInputWindow));
-            this.button1 = new System.Windows.Forms.Button();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
-            this.SuspendLayout();
+            button1 = new System.Windows.Forms.Button();
+            numericUpDown1 = new System.Windows.Forms.NumericUpDown();
+            textBox1 = new System.Windows.Forms.TextBox();
+            label1 = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)numericUpDown1).BeginInit();
+            SuspendLayout();
             // 
             // button1
             // 
-            this.button1.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.button1.Location = new System.Drawing.Point(221, 33);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(70, 23);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Apply";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            button1.BackColor = System.Drawing.SystemColors.ControlDark;
+            button1.Location = new System.Drawing.Point(221, 33);
+            button1.Name = "button1";
+            button1.Size = new System.Drawing.Size(70, 23);
+            button1.TabIndex = 0;
+            button1.Text = "Apply";
+            button1.UseVisualStyleBackColor = false;
+            button1.Click += button1_Click;
             // 
             // numericUpDown1
             // 
-            this.numericUpDown1.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.numericUpDown1.Location = new System.Drawing.Point(12, 33);
-            this.numericUpDown1.Maximum = new decimal(new int[] {
-            -2147483648,
-            0,
-            0,
-            0});
-            this.numericUpDown1.Minimum = new decimal(new int[] {
-            -2147483648,
-            0,
-            0,
-            -2147483648});
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(83, 23);
-            this.numericUpDown1.TabIndex = 1;
+            numericUpDown1.BackColor = System.Drawing.SystemColors.ControlDark;
+            numericUpDown1.Location = new System.Drawing.Point(12, 33);
+            numericUpDown1.Maximum = new decimal(new int[] { int.MinValue, 0, 0, 0 });
+            numericUpDown1.Minimum = new decimal(new int[] { int.MinValue, 0, 0, int.MinValue });
+            numericUpDown1.Name = "numericUpDown1";
+            numericUpDown1.Size = new System.Drawing.Size(83, 23);
+            numericUpDown1.TabIndex = 1;
             // 
             // textBox1
             // 
-            this.textBox1.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.textBox1.Location = new System.Drawing.Point(101, 33);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(58, 23);
-            this.textBox1.TabIndex = 2;
+            textBox1.BackColor = System.Drawing.SystemColors.ControlDark;
+            textBox1.Location = new System.Drawing.Point(101, 33);
+            textBox1.Name = "textBox1";
+            textBox1.Size = new System.Drawing.Size(58, 23);
+            textBox1.TabIndex = 2;
             // 
             // label1
             // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.ForeColor = System.Drawing.SystemColors.Control;
-            this.label1.Location = new System.Drawing.Point(12, 9);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(38, 15);
-            this.label1.TabIndex = 3;
-            this.label1.Text = "label1";
+            label1.AutoSize = true;
+            label1.BackColor = System.Drawing.Color.Transparent;
+            label1.ForeColor = System.Drawing.SystemColors.Control;
+            label1.Location = new System.Drawing.Point(12, 9);
+            label1.Name = "label1";
+            label1.Size = new System.Drawing.Size(38, 15);
+            label1.TabIndex = 3;
+            label1.Text = "label1";
             // 
             // VariableInputWindow
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
-            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(303, 65);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.numericUpDown1);
-            this.Controls.Add(this.button1);
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "VariableInputWindow";
-            this.Load += new System.EventHandler(this.VariableInputWindow_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
-            this.ResumeLayout(false);
-            this.PerformLayout();
-
+            AcceptButton = button1;
+            AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            BackgroundImage = (System.Drawing.Image)resources.GetObject("$this.BackgroundImage");
+            BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            ClientSize = new System.Drawing.Size(303, 65);
+            Controls.Add(label1);
+            Controls.Add(textBox1);
+            Controls.Add(numericUpDown1);
+            Controls.Add(button1);
+            Icon = (System.Drawing.Icon)resources.GetObject("$this.Icon");
+            Name = "VariableInputWindow";
+            Load += VariableInputWindow_Load;
+            ((System.ComponentModel.ISupportInitialize)numericUpDown1).EndInit();
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion

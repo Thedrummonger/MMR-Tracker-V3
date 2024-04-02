@@ -39,6 +39,8 @@ namespace Windows_Form_Frontend
             {
                 SetUIElements(true, $"Enter Hint at {hintObject.GetDictEntry().Name}", "Set Hint", hintObject.GetDictEntry().Name);
                 varType = VarType.Gossip;
+                textBox1.Focus();
+                textBox1.Select(0, textBox1.Text.Length);
             }
             else if (_InputItems[0] is OptionData.IntOption IntVariableObject)
             {
@@ -47,6 +49,8 @@ namespace Windows_Form_Frontend
                 numericUpDown1.Maximum = IntVariableObject.Max;
                 numericUpDown1.Minimum = IntVariableObject.Min;
                 varType = VarType.Number;
+                numericUpDown1.Focus();
+                numericUpDown1.Select(0, numericUpDown1.Text.Length);
             }
             else if (_InputItems[0] is PriceContainer PricedObject)
             {
@@ -57,6 +61,8 @@ namespace Windows_Form_Frontend
                 numericUpDown1.Maximum = int.MaxValue;
                 numericUpDown1.Minimum = 0;
                 varType = VarType.Price;
+                numericUpDown1.Focus();
+                numericUpDown1.Select(0, numericUpDown1.Text.Length);
             }
         }
         private void button1_Click(object sender, EventArgs e)
