@@ -27,7 +27,6 @@ namespace TestingForm
         public TestingForm()
         {
             CurrentForm = this;
-            //CLITracker.HideConsole = CLITrackerTesting.HideCLI;
             InitializeComponent();
         }
 
@@ -37,6 +36,7 @@ namespace TestingForm
             UpdateDebugActions();
             DLLImport.AllocConsole();
             DLLImport.ShowWindow(DLLImport.GetConsoleWindow(), DLLImport.SW_HIDE);
+            CLIFrontEnd.Program.CloseForm += CLITrackerTesting.Program_CloseForm;
         }
 
         public class DevAction
@@ -79,6 +79,7 @@ namespace TestingForm
                 new DevAction("Create LAS Data", GameFileCreation.LASCreateData, UpdateDebugActions),
                 new DevAction("Open Web Client", OpenWebClient, UpdateDebugActions, () => { return CurrentNetClientForm is null && WinFormTesting.WinformInstanceLoaded();  }),
                 new DevAction("Test Archipelago", Archipelago, UpdateDebugActions),
+                new DevAction("Print Winform output to CLI", PrintWinformCLI, UpdateDebugActions),
                 new DevAction("Test Random Stuff", RandomTests, UpdateDebugActions),
             };
 
@@ -114,15 +115,7 @@ namespace TestingForm
 
         private void RandomTests()
         {
-            PlaythroughGenerator playthroughGenerator = new PlaythroughGenerator(MainInterface.InstanceContainer.Instance);
-            playthroughGenerator.GeneratePlaythrough();
-            var Wincon = PlaythroughTools.GetDefaultWincon(MainInterface.InstanceContainer.Instance);
-            bool Filtered = playthroughGenerator.FilterImportantPlaythrough(Wincon);
-            var Playthrough = playthroughGenerator.Playthrough;
-            if (Filtered) { Playthrough = Playthrough.Where(x => x.Value.Important).ToDictionary(); }
-            else { Debug.WriteLine($"Game_Clear NOT OBTAINABLE"); }
-            File.WriteAllText(Path.Combine(TestingReferences.GetDevTestingPath(), "TestPlaythrough.json"), Playthrough.ToFormattedJson());
-            //MiscTesting.TestFuncParse();
+            Debug.WriteLine("Test");
         }
 
         private void RegexTesting()

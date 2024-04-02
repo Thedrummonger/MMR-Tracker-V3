@@ -5,23 +5,33 @@ using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Windows_Form_Frontend;
 
 namespace TestingForm
 {
-    internal class CLITrackerTesting
+    public class CLITrackerTesting
     {
+        public static bool CLIActive = false;
 
         public static void OpenCLITracker()
         {
             DLLImport.AllocConsole();
             DLLImport.ShowWindow(DLLImport.GetConsoleWindow(), DLLImport.SW_SHOW);
-            //CLITracker.Main(Environment.GetCommandLineArgs());
+            CLIFrontEnd.Program.Main(Environment.GetCommandLineArgs());
+            CLIActive = true;
+        }
+        public static void Program_CloseForm()
+        {
+            CLIActive = false;
+            if (!CLIInUse())
+            {
+
+            }
         }
 
-        public static void HideCLI()
+        public static bool CLIInUse()
         {
-            Debug.WriteLine("Hiding CLI");
-            DLLImport.ShowWindow(DLLImport.GetConsoleWindow(), DLLImport.SW_HIDE);
+            return CLIActive || MainInterface.CurrentProgram is not null;
         }
     }
 }

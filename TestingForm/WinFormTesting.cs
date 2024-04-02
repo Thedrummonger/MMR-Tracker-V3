@@ -15,6 +15,7 @@ namespace TestingForm
 {
     internal class WinFormTesting
     {
+        private static TextWriterTraceListener WinFormCLIDebug = null;
         public static object LastSelectedObject;
         public static void ActivateWinFormInterface()
         {
@@ -26,6 +27,20 @@ namespace TestingForm
                 EventListeners.BuildWinFormEventListeners();
             }
             MainInterface.CurrentProgram.Show();
+        }
+
+        public static void PrintWinformCLI()
+        {
+            WinFormCLIDebug ??= new(Console.Out);
+            if (Trace.Listeners.Contains(WinFormCLIDebug))
+            {
+                Trace.Listeners.Remove(WinFormCLIDebug);
+            }
+            else
+            {
+                Trace.Listeners.Add(WinFormCLIDebug);
+                DLLImport.ShowWindow(DLLImport.GetConsoleWindow(), DLLImport.SW_SHOW);
+            }
         }
         public static bool WinformLoaded()
         {

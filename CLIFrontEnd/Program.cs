@@ -3,11 +3,12 @@ using MMR_Tracker_V3.TrackerObjects;
 
 namespace CLIFrontEnd
 {
-    static class Program
+    public static class Program
     {
-        static void Main()
+        public static event Action CloseForm;
+        public static void Main(string[] args)
         {
-            while(true)
+            while (true)
             {
                 CLISelectMenu MenuSelect = new(["New (From File)", "New (From Preset)", "Load", "Exit"]);
 
@@ -40,6 +41,7 @@ namespace CLIFrontEnd
                 MainDisplay mainDisplay = new(container);
                 mainDisplay.Display();
             }
+            CloseForm?.Invoke();
         }
 
         private static (bool, string) LoadFromSaveFile(InstanceData.InstanceContainer container)
