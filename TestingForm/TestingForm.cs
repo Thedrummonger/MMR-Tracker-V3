@@ -78,6 +78,7 @@ namespace TestingForm
                 new DevAction("Create PMR Data", GameFileCreation.PMRCreateData, UpdateDebugActions),
                 new DevAction("Create LAS Data", GameFileCreation.LASCreateData, UpdateDebugActions),
                 new DevAction("Open Web Client", OpenWebClient, UpdateDebugActions, () => { return CurrentNetClientForm is null && WinFormTesting.WinformInstanceLoaded();  }),
+                new DevAction("Test Archipelago", Archipelago, UpdateDebugActions),
                 new DevAction("Test Random Stuff", RandomTests, UpdateDebugActions),
             };
 
@@ -86,6 +87,17 @@ namespace TestingForm
                 if (Function.Conitional is not null && !Function.Conitional()) { continue; }
                 listBox1.Items.Add(Function);
             }
+        }
+
+        private void Archipelago()
+        {
+            ArchipelagoConnector archipelago = new ArchipelagoConnector("Ocarina of Time", "OOT", null, "archipelago.gg", 32949);
+            if (!archipelago.WasConnectionSuccess(out string Error)) {
+                MessageBox.Show(Error);
+                return;
+            }
+            Debug.WriteLine(archipelago.GetLoginSuccessInfo().ToFormattedJson());
+            Debug.WriteLine(archipelago.GetAllLocations().ToFormattedJson());
         }
 
         [Flags]
