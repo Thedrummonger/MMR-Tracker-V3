@@ -65,28 +65,27 @@ namespace TestingForm
             EntranceData.EntranceRandoDestination RandomizedExit = null;
             Debug.WriteLine($"Data for {LastSelectedObject}=========================================================");
             Debug.WriteLine(JsonConvert.SerializeObject(LastSelectedObject, MMR_Tracker_V3.Utility.DefaultSerializerSettings));
-            if (LastSelectedObject is LocationData.LocationObject DebugLocObj)
+            if (LastSelectedObject is CheckableLocation DebugCLOObj)
             {
                 Debug.WriteLine($"Dictionary Entry");
-                Debug.WriteLine(JsonConvert.SerializeObject(DebugLocObj.GetDictEntry(), MMR_Tracker_V3.Utility.DefaultSerializerSettings));
-                RandomizedItem = DebugLocObj.Randomizeditem.Item;
+                Debug.WriteLine(DebugCLOObj.GetAbstractDictEntry().ToFormattedJson());
+            }
 
-            }
-            if (LastSelectedObject is LocationData.LocationProxy DebugProxyObj)
+            if (LastSelectedObject is LocationData.LocationObject DebugLocObj) { RandomizedItem = DebugLocObj.Randomizeditem.Item; }
+            else if (LastSelectedObject is EntranceData.EntranceRandoExit DebugEntObj) { RandomizedExit = DebugEntObj.DestinationExit; }
+            else if (LastSelectedObject is LocationData.LocationProxy DebugProxyObj)
             {
-                var ProxyRef = MainInterface.InstanceContainer.Instance.GetLocationByID(DebugProxyObj.ReferenceID);
-                Debug.WriteLine($"Proxied Entry");
-                Debug.WriteLine(JsonConvert.SerializeObject(ProxyRef, MMR_Tracker_V3.Utility.DefaultSerializerSettings));
-                Debug.WriteLine($"Dictionary Entry");
-                Debug.WriteLine(JsonConvert.SerializeObject(ProxyRef?.GetDictEntry(), MMR_Tracker_V3.Utility.DefaultSerializerSettings));
-                RandomizedItem = ProxyRef.Randomizeditem.Item;
+                Debug.WriteLine($"Proxied Location");
+                Debug.WriteLine(DebugProxyObj.GetReferenceLocation().ToFormattedJson());
+                Debug.WriteLine($"Proxied Location Dictionary Entry");
+                Debug.WriteLine(DebugProxyObj.GetReferenceLocation().GetDictEntry().ToFormattedJson());
+                Debug.WriteLine($"Logic Inheritance");
+                Debug.WriteLine(DebugProxyObj.GetLogicInheritance().ToFormattedJson());
+                Debug.WriteLine($"Logic Inheritance Dictionary Entry");
+                Debug.WriteLine(DebugProxyObj.GetLogicInheritance().GetAbstractDictEntry().ToFormattedJson());
+                RandomizedItem = DebugProxyObj.GetReferenceLocation().Randomizeditem.Item;
             }
-            if (LastSelectedObject is EntranceData.EntranceRandoExit DebugEntObj)
-            {
-                Debug.WriteLine($"Dictionary Entry");
-                Debug.WriteLine(JsonConvert.SerializeObject(DebugEntObj.GetDictEntry(), MMR_Tracker_V3.Utility.DefaultSerializerSettings));
-                RandomizedExit = DebugEntObj.DestinationExit;
-            }
+
             if (RandomizedItem !=null)
             {
                 var Item = MainInterface.InstanceContainer.Instance.GetItemByID(RandomizedItem);
