@@ -42,7 +42,7 @@ namespace MMR_Tracker_V3.TrackerObjects
         }
 
         public abstract string GetName();
-        public abstract object GetAbstractDictEntry();
+        public abstract LogicDictionaryData.DictionaryCheckableLocationEntry GetAbstractDictEntry();
         public abstract MiscData.CheckableLocationTypes LocationType();
     }
 }

@@ -9,15 +9,9 @@ namespace MMR_Tracker_V3.TrackerObjects
 {
     public class EntranceData
     {
-        public class EntranceRandoArea(InstanceData.TrackerInstance Parent)
+        public class EntranceRandoArea(InstanceData.TrackerInstance Parent) : ObtainableObject(Parent)
         {
-            private InstanceData.TrackerInstance _parent = Parent;
-            public InstanceData.TrackerInstance GetParent() { return _parent; }
-            public void SetParent(InstanceData.TrackerInstance parent) { _parent = parent; }
-
             public bool IsRoot = false;
-            public string ID { get; set; }
-            public int ExitsAcessibleFrom { get; set; } = 0;
             /// <summary>
             /// Key = The Exits ID, Value = The exits Logic ID
             /// </summary>
@@ -26,12 +20,12 @@ namespace MMR_Tracker_V3.TrackerObjects
             public EntranceRandoExit GetExitFromExitID(string ExitID)
             {
                 if (!Exits.TryGetValue(ExitID, out string ExitLogicID)) { return null; }
-                if (!_parent.ExitPool.TryGetValue(ExitLogicID, out EntranceRandoExit ExitObj)) { return null; }
+                if (!GetParent().ExitPool.TryGetValue(ExitLogicID, out EntranceRandoExit ExitObj)) { return null; }
                 return ExitObj;
             }
             public Dictionary<string, EntranceRandoExit> GetAllExits()
             {
-                return Exits.ToDictionary(x => x.Value, x => _parent.ExitPool[x.Value]);
+                return Exits.ToDictionary(x => x.Value, x => GetParent().ExitPool[x.Value]);
             }
             public Dictionary<string, EntranceRandoExit> GetAllRandomizableExits()
             {
@@ -74,7 +68,7 @@ namespace MMR_Tracker_V3.TrackerObjects
                 return GetDictEntry().DisplayExit ?? GetDictEntry().Exit;
             }
 
-            public override object GetAbstractDictEntry() => GetDictEntry();
+            public override LogicDictionaryData.DictionaryCheckableLocationEntry GetAbstractDictEntry() => GetDictEntry();
 
             public override CheckableLocationTypes LocationType() => CheckableLocationTypes.Exit;
         }

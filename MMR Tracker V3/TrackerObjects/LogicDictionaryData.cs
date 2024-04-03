@@ -62,34 +62,36 @@ namespace MMR_Tracker_V3.TrackerObjects
             public Dictionary<string, RandomizedState> ManualRandomizationState { get; set; }
             public List<string> EnabledTricks { get; set; }
         }
-
-        [Serializable]
-        public class DictionaryLocationEntries
+        public abstract class DictionaryCheckableLocationEntry
         {
             private LogicDictionary _parent;
             public LogicDictionary GetParent() { return _parent; }
             public void SetParent(LogicDictionary parent) { _parent = parent; }
             public string ID { get; set; }
             public string Name { get; set; }
-            public string OriginalItem { get; set; }
-            public char? WalletCurrency { get; set; } = null;
             public string Area { get; set; }
-            public string[] ValidItemTypes { get; set; } = [];
+            public int? WalletCapacity { get; set; } = null;
+            public char? WalletCurrency { get; set; } = null;
             public bool? IgnoreForSettingString { get; set; } = null;
-            public bool? Repeatable { get; set; } = null;
             public SpoilerlogReference SpoilerData { get; set; } = new SpoilerlogReference();
+            public abstract string GetName();
+        }
+
+        [Serializable]
+        public class DictionaryLocationEntries : DictionaryCheckableLocationEntry
+        {
+            public string OriginalItem { get; set; }
+            public string[] ValidItemTypes { get; set; } = [];
+            public bool? Repeatable { get; set; } = null;
             public List<DictLocationProxy> LocationProxys { get; set; } = [];
-            public string GetName()
+            public override string GetName()
             {
                 return Name ?? ID;
             }
         }
 
-        public class DictLocationProxy
+        public class DictLocationProxy : DictionaryCheckableLocationEntry
         {
-            public string ID { get; set; }
-            public string Name { get; set; }
-            public string Area { get; set; }
             public string LogicInheritance { get; set; } = null;
             public LocationData.LocationProxy ToInstanceData(DictionaryLocationEntries Parent, InstanceData.TrackerInstance instance)
             {
@@ -99,6 +101,10 @@ namespace MMR_Tracker_V3.TrackerObjects
                     ReferenceID = Parent.ID,
                     DictInd = Parent.LocationProxys.IndexOf(this)
                 };
+            }
+            public override string GetName()
+            {
+                return Name ?? ID;
             }
 
         }
@@ -170,38 +176,26 @@ namespace MMR_Tracker_V3.TrackerObjects
         }
 
         [Serializable]
-        public class DictionaryMacroEntry
+        public class DictionaryMacroEntry : DictionaryCheckableLocationEntry
         {
-            private LogicDictionary _parent;
-            public LogicDictionary GetParent() { return _parent; }
-            public void SetParent(LogicDictionary parent) { _parent = parent; }
-            public string ID { get; set; }
-            public string Name { get; set; }
-            public int? WalletCapacity { get; set; } = null;
-            public char? WalletCurrency { get; set; } = null;
-            public SpoilerlogReference SpoilerData { get; set; } = new SpoilerlogReference();
+            public override string GetName()
+            {
+                return Name ?? ID;
+            }
         }
 
         [Serializable]
-        public class DictionaryHintEntries
+        public class DictionaryHintEntries : DictionaryCheckableLocationEntry
         {
-            private LogicDictionary _parent;
-            public LogicDictionary GetParent() { return _parent; }
-            public void SetParent(LogicDictionary parent) { _parent = parent; }
-            public string ID { get; set; }
-            public string Name { get; set; }
-            public SpoilerlogReference SpoilerData { get; set; } = new SpoilerlogReference();
-
+            public override string GetName()
+            {
+                return Name ?? ID;
+            }
         }
 
         [Serializable]
-        public class DictionaryEntranceEntries
+        public class DictionaryEntranceEntries : DictionaryCheckableLocationEntry
         {
-            private LogicDictionary _parent;
-            public LogicDictionary GetParent() { return _parent; }
-            public void SetParent(LogicDictionary parent) { _parent = parent; }
-            public string ID { get; set; }
-            public string Area { get; set; }
             public string Exit { get; set; }
             public string DisplayArea { get; set; } = null;
             public string DisplayExit { get; set; } = null;
@@ -209,7 +203,10 @@ namespace MMR_Tracker_V3.TrackerObjects
             public bool RandomizableEntrance { get; set; }
             public bool AlwaysAccessable { get; set; } = false;
             public bool DestinationHasSingleEntrance { get; set; } = false;
-            public SpoilerlogReference SpoilerData { get; set; } = new SpoilerlogReference();
+            public override string GetName()
+            {
+                return $"{DisplayArea??Area} => {DisplayExit??Exit}";
+            }
         }
     }
 }

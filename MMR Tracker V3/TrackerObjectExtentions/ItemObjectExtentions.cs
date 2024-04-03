@@ -26,7 +26,7 @@ namespace MMR_Tracker_V3.TrackerObjectExtensions
             return AmountAquired + AmountSetAtLocation;
         }
 
-        public static int GetAmountInStartingPool(this ItemData.ItemObject Item)
+        public static int GetAmountInStartingPool(this ObtainableObject Item)
         {
             return Item.AmountInStartingpool;
         }
@@ -43,32 +43,31 @@ namespace MMR_Tracker_V3.TrackerObjectExtensions
             return Item.GetDictEntry().GetMaxAmountInWorld() - Item.GetAmountPlaced();
         }
 
-        public static int GetTotalUsable(this ItemData.ItemObject Item)
+        public static int GetTotalUsable(this ObtainableObject Item)
         {
             return Item.AmountAquiredLocally + Item.AmountAquiredOnline.Values.Sum() + Item.GetAmountInStartingPool();
         }
 
-        public static bool Useable(this ItemData.ItemObject Item, int Amount = 1)
+        public static bool Useable(this ObtainableObject Item, int Amount = 1)
         {
             return Item.GetTotalUsable() >= Amount;
         }
 
-        public static void ChangeLocalItemAmounts(this ItemData.ItemObject Item, LocationData.LocationObject location, int Amount)
+        public static void ChangeLocalItemAmounts(this ObtainableObject Item, CheckableLocation location, int Amount)
         {
             if (Amount == 0) { return; }
-            bool OwnedByLocalPlayer = location.Randomizeditem.OwningPlayer < 0 || Item.GetParent().GetParentContainer().netConnection.PlayerID == location.Randomizeditem.OwningPlayer;
-            if (!OwnedByLocalPlayer)
+            if (Item is ItemData.ItemObject IO && location is LocationData.LocationObject LO && !IsOwnedByLocalPlayer(IO, LO))
             {
-                if (!Item.AmountSentToPlayer.ContainsKey(location.Randomizeditem.OwningPlayer))
-                {
-                    Item.AmountSentToPlayer.Add(location.Randomizeditem.OwningPlayer, 0);
-                }
-                Item.AmountSentToPlayer[location.Randomizeditem.OwningPlayer] += Amount;
+                IO.AmountSentToPlayer.SetIfEmpty(LO.Randomizeditem.OwningPlayer, 0);
+                IO.AmountSentToPlayer[LO.Randomizeditem.OwningPlayer] += Amount;
+                return;
             }
-            else
-            {
-                Item.AmountAquiredLocally += Amount;
-            }
+            Item.AmountAquiredLocally += Amount;
+        }
+
+        private static bool IsOwnedByLocalPlayer(ItemData.ItemObject Item, LocationData.LocationObject location)
+        {
+            return location.Randomizeditem.OwningPlayer < 0 || Item.GetParent().GetParentContainer().netConnection.PlayerID == location.Randomizeditem.OwningPlayer;
         }
     }
 }

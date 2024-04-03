@@ -85,10 +85,7 @@ namespace MMR_Tracker_V3.TrackerObjectExtensions
         {
             var ItemAtCheck = loc.GetParent().GetItemByID(loc.Randomizeditem.Item);
 
-            if (ItemAtCheck != null)
-            {
-                ItemAtCheck.ChangeLocalItemAmounts(loc, -1);
-            }
+            ItemAtCheck?.ChangeLocalItemAmounts(loc, -1);
             if (NewState == CheckState.Unchecked)
             {
                 loc.Randomizeditem.Item = null;

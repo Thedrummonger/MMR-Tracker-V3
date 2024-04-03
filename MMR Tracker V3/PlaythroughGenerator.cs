@@ -103,7 +103,7 @@ namespace MMR_Tracker_V3
 
         private void ResetInstance()
         {
-            foreach (var i in container.Instance.AreaPool.Values) { i.ExitsAcessibleFrom = 0; }
+            foreach (var i in container.Instance.AreaPool.Values) { i.AmountAquiredLocally = 0; }
             foreach (var i in container.Instance.ItemPool.Values) { i.AmountAquiredLocally = 0; }
             foreach (var i in container.Instance.LocationPool.Values) 
             {

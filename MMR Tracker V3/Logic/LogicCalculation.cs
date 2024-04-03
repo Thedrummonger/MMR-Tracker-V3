@@ -161,7 +161,7 @@ namespace MMR_Tracker_V3.Logic
             if (!container.Instance.AreaPool.ContainsKey(Area)) { return false; }
             var AreaObj = container.Instance.AreaPool[Area];
             TempUnlockData.Add(AreaObj.ID, new LogicItemData { Type = LogicItemTypes.Area, Amount = 1, CleanID = Area, RawID = Area, HadItemCount = false, Literal = false, Object = AreaObj });
-            bool Reachable = AreaObj.ExitsAcessibleFrom > 0 || AreaObj.IsRoot;
+            bool Reachable = AreaObj.AmountAquiredLocally > 0 || AreaObj.IsRoot;
             if (!Reachable) { return false; }
             CommitUnlockData(UnlockData, TempUnlockData);
             return Reachable;

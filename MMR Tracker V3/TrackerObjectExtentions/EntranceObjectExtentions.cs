@@ -101,22 +101,52 @@ namespace MMR_Tracker_V3.TrackerObjectExtensions
             }
             else if (CurrentState == CheckState.Checked)
             {
-                var Destination = exit.GetParent().AreaPool[exit.DestinationExit.region];
-                Destination.ExitsAcessibleFrom--;
+                exit.UncheckExit(NewState);
             }
             else if (NewState == CheckState.Checked)
             {
-                if (exit.DestinationExit == null) { return false; }
-                var Destination = exit.GetParent().AreaPool[exit.DestinationExit.region];
-                Destination.ExitsAcessibleFrom++;
+                if (!exit.CheckExit(NewState)) { return false; }
             }
-            else if (CurrentState == CheckState.Unchecked && NewState == CheckState.Marked)
+            else
             {
-                if (exit.DestinationExit == null) { return false; }
+                if (!exit.ToggleMarked(NewState)) { return false; }
             }
-
-            if (NewState == CheckState.Unchecked) { exit.DestinationExit = null; }
             exit.CheckState = NewState;
+            return true;
+        }
+        public static bool UncheckExit(this EntranceData.EntranceRandoExit loc, CheckState NewState)
+        {
+            var Area = loc.GetParent().GetAreaByLogicID(loc.DestinationExit.region);
+
+            Area?.ChangeLocalItemAmounts(loc, -1);
+            if (NewState == CheckState.Unchecked)
+            {
+                loc.DestinationExit = null;
+            }
+            return true;
+
+        }
+
+        public static bool CheckExit(this EntranceData.EntranceRandoExit loc, CheckState NewState)
+        {
+            if (loc.DestinationExit is null) { return false; }
+
+            if (loc.GetParent().AreaPool.TryGetValue(loc.DestinationExit.region, out EntranceRandoArea Area))
+            {
+                Area.ChangeLocalItemAmounts(loc, 1);
+            }
+            return true;
+        }
+        public static bool ToggleMarked(this EntranceRandoExit loc, CheckState NewState)
+        {
+            if (NewState == CheckState.Marked && loc.DestinationExit is null)
+            {
+                return false;
+            }
+            else if (NewState == CheckState.Unchecked)
+            {
+                loc.DestinationExit = null;
+            }
             return true;
         }
 

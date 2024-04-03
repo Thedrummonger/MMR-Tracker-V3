@@ -34,7 +34,7 @@ namespace MMR_Tracker_V3.TrackerObjects
                 return GetDictEntry().Name;
             }
 
-            public override object GetAbstractDictEntry() => GetDictEntry();
+            public override LogicDictionaryData.DictionaryCheckableLocationEntry GetAbstractDictEntry() => GetDictEntry();
 
             public override CheckableLocationTypes LocationType() => CheckableLocationTypes.location;
         }
@@ -104,7 +104,7 @@ namespace MMR_Tracker_V3.TrackerObjects
                 return GetDictEntry().Name??ID;
             }
 
-            public override object GetAbstractDictEntry() => GetDictEntry();
+            public override LogicDictionaryData.DictionaryCheckableLocationEntry GetAbstractDictEntry() => GetDictEntry();
 
             public override CheckableLocationTypes LocationType() => GetLogicInheritance().LocationType();
         }
