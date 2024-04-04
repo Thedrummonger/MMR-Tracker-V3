@@ -42,6 +42,11 @@ namespace MMR_Tracker_V3.TrackerObjects
                 ValueList = Values.ToDictionary(x => x, x => new OptionValue { ID = x, Name = x });
                 return this;
             }
+            public ChoiceOption CreateSimpleValues(params (string id, string name)[] Values)
+            {
+                ValueList = Values.ToDictionary(x => x.id, x => new OptionValue { ID = x.id, Name = x.name });
+                return this;
+            }
             public override string ToString()
             {
                 return $"{getOptionName()}: {getValueName()}";

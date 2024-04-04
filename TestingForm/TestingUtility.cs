@@ -98,6 +98,22 @@ namespace TestingForm
             return JsonConvert.SerializeObject(yamlIsDumb);
         }
 
+        public static T DeserializeJsonFile<T>(string Path)
+        {
+            return JsonConvert.DeserializeObject<T>(File.ReadAllText(Path));
+        }
+        public static T DeserializeCSVFile<T>(string Path)
+        {
+            var Json = TestingUtility.ConvertCsvFileToJsonObject(File.ReadAllLines(Path));
+            return JsonConvert.DeserializeObject<T>(Json);
+        }
+
+        public static T DeserializeYAMLFile<T>(string Path)
+        {
+            var Json = TestingUtility.ConvertYamlStringToJsonString(File.ReadAllText(Path), true);
+            return JsonConvert.DeserializeObject<T>(Json);
+        }
+
         /// <summary>
         /// Converts the Given object to a YAML string
         /// </summary>
