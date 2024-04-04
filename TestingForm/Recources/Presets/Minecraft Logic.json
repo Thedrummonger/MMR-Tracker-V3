@@ -1,0 +1,2303 @@
+{
+  "Version": 1,
+  "GameCode": "MC",
+  "Logic": [
+    {
+      "Id": "Ender Dragon",
+      "RequiredItems": [
+        "can_respawn_ender_dragon",
+        "can_kill_ender_dragon"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "Wither",
+      "RequiredItems": [
+        "can_kill_wither"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "Blaze Rods",
+      "RequiredItems": [
+        "fortress_loot"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "Who is Cutting Onions?",
+      "RequiredItems": [
+        "can_piglin_trade"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "Oh Shiny",
+      "RequiredItems": [
+        "can_piglin_trade"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "Suit Up",
+      "RequiredItems": [
+        "Progressive Armor",
+        "has_iron_ingots"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "Very Very Frightening",
+      "RequiredItems": [
+        "Channeling Book",
+        "can_use_anvil",
+        "can_enchant",
+        "overworld_villager"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "Hot Stuff",
+      "RequiredItems": [
+        "Bucket",
+        "has_iron_ingots"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "Free the End",
+      "RequiredItems": [
+        "can_respawn_ender_dragon",
+        "can_kill_ender_dragon"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "A Furious Cocktail",
+      "RequiredItems": [
+        "can_brew_potions",
+        "Fishing Rod",
+        "The Nether",
+        "Village",
+        "available{Bring Home the Beacon}"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "Bring Home the Beacon",
+      "RequiredItems": [
+        "can_kill_wither",
+        "has_diamond_pickaxe",
+        "Progressive Resource Crafting, 2"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "Not Today, Thank You",
+      "RequiredItems": [
+        "Shield",
+        "has_iron_ingots"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "Isn't It Iron Pick",
+      "RequiredItems": [
+        "Progressive Tools, 2",
+        "has_iron_ingots"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "Local Brewery",
+      "RequiredItems": [
+        "can_brew_potions"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "The Next Generation",
+      "RequiredItems": [
+        "can_respawn_ender_dragon",
+        "can_kill_ender_dragon"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "Fishy Business",
+      "RequiredItems": [
+        "Fishing Rod"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "This Boat Has Legs",
+      "RequiredItems": [
+        "Saddle",
+        "Fishing Rod"
+      ],
+      "ConditionalItems": [
+        [
+          "complete_raid"
+        ],
+        [
+          "fortress_loot"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "Sniper Duel",
+      "RequiredItems": [
+        "Archery"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "Great View From Up Here",
+      "RequiredItems": [
+        "basic_combat"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "How Did We Get Here?",
+      "RequiredItems": [
+        "can_brew_potions",
+        "has_gold_ingots",
+        "End City",
+        "The Nether",
+        "Fishing Rod",
+        "Archery",
+        "available{Bring Home the Beacon}",
+        "available{Hero of the Village}"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "Bullseye",
+      "RequiredItems": [
+        "Archery",
+        "Progressive Tools, 2",
+        "has_iron_ingots"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "Spooky Scary Skeleton",
+      "RequiredItems": [
+        "basic_combat"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "Two by Two",
+      "RequiredItems": [
+        "has_iron_ingots",
+        "Bucket",
+        "can_adventure"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "Two Birds, One Arrow",
+      "RequiredItems": [
+        "craft_crossbow",
+        "can_enchant"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "Who's the Pillager Now?",
+      "RequiredItems": [
+        "craft_crossbow"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "Getting an Upgrade",
+      "RequiredItems": [
+        "Progressive Tools"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "Tactical Fishing",
+      "RequiredItems": [
+        "Bucket",
+        "has_iron_ingots"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "Zombie Doctor",
+      "RequiredItems": [
+        "can_brew_potions",
+        "has_gold_ingots"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "Ice Bucket Challenge",
+      "RequiredItems": [
+        "has_diamond_pickaxe"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "Into Fire",
+      "RequiredItems": [
+        "basic_combat"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "War Pigs",
+      "RequiredItems": [
+        "basic_combat"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "Take Aim",
+      "RequiredItems": [
+        "Archery"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "Total Beelocation",
+      "RequiredItems": [
+        "Silk Touch Book",
+        "can_use_anvil",
+        "can_enchant"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "Arbalistic",
+      "RequiredItems": [
+        "craft_crossbow",
+        "Piercing IV Book",
+        "can_use_anvil",
+        "can_enchant"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "The End... Again...",
+      "RequiredItems": [
+        "can_respawn_ender_dragon",
+        "can_kill_ender_dragon"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "Acquire Hardware",
+      "RequiredItems": [
+        "has_iron_ingots"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "Not Quite \"Nine\" Lives",
+      "RequiredItems": [
+        "can_piglin_trade",
+        "Progressive Resource Crafting, 2"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "Cover Me With Diamonds",
+      "RequiredItems": [
+        "Progressive Armor, 2",
+        "Progressive Tools, 2",
+        "has_iron_ingots"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "Sky's the Limit",
+      "RequiredItems": [
+        "basic_combat"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "Hired Help",
+      "RequiredItems": [
+        "Progressive Resource Crafting, 2",
+        "has_iron_ingots"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "Sweet Dreams",
+      "RequiredItems": [],
+      "ConditionalItems": [
+        [
+          "Bed"
+        ],
+        [
+          "Village"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "You Need a Mint",
+      "RequiredItems": [
+        "can_respawn_ender_dragon",
+        "has_bottle"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "Monsters Hunted",
+      "RequiredItems": [
+        "can_respawn_ender_dragon",
+        "can_kill_ender_dragon",
+        "can_kill_wither",
+        "Fishing Rod"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "Enchanter",
+      "RequiredItems": [
+        "can_enchant"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "Voluntary Exile",
+      "RequiredItems": [
+        "basic_combat"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "Eye Spy",
+      "RequiredItems": [
+        "enter_stronghold"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "Serious Dedication",
+      "RequiredItems": [
+        "can_brew_potions",
+        "Bed",
+        "has_diamond_pickaxe",
+        "has_gold_ingots"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "Postmortal",
+      "RequiredItems": [
+        "complete_raid"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "Adventuring Time",
+      "RequiredItems": [
+        "can_adventure"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "Hero of the Village",
+      "RequiredItems": [
+        "complete_raid"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "Hidden in the Depths",
+      "RequiredItems": [
+        "can_brew_potions",
+        "Bed",
+        "has_diamond_pickaxe"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "Beaconator",
+      "RequiredItems": [
+        "can_kill_wither",
+        "has_diamond_pickaxe",
+        "Progressive Resource Crafting, 2"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "Withering Heights",
+      "RequiredItems": [
+        "can_kill_wither"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "A Balanced Diet",
+      "RequiredItems": [
+        "has_bottle",
+        "has_gold_ingots",
+        "Progressive Resource Crafting, 2",
+        "The End"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "Subspace Bubble",
+      "RequiredItems": [
+        "has_diamond_pickaxe"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "Country Lode, Take Me Home",
+      "RequiredItems": [
+        "available{Hidden in the Depths}",
+        "has_gold_ingots"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "Bee Our Guest",
+      "RequiredItems": [
+        "Campfire",
+        "has_bottle"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "Uneasy Alliance",
+      "RequiredItems": [
+        "has_diamond_pickaxe",
+        "Fishing Rod"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "Diamonds!",
+      "RequiredItems": [
+        "Progressive Tools, 2",
+        "has_iron_ingots"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "A Throwaway Joke",
+      "RequiredItems": [
+        "can_adventure"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "Sticky Situation",
+      "RequiredItems": [
+        "Campfire",
+        "has_bottle"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "Ol' Betsy",
+      "RequiredItems": [
+        "craft_crossbow"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "Cover Me in Debris",
+      "RequiredItems": [
+        "Progressive Armor, 2",
+        "8 Netherite Scrap, 2",
+        "Progressive Resource Crafting",
+        "has_diamond_pickaxe",
+        "has_iron_ingots",
+        "can_brew_potions",
+        "Bed"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "Hot Topic",
+      "RequiredItems": [
+        "Progressive Resource Crafting"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "The Lie",
+      "RequiredItems": [
+        "has_iron_ingots",
+        "Bucket"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "On a Rail",
+      "RequiredItems": [
+        "has_iron_ingots",
+        "Progressive Tools, 2"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "When Pigs Fly",
+      "RequiredItems": [
+        "Saddle",
+        "Fishing Rod",
+        "can_adventure"
+      ],
+      "ConditionalItems": [
+        [
+          "complete_raid"
+        ],
+        [
+          "fortress_loot"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "Overkill",
+      "RequiredItems": [
+        "can_brew_potions",
+        "Progressive Weapons",
+        "The Nether"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "Librarian",
+      "RequiredItems": [
+        "Enchanting"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "Overpowered",
+      "RequiredItems": [
+        "has_iron_ingots",
+        "Progressive Tools, 2",
+        "basic_combat"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "Wax On",
+      "RequiredItems": [
+        "has_copper_ingots",
+        "Campfire",
+        "Progressive Resource Crafting, 2"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "Wax Off",
+      "RequiredItems": [
+        "has_copper_ingots",
+        "Campfire",
+        "Progressive Resource Crafting, 2"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "The Cutest Predator",
+      "RequiredItems": [
+        "has_iron_ingots",
+        "Bucket"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "The Healing Power of Friendship",
+      "RequiredItems": [
+        "has_iron_ingots",
+        "Bucket"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "Is It a Bird?",
+      "RequiredItems": [
+        "has_spyglass",
+        "can_adventure"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "Is It a Balloon?",
+      "RequiredItems": [
+        "has_spyglass"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "Is It a Plane?",
+      "RequiredItems": [
+        "has_spyglass",
+        "can_respawn_ender_dragon"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "Surge Protector",
+      "RequiredItems": [
+        "Channeling Book",
+        "can_use_anvil",
+        "can_enchant",
+        "overworld_villager"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "Light as a Rabbit",
+      "RequiredItems": [
+        "can_adventure",
+        "has_iron_ingots",
+        "Bucket"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "Glow and Behold!",
+      "RequiredItems": [
+        "can_adventure"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "Whatever Floats Your Goat!",
+      "RequiredItems": [
+        "can_adventure"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "Caves & Cliffs",
+      "RequiredItems": [
+        "has_iron_ingots",
+        "Bucket",
+        "Progressive Tools, 2"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "Feels like home",
+      "RequiredItems": [
+        "has_iron_ingots",
+        "Bucket",
+        "Fishing Rod",
+        "Saddle"
+      ],
+      "ConditionalItems": [
+        [
+          "complete_raid"
+        ],
+        [
+          "fortress_loot"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "Sound of Music",
+      "RequiredItems": [
+        "Progressive Tools, 2",
+        "has_iron_ingots",
+        "basic_combat"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "Star Trader",
+      "RequiredItems": [
+        "has_iron_ingots",
+        "Bucket",
+        "overworld_villager"
+      ],
+      "ConditionalItems": [
+        [
+          "can_piglin_trade"
+        ],
+        [
+          "Nether Fortress"
+        ],
+        [
+          "The Nether"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "Birthday Song",
+      "RequiredItems": [
+        "available{The Lie}",
+        "Progressive Tools, 2",
+        "has_iron_ingots"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "Bukkit Bukkit",
+      "RequiredItems": [
+        "Bucket",
+        "has_iron_ingots",
+        "can_adventure"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "It Spreads",
+      "RequiredItems": [
+        "can_adventure",
+        "has_iron_ingots",
+        "Progressive Tools, 2"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "Sneak 100",
+      "RequiredItems": [
+        "can_adventure",
+        "has_iron_ingots",
+        "Progressive Tools, 2"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "When the Squad Hops into Town",
+      "RequiredItems": [
+        "can_adventure",
+        "Lead"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "With Our Powers Combined!",
+      "RequiredItems": [
+        "can_adventure",
+        "Lead"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "Overworld => Nether Portal",
+      "RequiredItems": [
+        "Flint and Steel"
+      ],
+      "ConditionalItems": [
+        [
+          "Bucket"
+        ],
+        [
+          "Progressive Tools, 3"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "Overworld => End Portal",
+      "RequiredItems": [
+        "enter_stronghold",
+        "3 Ender Pearls, 4"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "Overworld => Overworld Structure 1",
+      "RequiredItems": [
+        "can_adventure",
+        "has_structure_compass(Overworld Structure 1)"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "Overworld => Overworld Structure 2",
+      "RequiredItems": [
+        "can_adventure",
+        "has_structure_compass(Overworld Structure 2)"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "The Nether => Nether Structure 1",
+      "RequiredItems": [
+        "can_adventure",
+        "has_structure_compass(Nether Structure 1)"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "The Nether => Nether Structure 2",
+      "RequiredItems": [
+        "can_adventure",
+        "has_structure_compass(Nether Structure 2)"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "The End => The End Structure",
+      "RequiredItems": [
+        "can_adventure",
+        "has_structure_compass(The End Structure)"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "has_iron_ingots",
+      "RequiredItems": [
+        "Progressive Tools",
+        "Progressive Resource Crafting"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "has_copper_ingots",
+      "RequiredItems": [
+        "Progressive Tools",
+        "Progressive Resource Crafting"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "has_gold_ingots",
+      "RequiredItems": [
+        "Progressive Resource Crafting"
+      ],
+      "ConditionalItems": [
+        [
+          "Progressive Tools, 2"
+        ],
+        [
+          "The Nether"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "has_diamond_pickaxe",
+      "RequiredItems": [
+        "Progressive Tools, 3",
+        "has_iron_ingots"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "craft_crossbow",
+      "RequiredItems": [
+        "Archery",
+        "has_iron_ingots"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "has_bottle",
+      "RequiredItems": [
+        "Bottles",
+        "Progressive Resource Crafting"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "has_spyglass",
+      "RequiredItems": [
+        "has_copper_ingots",
+        "Spyglass",
+        "can_adventure"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "can_enchant",
+      "RequiredItems": [
+        "Enchanting",
+        "has_diamond_pickaxe"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "can_use_anvil",
+      "RequiredItems": [
+        "Enchanting",
+        "Progressive Resource Crafting, 2",
+        "has_iron_ingots"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "fortress_loot",
+      "RequiredItems": [
+        "Nether Fortress",
+        "basic_combat"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "can_brew_potions",
+      "RequiredItems": [
+        "Blaze Rods",
+        "Brewing",
+        "has_bottle"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "can_piglin_trade",
+      "RequiredItems": [
+        "has_gold_ingots"
+      ],
+      "ConditionalItems": [
+        [
+          "Bastion Remnant"
+        ],
+        [
+          "The Nether"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "overworld_villager",
+      "RequiredItems": [],
+      "ConditionalItems": [
+        [
+          "available{Zombie Doctor}"
+        ],
+        [
+          "Village",
+          "village_in_overworld"
+        ],
+        [
+          "has_diamond_pickaxe",
+          "Village",
+          "village_in_nether"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "enter_stronghold",
+      "RequiredItems": [
+        "Blaze Rods",
+        "Brewing",
+        "3 Ender Pearls"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "can_adventure",
+      "RequiredItems": [],
+      "ConditionalItems": [
+        [
+          "setting{combat_difficulty, option_hard}"
+        ],
+        [
+          "setting{combat_difficulty, option_easy}",
+          "death_link_check",
+          "has_iron_ingots",
+          "Progressive Weapons, 2"
+        ],
+        [
+          "setting{combat_difficulty, option_normal}",
+          "Campfire",
+          "death_link_check",
+          "Progressive Weapons"
+        ],
+        [
+          "setting{combat_difficulty, option_normal}",
+          "death_link_check",
+          "Progressive Resource Crafting",
+          "Progressive Weapons"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "basic_combat",
+      "RequiredItems": [],
+      "ConditionalItems": [
+        [
+          "setting{combat_difficulty, option_hard}"
+        ],
+        [
+          "setting{combat_difficulty, option_normal}",
+          "has_iron_ingots",
+          "Progressive Armor",
+          "Progressive Weapons"
+        ],
+        [
+          "setting{combat_difficulty, option_normal}",
+          "has_iron_ingots",
+          "Progressive Weapons",
+          "Shield"
+        ],
+        [
+          "setting{combat_difficulty, option_easy}",
+          "has_iron_ingots",
+          "Progressive Armor",
+          "Progressive Weapons, 2",
+          "Shield"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "complete_raid",
+      "RequiredItems": [
+        "can_reach_raid_regions",
+        "has_iron_ingots"
+      ],
+      "ConditionalItems": [
+        [
+          "setting{combat_difficulty, option_hard}",
+          "Progressive Armor",
+          "Progressive Weapons, 2"
+        ],
+        [
+          "setting{combat_difficulty, option_hard}",
+          "Progressive Weapons, 2",
+          "Shield"
+        ],
+        [
+          "setting{combat_difficulty, option_normal}",
+          "Progressive Armor",
+          "Progressive Weapons, 2",
+          "Shield"
+        ],
+        [
+          "setting{combat_difficulty, option_easy}",
+          "Archery",
+          "Progressive Armor, 2",
+          "Progressive Tools, 2",
+          "Progressive Weapons, 3",
+          "Shield"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "can_kill_wither",
+      "RequiredItems": [
+        "fortress_loot"
+      ],
+      "ConditionalItems": [
+        [
+          "setting{combat_difficulty, option_hard}",
+          "normal_wither_kill"
+        ],
+        [
+          "setting{combat_difficulty, option_hard}",
+          "The End"
+        ],
+        [
+          "setting{combat_difficulty, option_hard}",
+          "The Nether"
+        ],
+        [
+          "setting{combat_difficulty, option_normal}",
+          "normal_wither_kill"
+        ],
+        [
+          "setting{combat_difficulty, option_easy}",
+          "Archery",
+          "normal_wither_kill"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "can_respawn_ender_dragon",
+      "RequiredItems": [
+        "The Nether",
+        "The End",
+        "Progressive Resource Crafting"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "can_kill_ender_dragon",
+      "RequiredItems": [],
+      "ConditionalItems": [
+        [
+          "setting{combat_difficulty, option_hard}",
+          "Bed",
+          "Progressive Weapons"
+        ],
+        [
+          "setting{combat_difficulty, option_hard}",
+          "Progressive Armor",
+          "Progressive Weapons, 2"
+        ],
+        [
+          "setting{combat_difficulty, option_normal}",
+          "Archery",
+          "Progressive Armor",
+          "Progressive Weapons, 2"
+        ],
+        [
+          "setting{combat_difficulty, option_easy}",
+          "Archery",
+          "can_brew_potions",
+          "can_enchant",
+          "Progressive Armor, 2",
+          "Progressive Weapons, 3"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "has_structure_compass(Overworld Structure 1)",
+      "RequiredItems": [],
+      "ConditionalItems": [
+        [
+          "setting{structure_compasses, false}"
+        ],
+        [
+          "contains{Overworld Structure 1 => Village, Bastion Remnant}",
+          "'Structure Compass (Bastion Remnant)'"
+        ],
+        [
+          "contains{Overworld Structure 1 => Village, End City}",
+          "'Structure Compass (End City)'"
+        ],
+        [
+          "contains{Overworld Structure 1 => Village, Nether Fortress}",
+          "'Structure Compass (Nether Fortress)'"
+        ],
+        [
+          "contains{Overworld Structure 1 => Village, Pillager Outpost}",
+          "'Structure Compass (Pillager Outpost)'"
+        ],
+        [
+          "contains{Overworld Structure 1 => Village, Village}",
+          "'Structure Compass (Village)'"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "has_structure_compass(Overworld Structure 2)",
+      "RequiredItems": [],
+      "ConditionalItems": [
+        [
+          "setting{structure_compasses, false}"
+        ],
+        [
+          "contains{Overworld Structure 2 => Pillager Outpost, Bastion Remnant}",
+          "'Structure Compass (Bastion Remnant)'"
+        ],
+        [
+          "contains{Overworld Structure 2 => Pillager Outpost, End City}",
+          "'Structure Compass (End City)'"
+        ],
+        [
+          "contains{Overworld Structure 2 => Pillager Outpost, Nether Fortress}",
+          "'Structure Compass (Nether Fortress)'"
+        ],
+        [
+          "contains{Overworld Structure 2 => Pillager Outpost, Pillager Outpost}",
+          "'Structure Compass (Pillager Outpost)'"
+        ],
+        [
+          "contains{Overworld Structure 2 => Pillager Outpost, Village}",
+          "'Structure Compass (Village)'"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "has_structure_compass(Nether Structure 1)",
+      "RequiredItems": [],
+      "ConditionalItems": [
+        [
+          "setting{structure_compasses, false}"
+        ],
+        [
+          "contains{Nether Structure 1 => Nether Fortress, Bastion Remnant}",
+          "'Structure Compass (Bastion Remnant)'"
+        ],
+        [
+          "contains{Nether Structure 1 => Nether Fortress, End City}",
+          "'Structure Compass (End City)'"
+        ],
+        [
+          "contains{Nether Structure 1 => Nether Fortress, Nether Fortress}",
+          "'Structure Compass (Nether Fortress)'"
+        ],
+        [
+          "contains{Nether Structure 1 => Nether Fortress, Pillager Outpost}",
+          "'Structure Compass (Pillager Outpost)'"
+        ],
+        [
+          "contains{Nether Structure 1 => Nether Fortress, Village}",
+          "'Structure Compass (Village)'"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "has_structure_compass(Nether Structure 2)",
+      "RequiredItems": [],
+      "ConditionalItems": [
+        [
+          "setting{structure_compasses, false}"
+        ],
+        [
+          "contains{Nether Structure 2 => Bastion Remnant, Bastion Remnant}",
+          "'Structure Compass (Bastion Remnant)'"
+        ],
+        [
+          "contains{Nether Structure 2 => Bastion Remnant, End City}",
+          "'Structure Compass (End City)'"
+        ],
+        [
+          "contains{Nether Structure 2 => Bastion Remnant, Nether Fortress}",
+          "'Structure Compass (Nether Fortress)'"
+        ],
+        [
+          "contains{Nether Structure 2 => Bastion Remnant, Pillager Outpost}",
+          "'Structure Compass (Pillager Outpost)'"
+        ],
+        [
+          "contains{Nether Structure 2 => Bastion Remnant, Village}",
+          "'Structure Compass (Village)'"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "has_structure_compass(The End Structure)",
+      "RequiredItems": [],
+      "ConditionalItems": [
+        [
+          "setting{structure_compasses, false}"
+        ],
+        [
+          "contains{The End Structure => End City, Bastion Remnant}",
+          "'Structure Compass (Bastion Remnant)'"
+        ],
+        [
+          "contains{The End Structure => End City, End City}",
+          "'Structure Compass (End City)'"
+        ],
+        [
+          "contains{The End Structure => End City, Nether Fortress}",
+          "'Structure Compass (Nether Fortress)'"
+        ],
+        [
+          "contains{The End Structure => End City, Pillager Outpost}",
+          "'Structure Compass (Pillager Outpost)'"
+        ],
+        [
+          "contains{The End Structure => End City, Village}",
+          "'Structure Compass (Village)'"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "village_in_overworld",
+      "RequiredItems": [],
+      "ConditionalItems": [
+        [
+          "contains{Overworld Structure 1 => Village, Village}"
+        ],
+        [
+          "contains{Overworld Structure 2 => Pillager Outpost, Village}"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "village_in_nether",
+      "RequiredItems": [],
+      "ConditionalItems": [
+        [
+          "contains{Nether Structure 1 => Nether Fortress, Village}"
+        ],
+        [
+          "contains{Nether Structure 2 => Bastion Remnant, Village}"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "village_in_end",
+      "RequiredItems": [
+        "contains{The End Structure => End City, Village}"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "death_link_check",
+      "RequiredItems": [],
+      "ConditionalItems": [
+        [
+          "Bed"
+        ],
+        [
+          "setting{death_link, false}"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "can_reach_raid_regions",
+      "RequiredItems": [
+        "Village",
+        "Pillager Outpost"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "normal_wither_kill",
+      "RequiredItems": [
+        "Progressive Weapons, 3",
+        "Progressive Armor, 2",
+        "can_brew_potions",
+        "can_enchant"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "reach_wither_goal",
+      "RequiredItems": [
+        "setting{required_bosses, option_wither}",
+        "can_kill_wither"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "reach_dragon_goal",
+      "RequiredItems": [
+        "setting{required_bosses, option_ender_dragon}",
+        "can_kill_ender_dragon"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "reach_both_goal",
+      "RequiredItems": [
+        "setting{required_bosses, option_both}",
+        "can_kill_wither",
+        "can_kill_ender_dragon"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "can_summon_bosses",
+      "RequiredItems": [
+        "Dragon Egg Shard, egg_shards_required",
+        "checked_locations, advancement_goal"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "defeated_bosses",
+      "RequiredItems": [
+        "can_summon_bosses"
+      ],
+      "ConditionalItems": [
+        [
+          "reach_both_goal"
+        ],
+        [
+          "reach_dragon_goal"
+        ],
+        [
+          "reach_wither_goal"
+        ],
+        [
+          "setting{required_bosses, option_none}"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "Menu => New World",
+      "RequiredItems": [],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "New World => Overworld",
+      "RequiredItems": [],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "Nether Portal => The Nether",
+      "RequiredItems": [],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "End Portal => The End",
+      "RequiredItems": [],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "Overworld Structure 1 => Village",
+      "RequiredItems": [],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "Overworld Structure 2 => Pillager Outpost",
+      "RequiredItems": [],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "Nether Structure 1 => Nether Fortress",
+      "RequiredItems": [],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "Nether Structure 2 => Bastion Remnant",
+      "RequiredItems": [],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "The End Structure => End City",
+      "RequiredItems": [],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "Best Friends Forever",
+      "RequiredItems": [
+        "Overworld"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "Hot Tourist Destinations",
+      "RequiredItems": [
+        "The Nether"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "Nether",
+      "RequiredItems": [
+        "The Nether"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "Stone Age",
+      "RequiredItems": [
+        "Overworld"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "We Need to Go Deeper",
+      "RequiredItems": [
+        "The Nether"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "The City at the End of the Game",
+      "RequiredItems": [
+        "End City"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "Remote Getaway",
+      "RequiredItems": [
+        "The End"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "Return to Sender",
+      "RequiredItems": [
+        "The Nether"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "Adventure",
+      "RequiredItems": [
+        "Overworld"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "The End",
+      "RequiredItems": [
+        "The End"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "Monster Hunter",
+      "RequiredItems": [
+        "Overworld"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "A Seedy Place",
+      "RequiredItems": [
+        "Overworld"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "Those Were the Days",
+      "RequiredItems": [
+        "Bastion Remnant"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "Husbandry",
+      "RequiredItems": [
+        "Overworld"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "What a Deal!",
+      "RequiredItems": [
+        "Village"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "A Terrible Fortress",
+      "RequiredItems": [
+        "Nether Fortress"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "Minecraft",
+      "RequiredItems": [
+        "Overworld"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "The End?",
+      "RequiredItems": [
+        "The End"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "The Parrots and the Bats",
+      "RequiredItems": [
+        "Overworld"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "A Complete Catalogue",
+      "RequiredItems": [
+        "Village"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "Getting Wood",
+      "RequiredItems": [
+        "Overworld"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "Time to Mine!",
+      "RequiredItems": [
+        "Overworld"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "Bake Bread",
+      "RequiredItems": [
+        "Overworld"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "Time to Strike!",
+      "RequiredItems": [
+        "Overworld"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "Cow Tipper",
+      "RequiredItems": [
+        "Overworld"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "You've Got a Friend in Me",
+      "RequiredItems": [
+        "Pillager Outpost"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    }
+  ]
+}

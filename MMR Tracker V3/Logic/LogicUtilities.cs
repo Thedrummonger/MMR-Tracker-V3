@@ -125,6 +125,15 @@ namespace MMR_Tracker_V3.Logic
             entry.ConditionalItems = NewConditionals;
         }
 
+        public static void SortConditionals(MMRData.JsonFormatLogicItem entry)
+        {
+            for (var ind = 0; ind < entry.ConditionalItems.Count; ind++)
+            {
+                entry.ConditionalItems[ind] = [.. entry.ConditionalItems[ind].OrderBy(x => !LogicFunctions.IsLogicFunction(x)).ThenBy(x => x)];
+            }
+            entry.ConditionalItems = [.. entry.ConditionalItems.OrderBy(x => x.Count).ThenBy(x => string.Join(" ", x))];
+        }
+
         public static MMRData.JsonFormatLogicItem CreateInaccessibleLogic(string ID) => new()
         {
             Id = ID,

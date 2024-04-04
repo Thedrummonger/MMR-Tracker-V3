@@ -1,13 +1,6 @@
 ﻿using MMR_Tracker_V3;
 using MMR_Tracker_V3.Logic;
 using MMR_Tracker_V3.TrackerObjects;
-using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace TestingForm.GameDataCreation.Minecraft
 {
@@ -36,7 +29,7 @@ namespace TestingForm.GameDataCreation.Minecraft
                 RootAreas = ["Menu"],
                 GameCode = "MC",
                 LogicVersion = 1,
-                WinCondition = "WinCon"
+                WinCondition = "defeated_bosses"
             };
 
             foreach (var l in logic.locations) { AddLogic(l.Key, l.Value); }
@@ -94,6 +87,7 @@ namespace TestingForm.GameDataCreation.Minecraft
             }
 
             Logicdictionary.ItemList.Add("advancement", new() { ID = "advancement", Name = "Advancement" });
+            Logicdictionary.MacroList.Add("defeated_bosses", new() { ID = "defeated_bosses", Name = "Defeat Required Bosses" });
 
             Logicdictionary.LogicEntryCollections.Add("checked_locations", new OptionData.LogicEntryCollection
             {
@@ -139,6 +133,13 @@ namespace TestingForm.GameDataCreation.Minecraft
                 Value = false
             }.CreateSimpleValues());
 
+            foreach(var i in logicFile.Logic)
+            {
+                LogicUtilities.RemoveRedundantConditionals(i);
+                LogicUtilities.MakeCommonConditionalsRequirements(i);
+                LogicUtilities.SortConditionals(i);
+            }
+
             void ScanEntrances(object[] Data, bool Randomizable = false)
             {
                 string Area;
@@ -169,8 +170,8 @@ namespace TestingForm.GameDataCreation.Minecraft
                 logicFile.Logic.Add(Entry);
             }
 
-            File.WriteAllText(Path.Combine(Data.MCPaths.TestFolder, "MCLogicFile.json"), logicFile.ToFormattedJson());
-            File.WriteAllText(Path.Combine(Data.MCPaths.TestFolder, "MCDict.json"), Logicdictionary.ToFormattedJson());
+            File.WriteAllText(Path.Combine(TestingReferences.GetTestingLogicPresetsPath(), "Minecraft Logic.json"), logicFile.ToFormattedJson());
+            File.WriteAllText(Path.Combine(TestingReferences.GetTestingDictionaryPath(), "Minecraft V1.json"), Logicdictionary.ToFormattedJson());
 
             Logic = logicFile;
             dictionary = Logicdictionary;

@@ -1,0 +1,2997 @@
+{
+  "LogicVersion": 1,
+  "GameCode": "MC",
+  "WinCondition": "defeated_bosses",
+  "RootAreas": [
+    "Menu"
+  ],
+  "LocationList": {
+    "Who is Cutting Onions?": {
+      "OriginalItem": "advancement",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "LocationProxys": [],
+      "ID": "Who is Cutting Onions?",
+      "Name": "Who is Cutting Onions?",
+      "Area": "Overworld",
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": [],
+        "Tags": []
+      }
+    },
+    "Oh Shiny": {
+      "OriginalItem": "advancement",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "LocationProxys": [],
+      "ID": "Oh Shiny",
+      "Name": "Oh Shiny",
+      "Area": "Overworld",
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": [],
+        "Tags": []
+      }
+    },
+    "Suit Up": {
+      "OriginalItem": "advancement",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "LocationProxys": [],
+      "ID": "Suit Up",
+      "Name": "Suit Up",
+      "Area": "Overworld",
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": [],
+        "Tags": []
+      }
+    },
+    "Very Very Frightening": {
+      "OriginalItem": "advancement",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "LocationProxys": [],
+      "ID": "Very Very Frightening",
+      "Name": "Very Very Frightening",
+      "Area": "Overworld",
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": [],
+        "Tags": []
+      }
+    },
+    "Hot Stuff": {
+      "OriginalItem": "advancement",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "LocationProxys": [],
+      "ID": "Hot Stuff",
+      "Name": "Hot Stuff",
+      "Area": "Overworld",
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": [],
+        "Tags": []
+      }
+    },
+    "Best Friends Forever": {
+      "OriginalItem": "advancement",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "LocationProxys": [],
+      "ID": "Best Friends Forever",
+      "Name": "Best Friends Forever",
+      "Area": "Overworld",
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": [],
+        "Tags": []
+      }
+    },
+    "Not Today, Thank You": {
+      "OriginalItem": "advancement",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "LocationProxys": [],
+      "ID": "Not Today, Thank You",
+      "Name": "Not Today, Thank You",
+      "Area": "Overworld",
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": [],
+        "Tags": []
+      }
+    },
+    "Isn't It Iron Pick": {
+      "OriginalItem": "advancement",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "LocationProxys": [],
+      "ID": "Isn't It Iron Pick",
+      "Name": "Isn't It Iron Pick",
+      "Area": "Overworld",
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": [],
+        "Tags": []
+      }
+    },
+    "Fishy Business": {
+      "OriginalItem": "advancement",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "LocationProxys": [],
+      "ID": "Fishy Business",
+      "Name": "Fishy Business",
+      "Area": "Overworld",
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": [],
+        "Tags": []
+      }
+    },
+    "Sniper Duel": {
+      "OriginalItem": "advancement",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "LocationProxys": [],
+      "ID": "Sniper Duel",
+      "Name": "Sniper Duel",
+      "Area": "Overworld",
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": [],
+        "Tags": []
+      }
+    },
+    "Bullseye": {
+      "OriginalItem": "advancement",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "LocationProxys": [],
+      "ID": "Bullseye",
+      "Name": "Bullseye",
+      "Area": "Overworld",
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": [],
+        "Tags": []
+      }
+    },
+    "Stone Age": {
+      "OriginalItem": "advancement",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "LocationProxys": [],
+      "ID": "Stone Age",
+      "Name": "Stone Age",
+      "Area": "Overworld",
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": [],
+        "Tags": []
+      }
+    },
+    "Two Birds, One Arrow": {
+      "OriginalItem": "advancement",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "LocationProxys": [],
+      "ID": "Two Birds, One Arrow",
+      "Name": "Two Birds, One Arrow",
+      "Area": "Overworld",
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": [],
+        "Tags": []
+      }
+    },
+    "Getting an Upgrade": {
+      "OriginalItem": "advancement",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "LocationProxys": [],
+      "ID": "Getting an Upgrade",
+      "Name": "Getting an Upgrade",
+      "Area": "Overworld",
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": [],
+        "Tags": []
+      }
+    },
+    "Tactical Fishing": {
+      "OriginalItem": "advancement",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "LocationProxys": [],
+      "ID": "Tactical Fishing",
+      "Name": "Tactical Fishing",
+      "Area": "Overworld",
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": [],
+        "Tags": []
+      }
+    },
+    "Zombie Doctor": {
+      "OriginalItem": "advancement",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "LocationProxys": [],
+      "ID": "Zombie Doctor",
+      "Name": "Zombie Doctor",
+      "Area": "Overworld",
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": [],
+        "Tags": []
+      }
+    },
+    "Ice Bucket Challenge": {
+      "OriginalItem": "advancement",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "LocationProxys": [],
+      "ID": "Ice Bucket Challenge",
+      "Name": "Ice Bucket Challenge",
+      "Area": "Overworld",
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": [],
+        "Tags": []
+      }
+    },
+    "Take Aim": {
+      "OriginalItem": "advancement",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "LocationProxys": [],
+      "ID": "Take Aim",
+      "Name": "Take Aim",
+      "Area": "Overworld",
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": [],
+        "Tags": []
+      }
+    },
+    "Total Beelocation": {
+      "OriginalItem": "advancement",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "LocationProxys": [],
+      "ID": "Total Beelocation",
+      "Name": "Total Beelocation",
+      "Area": "Overworld",
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": [],
+        "Tags": []
+      }
+    },
+    "Arbalistic": {
+      "OriginalItem": "advancement",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "LocationProxys": [],
+      "ID": "Arbalistic",
+      "Name": "Arbalistic",
+      "Area": "Overworld",
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": [],
+        "Tags": []
+      }
+    },
+    "Acquire Hardware": {
+      "OriginalItem": "advancement",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "LocationProxys": [],
+      "ID": "Acquire Hardware",
+      "Name": "Acquire Hardware",
+      "Area": "Overworld",
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": [],
+        "Tags": []
+      }
+    },
+    "Cover Me With Diamonds": {
+      "OriginalItem": "advancement",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "LocationProxys": [],
+      "ID": "Cover Me With Diamonds",
+      "Name": "Cover Me With Diamonds",
+      "Area": "Overworld",
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": [],
+        "Tags": []
+      }
+    },
+    "Hired Help": {
+      "OriginalItem": "advancement",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "LocationProxys": [],
+      "ID": "Hired Help",
+      "Name": "Hired Help",
+      "Area": "Overworld",
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": [],
+        "Tags": []
+      }
+    },
+    "Sweet Dreams": {
+      "OriginalItem": "advancement",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "LocationProxys": [],
+      "ID": "Sweet Dreams",
+      "Name": "Sweet Dreams",
+      "Area": "Overworld",
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": [],
+        "Tags": []
+      }
+    },
+    "Adventure": {
+      "OriginalItem": "advancement",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "LocationProxys": [],
+      "ID": "Adventure",
+      "Name": "Adventure",
+      "Area": "Overworld",
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": [],
+        "Tags": []
+      }
+    },
+    "Monsters Hunted": {
+      "OriginalItem": "advancement",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "LocationProxys": [],
+      "ID": "Monsters Hunted",
+      "Name": "Monsters Hunted",
+      "Area": "Overworld",
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": [],
+        "Tags": []
+      }
+    },
+    "Enchanter": {
+      "OriginalItem": "advancement",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "LocationProxys": [],
+      "ID": "Enchanter",
+      "Name": "Enchanter",
+      "Area": "Overworld",
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": [],
+        "Tags": []
+      }
+    },
+    "Eye Spy": {
+      "OriginalItem": "advancement",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "LocationProxys": [],
+      "ID": "Eye Spy",
+      "Name": "Eye Spy",
+      "Area": "Overworld",
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": [],
+        "Tags": []
+      }
+    },
+    "Monster Hunter": {
+      "OriginalItem": "advancement",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "LocationProxys": [],
+      "ID": "Monster Hunter",
+      "Name": "Monster Hunter",
+      "Area": "Overworld",
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": [],
+        "Tags": []
+      }
+    },
+    "Adventuring Time": {
+      "OriginalItem": "advancement",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "LocationProxys": [],
+      "ID": "Adventuring Time",
+      "Name": "Adventuring Time",
+      "Area": "Overworld",
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": [],
+        "Tags": []
+      }
+    },
+    "A Seedy Place": {
+      "OriginalItem": "advancement",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "LocationProxys": [],
+      "ID": "A Seedy Place",
+      "Name": "A Seedy Place",
+      "Area": "Overworld",
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": [],
+        "Tags": []
+      }
+    },
+    "Husbandry": {
+      "OriginalItem": "advancement",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "LocationProxys": [],
+      "ID": "Husbandry",
+      "Name": "Husbandry",
+      "Area": "Overworld",
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": [],
+        "Tags": []
+      }
+    },
+    "Bee Our Guest": {
+      "OriginalItem": "advancement",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "LocationProxys": [],
+      "ID": "Bee Our Guest",
+      "Name": "Bee Our Guest",
+      "Area": "Overworld",
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": [],
+        "Tags": []
+      }
+    },
+    "Diamonds!": {
+      "OriginalItem": "advancement",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "LocationProxys": [],
+      "ID": "Diamonds!",
+      "Name": "Diamonds!",
+      "Area": "Overworld",
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": [],
+        "Tags": []
+      }
+    },
+    "A Throwaway Joke": {
+      "OriginalItem": "advancement",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "LocationProxys": [],
+      "ID": "A Throwaway Joke",
+      "Name": "A Throwaway Joke",
+      "Area": "Overworld",
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": [],
+        "Tags": []
+      }
+    },
+    "Minecraft": {
+      "OriginalItem": "advancement",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "LocationProxys": [],
+      "ID": "Minecraft",
+      "Name": "Minecraft",
+      "Area": "Overworld",
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": [],
+        "Tags": []
+      }
+    },
+    "Sticky Situation": {
+      "OriginalItem": "advancement",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "LocationProxys": [],
+      "ID": "Sticky Situation",
+      "Name": "Sticky Situation",
+      "Area": "Overworld",
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": [],
+        "Tags": []
+      }
+    },
+    "Ol' Betsy": {
+      "OriginalItem": "advancement",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "LocationProxys": [],
+      "ID": "Ol' Betsy",
+      "Name": "Ol' Betsy",
+      "Area": "Overworld",
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": [],
+        "Tags": []
+      }
+    },
+    "The Parrots and the Bats": {
+      "OriginalItem": "advancement",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "LocationProxys": [],
+      "ID": "The Parrots and the Bats",
+      "Name": "The Parrots and the Bats",
+      "Area": "Overworld",
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": [],
+        "Tags": []
+      }
+    },
+    "Getting Wood": {
+      "OriginalItem": "advancement",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "LocationProxys": [],
+      "ID": "Getting Wood",
+      "Name": "Getting Wood",
+      "Area": "Overworld",
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": [],
+        "Tags": []
+      }
+    },
+    "Time to Mine!": {
+      "OriginalItem": "advancement",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "LocationProxys": [],
+      "ID": "Time to Mine!",
+      "Name": "Time to Mine!",
+      "Area": "Overworld",
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": [],
+        "Tags": []
+      }
+    },
+    "Hot Topic": {
+      "OriginalItem": "advancement",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "LocationProxys": [],
+      "ID": "Hot Topic",
+      "Name": "Hot Topic",
+      "Area": "Overworld",
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": [],
+        "Tags": []
+      }
+    },
+    "Bake Bread": {
+      "OriginalItem": "advancement",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "LocationProxys": [],
+      "ID": "Bake Bread",
+      "Name": "Bake Bread",
+      "Area": "Overworld",
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": [],
+        "Tags": []
+      }
+    },
+    "The Lie": {
+      "OriginalItem": "advancement",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "LocationProxys": [],
+      "ID": "The Lie",
+      "Name": "The Lie",
+      "Area": "Overworld",
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": [],
+        "Tags": []
+      }
+    },
+    "On a Rail": {
+      "OriginalItem": "advancement",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "LocationProxys": [],
+      "ID": "On a Rail",
+      "Name": "On a Rail",
+      "Area": "Overworld",
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": [],
+        "Tags": []
+      }
+    },
+    "Time to Strike!": {
+      "OriginalItem": "advancement",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "LocationProxys": [],
+      "ID": "Time to Strike!",
+      "Name": "Time to Strike!",
+      "Area": "Overworld",
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": [],
+        "Tags": []
+      }
+    },
+    "Cow Tipper": {
+      "OriginalItem": "advancement",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "LocationProxys": [],
+      "ID": "Cow Tipper",
+      "Name": "Cow Tipper",
+      "Area": "Overworld",
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": [],
+        "Tags": []
+      }
+    },
+    "When Pigs Fly": {
+      "OriginalItem": "advancement",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "LocationProxys": [],
+      "ID": "When Pigs Fly",
+      "Name": "When Pigs Fly",
+      "Area": "Overworld",
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": [],
+        "Tags": []
+      }
+    },
+    "Librarian": {
+      "OriginalItem": "advancement",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "LocationProxys": [],
+      "ID": "Librarian",
+      "Name": "Librarian",
+      "Area": "Overworld",
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": [],
+        "Tags": []
+      }
+    },
+    "Wax On": {
+      "OriginalItem": "advancement",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "LocationProxys": [],
+      "ID": "Wax On",
+      "Name": "Wax On",
+      "Area": "Overworld",
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": [],
+        "Tags": []
+      }
+    },
+    "Wax Off": {
+      "OriginalItem": "advancement",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "LocationProxys": [],
+      "ID": "Wax Off",
+      "Name": "Wax Off",
+      "Area": "Overworld",
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": [],
+        "Tags": []
+      }
+    },
+    "The Cutest Predator": {
+      "OriginalItem": "advancement",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "LocationProxys": [],
+      "ID": "The Cutest Predator",
+      "Name": "The Cutest Predator",
+      "Area": "Overworld",
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": [],
+        "Tags": []
+      }
+    },
+    "The Healing Power of Friendship": {
+      "OriginalItem": "advancement",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "LocationProxys": [],
+      "ID": "The Healing Power of Friendship",
+      "Name": "The Healing Power of Friendship",
+      "Area": "Overworld",
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": [],
+        "Tags": []
+      }
+    },
+    "Is It a Bird?": {
+      "OriginalItem": "advancement",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "LocationProxys": [],
+      "ID": "Is It a Bird?",
+      "Name": "Is It a Bird?",
+      "Area": "Overworld",
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": [],
+        "Tags": []
+      }
+    },
+    "Surge Protector": {
+      "OriginalItem": "advancement",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "LocationProxys": [],
+      "ID": "Surge Protector",
+      "Name": "Surge Protector",
+      "Area": "Overworld",
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": [],
+        "Tags": []
+      }
+    },
+    "Light as a Rabbit": {
+      "OriginalItem": "advancement",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "LocationProxys": [],
+      "ID": "Light as a Rabbit",
+      "Name": "Light as a Rabbit",
+      "Area": "Overworld",
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": [],
+        "Tags": []
+      }
+    },
+    "Glow and Behold!": {
+      "OriginalItem": "advancement",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "LocationProxys": [],
+      "ID": "Glow and Behold!",
+      "Name": "Glow and Behold!",
+      "Area": "Overworld",
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": [],
+        "Tags": []
+      }
+    },
+    "Whatever Floats Your Goat!": {
+      "OriginalItem": "advancement",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "LocationProxys": [],
+      "ID": "Whatever Floats Your Goat!",
+      "Name": "Whatever Floats Your Goat!",
+      "Area": "Overworld",
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": [],
+        "Tags": []
+      }
+    },
+    "Caves & Cliffs": {
+      "OriginalItem": "advancement",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "LocationProxys": [],
+      "ID": "Caves & Cliffs",
+      "Name": "Caves & Cliffs",
+      "Area": "Overworld",
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": [],
+        "Tags": []
+      }
+    },
+    "Sound of Music": {
+      "OriginalItem": "advancement",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "LocationProxys": [],
+      "ID": "Sound of Music",
+      "Name": "Sound of Music",
+      "Area": "Overworld",
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": [],
+        "Tags": []
+      }
+    },
+    "Bukkit Bukkit": {
+      "OriginalItem": "advancement",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "LocationProxys": [],
+      "ID": "Bukkit Bukkit",
+      "Name": "Bukkit Bukkit",
+      "Area": "Overworld",
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": [],
+        "Tags": []
+      }
+    },
+    "It Spreads": {
+      "OriginalItem": "advancement",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "LocationProxys": [],
+      "ID": "It Spreads",
+      "Name": "It Spreads",
+      "Area": "Overworld",
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": [],
+        "Tags": []
+      }
+    },
+    "Sneak 100": {
+      "OriginalItem": "advancement",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "LocationProxys": [],
+      "ID": "Sneak 100",
+      "Name": "Sneak 100",
+      "Area": "Overworld",
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": [],
+        "Tags": []
+      }
+    },
+    "When the Squad Hops into Town": {
+      "OriginalItem": "advancement",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "LocationProxys": [],
+      "ID": "When the Squad Hops into Town",
+      "Name": "When the Squad Hops into Town",
+      "Area": "Overworld",
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": [],
+        "Tags": []
+      }
+    },
+    "Hot Tourist Destinations": {
+      "OriginalItem": "advancement",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "LocationProxys": [],
+      "ID": "Hot Tourist Destinations",
+      "Name": "Hot Tourist Destinations",
+      "Area": "The Nether",
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": [],
+        "Tags": []
+      }
+    },
+    "This Boat Has Legs": {
+      "OriginalItem": "advancement",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "LocationProxys": [],
+      "ID": "This Boat Has Legs",
+      "Name": "This Boat Has Legs",
+      "Area": "The Nether",
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": [],
+        "Tags": []
+      }
+    },
+    "Nether": {
+      "OriginalItem": "advancement",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "LocationProxys": [],
+      "ID": "Nether",
+      "Name": "Nether",
+      "Area": "The Nether",
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": [],
+        "Tags": []
+      }
+    },
+    "Two by Two": {
+      "OriginalItem": "advancement",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "LocationProxys": [],
+      "ID": "Two by Two",
+      "Name": "Two by Two",
+      "Area": "The Nether",
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": [],
+        "Tags": []
+      }
+    },
+    "We Need to Go Deeper": {
+      "OriginalItem": "advancement",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "LocationProxys": [],
+      "ID": "We Need to Go Deeper",
+      "Name": "We Need to Go Deeper",
+      "Area": "The Nether",
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": [],
+        "Tags": []
+      }
+    },
+    "Not Quite \"Nine\" Lives": {
+      "OriginalItem": "advancement",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "LocationProxys": [],
+      "ID": "Not Quite \"Nine\" Lives",
+      "Name": "Not Quite \"Nine\" Lives",
+      "Area": "The Nether",
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": [],
+        "Tags": []
+      }
+    },
+    "Return to Sender": {
+      "OriginalItem": "advancement",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "LocationProxys": [],
+      "ID": "Return to Sender",
+      "Name": "Return to Sender",
+      "Area": "The Nether",
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": [],
+        "Tags": []
+      }
+    },
+    "Serious Dedication": {
+      "OriginalItem": "advancement",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "LocationProxys": [],
+      "ID": "Serious Dedication",
+      "Name": "Serious Dedication",
+      "Area": "The Nether",
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": [],
+        "Tags": []
+      }
+    },
+    "Hidden in the Depths": {
+      "OriginalItem": "advancement",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "LocationProxys": [],
+      "ID": "Hidden in the Depths",
+      "Name": "Hidden in the Depths",
+      "Area": "The Nether",
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": [],
+        "Tags": []
+      }
+    },
+    "Subspace Bubble": {
+      "OriginalItem": "advancement",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "LocationProxys": [],
+      "ID": "Subspace Bubble",
+      "Name": "Subspace Bubble",
+      "Area": "The Nether",
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": [],
+        "Tags": []
+      }
+    },
+    "Country Lode, Take Me Home": {
+      "OriginalItem": "advancement",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "LocationProxys": [],
+      "ID": "Country Lode, Take Me Home",
+      "Name": "Country Lode, Take Me Home",
+      "Area": "The Nether",
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": [],
+        "Tags": []
+      }
+    },
+    "Uneasy Alliance": {
+      "OriginalItem": "advancement",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "LocationProxys": [],
+      "ID": "Uneasy Alliance",
+      "Name": "Uneasy Alliance",
+      "Area": "The Nether",
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": [],
+        "Tags": []
+      }
+    },
+    "Cover Me in Debris": {
+      "OriginalItem": "advancement",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "LocationProxys": [],
+      "ID": "Cover Me in Debris",
+      "Name": "Cover Me in Debris",
+      "Area": "The Nether",
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": [],
+        "Tags": []
+      }
+    },
+    "Is It a Balloon?": {
+      "OriginalItem": "advancement",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "LocationProxys": [],
+      "ID": "Is It a Balloon?",
+      "Name": "Is It a Balloon?",
+      "Area": "The Nether",
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": [],
+        "Tags": []
+      }
+    },
+    "Feels like home": {
+      "OriginalItem": "advancement",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "LocationProxys": [],
+      "ID": "Feels like home",
+      "Name": "Feels like home",
+      "Area": "The Nether",
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": [],
+        "Tags": []
+      }
+    },
+    "With Our Powers Combined!": {
+      "OriginalItem": "advancement",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "LocationProxys": [],
+      "ID": "With Our Powers Combined!",
+      "Name": "With Our Powers Combined!",
+      "Area": "The Nether",
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": [],
+        "Tags": []
+      }
+    },
+    "Free the End": {
+      "OriginalItem": "advancement",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "LocationProxys": [],
+      "ID": "Free the End",
+      "Name": "Free the End",
+      "Area": "The End",
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": [],
+        "Tags": []
+      }
+    },
+    "The Next Generation": {
+      "OriginalItem": "advancement",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "LocationProxys": [],
+      "ID": "The Next Generation",
+      "Name": "The Next Generation",
+      "Area": "The End",
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": [],
+        "Tags": []
+      }
+    },
+    "Remote Getaway": {
+      "OriginalItem": "advancement",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "LocationProxys": [],
+      "ID": "Remote Getaway",
+      "Name": "Remote Getaway",
+      "Area": "The End",
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": [],
+        "Tags": []
+      }
+    },
+    "The End... Again...": {
+      "OriginalItem": "advancement",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "LocationProxys": [],
+      "ID": "The End... Again...",
+      "Name": "The End... Again...",
+      "Area": "The End",
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": [],
+        "Tags": []
+      }
+    },
+    "You Need a Mint": {
+      "OriginalItem": "advancement",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "LocationProxys": [],
+      "ID": "You Need a Mint",
+      "Name": "You Need a Mint",
+      "Area": "The End",
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": [],
+        "Tags": []
+      }
+    },
+    "The End": {
+      "OriginalItem": "advancement",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "LocationProxys": [],
+      "ID": "The End",
+      "Name": "The End",
+      "Area": "The End",
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": [],
+        "Tags": []
+      }
+    },
+    "The End?": {
+      "OriginalItem": "advancement",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "LocationProxys": [],
+      "ID": "The End?",
+      "Name": "The End?",
+      "Area": "The End",
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": [],
+        "Tags": []
+      }
+    },
+    "Is It a Plane?": {
+      "OriginalItem": "advancement",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "LocationProxys": [],
+      "ID": "Is It a Plane?",
+      "Name": "Is It a Plane?",
+      "Area": "The End",
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": [],
+        "Tags": []
+      }
+    },
+    "Postmortal": {
+      "OriginalItem": "advancement",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "LocationProxys": [],
+      "ID": "Postmortal",
+      "Name": "Postmortal",
+      "Area": "Village",
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": [],
+        "Tags": []
+      }
+    },
+    "Hero of the Village": {
+      "OriginalItem": "advancement",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "LocationProxys": [],
+      "ID": "Hero of the Village",
+      "Name": "Hero of the Village",
+      "Area": "Village",
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": [],
+        "Tags": []
+      }
+    },
+    "A Balanced Diet": {
+      "OriginalItem": "advancement",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "LocationProxys": [],
+      "ID": "A Balanced Diet",
+      "Name": "A Balanced Diet",
+      "Area": "Village",
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": [],
+        "Tags": []
+      }
+    },
+    "What a Deal!": {
+      "OriginalItem": "advancement",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "LocationProxys": [],
+      "ID": "What a Deal!",
+      "Name": "What a Deal!",
+      "Area": "Village",
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": [],
+        "Tags": []
+      }
+    },
+    "A Complete Catalogue": {
+      "OriginalItem": "advancement",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "LocationProxys": [],
+      "ID": "A Complete Catalogue",
+      "Name": "A Complete Catalogue",
+      "Area": "Village",
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": [],
+        "Tags": []
+      }
+    },
+    "Star Trader": {
+      "OriginalItem": "advancement",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "LocationProxys": [],
+      "ID": "Star Trader",
+      "Name": "Star Trader",
+      "Area": "Village",
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": [],
+        "Tags": []
+      }
+    },
+    "A Furious Cocktail": {
+      "OriginalItem": "advancement",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "LocationProxys": [],
+      "ID": "A Furious Cocktail",
+      "Name": "A Furious Cocktail",
+      "Area": "Nether Fortress",
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": [],
+        "Tags": []
+      }
+    },
+    "Bring Home the Beacon": {
+      "OriginalItem": "advancement",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "LocationProxys": [],
+      "ID": "Bring Home the Beacon",
+      "Name": "Bring Home the Beacon",
+      "Area": "Nether Fortress",
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": [],
+        "Tags": []
+      }
+    },
+    "Local Brewery": {
+      "OriginalItem": "advancement",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "LocationProxys": [],
+      "ID": "Local Brewery",
+      "Name": "Local Brewery",
+      "Area": "Nether Fortress",
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": [],
+        "Tags": []
+      }
+    },
+    "How Did We Get Here?": {
+      "OriginalItem": "advancement",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "LocationProxys": [],
+      "ID": "How Did We Get Here?",
+      "Name": "How Did We Get Here?",
+      "Area": "Nether Fortress",
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": [],
+        "Tags": []
+      }
+    },
+    "Spooky Scary Skeleton": {
+      "OriginalItem": "advancement",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "LocationProxys": [],
+      "ID": "Spooky Scary Skeleton",
+      "Name": "Spooky Scary Skeleton",
+      "Area": "Nether Fortress",
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": [],
+        "Tags": []
+      }
+    },
+    "Into Fire": {
+      "OriginalItem": "advancement",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "LocationProxys": [],
+      "ID": "Into Fire",
+      "Name": "Into Fire",
+      "Area": "Nether Fortress",
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": [],
+        "Tags": []
+      }
+    },
+    "Beaconator": {
+      "OriginalItem": "advancement",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "LocationProxys": [],
+      "ID": "Beaconator",
+      "Name": "Beaconator",
+      "Area": "Nether Fortress",
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": [],
+        "Tags": []
+      }
+    },
+    "Withering Heights": {
+      "OriginalItem": "advancement",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "LocationProxys": [],
+      "ID": "Withering Heights",
+      "Name": "Withering Heights",
+      "Area": "Nether Fortress",
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": [],
+        "Tags": []
+      }
+    },
+    "A Terrible Fortress": {
+      "OriginalItem": "advancement",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "LocationProxys": [],
+      "ID": "A Terrible Fortress",
+      "Name": "A Terrible Fortress",
+      "Area": "Nether Fortress",
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": [],
+        "Tags": []
+      }
+    },
+    "Overkill": {
+      "OriginalItem": "advancement",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "LocationProxys": [],
+      "ID": "Overkill",
+      "Name": "Overkill",
+      "Area": "Nether Fortress",
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": [],
+        "Tags": []
+      }
+    },
+    "Who's the Pillager Now?": {
+      "OriginalItem": "advancement",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "LocationProxys": [],
+      "ID": "Who's the Pillager Now?",
+      "Name": "Who's the Pillager Now?",
+      "Area": "Pillager Outpost",
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": [],
+        "Tags": []
+      }
+    },
+    "Voluntary Exile": {
+      "OriginalItem": "advancement",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "LocationProxys": [],
+      "ID": "Voluntary Exile",
+      "Name": "Voluntary Exile",
+      "Area": "Pillager Outpost",
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": [],
+        "Tags": []
+      }
+    },
+    "Birthday Song": {
+      "OriginalItem": "advancement",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "LocationProxys": [],
+      "ID": "Birthday Song",
+      "Name": "Birthday Song",
+      "Area": "Pillager Outpost",
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": [],
+        "Tags": []
+      }
+    },
+    "You've Got a Friend in Me": {
+      "OriginalItem": "advancement",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "LocationProxys": [],
+      "ID": "You've Got a Friend in Me",
+      "Name": "You've Got a Friend in Me",
+      "Area": "Pillager Outpost",
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": [],
+        "Tags": []
+      }
+    },
+    "War Pigs": {
+      "OriginalItem": "advancement",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "LocationProxys": [],
+      "ID": "War Pigs",
+      "Name": "War Pigs",
+      "Area": "Bastion Remnant",
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": [],
+        "Tags": []
+      }
+    },
+    "Those Were the Days": {
+      "OriginalItem": "advancement",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "LocationProxys": [],
+      "ID": "Those Were the Days",
+      "Name": "Those Were the Days",
+      "Area": "Bastion Remnant",
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": [],
+        "Tags": []
+      }
+    },
+    "Overpowered": {
+      "OriginalItem": "advancement",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "LocationProxys": [],
+      "ID": "Overpowered",
+      "Name": "Overpowered",
+      "Area": "Bastion Remnant",
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": [],
+        "Tags": []
+      }
+    },
+    "Great View From Up Here": {
+      "OriginalItem": "advancement",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "LocationProxys": [],
+      "ID": "Great View From Up Here",
+      "Name": "Great View From Up Here",
+      "Area": "End City",
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": [],
+        "Tags": []
+      }
+    },
+    "The City at the End of the Game": {
+      "OriginalItem": "advancement",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "LocationProxys": [],
+      "ID": "The City at the End of the Game",
+      "Name": "The City at the End of the Game",
+      "Area": "End City",
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": [],
+        "Tags": []
+      }
+    },
+    "Sky's the Limit": {
+      "OriginalItem": "advancement",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "LocationProxys": [],
+      "ID": "Sky's the Limit",
+      "Name": "Sky's the Limit",
+      "Area": "End City",
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": [],
+        "Tags": []
+      }
+    }
+  },
+  "ItemList": {
+    "Archery": {
+      "ID": "Archery",
+      "Name": "Archery",
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": [],
+        "Tags": []
+      }
+    },
+    "Progressive Resource Crafting": {
+      "ID": "Progressive Resource Crafting",
+      "Name": "Progressive Resource Crafting",
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": [],
+        "Tags": []
+      }
+    },
+    "Resource Blocks": {
+      "ID": "Resource Blocks",
+      "Name": "Resource Blocks",
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": [],
+        "Tags": []
+      }
+    },
+    "Brewing": {
+      "ID": "Brewing",
+      "Name": "Brewing",
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": [],
+        "Tags": []
+      }
+    },
+    "Enchanting": {
+      "ID": "Enchanting",
+      "Name": "Enchanting",
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": [],
+        "Tags": []
+      }
+    },
+    "Bucket": {
+      "ID": "Bucket",
+      "Name": "Bucket",
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": [],
+        "Tags": []
+      }
+    },
+    "Flint and Steel": {
+      "ID": "Flint and Steel",
+      "Name": "Flint and Steel",
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": [],
+        "Tags": []
+      }
+    },
+    "Bed": {
+      "ID": "Bed",
+      "Name": "Bed",
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": [],
+        "Tags": []
+      }
+    },
+    "Bottles": {
+      "ID": "Bottles",
+      "Name": "Bottles",
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": [],
+        "Tags": []
+      }
+    },
+    "Shield": {
+      "ID": "Shield",
+      "Name": "Shield",
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": [],
+        "Tags": []
+      }
+    },
+    "Fishing Rod": {
+      "ID": "Fishing Rod",
+      "Name": "Fishing Rod",
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": [],
+        "Tags": []
+      }
+    },
+    "Campfire": {
+      "ID": "Campfire",
+      "Name": "Campfire",
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": [],
+        "Tags": []
+      }
+    },
+    "Progressive Weapons": {
+      "ID": "Progressive Weapons",
+      "Name": "Progressive Weapons",
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": [],
+        "Tags": []
+      }
+    },
+    "Progressive Tools": {
+      "ID": "Progressive Tools",
+      "Name": "Progressive Tools",
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": [],
+        "Tags": []
+      }
+    },
+    "Progressive Armor": {
+      "ID": "Progressive Armor",
+      "Name": "Progressive Armor",
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": [],
+        "Tags": []
+      }
+    },
+    "8 Netherite Scrap": {
+      "ID": "8 Netherite Scrap",
+      "Name": "8 Netherite Scrap",
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": [],
+        "Tags": []
+      }
+    },
+    "8 Emeralds": {
+      "ID": "8 Emeralds",
+      "Name": "8 Emeralds",
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": [],
+        "Tags": []
+      }
+    },
+    "4 Emeralds": {
+      "ID": "4 Emeralds",
+      "Name": "4 Emeralds",
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": [],
+        "Tags": []
+      }
+    },
+    "Channeling Book": {
+      "ID": "Channeling Book",
+      "Name": "Channeling Book",
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": [],
+        "Tags": []
+      }
+    },
+    "Silk Touch Book": {
+      "ID": "Silk Touch Book",
+      "Name": "Silk Touch Book",
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": [],
+        "Tags": []
+      }
+    },
+    "Sharpness III Book": {
+      "ID": "Sharpness III Book",
+      "Name": "Sharpness III Book",
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": [],
+        "Tags": []
+      }
+    },
+    "Piercing IV Book": {
+      "ID": "Piercing IV Book",
+      "Name": "Piercing IV Book",
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": [],
+        "Tags": []
+      }
+    },
+    "Looting III Book": {
+      "ID": "Looting III Book",
+      "Name": "Looting III Book",
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": [],
+        "Tags": []
+      }
+    },
+    "Infinity Book": {
+      "ID": "Infinity Book",
+      "Name": "Infinity Book",
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": [],
+        "Tags": []
+      }
+    },
+    "4 Diamond Ore": {
+      "ID": "4 Diamond Ore",
+      "Name": "4 Diamond Ore",
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": [],
+        "Tags": []
+      }
+    },
+    "16 Iron Ore": {
+      "ID": "16 Iron Ore",
+      "Name": "16 Iron Ore",
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": [],
+        "Tags": []
+      }
+    },
+    "500 XP": {
+      "ID": "500 XP",
+      "Name": "500 XP",
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": [],
+        "Tags": []
+      }
+    },
+    "100 XP": {
+      "ID": "100 XP",
+      "Name": "100 XP",
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": [],
+        "Tags": []
+      }
+    },
+    "50 XP": {
+      "ID": "50 XP",
+      "Name": "50 XP",
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": [],
+        "Tags": []
+      }
+    },
+    "3 Ender Pearls": {
+      "ID": "3 Ender Pearls",
+      "Name": "3 Ender Pearls",
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": [],
+        "Tags": []
+      }
+    },
+    "4 Lapis Lazuli": {
+      "ID": "4 Lapis Lazuli",
+      "Name": "4 Lapis Lazuli",
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": [],
+        "Tags": []
+      }
+    },
+    "16 Porkchops": {
+      "ID": "16 Porkchops",
+      "Name": "16 Porkchops",
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": [],
+        "Tags": []
+      }
+    },
+    "8 Gold Ore": {
+      "ID": "8 Gold Ore",
+      "Name": "8 Gold Ore",
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": [],
+        "Tags": []
+      }
+    },
+    "Rotten Flesh": {
+      "ID": "Rotten Flesh",
+      "Name": "Rotten Flesh",
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": [],
+        "Tags": []
+      }
+    },
+    "Single Arrow": {
+      "ID": "Single Arrow",
+      "Name": "Single Arrow",
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": [],
+        "Tags": []
+      }
+    },
+    "32 Arrows": {
+      "ID": "32 Arrows",
+      "Name": "32 Arrows",
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": [],
+        "Tags": []
+      }
+    },
+    "Saddle": {
+      "ID": "Saddle",
+      "Name": "Saddle",
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": [],
+        "Tags": []
+      }
+    },
+    "Structure Compass (Village)": {
+      "ID": "Structure Compass (Village)",
+      "Name": "Structure Compass (Village)",
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": [],
+        "Tags": []
+      }
+    },
+    "Structure Compass (Pillager Outpost)": {
+      "ID": "Structure Compass (Pillager Outpost)",
+      "Name": "Structure Compass (Pillager Outpost)",
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": [],
+        "Tags": []
+      }
+    },
+    "Structure Compass (Nether Fortress)": {
+      "ID": "Structure Compass (Nether Fortress)",
+      "Name": "Structure Compass (Nether Fortress)",
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": [],
+        "Tags": []
+      }
+    },
+    "Structure Compass (Bastion Remnant)": {
+      "ID": "Structure Compass (Bastion Remnant)",
+      "Name": "Structure Compass (Bastion Remnant)",
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": [],
+        "Tags": []
+      }
+    },
+    "Structure Compass (End City)": {
+      "ID": "Structure Compass (End City)",
+      "Name": "Structure Compass (End City)",
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": [],
+        "Tags": []
+      }
+    },
+    "Shulker Box": {
+      "ID": "Shulker Box",
+      "Name": "Shulker Box",
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": [],
+        "Tags": []
+      }
+    },
+    "Dragon Egg Shard": {
+      "ID": "Dragon Egg Shard",
+      "Name": "Dragon Egg Shard",
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": [],
+        "Tags": []
+      }
+    },
+    "Spyglass": {
+      "ID": "Spyglass",
+      "Name": "Spyglass",
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": [],
+        "Tags": []
+      }
+    },
+    "Lead": {
+      "ID": "Lead",
+      "Name": "Lead",
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": [],
+        "Tags": []
+      }
+    },
+    "Bee Trap": {
+      "ID": "Bee Trap",
+      "Name": "Bee Trap",
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": [],
+        "Tags": []
+      }
+    },
+    "advancement": {
+      "ID": "advancement",
+      "Name": "Advancement",
+      "ItemTypes": [],
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": [],
+        "Tags": []
+      }
+    }
+  },
+  "EntranceList": {
+    "Menu => New World": {
+      "Exit": "New World",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false,
+      "ID": "Menu => New World",
+      "Area": "Menu",
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": [],
+        "Tags": []
+      }
+    },
+    "Overworld => Nether Portal": {
+      "Exit": "Nether Portal",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false,
+      "ID": "Overworld => Nether Portal",
+      "Area": "Overworld",
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": [],
+        "Tags": []
+      }
+    },
+    "Overworld => End Portal": {
+      "Exit": "End Portal",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false,
+      "ID": "Overworld => End Portal",
+      "Area": "Overworld",
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": [],
+        "Tags": []
+      }
+    },
+    "Overworld => Overworld Structure 1": {
+      "Exit": "Overworld Structure 1",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false,
+      "ID": "Overworld => Overworld Structure 1",
+      "Area": "Overworld",
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": [],
+        "Tags": []
+      }
+    },
+    "Overworld => Overworld Structure 2": {
+      "Exit": "Overworld Structure 2",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false,
+      "ID": "Overworld => Overworld Structure 2",
+      "Area": "Overworld",
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": [],
+        "Tags": []
+      }
+    },
+    "The Nether => Nether Structure 1": {
+      "Exit": "Nether Structure 1",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false,
+      "ID": "The Nether => Nether Structure 1",
+      "Area": "The Nether",
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": [],
+        "Tags": []
+      }
+    },
+    "The Nether => Nether Structure 2": {
+      "Exit": "Nether Structure 2",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false,
+      "ID": "The Nether => Nether Structure 2",
+      "Area": "The Nether",
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": [],
+        "Tags": []
+      }
+    },
+    "The End => The End Structure": {
+      "Exit": "The End Structure",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false,
+      "ID": "The End => The End Structure",
+      "Area": "The End",
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": [],
+        "Tags": []
+      }
+    },
+    "New World => Overworld": {
+      "Exit": "Overworld",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false,
+      "ID": "New World => Overworld",
+      "Area": "New World",
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": [],
+        "Tags": []
+      }
+    },
+    "Nether Portal => The Nether": {
+      "Exit": "The Nether",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false,
+      "ID": "Nether Portal => The Nether",
+      "Area": "Nether Portal",
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": [],
+        "Tags": []
+      }
+    },
+    "End Portal => The End": {
+      "Exit": "The End",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false,
+      "ID": "End Portal => The End",
+      "Area": "End Portal",
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": [],
+        "Tags": []
+      }
+    },
+    "Overworld Structure 1 => Village": {
+      "Exit": "Village",
+      "RandomizableEntrance": true,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false,
+      "ID": "Overworld Structure 1 => Village",
+      "Area": "Overworld Structure 1",
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": [],
+        "Tags": []
+      }
+    },
+    "Overworld Structure 2 => Pillager Outpost": {
+      "Exit": "Pillager Outpost",
+      "RandomizableEntrance": true,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false,
+      "ID": "Overworld Structure 2 => Pillager Outpost",
+      "Area": "Overworld Structure 2",
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": [],
+        "Tags": []
+      }
+    },
+    "Nether Structure 1 => Nether Fortress": {
+      "Exit": "Nether Fortress",
+      "RandomizableEntrance": true,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false,
+      "ID": "Nether Structure 1 => Nether Fortress",
+      "Area": "Nether Structure 1",
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": [],
+        "Tags": []
+      }
+    },
+    "Nether Structure 2 => Bastion Remnant": {
+      "Exit": "Bastion Remnant",
+      "RandomizableEntrance": true,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false,
+      "ID": "Nether Structure 2 => Bastion Remnant",
+      "Area": "Nether Structure 2",
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": [],
+        "Tags": []
+      }
+    },
+    "The End Structure => End City": {
+      "Exit": "End City",
+      "RandomizableEntrance": true,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false,
+      "ID": "The End Structure => End City",
+      "Area": "The End Structure",
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": [],
+        "Tags": []
+      }
+    }
+  },
+  "HintSpots": {},
+  "MacroList": {
+    "defeated_bosses": {
+      "ID": "defeated_bosses",
+      "Name": "Defeat Required Bosses",
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": [],
+        "Tags": []
+      }
+    }
+  },
+  "ChoiceOptions": {
+    "combat_difficulty": {
+      "Value": "option_normal",
+      "ValueList": {
+        "option_easy": {
+          "ID": "option_easy",
+          "Name": "Easy",
+          "Actions": {
+            "LogicReplacements": [],
+            "AdditionalLogic": [],
+            "ItemNameOverride": {},
+            "ItemMaxAmountEdit": {},
+            "VariableEdit": {}
+          }
+        },
+        "option_normal": {
+          "ID": "option_normal",
+          "Name": "Normal",
+          "Actions": {
+            "LogicReplacements": [],
+            "AdditionalLogic": [],
+            "ItemNameOverride": {},
+            "ItemMaxAmountEdit": {},
+            "VariableEdit": {}
+          }
+        },
+        "option_hard": {
+          "ID": "option_hard",
+          "Name": "Hard",
+          "Actions": {
+            "LogicReplacements": [],
+            "AdditionalLogic": [],
+            "ItemNameOverride": {},
+            "ItemMaxAmountEdit": {},
+            "VariableEdit": {}
+          }
+        }
+      },
+      "ID": "combat_difficulty",
+      "Name": "Combat Difficulty",
+      "Priority": 0,
+      "Conditionals": []
+    },
+    "required_bosses": {
+      "Value": "option_ender_dragon",
+      "ValueList": {
+        "option_none": {
+          "ID": "option_none",
+          "Name": "None",
+          "Actions": {
+            "LogicReplacements": [],
+            "AdditionalLogic": [],
+            "ItemNameOverride": {},
+            "ItemMaxAmountEdit": {},
+            "VariableEdit": {}
+          }
+        },
+        "option_ender_dragon": {
+          "ID": "option_ender_dragon",
+          "Name": "Ender Dragon",
+          "Actions": {
+            "LogicReplacements": [],
+            "AdditionalLogic": [],
+            "ItemNameOverride": {},
+            "ItemMaxAmountEdit": {},
+            "VariableEdit": {}
+          }
+        },
+        "option_wither": {
+          "ID": "option_wither",
+          "Name": "Wither",
+          "Actions": {
+            "LogicReplacements": [],
+            "AdditionalLogic": [],
+            "ItemNameOverride": {},
+            "ItemMaxAmountEdit": {},
+            "VariableEdit": {}
+          }
+        },
+        "option_both": {
+          "ID": "option_both",
+          "Name": "Both",
+          "Actions": {
+            "LogicReplacements": [],
+            "AdditionalLogic": [],
+            "ItemNameOverride": {},
+            "ItemMaxAmountEdit": {},
+            "VariableEdit": {}
+          }
+        }
+      },
+      "ID": "required_bosses",
+      "Name": "Required Bosses",
+      "Priority": 0,
+      "Conditionals": []
+    }
+  },
+  "MultiSelectOptions": {},
+  "ToggleOptions": {
+    "structure_compasses": {
+      "Value": true,
+      "Enabled": {
+        "ID": "True",
+        "Name": "True",
+        "Actions": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {}
+        }
+      },
+      "Disabled": {
+        "ID": "False",
+        "Name": "False",
+        "Actions": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {}
+        }
+      },
+      "ID": "structure_compasses",
+      "Name": "Structure Compasses",
+      "Priority": 0,
+      "Conditionals": []
+    },
+    "death_link": {
+      "Value": false,
+      "Enabled": {
+        "ID": "True",
+        "Name": "True",
+        "Actions": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {}
+        }
+      },
+      "Disabled": {
+        "ID": "False",
+        "Name": "False",
+        "Actions": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {}
+        }
+      },
+      "ID": "death_link",
+      "Name": "Death Link",
+      "Priority": 0,
+      "Conditionals": []
+    }
+  },
+  "IntOptions": {
+    "advancement_goal": {
+      "Value": 40,
+      "Min": 0,
+      "Max": 2147483647,
+      "ID": "advancement_goal",
+      "Name": "Advancement Goal",
+      "Priority": 0,
+      "Conditionals": []
+    },
+    "egg_shards_required": {
+      "Value": 0,
+      "Min": 0,
+      "Max": 2147483647,
+      "ID": "egg_shards_required",
+      "Name": "Dragon Egg Shards Required",
+      "Priority": 0,
+      "Conditionals": []
+    }
+  },
+  "LogicEntryCollections": {
+    "checked_locations": {
+      "ID": "checked_locations",
+      "Entries": [
+        "checked{Who is Cutting Onions?}",
+        "checked{Oh Shiny}",
+        "checked{Suit Up}",
+        "checked{Very Very Frightening}",
+        "checked{Hot Stuff}",
+        "checked{Best Friends Forever}",
+        "checked{Not Today, Thank You}",
+        "checked{Isn't It Iron Pick}",
+        "checked{Fishy Business}",
+        "checked{Sniper Duel}",
+        "checked{Bullseye}",
+        "checked{Stone Age}",
+        "checked{Two Birds, One Arrow}",
+        "checked{Getting an Upgrade}",
+        "checked{Tactical Fishing}",
+        "checked{Zombie Doctor}",
+        "checked{Ice Bucket Challenge}",
+        "checked{Take Aim}",
+        "checked{Total Beelocation}",
+        "checked{Arbalistic}",
+        "checked{Acquire Hardware}",
+        "checked{Cover Me With Diamonds}",
+        "checked{Hired Help}",
+        "checked{Sweet Dreams}",
+        "checked{Adventure}",
+        "checked{Monsters Hunted}",
+        "checked{Enchanter}",
+        "checked{Eye Spy}",
+        "checked{Monster Hunter}",
+        "checked{Adventuring Time}",
+        "checked{A Seedy Place}",
+        "checked{Husbandry}",
+        "checked{Bee Our Guest}",
+        "checked{Diamonds!}",
+        "checked{A Throwaway Joke}",
+        "checked{Minecraft}",
+        "checked{Sticky Situation}",
+        "checked{Ol' Betsy}",
+        "checked{The Parrots and the Bats}",
+        "checked{Getting Wood}",
+        "checked{Time to Mine!}",
+        "checked{Hot Topic}",
+        "checked{Bake Bread}",
+        "checked{The Lie}",
+        "checked{On a Rail}",
+        "checked{Time to Strike!}",
+        "checked{Cow Tipper}",
+        "checked{When Pigs Fly}",
+        "checked{Librarian}",
+        "checked{Wax On}",
+        "checked{Wax Off}",
+        "checked{The Cutest Predator}",
+        "checked{The Healing Power of Friendship}",
+        "checked{Is It a Bird?}",
+        "checked{Surge Protector}",
+        "checked{Light as a Rabbit}",
+        "checked{Glow and Behold!}",
+        "checked{Whatever Floats Your Goat!}",
+        "checked{Caves & Cliffs}",
+        "checked{Sound of Music}",
+        "checked{Bukkit Bukkit}",
+        "checked{It Spreads}",
+        "checked{Sneak 100}",
+        "checked{When the Squad Hops into Town}",
+        "checked{Hot Tourist Destinations}",
+        "checked{This Boat Has Legs}",
+        "checked{Nether}",
+        "checked{Two by Two}",
+        "checked{We Need to Go Deeper}",
+        "checked{Not Quite \"Nine\" Lives}",
+        "checked{Return to Sender}",
+        "checked{Serious Dedication}",
+        "checked{Hidden in the Depths}",
+        "checked{Subspace Bubble}",
+        "checked{Country Lode, Take Me Home}",
+        "checked{Uneasy Alliance}",
+        "checked{Cover Me in Debris}",
+        "checked{Is It a Balloon?}",
+        "checked{Feels like home}",
+        "checked{With Our Powers Combined!}",
+        "checked{Free the End}",
+        "checked{The Next Generation}",
+        "checked{Remote Getaway}",
+        "checked{The End... Again...}",
+        "checked{You Need a Mint}",
+        "checked{The End}",
+        "checked{The End?}",
+        "checked{Is It a Plane?}",
+        "checked{Postmortal}",
+        "checked{Hero of the Village}",
+        "checked{A Balanced Diet}",
+        "checked{What a Deal!}",
+        "checked{A Complete Catalogue}",
+        "checked{Star Trader}",
+        "checked{A Furious Cocktail}",
+        "checked{Bring Home the Beacon}",
+        "checked{Local Brewery}",
+        "checked{How Did We Get Here?}",
+        "checked{Spooky Scary Skeleton}",
+        "checked{Into Fire}",
+        "checked{Beaconator}",
+        "checked{Withering Heights}",
+        "checked{A Terrible Fortress}",
+        "checked{Overkill}",
+        "checked{Who's the Pillager Now?}",
+        "checked{Voluntary Exile}",
+        "checked{Birthday Song}",
+        "checked{You've Got a Friend in Me}",
+        "checked{War Pigs}",
+        "checked{Those Were the Days}",
+        "checked{Overpowered}",
+        "checked{Great View From Up Here}",
+        "checked{The City at the End of the Game}",
+        "checked{Sky's the Limit}"
+      ]
+    }
+  },
+  "AdditionalLogic": []
+}
