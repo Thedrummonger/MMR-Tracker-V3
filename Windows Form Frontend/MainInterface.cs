@@ -29,6 +29,7 @@ namespace Windows_Form_Frontend
         private bool FormIsMaximized = false;
         Thread MainInterfaceItemDisplayThread = null;
         ItemDisplay MainInterfaceItemDisplayForm = null;
+        public NetClient CurrentNetClientForm;
         private Dictionary<string, ToolStripMenuItem> MenuItemParentTree = new Dictionary<string, ToolStripMenuItem>();
 
         List<Control> TLPLocationsControls = new List<Control>();
@@ -604,7 +605,7 @@ namespace Windows_Form_Frontend
             PathFinderToolStripMenuItem.Visible = (InstanceContainer.Instance != null && InstanceContainer.Instance.GetAllRandomizableExits().Count > 0);
 
             viewToolStripMenuItem.Visible = (InstanceContainer.Instance != null && InstanceContainer.Instance.StaticOptions.OptionFile.WinformData.UILayout == UILayout.Compact);
-            
+
             if (InstanceContainer.Instance == null) { return; }
 
             entrancesToolStripMenuItem.Visible = !InstanceContainer.Instance.CombineEntrancesWithLocations();
@@ -1040,6 +1041,16 @@ namespace Windows_Form_Frontend
             else if (sender == checkedToolStripMenuItem) { ViewFocus = DisplayListType.Checked; }
             UpdateUI();
             AlignUIElements();
+        }
+
+        private void netClientToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (CurrentNetClientForm is not null) { CurrentNetClientForm.Focus(); }
+            else
+            {
+                CurrentNetClientForm = new NetClient(this, InstanceContainer);
+                CurrentNetClientForm.Show();
+            }
         }
     }
 }

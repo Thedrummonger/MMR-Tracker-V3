@@ -1,12 +1,14 @@
-﻿using Newtonsoft.Json;
+﻿using MMR_Tracker_V3.TrackerObjects;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.IO;
+using System.Linq;
 using System.Net;
 using System.Net.Sockets;
 
-namespace MMR_Tracker_V3.TrackerObjects
+namespace MMR_Tracker_V3.NetCode
 {
     public class NetData
     {
@@ -25,9 +27,11 @@ namespace MMR_Tracker_V3.TrackerObjects
             [Description("Co-op")]
             Coop = 1,
             [Description("Multiworld")]
-            Multiworld = 3
+            Multiworld = 3,
+            [Description("Archipelago")]
+            Archipelago = 4
         }
-        public class NetPacket(int _playerID, PacketType _packetType, string _Password = "", Dictionary<int, Dictionary<string, int>> _ItemData = null)
+        public class NetPacket(int _playerID, PacketType _packetType, string _Password = "", Dictionary<int, Dictionary<string, int>> _ItemData = null, NetData.OnlineMode Mode = OnlineMode.None)
         {
             public int PlayerID = _playerID;
             public string Password = _Password;
@@ -128,11 +132,21 @@ namespace MMR_Tracker_V3.TrackerObjects
 
         public static bool IsIpAddress(string Input, out IPAddress IP)
         {
+            bool WasIP = true;
             IP = null;
             var Segments = Input.Split('.');
-            if (Segments.Length != 4) { return false; }
-            if (!IPAddress.TryParse(Input, out IP)) { return false; }
-            return true;
+            if (Segments.Length != 4) { WasIP = false; }
+            if (!IPAddress.TryParse(Input, out IP)) { WasIP = false; }
+            if (!WasIP)
+            {
+                IPAddress[] addresslist = Dns.GetHostAddresses(Input);
+                if (addresslist.Length != 0)
+                {
+                    WasIP = true;
+                    IP = addresslist.First();
+                }
+            }
+            return WasIP;
         }
     }
 }

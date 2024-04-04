@@ -80,7 +80,6 @@ namespace TestingForm
                 new DevAction("Create PMR Data", GameFileCreation.PMRCreateData, UpdateDebugActions),
                 new DevAction("Create LAS Data", GameFileCreation.LASCreateData, UpdateDebugActions),
                 new DevAction("Create Minecraft Data", GameFileCreation.MinecraftCreateData, UpdateDebugActions),
-                new DevAction("Open Web Client", OpenWebClient, UpdateDebugActions, () => { return CurrentNetClientForm is null && WinFormTesting.WinformInstanceLoaded();  }),
                 new DevAction("Test Archipelago", Archipelago, UpdateDebugActions),
                 new DevAction("Test Random Stuff", RandomTests, UpdateDebugActions),
             };
@@ -94,10 +93,10 @@ namespace TestingForm
 
         private void Archipelago()
         {
-            ArchipelagoConnector archipelago = 
+            MMR_Tracker_V3.NetCode.ArchipelagoConnector archipelago = 
                 new(Interaction.InputBox("Enter Game"), Interaction.InputBox("Enter Slot ID"), Interaction.InputBox("Enter Password"), Interaction.InputBox("Enter Server Address"));
-            if (!archipelago.WasConnectionSuccess(out string Error)) {
-                MessageBox.Show(Error);
+            if (!archipelago.WasConnectionSuccess(out string[] Error)) {
+                MessageBox.Show(string.Join("\n", Error));
                 return;
             }
             Debug.WriteLine(archipelago.GetLoginSuccessInfo().ToFormattedJson());
@@ -169,12 +168,6 @@ namespace TestingForm
         private void printInt(params int[] ints)
         {
             Debug.WriteLine(ints.Length);
-        }
-
-        private void OpenWebClient()
-        {
-            CurrentNetClientForm = new NetClient(this, MainInterface.InstanceContainer);
-            CurrentNetClientForm.Show();
         }
 
         private void LB_DoubleClick(object sender, EventArgs e)

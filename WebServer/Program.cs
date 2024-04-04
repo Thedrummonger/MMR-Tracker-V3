@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 using FParsec;
 using MMR_Tracker_V3;
 using MathNet.Numerics.Statistics;
-using MMR_Tracker_V3.TrackerObjects;
+using MMR_Tracker_V3.NetCode;
 
 namespace WebServer
 {
@@ -42,6 +42,13 @@ namespace WebServer
                         goto selectGM;
                 }
                 Console.Clear();
+            }
+            else if (cfg.ServerGameMode == NetData.OnlineMode.Archipelago)
+            {
+                Console.WriteLine($"This web server can not run Archipelago games. " +
+                    $"\nTo connect to an Archipelago server, enter the servers address in the client");
+                Console.ReadKey();
+                return;
             }
 
             Console.WriteLine($"Game mode set to {cfg.ServerGameMode}");

@@ -19,6 +19,7 @@ namespace MMR_Tracker_V3.TrackerObjects
             public int LogicVersion { get; set; }
             public string GameCode { get; set; }
             public string WinCondition { get; set; }
+            public string ArchipelagoGame { get; set; }
             public string[] RootAreas { get; set; }
             public DefaultSettings DefaultSettings { get; set; }
             public Dictionary<string, DictionaryLocationEntries> LocationList { get; set; } = [];

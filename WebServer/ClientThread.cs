@@ -5,7 +5,7 @@ using System.Linq;
 using System.Net;
 using System.Text;
 using System.Threading.Tasks;
-using static MMR_Tracker_V3.TrackerObjects.NetData;
+using static MMR_Tracker_V3.NetCode.NetData;
 
 namespace WebServer
 {

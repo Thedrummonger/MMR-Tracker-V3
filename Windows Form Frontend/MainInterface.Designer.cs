@@ -65,6 +65,7 @@ namespace Windows_Form_Frontend
             importSpoilerLogToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             spoilerLogToolsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             PathFinderToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            netClientToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             viewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             locationsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             entrancesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -462,7 +463,7 @@ namespace Windows_Form_Frontend
             // 
             // toolsToolStripMenuItem
             // 
-            toolsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] { importSpoilerLogToolStripMenuItem, spoilerLogToolsToolStripMenuItem, PathFinderToolStripMenuItem });
+            toolsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] { importSpoilerLogToolStripMenuItem, spoilerLogToolsToolStripMenuItem, PathFinderToolStripMenuItem, netClientToolStripMenuItem });
             toolsToolStripMenuItem.Name = "toolsToolStripMenuItem";
             toolsToolStripMenuItem.Size = new System.Drawing.Size(46, 20);
             toolsToolStripMenuItem.Text = "Tools";
@@ -470,23 +471,30 @@ namespace Windows_Form_Frontend
             // importSpoilerLogToolStripMenuItem
             // 
             importSpoilerLogToolStripMenuItem.Name = "importSpoilerLogToolStripMenuItem";
-            importSpoilerLogToolStripMenuItem.Size = new System.Drawing.Size(172, 22);
+            importSpoilerLogToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             importSpoilerLogToolStripMenuItem.Text = "Import Spoiler Log";
             importSpoilerLogToolStripMenuItem.Click += importSpoilerLogToolStripMenuItem_Click;
             // 
             // spoilerLogToolsToolStripMenuItem
             // 
             spoilerLogToolsToolStripMenuItem.Name = "spoilerLogToolsToolStripMenuItem";
-            spoilerLogToolsToolStripMenuItem.Size = new System.Drawing.Size(172, 22);
+            spoilerLogToolsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             spoilerLogToolsToolStripMenuItem.Text = "Spoiler Log Tools";
             spoilerLogToolsToolStripMenuItem.Click += spoilerLogToolsToolStripMenuItem_Click;
             // 
             // PathFinderToolStripMenuItem
             // 
             PathFinderToolStripMenuItem.Name = "PathFinderToolStripMenuItem";
-            PathFinderToolStripMenuItem.Size = new System.Drawing.Size(172, 22);
+            PathFinderToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             PathFinderToolStripMenuItem.Text = "Path Finder";
             PathFinderToolStripMenuItem.Click += PathFinderToolStripMenuItem_Click;
+            // 
+            // netClientToolStripMenuItem
+            // 
+            netClientToolStripMenuItem.Name = "netClientToolStripMenuItem";
+            netClientToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            netClientToolStripMenuItem.Text = "Net Client";
+            netClientToolStripMenuItem.Click += netClientToolStripMenuItem_Click;
             // 
             // viewToolStripMenuItem
             // 
@@ -732,6 +740,7 @@ namespace Windows_Form_Frontend
         private System.Windows.Forms.ToolStripMenuItem entrancesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem checkedToolStripMenuItem;
         public System.Windows.Forms.ComboBox CMBEnd;
+        private System.Windows.Forms.ToolStripMenuItem netClientToolStripMenuItem;
     }
 }
 

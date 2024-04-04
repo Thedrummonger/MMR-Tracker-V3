@@ -9,10 +9,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Diagnostics;
-using System.Drawing;
 using System.Linq;
-using System.Net;
-using System.Net.Http;
 using System.Net.Sockets;
 using System.Text;
 using System.Threading.Tasks;
@@ -20,16 +17,17 @@ using System.Windows.Forms;
 using Windows_Form_Frontend;
 using static MMR_Tracker_V3.TrackerObjects.InstanceData;
 using static MMR_Tracker_V3.TrackerObjects.MiscData;
-using static MMR_Tracker_V3.TrackerObjects.NetData;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+using static MMR_Tracker_V3.NetCode.NetData;
+using MMR_Tracker_V3.NetCode;
+using System.Net;
 
-namespace TestingForm
+namespace Windows_Form_Frontend
 {
     public partial class NetClient : Form
     {
-        TestingForm ParentForm;
+        MainInterface ParentForm;
         InstanceContainer InstanceContainer;
-        public NetClient(TestingForm testingForm, InstanceContainer C)
+        public NetClient(MainInterface testingForm, InstanceContainer C)
         {
             InstanceContainer = C;
             ParentForm = testingForm;
@@ -42,6 +40,9 @@ namespace TestingForm
             ModeUpdating = true;
             LocationChecker.CheckStateChanged += TrackerDataHandeling_CheckedObjectsUpdate;
 
+            cmbGameType.DataSource = Utility.EnumAsArray<NetData.OnlineMode>();
+            cmbGameType.SelectedIndexChanged += CmbGameType_SelectedIndexChanged;
+
             txtServerAddress.Text = "127.0.0.1";
             nudPort.Value = 25570;
             nudPlayer.Value = 1;
@@ -49,6 +50,11 @@ namespace TestingForm
             UpdateUI();
 
             ModeUpdating = false;
+        }
+
+        private void CmbGameType_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            UpdateUI();
         }
 
         private void NetClient_FormClosing(object sender, FormClosingEventArgs e)
@@ -59,9 +65,7 @@ namespace TestingForm
                 if (result != DialogResult.Yes) { e.Cancel = true; return; }
             }
             LocationChecker.CheckStateChanged -= TrackerDataHandeling_CheckedObjectsUpdate;
-            TestingForm.CurrentNetClientForm = null;
             CloseServer("Client Closed Manually");
-            ParentForm.UpdateDebugActions();
         }
 
         public void CloseServer(string Reason = "Unknown", bool WasConnected = true)
@@ -74,20 +78,17 @@ namespace TestingForm
             Debug.WriteLine($"{Reason}");
             PrintToConsole($"{Reason}");
 
-            bool ServerConnectionNull = InstanceContainer.netConnection.ServerConnection is null;
-
-            if (ServerConnectionNull) 
-            {
-                InstanceContainer.netConnection.Reset();
-                return; 
-            }
-            
             if (InstanceContainer.netConnection.ServerConnection is not null && InstanceContainer.netConnection.ServerConnection.Connected)
             {
                 InstanceContainer.netConnection.ServerConnection.GetStream().Close();
                 InstanceContainer.netConnection.ServerConnection.Close();
             }
+            if (InstanceContainer.netConnection.ArchipelagoClient is not null)
+            {
+                InstanceContainer.netConnection.ArchipelagoClient.Session.Socket.DisconnectAsync();
+            }
             InstanceContainer.netConnection.Reset();
+
         }
 
         private void PrintToConsole(IEnumerable<string> Content)
@@ -165,16 +166,17 @@ namespace TestingForm
 
         private void btnConnect_Click(object sender, EventArgs e)
         {
-            if (InstanceContainer.netConnection.ServerConnection is null || !InstanceContainer.netConnection.ServerConnection.Connected)
+            if (!InstanceContainer.netConnection.IsConnected())
             {
-                if (!NetData.IsIpAddress(txtServerAddress.Text, out _))
+                if (!NetData.IsIpAddress(txtServerAddress.Text, out IPAddress ParsedAddress))
                 {
                     PrintToConsole($"{txtServerAddress.Text} Was not a valid IP address");
                     return; 
                 }
-                PrintToConsole($"Connecting to server {txtServerAddress.Text}:{nudPort.Value}");
+                PrintToConsole($"Connecting to server {ParsedAddress}:{nudPort.Value}");
                 lbConsole.Refresh();
-                ConnectToWebServer();
+                if ((OnlineMode)cmbGameType.SelectedItem == OnlineMode.Archipelago) { ConnectToArchipelago(); }
+                else { ConnectToWebServer(); }
             }
             else
             {
@@ -185,18 +187,26 @@ namespace TestingForm
 
         public void UpdateUI()
         {
-            bool Connected = InstanceContainer.netConnection.ServerConnection is not null && InstanceContainer.netConnection.ServerConnection.Connected;
+            bool Connected = InstanceContainer.netConnection.IsConnected();
+            bool IsNone = (OnlineMode)cmbGameType.SelectedItem == OnlineMode.None;
+            bool IsArchipelago = (OnlineMode)cmbGameType.SelectedItem == OnlineMode.Archipelago;
+            bool IsCoop = (OnlineMode)cmbGameType.SelectedItem == OnlineMode.Coop;
+            bool IsMultworld = (OnlineMode)cmbGameType.SelectedItem == OnlineMode.Multiworld;
             //btnConnect.Enabled = !Connected;
             btnConnect.Text = Connected ? "Disconnect" : "Connect";
-            txtServerAddress.Enabled = !Connected;
-            nudPort.Enabled = !Connected;
-            nudPlayer.Enabled = !Connected;
-            txtPassword.Enabled = !Connected;
-            chkShowPass.Enabled = !Connected;
+            btnConnect.Enabled = !IsNone;
+            txtServerAddress.Enabled = !Connected && !IsNone;
+            nudPort.Enabled = !Connected && !IsNone;
+            nudPlayer.Enabled = !Connected && (IsCoop || IsMultworld);
+            txtGameName.Enabled = !Connected && IsArchipelago;
+            txtSlotID.Enabled = !Connected && IsArchipelago;
+            txtPassword.Enabled = !Connected && !IsNone;
             txtChatMessage.Enabled = Connected;
             btnSendChat.Enabled = Connected;
             btnProcessData.Enabled = (LocationDataToProcess.Any() || ItemDataToProcess.Any()) && Connected && !chkProcessData.Checked;
-            chkAllowCheck.Enabled = InstanceContainer.netConnection.OnlineMode != OnlineMode.Multiworld;
+            chkAllowCheck.Enabled = IsCoop;
+            chkSendData.Enabled = !IsArchipelago;
+            chkRecieveData.Enabled = !IsArchipelago;
             if (chkShowPass.Checked) { txtPassword.PasswordChar = '\0'; }
             else { txtPassword.PasswordChar = '*'; }
         }
@@ -206,9 +216,10 @@ namespace TestingForm
             int PlayerID = (int)nudPlayer.Value;
             try
             {
+                NetData.OnlineMode ClientMode = (NetData.OnlineMode)cmbGameType.SelectedItem;
                 InstanceContainer.netConnection.ServerConnection = new TcpClient(txtServerAddress.Text, (int)nudPort.Value);
                 InstanceContainer.netConnection.ServerConnection.LingerState = new LingerOption(true, 0);
-                NetData.NetPacket HandshakePacket = new NetData.NetPacket(PlayerID, NetData.PacketType.Handshake, txtPassword.Text);
+                NetData.NetPacket HandshakePacket = new NetData.NetPacket(PlayerID, NetData.PacketType.Handshake, txtPassword.Text, Mode: ClientMode);
                 byte[] bytesToSend = ASCIIEncoding.ASCII.GetBytes(HandshakePacket.ToFormattedJson());
                 InstanceContainer.netConnection.ServerConnection.GetStream().Write(bytesToSend, 0, bytesToSend.Length);
                 byte[] buffer = new byte[InstanceContainer.netConnection.ServerConnection.ReceiveBufferSize];
@@ -237,6 +248,35 @@ namespace TestingForm
             UpdateUI();
 
         }
+
+        private void ConnectToArchipelago()
+        {
+            string ServerAddress = $"{txtServerAddress.Text}:{nudPort.Value}";
+            InstanceContainer.netConnection.ArchipelagoClient =
+                new ArchipelagoConnector(txtGameName.Text, txtSlotID.Text, txtPassword.Text, ServerAddress);
+
+            if (!InstanceContainer.netConnection.ArchipelagoClient.WasConnectionSuccess(out string[] Error))
+            {
+                PrintToConsole(Error);
+                InstanceContainer.netConnection.ArchipelagoClient = null;
+                return;
+            }
+            var ConnectionInfo = InstanceContainer.netConnection.ArchipelagoClient.GetLoginSuccessInfo();
+            PrintToConsole(ConnectionInfo.ToFormattedJson().SplitAtNewLine());
+            InstanceContainer.netConnection.ArchipelagoClient.Session.Items.ItemReceived += ArchipelagoItemReceived;
+            InstanceContainer.netConnection.ArchipelagoClient.Session.MessageLog.OnMessageReceived += ArchipelagoChatMessageReceived; ;
+        }
+
+        private void ArchipelagoChatMessageReceived(Archipelago.MultiClient.Net.MessageLog.Messages.LogMessage message)
+        {
+            PrintToConsole(message.ToString());
+        }
+
+        private void ArchipelagoItemReceived(Archipelago.MultiClient.Net.Helpers.ReceivedItemsHelper helper)
+        {
+
+        }
+
         private async Task<string> OpenListenThread()
         {
             string ExitReason = "Unknown";

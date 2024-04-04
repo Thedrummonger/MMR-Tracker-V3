@@ -43,6 +43,11 @@ namespace MMR_Tracker_V3
         /// <param name="s">The source string</param>
         /// <param name="Val">The substring to split on</param>
         /// <returns></returns>
+        /// 
+        public static string[] SplitAtNewLine(this string s)
+        {
+            return s.Split( new string[] { "\r\n", "\r", "\n" }, StringSplitOptions.None );
+        }
         public static string[] TrimSplit(this string s, string Val)
         {
             return s.Split(Val).Select(x => x.Trim()).ToArray();

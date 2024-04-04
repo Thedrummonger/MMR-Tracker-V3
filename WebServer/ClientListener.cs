@@ -5,7 +5,7 @@ using System.Net.Sockets;
 using System.Net;
 using System.Text;
 using System.Threading.Tasks;
-using static MMR_Tracker_V3.TrackerObjects.NetData;
+using static MMR_Tracker_V3.NetCode.NetData;
 using static WebServer.ServerThread;
 using Newtonsoft.Json;
 using MMR_Tracker_V3;
@@ -31,6 +31,7 @@ namespace WebServer
         {
             var NewNetClient = ReadHandshakePacket(client, serverConfig);
             if (NewNetClient is null) { SendConnectionConfirmation(client, null, "Bad Handshake Packet"); return; }
+            if (NewNetClient.ClientMode != serverConfig.ServerGameMode) { SendConnectionConfirmation(client, null, $"Client Gamemode {NewNetClient.ClientMode} did not match server Gamemode {serverConfig.ServerGameMode}"); return; }
             if (!ClientAuthentication.AuthenticateUser(NewNetClient, serverConfig)) { SendConnectionConfirmation(client, null, "Authentication Failed"); return; }
             if (!AddPlayerToClientList(NewNetClient)) { SendConnectionConfirmation(client, null, "Unknown Server error"); return; }
 
