@@ -231,10 +231,11 @@ namespace Windows_Form_Frontend
             cmbGameType.Enabled = !Connected;
             txtChatMessage.Enabled = Connected;
             btnSendChat.Enabled = Connected;
-            btnProcessData.Enabled = (LocationDataToProcess.Any() || ItemDataToProcess.Any()) && Connected && !chkProcessData.Checked;
+            btnProcessData.Enabled = (LocationDataToProcess.Any() || ItemDataToProcess.Any() || IsArchipelago) && Connected;
             chkAllowCheck.Enabled = IsCoop;
-            chkSendData.Enabled = !IsArchipelago;
-            chkRecieveData.Enabled = !IsArchipelago;
+            chkSendData.Enabled = !IsArchipelago && !IsNone;
+            chkRecieveData.Enabled = !IsNone;
+            chkProcessData.Enabled = !IsNone;
             if (chkShowPass.Checked) { txtPassword.PasswordChar = '\0'; }
             else { txtPassword.PasswordChar = '*'; }
         }
@@ -319,19 +320,28 @@ namespace Windows_Form_Frontend
         private void ArchipelagoChatMessageReceived(Archipelago.MultiClient.Net.MessageLog.Messages.LogMessage message)
         {
             string Chat = message.ToString();
-            Invoke(new Action(() => { PrintToConsole(Chat); }));
+            Invoke(new Action(() => { 
+                if (!chkRecieveData.Checked) { return; }
+                PrintToConsole(Chat); 
+            }));
         }
 
         private void ArchipelagoLocationChecked(System.Collections.ObjectModel.ReadOnlyCollection<long> newCheckedLocations)
         {
             Debug.WriteLine("ArchipelagoLocationChecked");
-            Invoke(new Action(SyncWithArchipelagoData));
+            Invoke(new Action(() => {
+                if (!chkRecieveData.Checked) { return; }
+                SyncWithArchipelagoData();
+            }));
         }
 
         private void ArchipelagoItemReceived(Archipelago.MultiClient.Net.Helpers.ReceivedItemsHelper helper)
         {
             Debug.WriteLine("ArchipelagoItemReceived");
-            Invoke(new Action(SyncWithArchipelagoData));
+            Invoke(new Action(() => {
+                if (!chkRecieveData.Checked) { return; }
+                SyncWithArchipelagoData();
+            }));
         }
 
         private void SyncWithArchipelagoData()
@@ -425,6 +435,10 @@ namespace Windows_Form_Frontend
             else if (InstanceContainer.netConnection.OnlineMode == OnlineMode.Multiworld)
             {
                 ProcessMultiworldItems();
+            }
+            else if (InstanceContainer.netConnection.OnlineMode == OnlineMode.Archipelago)
+            {
+                SyncWithArchipelagoData();
             }
             UpdateUI();
         }
