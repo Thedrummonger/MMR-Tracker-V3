@@ -99,7 +99,7 @@ namespace Windows_Form_Frontend
             // 
             // nudPort
             // 
-            nudPort.Location = new System.Drawing.Point(128, 18);
+            nudPort.Location = new System.Drawing.Point(129, 17);
             nudPort.Maximum = new decimal(new int[] { 65535, 0, 0, 0 });
             nudPort.Name = "nudPort";
             nudPort.Size = new System.Drawing.Size(72, 23);
@@ -108,9 +108,9 @@ namespace Windows_Form_Frontend
             // 
             // btnConnect
             // 
-            btnConnect.Location = new System.Drawing.Point(4, 156);
+            btnConnect.Location = new System.Drawing.Point(3, 157);
             btnConnect.Name = "btnConnect";
-            btnConnect.Size = new System.Drawing.Size(107, 23);
+            btnConnect.Size = new System.Drawing.Size(91, 23);
             btnConnect.TabIndex = 6;
             btnConnect.Text = "Connect";
             btnConnect.UseVisualStyleBackColor = true;
@@ -232,9 +232,9 @@ namespace Windows_Form_Frontend
             // 
             // btnProcessData
             // 
-            btnProcessData.Location = new System.Drawing.Point(117, 157);
+            btnProcessData.Location = new System.Drawing.Point(100, 157);
             btnProcessData.Name = "btnProcessData";
-            btnProcessData.Size = new System.Drawing.Size(84, 23);
+            btnProcessData.Size = new System.Drawing.Size(101, 23);
             btnProcessData.TabIndex = 18;
             btnProcessData.Text = "Process Data";
             btnProcessData.UseVisualStyleBackColor = true;
@@ -320,7 +320,7 @@ namespace Windows_Form_Frontend
             // 
             // txtSlotID
             // 
-            txtSlotID.Location = new System.Drawing.Point(4, 127);
+            txtSlotID.Location = new System.Drawing.Point(4, 128);
             txtSlotID.Name = "txtSlotID";
             txtSlotID.Size = new System.Drawing.Size(90, 23);
             txtSlotID.TabIndex = 26;
