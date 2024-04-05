@@ -7,6 +7,7 @@ using System.IO;
 using System.Linq;
 using System.Net;
 using System.Net.Sockets;
+using static MMR_Tracker_V3.TrackerObjects.InstanceData;
 
 namespace MMR_Tracker_V3.NetCode
 {
@@ -30,6 +31,48 @@ namespace MMR_Tracker_V3.NetCode
             Multiworld = 3,
             [Description("Archipelago")]
             Archipelago = 4
+        }
+        public class NetSessionData(
+            string _ServerAddress, int _ServerPort,
+            int _PlayerID, string _SlotID, string _GameName,
+            string _Password,
+            bool _ReceiveData, bool _SendData, bool _AutoProcessData, bool _AllowLocationChecking,
+            Action<string, object[]> _Logger, Action _RefreshNetForm, Action _RefreshMainForm,
+            InstanceContainer _InstanceContainer
+        )
+        {
+            public string ServerAddress = _ServerAddress;
+            public int ServerPort = _ServerPort;
+            public int PlayerID = _PlayerID;
+            public string SlotID = _SlotID;
+            public string GameName = _GameName;
+            public string Password = _Password;
+            public bool ReceiveData = _ReceiveData;
+            public bool SendData = _SendData;
+            public bool AutoProcessData = _AutoProcessData;
+            public bool AllowLocationChecking = _AllowLocationChecking;
+            public Action<string, object[]> Logger = _Logger;
+            public Action Refresh = _RefreshNetForm;
+            public Action RefreshMainForm = _RefreshMainForm;
+            public InstanceContainer InstanceContainer = _InstanceContainer;
+
+            public void UpdateParams(
+            string _ServerAddress, int _ServerPort,
+            int _PlayerID, string _SlotID, string _GameName,
+            string _Password,
+            bool _ReceiveData, bool _SendData, bool _AutoProcessData, bool _AllowLocationChecking)
+            {
+                ServerAddress = _ServerAddress;
+                ServerPort = _ServerPort;
+                PlayerID = _PlayerID;
+                SlotID = _SlotID;
+                GameName = _GameName;
+                Password = _Password;
+                ReceiveData = _ReceiveData;
+                SendData = _SendData;
+                AutoProcessData = _AutoProcessData;
+                AllowLocationChecking = _AllowLocationChecking;
+            }
         }
         public class NetPacket(int _playerID, PacketType _packetType, string _Password = "", Dictionary<int, Dictionary<string, int>> _ItemData = null, NetData.OnlineMode Mode = OnlineMode.None)
         {

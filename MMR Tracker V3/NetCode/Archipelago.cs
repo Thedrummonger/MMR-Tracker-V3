@@ -1,9 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using Archipelago.MultiClient.Net;
 using Archipelago.MultiClient.Net.Enums;
-using static System.Collections.Specialized.BitVector32;
+using MMR_Tracker_V3.SpoilerLogImporter;
+using MMR_Tracker_V3.TrackerObjectExtensions;
+using MMR_Tracker_V3.TrackerObjects;
+using static MMR_Tracker_V3.NetCode.NetData;
+using static MMR_Tracker_V3.TrackerObjects.MiscData;
 
 namespace MMR_Tracker_V3.NetCode
 {
@@ -49,6 +54,103 @@ namespace MMR_Tracker_V3.NetCode
             var AllLocations = Session.Items.AllItemsReceived.ToArray();
             var AllLocationNames = AllLocations.Select(x => $"{Session.Items.GetItemName(x.Item)} ({Session.Players.GetPlayerAliasAndName(x.Player)})");
             return [.. AllLocationNames];
+        }
+    }
+
+    public class ArchipelagoConnectionHandler(NetSessionData Data)
+    {
+        public bool Connect(out List<string> Log)
+        {
+            Log = new List<string>();
+            string ServerAddress = $"{Data.ServerAddress}:{Data.ServerPort}";
+            Data.InstanceContainer.netConnection.ArchipelagoClient =
+                new ArchipelagoConnector(Data.GameName, Data.SlotID, Data.Password, ServerAddress);
+
+            if (!Data.InstanceContainer.netConnection.ArchipelagoClient.WasConnectionSuccess(out string[] Error))
+            {
+                Log.Add(string.Join("\n", Error));
+                Data.InstanceContainer.netConnection.ArchipelagoClient = null;
+                return false;
+            }
+            var APClient = Data.InstanceContainer.netConnection.ArchipelagoClient;
+            var ConnectionInfo = APClient.GetLoginSuccessInfo();
+            Log.Add($"Connected to {ServerAddress}");
+            Data.InstanceContainer.netConnection.OnlineMode = OnlineMode.Archipelago;
+            Data.InstanceContainer.netConnection.PlayerID = Data.InstanceContainer.netConnection.ArchipelagoClient.Session.ConnectionInfo.Slot;
+            Data.InstanceContainer.netConnection.SlotID = Data.SlotID;
+            Data.InstanceContainer.netConnection.GameName = Data.GameName;
+
+            Data.InstanceContainer.netConnection.PlayerNames = APClient.Session.Players.AllPlayers.ToDictionary(x => x.Slot, x => x.Name);
+            
+            return true;
+        }
+
+        public void ActivateListers()
+        {
+            var APClient = Data.InstanceContainer.netConnection.ArchipelagoClient;
+            APClient.Session.Items.ItemReceived += ArchipelagoItemReceived;
+            APClient.Session.Locations.CheckedLocationsUpdated += ArchipelagoLocationChecked;
+            APClient.Session.MessageLog.OnMessageReceived += ArchipelagoChatMessageReceived;
+        }
+
+        public void ApplySpoilerFromAPData()
+        {
+            var SpoilerLog = SpoilerLogImporter.Archipelago.CreateGenericSpoilerLog(Data.InstanceContainer);
+            var LogImported = SpoilerLogTools.ImportSpoilerLog(SpoilerLog, "", Data.InstanceContainer);
+            Data.InstanceContainer.logicCalculation.CalculateLogic();
+        }
+
+        public void SyncWithArchipelagoData()
+        {
+            var Instance = Data.InstanceContainer.Instance;
+            var Sess = Data.InstanceContainer.netConnection.ArchipelagoClient.Session;
+            var AllItems = Sess.Items.AllItemsReceived.Select(x => (Sess.Items.GetItemName(x.Item), Sess.Locations.GetLocationNameFromId(x.Location), x.Player)).ToArray();
+            var AllLocations = Sess.Locations.AllLocationsChecked.Select(x => Sess.Locations.GetLocationNameFromId(x)).ToArray();
+            foreach (var i in Data.InstanceContainer.Instance.ItemPool.Values) { i.AmountAquiredOnline = []; }
+            List<LocationData.LocationObject> ToCheck = new List<LocationData.LocationObject>();
+            foreach (var Entry in AllItems)
+            {
+                bool IsLocal = Entry.Player == Data.InstanceContainer.netConnection.PlayerID;
+                var location = IsLocal ? Instance.GetLocationByID(Entry.Item2) : null;
+                var Item = Instance.GetItemByID(Entry.Item1);
+                if (!IsLocal && Item is not null)
+                {
+                    Item.AmountAquiredOnline.SetIfEmpty(Entry.Player, 0);
+                    Item.AmountAquiredOnline[Entry.Player]++;
+                }
+                else if (IsLocal && location is not null && location.CheckState != MiscData.CheckState.Checked)
+                {
+                    location.Randomizeditem.Item = Entry.Item1;
+                    ToCheck.Add(location);
+                }
+            }
+            foreach (var Entry in AllLocations)
+            {
+                var location = Instance.GetLocationByID(Entry);
+                if (location is null) { continue; }
+                if (location.GetItemAtCheck() == null) { location.Randomizeditem.Item = "Archipelago Item"; }
+                ToCheck.Add(location);
+            }
+            LocationChecker.CheckSelectedItems(ToCheck, Data.InstanceContainer, new CheckItemSetting(MiscData.CheckState.Checked));
+            Data.RefreshMainForm();
+        }
+        public void ArchipelagoChatMessageReceived(Archipelago.MultiClient.Net.MessageLog.Messages.LogMessage message)
+        {
+            Data.Logger?.Invoke(message.ToString(), null);
+        }
+
+        public void ArchipelagoLocationChecked(System.Collections.ObjectModel.ReadOnlyCollection<long> newCheckedLocations)
+        {
+            Debug.WriteLine("ArchipelagoLocationChecked");
+            if (!Data.AutoProcessData) { return; }
+            SyncWithArchipelagoData();
+        }
+
+        public void ArchipelagoItemReceived(Archipelago.MultiClient.Net.Helpers.ReceivedItemsHelper helper)
+        {
+            Debug.WriteLine("ArchipelagoItemReceived");
+            if (!Data.AutoProcessData) { return; }
+            SyncWithArchipelagoData();
         }
     }
 }

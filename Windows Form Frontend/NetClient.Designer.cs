@@ -77,6 +77,7 @@ namespace Windows_Form_Frontend
             txtServerAddress.Name = "txtServerAddress";
             txtServerAddress.Size = new System.Drawing.Size(118, 23);
             txtServerAddress.TabIndex = 2;
+            txtServerAddress.TextChanged += textbox_TextChanged;
             // 
             // label2
             // 
@@ -103,6 +104,7 @@ namespace Windows_Form_Frontend
             nudPort.Name = "nudPort";
             nudPort.Size = new System.Drawing.Size(72, 23);
             nudPort.TabIndex = 5;
+            nudPort.ValueChanged += textbox_TextChanged;
             // 
             // btnConnect
             // 
@@ -188,6 +190,7 @@ namespace Windows_Form_Frontend
             nudPlayer.Size = new System.Drawing.Size(49, 23);
             nudPlayer.TabIndex = 13;
             nudPlayer.Value = new decimal(new int[] { 1, 0, 0, 0 });
+            nudPlayer.ValueChanged += textbox_TextChanged;
             // 
             // label5
             // 
@@ -205,6 +208,7 @@ namespace Windows_Form_Frontend
             txtPassword.PasswordChar = '*';
             txtPassword.Size = new System.Drawing.Size(142, 23);
             txtPassword.TabIndex = 15;
+            txtPassword.TextChanged += textbox_TextChanged;
             // 
             // label6
             // 
@@ -312,6 +316,7 @@ namespace Windows_Form_Frontend
             txtGameName.Name = "txtGameName";
             txtGameName.Size = new System.Drawing.Size(101, 23);
             txtGameName.TabIndex = 25;
+            txtGameName.TextChanged += textbox_TextChanged;
             // 
             // txtSlotID
             // 
@@ -319,6 +324,7 @@ namespace Windows_Form_Frontend
             txtSlotID.Name = "txtSlotID";
             txtSlotID.Size = new System.Drawing.Size(90, 23);
             txtSlotID.TabIndex = 26;
+            txtSlotID.TextChanged += textbox_TextChanged;
             // 
             // label10
             // 
