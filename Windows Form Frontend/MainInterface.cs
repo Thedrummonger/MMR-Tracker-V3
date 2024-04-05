@@ -375,12 +375,14 @@ namespace Windows_Form_Frontend
         public void SetTrackerTitle()
         {
             string GameCode = InstanceContainer?.Instance?.LogicFile?.GameCode is null ? "MMR" : InstanceContainer.Instance.LogicFile.GameCode;
+            string GameName = InstanceContainer?.Instance?.LogicDictionary.GameName is null ? null : InstanceContainer.Instance.LogicDictionary.GameName;
             string UsavedChanges = InstanceContainer?.UnsavedChanges is not null && InstanceContainer.UnsavedChanges ? "*" : "";
             string TrackerStatus = "";
             if (References.TrackerVersionStatus.VersionStatus == UpdateManager.versionStatus.outdated) { TrackerStatus = " (outdated)"; }
             else if (References.TrackerVersionStatus.VersionStatus == UpdateManager.versionStatus.dev) { TrackerStatus = " (dev)"; }
             TrackerStatus = References.TrackerVersionStatus.DoUpdateCheck ? TrackerStatus : "";
-            this.Text = GameCode + " Tracker" + UsavedChanges + TrackerStatus;
+            string DisplayName = string.IsNullOrWhiteSpace(GameName) ? GameCode : GameName;
+            this.Text = DisplayName + " Tracker" + UsavedChanges + TrackerStatus;
         }
 
         public void UpdateUI()
@@ -603,6 +605,7 @@ namespace Windows_Form_Frontend
             spoilerLogToolsToolStripMenuItem.Visible = (InstanceContainer.Instance != null);
             importSpoilerLogToolStripMenuItem.Visible = (InstanceContainer.Instance != null);
             PathFinderToolStripMenuItem.Visible = (InstanceContainer.Instance != null && InstanceContainer.Instance.GetAllRandomizableExits().Count > 0);
+            netClientToolStripMenuItem.Visible = (InstanceContainer.Instance != null && InstanceContainer.Instance.LogicDictionary.NetPlaySupported);
 
             viewToolStripMenuItem.Visible = (InstanceContainer.Instance != null && InstanceContainer.Instance.StaticOptions.OptionFile.WinformData.UILayout == UILayout.Compact);
 

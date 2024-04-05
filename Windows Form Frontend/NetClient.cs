@@ -47,6 +47,8 @@ namespace Windows_Form_Frontend
             nudPort.Value = PortCache;
             nudPlayer.Value = 1;
 
+            txtGameName.Text = InstanceContainer.Instance.LogicDictionary.GameName;
+
             UpdateUI();
 
             ModeUpdating = false;

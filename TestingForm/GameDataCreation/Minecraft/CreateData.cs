@@ -29,7 +29,9 @@ namespace TestingForm.GameDataCreation.Minecraft
                 RootAreas = ["Menu"],
                 GameCode = "MC",
                 LogicVersion = 1,
-                WinCondition = "defeated_bosses"
+                WinCondition = "defeated_bosses",
+                NetPlaySupported = true,
+                GameName = "Minecraft"
             };
 
             foreach (var l in logic.locations) { AddLogic(l.Key, l.Value); }

@@ -2,6 +2,8 @@
   "LogicVersion": 1,
   "GameCode": "MC",
   "WinCondition": "defeated_bosses",
+  "GameName": "Minecraft",
+  "NetPlaySupported": true,
   "RootAreas": [
     "Menu"
   ],
