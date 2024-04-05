@@ -167,32 +167,6 @@ namespace MMR_Tracker_V3.TrackerObjects
             public int Player;
         }
 
-        public class NetConnection
-        {
-            public NetData.OnlineMode OnlineMode { get; set; } = NetData.OnlineMode.None;
-            public TcpClient ServerConnection { get; set; } = null;
-            public ArchipelagoConnector ArchipelagoClient { get; set; } = null;
-            public int PlayerID { get; set; } = -1;
-            public string SlotID { get; set; } = string.Empty;
-            public string GameName { get; set; } = string.Empty;
-            public void Reset()
-            {
-                OnlineMode = NetData.OnlineMode.None;
-                ServerConnection = null;
-                ArchipelagoClient = null;
-                PlayerID = -1;
-                SlotID = string.Empty; 
-                GameName = string.Empty;
-            }
-            public bool IsConnected()
-            {
-                bool ServerConnected = ServerConnection is not null && ServerConnection.Connected;
-                bool ArchipelagoConnected = ArchipelagoClient is not null && ArchipelagoClient.WasConnectionSuccess(out _);
-
-                return ServerConnected || ArchipelagoConnected;
-            }
-        }
-
         public class TrackerLocationDataList
         {
             public InstanceContainer InstanceContainer;

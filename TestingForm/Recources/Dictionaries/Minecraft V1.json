@@ -2696,10 +2696,10 @@
   },
   "ChoiceOptions": {
     "combat_difficulty": {
-      "Value": "option_normal",
+      "Value": "normal",
       "ValueList": {
-        "option_easy": {
-          "ID": "option_easy",
+        "easy": {
+          "ID": "easy",
           "Name": "Easy",
           "Actions": {
             "LogicReplacements": [],
@@ -2709,8 +2709,8 @@
             "VariableEdit": {}
           }
         },
-        "option_normal": {
-          "ID": "option_normal",
+        "normal": {
+          "ID": "normal",
           "Name": "Normal",
           "Actions": {
             "LogicReplacements": [],
@@ -2720,8 +2720,8 @@
             "VariableEdit": {}
           }
         },
-        "option_hard": {
-          "ID": "option_hard",
+        "hard": {
+          "ID": "hard",
           "Name": "Hard",
           "Actions": {
             "LogicReplacements": [],
@@ -2738,10 +2738,10 @@
       "Conditionals": []
     },
     "required_bosses": {
-      "Value": "option_ender_dragon",
+      "Value": "ender_dragon",
       "ValueList": {
-        "option_none": {
-          "ID": "option_none",
+        "none": {
+          "ID": "none",
           "Name": "None",
           "Actions": {
             "LogicReplacements": [],
@@ -2751,8 +2751,8 @@
             "VariableEdit": {}
           }
         },
-        "option_ender_dragon": {
-          "ID": "option_ender_dragon",
+        "ender_dragon": {
+          "ID": "ender_dragon",
           "Name": "Ender Dragon",
           "Actions": {
             "LogicReplacements": [],
@@ -2762,8 +2762,8 @@
             "VariableEdit": {}
           }
         },
-        "option_wither": {
-          "ID": "option_wither",
+        "wither": {
+          "ID": "wither",
           "Name": "Wither",
           "Actions": {
             "LogicReplacements": [],
@@ -2773,8 +2773,8 @@
             "VariableEdit": {}
           }
         },
-        "option_both": {
-          "ID": "option_both",
+        "both": {
+          "ID": "both",
           "Name": "Both",
           "Actions": {
             "LogicReplacements": [],

@@ -59,33 +59,39 @@ namespace MMR_Tracker_V3.SpoilerLogImporter
                 case "OOTMM":
                     container.Instance.SpoilerLog = new InstanceData.SpoilerLogFileData { FileName = OriginalFile, Log = spoilerLog };
                     OOTMMSpoilerLogTools.readAndApplySpoilerLog(container.Instance);
-                    container.Instance.SpoilerLog.GetStaticPlaythrough(container.Instance);
+                    container.Instance.SpoilerLog.GetStaticPlaythrough(container);
                     break;
                 case "MMR":
                     container.Instance.SpoilerLog = new InstanceData.SpoilerLogFileData { FileName = OriginalFile, Log = spoilerLog };
                     MMRSpoilerLogTools.ReadAndApplySpoilerLog(container);
-                    container.Instance.SpoilerLog.GetStaticPlaythrough(container.Instance);
+                    container.Instance.SpoilerLog.GetStaticPlaythrough(container);
                     break;
                 case "TPR":
                     container.Instance.SpoilerLog = new InstanceData.SpoilerLogFileData { FileName = OriginalFile, Log = spoilerLog };
                     TPRSpoilerLogTools.readAndApplySpoilerLog(container.Instance);
-                    container.Instance.SpoilerLog.GetStaticPlaythrough(container.Instance);
+                    container.Instance.SpoilerLog.GetStaticPlaythrough(container);
                     break;
                 case "PMR":
                     container.Instance.SpoilerLog = new InstanceData.SpoilerLogFileData { FileName = OriginalFile, Log = spoilerLog };
                     PMRSpoilerLogTools.ParseSpoiler(container.Instance);
-                    container.Instance.SpoilerLog.GetStaticPlaythrough(container.Instance);
+                    container.Instance.SpoilerLog.GetStaticPlaythrough(container);
                     break;
                 case "LAS":
                     container.Instance.SpoilerLog = new InstanceData.SpoilerLogFileData { FileName = OriginalFile, Log = spoilerLog };
                     LASSpoilerLogTools.ParseSpoiler(container.Instance);
-                    container.Instance.SpoilerLog.GetStaticPlaythrough(container.Instance);
+                    container.Instance.SpoilerLog.GetStaticPlaythrough(container);
+                    break;
+                case "MC":
+                    container.Instance.SpoilerLog = new InstanceData.SpoilerLogFileData { FileName = OriginalFile, Log = spoilerLog };
+                    MinecraftSpoilerLogTools.ParseSpoiler(container.Instance);
+                    container.Instance.SpoilerLog.GetStaticPlaythrough(container);
                     break;
                 default:
                     LogImported = false; break;
             }
+            if (!LogImported) { container.Instance.SpoilerLog = null; return false; }
             container.logicCalculation.CompileOptionActionEdits();
-            return LogImported;
+            return true;
         }
 
         public static void RemoveSpoilerData(this InstanceData.TrackerInstance instance)

@@ -646,7 +646,7 @@ namespace Windows_Form_Frontend
         private void regenerateGlobalPlaythroughToolStripMenuItem_Click(object sender, EventArgs e)
         {
             if (_instance.SpoilerLog is null) { MessageBox.Show("Not spoiler log has been imported. A spoiler log must be imported to generate a playthrough."); return; }
-            _instance.SpoilerLog.GetStaticPlaythrough(_instance);
+            _instance.SpoilerLog.GetStaticPlaythrough(_instance.GetParentContainer());
         }
 
         private void regenerateLocalSpoilerLogToolsPlaythroughToolStripMenuItem_Click(object sender, EventArgs e)

@@ -39,7 +39,8 @@
     {
       "Id": "Who is Cutting Onions?",
       "RequiredItems": [
-        "can_piglin_trade"
+        "can_piglin_trade",
+        "Overworld"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -50,7 +51,8 @@
     {
       "Id": "Oh Shiny",
       "RequiredItems": [
-        "can_piglin_trade"
+        "can_piglin_trade",
+        "Overworld"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -62,7 +64,8 @@
       "Id": "Suit Up",
       "RequiredItems": [
         "Progressive Armor",
-        "has_iron_ingots"
+        "has_iron_ingots",
+        "Overworld"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -76,7 +79,8 @@
         "Channeling Book",
         "can_use_anvil",
         "can_enchant",
-        "overworld_villager"
+        "overworld_villager",
+        "Overworld"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -88,7 +92,8 @@
       "Id": "Hot Stuff",
       "RequiredItems": [
         "Bucket",
-        "has_iron_ingots"
+        "has_iron_ingots",
+        "Overworld"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -100,7 +105,8 @@
       "Id": "Free the End",
       "RequiredItems": [
         "can_respawn_ender_dragon",
-        "can_kill_ender_dragon"
+        "can_kill_ender_dragon",
+        "The End"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -115,7 +121,8 @@
         "Fishing Rod",
         "The Nether",
         "Village",
-        "available{Bring Home the Beacon}"
+        "available{Bring Home the Beacon}",
+        "Nether Fortress"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -128,7 +135,8 @@
       "RequiredItems": [
         "can_kill_wither",
         "has_diamond_pickaxe",
-        "Progressive Resource Crafting, 2"
+        "Progressive Resource Crafting, 2",
+        "Nether Fortress"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -140,7 +148,8 @@
       "Id": "Not Today, Thank You",
       "RequiredItems": [
         "Shield",
-        "has_iron_ingots"
+        "has_iron_ingots",
+        "Overworld"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -152,7 +161,8 @@
       "Id": "Isn't It Iron Pick",
       "RequiredItems": [
         "Progressive Tools, 2",
-        "has_iron_ingots"
+        "has_iron_ingots",
+        "Overworld"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -163,7 +173,8 @@
     {
       "Id": "Local Brewery",
       "RequiredItems": [
-        "can_brew_potions"
+        "can_brew_potions",
+        "Nether Fortress"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -175,7 +186,8 @@
       "Id": "The Next Generation",
       "RequiredItems": [
         "can_respawn_ender_dragon",
-        "can_kill_ender_dragon"
+        "can_kill_ender_dragon",
+        "The End"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -186,7 +198,8 @@
     {
       "Id": "Fishy Business",
       "RequiredItems": [
-        "Fishing Rod"
+        "Fishing Rod",
+        "Overworld"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -198,7 +211,8 @@
       "Id": "This Boat Has Legs",
       "RequiredItems": [
         "Saddle",
-        "Fishing Rod"
+        "Fishing Rod",
+        "The Nether"
       ],
       "ConditionalItems": [
         [
@@ -216,7 +230,8 @@
     {
       "Id": "Sniper Duel",
       "RequiredItems": [
-        "Archery"
+        "Archery",
+        "Overworld"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -227,7 +242,8 @@
     {
       "Id": "Great View From Up Here",
       "RequiredItems": [
-        "basic_combat"
+        "basic_combat",
+        "End City"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -245,7 +261,8 @@
         "Fishing Rod",
         "Archery",
         "available{Bring Home the Beacon}",
-        "available{Hero of the Village}"
+        "available{Hero of the Village}",
+        "Nether Fortress"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -258,7 +275,8 @@
       "RequiredItems": [
         "Archery",
         "Progressive Tools, 2",
-        "has_iron_ingots"
+        "has_iron_ingots",
+        "Overworld"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -269,7 +287,8 @@
     {
       "Id": "Spooky Scary Skeleton",
       "RequiredItems": [
-        "basic_combat"
+        "basic_combat",
+        "Nether Fortress"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -282,7 +301,8 @@
       "RequiredItems": [
         "has_iron_ingots",
         "Bucket",
-        "can_adventure"
+        "can_adventure",
+        "The Nether"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -294,7 +314,8 @@
       "Id": "Two Birds, One Arrow",
       "RequiredItems": [
         "craft_crossbow",
-        "can_enchant"
+        "can_enchant",
+        "Overworld"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -305,7 +326,8 @@
     {
       "Id": "Who's the Pillager Now?",
       "RequiredItems": [
-        "craft_crossbow"
+        "craft_crossbow",
+        "Pillager Outpost"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -316,7 +338,8 @@
     {
       "Id": "Getting an Upgrade",
       "RequiredItems": [
-        "Progressive Tools"
+        "Progressive Tools",
+        "Overworld"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -328,7 +351,8 @@
       "Id": "Tactical Fishing",
       "RequiredItems": [
         "Bucket",
-        "has_iron_ingots"
+        "has_iron_ingots",
+        "Overworld"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -340,7 +364,8 @@
       "Id": "Zombie Doctor",
       "RequiredItems": [
         "can_brew_potions",
-        "has_gold_ingots"
+        "has_gold_ingots",
+        "Overworld"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -351,7 +376,8 @@
     {
       "Id": "Ice Bucket Challenge",
       "RequiredItems": [
-        "has_diamond_pickaxe"
+        "has_diamond_pickaxe",
+        "Overworld"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -362,7 +388,8 @@
     {
       "Id": "Into Fire",
       "RequiredItems": [
-        "basic_combat"
+        "basic_combat",
+        "Nether Fortress"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -373,7 +400,8 @@
     {
       "Id": "War Pigs",
       "RequiredItems": [
-        "basic_combat"
+        "basic_combat",
+        "Bastion Remnant"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -384,7 +412,8 @@
     {
       "Id": "Take Aim",
       "RequiredItems": [
-        "Archery"
+        "Archery",
+        "Overworld"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -397,7 +426,8 @@
       "RequiredItems": [
         "Silk Touch Book",
         "can_use_anvil",
-        "can_enchant"
+        "can_enchant",
+        "Overworld"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -411,7 +441,8 @@
         "craft_crossbow",
         "Piercing IV Book",
         "can_use_anvil",
-        "can_enchant"
+        "can_enchant",
+        "Overworld"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -423,7 +454,8 @@
       "Id": "The End... Again...",
       "RequiredItems": [
         "can_respawn_ender_dragon",
-        "can_kill_ender_dragon"
+        "can_kill_ender_dragon",
+        "The End"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -434,7 +466,8 @@
     {
       "Id": "Acquire Hardware",
       "RequiredItems": [
-        "has_iron_ingots"
+        "has_iron_ingots",
+        "Overworld"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -446,7 +479,8 @@
       "Id": "Not Quite \"Nine\" Lives",
       "RequiredItems": [
         "can_piglin_trade",
-        "Progressive Resource Crafting, 2"
+        "Progressive Resource Crafting, 2",
+        "The Nether"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -459,7 +493,8 @@
       "RequiredItems": [
         "Progressive Armor, 2",
         "Progressive Tools, 2",
-        "has_iron_ingots"
+        "has_iron_ingots",
+        "Overworld"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -470,7 +505,8 @@
     {
       "Id": "Sky's the Limit",
       "RequiredItems": [
-        "basic_combat"
+        "basic_combat",
+        "End City"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -482,7 +518,8 @@
       "Id": "Hired Help",
       "RequiredItems": [
         "Progressive Resource Crafting, 2",
-        "has_iron_ingots"
+        "has_iron_ingots",
+        "Overworld"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -492,7 +529,9 @@
     },
     {
       "Id": "Sweet Dreams",
-      "RequiredItems": [],
+      "RequiredItems": [
+        "Overworld"
+      ],
       "ConditionalItems": [
         [
           "Bed"
@@ -510,7 +549,8 @@
       "Id": "You Need a Mint",
       "RequiredItems": [
         "can_respawn_ender_dragon",
-        "has_bottle"
+        "has_bottle",
+        "The End"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -524,7 +564,8 @@
         "can_respawn_ender_dragon",
         "can_kill_ender_dragon",
         "can_kill_wither",
-        "Fishing Rod"
+        "Fishing Rod",
+        "Overworld"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -535,7 +576,8 @@
     {
       "Id": "Enchanter",
       "RequiredItems": [
-        "can_enchant"
+        "can_enchant",
+        "Overworld"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -546,7 +588,8 @@
     {
       "Id": "Voluntary Exile",
       "RequiredItems": [
-        "basic_combat"
+        "basic_combat",
+        "Pillager Outpost"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -557,7 +600,8 @@
     {
       "Id": "Eye Spy",
       "RequiredItems": [
-        "enter_stronghold"
+        "enter_stronghold",
+        "Overworld"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -571,7 +615,8 @@
         "can_brew_potions",
         "Bed",
         "has_diamond_pickaxe",
-        "has_gold_ingots"
+        "has_gold_ingots",
+        "The Nether"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -582,7 +627,8 @@
     {
       "Id": "Postmortal",
       "RequiredItems": [
-        "complete_raid"
+        "complete_raid",
+        "Village"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -593,7 +639,8 @@
     {
       "Id": "Adventuring Time",
       "RequiredItems": [
-        "can_adventure"
+        "can_adventure",
+        "Overworld"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -604,7 +651,8 @@
     {
       "Id": "Hero of the Village",
       "RequiredItems": [
-        "complete_raid"
+        "complete_raid",
+        "Village"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -617,7 +665,8 @@
       "RequiredItems": [
         "can_brew_potions",
         "Bed",
-        "has_diamond_pickaxe"
+        "has_diamond_pickaxe",
+        "The Nether"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -630,7 +679,8 @@
       "RequiredItems": [
         "can_kill_wither",
         "has_diamond_pickaxe",
-        "Progressive Resource Crafting, 2"
+        "Progressive Resource Crafting, 2",
+        "Nether Fortress"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -641,7 +691,8 @@
     {
       "Id": "Withering Heights",
       "RequiredItems": [
-        "can_kill_wither"
+        "can_kill_wither",
+        "Nether Fortress"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -655,7 +706,8 @@
         "has_bottle",
         "has_gold_ingots",
         "Progressive Resource Crafting, 2",
-        "The End"
+        "The End",
+        "Village"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -666,7 +718,8 @@
     {
       "Id": "Subspace Bubble",
       "RequiredItems": [
-        "has_diamond_pickaxe"
+        "has_diamond_pickaxe",
+        "The Nether"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -678,7 +731,8 @@
       "Id": "Country Lode, Take Me Home",
       "RequiredItems": [
         "available{Hidden in the Depths}",
-        "has_gold_ingots"
+        "has_gold_ingots",
+        "The Nether"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -690,7 +744,8 @@
       "Id": "Bee Our Guest",
       "RequiredItems": [
         "Campfire",
-        "has_bottle"
+        "has_bottle",
+        "Overworld"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -702,7 +757,8 @@
       "Id": "Uneasy Alliance",
       "RequiredItems": [
         "has_diamond_pickaxe",
-        "Fishing Rod"
+        "Fishing Rod",
+        "The Nether"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -714,7 +770,8 @@
       "Id": "Diamonds!",
       "RequiredItems": [
         "Progressive Tools, 2",
-        "has_iron_ingots"
+        "has_iron_ingots",
+        "Overworld"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -725,7 +782,8 @@
     {
       "Id": "A Throwaway Joke",
       "RequiredItems": [
-        "can_adventure"
+        "can_adventure",
+        "Overworld"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -737,7 +795,8 @@
       "Id": "Sticky Situation",
       "RequiredItems": [
         "Campfire",
-        "has_bottle"
+        "has_bottle",
+        "Overworld"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -748,7 +807,8 @@
     {
       "Id": "Ol' Betsy",
       "RequiredItems": [
-        "craft_crossbow"
+        "craft_crossbow",
+        "Overworld"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -765,7 +825,8 @@
         "has_diamond_pickaxe",
         "has_iron_ingots",
         "can_brew_potions",
-        "Bed"
+        "Bed",
+        "The Nether"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -776,7 +837,8 @@
     {
       "Id": "Hot Topic",
       "RequiredItems": [
-        "Progressive Resource Crafting"
+        "Progressive Resource Crafting",
+        "Overworld"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -788,7 +850,8 @@
       "Id": "The Lie",
       "RequiredItems": [
         "has_iron_ingots",
-        "Bucket"
+        "Bucket",
+        "Overworld"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -800,7 +863,8 @@
       "Id": "On a Rail",
       "RequiredItems": [
         "has_iron_ingots",
-        "Progressive Tools, 2"
+        "Progressive Tools, 2",
+        "Overworld"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -813,7 +877,8 @@
       "RequiredItems": [
         "Saddle",
         "Fishing Rod",
-        "can_adventure"
+        "can_adventure",
+        "Overworld"
       ],
       "ConditionalItems": [
         [
@@ -833,7 +898,8 @@
       "RequiredItems": [
         "can_brew_potions",
         "Progressive Weapons",
-        "The Nether"
+        "The Nether",
+        "Nether Fortress"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -844,7 +910,8 @@
     {
       "Id": "Librarian",
       "RequiredItems": [
-        "Enchanting"
+        "Enchanting",
+        "Overworld"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -857,7 +924,8 @@
       "RequiredItems": [
         "has_iron_ingots",
         "Progressive Tools, 2",
-        "basic_combat"
+        "basic_combat",
+        "Bastion Remnant"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -870,7 +938,8 @@
       "RequiredItems": [
         "has_copper_ingots",
         "Campfire",
-        "Progressive Resource Crafting, 2"
+        "Progressive Resource Crafting, 2",
+        "Overworld"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -883,7 +952,8 @@
       "RequiredItems": [
         "has_copper_ingots",
         "Campfire",
-        "Progressive Resource Crafting, 2"
+        "Progressive Resource Crafting, 2",
+        "Overworld"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -895,7 +965,8 @@
       "Id": "The Cutest Predator",
       "RequiredItems": [
         "has_iron_ingots",
-        "Bucket"
+        "Bucket",
+        "Overworld"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -907,7 +978,8 @@
       "Id": "The Healing Power of Friendship",
       "RequiredItems": [
         "has_iron_ingots",
-        "Bucket"
+        "Bucket",
+        "Overworld"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -919,7 +991,8 @@
       "Id": "Is It a Bird?",
       "RequiredItems": [
         "has_spyglass",
-        "can_adventure"
+        "can_adventure",
+        "Overworld"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -930,7 +1003,8 @@
     {
       "Id": "Is It a Balloon?",
       "RequiredItems": [
-        "has_spyglass"
+        "has_spyglass",
+        "The Nether"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -942,7 +1016,8 @@
       "Id": "Is It a Plane?",
       "RequiredItems": [
         "has_spyglass",
-        "can_respawn_ender_dragon"
+        "can_respawn_ender_dragon",
+        "The End"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -956,7 +1031,8 @@
         "Channeling Book",
         "can_use_anvil",
         "can_enchant",
-        "overworld_villager"
+        "overworld_villager",
+        "Overworld"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -969,7 +1045,8 @@
       "RequiredItems": [
         "can_adventure",
         "has_iron_ingots",
-        "Bucket"
+        "Bucket",
+        "Overworld"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -980,7 +1057,8 @@
     {
       "Id": "Glow and Behold!",
       "RequiredItems": [
-        "can_adventure"
+        "can_adventure",
+        "Overworld"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -991,7 +1069,8 @@
     {
       "Id": "Whatever Floats Your Goat!",
       "RequiredItems": [
-        "can_adventure"
+        "can_adventure",
+        "Overworld"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -1004,7 +1083,8 @@
       "RequiredItems": [
         "has_iron_ingots",
         "Bucket",
-        "Progressive Tools, 2"
+        "Progressive Tools, 2",
+        "Overworld"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -1018,7 +1098,8 @@
         "has_iron_ingots",
         "Bucket",
         "Fishing Rod",
-        "Saddle"
+        "Saddle",
+        "The Nether"
       ],
       "ConditionalItems": [
         [
@@ -1038,7 +1119,8 @@
       "RequiredItems": [
         "Progressive Tools, 2",
         "has_iron_ingots",
-        "basic_combat"
+        "basic_combat",
+        "Overworld"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -1051,7 +1133,8 @@
       "RequiredItems": [
         "has_iron_ingots",
         "Bucket",
-        "overworld_villager"
+        "overworld_villager",
+        "Village"
       ],
       "ConditionalItems": [
         [
@@ -1074,7 +1157,8 @@
       "RequiredItems": [
         "available{The Lie}",
         "Progressive Tools, 2",
-        "has_iron_ingots"
+        "has_iron_ingots",
+        "Pillager Outpost"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -1087,7 +1171,8 @@
       "RequiredItems": [
         "Bucket",
         "has_iron_ingots",
-        "can_adventure"
+        "can_adventure",
+        "Overworld"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -1100,7 +1185,8 @@
       "RequiredItems": [
         "can_adventure",
         "has_iron_ingots",
-        "Progressive Tools, 2"
+        "Progressive Tools, 2",
+        "Overworld"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -1113,7 +1199,8 @@
       "RequiredItems": [
         "can_adventure",
         "has_iron_ingots",
-        "Progressive Tools, 2"
+        "Progressive Tools, 2",
+        "Overworld"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -1125,7 +1212,8 @@
       "Id": "When the Squad Hops into Town",
       "RequiredItems": [
         "can_adventure",
-        "Lead"
+        "Lead",
+        "Overworld"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -1137,7 +1225,8 @@
       "Id": "With Our Powers Combined!",
       "RequiredItems": [
         "can_adventure",
-        "Lead"
+        "Lead",
+        "The Nether"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -1434,22 +1523,22 @@
       "RequiredItems": [],
       "ConditionalItems": [
         [
-          "setting{combat_difficulty, option_hard}"
+          "setting{combat_difficulty, hard}"
         ],
         [
-          "setting{combat_difficulty, option_easy}",
+          "setting{combat_difficulty, easy}",
           "death_link_check",
           "has_iron_ingots",
           "Progressive Weapons, 2"
         ],
         [
-          "setting{combat_difficulty, option_normal}",
+          "setting{combat_difficulty, normal}",
           "Campfire",
           "death_link_check",
           "Progressive Weapons"
         ],
         [
-          "setting{combat_difficulty, option_normal}",
+          "setting{combat_difficulty, normal}",
           "death_link_check",
           "Progressive Resource Crafting",
           "Progressive Weapons"
@@ -1465,22 +1554,22 @@
       "RequiredItems": [],
       "ConditionalItems": [
         [
-          "setting{combat_difficulty, option_hard}"
+          "setting{combat_difficulty, hard}"
         ],
         [
-          "setting{combat_difficulty, option_normal}",
+          "setting{combat_difficulty, normal}",
           "has_iron_ingots",
           "Progressive Armor",
           "Progressive Weapons"
         ],
         [
-          "setting{combat_difficulty, option_normal}",
+          "setting{combat_difficulty, normal}",
           "has_iron_ingots",
           "Progressive Weapons",
           "Shield"
         ],
         [
-          "setting{combat_difficulty, option_easy}",
+          "setting{combat_difficulty, easy}",
           "has_iron_ingots",
           "Progressive Armor",
           "Progressive Weapons, 2",
@@ -1500,23 +1589,23 @@
       ],
       "ConditionalItems": [
         [
-          "setting{combat_difficulty, option_hard}",
+          "setting{combat_difficulty, hard}",
           "Progressive Armor",
           "Progressive Weapons, 2"
         ],
         [
-          "setting{combat_difficulty, option_hard}",
+          "setting{combat_difficulty, hard}",
           "Progressive Weapons, 2",
           "Shield"
         ],
         [
-          "setting{combat_difficulty, option_normal}",
+          "setting{combat_difficulty, normal}",
           "Progressive Armor",
           "Progressive Weapons, 2",
           "Shield"
         ],
         [
-          "setting{combat_difficulty, option_easy}",
+          "setting{combat_difficulty, easy}",
           "Archery",
           "Progressive Armor, 2",
           "Progressive Tools, 2",
@@ -1536,23 +1625,23 @@
       ],
       "ConditionalItems": [
         [
-          "setting{combat_difficulty, option_hard}",
+          "setting{combat_difficulty, hard}",
           "normal_wither_kill"
         ],
         [
-          "setting{combat_difficulty, option_hard}",
+          "setting{combat_difficulty, hard}",
           "The End"
         ],
         [
-          "setting{combat_difficulty, option_hard}",
+          "setting{combat_difficulty, hard}",
           "The Nether"
         ],
         [
-          "setting{combat_difficulty, option_normal}",
+          "setting{combat_difficulty, normal}",
           "normal_wither_kill"
         ],
         [
-          "setting{combat_difficulty, option_easy}",
+          "setting{combat_difficulty, easy}",
           "Archery",
           "normal_wither_kill"
         ]
@@ -1580,23 +1669,23 @@
       "RequiredItems": [],
       "ConditionalItems": [
         [
-          "setting{combat_difficulty, option_hard}",
+          "setting{combat_difficulty, hard}",
           "Bed",
           "Progressive Weapons"
         ],
         [
-          "setting{combat_difficulty, option_hard}",
+          "setting{combat_difficulty, hard}",
           "Progressive Armor",
           "Progressive Weapons, 2"
         ],
         [
-          "setting{combat_difficulty, option_normal}",
+          "setting{combat_difficulty, normal}",
           "Archery",
           "Progressive Armor",
           "Progressive Weapons, 2"
         ],
         [
-          "setting{combat_difficulty, option_easy}",
+          "setting{combat_difficulty, easy}",
           "Archery",
           "can_brew_potions",
           "can_enchant",
@@ -1862,7 +1951,7 @@
     {
       "Id": "reach_wither_goal",
       "RequiredItems": [
-        "setting{required_bosses, option_wither}",
+        "setting{required_bosses, wither}",
         "can_kill_wither"
       ],
       "ConditionalItems": [],
@@ -1874,7 +1963,7 @@
     {
       "Id": "reach_dragon_goal",
       "RequiredItems": [
-        "setting{required_bosses, option_ender_dragon}",
+        "setting{required_bosses, ender_dragon}",
         "can_kill_ender_dragon"
       ],
       "ConditionalItems": [],
@@ -1886,7 +1975,7 @@
     {
       "Id": "reach_both_goal",
       "RequiredItems": [
-        "setting{required_bosses, option_both}",
+        "setting{required_bosses, both}",
         "can_kill_wither",
         "can_kill_ender_dragon"
       ],
@@ -1924,7 +2013,7 @@
           "reach_wither_goal"
         ],
         [
-          "setting{required_bosses, option_none}"
+          "setting{required_bosses, none}"
         ]
       ],
       "TimeNeeded": "None",

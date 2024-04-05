@@ -6,7 +6,6 @@ using MMR_Tracker_V3.TrackerObjects;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Diagnostics;
 using System.Linq;
@@ -14,12 +13,13 @@ using System.Net.Sockets;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Windows_Form_Frontend;
 using static MMR_Tracker_V3.TrackerObjects.InstanceData;
 using static MMR_Tracker_V3.TrackerObjects.MiscData;
 using static MMR_Tracker_V3.NetCode.NetData;
 using MMR_Tracker_V3.NetCode;
 using System.Net;
+using Archipelago.MultiClient.Net.Packets;
+using MMR_Tracker_V3.SpoilerLogImporter;
 
 namespace Windows_Form_Frontend
 {
@@ -43,8 +43,8 @@ namespace Windows_Form_Frontend
             cmbGameType.DataSource = Utility.EnumAsArray<NetData.OnlineMode>();
             cmbGameType.SelectedIndexChanged += CmbGameType_SelectedIndexChanged;
 
-            txtServerAddress.Text = "127.0.0.1";
-            nudPort.Value = 25570;
+            txtServerAddress.Text = ServerCache;
+            nudPort.Value = PortCache;
             nudPlayer.Value = 1;
 
             UpdateUI();
@@ -52,9 +52,32 @@ namespace Windows_Form_Frontend
             ModeUpdating = false;
         }
 
+        private OnlineMode CurrentMode = OnlineMode.None;
+        private string ServerCache = "127.0.0.1";
+        private int PortCache = 25570;
+        private string APServerCache = "archipelago.gg";
+        private int APPortCache = 38281;
         private void CmbGameType_SelectedIndexChanged(object sender, EventArgs e)
         {
+            OnlineMode NewMode = (OnlineMode)cmbGameType.SelectedItem;
+
+            if (CurrentMode != OnlineMode.Archipelago && NewMode == OnlineMode.Archipelago)
+            {
+                ServerCache = txtServerAddress.Text;
+                PortCache = (int)nudPort.Value;
+                txtServerAddress.Text = APServerCache;
+                nudPort.Value = APPortCache;
+            }
+            else if (CurrentMode == OnlineMode.Archipelago && NewMode != OnlineMode.Archipelago)
+            {
+                APServerCache = txtServerAddress.Text;
+                APPortCache = (int)nudPort.Value;
+                txtServerAddress.Text = ServerCache;
+                nudPort.Value = PortCache;
+            }
+
             UpdateUI();
+            CurrentMode = (OnlineMode)cmbGameType.SelectedItem;
         }
 
         private void NetClient_FormClosing(object sender, FormClosingEventArgs e)
@@ -66,6 +89,7 @@ namespace Windows_Form_Frontend
             }
             LocationChecker.CheckStateChanged -= TrackerDataHandeling_CheckedObjectsUpdate;
             CloseServer("Client Closed Manually");
+            ParentForm.CurrentNetClientForm = null;
         }
 
         public void CloseServer(string Reason = "Unknown", bool WasConnected = true)
@@ -107,7 +131,7 @@ namespace Windows_Form_Frontend
         {
             var LocationsUpdated = ObjectsUpdated.Where(x => x is LocationData.LocationObject lo && (lo.Randomizeditem.OwningPlayer > -1) || InstanceContainer.netConnection.OnlineMode != OnlineMode.Multiworld)
                 .Select(x => (LocationData.LocationObject)x);
-            if (InstanceContainer.netConnection.ServerConnection is null || !InstanceContainer.netConnection.ServerConnection.Connected) { return; }
+            if (InstanceContainer.netConnection.IsConnected()) { return; }
             if (!chkSendData.Checked) { return; }
 
             NetData.NetPacket? packet;
@@ -182,6 +206,7 @@ namespace Windows_Form_Frontend
             {
                 CloseServer("Client Closed Manually");
             }
+            Debug.WriteLine("Connection Complete");
             UpdateUI();
         }
 
@@ -201,6 +226,7 @@ namespace Windows_Form_Frontend
             txtGameName.Enabled = !Connected && IsArchipelago;
             txtSlotID.Enabled = !Connected && IsArchipelago;
             txtPassword.Enabled = !Connected && !IsNone;
+            cmbGameType.Enabled = !Connected;
             txtChatMessage.Enabled = Connected;
             btnSendChat.Enabled = Connected;
             btnProcessData.Enabled = (LocationDataToProcess.Any() || ItemDataToProcess.Any()) && Connected && !chkProcessData.Checked;
@@ -261,20 +287,84 @@ namespace Windows_Form_Frontend
                 InstanceContainer.netConnection.ArchipelagoClient = null;
                 return;
             }
-            var ConnectionInfo = InstanceContainer.netConnection.ArchipelagoClient.GetLoginSuccessInfo();
-            PrintToConsole(ConnectionInfo.ToFormattedJson().SplitAtNewLine());
-            InstanceContainer.netConnection.ArchipelagoClient.Session.Items.ItemReceived += ArchipelagoItemReceived;
-            InstanceContainer.netConnection.ArchipelagoClient.Session.MessageLog.OnMessageReceived += ArchipelagoChatMessageReceived; ;
+            var APClient = InstanceContainer.netConnection.ArchipelagoClient;
+            var ConnectionInfo = APClient.GetLoginSuccessInfo();
+            PrintToConsole([$"Connected to {ServerAddress}"]);
+            InstanceContainer.netConnection.OnlineMode = OnlineMode.Archipelago;
+            nudPlayer.Value = InstanceContainer.netConnection.ArchipelagoClient.Session.ConnectionInfo.Slot;
+            InstanceContainer.netConnection.PlayerID = InstanceContainer.netConnection.ArchipelagoClient.Session.ConnectionInfo.Slot;
+            InstanceContainer.netConnection.SlotID = txtSlotID.Text;
+            InstanceContainer.netConnection.GameName = txtGameName.Text;
+
+            InstanceContainer.netConnection.PlayerNames = APClient.Session.Players.AllPlayers.ToDictionary(x => x.Slot, x => x.Name);
+            //Has to go Before event listeners are defined
+
+            if (InstanceContainer.Instance.SpoilerLog is null)
+            {
+                var SpoilerLog = MMR_Tracker_V3.SpoilerLogImporter.Archipelago.CreateGenericSpoilerLog(InstanceContainer);
+                var LogImported = SpoilerLogTools.ImportSpoilerLog(SpoilerLog, "", InstanceContainer);
+                InstanceContainer.logicCalculation.CalculateLogic();
+            }
+            ParentForm.UpdateUI();
+            SyncWithArchipelagoData();
+
+            APClient.Session.Items.ItemReceived += ArchipelagoItemReceived;
+            APClient.Session.Locations.CheckedLocationsUpdated += ArchipelagoLocationChecked;
+            APClient.Session.MessageLog.OnMessageReceived += ArchipelagoChatMessageReceived;
+
         }
 
         private void ArchipelagoChatMessageReceived(Archipelago.MultiClient.Net.MessageLog.Messages.LogMessage message)
         {
-            PrintToConsole(message.ToString());
+            string Chat = message.ToString();
+            Invoke(new Action(() => { PrintToConsole(Chat); }));
+        }
+
+        private void ArchipelagoLocationChecked(System.Collections.ObjectModel.ReadOnlyCollection<long> newCheckedLocations)
+        {
+            Debug.WriteLine("ArchipelagoLocationChecked");
+            Invoke(new Action(SyncWithArchipelagoData));
         }
 
         private void ArchipelagoItemReceived(Archipelago.MultiClient.Net.Helpers.ReceivedItemsHelper helper)
         {
+            Debug.WriteLine("ArchipelagoItemReceived");
+            Invoke(new Action(SyncWithArchipelagoData));
+        }
 
+        private void SyncWithArchipelagoData()
+        {
+            var Instance = InstanceContainer.Instance;
+            var Sess = InstanceContainer.netConnection.ArchipelagoClient.Session;
+            var AllItems = Sess.Items.AllItemsReceived.Select(x => (Sess.Items.GetItemName(x.Item), Sess.Locations.GetLocationNameFromId(x.Location), x.Player)).ToArray();
+            var AllLocations = Sess.Locations.AllLocationsChecked.Select(x => Sess.Locations.GetLocationNameFromId(x)).ToArray();
+            foreach (var i in InstanceContainer.Instance.ItemPool.Values) { i.AmountAquiredOnline = []; }
+            List<LocationData.LocationObject> ToCheck = new List<LocationData.LocationObject>();
+            foreach(var Entry in AllItems)
+            {
+                bool IsLocal = Entry.Player == InstanceContainer.netConnection.PlayerID;
+                var location = IsLocal ? Instance.GetLocationByID(Entry.Item2) : null;
+                var Item = Instance.GetItemByID(Entry.Item1);
+                if (!IsLocal && Item is not null) { 
+                    Item.AmountAquiredOnline.SetIfEmpty(Entry.Player, 0);
+                    Item.AmountAquiredOnline[Entry.Player]++;
+                }
+                else if (IsLocal && location is not null && location.CheckState != MiscData.CheckState.Checked)
+                {
+                    location.Randomizeditem.Item = Entry.Item1;
+                    ToCheck.Add(location);
+                }
+            }
+            foreach(var Entry in AllLocations)
+            {
+                var location = Instance.GetLocationByID(Entry);
+                if (location is null) { continue; }
+                if (location.GetItemAtCheck() == null) { location.Randomizeditem.Item = "Archipelago Item"; }
+                ToCheck.Add(location);
+            }
+            LocationChecker.CheckSelectedItems(ToCheck, InstanceContainer, new CheckItemSetting(MiscData.CheckState.Checked));
+            InstanceContainer.logicCalculation.CalculateLogic();
+            ParentForm.PrintToListBox();
         }
 
         private async Task<string> OpenListenThread()
@@ -431,15 +521,21 @@ namespace Windows_Form_Frontend
         private void btnSendChat_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrWhiteSpace(txtChatMessage.Text)) { return; }
-            if (InstanceContainer.netConnection.ServerConnection is null || !InstanceContainer.netConnection.ServerConnection.Connected) { return; }
+            if (!InstanceContainer.netConnection.IsConnected()) { return; }
+            if ((OnlineMode)cmbGameType.SelectedItem == OnlineMode.Archipelago)
+            {
+                InstanceContainer.netConnection.ArchipelagoClient.Session.Socket.SendPacket(new SayPacket() { Text = txtChatMessage.Text });
+            }
+            else
+            {
 
-            NetData.NetPacket packet = new NetData.NetPacket((int)nudPlayer.Value, PacketType.ChatMessage, txtPassword.Text);
-            Guid ChatGuid = Guid.NewGuid();
-            packet.ChatMessage = new ChatMessage((int)nudPlayer.Value, ChatGuid, txtChatMessage.Text);
-            PrintToConsole($"Player {nudPlayer.Value} (You): {packet.ChatMessage.Message}");
-            byte[] bytesToSend = ASCIIEncoding.ASCII.GetBytes(packet.ToFormattedJson());
-            InstanceContainer.netConnection.ServerConnection.GetStream().Write(bytesToSend, 0, bytesToSend.Length);
-
+                NetData.NetPacket packet = new NetData.NetPacket((int)nudPlayer.Value, PacketType.ChatMessage, txtPassword.Text);
+                Guid ChatGuid = Guid.NewGuid();
+                packet.ChatMessage = new ChatMessage((int)nudPlayer.Value, ChatGuid, txtChatMessage.Text);
+                PrintToConsole($"Player {nudPlayer.Value} (You): {packet.ChatMessage.Message}");
+                byte[] bytesToSend = ASCIIEncoding.ASCII.GetBytes(packet.ToFormattedJson());
+                InstanceContainer.netConnection.ServerConnection.GetStream().Write(bytesToSend, 0, bytesToSend.Length);
+            }
             txtChatMessage.Text = string.Empty;
         }
 

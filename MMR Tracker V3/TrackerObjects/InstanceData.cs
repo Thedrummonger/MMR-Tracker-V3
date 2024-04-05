@@ -12,6 +12,7 @@ using static MMR_Tracker_V3.TrackerObjects.ItemData;
 using static MMR_Tracker_V3.TrackerObjects.LocationData;
 using static MMR_Tracker_V3.TrackerObjects.LogicDictionaryData;
 using static MMR_Tracker_V3.TrackerObjects.OptionData;
+using MMR_Tracker_V3.NetCode;
 
 namespace MMR_Tracker_V3.TrackerObjects
 {
@@ -132,15 +133,16 @@ namespace MMR_Tracker_V3.TrackerObjects
             public string[] Log { get; set; }
             public Dictionary<string, PlaythroughGenerator.PlaythroughObject> Playthrough { get; set; }
 
-            public void GetStaticPlaythrough(TrackerInstance instance)
+            public void GetStaticPlaythrough(InstanceContainer Container)
             {
-                PlaythroughGenerator generator = new(instance);
+                if (Container.netConnection.OnlineMode.In(NetCode.NetData.OnlineMode.Multiworld, NetCode.NetData.OnlineMode.Archipelago)) { return; }
+                PlaythroughGenerator generator = new(Container.Instance);
                 generator.GeneratePlaythrough();
-                if (instance.LogicDictionary.WinCondition != null)
+                if (Container.Instance.LogicDictionary.WinCondition != null)
                 {
-                    var wincon = PlaythroughTools.GetDefaultWincon(instance);
+                    var wincon = PlaythroughTools.GetDefaultWincon(Container.Instance);
                     if (wincon is not null) { generator.FilterImportantPlaythrough(wincon); }
-                    Debug.WriteLine($"Seed Beatable: {generator.Playthrough.ContainsKey(instance.LogicDictionary.WinCondition)}");
+                    Debug.WriteLine($"Seed Beatable: {generator.Playthrough.ContainsKey(Container.Instance.LogicDictionary.WinCondition)}");
                 }
                 Playthrough = generator.Playthrough;
             }
@@ -162,7 +164,7 @@ namespace MMR_Tracker_V3.TrackerObjects
                 }
             }
             public LogicCalculation logicCalculation { get; set; }
-            public NetConnection netConnection { get; set; } = new NetConnection();
+            public NetData.NetConnection netConnection { get; set; } = new NetData.NetConnection();
             public List<string> UndoStringList { get; set; } = [];
             public List<string> RedoStringList { get; set; } = [];
             public string CurrentSavePath { get; set; } = "";

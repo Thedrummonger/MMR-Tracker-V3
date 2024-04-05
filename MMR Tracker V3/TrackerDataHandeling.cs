@@ -1,4 +1,5 @@
-﻿using MMR_Tracker_V3.TrackerObjectExtensions;
+﻿using MathNet.Numerics;
+using MMR_Tracker_V3.TrackerObjectExtensions;
 using MMR_Tracker_V3.TrackerObjects;
 using System;
 using System.Collections.Generic;
@@ -209,7 +210,7 @@ namespace MMR_Tracker_V3
             PriceDisplay = p < 0 || (!Available) ? "" : $" [{c}{p}]";
             RandomizedItemDisplay = instance.Instance.GetItemByID(Location.Randomizeditem.Item)?.GetDictEntry()?.GetName() ?? Location.Randomizeditem.Item;
 
-            ForPlayer = Location.Randomizeditem.Item is not null && Location.Randomizeditem.OwningPlayer >= 0 ? $" [Player: {Location.Randomizeditem.OwningPlayer}]" : "";
+            ForPlayer = Location.Randomizeditem.Item is not null && Location.Randomizeditem.OwningPlayer >= 0 ? $" [Player: {PlayerNumber(Location.Randomizeditem.OwningPlayer)}]" : "";
 
             return Location.CheckState switch
             {
@@ -218,6 +219,15 @@ namespace MMR_Tracker_V3
                 MiscData.CheckState.Checked => $"{RandomizedItemDisplay}{ForPlayer}{PriceDisplay}: {LocationDisplay}{StarredDisplay}",
                 _ => obj.ToString(),
             };
+
+            string PlayerNumber(int Player)
+            {
+                if (instance.netConnection.PlayerNames.TryGetValue(Player, out string name))
+                {
+                    return $"{Player} ({name})";
+                }
+                return Player.ToString();
+            }
         }
 
 
@@ -429,7 +439,7 @@ namespace MMR_Tracker_V3
                 {
                     foreach (var j in i.AmountAquiredOnline)
                     {
-                        string Display = $"{i.GetDictEntry().GetName()} X{j.Value}: Player {j.Key}";
+                        string Display = $"{i.GetDictEntry().GetName()} X{j.Value}: Player {PlayerNumber(j.Key)}";
                         Data.ItemsFound++;
                         if (!SearchStringParser.FilterSearch(Data.Instance, i, Data.Filter, Display)) { continue; }
                         if (!DividerCreated)
@@ -444,6 +454,14 @@ namespace MMR_Tracker_V3
                 }
             }
             return Data;
+            string PlayerNumber(int Player)
+            {
+                if (Data.InstanceContainer.netConnection.PlayerNames.TryGetValue(Player, out string name))
+                {
+                    return $"{Player} ({name})";
+                }
+                return Player.ToString();
+            }
         }
 
     }

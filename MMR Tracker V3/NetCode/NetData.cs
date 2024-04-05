@@ -117,6 +117,33 @@ namespace MMR_Tracker_V3.NetCode
                 File.WriteAllText(ConfigFilePath, configFile.ToFormattedJson());
             }
         }
+
+        public class NetConnection
+        {
+            public NetData.OnlineMode OnlineMode { get; set; } = NetData.OnlineMode.None;
+            public TcpClient ServerConnection { get; set; } = null;
+            public ArchipelagoConnector ArchipelagoClient { get; set; } = null;
+            public int PlayerID { get; set; } = -1;
+            public string SlotID { get; set; } = string.Empty;
+            public string GameName { get; set; } = string.Empty;
+            public Dictionary<int, string> PlayerNames { get; set; } = [];
+            public void Reset()
+            {
+                OnlineMode = NetData.OnlineMode.None;
+                ServerConnection = null;
+                ArchipelagoClient = null;
+                PlayerID = -1;
+                SlotID = string.Empty;
+                GameName = string.Empty;
+            }
+            public bool IsConnected()
+            {
+                bool ServerConnected = ServerConnection is not null && ServerConnection.Connected;
+                bool ArchipelagoConnected = ArchipelagoClient is not null && ArchipelagoClient.WasConnectionSuccess(out _);
+
+                return ServerConnected || ArchipelagoConnected;
+            }
+        }
         public static void ParseNetServerArgs(string[] args, out IPAddress IP, out int Port)
         {
             IP = null;

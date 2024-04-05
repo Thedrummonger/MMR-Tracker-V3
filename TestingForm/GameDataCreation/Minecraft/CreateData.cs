@@ -74,6 +74,14 @@ namespace TestingForm.GameDataCreation.Minecraft
                     AddLogic(location, Logicdictionary.LocationList[location].Area);
                 }
             }
+            foreach (var region in locations.locations_by_region)
+            {
+                foreach (var location in region.Value)
+                {
+                    var LogicEntry = logicFile.Logic.First(x => x.Id == location);
+                    LogicEntry.RequiredItems.Add(region.Key);
+                }
+            }
 
             foreach (var item in items.all_items)
             {
@@ -112,14 +120,14 @@ namespace TestingForm.GameDataCreation.Minecraft
             {
                 ID = "combat_difficulty",
                 Name = "Combat Difficulty",
-                Value = "option_normal"
-            }.CreateSimpleValues(("option_easy", "Easy"), ("option_normal", "Normal"), ("option_hard", "Hard")));
+                Value = "normal"
+            }.CreateSimpleValues(("easy", "Easy"), ("normal", "Normal"), ("hard", "Hard")));
             Logicdictionary.ChoiceOptions.Add("required_bosses", new OptionData.ChoiceOption(null)
             {
                 ID = "required_bosses",
                 Name = "Required Bosses",
-                Value = "option_ender_dragon"
-            }.CreateSimpleValues(("option_none", "None"), ("option_ender_dragon", "Ender Dragon"), ("option_wither", "Wither"), ("option_both", "Both")));
+                Value = "ender_dragon"
+            }.CreateSimpleValues(("none", "None"), ("ender_dragon", "Ender Dragon"), ("wither", "Wither"), ("both", "Both")));
             Logicdictionary.ToggleOptions.Add("structure_compasses", new OptionData.ToggleOption(null)
             {
                 ID = "structure_compasses",
@@ -135,6 +143,7 @@ namespace TestingForm.GameDataCreation.Minecraft
 
             foreach(var i in logicFile.Logic)
             {
+                LogicUtilities.MoveRequirementsToConditionals(i);
                 LogicUtilities.RemoveRedundantConditionals(i);
                 LogicUtilities.MakeCommonConditionalsRequirements(i);
                 LogicUtilities.SortConditionals(i);
