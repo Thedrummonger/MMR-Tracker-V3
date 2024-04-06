@@ -243,11 +243,12 @@ namespace Windows_Form_Frontend
         //Misc
         private async void ConnectToWebServer()
         {
-            ConnectionHandling.ConnectToWebServer(
+            var Connected = ConnectionHandling.ConnectToWebServer(
                 InstanceContainer, txtServerAddress.Text, (int)nudPort.Value,
                 (int)nudPlayer.Value, txtPassword.Text, CurrentMode, out List<string> Log);
             PrintToConsole(Log);
             UpdateUI();
+            if (!Connected) { return; }
             string ExitReason = await ListenerThread.OpenListenThread();
             PrintToConsole(ExitReason);
             ConnectionHandling.CloseServer(InstanceContainer);
@@ -256,8 +257,9 @@ namespace Windows_Form_Frontend
         }
         private void ConnectToArchipelago()
         {
-            archipelagoConnection.Connect(out List<string> Log);
+            var Connected = archipelagoConnection.Connect(out List<string> Log);
             PrintToConsole(Log);
+            if (!Connected) { return ; }
             nudPlayer.Value = InstanceContainer.netConnection.ArchipelagoClient.Session.ConnectionInfo.Slot;
             if (InstanceContainer.Instance.SpoilerLog is null){ archipelagoConnection.ApplySpoilerFromAPData(); }
             archipelagoConnection.SyncWithArchipelagoData();
