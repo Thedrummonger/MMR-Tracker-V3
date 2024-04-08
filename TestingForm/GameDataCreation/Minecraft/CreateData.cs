@@ -52,7 +52,8 @@ namespace TestingForm.GameDataCreation.Minecraft
                         Area = region.Key,
                         Name = location,
                         OriginalItem = "advancement",
-                        ValidItemTypes = ["item"]
+                        ValidItemTypes = ["item"],
+                        SpoilerData = new MMRData.SpoilerlogReference() { NetID = location },
                     };
                     Logicdictionary.LocationList.Add(location, locationEntry);
                 }
@@ -67,7 +68,8 @@ namespace TestingForm.GameDataCreation.Minecraft
                         Area = "Archipelago",
                         Name = location,
                         OriginalItem = "advancement",
-                        ValidItemTypes = ["item"]
+                        ValidItemTypes = ["item"],
+                        SpoilerData = new MMRData.SpoilerlogReference() { NetID = location },
                     };
                     Logicdictionary.LocationList.Add(location, locationEntry);
                 }
@@ -91,7 +93,8 @@ namespace TestingForm.GameDataCreation.Minecraft
                 {
                     ID = item,
                     ItemTypes = ["item"],
-                    Name = item
+                    Name = item,
+                    SpoilerData = new MMRData.SpoilerlogReference() { NetID = item },
                 };
                 Logicdictionary.ItemList.Add(item, itemEntry);
             }

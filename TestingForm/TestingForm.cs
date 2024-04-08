@@ -79,6 +79,7 @@ namespace TestingForm
                 new DevAction("Create OOTMM Data", GameFileCreation.OOTMMCreateData, UpdateDebugActions),
                 new DevAction("Create PMR Data", GameFileCreation.PMRCreateData, UpdateDebugActions),
                 new DevAction("Create LAS Data", GameFileCreation.LASCreateData, UpdateDebugActions),
+                new DevAction("Create WWR Data", GameFileCreation.WWRCreateData, UpdateDebugActions),
                 new DevAction("Create Minecraft Data", GameFileCreation.MinecraftCreateData, UpdateDebugActions),
                 new DevAction("Test Archipelago", Archipelago, UpdateDebugActions),
                 new DevAction("Test Random Stuff", RandomTests, UpdateDebugActions),
@@ -118,7 +119,15 @@ namespace TestingForm
 
         private void RandomTests()
         {
-            Debug.WriteLine("Test");
+            string input = "Key x2";
+
+            // Define a regular expression pattern to match "x" followed by a number
+            string pattern = @" (x)(\d+)";
+
+            // Replace occurrences of the pattern with ",$2", where $2 is the matched number
+            string result = Regex.Replace(input, pattern, ", $2");
+
+            Debug.WriteLine(result); // Output: "Key ,2"
         }
 
         private void RegexTesting()

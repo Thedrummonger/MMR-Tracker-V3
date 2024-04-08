@@ -96,6 +96,7 @@ namespace MMR_Tracker_V3.TrackerObjects
             public string[] GossipHintNames { get; set; } = Array.Empty<string>();
             public string[] PriceDataNames { get; set; } = Array.Empty<string>();
             public string[] Tags { get; set; } = Array.Empty<string>();
+            public string NetID { get; set; } = null;
         }
     }
 }

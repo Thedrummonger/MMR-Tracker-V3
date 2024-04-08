@@ -59,6 +59,38 @@ namespace MMR_Tracker_V3.NetCode
 
     public class ArchipelagoConnectionHandler(NetSessionData Data)
     {
+        Dictionary<string, string> APLocationIDLookup = null;
+        Dictionary<string, string> APItemIDLookup = null;
+        private void FillLocationLookupDict() 
+        {
+            APLocationIDLookup = [];
+            foreach (var i in Data.InstanceContainer.Instance.LocationPool) 
+            {
+                var NetID = i.Value.GetDictEntry().SpoilerData.NetID;
+                if (NetID is null) { continue; }
+                APLocationIDLookup[NetID] = i.Key;
+            }
+        }
+        private LocationData.LocationObject GetLocationByNetID(string netID)
+        {
+            if (!APLocationIDLookup.TryGetValue(netID, out string LocID)) { return null; }  
+            return Data.InstanceContainer.Instance.GetLocationByID(LocID);
+        }
+        private void FillItemLookupDict()
+        {
+            APItemIDLookup = [];
+            foreach (var i in Data.InstanceContainer.Instance.ItemPool)
+            {
+                var NetID = i.Value.GetDictEntry().SpoilerData.NetID;
+                if (NetID is null) { continue; }
+                APItemIDLookup[NetID] = i.Key;
+            }
+        }
+        private ItemData.ItemObject GetItemByNetID(string netID)
+        {
+            if (!APLocationIDLookup.TryGetValue(netID, out string LocID)) { return null; }
+            return Data.InstanceContainer.Instance.GetItemByID(LocID);
+        }
         public bool Connect(out List<string> Log)
         {
             Log = new List<string>();
@@ -102,6 +134,8 @@ namespace MMR_Tracker_V3.NetCode
 
         public void SyncWithArchipelagoData()
         {
+            if (APLocationIDLookup is null) { FillLocationLookupDict(); }
+            if (APItemIDLookup is null) { FillItemLookupDict(); }
             var Instance = Data.InstanceContainer.Instance;
             var Sess = Data.InstanceContainer.netConnection.ArchipelagoClient.Session;
             var AllItems = Sess.Items.AllItemsReceived.Select(x => (Sess.Items.GetItemName(x.Item), Sess.Locations.GetLocationNameFromId(x.Location), x.Player)).ToArray();
@@ -111,8 +145,8 @@ namespace MMR_Tracker_V3.NetCode
             foreach (var Entry in AllItems)
             {
                 bool IsLocal = Entry.Player == Data.InstanceContainer.netConnection.PlayerID;
-                var location = IsLocal ? Instance.GetLocationByID(Entry.Item2) : null;
-                var Item = Instance.GetItemByID(Entry.Item1);
+                var location = IsLocal ? GetLocationByNetID(Entry.Item2) : null;
+                var Item = GetItemByNetID(Entry.Item1);
                 if (!IsLocal && Item is not null)
                 {
                     Item.AmountAquiredOnline.SetIfEmpty(Entry.Player, 0);
@@ -126,7 +160,7 @@ namespace MMR_Tracker_V3.NetCode
             }
             foreach (var Entry in AllLocations)
             {
-                var location = Instance.GetLocationByID(Entry);
+                var location = GetLocationByNetID(Entry);
                 if (location is null) { continue; }
                 if (location.GetItemAtCheck() == null) { location.Randomizeditem.Item = "Archipelago Item"; }
                 ToCheck.Add(location);
