@@ -1,5 +1,6 @@
 ﻿using MMR_Tracker_V3.TrackerObjectExtensions;
 using MMR_Tracker_V3.TrackerObjects;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -86,6 +87,11 @@ namespace MMR_Tracker_V3.SpoilerLogImporter
                     MinecraftSpoilerLogTools.ParseSpoiler(container.Instance);
                     container.Instance.SpoilerLog.GetStaticPlaythrough(container);
                     break;
+                case "WWR":
+                    container.Instance.SpoilerLog = new InstanceData.SpoilerLogFileData { FileName = OriginalFile, Log = spoilerLog };
+                    WWRSpoilerLogTools.ParseSpoiler(container.Instance);
+                    container.Instance.SpoilerLog.GetStaticPlaythrough(container);
+                    break;
                 default:
                     LogImported = false; break;
             }
@@ -115,6 +121,21 @@ namespace MMR_Tracker_V3.SpoilerLogImporter
         public static bool CheckForSpoilerLog(InstanceData.TrackerInstance logic)
         {
             return logic.LocationPool.Values.Any(x => !string.IsNullOrWhiteSpace(x.Randomizeditem.SpoilerLogGivenItem));
+        }
+
+        public static bool IsGenericAPSpoiler(InstanceData.TrackerInstance instance)
+        {
+            if (instance.GetParentContainer().netConnection.OnlineMode != NetCode.NetData.OnlineMode.Archipelago) { return false; }
+            try
+            {
+                Archipelago.GenericAPSpoiler genericAPSpoiler = 
+                    JsonConvert.DeserializeObject<Archipelago.GenericAPSpoiler>(string.Join(" ", instance.SpoilerLog.Log));
+                var LocationData = genericAPSpoiler.Locations;
+                var SlotData = genericAPSpoiler.SlotData;
+                if (LocationData.Count < 1 || SlotData.Count < 1) { return false; }
+            }
+            catch { return false; }
+            return true;
         }
     }
 }

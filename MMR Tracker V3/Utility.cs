@@ -48,6 +48,13 @@ namespace MMR_Tracker_V3
         {
             return s.Split( new string[] { "\r\n", "\r", "\n" }, StringSplitOptions.None );
         }
+        /// <summary>
+        /// Splits a string and trims the values
+        /// </summary>
+        /// <param name="s">The source string</param>
+        /// <param name="Val">The substring to split on</param>
+        /// <returns></returns>
+        /// 
         public static string[] TrimSplit(this string s, string Val)
         {
             return s.Split(Val).Select(x => x.Trim()).ToArray();
@@ -228,6 +235,27 @@ namespace MMR_Tracker_V3
         public static string ToFormattedJson(this object o)
         {
             return JsonConvert.SerializeObject(o, DefaultSerializerSettings);
+        }
+        /// <summary>
+        /// Checks if an object represents a value that could be interpreted as a boolean
+        /// </summary>
+        /// <param name="val"></param>
+        /// <param name="Default">The value to return if the object can not be parsed as a boolean. Throws an exception on failed parse if null</param>
+        /// <returns></returns>
+        /// <exception cref="Exception"></exception>
+        public static bool IsTruthy(this object val, bool? Default = null)
+        {
+            var result = Default;
+            if (val is bool boolVal) { result = (boolVal); }
+            else if (val is int IntBoolVal) { result = (IntBoolVal > 0); }
+            else if (val is Int64 Int64BoolVal) { result = (Int64BoolVal > 0); }
+            else if (val is float FloatBoolVal) { result = (FloatBoolVal > 0); }
+            else if (val is double DoubleBoolVal) { result = (DoubleBoolVal > 0); }
+            else if (val is decimal DecimalBoolVal) { result = (DecimalBoolVal > 0); }
+            else if (val is string StringBoolVal && bool.TryParse(StringBoolVal, out bool rb)) { result = (rb); }
+
+            if (result is null) { throw new Exception($"{val.GetType().Name} {val} Was not a valid truthy Value"); }
+            return (bool)result;
         }
 
         public readonly static Newtonsoft.Json.JsonSerializerSettings DefaultSerializerSettings = new()

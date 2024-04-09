@@ -101,8 +101,6 @@ namespace TestingForm
                 return;
             }
             Debug.WriteLine(archipelago.GetLoginSuccessInfo().ToFormattedJson());
-            Debug.WriteLine(archipelago.GetAllLocations().ToFormattedJson());
-            Debug.WriteLine(archipelago.GetAllItems().ToFormattedJson());
         }
 
         [Flags]

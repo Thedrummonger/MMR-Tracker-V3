@@ -88,7 +88,7 @@ namespace MMR_Tracker_V3.NetCode
         }
         private ItemData.ItemObject GetItemByNetID(string netID)
         {
-            if (!APLocationIDLookup.TryGetValue(netID, out string LocID)) { return null; }
+            if (!APItemIDLookup.TryGetValue(netID, out string LocID)) { return null; }
             return Data.InstanceContainer.Instance.GetItemByID(LocID);
         }
         public bool Connect(out List<string> Log)

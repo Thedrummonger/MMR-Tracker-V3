@@ -1,12 +1,6 @@
-﻿using Archipelago.MultiClient.Net.Packets;
-using MMR_Tracker_V3.TrackerObjects;
-using System;
+﻿using MMR_Tracker_V3.TrackerObjects;
 using System.Collections.Generic;
-using System.Diagnostics;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using static MMR_Tracker_V3.TrackerObjects.InstanceData;
 
 namespace MMR_Tracker_V3.SpoilerLogImporter
 {

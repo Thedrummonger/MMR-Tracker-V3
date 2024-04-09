@@ -29,7 +29,7 @@ namespace TestingForm.GameDataCreation.WindWakerRando
             var WWRCodeFolder = Path.Combine(TestingReferences.GetOtherGameDataPath("WindWakerRando"));
             var EntranceListFile = Path.Combine(WWRCodeFolder, "EntranceList.json");
             var ItemListFile = Path.Combine(WWRCodeFolder, "ItemList.json");
-            var Entrances = TestingUtility.DeserializeJsonFile<string[]>(EntranceListFile);
+            var Entrances = TestingUtility.DeserializeJsonFile<Dictionary<string, string[]>>(EntranceListFile);
             var Items = TestingUtility.DeserializeJsonFile<string[]>(ItemListFile);
 
             var WWRtestingFolder = Path.Combine(TestingReferences.GetDevTestingPath(), "WW");
@@ -72,33 +72,37 @@ namespace TestingForm.GameDataCreation.WindWakerRando
                     Area = location.Key.TrimSplit("-")[0],
                     OriginalItem = location.Value.OriginalItem,
                     ValidItemTypes = ["item"],
-                    SpoilerData = new MMRData.SpoilerlogReference { NetID = location.Key, Tags = [location.Value.Types] },
+                    SpoilerData = new MMRData.SpoilerlogReference { NetID = location.Key, Tags = location.Value.Types.TrimSplit(",") },
                 };
                 dictFile.LocationList.Add(location.Key, Entry);
             }
 
-            foreach(var entrance in Entrances)
+            foreach(var set in Entrances)
             {
-                var EntranceID = logicFile.Logic.First(x => x.Id == $"Can Access {entrance}");
-                var LocationName = EntranceID.ConditionalItems[0][0]["Can Access ".Length..];
-                var LocationEntry = new LogicDictionaryData.DictionaryLocationEntries()
+                foreach(var entrance in set.Value)
                 {
-                    ID = EntranceID.Id,
-                    Name = LocationName,
-                    Area = GetEntArea(entrance),
-                    OriginalItem = EntranceID.Id,
-                    ValidItemTypes = ["Entrances"],
-                };
-                var ItemEntry = new LogicDictionaryData.DictionaryItemEntries()
-                {
-                    ID = EntranceID.Id,
-                    Name = entrance,
-                    ItemTypes = ["Entrances"],
-                    MaxAmountInWorld = 1,
-                    ValidStartingItem = false,
-                };
-                dictFile.LocationList.Add(EntranceID.Id, LocationEntry);
-                dictFile.ItemList.Add(EntranceID.Id, ItemEntry);
+                    var EntranceID = logicFile.Logic.First(x => x.Id == $"Can Access {entrance}");
+                    var LocationName = EntranceID.ConditionalItems[0][0]["Can Access ".Length..];
+                    var LocationEntry = new LogicDictionaryData.DictionaryLocationEntries()
+                    {
+                        ID = EntranceID.Id,
+                        Name = LocationName,
+                        Area = set.Key,
+                        OriginalItem = EntranceID.Id,
+                        ValidItemTypes = ["Entrances"],
+                        SpoilerData = new() { Tags = [set.Key] }
+                    };
+                    var ItemEntry = new LogicDictionaryData.DictionaryItemEntries()
+                    {
+                        ID = EntranceID.Id,
+                        Name = entrance,
+                        ItemTypes = ["Entrances"],
+                        MaxAmountInWorld = 1,
+                        ValidStartingItem = false,
+                    };
+                    dictFile.LocationList.Add(EntranceID.Id, LocationEntry);
+                    dictFile.ItemList.Add(EntranceID.Id, ItemEntry);
+                }
             }
             foreach (var item in Items.Distinct())
             {
@@ -112,18 +116,55 @@ namespace TestingForm.GameDataCreation.WindWakerRando
                 };
                 dictFile.ItemList.Add(item, ItemEntry);
             }
+
+            var TrickDifficulty = new string[] { "None", "Normal", "Hard", "Very Hard" };
+
+            dictFile.ChoiceOptions.Add("logic_obscurity", new OptionData.ChoiceOption(null)
+            {
+                ID = "logic_obscurity",
+                Name = "Logic Obscurity",
+                Value = "None",
+                Description = "Obscure tricks are ways of obtaining items that are not obvious and may involve thinking outside the box.\n" +
+                "This option controls the maximum difficulty of obscure tricks the randomizer will require you to do to beat the game."
+            }.CreateSimpleValues(TrickDifficulty)); ;
+            dictFile.ChoiceOptions.Add("logic_precision", new OptionData.ChoiceOption(null)
+            {
+                ID = "logic_precision",
+                Name = "Logic Precision",
+                Value = "None",
+                Description = "Precise tricks are ways of obtaining items that involve difficult inputs such as accurate aiming or perfect timing.\n" +
+                "This option controls the maximum difficulty of precise tricks the randomizer will require you to do to beat the game."
+            }.CreateSimpleValues(TrickDifficulty));
+            dictFile.ChoiceOptions.Add("sword_mode", new OptionData.ChoiceOption(null)
+            {
+                ID = "sword_mode",
+                Name = "Sword Mode",
+                Value = "Start with Hero's Sword",
+                Description = "Controls whether you start with the Hero's Sword, the Hero's Sword is randomized, or if there are no swords in the entire game.\n" +
+                "Swordless and No Starting Sword are challenge modes. (For Swordless, Phantom Ganon at FF is vulnerable to Skull Hammer.)\n" +
+                "Start with Hero's Sword: You will start the game with the basic Hero's Sword already in your inventory (the default).\n" +
+                "No Starting Sword: You will start the game with no sword, and have to find it somewhere in the world like other randomized items.\n" +
+                "Swordless: You will start the game with no sword, and won't be able to find it anywhere. You have to beat the entire game using other items as weapons instead of the sword.\n" +
+                "(Note that Phantom Ganon in FF becomes vulnerable to Skull Hammer in this mode.)"
+            }.CreateSimpleValues("Start with Hero's Sword", "No Starting Sword", "Swordless"));
+            dictFile.ToggleOptions.Add("required_bosses", new OptionData.ToggleOption(null)
+            {
+                ID = "required_bosses",
+                Name = "Required Bosses",
+                Value = false,
+                Description = "In this mode, you will not be allowed to beat the game until certain randomly-chosen bosses are defeated. Nothing in dungeons for other bosses will ever be required.\n" +
+                "You can see which islands have the required bosses on them by opening the sea chart and checking which islands have blue quest markers."
+            }.CreateSimpleValues());
+            dictFile.ToggleOptions.Add("skip_rematch_bosses", new OptionData.ToggleOption(null)
+            {
+                ID = "skip_rematch_bosses",
+                Name = "Skip Boss Rematch",
+                Value = false,
+                Description = "Removes the door in Ganon's Tower that only unlocks when you defeat the rematch versions of Gohma, Kalle Demos, Jalhalla, and Molgera."
+            }.CreateSimpleValues());
+
             Logic = logicFile;
             dictionary = dictFile;
-        }
-
-        public static string GetEntArea(string ID)
-        {
-            if (ID.EndsWith("Miniboss Arena")) { return "MiniBoss Entrance"; }
-            else if (ID.EndsWith("Boss Arena")) { return "Boss Entrance"; }
-            else if (ID.EndsWith("Secret Cave")) { return "Secret Cave Entrance"; }
-            else if (ID.EndsWith("Inner Cave")) { return "Inner Cave Entrance"; }
-            else if (ID.EndsWith("Fairy Fountain")) { return "Fairy Fountain Entrance"; }
-            return "Dungeon Entrance";
         }
 
         public static void CleanLogic(MMRData.LogicFile logicFile)

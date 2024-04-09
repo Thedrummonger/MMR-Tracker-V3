@@ -37,6 +37,13 @@ namespace MMR_Tracker_V3.TrackerObjects
                 if (!ValueList.ContainsKey(_Value)) { throw new Exception($"{_Value} was not a valid value for Option {ID}"); }
                 Value = _Value;
             }
+            public void SetDynValue(object _Value)
+            {
+                if (_Value is Int64 Int64BoolVal) { SetValue(ValueList.Keys.ToArray()[Int64BoolVal]); }
+                else if (_Value is int IntBoolVal) { SetValue(ValueList.Keys.ToArray()[IntBoolVal]); }
+                else if (_Value is string StringBoolVal) { SetValue(StringBoolVal); }
+                else { throw new Exception($"{_Value.GetType().Name} {_Value} Could not be applied to a choice option"); }
+            }
             public ChoiceOption CreateSimpleValues(params string[] Values)
             {
                 ValueList = Values.ToDictionary(x => x, x => new OptionValue { ID = x, Name = x });
@@ -154,6 +161,14 @@ namespace MMR_Tracker_V3.TrackerObjects
                 if (!bool.TryParse(_Value, out bool val)) { throw new Exception($"{_Value} was not a valid value for Option {ID}"); }
                 Value = val;
             }
+            public void SetDynValue(object _Value)
+            {
+                if (_Value is bool boolVal) { SetValue(boolVal); }
+                else if (_Value is int IntBoolVal) { SetValue(IntBoolVal > 0); }
+                else if (_Value is Int64 Int64BoolVal) { SetValue(Int64BoolVal > 0); }
+                else if (_Value is string StringBoolVal && bool.TryParse(StringBoolVal, out bool rb)) { SetValue(rb); }
+                else { throw new Exception($"{_Value.GetType().Name} {_Value} Could not be applied to a toggle option"); }
+            }
             public void ToggleValue()
             {
                 Value = !Value;
@@ -192,6 +207,13 @@ namespace MMR_Tracker_V3.TrackerObjects
             {
                 if (_Value > Max || _Value < Min) { throw new Exception($"{_Value} was not a valid value for Option {ID}"); }
                 Value = _Value;
+            }
+            public void SetDynValue(object _Value)
+            {
+                if (_Value is int i1) { SetValue(i1); }
+                else if (_Value is Int64 i64) { SetValue(Convert.ToInt32(i64)); }
+                else if (_Value is string str && int.TryParse(str, out int istr)) { SetValue(istr); }
+                else { throw new Exception($"{_Value.GetType().Name} {_Value} Could not be applied to an int option"); }
             }
             public override string ToString()
             {
