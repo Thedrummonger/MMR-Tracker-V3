@@ -2,14 +2,8 @@
 using MMR_Tracker_V3.Logic;
 using MMR_Tracker_V3.TrackerObjects;
 using Newtonsoft.Json;
-using System;
-using System.Collections.Generic;
 using System.Diagnostics;
-using System.Linq;
-using System.Text;
 using System.Text.RegularExpressions;
-using System.Threading.Tasks;
-using static Microsoft.FSharp.Core.ByRefKinds;
 
 namespace TestingForm.GameDataCreation.WindWakerRando
 {
@@ -38,8 +32,6 @@ namespace TestingForm.GameDataCreation.WindWakerRando
             var MacroFile = Path.Combine(LogicFolderPath, "macros.txt");
             var Locations = TestingUtility.DeserializeYAMLFile<Dictionary<string, WWRLocation>>(ItemLocationsFile);
             var Macros = TestingUtility.DeserializeYAMLFile<Dictionary<string, string>>(MacroFile);
-            Debug.WriteLine(Locations.ToFormattedJson());
-            Debug.WriteLine(Macros.ToFormattedJson());
 
             MMRData.LogicFile logicFile = new() { Logic = [], GameCode = "WWR", Version = 2 };
             LogicDictionaryData.LogicDictionary dictFile = new() { 
@@ -69,7 +61,7 @@ namespace TestingForm.GameDataCreation.WindWakerRando
                 {
                     ID = location.Key,
                     Name = location.Key,
-                    Area = location.Key.TrimSplit("-")[0],
+                    Area = location.Key.TrimSplit(" - ")[0],
                     OriginalItem = location.Value.OriginalItem,
                     ValidItemTypes = ["item"],
                     SpoilerData = new MMRData.SpoilerlogReference { NetID = location.Key, Tags = location.Value.Types.TrimSplit(",") },
@@ -165,6 +157,11 @@ namespace TestingForm.GameDataCreation.WindWakerRando
 
             Logic = logicFile;
             dictionary = dictFile;
+
+            File.WriteAllText(Path.Combine(TestingReferences.GetTestingLogicPresetsPath(), "Wind Waker Logic.json"), logicFile.ToFormattedJson());
+            File.WriteAllText(Path.Combine(TestingReferences.GetTestingDictionaryPath(), "WWR V1.json"), dictFile.ToFormattedJson());
+
+            Debug.WriteLine(dictFile.LocationList.Select(x => x.Value.Area).Distinct().ToFormattedJson());
         }
 
         public static void CleanLogic(MMRData.LogicFile logicFile)
