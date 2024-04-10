@@ -40,7 +40,8 @@ namespace MMR_Tracker_V3.TrackerObjectExtensions
         /// <returns></returns>
         public static bool LeadsToArea(this EntranceRandoExit Entrance, string Area)
         {
-            if (Entrance.DestinationExit is not null && Entrance.DestinationExit.region == Area) { return true; }
+            var DestAtExit =  Entrance.GetDestinationAtExit();
+            if (DestAtExit is not null && DestAtExit.region == Area) { return true; }
             return false;
         }
 

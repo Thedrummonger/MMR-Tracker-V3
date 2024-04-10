@@ -197,7 +197,7 @@ namespace MMR_Tracker_V3.Logic
                 {
                     ValidEntries.Add(LO);
                 }
-                else if (Location is EntranceData.EntranceRandoExit EO && EO.DestinationExit is not null)
+                else if (Location is EntranceData.EntranceRandoExit EO && EO.GetDestinationAtExit() is not null)
                 {
                     ValidEntries.Add(EO);
                 }
