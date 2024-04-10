@@ -1,6 +1,7 @@
 ﻿using MMR_Tracker_V3.TrackerObjects;
 using static MMR_Tracker_V3.TrackerObjects.MiscData;
 using static MMR_Tracker_V3.TrackerObjects.EntranceData;
+using MMR_Tracker_V3.TrackerObjectExtentions;
 
 namespace MMR_Tracker_V3.TrackerObjectExtensions
 {
@@ -47,20 +48,6 @@ namespace MMR_Tracker_V3.TrackerObjectExtensions
         public static EntranceRandoDestination GetVanillaDestination(this EntranceRandoExit exit)
         {
             return new EntranceRandoDestination { region = exit.ExitID, from = exit.GetParentArea().ID };
-        }
-        public static bool IsUnrandomized(this EntranceRandoExit exit, UnrandState Include = UnrandState.Any)
-        {
-            if ((Include == UnrandState.Any || Include == UnrandState.Unrand) && exit.RandomizedState == RandomizedState.Unrandomized) { return true; }
-            if ((Include == UnrandState.Any || Include == UnrandState.Manual) && exit.RandomizedState == RandomizedState.UnrandomizedManual) { return true; }
-            return false;
-        }
-        public static bool IsRandomized(this EntranceRandoExit exit)
-        {
-            return exit.RandomizedState == RandomizedState.Randomized;
-        }
-        public static bool IsJunk(this EntranceRandoExit exit)
-        {
-            return exit.RandomizedState == RandomizedState.ForcedJunk;
         }
         /// <summary>
         /// Determines which destination should be applied to this exit when it's checked
