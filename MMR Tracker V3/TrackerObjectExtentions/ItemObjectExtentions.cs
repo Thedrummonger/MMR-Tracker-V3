@@ -39,7 +39,7 @@ namespace MMR_Tracker_V3.TrackerObjectExtensions
 
         public static int GetAmountLeftToPlace(this ItemData.ItemObject Item)
         {
-            if (Item.GetDictEntry().GetMaxAmountInWorld() < 0) { return 9999999; }
+            if (Item.GetDictEntry().GetMaxAmountInWorld() < 0) { return int.MaxValue; }
             return Item.GetDictEntry().GetMaxAmountInWorld() - Item.GetAmountPlaced();
         }
 

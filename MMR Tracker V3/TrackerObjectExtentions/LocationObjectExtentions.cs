@@ -1,4 +1,5 @@
-﻿using MMR_Tracker_V3.TrackerObjects;
+﻿using MMR_Tracker_V3.TrackerObjectExtentions;
+using MMR_Tracker_V3.TrackerObjects;
 using System.Linq;
 using static MMR_Tracker_V3.TrackerObjects.MiscData;
 
@@ -18,26 +19,6 @@ namespace MMR_Tracker_V3.TrackerObjectExtensions
         {
             return loc.GetDictEntry().Repeatable is not null && (bool)loc.GetDictEntry().Repeatable;
         }
-
-        public static void SetRandomizedState(this LocationData.LocationObject loc, RandomizedState Newstate)
-        {
-            if (Newstate == loc.RandomizedState) { return; }
-            loc.RandomizedState = Newstate;
-        }
-        public static bool IsUnrandomized(this LocationData.LocationObject loc, UnrandState Include = UnrandState.Any)
-        {
-            if ((Include == UnrandState.Any || Include == UnrandState.Unrand) && loc.RandomizedState == RandomizedState.Unrandomized) { return true; }
-            if ((Include == UnrandState.Any || Include == UnrandState.Manual) && loc.RandomizedState == RandomizedState.UnrandomizedManual) { return true; }
-            return false;
-        }
-        public static bool IsRandomized(this LocationData.LocationObject loc)
-        {
-            return loc.RandomizedState == RandomizedState.Randomized;
-        }
-        public static bool IsJunk(this LocationData.LocationObject loc)
-        {
-            return loc.RandomizedState == RandomizedState.ForcedJunk;
-        }
         public static bool CanBeUnrandomized(this LocationData.LocationObject loc)
         {
             //If it's already unrandomized let it continue to be
@@ -52,10 +33,6 @@ namespace MMR_Tracker_V3.TrackerObjectExtensions
             if (loc.GetItemAtCheck() is not null && loc.GetItemAtCheck() == OriginalItemObject.ID) { return true; }
             //If the max amount of this object has been placed return false, otherwise true
             return OriginalItemObject.CanBePlaced();
-        }
-        public static bool AppearsinListbox(this LocationData.LocationObject loc, bool ShowJunkUnrand = false)
-        {
-            return (!loc.IsJunk() || ShowJunkUnrand) && (!loc.IsUnrandomized(MiscData.UnrandState.Unrand) || ShowJunkUnrand) && !string.IsNullOrWhiteSpace(loc.GetDictEntry().GetName());
         }
 
         public static bool ToggleChecked(this LocationData.LocationObject loc, CheckState NewState)

@@ -1,4 +1,5 @@
 ﻿using MMR_Tracker_V3.TrackerObjectExtensions;
+using MMR_Tracker_V3.TrackerObjectExtentions;
 using MMR_Tracker_V3.TrackerObjects;
 using Newtonsoft.Json;
 using System;
@@ -24,7 +25,11 @@ namespace MMR_Tracker_V3.SpoilerLogImporter
                 }
             }
             //Apply Entrance Data
-            if (SpoilerLog.SlotData.TryGetValue("structures", out object EntMapObj))
+            if (SpoilerLog.SlotData.TryGetValue("shuffle_structures", out object st) && !st.IsTruthy())
+            {
+                foreach(var ent in Instance.ExitPool.Values) { ent.SetRandomizedState(MiscData.RandomizedState.Unrandomized); }
+            }
+            else if (SpoilerLog.SlotData.TryGetValue("structures", out object EntMapObj))
             {
                 var EntranceMap = Utility.SerializeConvert<Dictionary<string, string>>(EntMapObj);
                 foreach (var Entry in EntranceMap)
