@@ -18,9 +18,8 @@ namespace MMR_Tracker_V3.TrackerObjectExtensions
             int AmountSetAtLocation = 0;
             foreach (var x in Item.GetParent().LocationPool.Where(x => x.Value.CheckState != CheckState.Checked))
             {
-                bool OwnedByLocalPlayer = x.Value.Randomizeditem.OwningPlayer < 0 || Item.GetParent().GetParentContainer().netConnection.PlayerID == x.Value.Randomizeditem.OwningPlayer;
                 var itemAtheck = x.Value.GetItemAtCheck() ?? "";
-                if (itemAtheck == Item.ID && OwnedByLocalPlayer) { AmountSetAtLocation++; }
+                if (itemAtheck == Item.ID && x.Value.IsOwnedByLocalPlayer()) { AmountSetAtLocation++; }
             }
 
             return AmountAquired + AmountSetAtLocation;
@@ -56,18 +55,13 @@ namespace MMR_Tracker_V3.TrackerObjectExtensions
         public static void ChangeLocalItemAmounts(this ObtainableObject Item, CheckableLocation location, int Amount)
         {
             if (Amount == 0) { return; }
-            if (Item is ItemData.ItemObject IO && location is LocationData.LocationObject LO && !IsOwnedByLocalPlayer(IO, LO))
+            if (Item is ItemData.ItemObject IO && location is LocationData.LocationObject LO && !LO.IsOwnedByLocalPlayer())
             {
                 IO.AmountSentToPlayer.SetIfEmpty(LO.Randomizeditem.OwningPlayer, 0);
                 IO.AmountSentToPlayer[LO.Randomizeditem.OwningPlayer] += Amount;
                 return;
             }
             Item.AmountAquiredLocally += Amount;
-        }
-
-        private static bool IsOwnedByLocalPlayer(ItemData.ItemObject Item, LocationData.LocationObject location)
-        {
-            return location.Randomizeditem.OwningPlayer < 0 || Item.GetParent().GetParentContainer().netConnection.PlayerID == location.Randomizeditem.OwningPlayer;
         }
     }
 }

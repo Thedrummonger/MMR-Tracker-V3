@@ -113,5 +113,10 @@ namespace MMR_Tracker_V3.TrackerObjectExtensions
             }
             return ItemAtCheck;
         }
+
+        public static bool IsOwnedByLocalPlayer(this LocationData.LocationObject location)
+        {
+            return location.Randomizeditem.OwningPlayer < 0 || location.GetParent().GetParentContainer().netConnection.PlayerID == location.Randomizeditem.OwningPlayer;
+        }
     }
 }
