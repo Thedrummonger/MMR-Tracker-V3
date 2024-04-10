@@ -72,7 +72,9 @@
         "SpoilerLogNames": [],
         "GossipHintNames": [],
         "PriceDataNames": [],
-        "Tags": [],
+        "Tags": [
+          "hard"
+        ],
         "NetID": "Very Very Frightening"
       }
     },
@@ -225,7 +227,9 @@
         "SpoilerLogNames": [],
         "GossipHintNames": [],
         "PriceDataNames": [],
-        "Tags": [],
+        "Tags": [
+          "hard"
+        ],
         "NetID": "Two Birds, One Arrow"
       }
     },
@@ -344,7 +348,9 @@
         "SpoilerLogNames": [],
         "GossipHintNames": [],
         "PriceDataNames": [],
-        "Tags": [],
+        "Tags": [
+          "hard"
+        ],
         "NetID": "Arbalistic"
       }
     },
@@ -446,7 +452,13 @@
         "SpoilerLogNames": [],
         "GossipHintNames": [],
         "PriceDataNames": [],
-        "Tags": [],
+        "Tags": [
+          "hard",
+          "post_game",
+          "ender_dragon",
+          "post_game",
+          "wither"
+        ],
         "NetID": "Monsters Hunted"
       }
     },
@@ -514,7 +526,9 @@
         "SpoilerLogNames": [],
         "GossipHintNames": [],
         "PriceDataNames": [],
-        "Tags": [],
+        "Tags": [
+          "unreasonable"
+        ],
         "NetID": "Adventuring Time"
       }
     },
@@ -939,7 +953,9 @@
         "SpoilerLogNames": [],
         "GossipHintNames": [],
         "PriceDataNames": [],
-        "Tags": [],
+        "Tags": [
+          "hard"
+        ],
         "NetID": "Surge Protector"
       }
     },
@@ -1024,7 +1040,9 @@
         "SpoilerLogNames": [],
         "GossipHintNames": [],
         "PriceDataNames": [],
-        "Tags": [],
+        "Tags": [
+          "hard"
+        ],
         "NetID": "Sound of Music"
       }
     },
@@ -1092,7 +1110,9 @@
         "SpoilerLogNames": [],
         "GossipHintNames": [],
         "PriceDataNames": [],
-        "Tags": [],
+        "Tags": [
+          "hard"
+        ],
         "NetID": "When the Squad Hops into Town"
       }
     },
@@ -1160,7 +1180,9 @@
         "SpoilerLogNames": [],
         "GossipHintNames": [],
         "PriceDataNames": [],
-        "Tags": [],
+        "Tags": [
+          "hard"
+        ],
         "NetID": "Two by Two"
       }
     },
@@ -1296,7 +1318,9 @@
         "SpoilerLogNames": [],
         "GossipHintNames": [],
         "PriceDataNames": [],
-        "Tags": [],
+        "Tags": [
+          "hard"
+        ],
         "NetID": "Uneasy Alliance"
       }
     },
@@ -1313,7 +1337,9 @@
         "SpoilerLogNames": [],
         "GossipHintNames": [],
         "PriceDataNames": [],
-        "Tags": [],
+        "Tags": [
+          "hard"
+        ],
         "NetID": "Cover Me in Debris"
       }
     },
@@ -1364,7 +1390,9 @@
         "SpoilerLogNames": [],
         "GossipHintNames": [],
         "PriceDataNames": [],
-        "Tags": [],
+        "Tags": [
+          "hard"
+        ],
         "NetID": "With Our Powers Combined!"
       }
     },
@@ -1381,7 +1409,10 @@
         "SpoilerLogNames": [],
         "GossipHintNames": [],
         "PriceDataNames": [],
-        "Tags": [],
+        "Tags": [
+          "post_game",
+          "ender_dragon"
+        ],
         "NetID": "Free the End"
       }
     },
@@ -1398,7 +1429,10 @@
         "SpoilerLogNames": [],
         "GossipHintNames": [],
         "PriceDataNames": [],
-        "Tags": [],
+        "Tags": [
+          "post_game",
+          "ender_dragon"
+        ],
         "NetID": "The Next Generation"
       }
     },
@@ -1432,7 +1466,10 @@
         "SpoilerLogNames": [],
         "GossipHintNames": [],
         "PriceDataNames": [],
-        "Tags": [],
+        "Tags": [
+          "post_game",
+          "ender_dragon"
+        ],
         "NetID": "The End... Again..."
       }
     },
@@ -1449,7 +1486,10 @@
         "SpoilerLogNames": [],
         "GossipHintNames": [],
         "PriceDataNames": [],
-        "Tags": [],
+        "Tags": [
+          "post_game",
+          "ender_dragon"
+        ],
         "NetID": "You Need a Mint"
       }
     },
@@ -1500,7 +1540,10 @@
         "SpoilerLogNames": [],
         "GossipHintNames": [],
         "PriceDataNames": [],
-        "Tags": [],
+        "Tags": [
+          "post_game",
+          "ender_dragon"
+        ],
         "NetID": "Is It a Plane?"
       }
     },
@@ -1551,7 +1594,9 @@
         "SpoilerLogNames": [],
         "GossipHintNames": [],
         "PriceDataNames": [],
-        "Tags": [],
+        "Tags": [
+          "hard"
+        ],
         "NetID": "A Balanced Diet"
       }
     },
@@ -1585,7 +1630,9 @@
         "SpoilerLogNames": [],
         "GossipHintNames": [],
         "PriceDataNames": [],
-        "Tags": [],
+        "Tags": [
+          "hard"
+        ],
         "NetID": "A Complete Catalogue"
       }
     },
@@ -1602,7 +1649,9 @@
         "SpoilerLogNames": [],
         "GossipHintNames": [],
         "PriceDataNames": [],
-        "Tags": [],
+        "Tags": [
+          "hard"
+        ],
         "NetID": "Star Trader"
       }
     },
@@ -1619,7 +1668,11 @@
         "SpoilerLogNames": [],
         "GossipHintNames": [],
         "PriceDataNames": [],
-        "Tags": [],
+        "Tags": [
+          "hard",
+          "post_game",
+          "wither"
+        ],
         "NetID": "A Furious Cocktail"
       }
     },
@@ -1636,7 +1689,10 @@
         "SpoilerLogNames": [],
         "GossipHintNames": [],
         "PriceDataNames": [],
-        "Tags": [],
+        "Tags": [
+          "post_game",
+          "wither"
+        ],
         "NetID": "Bring Home the Beacon"
       }
     },
@@ -1670,7 +1726,11 @@
         "SpoilerLogNames": [],
         "GossipHintNames": [],
         "PriceDataNames": [],
-        "Tags": [],
+        "Tags": [
+          "unreasonable",
+          "post_game",
+          "wither"
+        ],
         "NetID": "How Did We Get Here?"
       }
     },
@@ -1721,7 +1781,11 @@
         "SpoilerLogNames": [],
         "GossipHintNames": [],
         "PriceDataNames": [],
-        "Tags": [],
+        "Tags": [
+          "hard",
+          "post_game",
+          "wither"
+        ],
         "NetID": "Beaconator"
       }
     },
@@ -1738,7 +1802,10 @@
         "SpoilerLogNames": [],
         "GossipHintNames": [],
         "PriceDataNames": [],
-        "Tags": [],
+        "Tags": [
+          "post_game",
+          "wither"
+        ],
         "NetID": "Withering Heights"
       }
     },

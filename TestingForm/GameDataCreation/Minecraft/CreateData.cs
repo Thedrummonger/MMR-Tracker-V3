@@ -53,7 +53,7 @@ namespace TestingForm.GameDataCreation.Minecraft
                         Name = location,
                         OriginalItem = "advancement",
                         ValidItemTypes = ["item"],
-                        SpoilerData = new MMRData.SpoilerlogReference() { NetID = location },
+                        SpoilerData = new MMRData.SpoilerlogReference() { NetID = location, Tags = GetLocationTags(location) },
                     };
                     Logicdictionary.LocationList.Add(location, locationEntry);
                 }
@@ -69,7 +69,7 @@ namespace TestingForm.GameDataCreation.Minecraft
                         Name = location,
                         OriginalItem = "advancement",
                         ValidItemTypes = ["item"],
-                        SpoilerData = new MMRData.SpoilerlogReference() { NetID = location },
+                        SpoilerData = new MMRData.SpoilerlogReference() { NetID = location, Tags = GetLocationTags(location) },
                     };
                     Logicdictionary.LocationList.Add(location, locationEntry);
                 }
@@ -78,6 +78,17 @@ namespace TestingForm.GameDataCreation.Minecraft
                     AddLogic(location, Logicdictionary.LocationList[location].Area);
                 }
             }
+
+            string[] GetLocationTags(string ID)
+            {
+                List<string> Tags = [];
+                if (excluded_locations.hard.Contains(ID)) { Tags.Add("hard"); }
+                if (excluded_locations.unreasonable.Contains(ID)) { Tags.Add("unreasonable"); }
+                if (excluded_locations.ender_dragon.Contains(ID)) { Tags.AddRange(["post_game", "ender_dragon"]); }
+                if (excluded_locations.wither.Contains(ID)) { Tags.AddRange(["post_game", "wither"]); }
+                return [.. Tags];
+            }
+
             foreach (var region in locations.locations_by_region)
             {
                 foreach (var location in region.Value)
@@ -183,6 +194,8 @@ namespace TestingForm.GameDataCreation.Minecraft
                 };
                 logicFile.Logic.Add(Entry);
             }
+
+
 
             File.WriteAllText(Path.Combine(TestingReferences.GetTestingLogicPresetsPath(), "Minecraft Logic.json"), logicFile.ToFormattedJson());
             File.WriteAllText(Path.Combine(TestingReferences.GetTestingDictionaryPath(), "Minecraft V1.json"), Logicdictionary.ToFormattedJson());
