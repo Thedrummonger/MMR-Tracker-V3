@@ -9,8 +9,6 @@ using static MMR_Tracker_V3.TrackerObjects.InstanceData;
 using static MMR_Tracker_V3.TrackerObjects.ItemData;
 using static MMR_Tracker_V3.TrackerObjects.LocationData;
 using static MMR_Tracker_V3.TrackerObjects.OptionData;
-using System.ComponentModel;
-using MMR_Tracker_V3.TrackerObjectExtentions;
 
 namespace MMR_Tracker_V3.TrackerObjectExtensions
 {

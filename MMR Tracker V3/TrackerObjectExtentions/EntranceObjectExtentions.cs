@@ -1,7 +1,6 @@
 ﻿using MMR_Tracker_V3.TrackerObjects;
 using static MMR_Tracker_V3.TrackerObjects.MiscData;
 using static MMR_Tracker_V3.TrackerObjects.EntranceData;
-using MMR_Tracker_V3.TrackerObjectExtentions;
 
 namespace MMR_Tracker_V3.TrackerObjectExtensions
 {
