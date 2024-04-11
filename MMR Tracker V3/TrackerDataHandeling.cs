@@ -412,11 +412,12 @@ namespace MMR_Tracker_V3
             {
                 var StartingItems = Data.Reverse ? Data.DataSets.CurrentStartingItems.ToArray().Reverse() : Data.DataSets.CurrentStartingItems;
                 bool DividerCreated = false;
+                List<StartingItemDisplay> StartingItemObjs = [];
                 foreach (var i in StartingItems)
                 {
-                    string Display = $"{i.GetDictEntry().GetName()} X{i.AmountInStartingpool}";
+                    var DisplayObject = new StartingItemDisplay(i);
                     Data.ItemsFound++;
-                    if (!SearchStringParser.FilterSearch(Data.Instance, i, Data.Filter, Display)) { continue; }
+                    if (!SearchStringParser.FilterSearch(Data.Instance, i, Data.Filter, DisplayObject.ToString())) { continue; }
                     if (!DividerCreated)
                     {
                         if (Data.FinalData.Count > 0) { Data.FinalData.Add(Data.Divider); }
@@ -424,8 +425,10 @@ namespace MMR_Tracker_V3
                         DividerCreated = true;
                     }
                     Data.ItemsDisplayed++;
-                    Data.FinalData.Add(Display);
+                    StartingItemObjs.Add(new StartingItemDisplay(i));
                 }
+                StartingItemObjs = StartingItemObjs.OrderBy(x => x.ItemObject.GetDictEntry().GetName()).ToList();
+                Data.FinalData.AddRange(StartingItemObjs);
             }
             return Data;
         }
@@ -435,13 +438,14 @@ namespace MMR_Tracker_V3
             {
                 var OnlineItems = Data.Reverse ? Data.DataSets.OnlineObtainedItems.ToArray().Reverse() : Data.DataSets.OnlineObtainedItems;
                 bool DividerCreated = false;
+                List<OnlineItemDisplay> OnlineItemObjs = [];
                 foreach (var i in OnlineItems)
                 {
                     foreach (var j in i.AmountAquiredOnline)
                     {
-                        string Display = $"{i.GetDictEntry().GetName()} X{j.Value}: Player {PlayerNumber(j.Key)}";
+                        var DisplayObject = new OnlineItemDisplay(i, j.Value, j.Key);
                         Data.ItemsFound++;
-                        if (!SearchStringParser.FilterSearch(Data.Instance, i, Data.Filter, Display)) { continue; }
+                        if (!SearchStringParser.FilterSearch(Data.Instance, i, Data.Filter, DisplayObject.ToString())) { continue; }
                         if (!DividerCreated)
                         {
                             if (Data.FinalData.Count > 0) { Data.FinalData.Add(Data.Divider); }
@@ -449,19 +453,13 @@ namespace MMR_Tracker_V3
                             DividerCreated = true;
                         }
                         Data.ItemsDisplayed++;
-                        Data.FinalData.Add(Display);
+                        OnlineItemObjs.Add(DisplayObject);
                     }
                 }
+                OnlineItemObjs = OnlineItemObjs.OrderBy(x => x.ItemObject.GetDictEntry().GetName()).ThenBy(x => x.PlayerID).ToList();
+                Data.FinalData.AddRange(OnlineItemObjs);
             }
             return Data;
-            string PlayerNumber(int Player)
-            {
-                if (Data.InstanceContainer.netConnection.PlayerNames.TryGetValue(Player, out string name))
-                {
-                    return $"{Player} ({name})";
-                }
-                return Player.ToString();
-            }
         }
 
     }

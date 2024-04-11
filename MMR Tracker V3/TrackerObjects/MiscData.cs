@@ -8,6 +8,7 @@ using System.Linq;
 using System.Net.Sockets;
 using static MMR_Tracker_V3.TrackerDataHandling;
 using static MMR_Tracker_V3.TrackerObjects.InstanceData;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace MMR_Tracker_V3.TrackerObjects
 {
@@ -205,6 +206,34 @@ namespace MMR_Tracker_V3.TrackerObjects
             public bool Literal;
             public bool HadItemCount;
             public LogicItemTypes Type;
+        }
+
+        public class StartingItemDisplay(ItemData.ItemObject _ItemObject)
+        {
+            public ItemData.ItemObject ItemObject = _ItemObject;
+            public int Amount = _ItemObject.AmountInStartingpool;
+            public override string ToString()
+            {
+                return $"{ItemObject.GetDictEntry().GetName()} X{Amount}";
+            }
+        }
+        public class OnlineItemDisplay(ItemData.ItemObject _ItemObject, int _Amount, int _PlayerID)
+        {
+            public ItemData.ItemObject ItemObject = _ItemObject;
+            public int Amount = _Amount;
+            public int PlayerID = _PlayerID;
+            string PlayerNumber(int Player)
+            {
+                if (ItemObject.GetParent().GetParentContainer().netConnection.PlayerNames.TryGetValue(Player, out string name))
+                {
+                    return $"{Player} ({name})";
+                }
+                return Player.ToString();
+            }
+            public override string ToString()
+            {
+                return $"{ItemObject.GetDictEntry().GetName()} X{Amount}: Player {PlayerNumber(PlayerID)}";
+            }
         }
 
         [Serializable]
