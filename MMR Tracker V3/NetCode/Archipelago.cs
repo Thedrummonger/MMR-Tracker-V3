@@ -29,7 +29,7 @@ namespace MMR_Tracker_V3.NetCode
             if (string.IsNullOrWhiteSpace(Address)) { Address = "127.0.0.1"; }
             string Password = string.IsNullOrWhiteSpace(Pass) ? null : Pass;
             Session = ArchipelagoSessionFactory.CreateSession(Address, Port);
-            try { result = Session.TryConnectAndLogin(Game, Slot, ItemsHandlingFlags.AllItems, null, ["Tracker"], null, Password, true); }
+            try { result = Session.TryConnectAndLogin(Game, Slot, ItemsHandlingFlags.AllItems, new Version(0,4,5), ["Tracker"], null, Password, true); }
             catch (Exception ex) { result = new LoginFailure(ex.GetBaseException().Message); }
             if (!result.Successful)
             {
@@ -66,9 +66,10 @@ namespace MMR_Tracker_V3.NetCode
             APLocationIDLookup = [];
             foreach (var i in Data.InstanceContainer.Instance.LocationPool) 
             {
-                var NetID = i.Value.GetDictEntry().SpoilerData.NetID;
-                if (NetID is null) { continue; }
-                APLocationIDLookup[NetID] = i.Key;
+                foreach(var NetID in i.Value.GetDictEntry().SpoilerData.NetIDs)
+                {
+                    APLocationIDLookup[NetID] = i.Key;
+                }
             }
         }
         private LocationData.LocationObject GetLocationByNetID(string netID)
@@ -81,9 +82,10 @@ namespace MMR_Tracker_V3.NetCode
             APItemIDLookup = [];
             foreach (var i in Data.InstanceContainer.Instance.ItemPool)
             {
-                var NetID = i.Value.GetDictEntry().SpoilerData.NetID;
-                if (NetID is null) { continue; }
-                APItemIDLookup[NetID] = i.Key;
+                foreach(var NetID in i.Value.GetDictEntry().SpoilerData.NetIDs)
+                {
+                    APItemIDLookup[NetID] = i.Key;
+                }
             }
         }
         private ItemData.ItemObject GetItemByNetID(string netID)

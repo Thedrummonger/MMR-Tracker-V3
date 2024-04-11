@@ -64,7 +64,7 @@ namespace TestingForm.GameDataCreation.WindWakerRando
                     Area = location.Key.TrimSplit(" - ")[0],
                     OriginalItem = location.Value.OriginalItem,
                     ValidItemTypes = ["item"],
-                    SpoilerData = new MMRData.SpoilerlogReference { NetID = location.Key, Tags = location.Value.Types.TrimSplit(",") },
+                    SpoilerData = new MMRData.SpoilerlogReference { NetIDs = [location.Key], Tags = location.Value.Types.TrimSplit(",") },
                 };
                 dictFile.LocationList.Add(location.Key, Entry);
             }
@@ -104,7 +104,7 @@ namespace TestingForm.GameDataCreation.WindWakerRando
                     Name = item,
                     ItemTypes = ["item"],
                     ValidStartingItem = true,
-                    SpoilerData = new MMRData.SpoilerlogReference() { NetID = item }
+                    SpoilerData = new MMRData.SpoilerlogReference() { NetIDs = [item] }
                 };
                 dictFile.ItemList.Add(item, ItemEntry);
             }

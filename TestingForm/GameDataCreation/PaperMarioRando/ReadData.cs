@@ -10,6 +10,7 @@ using System.IO;
 using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using TestingForm;
 using static MathNet.Symbolics.Linq;
@@ -137,6 +138,7 @@ namespace MMR_Tracker_V3.GameDataCreation.PaperMarioRando
             string MacroFile = Path.Combine(PMRFiles, "Macros.json");
             string EdgeAlterationsFile = Path.Combine(PMRFiles, "Edges_alterations.json");
             string LocationTagsFile = Path.Combine(PMRFiles, "SettingLocationRestrictions.json");
+            string ArchipelagoDataFile = Path.Combine(PMRFiles, "ArchipelagoData.json");
 
             Dictionary<string, string> MapNames = JsonConvert.DeserializeObject<Dictionary<string, string>>(File.ReadAllText(AreaName));
             Dictionary<string, string> MapMeta = JsonConvert.DeserializeObject<List<MapMeta>>(File.ReadAllText(MapMetaFile)).ToDictionary(x => x.name, x => x.verbose_name);
@@ -147,6 +149,7 @@ namespace MMR_Tracker_V3.GameDataCreation.PaperMarioRando
             Dictionary<string, string> Macros = JsonConvert.DeserializeObject<Dictionary<string, string>>(File.ReadAllText(MacroFile));
             List<MapNode> ItemLocationNodes = JsonConvert.DeserializeObject<List<MapNode>>(File.ReadAllText(MapNodesFile)).Where(x => x.vanilla_item_id is not null).ToList();
             Dictionary<string, List<string>> LocationTags = JsonConvert.DeserializeObject<Dictionary<string, List<string>>>(File.ReadAllText(LocationTagsFile));
+            List<(string,string)> ArchipelagoData = JsonConvert.DeserializeObject<List<(string, string)>>(File.ReadAllText(ArchipelagoDataFile));
 
             string TestingFoler = Path.Combine(TestingReferences.GetDevTestingPath(), "PMRTesting");
 
@@ -158,7 +161,9 @@ namespace MMR_Tracker_V3.GameDataCreation.PaperMarioRando
                 RootAreas = ["Spawn"],
                 GameCode = "PMR",
                 WinCondition = "YOUWIN",
-                LogicVersion = 1
+                LogicVersion = 1,
+                NetPlaySupported = true,
+                GameName = "Paper Mario"
             };
             MMRData.LogicFile PRMLogic = new MMRData.LogicFile
             {
@@ -610,10 +615,38 @@ namespace MMR_Tracker_V3.GameDataCreation.PaperMarioRando
             string FinalDictFile = Path.Combine(TestingReferences.GetTestingDictionaryPath(), @"PMR V1.json");
             string FinalLogicFile = Path.Combine(TestingReferences.GetTestingLogicPresetsPath(), @"DEV-PMR Casual.json");
 
+            var APDataLocations = ArchipelagoData.Select(x => x.Item1);
+            var APDataItems = ArchipelagoData.Select(x => x.Item2);
+            var AreaDashReplacer = new Regex(Regex.Escape(" -"));
+            foreach (var i in APDataLocations)
+            {
+                var LocationEquivilent = PMRDict.LocationList.Values.FirstOrDefault(x => AreaDashReplacer.Replace(x.ID, "", 1) == i.Replace("'", ""));
+                if (LocationEquivilent is null) { Debug.WriteLine($"AP {i} was not a valid location"); continue; }
+                LocationEquivilent.SpoilerData.NetIDs = [i];
+            }
+            List<string> CombineItems = ["ThreeStarPieces", "StarPiece", "BowserCastleKey", "KoopaFortressKey", "RuinsKey", "TubbaCastleKey"];
+            foreach (var i in APDataItems)
+            {
+                var GetItemById = PMRDict.ItemList.Values.FirstOrDefault(x => x.ID == i);
+                if (GetItemById is not null) { GetItemById.SpoilerData.NetIDs = [.. GetItemById.SpoilerData.NetIDs, i]; continue; }
+                var GetItemByIdNoProxy = PMRDict.ItemList.Values.FirstOrDefault(x => x.ID == i.Replace("Proxy1", "").Replace("Proxy2", ""));
+                if (GetItemByIdNoProxy is not null) { GetItemByIdNoProxy.SpoilerData.NetIDs = [.. GetItemByIdNoProxy.SpoilerData.NetIDs, i]; continue; }
+
+                bool Found = false;
+                foreach(var item in CombineItems)
+                {
+                    if (i.StartsWith(item))
+                    {
+                        PMRDict.ItemList[item].SpoilerData.NetIDs = [.. PMRDict.ItemList[item].SpoilerData.NetIDs, i];
+                        Found = true;
+                    }
+                }
+                if (Found) { continue; }
+                Debug.WriteLine($"AP {i} was not a valid item");
+            }
+
             File.WriteAllText(FinalDictFile, JsonConvert.SerializeObject(PMRDict, Utility.DefaultSerializerSettings));
             File.WriteAllText(FinalLogicFile, JsonConvert.SerializeObject(PRMLogic, Utility.DefaultSerializerSettings));
-
-            List<Tuple<string, int>> Reqs = new List<Tuple<string, int>>();
 
             outDict = PMRDict;
             OutLogic = PRMLogic;

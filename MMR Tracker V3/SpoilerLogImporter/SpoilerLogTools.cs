@@ -122,9 +122,13 @@ namespace MMR_Tracker_V3.SpoilerLogImporter
         {
             return logic.LocationPool.Values.Any(x => !string.IsNullOrWhiteSpace(x.Randomizeditem.SpoilerLogGivenItem));
         }
-
         public static bool IsGenericAPSpoiler(InstanceData.TrackerInstance instance)
         {
+            return IsGenericAPSpoiler(instance, out _);
+        }
+        public static bool IsGenericAPSpoiler(InstanceData.TrackerInstance instance, out Archipelago.GenericAPSpoiler Log)
+        {
+            Log = null;
             if (instance.GetParentContainer().netConnection.OnlineMode != NetCode.NetData.OnlineMode.Archipelago) { return false; }
             try
             {
@@ -133,6 +137,7 @@ namespace MMR_Tracker_V3.SpoilerLogImporter
                 var LocationData = genericAPSpoiler.Locations;
                 var SlotData = genericAPSpoiler.SlotData;
                 if (LocationData.Count < 1 || SlotData.Count < 1) { return false; }
+                Log = genericAPSpoiler;
             }
             catch { return false; }
             return true;

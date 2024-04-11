@@ -8,6 +8,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static MMR_Tracker_V3.SpoilerLogImporter.Archipelago;
 
 namespace MMR_Tracker_V3.SpoilerLogImporter
 {
@@ -23,6 +24,12 @@ namespace MMR_Tracker_V3.SpoilerLogImporter
         public static void ParseSpoiler(TrackerObjects.InstanceData.TrackerInstance Instance)
         {
             var SpoilerLog = Instance.SpoilerLog.Log;
+
+            if (SpoilerLogTools.IsGenericAPSpoiler(Instance, out Archipelago.GenericAPSpoiler genericAPSpoiler)) 
+            {
+                ParseAPSpoiler(Instance, genericAPSpoiler);
+                return;
+            }
 
             string WebData = SettingWebPage + Path.GetFileNameWithoutExtension(Instance.SpoilerLog.FileName).Split('_')[0];
 
@@ -252,6 +259,24 @@ namespace MMR_Tracker_V3.SpoilerLogImporter
                 }
             }
 
+        }
+
+        public static void ParseAPSpoiler(InstanceData.TrackerInstance Instance, Archipelago.GenericAPSpoiler genericAPSpoiler)
+        {
+            foreach (var entry in genericAPSpoiler.Locations)
+            {
+                var Location = Instance.LocationPool.First(x => x.Value.GetDictEntry().SpoilerData.NetIDs.Contains(entry.Location));
+                if (Instance.GetParentContainer().netConnection.PlayerID != entry.Player)
+                {
+                    Location.Value.Randomizeditem.OwningPlayer = entry.Player;
+                    Location.Value.Randomizeditem.SpoilerLogGivenItem = entry.Item;
+                }
+                else
+                {
+                    var Item = Instance.ItemPool.First(x => x.Value.GetDictEntry().SpoilerData.NetIDs.Contains(entry.Item));
+                    Location.Value.Randomizeditem.SpoilerLogGivenItem = Item.Value.ID;
+                }
+            }
         }
     }
 }

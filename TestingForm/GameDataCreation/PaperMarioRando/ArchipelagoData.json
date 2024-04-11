@@ -1,0 +1,2698 @@
+[
+  {
+    "Item1": "Residental District Shop Item 3",
+    "Item2": "Sushie"
+  },
+  {
+    "Item1": "Residental District Shop Item 6",
+    "Item2": "YellowBerryProxy1"
+  },
+  {
+    "Item1": "Residental District Shop Item 5",
+    "Item2": "StarPiece0C"
+  },
+  {
+    "Item1": "Port District Poet Melody Reward",
+    "Item2": "KoopaFortressKeyD"
+  },
+  {
+    "Item1": "Port District Poet Gift",
+    "Item2": "SnowmanDoll"
+  },
+  {
+    "Item1": "Port District Radio Trade Event 3 Reward",
+    "Item2": "Letter04"
+  },
+  {
+    "Item1": "Port District Fishmael Letter Reward",
+    "Item2": "HoneyCandy"
+  },
+  {
+    "Item1": "Port District Hidden Panel",
+    "Item2": "SnowmanDoll"
+  },
+  {
+    "Item1": "Short Elevator Room (B1) Yellow Block Center",
+    "Item2": "HammerProxy3"
+  },
+  {
+    "Item1": "Blooper Boss 1 (B1) Blooper Fight Reward",
+    "Item2": "DDownJump"
+  },
+  {
+    "Item1": "Short Elevator Room (B1) Yellow Block Right",
+    "Item2": "StarPiece26"
+  },
+  {
+    "Item1": "Short Elevator Room (B1) Yellow Block Left",
+    "Item2": "Coin"
+  },
+  {
+    "Item1": "Elevator Attic Room (B2) On Parakarry Ledge",
+    "Item2": "SnowmanDoll"
+  },
+  {
+    "Item1": "Spring Room (B2) Chest On Ledge",
+    "Item2": "StarPiece0B"
+  },
+  {
+    "Item1": "Blue Pushblock Room (B2) Hidden Block Left",
+    "Item2": "LifeShroom"
+  },
+  {
+    "Item1": "Blue Pushblock Room (B2) Hidden Block Right",
+    "Item2": "FlowerFanatic"
+  },
+  {
+    "Item1": "Blue Pushblock Room (B2) Hidden Block Center",
+    "Item2": "StoneCap"
+  },
+  {
+    "Item1": "Blue Pushblock Room (B2) In SuperBlock",
+    "Item2": "SuperJump"
+  },
+  {
+    "Item1": "Rip Cheato's Home (B3) Rip Cheato Offer 2",
+    "Item2": "HealthyHealthy"
+  },
+  {
+    "Item1": "Rip Cheato's Home (B3) Rip Cheato Offer 1",
+    "Item2": "SuperSoda"
+  },
+  {
+    "Item1": "Rip Cheato's Home (B3) Rip Cheato Offer 4",
+    "Item2": "ShootingStar"
+  },
+  {
+    "Item1": "Rip Cheato's Home (B3) Rip Cheato Offer 3",
+    "Item2": "MegaHPDrain"
+  },
+  {
+    "Item1": "Rip Cheato's Home (B3) Rip Cheato Offer 6",
+    "Item2": "BootsProxy2"
+  },
+  {
+    "Item1": "Rip Cheato's Home (B3) Rip Cheato Offer 5",
+    "Item2": "Coin"
+  },
+  {
+    "Item1": "Rip Cheato's Home (B3) Rip Cheato Offer 8",
+    "Item2": "DizzyDial"
+  },
+  {
+    "Item1": "Rip Cheato's Home (B3) Rip Cheato Offer 7",
+    "Item2": "Coin"
+  },
+  {
+    "Item1": "Rip Cheato's Home (B3) Rip Cheato Offer 10",
+    "Item2": "ThreeStarPieces3"
+  },
+  {
+    "Item1": "Rip Cheato's Home (B3) Rip Cheato Offer 9",
+    "Item2": "Coin"
+  },
+  {
+    "Item1": "Frozen Room (B3) In SuperBlock",
+    "Item2": "PrisonKeyB"
+  },
+  {
+    "Item1": "Rip Cheato's Home (B3) Rip Cheato Offer 11",
+    "Item2": "StarPiece4C"
+  },
+  {
+    "Item1": "Hall to Blooper 1 (B1) Hidden Block",
+    "Item2": "Melon"
+  },
+  {
+    "Item1": "Room with Spikes (B2) Yellow Block",
+    "Item2": "FlowerSaverB"
+  },
+  {
+    "Item1": "Under the Toad Town Pond In SuperBlock",
+    "Item2": "POWBlock"
+  },
+  {
+    "Item1": "Bridge to Shiver City (B2) Yellow Block 2",
+    "Item2": "Coin"
+  },
+  {
+    "Item1": "Bridge to Shiver City (B2) Yellow Block 1",
+    "Item2": "Mystery"
+  },
+  {
+    "Item1": "Bridge to Shiver City (B2) Yellow Block 4",
+    "Item2": "StarPiece3D"
+  },
+  {
+    "Item1": "Bridge to Shiver City (B2) Yellow Block 3",
+    "Item2": "Coin"
+  },
+  {
+    "Item1": "Winding Path (Spiny Room) Hidden Block Center",
+    "Item2": "HoneySyrup"
+  },
+  {
+    "Item1": "Bridge to Shiver City (B2) Yellow Block 5",
+    "Item2": "Coin"
+  },
+  {
+    "Item1": "Winding Path (Spiny Room) Hidden Block Left",
+    "Item2": "ThunderRage"
+  },
+  {
+    "Item1": "Winding Path (Spiny Room) Hidden Block Right",
+    "Item2": "Coin"
+  },
+  {
+    "Item1": "Hall to Ultra Boots (B3) Hidden Block",
+    "Item2": "TubbaCastleKeyC"
+  },
+  {
+    "Item1": "Winding Path (Spiny Room) Yellow Block",
+    "Item2": "StarPiece19"
+  },
+  {
+    "Item1": "Hall to Ultra Boots (B3) Yellow Block Right",
+    "Item2": "RepelGel"
+  },
+  {
+    "Item1": "Hall to Ultra Boots (B3) Yellow Block Left",
+    "Item2": "MagicalSeed1"
+  },
+  {
+    "Item1": "Library (2F) Upper Level",
+    "Item2": "StarPiece28"
+  },
+  {
+    "Item1": "Ultra Boots Room (B3) In Big Chest",
+    "Item2": "KootLuigiAutograph"
+  },
+  {
+    "Item1": "Storeroom (2F) On The Ground",
+    "Item2": "Letter02"
+  },
+  {
+    "Item1": "Library (2F) Between Bookshelves",
+    "Item2": "Coin"
+  },
+  {
+    "Item1": "Shooting Star Path Hidden Panel",
+    "Item2": "MagicalBean"
+  },
+  {
+    "Item1": "Guest Room (1F) In Chest",
+    "Item2": "Coin"
+  },
+  {
+    "Item1": "Shooting Star Summit Hidden Panel",
+    "Item2": "KoopaFortressKeyB"
+  },
+  {
+    "Item1": "Shooting Star Summit Behind The Summit",
+    "Item2": "AttackFXD"
+  },
+  {
+    "Item1": "Star Haven Shop Item 2",
+    "Item2": "Coin"
+  },
+  {
+    "Item1": "Star Haven Shop Item 1",
+    "Item2": "StarPiece2F"
+  },
+  {
+    "Item1": "Star Haven Shop Item 4",
+    "Item2": "StarPiece0A"
+  },
+  {
+    "Item1": "Star Haven Shop Item 3",
+    "Item2": "EarthquakeJump"
+  },
+  {
+    "Item1": "Star Haven Shop Item 6",
+    "Item2": "BubbleBerryProxy1"
+  },
+  {
+    "Item1": "Star Haven Shop Item 5",
+    "Item2": "KootRedJar"
+  },
+  {
+    "Item1": "Merluvlee's House Merluvlee Koopa Koot Favor",
+    "Item2": "StarPiece4F"
+  },
+  {
+    "Item1": "Merluvlee's House Merlow's Badges 2",
+    "Item2": "HeartFinder"
+  },
+  {
+    "Item1": "Merluvlee's House Merlow's Badges 1",
+    "Item2": "AttackFXC"
+  },
+  {
+    "Item1": "Merluvlee's House Merlow's Badges 4",
+    "Item2": "Coin"
+  },
+  {
+    "Item1": "Merluvlee's House Merlow's Badges 3",
+    "Item2": "Coin"
+  },
+  {
+    "Item1": "Merluvlee's House Merlow's Badges 6",
+    "Item2": "Coin"
+  },
+  {
+    "Item1": "Merluvlee's House Merlow's Badges 5",
+    "Item2": "HappyHeartA"
+  },
+  {
+    "Item1": "Merluvlee's House Merlow's Badges 8",
+    "Item2": "Coin"
+  },
+  {
+    "Item1": "Merluvlee's House Merlow's Badges 7",
+    "Item2": "AutoJump"
+  },
+  {
+    "Item1": "Merluvlee's House Merlow's Badges 10",
+    "Item2": "Coin"
+  },
+  {
+    "Item1": "Merluvlee's House Merlow's Badges 9",
+    "Item2": "Coin"
+  },
+  {
+    "Item1": "Merluvlee's House Merlow's Badges 12",
+    "Item2": "Coin"
+  },
+  {
+    "Item1": "Merluvlee's House Merlow's Badges 11",
+    "Item2": "ThunderRage"
+  },
+  {
+    "Item1": "Merluvlee's House Merlow's Badges 14",
+    "Item2": "DizzyDial"
+  },
+  {
+    "Item1": "Merluvlee's House Merlow's Badges 13",
+    "Item2": "AutoSmash"
+  },
+  {
+    "Item1": "Merluvlee's House Merlow's Rewards 1",
+    "Item2": "MapleSyrup"
+  },
+  {
+    "Item1": "Merluvlee's House Merlow's Badges 15",
+    "Item2": "Coin"
+  },
+  {
+    "Item1": "Merluvlee's House Merlow's Rewards 3",
+    "Item2": "Coin"
+  },
+  {
+    "Item1": "Merluvlee's House Merlow's Rewards 2",
+    "Item2": "StarPiece2B"
+  },
+  {
+    "Item1": "Merluvlee's House Merlow's Rewards 5",
+    "Item2": "Coin"
+  },
+  {
+    "Item1": "Merluvlee's House Merlow's Rewards 4",
+    "Item2": "HoneySyrup"
+  },
+  {
+    "Item1": "Merluvlee's House Hidden Panel",
+    "Item2": "SSmashChg"
+  },
+  {
+    "Item1": "Merluvlee's House Merlow's Rewards 6",
+    "Item2": "Coin"
+  },
+  {
+    "Item1": "Koopa Village 1 Bush Left Front",
+    "Item2": "Coin"
+  },
+  {
+    "Item1": "Koopa Village 1 Bush Far Left",
+    "Item2": "Coin"
+  },
+  {
+    "Item1": "Koopa Village 1 Bush Second From Right",
+    "Item2": "StarPiece18"
+  },
+  {
+    "Item1": "Koopa Village 1 Bush Infront Of Tree",
+    "Item2": "BubbleBerryProxy2"
+  },
+  {
+    "Item1": "Koopa Village 1 Bush Far Right (Koopa Koot Favor)",
+    "Item2": "StarPiece3F"
+  },
+  {
+    "Item1": "Koopa Village 1 Bush Second From Left (Koopa Koot Favor)",
+    "Item2": "Coin"
+  },
+  {
+    "Item1": "Koopa Village 1 Koover Letter Reward 1",
+    "Item2": "TubbaCastleKeyB"
+  },
+  {
+    "Item1": "Koopa Village 1 Shop Item 1",
+    "Item2": "Mushroom"
+  },
+  {
+    "Item1": "Koopa Village 1 Koover Letter Reward 2",
+    "Item2": "Coin"
+  },
+  {
+    "Item1": "Koopa Village 1 Shop Item 3",
+    "Item2": "SnowmanDoll"
+  },
+  {
+    "Item1": "Koopa Village 1 Shop Item 2",
+    "Item2": "Coin"
+  },
+  {
+    "Item1": "Koopa Village 1 Shop Item 5",
+    "Item2": "GoldCredit"
+  },
+  {
+    "Item1": "Koopa Village 1 Shop Item 4",
+    "Item2": "UltraShroom"
+  },
+  {
+    "Item1": "Koopa Village 1 Hidden Panel",
+    "Item2": "SushieUp1"
+  },
+  {
+    "Item1": "Koopa Village 1 Shop Item 6",
+    "Item2": "Coin"
+  },
+  {
+    "Item1": "Koopa Village 2 Kolorado's Wife (Koopa Koot Favor)",
+    "Item2": "MapleSyrup"
+  },
+  {
+    "Item1": "Koopa Village 2 Push Block Puzzle",
+    "Item2": "KootPackage"
+  },
+  {
+    "Item1": "Koopa Village 2 Koopa Koot Gold Credit",
+    "Item2": "Coin"
+  },
+  {
+    "Item1": "Koopa Village 2 Koopa Koot Silver Credit",
+    "Item2": "FrightJar"
+  },
+  {
+    "Item1": "Koopa Village 2 Kolorado Artifact Reward",
+    "Item2": "StarPiece43"
+  },
+  {
+    "Item1": "Koopa Village 2 Kooper Partner",
+    "Item2": "ThunderRage"
+  },
+  {
+    "Item1": "Koopa Village 2 Bush Far Left",
+    "Item2": "BowserCastleKeyD"
+  },
+  {
+    "Item1": "Koopa Village 2 Koopa Koot Reward 2",
+    "Item2": "POWBlock"
+  },
+  {
+    "Item1": "Koopa Village 2 Koopa Koot Reward 1",
+    "Item2": "MagicalSeed2"
+  },
+  {
+    "Item1": "Koopa Village 2 Koopa Koot Reward 4",
+    "Item2": "PouchE"
+  },
+  {
+    "Item1": "Koopa Village 2 Koopa Koot Reward 3",
+    "Item2": "ThunderRage"
+  },
+  {
+    "Item1": "Koopa Village 2 Koopa Koot Reward 6",
+    "Item2": "Coconut"
+  },
+  {
+    "Item1": "Koopa Village 2 Koopa Koot Reward 5",
+    "Item2": "HoneySyrup"
+  },
+  {
+    "Item1": "Koopa Village 2 Koopa Koot Reward 8",
+    "Item2": "KooperUp1"
+  },
+  {
+    "Item1": "Koopa Village 2 Koopa Koot Reward 7",
+    "Item2": "Coconut"
+  },
+  {
+    "Item1": "Koopa Village 2 Koopa Koot Reward 10",
+    "Item2": "Coin"
+  },
+  {
+    "Item1": "Koopa Village 2 Koopa Koot Reward 9",
+    "Item2": "QuickChange"
+  },
+  {
+    "Item1": "Koopa Village 2 Koopa Koot Reward 12",
+    "Item2": "Letter22"
+  },
+  {
+    "Item1": "Koopa Village 2 Koopa Koot Reward 11",
+    "Item2": "StarPiece46"
+  },
+  {
+    "Item1": "Koopa Village 2 Koopa Koot Reward 14",
+    "Item2": "Coin"
+  },
+  {
+    "Item1": "Koopa Village 2 Koopa Koot Reward 13",
+    "Item2": "StopWatch"
+  },
+  {
+    "Item1": "Koopa Village 2 Koopa Koot Reward 16",
+    "Item2": "BooRecord"
+  },
+  {
+    "Item1": "Koopa Village 2 Koopa Koot Reward 15",
+    "Item2": "Letter24"
+  },
+  {
+    "Item1": "Koopa Village 2 Koopa Koot Reward 18",
+    "Item2": "SleepySheep"
+  },
+  {
+    "Item1": "Koopa Village 2 Koopa Koot Reward 17",
+    "Item2": "SuperSoda"
+  },
+  {
+    "Item1": "Koopa Village 2 Koopa Koot Reward 20",
+    "Item2": "PowerPlusX"
+  },
+  {
+    "Item1": "Koopa Village 2 Koopa Koot Reward 19",
+    "Item2": "SleepySheep"
+  },
+  {
+    "Item1": "Behind Koopa Village On Stump",
+    "Item2": "Coin"
+  },
+  {
+    "Item1": "Koopa Village 2 Bush Far Right",
+    "Item2": "StarPiece37"
+  },
+  {
+    "Item1": "Pleasant Path Entry Yellow Block Left",
+    "Item2": "Coin"
+  },
+  {
+    "Item1": "Fuzzy Forest Fuzzy Battle Reward",
+    "Item2": "WattUp1"
+  },
+  {
+    "Item1": "Pleasant Path Entry Yellow Block Right",
+    "Item2": "DizzyDial"
+  },
+  {
+    "Item1": "Pleasant Path Entry Red Block Center",
+    "Item2": "MagicalSeed4"
+  },
+  {
+    "Item1": "Pleasant Path Bridge Kooper Island",
+    "Item2": "Coin"
+  },
+  {
+    "Item1": "Pleasant Path Bridge Yellow Block",
+    "Item2": "ThunderRage"
+  },
+  {
+    "Item1": "Pleasant Path Bridge Behind Fence",
+    "Item2": "Coin"
+  },
+  {
+    "Item1": "Pleasant Crossroads Behind Peg",
+    "Item2": "Coin"
+  },
+  {
+    "Item1": "Pleasant Crossroads Brick Block Puzzle",
+    "Item2": "Mushroom"
+  },
+  {
+    "Item1": "Path to Fortress 1 X On Ground 1",
+    "Item2": "HappyFlowerB"
+  },
+  {
+    "Item1": "Pleasant Crossroads Hidden Panel",
+    "Item2": "Coin"
+  },
+  {
+    "Item1": "Path to Fortress 1 X On Ground 3",
+    "Item2": "StarPiece23"
+  },
+  {
+    "Item1": "Path to Fortress 1 X On Ground 2",
+    "Item2": "DoubleDip"
+  },
+  {
+    "Item1": "Path to Fortress 1 X On Ground 5",
+    "Item2": "Coin"
+  },
+  {
+    "Item1": "Path to Fortress 1 X On Ground 4",
+    "Item2": "KoopaLeaf"
+  },
+  {
+    "Item1": "Path to Fortress 1 Hidden Block",
+    "Item2": "BowserCastleKeyA"
+  },
+  {
+    "Item1": "Path to Fortress 1 On Brick Block",
+    "Item2": "StarPiece03"
+  },
+  {
+    "Item1": "Path to Fortress 2 In Tree",
+    "Item2": "StarPiece02"
+  },
+  {
+    "Item1": "Path to Fortress 1 Hidden Panel",
+    "Item2": "YellowBerryProxy2"
+  },
+  {
+    "Item1": "Fortress Exterior Chest On Ledge",
+    "Item2": "Mushroom"
+  },
+  {
+    "Item1": "Fortress Exterior Chest Behind Fortress",
+    "Item2": "VoltShroom"
+  },
+  {
+    "Item1": "Left Tower Koopa Troopa Reward",
+    "Item2": "Mushroom"
+  },
+  {
+    "Item1": "Left Tower Top Of Tower",
+    "Item2": "HustleDrink"
+  },
+  {
+    "Item1": "Central Hall Right Cell",
+    "Item2": "LifeShroom"
+  },
+  {
+    "Item1": "Central Hall Left Cell",
+    "Item2": "SuperShroom"
+  },
+  {
+    "Item1": "Jail Bombette Partner",
+    "Item2": "Coin"
+  },
+  {
+    "Item1": "Central Hall Center Cell",
+    "Item2": "CakeMix"
+  },
+  {
+    "Item1": "Battlement Block Behind Rock",
+    "Item2": "MapleSyrup"
+  },
+  {
+    "Item1": "Dungeon Fire Room On The Ground",
+    "Item2": "BooPortrait"
+  },
+  {
+    "Item1": "Mt Rugged 1 On Slide 2",
+    "Item2": "Coin"
+  },
+  {
+    "Item1": "Mt Rugged 1 On Slide 1",
+    "Item2": "Coin"
+  },
+  {
+    "Item1": "Mt Rugged 1 Yellow Block",
+    "Item2": "Coin"
+  },
+  {
+    "Item1": "Mt Rugged 1 On Slide 3",
+    "Item2": "Coin"
+  },
+  {
+    "Item1": "Mt Rugged 2 Parakarry Ledge",
+    "Item2": "Coin"
+  },
+  {
+    "Item1": "Mt Rugged 1 Hurting Whacka",
+    "Item2": "Coin"
+  },
+  {
+    "Item1": "Mt Rugged 2 Hidden Panel",
+    "Item2": "StarPiece10"
+  },
+  {
+    "Item1": "Mt Rugged 2 Kooper Ledge",
+    "Item2": "BowserCastleKeyC"
+  },
+  {
+    "Item1": "Mt Rugged 3 Bub-ulb Gift",
+    "Item2": "VoltShroom"
+  },
+  {
+    "Item1": "Mt Rugged 3 On Scaffolding",
+    "Item2": "MapleSyrup"
+  },
+  {
+    "Item1": "Mt Rugged 4 Yellow Block Top Left",
+    "Item2": "Apple"
+  },
+  {
+    "Item1": "Mt Rugged 4 Hidden Cave Chest",
+    "Item2": "SmashCharge0"
+  },
+  {
+    "Item1": "Mt Rugged 4 Yellow Block Top Right",
+    "Item2": "PouchA"
+  },
+  {
+    "Item1": "Mt Rugged 4 Yellow Block Floating",
+    "Item2": "BombetteUp2"
+  },
+  {
+    "Item1": "Mt Rugged 4 Left Ledge Center",
+    "Item2": "JumpCharge"
+  },
+  {
+    "Item1": "Mt Rugged 4 Slide Ledge",
+    "Item2": "JamminJelly"
+  },
+  {
+    "Item1": "Mt Rugged 4 Left Ledge 3",
+    "Item2": "StopWatch"
+  },
+  {
+    "Item1": "Mt Rugged 4 Left Ledge Right",
+    "Item2": "RepelGel"
+  },
+  {
+    "Item1": "Mt Rugged 4 Left Ledge 5",
+    "Item2": "SpikeShield"
+  },
+  {
+    "Item1": "Mt Rugged 4 Left Ledge 4",
+    "Item2": "MapleSyrup"
+  },
+  {
+    "Item1": "Mt Rugged 4 Left Ledge 7",
+    "Item2": "StarPiece29"
+  },
+  {
+    "Item1": "Mt Rugged 4 Left Ledge 6",
+    "Item2": "Coin"
+  },
+  {
+    "Item1": "Mt Rugged 4 Bottom Left 2",
+    "Item2": "Coin"
+  },
+  {
+    "Item1": "Mt Rugged 4 Bottom Left 1",
+    "Item2": "FrightJar"
+  },
+  {
+    "Item1": "Train Station Bush 1",
+    "Item2": "Coin"
+  },
+  {
+    "Item1": "Suspension Bridge Bottom Of Cliff",
+    "Item2": "Kooper"
+  },
+  {
+    "Item1": "Train Station Bush 3",
+    "Item2": "Coin"
+  },
+  {
+    "Item1": "Train Station Bush 2",
+    "Item2": "PouchC"
+  },
+  {
+    "Item1": "Train Station Parakarry Partner",
+    "Item2": "MapleSyrup"
+  },
+  {
+    "Item1": "Train Station Bush Top",
+    "Item2": "Mushroom"
+  },
+  {
+    "Item1": "Outpost 1 Composer Lyrics Reward",
+    "Item2": "ShootingStar"
+  },
+  {
+    "Item1": "Outpost 1 Little Mouser Letter Reward",
+    "Item2": "WhackasBump"
+  },
+  {
+    "Item1": "Outpost 1 Store Legend",
+    "Item2": "BowUp2"
+  },
+  {
+    "Item1": "Outpost 1 Shop Item 1",
+    "Item2": "PouchB"
+  },
+  {
+    "Item1": "Outpost 1 In Red Tree",
+    "Item2": "Coin"
+  },
+  {
+    "Item1": "Outpost 1 Shop Item 3",
+    "Item2": "Coin"
+  },
+  {
+    "Item1": "Outpost 1 Shop Item 2",
+    "Item2": "DustyHammer"
+  },
+  {
+    "Item1": "Outpost 1 Shop Item 5",
+    "Item2": "DriedPasta"
+  },
+  {
+    "Item1": "Outpost 1 Shop Item 4",
+    "Item2": "DriedShroom"
+  },
+  {
+    "Item1": "Outpost 2 Toad House Roof",
+    "Item2": "StarPiece1E"
+  },
+  {
+    "Item1": "Outpost 1 Shop Item 6",
+    "Item2": "SuperShroom"
+  },
+  {
+    "Item1": "Outpost 2 Moustafa Gift",
+    "Item2": "StarPiece3B"
+  },
+  {
+    "Item1": "Outpost 2 Merlee Request (Koopa Koot Favor)",
+    "Item2": "SuperShroom"
+  },
+  {
+    "Item1": "Outpost 2 Hidden Panel",
+    "Item2": "Cookbook"
+  },
+  {
+    "Item1": "Outpost 2 Mr. E. Letter Reward",
+    "Item2": "SuperShroom"
+  },
+  {
+    "Item1": "N3W3 Yellow Block Right",
+    "Item2": "Calculator"
+  },
+  {
+    "Item1": "N3W3 Yellow Block Left",
+    "Item2": "RepelGel"
+  },
+  {
+    "Item1": "N3E2 Pokey Army Behind Cactus",
+    "Item2": "PrisonKeyA"
+  },
+  {
+    "Item1": "N3W1 Ruins Entrance Radio Trade Event 2 Reward",
+    "Item2": "Coin"
+  },
+  {
+    "Item1": "N3E3 In Tree",
+    "Item2": "Coin"
+  },
+  {
+    "Item1": "N2E1 (Tweester A) Yellow Block Left",
+    "Item2": "StarPiece25"
+  },
+  {
+    "Item1": "N2W3 Hidden Block",
+    "Item2": "DiamondStone"
+  },
+  {
+    "Item1": "N2E1 (Tweester A) In MultiCoinBlock",
+    "Item2": "TripleDip"
+  },
+  {
+    "Item1": "N2E1 (Tweester A) Yellow Block Right",
+    "Item2": "FrightJar"
+  },
+  {
+    "Item1": "N1W3 Special Block Hit Block Plenty",
+    "Item2": "Bombette"
+  },
+  {
+    "Item1": "N1W3 Special Block Hit Block",
+    "Item2": "ThunderRage"
+  },
+  {
+    "Item1": "N1W1 Yellow Block 1",
+    "Item2": "StarPiece39"
+  },
+  {
+    "Item1": "N1W3 Special Block Hit Block Very Much",
+    "Item2": "PowerRush"
+  },
+  {
+    "Item1": "N1W1 Yellow Block 3",
+    "Item2": "MapleSyrup"
+  },
+  {
+    "Item1": "N1W1 Yellow Block 2",
+    "Item2": "PowerQuake"
+  },
+  {
+    "Item1": "N1W1 Yellow Block Center",
+    "Item2": "StarPiece35"
+  },
+  {
+    "Item1": "N1W1 Yellow Block 4",
+    "Item2": "Coin"
+  },
+  {
+    "Item1": "N1E2 In MultiCoinBlock Center",
+    "Item2": "Coconut"
+  },
+  {
+    "Item1": "N1E1 Palm Trio Hidden Block",
+    "Item2": "Letter15"
+  },
+  {
+    "Item1": "N1E3 In Tree",
+    "Item2": "ShrinkSmash"
+  },
+  {
+    "Item1": "Center (Tweester C) Hidden Panel",
+    "Item2": "StarPiece00"
+  },
+  {
+    "Item1": "W3 Kolorado's Camp In Tree",
+    "Item2": "DriedShroom"
+  },
+  {
+    "Item1": "E1 Nomadimouse In Tree",
+    "Item2": "Mushroom"
+  },
+  {
+    "Item1": "E3 Outside Outpost In Tree (Far Right)",
+    "Item2": "Coin"
+  },
+  {
+    "Item1": "E2 In Tree Far Left",
+    "Item2": "FireFlower"
+  },
+  {
+    "Item1": "E3 Outside Outpost In Tree (Second From Left)",
+    "Item2": "MapleSyrup"
+  },
+  {
+    "Item1": "E3 Outside Outpost In Tree (Far Left)",
+    "Item2": "Coin"
+  },
+  {
+    "Item1": "E3 Outside Outpost In Tree (Fourth From Right)",
+    "Item2": "StarPiece4D"
+  },
+  {
+    "Item1": "S1E2 Small Bluffs On Brick Block",
+    "Item2": "MapleSyrup"
+  },
+  {
+    "Item1": "S1 Yellow Block",
+    "Item2": "PowerPlusB"
+  },
+  {
+    "Item1": "S1E3 North of Oasis Yellow Block",
+    "Item2": "StarPiece27"
+  },
+  {
+    "Item1": "S1E2 Small Bluffs Ontop Of Bluffs",
+    "Item2": "Melody"
+  },
+  {
+    "Item1": "S1E3 North of Oasis Tree Bottom Left",
+    "Item2": "Coin"
+  },
+  {
+    "Item1": "S1E3 North of Oasis Hidden Block",
+    "Item2": "POWBlock"
+  },
+  {
+    "Item1": "S2E2 West of Oasis Behind Bush",
+    "Item2": "MagicalSeed3"
+  },
+  {
+    "Item1": "S2E2 West of Oasis In MultiCoinBlock",
+    "Item2": "LifeShroom"
+  },
+  {
+    "Item1": "S2E2 West of Oasis In Tree",
+    "Item2": "Coin"
+  },
+  {
+    "Item1": "S2E3 Oasis In Fruit Tree (Right)",
+    "Item2": "LifeShroom"
+  },
+  {
+    "Item1": "S2E3 Oasis In Fruit Tree (Left)",
+    "Item2": "FrightJar"
+  },
+  {
+    "Item1": "S2E3 Oasis In Tree (Front Right)",
+    "Item2": "Coin"
+  },
+  {
+    "Item1": "S2E3 Oasis In Tree (Far Left)",
+    "Item2": "FPPlusX"
+  },
+  {
+    "Item1": "S3W2 Hidden AttackFX Hidden Block",
+    "Item2": "ShootingStar"
+  },
+  {
+    "Item1": "S3E3 South of Oasis In Tree (Far Right)",
+    "Item2": "Letter20"
+  },
+  {
+    "Item1": "S3E1 Yellow Block",
+    "Item2": "StinkyHerb"
+  },
+  {
+    "Item1": "S3E3 South of Oasis In MultiCoinBlock Top Right",
+    "Item2": "SuperShroom"
+  },
+  {
+    "Item1": "S3E3 South of Oasis In MultiCoinBlock Top Left",
+    "Item2": "Coin"
+  },
+  {
+    "Item1": "S3E3 South of Oasis In MultiCoinBlock Left",
+    "Item2": "Letter23"
+  },
+  {
+    "Item1": "S3E3 South of Oasis In MultiCoinBlock Right",
+    "Item2": "BootsProxy1"
+  },
+  {
+    "Item1": "S3E3 South of Oasis In MultiCoinBlock Bottom Left",
+    "Item2": "StarPiece05"
+  },
+  {
+    "Item1": "Sand Drainage Room 1 On The Ground",
+    "Item2": "Watt"
+  },
+  {
+    "Item1": "Sarcophagus Hall 1 In Sarcophagus",
+    "Item2": "SuperSoda"
+  },
+  {
+    "Item1": "Sand Drainage Room 2 In The Sand",
+    "Item2": "Coin"
+  },
+  {
+    "Item1": "Pyramid Stone Room On Pedestal",
+    "Item2": "SuperShroom"
+  },
+  {
+    "Item1": "Sarcophagus Hall 2 Pokey Gauntlet Reward",
+    "Item2": "StarPiece12"
+  },
+  {
+    "Item1": "Sand Drainage Room 2 On Ledge",
+    "Item2": "Coin"
+  },
+  {
+    "Item1": "Super Hammer Room Hidden Chest",
+    "Item2": "WarehouseKey"
+  },
+  {
+    "Item1": "Sarcophagus Hall 2 Behind Hammer Block",
+    "Item2": "Letter03"
+  },
+  {
+    "Item1": "Vertical Shaft In SuperBlock",
+    "Item2": "StarPiece07"
+  },
+  {
+    "Item1": "Super Hammer Room In Big Chest",
+    "Item2": "Coin"
+  },
+  {
+    "Item1": "Lunar Stone Room On Pedestal",
+    "Item2": "StinkyHerb"
+  },
+  {
+    "Item1": "Sand Drainage Room 3 On Ledge",
+    "Item2": "StarPiece08"
+  },
+  {
+    "Item1": "Tree Face (Bub-ulb) Bub-ulb Gift",
+    "Item2": "KootGlasses"
+  },
+  {
+    "Item1": "Diamond Stone Room On Pedestal",
+    "Item2": "StarPiece2A"
+  },
+  {
+    "Item1": "Flowers Appear (FP Plus) Central Block",
+    "Item2": "JadeRaven"
+  },
+  {
+    "Item1": "Bee Hive (HP Plus) Central Block",
+    "Item2": "Dictionary"
+  },
+  {
+    "Item1": "Outside Boo's Mansion In Bush (Back Right)",
+    "Item2": "RepelGel"
+  },
+  {
+    "Item1": "Outside Boo's Mansion Yellow Block",
+    "Item2": "Bow"
+  },
+  {
+    "Item1": "Foyer From Franky (Koopa Koot Favor)",
+    "Item2": "StoneCap"
+  },
+  {
+    "Item1": "Exit to Gusty Gulch Hidden Panel",
+    "Item2": "Coin"
+  },
+  {
+    "Item1": "Foyer Hidden Panel",
+    "Item2": "StopWatch"
+  },
+  {
+    "Item1": "Foyer Franky Letter Reward",
+    "Item2": "DizzyDial"
+  },
+  {
+    "Item1": "Basement In Crate",
+    "Item2": "StarPiece38"
+  },
+  {
+    "Item1": "Basement Stairs Hidden Panel",
+    "Item2": "Coin"
+  },
+  {
+    "Item1": "Basement Shop Item 1",
+    "Item2": "BlueBerryProxy1"
+  },
+  {
+    "Item1": "Basement Shop Item 3",
+    "Item2": "Coin"
+  },
+  {
+    "Item1": "Basement Shop Item 2",
+    "Item2": "MapleSyrup"
+  },
+  {
+    "Item1": "Basement Shop Item 5",
+    "Item2": "Coin"
+  },
+  {
+    "Item1": "Basement Shop Item 4",
+    "Item2": "WaterStone"
+  },
+  {
+    "Item1": "Super Boots Room In Crate",
+    "Item2": "StarPiece16"
+  },
+  {
+    "Item1": "Basement Shop Item 6",
+    "Item2": "Lemon"
+  },
+  {
+    "Item1": "Super Boots Room Hidden Panel",
+    "Item2": "Coin"
+  },
+  {
+    "Item1": "Super Boots Room In Big Chest",
+    "Item2": "StopWatch"
+  },
+  {
+    "Item1": "Pot Room In Crate 2",
+    "Item2": "RedBerryProxy1"
+  },
+  {
+    "Item1": "Pot Room In Crate 1",
+    "Item2": "VoltShroom"
+  },
+  {
+    "Item1": "Library In Crate",
+    "Item2": "Coin"
+  },
+  {
+    "Item1": "Library On Bookshelf",
+    "Item2": "SmashCharge"
+  },
+  {
+    "Item1": "Record Room Beat Boo Game",
+    "Item2": "HappyHeartX"
+  },
+  {
+    "Item1": "Record Player Room In Chest",
+    "Item2": "CrazyHeart"
+  },
+  {
+    "Item1": "Lady Bow's Room Bow Partner",
+    "Item2": "Mushroom"
+  },
+  {
+    "Item1": "Record Room Hidden Panel",
+    "Item2": "AttackFXA"
+  },
+  {
+    "Item1": "Wasteland Ascent 1 Infront Of Branch",
+    "Item2": "Mushroom"
+  },
+  {
+    "Item1": "Wasteland Ascent 1 On Rock",
+    "Item2": "Coin"
+  },
+  {
+    "Item1": "Wasteland Ascent 1 Yellow Block 2",
+    "Item2": "FPPlusY"
+  },
+  {
+    "Item1": "Wasteland Ascent 1 Yellow Block 1",
+    "Item2": "Coin"
+  },
+  {
+    "Item1": "Ghost Town 1 From Boo (Koopa Koot Favor)",
+    "Item2": "BowserCastleKeyE"
+  },
+  {
+    "Item1": "Wasteland Ascent 1 Yellow Block Right",
+    "Item2": "FireFlower"
+  },
+  {
+    "Item1": "Wasteland Ascent 2 Yellow Block Left",
+    "Item2": "PowerPlusA"
+  },
+  {
+    "Item1": "Ghost Town 1 Yellow Block In House",
+    "Item2": "ChillOut"
+  },
+  {
+    "Item1": "Wasteland Ascent 2 Behind Rock",
+    "Item2": "Mushroom"
+  },
+  {
+    "Item1": "Wasteland Ascent 2 Yellow Block Right",
+    "Item2": "DizzyDial"
+  },
+  {
+    "Item1": "Table/Clock Room (1/2F) On Table",
+    "Item2": "Mushroom"
+  },
+  {
+    "Item1": "Basement In Chest",
+    "Item2": "StarPiece21"
+  },
+  {
+    "Item1": "Covered Tables Room (1F) On Table",
+    "Item2": "SnowmanDoll"
+  },
+  {
+    "Item1": "Study (1F) On Table",
+    "Item2": "Mushroom"
+  },
+  {
+    "Item1": "Hidden Bedroom (2F) In Hidden Room",
+    "Item2": "Coin"
+  },
+  {
+    "Item1": "Spike Trap Room (2F) In Chest",
+    "Item2": "HoneySyrup"
+  },
+  {
+    "Item1": "Hidden Bedroom (2F) On Bed 2",
+    "Item2": "Mailbag"
+  },
+  {
+    "Item1": "Hidden Bedroom (2F) On Bed 1",
+    "Item2": "Coin"
+  },
+  {
+    "Item1": "Hidden Bedroom (2F) On Bed 4",
+    "Item2": "ShrinkStomp"
+  },
+  {
+    "Item1": "Hidden Bedroom (2F) On Bed 3",
+    "Item2": "Coconut"
+  },
+  {
+    "Item1": "Hidden Bedroom (2F) On Bed 6",
+    "Item2": "Multibounce"
+  },
+  {
+    "Item1": "Hidden Bedroom (2F) On Bed 5",
+    "Item2": "Coin"
+  },
+  {
+    "Item1": "Sleeping Clubbas Room (3F) On Pedestal",
+    "Item2": "CrystalPalaceKey"
+  },
+  {
+    "Item1": "Stairs to Third Floor Yellow Block",
+    "Item2": "Mystery"
+  },
+  {
+    "Item1": "BLU Large Playroom Calculator Thief 2",
+    "Item2": "Coin"
+  },
+  {
+    "Item1": "BLU Large Playroom Calculator Thief 1",
+    "Item2": "SuperShroom"
+  },
+  {
+    "Item1": "BLU Large Playroom Shy Guy 3",
+    "Item2": "SuperShroom"
+  },
+  {
+    "Item1": "BLU Large Playroom Shy Guy 2",
+    "Item2": "FireFlower"
+  },
+  {
+    "Item1": "BLU Large Playroom Shy Guy 5",
+    "Item2": "Goomnut"
+  },
+  {
+    "Item1": "BLU Large Playroom Shy Guy 4",
+    "Item2": "TastyTonic"
+  },
+  {
+    "Item1": "BLU Large Playroom Hidden Block 2",
+    "Item2": "StarPiece0D"
+  },
+  {
+    "Item1": "BLU Large Playroom Hidden Block 1",
+    "Item2": "DefendPlusX"
+  },
+  {
+    "Item1": "RED Boss Barricade Hidden Block Left",
+    "Item2": "OddKey"
+  },
+  {
+    "Item1": "RED Boss Barricade Yellow Block Right",
+    "Item2": "Letter01"
+  },
+  {
+    "Item1": "BLU Station Hidden Block",
+    "Item2": "Letter21"
+  },
+  {
+    "Item1": "RED Boss Barricade On Brick Block",
+    "Item2": "VoltShroom"
+  },
+  {
+    "Item1": "BLU Block City Infront Of Chest",
+    "Item2": "StarPiece13"
+  },
+  {
+    "Item1": "BLU Station Hidden Panel",
+    "Item2": "StarPiece41"
+  },
+  {
+    "Item1": "BLU Block City Yellow Block 1",
+    "Item2": "RuinsKeyA"
+  },
+  {
+    "Item1": "BLU Block City In Chest",
+    "Item2": "Mushroom"
+  },
+  {
+    "Item1": "BLU Block City Yellow Block On Ledge",
+    "Item2": "Letter13"
+  },
+  {
+    "Item1": "BLU Block City Yellow Block 2",
+    "Item2": "UltraShroom"
+  },
+  {
+    "Item1": "BLU Block City Midair 2",
+    "Item2": "Letter08"
+  },
+  {
+    "Item1": "BLU Block City Midair 1",
+    "Item2": "StoreroomKey"
+  },
+  {
+    "Item1": "BLU Block City Midair 4",
+    "Item2": "RedBerryProxy2"
+  },
+  {
+    "Item1": "BLU Block City Midair 3",
+    "Item2": "Coin"
+  },
+  {
+    "Item1": "BLU Block City Midair 6",
+    "Item2": "POWBlock"
+  },
+  {
+    "Item1": "BLU Block City Midair 5",
+    "Item2": "HammerProxy1"
+  },
+  {
+    "Item1": "BLU Block City Midair 8",
+    "Item2": "StarPiece4E"
+  },
+  {
+    "Item1": "BLU Block City Midair 7",
+    "Item2": "RunawayPay"
+  },
+  {
+    "Item1": "BLU Block City Behind Building Block",
+    "Item2": "StarPiece48"
+  },
+  {
+    "Item1": "BLU Block City On Building",
+    "Item2": "ThunderBolt"
+  },
+  {
+    "Item1": "PNK Gourmet Guy Crossing Yellow Block 1",
+    "Item2": "Mystery"
+  },
+  {
+    "Item1": "PNK Gourmet Guy Crossing Gourmet Guy Reward",
+    "Item2": "TastyTonic"
+  },
+  {
+    "Item1": "PNK Gourmet Guy Crossing Hidden Block Right",
+    "Item2": "MapleSyrup"
+  },
+  {
+    "Item1": "PNK Gourmet Guy Crossing Yellow Block 2",
+    "Item2": "ShootingStar"
+  },
+  {
+    "Item1": "PNK Station In Chest",
+    "Item2": "StarPiece3A"
+  },
+  {
+    "Item1": "PNK Gourmet Guy Crossing Hidden Block Left",
+    "Item2": "StinkyHerb"
+  },
+  {
+    "Item1": "PNK Station Hidden Panel",
+    "Item2": "SuperShroom"
+  },
+  {
+    "Item1": "PNK Station Hidden Block",
+    "Item2": "MapleSyrup"
+  },
+  {
+    "Item1": "PNK Playhouse In Chest (Far Right)",
+    "Item2": "CrystalBerry"
+  },
+  {
+    "Item1": "PNK Playhouse Infront Of Chest (Right)",
+    "Item2": "SilverCredit"
+  },
+  {
+    "Item1": "PNK Playhouse In Chest (Right)",
+    "Item2": "Coin"
+  },
+  {
+    "Item1": "PNK Playhouse In Chest (Top Left)",
+    "Item2": "FireFlower"
+  },
+  {
+    "Item1": "GRN Station Hidden Block",
+    "Item2": "HoneySyrup"
+  },
+  {
+    "Item1": "PNK Playhouse Yellow Block",
+    "Item2": "ThreeStarPieces2"
+  },
+  {
+    "Item1": "GRN Treadmills/Slot Machine Infront Of Chest",
+    "Item2": "Coin"
+  },
+  {
+    "Item1": "GRN Station Hidden Panel",
+    "Item2": "Coin"
+  },
+  {
+    "Item1": "GRN Treadmills/Slot Machine On Treadmill 1",
+    "Item2": "StarPiece2E"
+  },
+  {
+    "Item1": "GRN Treadmills/Slot Machine In Chest",
+    "Item2": "MegaSmash"
+  },
+  {
+    "Item1": "GRN Treadmills/Slot Machine On Treadmill 3",
+    "Item2": "RedKey"
+  },
+  {
+    "Item1": "GRN Treadmills/Slot Machine On Treadmill 2",
+    "Item2": "JamminJelly"
+  },
+  {
+    "Item1": "GRN Treadmills/Slot Machine On Treadmill 5",
+    "Item2": "Coin"
+  },
+  {
+    "Item1": "GRN Treadmills/Slot Machine On Treadmill 4",
+    "Item2": "StarPiece2C"
+  },
+  {
+    "Item1": "GRN Treadmills/Slot Machine Hidden Room Center",
+    "Item2": "StarPiece32"
+  },
+  {
+    "Item1": "GRN Treadmills/Slot Machine On Treadmill 6",
+    "Item2": "SleepySheep"
+  },
+  {
+    "Item1": "GRN Treadmills/Slot Machine Hidden Room 2",
+    "Item2": "HammerProxy2"
+  },
+  {
+    "Item1": "GRN Treadmills/Slot Machine Hidden Room 1",
+    "Item2": "UltraShroom"
+  },
+  {
+    "Item1": "GRN Treadmills/Slot Machine Hidden Room 4",
+    "Item2": "HPPlusC"
+  },
+  {
+    "Item1": "GRN Treadmills/Slot Machine Hidden Room 3",
+    "Item2": "Coin"
+  },
+  {
+    "Item1": "GRN Treadmills/Slot Machine Hidden Room 6",
+    "Item2": "FireFlower"
+  },
+  {
+    "Item1": "GRN Treadmills/Slot Machine Hidden Room 5",
+    "Item2": "ThunderRage"
+  },
+  {
+    "Item1": "GRN Treadmills/Slot Machine Defeat Shy Guy",
+    "Item2": "BowUp1"
+  },
+  {
+    "Item1": "RED Station Hidden Panel",
+    "Item2": "VolcanoVase"
+  },
+  {
+    "Item1": "RED Station Hidden Block",
+    "Item2": "TastyTonic"
+  },
+  {
+    "Item1": "RED Moving Platforms Hidden Block Left",
+    "Item2": "PrettyLucky"
+  },
+  {
+    "Item1": "RED Moving Platforms Hidden Block Right",
+    "Item2": "StarPiece31"
+  },
+  {
+    "Item1": "RED Moving Platforms Hidden Block Center",
+    "Item2": "HappyFlowerA"
+  },
+  {
+    "Item1": "RED Moving Platforms Yellow Block 1",
+    "Item2": "StarPiece06"
+  },
+  {
+    "Item1": "RED Moving Platforms Yellow Block 2",
+    "Item2": "SuperShroom"
+  },
+  {
+    "Item1": "RED Lantern Ghost Watt Partner",
+    "Item2": "POWBlock"
+  },
+  {
+    "Item1": "BLU Anti-Guy Hall Yellow Block",
+    "Item2": "IcedPotato"
+  },
+  {
+    "Item1": "BLU Anti-Guy Hall In Chest",
+    "Item2": "StarPiece49"
+  },
+  {
+    "Item1": "PNK Tracks Hallway Yellow Block South",
+    "Item2": "Letter14"
+  },
+  {
+    "Item1": "BLU Anti-Guy Hall Hidden Block",
+    "Item2": "StarStone"
+  },
+  {
+    "Item1": "PNK Tracks Hallway Yellow Block North 2",
+    "Item2": "Coin"
+  },
+  {
+    "Item1": "PNK Tracks Hallway Yellow Block North 1",
+    "Item2": "KoopaFortressKeyC"
+  },
+  {
+    "Item1": "Whale Cove Over Flower 1",
+    "Item2": "FeelingFine"
+  },
+  {
+    "Item1": "PNK Tracks Hallway In MultiCoinBlock",
+    "Item2": "SuperShroom"
+  },
+  {
+    "Item1": "Whale Cove Behind Bush",
+    "Item2": "Egg"
+  },
+  {
+    "Item1": "Whale Cove Over Flower 2",
+    "Item2": "LifeShroom"
+  },
+  {
+    "Item1": "Beach On The Rocks",
+    "Item2": "GoombarioUp1"
+  },
+  {
+    "Item1": "Whale Cove In Palm Tree",
+    "Item2": "Coin"
+  },
+  {
+    "Item1": "Beach Hidden Block Right",
+    "Item2": "Coin"
+  },
+  {
+    "Item1": "Beach Hidden Block Left",
+    "Item2": "StopWatch"
+  },
+  {
+    "Item1": "Beach Over Flower 2",
+    "Item2": "POWBlock"
+  },
+  {
+    "Item1": "Beach Over Flower 1",
+    "Item2": "RuinsKeyB"
+  },
+  {
+    "Item1": "Beach In Palm Tree 2",
+    "Item2": "KootOldPhoto"
+  },
+  {
+    "Item1": "Beach In Palm Tree 1",
+    "Item2": "JamminJelly"
+  },
+  {
+    "Item1": "Beach In Palm Tree 4",
+    "Item2": "SnowmanBucket"
+  },
+  {
+    "Item1": "Beach In Palm Tree 3",
+    "Item2": "Coin"
+  },
+  {
+    "Item1": "Beach In Palm Tree 6",
+    "Item2": "Coin"
+  },
+  {
+    "Item1": "Beach In Palm Tree 5",
+    "Item2": "LifeShroom"
+  },
+  {
+    "Item1": "Village Cove Village Leader Reward",
+    "Item2": "StarPiece44"
+  },
+  {
+    "Item1": "Beach In Palm Tree 6 2",
+    "Item2": "Coin"
+  },
+  {
+    "Item1": "Village Cove In Palm Tree Right",
+    "Item2": "ParakarryUp1"
+  },
+  {
+    "Item1": "Village Cove In Palm Tree Left",
+    "Item2": "Mushroom"
+  },
+  {
+    "Item1": "Village Buildings Kolorado Volcano Vase Reward",
+    "Item2": "Letter05"
+  },
+  {
+    "Item1": "Village Cove Hidden Panel",
+    "Item2": "Coin"
+  },
+  {
+    "Item1": "Village Buildings Red Yoshi Kid Letter Reward",
+    "Item2": "Coin"
+  },
+  {
+    "Item1": "Village Buildings Yellow Yoshi Food Reward",
+    "Item2": "LakilesterUp2"
+  },
+  {
+    "Item1": "Village Buildings Shop Item 1",
+    "Item2": "DamageDodgeX"
+  },
+  {
+    "Item1": "Village Buildings In Palm Tree",
+    "Item2": "Coin"
+  },
+  {
+    "Item1": "Village Buildings Shop Item 3",
+    "Item2": "StrangeLeaf"
+  },
+  {
+    "Item1": "Village Buildings Shop Item 2",
+    "Item2": "Coin"
+  },
+  {
+    "Item1": "Village Buildings Shop Item 5",
+    "Item2": "StarPiece22"
+  },
+  {
+    "Item1": "Village Buildings Shop Item 4",
+    "Item2": "SuperShroom"
+  },
+  {
+    "Item1": "Sushi Tree In Volcano Chest",
+    "Item2": "LifeShroom"
+  },
+  {
+    "Item1": "Village Buildings Shop Item 6",
+    "Item2": "ThunderRage"
+  },
+  {
+    "Item1": "Sushi Tree In Island Tree",
+    "Item2": "Coin"
+  },
+  {
+    "Item1": "Sushi Tree On Island",
+    "Item2": "PouchD"
+  },
+  {
+    "Item1": "SE Jungle (Quake Hammer) Red Block",
+    "Item2": "IcePower"
+  },
+  {
+    "Item1": "Sushi Tree Sushie Partner",
+    "Item2": "Coin"
+  },
+  {
+    "Item1": "SE Jungle (Quake Hammer) Bush (Bottom Left)",
+    "Item2": "LakilesterUp1"
+  },
+  {
+    "Item1": "SE Jungle (Quake Hammer) Bush (Bottom Right)",
+    "Item2": "HPPlusA"
+  },
+  {
+    "Item1": "NE Jungle (Raven Statue) Underwater",
+    "Item2": "Coin"
+  },
+  {
+    "Item1": "SE Jungle (Quake Hammer) In Tree (Right)",
+    "Item2": "DeepFocus1"
+  },
+  {
+    "Item1": "Small Jungle Ledge In Tree",
+    "Item2": "Coin"
+  },
+  {
+    "Item1": "NE Jungle (Raven Statue) In Tree (Top Left)",
+    "Item2": "Coin"
+  },
+  {
+    "Item1": "SW Jungle (Super Block) Underwater 2",
+    "Item2": "MapleSuper"
+  },
+  {
+    "Item1": "SW Jungle (Super Block) Underwater 1",
+    "Item2": "FireFlower"
+  },
+  {
+    "Item1": "SW Jungle (Super Block) Hidden Block",
+    "Item2": "ThunderRage"
+  },
+  {
+    "Item1": "SW Jungle (Super Block) Underwater 3",
+    "Item2": "UltraShroom"
+  },
+  {
+    "Item1": "SW Jungle (Super Block) Bush (Bottom Left)",
+    "Item2": "Coin"
+  },
+  {
+    "Item1": "SW Jungle (Super Block) Bush (Top Right)",
+    "Item2": "ShootingStar"
+  },
+  {
+    "Item1": "SW Jungle (Super Block) In Tree (Right)",
+    "Item2": "FlowerSaverA"
+  },
+  {
+    "Item1": "SW Jungle (Super Block) In Tree (Top)",
+    "Item2": "StarPiece1B"
+  },
+  {
+    "Item1": "NW Jungle (Large Ledge) Bush 1",
+    "Item2": "MiracleWater"
+  },
+  {
+    "Item1": "NW Jungle (Large Ledge) In Tree On Ledge",
+    "Item2": "RightOn"
+  },
+  {
+    "Item1": "NW Jungle (Large Ledge) Bush 2",
+    "Item2": "Coin"
+  },
+  {
+    "Item1": "Western Dead End Underwater",
+    "Item2": "Coin"
+  },
+  {
+    "Item1": "NW Jungle (Large Ledge) In Tree Right",
+    "Item2": "FPPlusC"
+  },
+  {
+    "Item1": "Deep Jungle 1 Hidden Block",
+    "Item2": "StarPiece42"
+  },
+  {
+    "Item1": "Deep Jungle 1 In Tree (Vine)",
+    "Item2": "FertileSoil"
+  },
+  {
+    "Item1": "Deep Jungle 2 (Block Puzzle) Hidden Block",
+    "Item2": "MysteryNote"
+  },
+  {
+    "Item1": "Deep Jungle 1 In Tree (Hit)",
+    "Item2": "Coin"
+  },
+  {
+    "Item1": "Deep Jungle 3 Tree Vine Second Left",
+    "Item2": "ThunderBolt"
+  },
+  {
+    "Item1": "Deep Jungle 2 (Block Puzzle) In Tree (Left)",
+    "Item2": "SuperSmash"
+  },
+  {
+    "Item1": "Deep Jungle 4 (Ambush) In Tree (Right)",
+    "Item2": "Coin"
+  },
+  {
+    "Item1": "Deep Jungle 3 Tree Vine Far Right",
+    "Item2": "FireFlower"
+  },
+  {
+    "Item1": "Great Tree Vine Ascent End Of Vine",
+    "Item2": "Coin"
+  },
+  {
+    "Item1": "Deep Jungle 4 (Ambush) Hidden Panel",
+    "Item2": "ThreeStarPieces1"
+  },
+  {
+    "Item1": "Path to the Volcano Behind Tree",
+    "Item2": "BowserCastleKeyB"
+  },
+  {
+    "Item1": "Path to the Volcano Raphael Gift",
+    "Item2": "Letter11"
+  },
+  {
+    "Item1": "Central Cavern On Brick Block",
+    "Item2": "Coin"
+  },
+  {
+    "Item1": "Central Cavern On Stone Pillar",
+    "Item2": "Coin"
+  },
+  {
+    "Item1": "Central Cavern Yellow Block 2",
+    "Item2": "Coin"
+  },
+  {
+    "Item1": "Central Cavern Yellow Block 1",
+    "Item2": "Mystery"
+  },
+  {
+    "Item1": "Central Cavern Yellow Block 4",
+    "Item2": "Coin"
+  },
+  {
+    "Item1": "Central Cavern Yellow Block 3",
+    "Item2": "SushieUp2"
+  },
+  {
+    "Item1": "Flowing Lava Puzzle Hidden Block",
+    "Item2": "Cake"
+  },
+  {
+    "Item1": "Dizzy Stomp Room In Chest",
+    "Item2": "Egg"
+  },
+  {
+    "Item1": "Ultra Hammer Room In Big Chest",
+    "Item2": "DriedShroom"
+  },
+  {
+    "Item1": "Zipline Cavern Hidden Panel",
+    "Item2": "StarPiece3C"
+  },
+  {
+    "Item1": "Boss Room Yellow Block Left",
+    "Item2": "StarPiece1D"
+  },
+  {
+    "Item1": "Boss Antechamber Hidden Panel",
+    "Item2": "Coin"
+  },
+  {
+    "Item1": "(East) Petunia's Field Petunia Gift",
+    "Item2": "Coin"
+  },
+  {
+    "Item1": "Boss Room Yellow Block Right",
+    "Item2": "Coin"
+  },
+  {
+    "Item1": "(East) Petunia's Field In Tree 2",
+    "Item2": "HoneySyrup"
+  },
+  {
+    "Item1": "(East) Petunia's Field In Tree 1",
+    "Item2": "StarPiece4B"
+  },
+  {
+    "Item1": "(SW) Posie and Crystal Tree Posie Gift 2",
+    "Item2": "DizzyDial"
+  },
+  {
+    "Item1": "(East) Petunia's Field Hidden Panel",
+    "Item2": "KootTheTape"
+  },
+  {
+    "Item1": "(SE) Briar Platforming In The Flowers",
+    "Item2": "Coin"
+  },
+  {
+    "Item1": "(SW) Posie and Crystal Tree Posie Gift 1",
+    "Item2": "StarPiece09"
+  },
+  {
+    "Item1": "(SE) Briar Platforming In Tree 1",
+    "Item2": "Coconut"
+  },
+  {
+    "Item1": "(SE) Briar Platforming Left Side Vine",
+    "Item2": "YummyMeal"
+  },
+  {
+    "Item1": "(SE) Briar Platforming In Tree 2",
+    "Item2": "ParakarryUp2"
+  },
+  {
+    "Item1": "(East) Triple Tree Path Leftmost Vine",
+    "Item2": "Coin"
+  },
+  {
+    "Item1": "(East) Triple Tree Path Tree Puzzle Reward",
+    "Item2": "Coin"
+  },
+  {
+    "Item1": "(SE) Lily's Fountain In Tree",
+    "Item2": "LunarStone"
+  },
+  {
+    "Item1": "(SE) Lily's Fountain Lily Reward For WaterStone",
+    "Item2": "UltraShroom"
+  },
+  {
+    "Item1": "(West) Rosie's Trellis Rosie Gift",
+    "Item2": "Mushroom"
+  },
+  {
+    "Item1": "(NW) Lakilester In The Flowers",
+    "Item2": "ThreeStarPieces4"
+  },
+  {
+    "Item1": "(NW) Lakilester Cage Under Rock",
+    "Item2": "MapleSyrup"
+  },
+  {
+    "Item1": "(NW) Bubble Flower On Ledge",
+    "Item2": "WattUp2"
+  },
+  {
+    "Item1": "(NW) Lakilester Lakilester Partner",
+    "Item2": "StarPiece1C"
+  },
+  {
+    "Item1": "(NE) Elevators Stomp On Ledge",
+    "Item2": "MapleSyrup"
+  },
+  {
+    "Item1": "(NW) Bubble Flower Right Vine",
+    "Item2": "Coin"
+  },
+  {
+    "Item1": "(NE) Elevators In SuperBlock",
+    "Item2": "GoombarioUp2"
+  },
+  {
+    "Item1": "(NE) Elevators Leftside Vine",
+    "Item2": "KootEmptyWallet"
+  },
+  {
+    "Item1": "(NE) Fallen Logs In The Flowers",
+    "Item2": "Pebble"
+  },
+  {
+    "Item1": "(NE) Fallen Logs Hidden Block",
+    "Item2": "Coin"
+  },
+  {
+    "Item1": "(East) Old Well Well Reward",
+    "Item2": "SpinSmash"
+  },
+  {
+    "Item1": "Cloudy Climb On Cloud",
+    "Item2": "Coin"
+  },
+  {
+    "Item1": "(West) Path to Maze Lower Hidden Block",
+    "Item2": "LifeShroom"
+  },
+  {
+    "Item1": "(West) Path to Maze Upper Hidden Block",
+    "Item2": "SuperShroom"
+  },
+  {
+    "Item1": "(SE) Water Level Room Hidden Block",
+    "Item2": "StarPiece36"
+  },
+  {
+    "Item1": "(SE) Water Level Room Yellow Block",
+    "Item2": "ShootingStar"
+  },
+  {
+    "Item1": "(SE) Water Level Room In Tree 2",
+    "Item2": "VoltShroom"
+  },
+  {
+    "Item1": "(SE) Water Level Room In Tree 1",
+    "Item2": "Mushroom"
+  },
+  {
+    "Item1": "(SW) Path to Crystal Tree Central Vine",
+    "Item2": "Coconut"
+  },
+  {
+    "Item1": "(SE) Water Level Room Hidden Panel",
+    "Item2": "KooperUp2"
+  },
+  {
+    "Item1": "(SW) Path to Crystal Tree In Tree 2",
+    "Item2": "FireFlower"
+  },
+  {
+    "Item1": "(SW) Path to Crystal Tree In Tree 1",
+    "Item2": "ThreeStarPieces0"
+  },
+  {
+    "Item1": "Shiver City Mayor Area Mayor Penguin Gift",
+    "Item2": "StarPiece45"
+  },
+  {
+    "Item1": "(SW) Path to Crystal Tree Hidden Panel",
+    "Item2": "StopWatch"
+  },
+  {
+    "Item1": "Shiver City Mayor Area Chest In House",
+    "Item2": "Coin"
+  },
+  {
+    "Item1": "Shiver City Center Toad House Breakfast",
+    "Item2": "RuinsKeyC"
+  },
+  {
+    "Item1": "Shiver City Mayor Area Hidden Panel",
+    "Item2": "PayOff"
+  },
+  {
+    "Item1": "Shiver City Center Snowmen Gift 2",
+    "Item2": "Coin"
+  },
+  {
+    "Item1": "Shiver City Center Snowmen Gift 1",
+    "Item2": "Coin"
+  },
+  {
+    "Item1": "Shiver City Center Snowmen Gift 4",
+    "Item2": "Coin"
+  },
+  {
+    "Item1": "Shiver City Center Snowmen Gift 3",
+    "Item2": "Letter10"
+  },
+  {
+    "Item1": "Shiver City Center Shop Item 1",
+    "Item2": "Lime"
+  },
+  {
+    "Item1": "Shiver City Center Snowmen Gift 5",
+    "Item2": "SuperShroom"
+  },
+  {
+    "Item1": "Shiver City Center Shop Item 3",
+    "Item2": "DamageDodgeA"
+  },
+  {
+    "Item1": "Shiver City Center Shop Item 2",
+    "Item2": "KoopaLeaf"
+  },
+  {
+    "Item1": "Shiver City Center Shop Item 5",
+    "Item2": "SuperShroom"
+  },
+  {
+    "Item1": "Shiver City Center Shop Item 4",
+    "Item2": "BombetteUp1"
+  },
+  {
+    "Item1": "Shiver Snowfield In Tree Left",
+    "Item2": "Coin"
+  },
+  {
+    "Item1": "Shiver City Center Shop Item 6",
+    "Item2": "CrystalBall"
+  },
+  {
+    "Item1": "Shiver Snowfield Hidden Panel",
+    "Item2": "VoltShroom"
+  },
+  {
+    "Item1": "Shiver Snowfield Behind Tree Right",
+    "Item2": "HPPlusY"
+  },
+  {
+    "Item1": "Path to Starborn Valley Hidden Block",
+    "Item2": "Letter19"
+  },
+  {
+    "Item1": "Path to Starborn Valley Behind Icicle",
+    "Item2": "Letter06"
+  },
+  {
+    "Item1": "Starborn Valley Frost T. Letter Reward",
+    "Item2": "AttackFXB"
+  },
+  {
+    "Item1": "Starborn Valley Merle Gift",
+    "Item2": "Letter18"
+  },
+  {
+    "Item1": "Shiver Mountain Hills Bottom Path",
+    "Item2": "Coin"
+  },
+  {
+    "Item1": "Shiver Mountain Passage Hidden Block",
+    "Item2": "Berserker"
+  },
+  {
+    "Item1": "Shiver Mountain Tunnel Socket 1",
+    "Item2": "Coconut"
+  },
+  {
+    "Item1": "Shiver Mountain Hills In SuperBlock",
+    "Item2": "StarPiece40"
+  },
+  {
+    "Item1": "Shiver Mountain Tunnel Socket 3",
+    "Item2": "SleepStomp"
+  },
+  {
+    "Item1": "Shiver Mountain Tunnel Socket 2",
+    "Item2": "StarPiece17"
+  },
+  {
+    "Item1": "Shiver Mountain Peaks Left Ledge",
+    "Item2": "TastyTonic"
+  },
+  {
+    "Item1": "Shiver Mountain Peaks Red Block",
+    "Item2": "Coin"
+  },
+  {
+    "Item1": "Merlar's Sanctuary On Pedestal",
+    "Item2": "Coin"
+  },
+  {
+    "Item1": "Shiver City Pond Area In Frozen Pond",
+    "Item2": "Coin"
+  },
+  {
+    "Item1": "Blue Key Room In Chest",
+    "Item2": "DriedShroom"
+  },
+  {
+    "Item1": "Reflected Save Room Yellow Block",
+    "Item2": "HoneySyrup"
+  },
+  {
+    "Item1": "Red Key Room In Chest",
+    "Item2": "Letter09"
+  },
+  {
+    "Item1": "Shooting Star Room On The Ground",
+    "Item2": "MapleSyrup"
+  },
+  {
+    "Item1": "Blue Mirror Hall 2 In MultiCoinBlock Front",
+    "Item2": "Coin"
+  },
+  {
+    "Item1": "P-Down, D-Up Room In Chest",
+    "Item2": "SuperShroom"
+  },
+  {
+    "Item1": "Star Piece Cave On The Ground",
+    "Item2": "Coconut"
+  },
+  {
+    "Item1": "Huge Statue Room Hidden Panel",
+    "Item2": "DefendPlusA"
+  },
+  {
+    "Item1": "Huge Statue Room Yellow Block",
+    "Item2": "Coin"
+  },
+  {
+    "Item1": "Small Statue Room Hidden Panel",
+    "Item2": "StarPiece14"
+  },
+  {
+    "Item1": "Small Statue Room Hidden Block",
+    "Item2": "DizzyDial"
+  },
+  {
+    "Item1": "P-Up, D-Down Room In Chest",
+    "Item2": "DriedShroom"
+  },
+  {
+    "Item1": "Palace Key Room In Chest",
+    "Item2": "Coin"
+  },
+  {
+    "Item1": "Dark Cave 1 Yellow Block",
+    "Item2": "StarPiece4A"
+  },
+  {
+    "Item1": "Triple Dip Room In Chest",
+    "Item2": "FPPlusA"
+  },
+  {
+    "Item1": "Outside Lower Jail Yellow Block",
+    "Item2": "StarPiece1A"
+  },
+  {
+    "Item1": "Dark Cave 2 Yellow Block",
+    "Item2": "KooperShell"
+  },
+  {
+    "Item1": "Lava Channel 3 On Island 1",
+    "Item2": "Coin"
+  },
+  {
+    "Item1": "Outside Lower Jail Defeat Koopatrol Reward",
+    "Item2": "Coin"
+  },
+  {
+    "Item1": "Lava Key Room In Chest",
+    "Item2": "ShootingStar"
+  },
+  {
+    "Item1": "Lava Channel 3 On Island 2",
+    "Item2": "StarPiece51"
+  },
+  {
+    "Item1": "Lower Jail In Crate 2",
+    "Item2": "BlueBerryProxy2"
+  },
+  {
+    "Item1": "Lower Jail In Crate 1",
+    "Item2": "Letter25"
+  },
+  {
+    "Item1": "Battlement Yellow Block Center",
+    "Item2": "StarPiece01"
+  },
+  {
+    "Item1": "Battlement Yellow Block Left",
+    "Item2": "Coin"
+  },
+  {
+    "Item1": "Battlement On Ledge",
+    "Item2": "FireShield"
+  },
+  {
+    "Item1": "Battlement Yellow Block Right",
+    "Item2": "Dolly"
+  },
+  {
+    "Item1": "East Upper Jail Defeat Koopatrol Reward",
+    "Item2": "Coin"
+  },
+  {
+    "Item1": "Item Shop Shop Item 1",
+    "Item2": "DizzyDial"
+  },
+  {
+    "Item1": "West Upper Jail Defeat Koopatrol Reward",
+    "Item2": "Coin"
+  },
+  {
+    "Item1": "Item Shop Shop Item 3",
+    "Item2": "Coin"
+  },
+  {
+    "Item1": "Item Shop Shop Item 2",
+    "Item2": "AllorNothing"
+  },
+  {
+    "Item1": "Item Shop Shop Item 5",
+    "Item2": "Letter12"
+  },
+  {
+    "Item1": "Item Shop Shop Item 4",
+    "Item2": "PowerJump"
+  },
+  {
+    "Item1": "Castle Key Room On The Ground",
+    "Item2": "Mystery"
+  },
+  {
+    "Item1": "Item Shop Shop Item 6",
+    "Item2": "Lyrics"
+  },
+  {
+    "Item1": "Room with Hidden Door 1 Yellow Block",
+    "Item2": "FrightJar"
+  },
+  {
+    "Item1": "Ultra Shroom Room On The Ground",
+    "Item2": "Artifact"
+  },
+  {
+    "Item1": "Hidden Key Room On The Ground",
+    "Item2": "Coin"
+  },
+  {
+    "Item1": "Room with Hidden Door 1 Hidden Block",
+    "Item2": "StarPiece30"
+  },
+  {
+    "Item1": "Right Water Puzzle Hidden Block",
+    "Item2": "Coin"
+  },
+  {
+    "Item1": "Left Water Puzzle Top Left Ledge",
+    "Item2": "Letter07"
+  },
+  {
+    "Item1": "Hijacked Castle Entrance Hidden Block",
+    "Item2": "ThunderBolt"
+  },
+  {
+    "Item1": "Ruined Castle Grounds Muss T. Letter Reward",
+    "Item2": "ThunderRage"
+  },
+  {
+    "Item1": "Goomba Village Goompa Koopa Koot Favor",
+    "Item2": "Coin"
+  },
+  {
+    "Item1": "Forest Clearing Hidden Panel",
+    "Item2": "Mushroom"
+  },
+  {
+    "Item1": "Goomba Village Goombaria Dolly Reward",
+    "Item2": "StarPiece47"
+  },
+  {
+    "Item1": "Goomba Village Goompa Gift",
+    "Item2": "Coin"
+  },
+  {
+    "Item1": "Goomba Village Goompapa Letter Reward 1",
+    "Item2": "Letter16"
+  },
+  {
+    "Item1": "Goomba Village On The Balcony",
+    "Item2": "Coin"
+  },
+  {
+    "Item1": "Goomba Village Goompapa Letter Reward 2",
+    "Item2": "Coin"
+  },
+  {
+    "Item1": "Goomba Village Goombario Partner",
+    "Item2": "StarPiece2D"
+  },
+  {
+    "Item1": "Goomba Village Goomnut Tree",
+    "Item2": "Coin"
+  },
+  {
+    "Item1": "Bottom of the Cliff Above Stone Block",
+    "Item2": "Parakarry"
+  },
+  {
+    "Item1": "Goomba Village Bush Bottom Right",
+    "Item2": "Coin"
+  },
+  {
+    "Item1": "Bottom of the Cliff Floating Coin 1",
+    "Item2": "DeepFocus2"
+  },
+  {
+    "Item1": "Bottom of the Cliff Block On Ground",
+    "Item2": "DizzyStomp"
+  },
+  {
+    "Item1": "Bottom of the Cliff Floating Coin 3",
+    "Item2": "RepelGel"
+  },
+  {
+    "Item1": "Bottom of the Cliff Floating Coin 2",
+    "Item2": "RuinsKeyD"
+  },
+  {
+    "Item1": "Bottom of the Cliff Upper Ledge",
+    "Item2": "Coin"
+  },
+  {
+    "Item1": "Bottom of the Cliff Floating Coin 4",
+    "Item2": "LifeShroom"
+  },
+  {
+    "Item1": "Bottom of the Cliff Hidden Panel",
+    "Item2": "Coin"
+  },
+  {
+    "Item1": "Bottom of the Cliff In Tree",
+    "Item2": "StarPiece1F"
+  },
+  {
+    "Item1": "Jr. Troopa's Playground In Hammer Bush",
+    "Item2": "PDownDUp"
+  },
+  {
+    "Item1": "Jr. Troopa's Playground In Tree Right",
+    "Item2": "MapleSyrup"
+  },
+  {
+    "Item1": "Jr. Troopa's Playground Bush Bottom Right",
+    "Item2": "StarPiece20"
+  },
+  {
+    "Item1": "Jr. Troopa's Playground Bush Right",
+    "Item2": "Coin"
+  },
+  {
+    "Item1": "Jr. Troopa's Playground Bush Top 2",
+    "Item2": "Coin"
+  },
+  {
+    "Item1": "Jr. Troopa's Playground Bush Top 1",
+    "Item2": "StarPiece33"
+  },
+  {
+    "Item1": "Jr. Troopa's Playground Bush Top Left",
+    "Item2": "FryingPan"
+  },
+  {
+    "Item1": "Jr. Troopa's Playground Bush Center",
+    "Item2": "SuperShroom"
+  },
+  {
+    "Item1": "Jr. Troopa's Playground In Tree Top",
+    "Item2": "ShootingStar"
+  },
+  {
+    "Item1": "Jr. Troopa's Playground In Tree Left",
+    "Item2": "MegaJump"
+  },
+  {
+    "Item1": "Behind the Village On Ledge",
+    "Item2": "ShootingStar"
+  },
+  {
+    "Item1": "Goomba Road 2 Red Block",
+    "Item2": "Coin"
+  },
+  {
+    "Item1": "Behind the Village In Tree",
+    "Item2": "DizzyAttack"
+  },
+  {
+    "Item1": "Goomba Road 1 Yellow Block Left",
+    "Item2": "StarPiece04"
+  },
+  {
+    "Item1": "Goomba Road 2 On the Sign",
+    "Item2": "HPDrain"
+  },
+  {
+    "Item1": "Toad Town Entrance Chest On Roof",
+    "Item2": "SnowmanDoll"
+  },
+  {
+    "Item1": "Goomba Road 1 Yellow Block Right",
+    "Item2": "SuperShroom"
+  },
+  {
+    "Item1": "Goomba King's Castle Hidden Yellow Block",
+    "Item2": "StarPiece24"
+  },
+  {
+    "Item1": "Toad Town Entrance Yellow Block",
+    "Item2": "Coin"
+  },
+  {
+    "Item1": "Goomba King's Castle In Tree Right Of Cliff",
+    "Item2": "Coin"
+  },
+  {
+    "Item1": "Goomba King's Castle In Tree Left Of Fortress",
+    "Item2": "SuperShroom"
+  },
+  {
+    "Item1": "Mario's House Luigi Koopa Koot Favor",
+    "Item2": "LifeShroom"
+  },
+  {
+    "Item1": "Goomba King's Castle Hidden Panel",
+    "Item2": "BumpAttack"
+  },
+  {
+    "Item1": "Gate District Russ T. Dictionary Reward",
+    "Item2": "ToyTrain"
+  },
+  {
+    "Item1": "Gate District Sushie Island",
+    "Item2": "MoneyMoney"
+  },
+  {
+    "Item1": "Gate District Miss T. Letter Reward",
+    "Item2": "SnowmanScarf"
+  },
+  {
+    "Item1": "Gate District Dojo: Chan",
+    "Item2": "PulseStone"
+  },
+  {
+    "Item1": "Gate District Radio Trade Event 1 Reward",
+    "Item2": "StarPiece0F"
+  },
+  {
+    "Item1": "Gate District Dojo: Master 1",
+    "Item2": "Coin"
+  },
+  {
+    "Item1": "Gate District Dojo: Lee",
+    "Item2": "ShootingStar"
+  },
+  {
+    "Item1": "Gate District Dojo: Master 3",
+    "Item2": "Coin"
+  },
+  {
+    "Item1": "Gate District Dojo: Master 2",
+    "Item2": "StarPiece3E"
+  },
+  {
+    "Item1": "Gate District Shop Item 2",
+    "Item2": "FireFlower"
+  },
+  {
+    "Item1": "Gate District Shop Item 1",
+    "Item2": "Coin"
+  },
+  {
+    "Item1": "Gate District Shop Item 4",
+    "Item2": "ForestPass"
+  },
+  {
+    "Item1": "Gate District Shop Item 3",
+    "Item2": "KootMerluvleeAutograph"
+  },
+  {
+    "Item1": "Gate District Shop Item 6",
+    "Item2": "SleepySheep"
+  },
+  {
+    "Item1": "Gate District Shop Item 5",
+    "Item2": "BootsProxy3"
+  },
+  {
+    "Item1": "Plaza District Merlon House Stomping",
+    "Item2": "StarPiece34"
+  },
+  {
+    "Item1": "Gate District Hidden Panel",
+    "Item2": "LastStand"
+  },
+  {
+    "Item1": "Plaza District Postmaster MailBag Reward",
+    "Item2": "Coin"
+  },
+  {
+    "Item1": "Plaza District Rowf's Calculator Reward",
+    "Item2": "HappyFlowerX"
+  },
+  {
+    "Item1": "Plaza District Rowf's Shop Set 1 - 1",
+    "Item2": "Coin"
+  },
+  {
+    "Item1": "Plaza District In Tree",
+    "Item2": "Coin"
+  },
+  {
+    "Item1": "Plaza District Rowf's Shop Set 1 - 3",
+    "Item2": "StarPiece0E"
+  },
+  {
+    "Item1": "Plaza District Rowf's Shop Set 1 - 2",
+    "Item2": "Coin"
+  },
+  {
+    "Item1": "Plaza District Rowf's Shop Set 2 - 1",
+    "Item2": "Coconut"
+  },
+  {
+    "Item1": "Plaza District Rowf's Shop Set 1 - 4",
+    "Item2": "UltraShroom"
+  },
+  {
+    "Item1": "Plaza District Rowf's Shop Set 2 - 3",
+    "Item2": "Coin"
+  },
+  {
+    "Item1": "Plaza District Rowf's Shop Set 2 - 2",
+    "Item2": "StarPiece15"
+  },
+  {
+    "Item1": "Plaza District Rowf's Shop Set 3 - 2",
+    "Item2": "Coin"
+  },
+  {
+    "Item1": "Plaza District Rowf's Shop Set 3 - 1",
+    "Item2": "PyramidStone"
+  },
+  {
+    "Item1": "Plaza District Rowf's Shop Set 4 - 1",
+    "Item2": "StarPiece11"
+  },
+  {
+    "Item1": "Plaza District Rowf's Shop Set 3 - 3",
+    "Item2": "SnowmanDoll"
+  },
+  {
+    "Item1": "Plaza District Rowf's Shop Set 4 - 3",
+    "Item2": "TubbaCastleKeyA"
+  },
+  {
+    "Item1": "Plaza District Rowf's Shop Set 4 - 2",
+    "Item2": "SleepySheep"
+  },
+  {
+    "Item1": "Plaza District Rowf's Shop Set 5 - 2",
+    "Item2": "AttackFXE"
+  },
+  {
+    "Item1": "Plaza District Rowf's Shop Set 5 - 1",
+    "Item2": "FireFlower"
+  },
+  {
+    "Item1": "Southern District Inside Blue House",
+    "Item2": "Coin"
+  },
+  {
+    "Item1": "Plaza District Rowf's Shop Set 5 - 3",
+    "Item2": "FlowerFinder"
+  },
+  {
+    "Item1": "Southern District Tayce T. Frying Pan Reward",
+    "Item2": "MapleSyrup"
+  },
+  {
+    "Item1": "Southern District Bub-ulb Gift",
+    "Item2": "BlueKey"
+  },
+  {
+    "Item1": "Southern District Fice T. Forest Pass",
+    "Item2": "Coconut"
+  },
+  {
+    "Item1": "Station District Dane T. Letter Reward 1",
+    "Item2": "BooWeight"
+  },
+  {
+    "Item1": "Southern District Hidden Panel",
+    "Item2": "Apple"
+  },
+  {
+    "Item1": "Station District Hidden Panel",
+    "Item2": "KoopaFortressKeyA"
+  },
+  {
+    "Item1": "Station District Dane T. Letter Reward 2",
+    "Item2": "StoneCap"
+  },
+  {
+    "Item1": "Residental District Storeroom Item 2",
+    "Item2": "Coin"
+  },
+  {
+    "Item1": "Residental District Storeroom Item 1",
+    "Item2": "Coin"
+  },
+  {
+    "Item1": "Residental District Storeroom Item 4",
+    "Item2": "StinkyHerb"
+  },
+  {
+    "Item1": "Residental District Storeroom Item 3",
+    "Item2": "JumpCharge0"
+  },
+  {
+    "Item1": "Residental District Shop Item 2",
+    "Item2": "LifeShroom"
+  },
+  {
+    "Item1": "Residental District Shop Item 1",
+    "Item2": "CakeMix"
+  },
+  {
+    "Item1": "Residental District Shop Item 4",
+    "Item2": "RepelGel"
+  }
+]

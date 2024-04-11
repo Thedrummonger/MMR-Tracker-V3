@@ -53,7 +53,7 @@ namespace TestingForm.GameDataCreation.Minecraft
                         Name = location,
                         OriginalItem = "advancement",
                         ValidItemTypes = ["item"],
-                        SpoilerData = new MMRData.SpoilerlogReference() { NetID = location, Tags = GetLocationTags(location) },
+                        SpoilerData = new MMRData.SpoilerlogReference() { NetIDs = [location], Tags = GetLocationTags(location) },
                     };
                     Logicdictionary.LocationList.Add(location, locationEntry);
                 }
@@ -69,7 +69,7 @@ namespace TestingForm.GameDataCreation.Minecraft
                         Name = location,
                         OriginalItem = "advancement",
                         ValidItemTypes = ["item"],
-                        SpoilerData = new MMRData.SpoilerlogReference() { NetID = location, Tags = GetLocationTags(location) },
+                        SpoilerData = new MMRData.SpoilerlogReference() { NetIDs = [location], Tags = GetLocationTags(location) },
                     };
                     Logicdictionary.LocationList.Add(location, locationEntry);
                 }
@@ -105,7 +105,7 @@ namespace TestingForm.GameDataCreation.Minecraft
                     ID = item,
                     ItemTypes = ["item"],
                     Name = item,
-                    SpoilerData = new MMRData.SpoilerlogReference() { NetID = item },
+                    SpoilerData = new MMRData.SpoilerlogReference() { NetIDs = [item] },
                 };
                 Logicdictionary.ItemList.Add(item, itemEntry);
             }

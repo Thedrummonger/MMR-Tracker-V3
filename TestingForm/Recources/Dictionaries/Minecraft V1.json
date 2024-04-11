@@ -22,7 +22,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetID": "Who is Cutting Onions?"
+        "NetIDs": [
+          "Who is Cutting Onions?"
+        ]
       }
     },
     "Oh Shiny": {
@@ -39,7 +41,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetID": "Oh Shiny"
+        "NetIDs": [
+          "Oh Shiny"
+        ]
       }
     },
     "Suit Up": {
@@ -56,7 +60,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetID": "Suit Up"
+        "NetIDs": [
+          "Suit Up"
+        ]
       }
     },
     "Very Very Frightening": {
@@ -75,7 +81,9 @@
         "Tags": [
           "hard"
         ],
-        "NetID": "Very Very Frightening"
+        "NetIDs": [
+          "Very Very Frightening"
+        ]
       }
     },
     "Hot Stuff": {
@@ -92,7 +100,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetID": "Hot Stuff"
+        "NetIDs": [
+          "Hot Stuff"
+        ]
       }
     },
     "Best Friends Forever": {
@@ -109,7 +119,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetID": "Best Friends Forever"
+        "NetIDs": [
+          "Best Friends Forever"
+        ]
       }
     },
     "Not Today, Thank You": {
@@ -126,7 +138,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetID": "Not Today, Thank You"
+        "NetIDs": [
+          "Not Today, Thank You"
+        ]
       }
     },
     "Isn't It Iron Pick": {
@@ -143,7 +157,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetID": "Isn't It Iron Pick"
+        "NetIDs": [
+          "Isn't It Iron Pick"
+        ]
       }
     },
     "Fishy Business": {
@@ -160,7 +176,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetID": "Fishy Business"
+        "NetIDs": [
+          "Fishy Business"
+        ]
       }
     },
     "Sniper Duel": {
@@ -177,7 +195,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetID": "Sniper Duel"
+        "NetIDs": [
+          "Sniper Duel"
+        ]
       }
     },
     "Bullseye": {
@@ -194,7 +214,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetID": "Bullseye"
+        "NetIDs": [
+          "Bullseye"
+        ]
       }
     },
     "Stone Age": {
@@ -211,7 +233,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetID": "Stone Age"
+        "NetIDs": [
+          "Stone Age"
+        ]
       }
     },
     "Two Birds, One Arrow": {
@@ -230,7 +254,9 @@
         "Tags": [
           "hard"
         ],
-        "NetID": "Two Birds, One Arrow"
+        "NetIDs": [
+          "Two Birds, One Arrow"
+        ]
       }
     },
     "Getting an Upgrade": {
@@ -247,7 +273,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetID": "Getting an Upgrade"
+        "NetIDs": [
+          "Getting an Upgrade"
+        ]
       }
     },
     "Tactical Fishing": {
@@ -264,7 +292,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetID": "Tactical Fishing"
+        "NetIDs": [
+          "Tactical Fishing"
+        ]
       }
     },
     "Zombie Doctor": {
@@ -281,7 +311,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetID": "Zombie Doctor"
+        "NetIDs": [
+          "Zombie Doctor"
+        ]
       }
     },
     "Ice Bucket Challenge": {
@@ -298,7 +330,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetID": "Ice Bucket Challenge"
+        "NetIDs": [
+          "Ice Bucket Challenge"
+        ]
       }
     },
     "Take Aim": {
@@ -315,7 +349,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetID": "Take Aim"
+        "NetIDs": [
+          "Take Aim"
+        ]
       }
     },
     "Total Beelocation": {
@@ -332,7 +368,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetID": "Total Beelocation"
+        "NetIDs": [
+          "Total Beelocation"
+        ]
       }
     },
     "Arbalistic": {
@@ -351,7 +389,9 @@
         "Tags": [
           "hard"
         ],
-        "NetID": "Arbalistic"
+        "NetIDs": [
+          "Arbalistic"
+        ]
       }
     },
     "Acquire Hardware": {
@@ -368,7 +408,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetID": "Acquire Hardware"
+        "NetIDs": [
+          "Acquire Hardware"
+        ]
       }
     },
     "Cover Me With Diamonds": {
@@ -385,7 +427,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetID": "Cover Me With Diamonds"
+        "NetIDs": [
+          "Cover Me With Diamonds"
+        ]
       }
     },
     "Hired Help": {
@@ -402,7 +446,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetID": "Hired Help"
+        "NetIDs": [
+          "Hired Help"
+        ]
       }
     },
     "Sweet Dreams": {
@@ -419,7 +465,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetID": "Sweet Dreams"
+        "NetIDs": [
+          "Sweet Dreams"
+        ]
       }
     },
     "Adventure": {
@@ -436,7 +484,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetID": "Adventure"
+        "NetIDs": [
+          "Adventure"
+        ]
       }
     },
     "Monsters Hunted": {
@@ -459,7 +509,9 @@
           "post_game",
           "wither"
         ],
-        "NetID": "Monsters Hunted"
+        "NetIDs": [
+          "Monsters Hunted"
+        ]
       }
     },
     "Enchanter": {
@@ -476,7 +528,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetID": "Enchanter"
+        "NetIDs": [
+          "Enchanter"
+        ]
       }
     },
     "Eye Spy": {
@@ -493,7 +547,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetID": "Eye Spy"
+        "NetIDs": [
+          "Eye Spy"
+        ]
       }
     },
     "Monster Hunter": {
@@ -510,7 +566,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetID": "Monster Hunter"
+        "NetIDs": [
+          "Monster Hunter"
+        ]
       }
     },
     "Adventuring Time": {
@@ -529,7 +587,9 @@
         "Tags": [
           "unreasonable"
         ],
-        "NetID": "Adventuring Time"
+        "NetIDs": [
+          "Adventuring Time"
+        ]
       }
     },
     "A Seedy Place": {
@@ -546,7 +606,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetID": "A Seedy Place"
+        "NetIDs": [
+          "A Seedy Place"
+        ]
       }
     },
     "Husbandry": {
@@ -563,7 +625,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetID": "Husbandry"
+        "NetIDs": [
+          "Husbandry"
+        ]
       }
     },
     "Bee Our Guest": {
@@ -580,7 +644,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetID": "Bee Our Guest"
+        "NetIDs": [
+          "Bee Our Guest"
+        ]
       }
     },
     "Diamonds!": {
@@ -597,7 +663,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetID": "Diamonds!"
+        "NetIDs": [
+          "Diamonds!"
+        ]
       }
     },
     "A Throwaway Joke": {
@@ -614,7 +682,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetID": "A Throwaway Joke"
+        "NetIDs": [
+          "A Throwaway Joke"
+        ]
       }
     },
     "Minecraft": {
@@ -631,7 +701,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetID": "Minecraft"
+        "NetIDs": [
+          "Minecraft"
+        ]
       }
     },
     "Sticky Situation": {
@@ -648,7 +720,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetID": "Sticky Situation"
+        "NetIDs": [
+          "Sticky Situation"
+        ]
       }
     },
     "Ol' Betsy": {
@@ -665,7 +739,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetID": "Ol' Betsy"
+        "NetIDs": [
+          "Ol' Betsy"
+        ]
       }
     },
     "The Parrots and the Bats": {
@@ -682,7 +758,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetID": "The Parrots and the Bats"
+        "NetIDs": [
+          "The Parrots and the Bats"
+        ]
       }
     },
     "Getting Wood": {
@@ -699,7 +777,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetID": "Getting Wood"
+        "NetIDs": [
+          "Getting Wood"
+        ]
       }
     },
     "Time to Mine!": {
@@ -716,7 +796,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetID": "Time to Mine!"
+        "NetIDs": [
+          "Time to Mine!"
+        ]
       }
     },
     "Hot Topic": {
@@ -733,7 +815,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetID": "Hot Topic"
+        "NetIDs": [
+          "Hot Topic"
+        ]
       }
     },
     "Bake Bread": {
@@ -750,7 +834,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetID": "Bake Bread"
+        "NetIDs": [
+          "Bake Bread"
+        ]
       }
     },
     "The Lie": {
@@ -767,7 +853,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetID": "The Lie"
+        "NetIDs": [
+          "The Lie"
+        ]
       }
     },
     "On a Rail": {
@@ -784,7 +872,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetID": "On a Rail"
+        "NetIDs": [
+          "On a Rail"
+        ]
       }
     },
     "Time to Strike!": {
@@ -801,7 +891,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetID": "Time to Strike!"
+        "NetIDs": [
+          "Time to Strike!"
+        ]
       }
     },
     "Cow Tipper": {
@@ -818,7 +910,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetID": "Cow Tipper"
+        "NetIDs": [
+          "Cow Tipper"
+        ]
       }
     },
     "When Pigs Fly": {
@@ -835,7 +929,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetID": "When Pigs Fly"
+        "NetIDs": [
+          "When Pigs Fly"
+        ]
       }
     },
     "Librarian": {
@@ -852,7 +948,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetID": "Librarian"
+        "NetIDs": [
+          "Librarian"
+        ]
       }
     },
     "Wax On": {
@@ -869,7 +967,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetID": "Wax On"
+        "NetIDs": [
+          "Wax On"
+        ]
       }
     },
     "Wax Off": {
@@ -886,7 +986,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetID": "Wax Off"
+        "NetIDs": [
+          "Wax Off"
+        ]
       }
     },
     "The Cutest Predator": {
@@ -903,7 +1005,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetID": "The Cutest Predator"
+        "NetIDs": [
+          "The Cutest Predator"
+        ]
       }
     },
     "The Healing Power of Friendship": {
@@ -920,7 +1024,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetID": "The Healing Power of Friendship"
+        "NetIDs": [
+          "The Healing Power of Friendship"
+        ]
       }
     },
     "Is It a Bird?": {
@@ -937,7 +1043,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetID": "Is It a Bird?"
+        "NetIDs": [
+          "Is It a Bird?"
+        ]
       }
     },
     "Surge Protector": {
@@ -956,7 +1064,9 @@
         "Tags": [
           "hard"
         ],
-        "NetID": "Surge Protector"
+        "NetIDs": [
+          "Surge Protector"
+        ]
       }
     },
     "Light as a Rabbit": {
@@ -973,7 +1083,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetID": "Light as a Rabbit"
+        "NetIDs": [
+          "Light as a Rabbit"
+        ]
       }
     },
     "Glow and Behold!": {
@@ -990,7 +1102,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetID": "Glow and Behold!"
+        "NetIDs": [
+          "Glow and Behold!"
+        ]
       }
     },
     "Whatever Floats Your Goat!": {
@@ -1007,7 +1121,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetID": "Whatever Floats Your Goat!"
+        "NetIDs": [
+          "Whatever Floats Your Goat!"
+        ]
       }
     },
     "Caves & Cliffs": {
@@ -1024,7 +1140,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetID": "Caves & Cliffs"
+        "NetIDs": [
+          "Caves & Cliffs"
+        ]
       }
     },
     "Sound of Music": {
@@ -1043,7 +1161,9 @@
         "Tags": [
           "hard"
         ],
-        "NetID": "Sound of Music"
+        "NetIDs": [
+          "Sound of Music"
+        ]
       }
     },
     "Bukkit Bukkit": {
@@ -1060,7 +1180,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetID": "Bukkit Bukkit"
+        "NetIDs": [
+          "Bukkit Bukkit"
+        ]
       }
     },
     "It Spreads": {
@@ -1077,7 +1199,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetID": "It Spreads"
+        "NetIDs": [
+          "It Spreads"
+        ]
       }
     },
     "Sneak 100": {
@@ -1094,7 +1218,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetID": "Sneak 100"
+        "NetIDs": [
+          "Sneak 100"
+        ]
       }
     },
     "When the Squad Hops into Town": {
@@ -1113,7 +1239,9 @@
         "Tags": [
           "hard"
         ],
-        "NetID": "When the Squad Hops into Town"
+        "NetIDs": [
+          "When the Squad Hops into Town"
+        ]
       }
     },
     "Hot Tourist Destinations": {
@@ -1130,7 +1258,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetID": "Hot Tourist Destinations"
+        "NetIDs": [
+          "Hot Tourist Destinations"
+        ]
       }
     },
     "This Boat Has Legs": {
@@ -1147,7 +1277,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetID": "This Boat Has Legs"
+        "NetIDs": [
+          "This Boat Has Legs"
+        ]
       }
     },
     "Nether": {
@@ -1164,7 +1296,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetID": "Nether"
+        "NetIDs": [
+          "Nether"
+        ]
       }
     },
     "Two by Two": {
@@ -1183,7 +1317,9 @@
         "Tags": [
           "hard"
         ],
-        "NetID": "Two by Two"
+        "NetIDs": [
+          "Two by Two"
+        ]
       }
     },
     "We Need to Go Deeper": {
@@ -1200,7 +1336,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetID": "We Need to Go Deeper"
+        "NetIDs": [
+          "We Need to Go Deeper"
+        ]
       }
     },
     "Not Quite \"Nine\" Lives": {
@@ -1217,7 +1355,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetID": "Not Quite \"Nine\" Lives"
+        "NetIDs": [
+          "Not Quite \"Nine\" Lives"
+        ]
       }
     },
     "Return to Sender": {
@@ -1234,7 +1374,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetID": "Return to Sender"
+        "NetIDs": [
+          "Return to Sender"
+        ]
       }
     },
     "Serious Dedication": {
@@ -1251,7 +1393,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetID": "Serious Dedication"
+        "NetIDs": [
+          "Serious Dedication"
+        ]
       }
     },
     "Hidden in the Depths": {
@@ -1268,7 +1412,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetID": "Hidden in the Depths"
+        "NetIDs": [
+          "Hidden in the Depths"
+        ]
       }
     },
     "Subspace Bubble": {
@@ -1285,7 +1431,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetID": "Subspace Bubble"
+        "NetIDs": [
+          "Subspace Bubble"
+        ]
       }
     },
     "Country Lode, Take Me Home": {
@@ -1302,7 +1450,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetID": "Country Lode, Take Me Home"
+        "NetIDs": [
+          "Country Lode, Take Me Home"
+        ]
       }
     },
     "Uneasy Alliance": {
@@ -1321,7 +1471,9 @@
         "Tags": [
           "hard"
         ],
-        "NetID": "Uneasy Alliance"
+        "NetIDs": [
+          "Uneasy Alliance"
+        ]
       }
     },
     "Cover Me in Debris": {
@@ -1340,7 +1492,9 @@
         "Tags": [
           "hard"
         ],
-        "NetID": "Cover Me in Debris"
+        "NetIDs": [
+          "Cover Me in Debris"
+        ]
       }
     },
     "Is It a Balloon?": {
@@ -1357,7 +1511,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetID": "Is It a Balloon?"
+        "NetIDs": [
+          "Is It a Balloon?"
+        ]
       }
     },
     "Feels like home": {
@@ -1374,7 +1530,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetID": "Feels like home"
+        "NetIDs": [
+          "Feels like home"
+        ]
       }
     },
     "With Our Powers Combined!": {
@@ -1393,7 +1551,9 @@
         "Tags": [
           "hard"
         ],
-        "NetID": "With Our Powers Combined!"
+        "NetIDs": [
+          "With Our Powers Combined!"
+        ]
       }
     },
     "Free the End": {
@@ -1413,7 +1573,9 @@
           "post_game",
           "ender_dragon"
         ],
-        "NetID": "Free the End"
+        "NetIDs": [
+          "Free the End"
+        ]
       }
     },
     "The Next Generation": {
@@ -1433,7 +1595,9 @@
           "post_game",
           "ender_dragon"
         ],
-        "NetID": "The Next Generation"
+        "NetIDs": [
+          "The Next Generation"
+        ]
       }
     },
     "Remote Getaway": {
@@ -1450,7 +1614,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetID": "Remote Getaway"
+        "NetIDs": [
+          "Remote Getaway"
+        ]
       }
     },
     "The End... Again...": {
@@ -1470,7 +1636,9 @@
           "post_game",
           "ender_dragon"
         ],
-        "NetID": "The End... Again..."
+        "NetIDs": [
+          "The End... Again..."
+        ]
       }
     },
     "You Need a Mint": {
@@ -1490,7 +1658,9 @@
           "post_game",
           "ender_dragon"
         ],
-        "NetID": "You Need a Mint"
+        "NetIDs": [
+          "You Need a Mint"
+        ]
       }
     },
     "The End": {
@@ -1507,7 +1677,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetID": "The End"
+        "NetIDs": [
+          "The End"
+        ]
       }
     },
     "The End?": {
@@ -1524,7 +1696,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetID": "The End?"
+        "NetIDs": [
+          "The End?"
+        ]
       }
     },
     "Is It a Plane?": {
@@ -1544,7 +1718,9 @@
           "post_game",
           "ender_dragon"
         ],
-        "NetID": "Is It a Plane?"
+        "NetIDs": [
+          "Is It a Plane?"
+        ]
       }
     },
     "Postmortal": {
@@ -1561,7 +1737,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetID": "Postmortal"
+        "NetIDs": [
+          "Postmortal"
+        ]
       }
     },
     "Hero of the Village": {
@@ -1578,7 +1756,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetID": "Hero of the Village"
+        "NetIDs": [
+          "Hero of the Village"
+        ]
       }
     },
     "A Balanced Diet": {
@@ -1597,7 +1777,9 @@
         "Tags": [
           "hard"
         ],
-        "NetID": "A Balanced Diet"
+        "NetIDs": [
+          "A Balanced Diet"
+        ]
       }
     },
     "What a Deal!": {
@@ -1614,7 +1796,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetID": "What a Deal!"
+        "NetIDs": [
+          "What a Deal!"
+        ]
       }
     },
     "A Complete Catalogue": {
@@ -1633,7 +1817,9 @@
         "Tags": [
           "hard"
         ],
-        "NetID": "A Complete Catalogue"
+        "NetIDs": [
+          "A Complete Catalogue"
+        ]
       }
     },
     "Star Trader": {
@@ -1652,7 +1838,9 @@
         "Tags": [
           "hard"
         ],
-        "NetID": "Star Trader"
+        "NetIDs": [
+          "Star Trader"
+        ]
       }
     },
     "A Furious Cocktail": {
@@ -1673,7 +1861,9 @@
           "post_game",
           "wither"
         ],
-        "NetID": "A Furious Cocktail"
+        "NetIDs": [
+          "A Furious Cocktail"
+        ]
       }
     },
     "Bring Home the Beacon": {
@@ -1693,7 +1883,9 @@
           "post_game",
           "wither"
         ],
-        "NetID": "Bring Home the Beacon"
+        "NetIDs": [
+          "Bring Home the Beacon"
+        ]
       }
     },
     "Local Brewery": {
@@ -1710,7 +1902,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetID": "Local Brewery"
+        "NetIDs": [
+          "Local Brewery"
+        ]
       }
     },
     "How Did We Get Here?": {
@@ -1731,7 +1925,9 @@
           "post_game",
           "wither"
         ],
-        "NetID": "How Did We Get Here?"
+        "NetIDs": [
+          "How Did We Get Here?"
+        ]
       }
     },
     "Spooky Scary Skeleton": {
@@ -1748,7 +1944,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetID": "Spooky Scary Skeleton"
+        "NetIDs": [
+          "Spooky Scary Skeleton"
+        ]
       }
     },
     "Into Fire": {
@@ -1765,7 +1963,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetID": "Into Fire"
+        "NetIDs": [
+          "Into Fire"
+        ]
       }
     },
     "Beaconator": {
@@ -1786,7 +1986,9 @@
           "post_game",
           "wither"
         ],
-        "NetID": "Beaconator"
+        "NetIDs": [
+          "Beaconator"
+        ]
       }
     },
     "Withering Heights": {
@@ -1806,7 +2008,9 @@
           "post_game",
           "wither"
         ],
-        "NetID": "Withering Heights"
+        "NetIDs": [
+          "Withering Heights"
+        ]
       }
     },
     "A Terrible Fortress": {
@@ -1823,7 +2027,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetID": "A Terrible Fortress"
+        "NetIDs": [
+          "A Terrible Fortress"
+        ]
       }
     },
     "Overkill": {
@@ -1840,7 +2046,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetID": "Overkill"
+        "NetIDs": [
+          "Overkill"
+        ]
       }
     },
     "Who's the Pillager Now?": {
@@ -1857,7 +2065,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetID": "Who's the Pillager Now?"
+        "NetIDs": [
+          "Who's the Pillager Now?"
+        ]
       }
     },
     "Voluntary Exile": {
@@ -1874,7 +2084,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetID": "Voluntary Exile"
+        "NetIDs": [
+          "Voluntary Exile"
+        ]
       }
     },
     "Birthday Song": {
@@ -1891,7 +2103,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetID": "Birthday Song"
+        "NetIDs": [
+          "Birthday Song"
+        ]
       }
     },
     "You've Got a Friend in Me": {
@@ -1908,7 +2122,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetID": "You've Got a Friend in Me"
+        "NetIDs": [
+          "You've Got a Friend in Me"
+        ]
       }
     },
     "War Pigs": {
@@ -1925,7 +2141,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetID": "War Pigs"
+        "NetIDs": [
+          "War Pigs"
+        ]
       }
     },
     "Those Were the Days": {
@@ -1942,7 +2160,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetID": "Those Were the Days"
+        "NetIDs": [
+          "Those Were the Days"
+        ]
       }
     },
     "Overpowered": {
@@ -1959,7 +2179,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetID": "Overpowered"
+        "NetIDs": [
+          "Overpowered"
+        ]
       }
     },
     "Great View From Up Here": {
@@ -1976,7 +2198,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetID": "Great View From Up Here"
+        "NetIDs": [
+          "Great View From Up Here"
+        ]
       }
     },
     "The City at the End of the Game": {
@@ -1993,7 +2217,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetID": "The City at the End of the Game"
+        "NetIDs": [
+          "The City at the End of the Game"
+        ]
       }
     },
     "Sky's the Limit": {
@@ -2010,7 +2236,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetID": "Sky's the Limit"
+        "NetIDs": [
+          "Sky's the Limit"
+        ]
       }
     }
   },
@@ -2026,7 +2254,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetID": "Archery"
+        "NetIDs": [
+          "Archery"
+        ]
       }
     },
     "Progressive Resource Crafting": {
@@ -2040,7 +2270,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetID": "Progressive Resource Crafting"
+        "NetIDs": [
+          "Progressive Resource Crafting"
+        ]
       }
     },
     "Resource Blocks": {
@@ -2054,7 +2286,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetID": "Resource Blocks"
+        "NetIDs": [
+          "Resource Blocks"
+        ]
       }
     },
     "Brewing": {
@@ -2068,7 +2302,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetID": "Brewing"
+        "NetIDs": [
+          "Brewing"
+        ]
       }
     },
     "Enchanting": {
@@ -2082,7 +2318,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetID": "Enchanting"
+        "NetIDs": [
+          "Enchanting"
+        ]
       }
     },
     "Bucket": {
@@ -2096,7 +2334,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetID": "Bucket"
+        "NetIDs": [
+          "Bucket"
+        ]
       }
     },
     "Flint and Steel": {
@@ -2110,7 +2350,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetID": "Flint and Steel"
+        "NetIDs": [
+          "Flint and Steel"
+        ]
       }
     },
     "Bed": {
@@ -2124,7 +2366,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetID": "Bed"
+        "NetIDs": [
+          "Bed"
+        ]
       }
     },
     "Bottles": {
@@ -2138,7 +2382,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetID": "Bottles"
+        "NetIDs": [
+          "Bottles"
+        ]
       }
     },
     "Shield": {
@@ -2152,7 +2398,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetID": "Shield"
+        "NetIDs": [
+          "Shield"
+        ]
       }
     },
     "Fishing Rod": {
@@ -2166,7 +2414,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetID": "Fishing Rod"
+        "NetIDs": [
+          "Fishing Rod"
+        ]
       }
     },
     "Campfire": {
@@ -2180,7 +2430,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetID": "Campfire"
+        "NetIDs": [
+          "Campfire"
+        ]
       }
     },
     "Progressive Weapons": {
@@ -2194,7 +2446,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetID": "Progressive Weapons"
+        "NetIDs": [
+          "Progressive Weapons"
+        ]
       }
     },
     "Progressive Tools": {
@@ -2208,7 +2462,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetID": "Progressive Tools"
+        "NetIDs": [
+          "Progressive Tools"
+        ]
       }
     },
     "Progressive Armor": {
@@ -2222,7 +2478,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetID": "Progressive Armor"
+        "NetIDs": [
+          "Progressive Armor"
+        ]
       }
     },
     "8 Netherite Scrap": {
@@ -2236,7 +2494,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetID": "8 Netherite Scrap"
+        "NetIDs": [
+          "8 Netherite Scrap"
+        ]
       }
     },
     "8 Emeralds": {
@@ -2250,7 +2510,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetID": "8 Emeralds"
+        "NetIDs": [
+          "8 Emeralds"
+        ]
       }
     },
     "4 Emeralds": {
@@ -2264,7 +2526,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetID": "4 Emeralds"
+        "NetIDs": [
+          "4 Emeralds"
+        ]
       }
     },
     "Channeling Book": {
@@ -2278,7 +2542,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetID": "Channeling Book"
+        "NetIDs": [
+          "Channeling Book"
+        ]
       }
     },
     "Silk Touch Book": {
@@ -2292,7 +2558,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetID": "Silk Touch Book"
+        "NetIDs": [
+          "Silk Touch Book"
+        ]
       }
     },
     "Sharpness III Book": {
@@ -2306,7 +2574,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetID": "Sharpness III Book"
+        "NetIDs": [
+          "Sharpness III Book"
+        ]
       }
     },
     "Piercing IV Book": {
@@ -2320,7 +2590,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetID": "Piercing IV Book"
+        "NetIDs": [
+          "Piercing IV Book"
+        ]
       }
     },
     "Looting III Book": {
@@ -2334,7 +2606,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetID": "Looting III Book"
+        "NetIDs": [
+          "Looting III Book"
+        ]
       }
     },
     "Infinity Book": {
@@ -2348,7 +2622,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetID": "Infinity Book"
+        "NetIDs": [
+          "Infinity Book"
+        ]
       }
     },
     "4 Diamond Ore": {
@@ -2362,7 +2638,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetID": "4 Diamond Ore"
+        "NetIDs": [
+          "4 Diamond Ore"
+        ]
       }
     },
     "16 Iron Ore": {
@@ -2376,7 +2654,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetID": "16 Iron Ore"
+        "NetIDs": [
+          "16 Iron Ore"
+        ]
       }
     },
     "500 XP": {
@@ -2390,7 +2670,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetID": "500 XP"
+        "NetIDs": [
+          "500 XP"
+        ]
       }
     },
     "100 XP": {
@@ -2404,7 +2686,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetID": "100 XP"
+        "NetIDs": [
+          "100 XP"
+        ]
       }
     },
     "50 XP": {
@@ -2418,7 +2702,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetID": "50 XP"
+        "NetIDs": [
+          "50 XP"
+        ]
       }
     },
     "3 Ender Pearls": {
@@ -2432,7 +2718,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetID": "3 Ender Pearls"
+        "NetIDs": [
+          "3 Ender Pearls"
+        ]
       }
     },
     "4 Lapis Lazuli": {
@@ -2446,7 +2734,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetID": "4 Lapis Lazuli"
+        "NetIDs": [
+          "4 Lapis Lazuli"
+        ]
       }
     },
     "16 Porkchops": {
@@ -2460,7 +2750,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetID": "16 Porkchops"
+        "NetIDs": [
+          "16 Porkchops"
+        ]
       }
     },
     "8 Gold Ore": {
@@ -2474,7 +2766,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetID": "8 Gold Ore"
+        "NetIDs": [
+          "8 Gold Ore"
+        ]
       }
     },
     "Rotten Flesh": {
@@ -2488,7 +2782,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetID": "Rotten Flesh"
+        "NetIDs": [
+          "Rotten Flesh"
+        ]
       }
     },
     "Single Arrow": {
@@ -2502,7 +2798,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetID": "Single Arrow"
+        "NetIDs": [
+          "Single Arrow"
+        ]
       }
     },
     "32 Arrows": {
@@ -2516,7 +2814,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetID": "32 Arrows"
+        "NetIDs": [
+          "32 Arrows"
+        ]
       }
     },
     "Saddle": {
@@ -2530,7 +2830,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetID": "Saddle"
+        "NetIDs": [
+          "Saddle"
+        ]
       }
     },
     "Structure Compass (Village)": {
@@ -2544,7 +2846,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetID": "Structure Compass (Village)"
+        "NetIDs": [
+          "Structure Compass (Village)"
+        ]
       }
     },
     "Structure Compass (Pillager Outpost)": {
@@ -2558,7 +2862,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetID": "Structure Compass (Pillager Outpost)"
+        "NetIDs": [
+          "Structure Compass (Pillager Outpost)"
+        ]
       }
     },
     "Structure Compass (Nether Fortress)": {
@@ -2572,7 +2878,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetID": "Structure Compass (Nether Fortress)"
+        "NetIDs": [
+          "Structure Compass (Nether Fortress)"
+        ]
       }
     },
     "Structure Compass (Bastion Remnant)": {
@@ -2586,7 +2894,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetID": "Structure Compass (Bastion Remnant)"
+        "NetIDs": [
+          "Structure Compass (Bastion Remnant)"
+        ]
       }
     },
     "Structure Compass (End City)": {
@@ -2600,7 +2910,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetID": "Structure Compass (End City)"
+        "NetIDs": [
+          "Structure Compass (End City)"
+        ]
       }
     },
     "Shulker Box": {
@@ -2614,7 +2926,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetID": "Shulker Box"
+        "NetIDs": [
+          "Shulker Box"
+        ]
       }
     },
     "Dragon Egg Shard": {
@@ -2628,7 +2942,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetID": "Dragon Egg Shard"
+        "NetIDs": [
+          "Dragon Egg Shard"
+        ]
       }
     },
     "Spyglass": {
@@ -2642,7 +2958,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetID": "Spyglass"
+        "NetIDs": [
+          "Spyglass"
+        ]
       }
     },
     "Lead": {
@@ -2656,7 +2974,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetID": "Lead"
+        "NetIDs": [
+          "Lead"
+        ]
       }
     },
     "Bee Trap": {
@@ -2670,7 +2990,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetID": "Bee Trap"
+        "NetIDs": [
+          "Bee Trap"
+        ]
       }
     },
     "advancement": {
@@ -2681,7 +3003,8 @@
         "SpoilerLogNames": [],
         "GossipHintNames": [],
         "PriceDataNames": [],
-        "Tags": []
+        "Tags": [],
+        "NetIDs": []
       }
     }
   },
@@ -2697,7 +3020,8 @@
         "SpoilerLogNames": [],
         "GossipHintNames": [],
         "PriceDataNames": [],
-        "Tags": []
+        "Tags": [],
+        "NetIDs": []
       }
     },
     "Overworld => Nether Portal": {
@@ -2711,7 +3035,8 @@
         "SpoilerLogNames": [],
         "GossipHintNames": [],
         "PriceDataNames": [],
-        "Tags": []
+        "Tags": [],
+        "NetIDs": []
       }
     },
     "Overworld => End Portal": {
@@ -2725,7 +3050,8 @@
         "SpoilerLogNames": [],
         "GossipHintNames": [],
         "PriceDataNames": [],
-        "Tags": []
+        "Tags": [],
+        "NetIDs": []
       }
     },
     "Overworld => Overworld Structure 1": {
@@ -2739,7 +3065,8 @@
         "SpoilerLogNames": [],
         "GossipHintNames": [],
         "PriceDataNames": [],
-        "Tags": []
+        "Tags": [],
+        "NetIDs": []
       }
     },
     "Overworld => Overworld Structure 2": {
@@ -2753,7 +3080,8 @@
         "SpoilerLogNames": [],
         "GossipHintNames": [],
         "PriceDataNames": [],
-        "Tags": []
+        "Tags": [],
+        "NetIDs": []
       }
     },
     "The Nether => Nether Structure 1": {
@@ -2767,7 +3095,8 @@
         "SpoilerLogNames": [],
         "GossipHintNames": [],
         "PriceDataNames": [],
-        "Tags": []
+        "Tags": [],
+        "NetIDs": []
       }
     },
     "The Nether => Nether Structure 2": {
@@ -2781,7 +3110,8 @@
         "SpoilerLogNames": [],
         "GossipHintNames": [],
         "PriceDataNames": [],
-        "Tags": []
+        "Tags": [],
+        "NetIDs": []
       }
     },
     "The End => The End Structure": {
@@ -2795,7 +3125,8 @@
         "SpoilerLogNames": [],
         "GossipHintNames": [],
         "PriceDataNames": [],
-        "Tags": []
+        "Tags": [],
+        "NetIDs": []
       }
     },
     "New World => Overworld": {
@@ -2809,7 +3140,8 @@
         "SpoilerLogNames": [],
         "GossipHintNames": [],
         "PriceDataNames": [],
-        "Tags": []
+        "Tags": [],
+        "NetIDs": []
       }
     },
     "Nether Portal => The Nether": {
@@ -2823,7 +3155,8 @@
         "SpoilerLogNames": [],
         "GossipHintNames": [],
         "PriceDataNames": [],
-        "Tags": []
+        "Tags": [],
+        "NetIDs": []
       }
     },
     "End Portal => The End": {
@@ -2837,7 +3170,8 @@
         "SpoilerLogNames": [],
         "GossipHintNames": [],
         "PriceDataNames": [],
-        "Tags": []
+        "Tags": [],
+        "NetIDs": []
       }
     },
     "Overworld Structure 1 => Village": {
@@ -2851,7 +3185,8 @@
         "SpoilerLogNames": [],
         "GossipHintNames": [],
         "PriceDataNames": [],
-        "Tags": []
+        "Tags": [],
+        "NetIDs": []
       }
     },
     "Overworld Structure 2 => Pillager Outpost": {
@@ -2865,7 +3200,8 @@
         "SpoilerLogNames": [],
         "GossipHintNames": [],
         "PriceDataNames": [],
-        "Tags": []
+        "Tags": [],
+        "NetIDs": []
       }
     },
     "Nether Structure 1 => Nether Fortress": {
@@ -2879,7 +3215,8 @@
         "SpoilerLogNames": [],
         "GossipHintNames": [],
         "PriceDataNames": [],
-        "Tags": []
+        "Tags": [],
+        "NetIDs": []
       }
     },
     "Nether Structure 2 => Bastion Remnant": {
@@ -2893,7 +3230,8 @@
         "SpoilerLogNames": [],
         "GossipHintNames": [],
         "PriceDataNames": [],
-        "Tags": []
+        "Tags": [],
+        "NetIDs": []
       }
     },
     "The End Structure => End City": {
@@ -2907,7 +3245,8 @@
         "SpoilerLogNames": [],
         "GossipHintNames": [],
         "PriceDataNames": [],
-        "Tags": []
+        "Tags": [],
+        "NetIDs": []
       }
     }
   },
@@ -2920,7 +3259,8 @@
         "SpoilerLogNames": [],
         "GossipHintNames": [],
         "PriceDataNames": [],
-        "Tags": []
+        "Tags": [],
+        "NetIDs": []
       }
     }
   },

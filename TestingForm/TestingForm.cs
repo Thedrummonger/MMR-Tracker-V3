@@ -100,6 +100,12 @@ namespace TestingForm
                 MessageBox.Show(string.Join("\n", Error));
                 return;
             }
+
+            var Data = archipelago.Session.Locations.ScoutLocationsAsync(archipelago.Session.Locations.AllLocations.ToArray()).Result;
+            var CleanData = Data.Locations.Select(x =>
+                (archipelago.Session.Locations.GetLocationNameFromId(x.Location),
+                archipelago.Session.Items.GetItemName(x.Item)));
+            Debug.WriteLine(CleanData.ToFormattedJson());
             Debug.WriteLine(archipelago.GetLoginSuccessInfo().ToFormattedJson());
         }
 
