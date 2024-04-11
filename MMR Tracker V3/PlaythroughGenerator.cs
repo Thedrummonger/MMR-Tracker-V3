@@ -356,7 +356,7 @@ namespace MMR_Tracker_V3
             {
                 var ItemData = IC.Instance.GetItemByID(i.Key);
                 string Display = ItemData?.GetDictEntry()?.GetName() ?? i.Key;
-                if (!TempRealItems.ContainsKey(i.Key)) { TempRealItems.Add(Display, 0); }
+                if (!TempRealItems.ContainsKey(Display)) { TempRealItems.Add(Display, 0); }
                 TempRealItems[Display] += i.Value;
             }
             foreach (var i in ADVUnlockData.OptionsUsed)

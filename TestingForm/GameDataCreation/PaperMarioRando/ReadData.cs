@@ -182,8 +182,6 @@ namespace MMR_Tracker_V3.GameDataCreation.PaperMarioRando
             Dictionary<string, Tuple<string, string, string, string>> PsuedoSTayceTLocations = new Dictionary<string, Tuple<string, string, string, string>>();
             //ID, Area, Logic
             Tuple<string, string, string> MysticalKeyData = null;
-            //ID, Area, Logic
-            Tuple<string, string, string> DryOutpostDriedpastaData = null;
             foreach (var edge in Edges)
             {
                 List<List<object>> AdditionalRequirements = new List<List<object>>();
@@ -265,10 +263,6 @@ namespace MMR_Tracker_V3.GameDataCreation.PaperMarioRando
                             string ID = $"Tayce T Cook {RecipeResult} ({string.Join(", ", Ingredients)})";
                             PsuedoSTayceTLocations.Add(ID, new(ID, MapName, EdgeLogic, RecipeResult));
                         }
-                        else if (item == "DriedPasta" && ToID == "Dry Dry Outpost - Outpost 1 - ShopItemA")
-                        {
-                            DryOutpostDriedpastaData = new("Outpost 1 - Shop Item 4", MapName, EdgeLogic);
-                        }
                         else
                         {
                             Debug.WriteLine($"Handle Psuedoitem {item}\n{ToID}");
@@ -300,9 +294,6 @@ namespace MMR_Tracker_V3.GameDataCreation.PaperMarioRando
             PMRDict.LocationList.Add(MysticalKeyData.Item1, new LogicDictionaryData.DictionaryLocationEntries { ID = MysticalKeyData.Item1, Name = MysticalKeyData.Item1, Area = MysticalKeyData.Item2, ValidItemTypes = new string[] { "MysticalKey" }, OriginalItem = "MysticalKey" });
             PRMLogic.Logic.Add(new MMRData.JsonFormatLogicItem { Id = MysticalKeyData.Item1, ConditionalItems = LogicStringConverter.ConvertLogicStringToConditional(PMRParser, MysticalKeyData.Item3, MysticalKeyData.Item1) });
             PMRDict.ItemList.Add("MysticalKey", new LogicDictionaryData.DictionaryItemEntries { ID = "MysticalKey", Name = "MysticalKey", ItemTypes = new string[] { "MysticalKey" } });
-
-            PMRDict.LocationList.Add(DryOutpostDriedpastaData.Item1, new LogicDictionaryData.DictionaryLocationEntries { ID = DryOutpostDriedpastaData.Item1, Name = DryOutpostDriedpastaData.Item1, Area = DryOutpostDriedpastaData.Item2, ValidItemTypes = new string[] { "Outpost DriedPasta" }, OriginalItem = "DriedPasta" });
-            PRMLogic.Logic.Add(new MMRData.JsonFormatLogicItem { Id = DryOutpostDriedpastaData.Item1, ConditionalItems = LogicStringConverter.ConvertLogicStringToConditional(PMRParser, DryOutpostDriedpastaData.Item3, DryOutpostDriedpastaData.Item1) });
 
             foreach (var i in PsuedoYoshiKidLocations)
             {

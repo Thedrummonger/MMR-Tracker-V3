@@ -14,17 +14,6 @@
       "IsTrick": false
     },
     {
-      "Id": "Outpost 1 - Shop Item 4",
-      "RequiredItems": [
-        "Dry Dry Outpost - Outpost 1 - ShopItemA"
-      ],
-      "ConditionalItems": [],
-      "TimeNeeded": "None",
-      "TimeAvailable": "None",
-      "TimeSetup": "None",
-      "IsTrick": false
-    },
-    {
       "Id": "SE Jungle (Quake Hammer) - Yoshi Kid",
       "RequiredItems": [
         "RF_YoshiKidsMissing",
@@ -4158,9 +4147,42 @@
       "IsTrick": false
     },
     {
+      "Id": "Dry Dry Outpost - Outpost 1 - Exit West => Dry Dry Outpost - Outpost 1 - ShopItemB",
+      "RequiredItems": [
+        "Dry Dry Outpost - Outpost 1 - Exit West"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
       "Id": "Dry Dry Outpost - Outpost 1 - ShopItemA => Dry Dry Outpost - Outpost 1 - ShopItemC",
       "RequiredItems": [
         "Dry Dry Outpost - Outpost 1 - ShopItemA"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "Dry Dry Outpost - Outpost 1 - Exit West => Dry Dry Outpost - Outpost 1 - ShopItemD",
+      "RequiredItems": [
+        "Dry Dry Outpost - Outpost 1 - Exit West"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "Dry Dry Outpost - Outpost 1 - Exit West => Dry Dry Outpost - Outpost 1 - ShopItemE",
+      "RequiredItems": [
+        "Dry Dry Outpost - Outpost 1 - Exit West"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -38392,9 +38414,42 @@
       "IsTrick": false
     },
     {
+      "Id": "Outpost 1 - Shop Item 2",
+      "RequiredItems": [
+        "Dry Dry Outpost - Outpost 1 - ShopItemB"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
       "Id": "Outpost 1 - Shop Item 3",
       "RequiredItems": [
         "Dry Dry Outpost - Outpost 1 - ShopItemC"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "Outpost 1 - Shop Item 4",
+      "RequiredItems": [
+        "Dry Dry Outpost - Outpost 1 - ShopItemD"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "Outpost 1 - Shop Item 5",
+      "RequiredItems": [
+        "Dry Dry Outpost - Outpost 1 - ShopItemE"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",

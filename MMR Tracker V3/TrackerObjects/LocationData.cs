@@ -31,7 +31,7 @@ namespace MMR_Tracker_V3.TrackerObjects
 
             public override string GetName()
             {
-                return GetDictEntry().Name;
+                return GetDictEntry().GetName();
             }
 
             public override LogicDictionaryData.DictionaryCheckableLocationEntry GetAbstractDictEntry() => GetDictEntry();

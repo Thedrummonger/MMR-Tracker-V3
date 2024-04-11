@@ -177,6 +177,10 @@ namespace MMR_Tracker_V3.SpoilerLogImporter
                         ItemToPlace.AmountInStartingpool++;
                     }
                 }
+                else if (i.Key == "puzzle_solutions")
+                {
+                    //Not sure if I need these for anything
+                }
                 else
                 {
                     Dictionary<string, string> Locations = JsonConvert.DeserializeObject<Dictionary<string, string>>(JsonConvert.SerializeObject(i.Value));
