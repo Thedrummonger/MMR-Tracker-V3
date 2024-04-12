@@ -2,7 +2,7 @@
   "LogicVersion": 1,
   "GameCode": "PMRAP",
   "GameName": "Paper Mario",
-  "NetPlaySupported": false,
+  "NetPlaySupported": true,
   "RootAreas": [
     "Menu"
   ],
@@ -15371,15 +15371,15 @@
         ]
       }
     },
-    "CP P-Down: D-Up Room In Chest": {
+    "CP P-Down, D-Up Room In Chest": {
       "OriginalItem": "P-Down D-Up",
       "ValidItemTypes": [
         "item"
       ],
       "Repeatable": false,
       "LocationProxys": [],
-      "ID": "CP P-Down: D-Up Room In Chest",
-      "Name": "CP P-Down: D-Up Room In Chest",
+      "ID": "CP P-Down, D-Up Room In Chest",
+      "Name": "CP P-Down, D-Up Room In Chest",
       "Area": "Crystal Palace",
       "SpoilerData": {
         "SpoilerLogNames": [],
@@ -15390,7 +15390,7 @@
           "PRA_12/ChestA"
         ],
         "NetIDs": [
-          "CP P-Down: D-Up Room In Chest"
+          "CP P-Down, D-Up Room In Chest"
         ]
       }
     },
@@ -15578,15 +15578,15 @@
         ]
       }
     },
-    "CP P-Up: D-Down Room In Chest": {
+    "CP P-Up, D-Down Room In Chest": {
       "OriginalItem": "P-Up D-Down",
       "ValidItemTypes": [
         "item"
       ],
       "Repeatable": false,
       "LocationProxys": [],
-      "ID": "CP P-Up: D-Down Room In Chest",
-      "Name": "CP P-Up: D-Down Room In Chest",
+      "ID": "CP P-Up, D-Down Room In Chest",
+      "Name": "CP P-Up, D-Down Room In Chest",
       "Area": "Crystal Palace",
       "SpoilerData": {
         "SpoilerLogNames": [],
@@ -15597,7 +15597,7 @@
           "PRA_28/ChestA"
         ],
         "NetIDs": [
-          "CP P-Up: D-Down Room In Chest"
+          "CP P-Up, D-Down Room In Chest"
         ]
       }
     },

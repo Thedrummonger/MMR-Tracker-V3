@@ -72,6 +72,7 @@ namespace MMR_Tracker_V3.SpoilerLogImporter
                     TPRSpoilerLogTools.readAndApplySpoilerLog(container.Instance);
                     container.Instance.SpoilerLog.GetStaticPlaythrough(container);
                     break;
+                case "PMRAP":
                 case "PMR":
                     container.Instance.SpoilerLog = new InstanceData.SpoilerLogFileData { FileName = OriginalFile, Log = spoilerLog };
                     PMRSpoilerLogTools.ParseSpoiler(container.Instance);

@@ -49,6 +49,7 @@ namespace TestingForm.GameDataCreation.PMR_AP
                 RootAreas = ["Menu"],
                 GameName = "Paper Mario",
                 LogicVersion = 1,
+                NetPlaySupported = true,
             };
             Logic = new MMRData.LogicFile() { GameCode = "PMRAP", Version = 1, Logic = [] };
             foreach (var Loc in Locations)
@@ -91,12 +92,13 @@ namespace TestingForm.GameDataCreation.PMR_AP
                     RegionsDict[$"{Region.area_id}|{Region.map_id}"] = Path.GetFileNameWithoutExtension(File).Replace("_", " ").ConvertToCamelCase();
                     foreach(var Location in Region.locations)
                     {
-                        if (!dictionary.LocationList.ContainsKey(Location.Key)) { Debug.WriteLine($"Bad Logic Line? {Location.Key}"); }
-                        AddLocationLogicEntry(Logic, Region, Location);
+                        var ID = Location.Key;
+                        if (!dictionary.LocationList.ContainsKey(ID)) { Debug.WriteLine($"Bad Logic Line? {ID}"); }
+                        AddLocationLogicEntry(Logic, Region, ID, Location.Value);
                     }
                     foreach(var Event in Region.events)
                     {
-                        AddLocationLogicEntry(Logic, Region, Event);
+                        AddLocationLogicEntry(Logic, Region, Event.Key, Event.Value);
                     }
                     foreach (var Exits in Region.exits)
                     {
@@ -275,23 +277,26 @@ namespace TestingForm.GameDataCreation.PMR_AP
                     }
                     return x;
                 });
+                LogicUtilities.RemoveRedundantConditionals(l);
+                LogicUtilities.MakeCommonConditionalsRequirements(l);
+                LogicUtilities.SortConditionals(l);
             }
 
-            void AddLocationLogicEntry(MMRData.LogicFile logic, PMRRegion Region, KeyValuePair<string, string> Location)
+            void AddLocationLogicEntry(MMRData.LogicFile logic, PMRRegion Region, string ID, string Logic)
             {
-                var LogicEntry = logic.Logic.FirstOrDefault(x => x.Id == Location.Key);
-                string LogicString = $"(({Location.Value}) and (|{Region.region_name}|))";
+                var LogicEntry = logic.Logic.FirstOrDefault(x => x.Id == ID);
+                string LogicString = $"(({Logic}) and (|{Region.region_name}|))";
                 if (LogicEntry != null)
                 {
                     LogicString += $" or ({LogicStringConverter.ConvertConditionalToLogicString(logicStringParser, LogicEntry.ConditionalItems)})";
-                    LogicEntry.ConditionalItems = LogicStringConverter.ConvertLogicStringToConditional(logicStringParser, LogicString, Location.Key);
+                    LogicEntry.ConditionalItems = LogicStringConverter.ConvertLogicStringToConditional(logicStringParser, LogicString, ID);
                 }
                 else
                 {
                     logic.Logic.Add(new MMRData.JsonFormatLogicItem
                     {
-                        Id = Location.Key,
-                        ConditionalItems = LogicStringConverter.ConvertLogicStringToConditional(logicStringParser, LogicString, Location.Key)
+                        Id = ID,
+                        ConditionalItems = LogicStringConverter.ConvertLogicStringToConditional(logicStringParser, LogicString, ID)
                     });
                 }
             }
