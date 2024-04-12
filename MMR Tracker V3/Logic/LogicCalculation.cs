@@ -94,20 +94,23 @@ namespace MMR_Tracker_V3.Logic
         public bool CheckItemArray(string ArrVar, int amount, Dictionary<string, LogicItemData> UnlockData = null)
         {
             var EditActions = container.Instance.GetOptionActions();
-            if (!container.Instance.LogicEntryCollections.TryGetValue(ArrVar, out OptionData.LogicEntryCollection value)) { return false; }
-            List<string> VariableEntries = value.GetValue(container.Instance);
+            if (!container.Instance.LogicEntryCollections.TryGetValue(ArrVar, out OptionData.LogicEntryCollection Collection)) { return false; }
+            List<string> VariableEntries = Collection.GetValue(container.Instance);
             VariableEntries = ExpandSubCollections(VariableEntries);
 
             List<string> ExpandedList = [];
             foreach (string VariableEntry in VariableEntries)
             {
                 var LogicItem = container.Instance.GetLogicItemData(VariableEntry);
-                if (LogicItem.Type == LogicItemTypes.item)
+                if (LogicItem.Object is ObtainableObject Item)
                 {
-                    var Item = LogicItem.Object as ItemData.ItemObject;
                     if (LogicItem.HadItemCount && Item.GetTotalUsable() >= LogicItem.Amount) { ExpandedList.Add(VariableEntry); }
                     else { ExpandedList.AddRange(Enumerable.Repeat(LogicItem.CleanID, Item.GetTotalUsable()).ToList()); }
-                };
+                }
+                else if (LogicItem.Object is MacroObject MO && MO.Available)
+                {
+                    ExpandedList.Add(VariableEntry);
+                }
             }
             if (ExpandedList.Count < amount) { return false; }
             IEnumerable<string> UsedItems = ExpandedList.Take(amount);

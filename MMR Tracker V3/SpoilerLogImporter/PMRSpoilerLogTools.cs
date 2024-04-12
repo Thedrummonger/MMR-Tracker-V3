@@ -263,6 +263,7 @@ namespace MMR_Tracker_V3.SpoilerLogImporter
 
         public static void ParseAPSpoiler(InstanceData.TrackerInstance Instance, Archipelago.GenericAPSpoiler genericAPSpoiler)
         {
+            Utility.PrintObjectToConsole(genericAPSpoiler.SlotData);
             foreach (var entry in genericAPSpoiler.Locations)
             {
                 var Location = Instance.LocationPool.First(x => x.Value.GetDictEntry().SpoilerData.NetIDs.Contains(entry.Location));

@@ -126,6 +126,7 @@ namespace TestingForm.GameDataCreation.PMR_AP
                     ConditionalItems = LogicStringConverter.ConvertLogicStringToConditional(logicStringParser, i.Value, i.Key)
                 });
             }
+            Logic.Logic.Add(new MMRData.JsonFormatLogicItem { Id = "RF_BrokenVeranda", RequiredItems = [$"setting{{starting_map, goomba_village}}"] });
 
             dictionary.LogicEntryCollections.Add("Letter", new OptionData.LogicEntryCollection()
             {

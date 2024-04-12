@@ -24547,6 +24547,17 @@
       "IsTrick": false
     },
     {
+      "Id": "RF_BrokenVeranda",
+      "RequiredItems": [
+        "setting{starting_map, goomba_village}"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
       "Id": "Menu => TT Gate District Mario's House Pipe",
       "RequiredItems": [
         "setting{starting_map, toad_town}"
