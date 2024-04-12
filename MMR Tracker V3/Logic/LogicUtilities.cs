@@ -391,7 +391,7 @@ namespace MMR_Tracker_V3.Logic
                 ContainerType.parentheses => ')',
                 ContainerType.bracket => ']',
                 ContainerType.braces => '}',
-                _ => '(',
+                _ => ')',
             };
         }
 

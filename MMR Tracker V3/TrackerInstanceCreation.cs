@@ -105,7 +105,8 @@ namespace MMR_Tracker_V3
             }
             foreach (var i in Instance.LogicDictionary.RootAreas ?? [])
             {
-                Instance.AreaPool[i].IsRoot = true;
+                if (Instance.AreaPool.TryGetValue(i, out EntranceData.EntranceRandoArea area))
+                    area.IsRoot = true;
             }
 
             Index = 0;

@@ -56,7 +56,7 @@ namespace TestingForm
         public static void PMRCreateData()
         {
             WinFormTesting.ActivateWinFormInterface();
-            MMR_Tracker_V3.GameDataCreation.PaperMarioRando.ReadData.ReadEadges(out MMRData.LogicFile Logic, out LogicDictionaryData.LogicDictionary dictionary);
+            GameDataCreation.PMR_AP.GenData.ReadAndGenData(out MMRData.LogicFile Logic, out LogicDictionaryData.LogicDictionary dictionary);
             WinFormInstanceCreation.CreateWinFormInstance(JsonConvert.SerializeObject(Logic), JsonConvert.SerializeObject(dictionary));
             TestingUtility.TestLogicForInvalidItems(MainInterface.InstanceContainer);
         }
