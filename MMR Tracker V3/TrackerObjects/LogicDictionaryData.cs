@@ -23,6 +23,7 @@ namespace MMR_Tracker_V3.TrackerObjects
             public bool NetPlaySupported { get; set; } = false;
             public string[] RootAreas { get; set; }
             public DefaultSettings DefaultSettings { get; set; }
+            public SpoilerLogHandling.SpoilerLogInstructions SpoilerLogInstructions { get; set; }
             public Dictionary<string, DictionaryLocationEntries> LocationList { get; set; } = [];
             public Dictionary<string, DictionaryItemEntries> ItemList { get; set; } = [];
             public Dictionary<string, DictionaryEntranceEntries> EntranceList { get; set; } = [];

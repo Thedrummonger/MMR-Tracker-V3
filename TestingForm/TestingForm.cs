@@ -65,25 +65,25 @@ namespace TestingForm
             listBox1.Items.Clear();
             //Debug Action Name, Debug action Code, Show action Check, Refresh After activation
 
-            List<DevAction> DevFunctions = new List<DevAction>()
-            {
-                new DevAction("Open WinForm Tracker Debug", WinFormTesting.ActivateWinFormInterface, UpdateDebugActions, () => !WinFormTesting.WinformLoaded()),
-                new DevAction("Print Debug to Console", CLITrackerTesting.AddCLIDebugListener, UpdateDebugActions, CLITrackerTesting.IsCLIDebugListenerInactive),
-                new DevAction("Stop Printing Debug to Console", CLITrackerTesting.RemoveCLIDebugListener, UpdateDebugActions, CLITrackerTesting.IsCLIDebugListenerActive),
-                new DevAction("Open CLI Tracker Debug", CLITrackerTesting.OpenCLITracker, UpdateDebugActions),
-                new DevAction("Save Tracker State", WinFormTesting.SaveWinformTrackerState, UpdateDebugActions, WinFormTesting.CanSaveWinformTrackerState),
-                new DevAction("Load Tracker State", WinFormTesting.LoadWinformTrackerState, UpdateDebugActions, WinFormTesting.CanLoadWinformTrackerState),
-                new DevAction("Print Selected Object to Console", WinFormTesting.PrintWinformSelectedObject, UpdateDebugActions, () => WinFormTesting.LastSelectedObject is not null),
-                new DevAction("Create MMR Data", GameFileCreation.MMRCreateData, UpdateDebugActions),
-                new DevAction("Create TPR Data", GameFileCreation.TPRCreateData, UpdateDebugActions),
-                new DevAction("Create OOTMM Data", GameFileCreation.OOTMMCreateData, UpdateDebugActions),
-                new DevAction("Create PMR Data", GameFileCreation.PMRCreateData, UpdateDebugActions),
-                new DevAction("Create LAS Data", GameFileCreation.LASCreateData, UpdateDebugActions),
-                new DevAction("Create WWR Data", GameFileCreation.WWRCreateData, UpdateDebugActions),
-                new DevAction("Create Minecraft Data", GameFileCreation.MinecraftCreateData, UpdateDebugActions),
-                new DevAction("Test Archipelago", Archipelago, UpdateDebugActions),
-                new DevAction("Test Random Stuff", RandomTests, UpdateDebugActions),
-            };
+            List<DevAction> DevFunctions =
+            [
+                new("Open WinForm Tracker Debug", WinFormTesting.ActivateWinFormInterface, UpdateDebugActions, () => !WinFormTesting.WinformLoaded()),
+                new("Print Debug to Console", CLITrackerTesting.AddCLIDebugListener, UpdateDebugActions, CLITrackerTesting.IsCLIDebugListenerInactive),
+                new("Stop Printing Debug to Console", CLITrackerTesting.RemoveCLIDebugListener, UpdateDebugActions, CLITrackerTesting.IsCLIDebugListenerActive),
+                new("Open CLI Tracker Debug", CLITrackerTesting.OpenCLITracker, UpdateDebugActions),
+                new("Save Tracker State", WinFormTesting.SaveWinformTrackerState, UpdateDebugActions, WinFormTesting.CanSaveWinformTrackerState),
+                new("Load Tracker State", WinFormTesting.LoadWinformTrackerState, UpdateDebugActions, WinFormTesting.CanLoadWinformTrackerState),
+                new("Print Selected Object to Console", WinFormTesting.PrintWinformSelectedObject, UpdateDebugActions, () => WinFormTesting.LastSelectedObject is not null),
+                new("Create MMR Data", GameFileCreation.MMRCreateData, UpdateDebugActions),
+                new("Create TPR Data", GameFileCreation.TPRCreateData, UpdateDebugActions),
+                new("Create OOTMM Data", GameFileCreation.OOTMMCreateData, UpdateDebugActions),
+                new("Create PMR Data", GameFileCreation.PMRCreateData, UpdateDebugActions),
+                new("Create LAS Data", GameFileCreation.LASCreateData, UpdateDebugActions),
+                new("Create WWR Data", GameFileCreation.WWRCreateData, UpdateDebugActions),
+                new("Create Minecraft Data", GameFileCreation.MinecraftCreateData, UpdateDebugActions),
+                new("Test Archipelago", Archipelago, UpdateDebugActions),
+                new("Test Random Stuff", RandomTests, UpdateDebugActions),
+            ];
 
             foreach (var Function in DevFunctions)
             {
@@ -95,7 +95,11 @@ namespace TestingForm
         private void Archipelago()
         {
             MMR_Tracker_V3.NetCode.ArchipelagoConnector archipelago = 
-                new(Interaction.InputBox("Enter Game"), Interaction.InputBox("Enter Slot ID"), Interaction.InputBox("Enter Password"), Interaction.InputBox("Enter Server Address"));
+                new(Interaction.InputBox("Enter Game"), 
+                Interaction.InputBox("Enter Slot ID"), 
+                Interaction.InputBox("Enter Password"), 
+                Interaction.InputBox("Enter Server Address"));
+
             if (!archipelago.WasConnectionSuccess(out string[] Error)) {
                 MessageBox.Show(string.Join("\n", Error));
                 return;
@@ -123,15 +127,9 @@ namespace TestingForm
 
         private void RandomTests()
         {
-            string input = "Key x2";
-
-            // Define a regular expression pattern to match "x" followed by a number
-            string pattern = @" (x)(\d+)";
-
-            // Replace occurrences of the pattern with ",$2", where $2 is the matched number
-            string result = Regex.Replace(input, pattern, ", $2");
-
-            Debug.WriteLine(result); // Output: "Key ,2"
+            var PMYAML = Path.Combine(TestingReferences.GetDevTestingPath(), "PM Sample.yaml");
+            var testing = TestingUtility.DeserializeYAMLFile<object>(PMYAML);
+            Debug.WriteLine(testing.ToFormattedJson());
         }
 
         private void RegexTesting()

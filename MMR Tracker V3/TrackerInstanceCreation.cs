@@ -1,5 +1,4 @@
 ﻿using MMR_Tracker_V3.Logic;
-using MMR_Tracker_V3.SpoilerLogImporter;
 using MMR_Tracker_V3.TrackerObjectExtensions;
 using MMR_Tracker_V3.TrackerObjects;
 using System;
@@ -250,15 +249,15 @@ namespace MMR_Tracker_V3
             var DefSet = instance.LogicDictionary.DefaultSettings;
             if (!string.IsNullOrWhiteSpace(DefSet.CustomItemListString))
             {
-                SettingStringHandler.ApplyLocationString(DefSet.CustomItemListString, instance);
+                SpoilerLogHandling.SettingStringHandler.ApplyLocationString(DefSet.CustomItemListString, instance);
             }
             if (!string.IsNullOrWhiteSpace(DefSet.CustomJunkLocationsString))
             {
-                SettingStringHandler.ApplyJunkString(DefSet.CustomJunkLocationsString, instance);
+                SpoilerLogHandling.SettingStringHandler.ApplyJunkString(DefSet.CustomJunkLocationsString, instance);
             }
             if (!string.IsNullOrWhiteSpace(DefSet.CustomStartingItemListString))
             {
-                SettingStringHandler.ApplyStartingItemString(DefSet.CustomStartingItemListString, instance);
+                SpoilerLogHandling.SettingStringHandler.ApplyStartingItemString(DefSet.CustomStartingItemListString, instance);
             }
             if (DefSet.ManualRandomizationState is not null)
             {

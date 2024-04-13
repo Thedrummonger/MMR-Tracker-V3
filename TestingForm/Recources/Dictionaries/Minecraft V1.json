@@ -7,6 +7,9 @@
   "RootAreas": [
     "Menu"
   ],
+  "SpoilerLogInstructions": {
+    "ArchipelagoParserPath": "MC"
+  },
   "LocationList": {
     "Who is Cutting Onions?": {
       "OriginalItem": "advancement",

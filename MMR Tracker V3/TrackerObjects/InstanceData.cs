@@ -13,6 +13,7 @@ using static MMR_Tracker_V3.TrackerObjects.LocationData;
 using static MMR_Tracker_V3.TrackerObjects.LogicDictionaryData;
 using static MMR_Tracker_V3.TrackerObjects.OptionData;
 using MMR_Tracker_V3.NetCode;
+using MMR_Tracker_V3.SpoilerLogHandling;
 
 namespace MMR_Tracker_V3.TrackerObjects
 {
@@ -129,8 +130,7 @@ namespace MMR_Tracker_V3.TrackerObjects
         [Serializable]
         public class SpoilerLogFileData
         {
-            public string FileName { get; set; }
-            public string[] Log { get; set; }
+            public GenericSpoilerLog Log { get; set; }
             public Dictionary<string, PlaythroughGenerator.PlaythroughObject> Playthrough { get; set; }
 
             public void GetStaticPlaythrough(InstanceContainer Container)

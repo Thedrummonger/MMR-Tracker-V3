@@ -19,8 +19,8 @@ using static MMR_Tracker_V3.NetCode.NetData;
 using MMR_Tracker_V3.NetCode;
 using System.Net;
 using Archipelago.MultiClient.Net.Packets;
-using MMR_Tracker_V3.SpoilerLogImporter;
 using static System.Runtime.InteropServices.JavaScript.JSType;
+using MMR_Tracker_V3.SpoilerLogHandling;
 
 namespace Windows_Form_Frontend
 {
@@ -261,7 +261,14 @@ namespace Windows_Form_Frontend
             PrintToConsole(Log);
             if (!Connected) { return ; }
             nudPlayer.Value = InstanceContainer.netConnection.ArchipelagoClient.Session.ConnectionInfo.Slot;
-            if (InstanceContainer.Instance.SpoilerLog is null){ archipelagoConnection.ApplySpoilerFromAPData(); }
+            if (InstanceContainer.Instance.SpoilerLog is null)
+            {
+                var Result = MessageBox.Show("Would you like to apply spoiler data?", "Import spoiler", MessageBoxButtons.YesNo);
+                if (Result == DialogResult.Yes) 
+                {
+                    SpoilerTools.ApplySpoilerLog(InstanceContainer, WinFormUtils.SelectAndReadFile);
+                }
+            }
             archipelagoConnection.SyncWithArchipelagoData();
             ParentWindowsForm.UpdateUI();
             archipelagoConnection.ActivateListers();

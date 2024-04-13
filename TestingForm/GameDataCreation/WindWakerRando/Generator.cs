@@ -39,7 +39,11 @@ namespace TestingForm.GameDataCreation.WindWakerRando
                 GameName = "The Wind Waker",
                 LogicVersion = 2,
                 NetPlaySupported = true,
-                WinCondition = "Can Reach and Defeat Ganondorf"
+                WinCondition = "Can Reach and Defeat Ganondorf",
+                SpoilerLogInstructions = new()
+                {
+                    ArchipelagoParserPath = "WWR"
+                }
             };
             foreach (var Location in Locations) { AddLogicEntry(Location.Key, Location.Value.Need); }
             foreach (var Location in Macros) { AddLogicEntry(Location.Key, Location.Value); }

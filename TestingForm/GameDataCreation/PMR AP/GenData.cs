@@ -50,6 +50,11 @@ namespace TestingForm.GameDataCreation.PMR_AP
                 GameName = "Paper Mario",
                 LogicVersion = 1,
                 NetPlaySupported = true,
+                SpoilerLogInstructions = new()
+                {
+                    ArchipelagoParserPath = "PMR",
+                    ArchipelagoFileImports = new() { { "APPlayerFile", ("Archipelago Player YAML", ["yaml", "txt"]) } }
+                }
             };
             Logic = new MMRData.LogicFile() { GameCode = "PMRAP", Version = 1, Logic = [] };
             foreach (var Loc in Locations)

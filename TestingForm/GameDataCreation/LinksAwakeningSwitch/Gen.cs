@@ -36,6 +36,11 @@ namespace TestingForm.GameDataCreation.LinksAwakeningSwitch
                 GameCode = "LAS",
                 LogicVersion = 1,
                 WinCondition = "kill-nightmare",
+                SpoilerLogInstructions = new()
+                {
+                    ParserPath = "LAS",
+                    FileImports = new() { { "SpoilerLog", ("LAS Spoiler Log", ["txt", "json"]) } }
+                }
             };
             MMRData.LogicFile LogicObject = new()
             {

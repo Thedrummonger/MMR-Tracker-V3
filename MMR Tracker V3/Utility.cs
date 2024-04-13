@@ -2,6 +2,7 @@
 using MMR_Tracker_V3.TrackerObjectExtensions;
 using MMR_Tracker_V3.TrackerObjects;
 using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -243,6 +244,55 @@ namespace MMR_Tracker_V3
         /// <param name="Default">The value to return if the object can not be parsed as a boolean. Throws an exception on failed parse if null</param>
         /// <returns></returns>
         /// <exception cref="Exception"></exception>
+        /// 
+        public static string ConvertYamlStringToJsonString(string YAML, bool Format = false)
+        {
+            var deserializer = new YamlDotNet.Serialization.DeserializerBuilder().Build();
+            object yamlIsDumb = deserializer.Deserialize<object>(YAML);
+            if (Format) { return JsonConvert.SerializeObject(yamlIsDumb, Utility.DefaultSerializerSettings); }
+            return JsonConvert.SerializeObject(yamlIsDumb);
+        }
+        public static string ConvertCsvFileToJsonObject(string[] lines)
+        {
+            var csv = new List<string[]>();
+
+            var properties = lines[0].Split(',');
+
+            foreach (string line in lines)
+            {
+                var LineData = line.Split(',');
+                csv.Add(LineData);
+            }
+
+            var listObjResult = new List<Dictionary<string, string>>();
+
+            for (int i = 1; i < lines.Length; i++)
+            {
+                if (string.IsNullOrWhiteSpace(lines[i])) { continue; }
+                var objResult = new Dictionary<string, string>();
+                for (int j = 0; j < properties.Length; j++)
+                    objResult.Add(properties[j].Trim(), csv[i][j].Trim());
+
+                listObjResult.Add(objResult);
+            }
+
+            return JsonConvert.SerializeObject(listObjResult, Utility.DefaultSerializerSettings);
+        }
+        public static T DeserializeJsonFile<T>(string Path)
+        {
+            return JsonConvert.DeserializeObject<T>(File.ReadAllText(Path));
+        }
+        public static T DeserializeCSVFile<T>(string Path)
+        {
+            var Json = Utility.ConvertCsvFileToJsonObject(File.ReadAllLines(Path));
+            return JsonConvert.DeserializeObject<T>(Json);
+        }
+
+        public static T DeserializeYAMLFile<T>(string Path)
+        {
+            var Json = Utility.ConvertYamlStringToJsonString(File.ReadAllText(Path), true);
+            return JsonConvert.DeserializeObject<T>(Json);
+        }
         public static bool IsTruthy(this object val, bool? Default = null)
         {
             var result = Default;
@@ -256,6 +306,15 @@ namespace MMR_Tracker_V3
 
             if (result is null) { throw new Exception($"{val.GetType().Name} {val} Was not a valid truthy Value"); }
             return (bool)result;
+        }
+
+        public static int AsIntValue(this object _Value)
+        {
+            if (_Value is int i1) { return (i1); }
+            else if (_Value is Int64 i64) { return (Convert.ToInt32(i64)); }
+            else if (_Value is string str && int.TryParse(str, out int istr)) { return (istr); }
+            else if (_Value is bool bval) { return (bval ? 1 : 0); }
+            else { throw new Exception($"{_Value.GetType().Name} {_Value} Could not be applied to an int option"); }
         }
 
         public readonly static Newtonsoft.Json.JsonSerializerSettings DefaultSerializerSettings = new()

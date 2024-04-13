@@ -4,6 +4,9 @@
   "WinCondition": "Can Reach and Defeat Ganondorf",
   "GameName": "The Wind Waker",
   "NetPlaySupported": true,
+  "SpoilerLogInstructions": {
+    "ArchipelagoParserPath": "WWR"
+  },
   "LocationList": {
     "Outset Island - Underneath Link's House": {
       "OriginalItem": "Orange Rupee",

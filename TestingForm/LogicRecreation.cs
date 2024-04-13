@@ -1,10 +1,5 @@
 ﻿using MMR_Tracker_V3.TrackerObjectExtensions;
 using MMR_Tracker_V3.TrackerObjects;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace MMR_Tracker_V3
 {
@@ -67,7 +62,7 @@ namespace MMR_Tracker_V3
             if (CurrentSaveState is null) { return; }
             if (CurrentSaveState.SpoilerData is not null && InstanceContainer.Instance.SpoilerLog is null)
             {
-                SpoilerLogImporter.SpoilerLogTools.ImportSpoilerLog(CurrentSaveState.SpoilerData.Log, CurrentSaveState.SpoilerData.FileName, InstanceContainer);
+                SpoilerLogHandling.Parser.ApplyGenericSpoilerLog(InstanceContainer, CurrentSaveState.SpoilerData.Log);
             }
             foreach(var i in CurrentSaveState.Locations)
             {

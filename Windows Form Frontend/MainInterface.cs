@@ -1,5 +1,4 @@
 ﻿using MMR_Tracker_V3;
-using MMR_Tracker_V3.SpoilerLogImporter;
 using MMR_Tracker_V3.TrackerObjectExtensions;
 using MMR_Tracker_V3.TrackerObjects;
 using Newtonsoft.Json;
@@ -17,6 +16,7 @@ using static MMR_Tracker_V3.TrackerObjects.MiscData;
 using static MMR_Tracker_V3.TrackerObjects.InstanceData;
 using MMR_Tracker_V3.Logic;
 using Microsoft.VisualBasic;
+using MMR_Tracker_V3.SpoilerLogHandling;
 
 namespace Windows_Form_Frontend
 {
@@ -194,29 +194,21 @@ namespace Windows_Form_Frontend
 
         private void importSpoilerLogToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (InstanceContainer.Instance.SpoilerLog == null)
+            if (InstanceContainer.Instance.SpoilerLog is null)
             {
-                OpenFileDialog openFileDialog = new()
+                if (InstanceContainer.Instance.LogicDictionary.SpoilerLogInstructions is not null)
                 {
-                    Filter = SpoilerLogTools.GetSpoilerLogFilter(InstanceContainer.Instance),
-                    Title = "Load Text Spoiler Log"
-                };
-                openFileDialog.ShowDialog();
-                if (openFileDialog.FileName != "" && File.Exists(openFileDialog.FileName))
+                    SpoilerTools.ApplySpoilerLog(InstanceContainer, WinFormUtils.SelectAndReadFile);
+                }
+                else
                 {
-                    string CurrentState = InstanceContainer.Instance.ToJson(MiscData.JSONType.UTF8);
-                    var ToUpdate = new List<ListBox> { LBCheckedLocations, LBValidEntrances, LBValidLocations };
-                    foreach (var i in ToUpdate) { WinFormUtils.PrintMessageToListBox(i, "Importing Spoiler Log \n Please Wait..."); }
-                    if (SpoilerLogTools.ImportSpoilerLog(File.ReadAllLines(openFileDialog.FileName), openFileDialog.FileName, InstanceContainer))
-                    {
-                        SaveTrackerState(CurrentState);
-                    }
+                    MessageBox.Show("Spoiler log importing is not implemented for this Game");
                 }
             }
             else
             {
                 SaveTrackerState();
-                SpoilerLogTools.RemoveSpoilerData(InstanceContainer.Instance);
+                SpoilerTools.RemoveSpoilerData(InstanceContainer.Instance);
             }
             InstanceContainer.logicCalculation.CalculateLogic();
             UpdateUI();

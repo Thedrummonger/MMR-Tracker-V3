@@ -1,6 +1,5 @@
 ﻿using MathNet.Symbolics;
 using MMR_Tracker_V3.Logic;
-using MMR_Tracker_V3.SpoilerLogImporter;
 using MMR_Tracker_V3.TrackerObjects;
 using Newtonsoft.Json;
 using System;
@@ -336,7 +335,13 @@ namespace MMR_Tracker_V3.GameDataCreation.TPRando
         {
             Dictionary<string, int> ItemCounts = GetItemCOunts(checkData);
             TRPLogic = new() { GameCode = "TPR", Logic = new List<MMRData.JsonFormatLogicItem>(), Version = 1 };
-            TRPDictionary = new() { LogicVersion = 1, GameCode = "TPR", RootAreas = ["Ordon Province"], WinCondition = "Triforce" };
+            TRPDictionary = new() { LogicVersion = 1, GameCode = "TPR", RootAreas = ["Ordon Province"], WinCondition = "Triforce",
+                SpoilerLogInstructions = new()
+                {
+                    ParserPath = "TPR",
+                    FileImports = new() { { "SpoilerLog", ("TPR Spoiler Log", ["json", "txt"]) } }
+                }
+            };
             foreach (var graph in worldGRaph)
             {
                 foreach(var loc in graph.Value.Locations)

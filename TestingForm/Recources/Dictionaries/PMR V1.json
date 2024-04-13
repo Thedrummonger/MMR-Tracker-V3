@@ -6,6 +6,18 @@
   "RootAreas": [
     "Menu"
   ],
+  "SpoilerLogInstructions": {
+    "ArchipelagoFileImports": {
+      "APPlayerFile": {
+        "Item1": "Archipelago Player YAML",
+        "Item2": [
+          "yaml",
+          "txt"
+        ]
+      }
+    },
+    "ArchipelagoParserPath": "PMR"
+  },
   "LocationList": {
     "GR Forest Clearing Hidden Panel": {
       "OriginalItem": "Star Piece",

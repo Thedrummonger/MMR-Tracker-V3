@@ -1,7 +1,8 @@
 ﻿using MMR_Tracker_V3;
-using MMR_Tracker_V3.SpoilerLogImporter;
+using MMR_Tracker_V3.SpoilerLogHandling;
 using MMR_Tracker_V3.TrackerObjectExtensions;
 using MMR_Tracker_V3.TrackerObjects;
+using System.Linq;
 using static CLIFrontEnd.CLIUtility;
 using static MMR_Tracker_V3.TrackerDataHandling;
 using static MMR_Tracker_V3.TrackerObjects.InstanceData;
@@ -159,20 +160,12 @@ namespace CLIFrontEnd
 
         private void ImportSpoilerLog()
         {
-            if (instanceContainer.Instance.SpoilerLog == null)
+            var Imported = SpoilerTools.ApplySpoilerLog(instanceContainer, (filters, desc) =>
             {
-                var Result = NativeFileDialogSharp.Dialog.FileOpen(SpoilerLogTools.GetSpoilerLogFilter(instanceContainer.Instance).SplitOnce('.', true).Item2);
-                if (Result.IsOk)
-                {
-                    instanceContainer.SaveState();
-                    SpoilerLogTools.ImportSpoilerLog(Result.Path, instanceContainer);
-                }
-            }
-            else
-            {
-                instanceContainer.SaveState();
-                SpoilerLogTools.RemoveSpoilerData(instanceContainer.Instance);
-            }
+                var Result = NativeFileDialogSharp.Dialog.FileOpen();
+                if (!Result.IsOk) { return []; }
+                return File.ReadAllLines(Result.Path);
+            });
         }
 
         private void HideLocations(List<int> indexes, Dictionary<int, object> reference)

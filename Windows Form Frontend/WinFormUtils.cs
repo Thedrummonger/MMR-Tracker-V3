@@ -4,6 +4,8 @@ using MMR_Tracker_V3.TrackerObjects;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Drawing;
+using System.IO;
+using System.Linq;
 using System.Windows.Forms;
 using static MMR_Tracker_V3.TrackerObjects.InstanceData;
 
@@ -144,6 +146,27 @@ namespace Windows_Form_Frontend
             }
             if (longest > 0)
                 C.DropDownWidth = (int)longest;
+        }
+
+        public static string[] SelectAndReadFile(string[] Filters, string Description)
+        {
+            string Filter = $"{Description} {string.Join("|", Filters.Select(x => FormatFilter(x)))}";
+            OpenFileDialog openFileDialog = new()
+            {
+                Filter = Filter,
+                Title = $"Select {Description}"
+            };
+            openFileDialog.ShowDialog();
+            if (openFileDialog.FileName != "" && File.Exists(openFileDialog.FileName))
+            {
+                return File.ReadAllLines(openFileDialog.FileName);
+            }
+            return [];
+
+            string FormatFilter(string Filter)
+            {
+                return $"*.{Filter}|*.{Filter}";
+            }
         }
     }
 }

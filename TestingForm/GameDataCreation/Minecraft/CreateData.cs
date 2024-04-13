@@ -31,7 +31,11 @@ namespace TestingForm.GameDataCreation.Minecraft
                 LogicVersion = 1,
                 WinCondition = "defeated_bosses",
                 NetPlaySupported = true,
-                GameName = "Minecraft"
+                GameName = "Minecraft",
+                SpoilerLogInstructions = new()
+                {
+                    ArchipelagoParserPath = "MC"
+                }
             };
 
             foreach (var l in logic.locations) { AddLogic(l.Key, l.Value); }

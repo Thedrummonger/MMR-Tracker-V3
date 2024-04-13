@@ -1,6 +1,8 @@
-﻿using System;
+﻿using MathNet.Symbolics;
+using System;
 using System.Collections.Generic;
 using System.Linq;
+using static MMR_Tracker_V3.TrackerObjects.OptionData;
 
 namespace MMR_Tracker_V3.TrackerObjects
 {
@@ -34,8 +36,8 @@ namespace MMR_Tracker_V3.TrackerObjects
             }
             public void SetValue(string _Value)
             {
-                if (!ValueList.ContainsKey(_Value)) { throw new Exception($"{_Value} was not a valid value for Option {ID}"); }
-                Value = _Value;
+                if (ValueList.ContainsKey(_Value)) { Value = _Value; return; }
+                throw new Exception($"{_Value} was not a valid value for Option {ID}");
             }
             public void SetDynValue(object _Value)
             {
@@ -68,7 +70,33 @@ namespace MMR_Tracker_V3.TrackerObjects
                 return string.IsNullOrWhiteSpace(ValueList[_val ?? Value].Name) ? ValueList[_val ?? Value].ID : ValueList[_val ?? Value].Name;
             }
 
+            public ChoiceOption GetDictEntry() { return this.GetParent().LogicDictionary.ChoiceOptions[ID]; }
+
             public override MiscData.OptionTypes OptionType() => MiscData.OptionTypes.ChoiceOption;
+
+            internal string GetDynValue(object _Value, bool CaseSensitive = true)
+            {
+                if (_Value is Int64 Int64BoolVal) { return GetIntVal(Convert.ToInt32(Int64BoolVal)); }
+                else if (_Value is int IntBoolVal) { return GetIntVal(IntBoolVal); }
+                else if (_Value is string StringBoolVal) { return GetStringVal(StringBoolVal, CaseSensitive); }
+                else { throw new Exception($"{_Value.GetType().Name} {_Value} Could not be applied to a choice option"); }
+                string GetIntVal(int val)
+                {
+                    if (val < 0 || val >= ValueList.Count) { 
+                        throw new Exception($"{_Value.GetType().Name} {_Value} Could not be applied to a choice option"); 
+                    }
+                    return ValueList.Keys.ToArray()[val];
+                }
+                string GetStringVal(string stringBoolVal, bool CaseSensitive)
+                {
+                    foreach (var optionVal in ValueList)
+                    {
+                        if (CaseSensitive && optionVal.Key.Equals(Value)) { return optionVal.Key; }
+                        else if (!CaseSensitive && optionVal.Key.Equals(Value, StringComparison.CurrentCultureIgnoreCase)) { return optionVal.Key; }
+                    }
+                    throw new Exception($"{_Value.GetType().Name} {_Value} Could not be applied to a choice option");
+                }
+            }
         }
 
         public class MultiSelectOption(InstanceData.TrackerInstance Parent) : LogicOption(Parent)
@@ -129,6 +157,8 @@ namespace MMR_Tracker_V3.TrackerObjects
                 if (!ValueList.ContainsKey(_val)) { return _val; }
                 return string.IsNullOrWhiteSpace(ValueList[_val].Name) ? ValueList[_val].ID : ValueList[_val].Name;
             }
+
+            public MultiSelectOption GetDictEntry() { return this.GetParent().LogicDictionary.MultiSelectOptions[ID]; }
             public override MiscData.OptionTypes OptionType() => MiscData.OptionTypes.MultiSelectOption;
         }
         public class MultiSelectValueListDisplay
@@ -195,6 +225,8 @@ namespace MMR_Tracker_V3.TrackerObjects
                 OptionValue selectedVal = GetValue();
                 return string.IsNullOrWhiteSpace(selectedVal.Name) ? selectedVal.ID : selectedVal.Name;
             }
+
+            public ToggleOption GetDictEntry() { return this.GetParent().LogicDictionary.ToggleOptions[ID]; }
             public override MiscData.OptionTypes OptionType() => MiscData.OptionTypes.ToggleOption;
 
         }
@@ -231,6 +263,8 @@ namespace MMR_Tracker_V3.TrackerObjects
             {
                 return new OptionValue { ID = Value.ToString(), Name = Value.ToString(), Actions = new Action() };
             }
+
+            public IntOption GetDictEntry() { return this.GetParent().LogicDictionary.IntOptions[ID]; }
             public override MiscData.OptionTypes OptionType() => MiscData.OptionTypes.IntOption;
 
         }

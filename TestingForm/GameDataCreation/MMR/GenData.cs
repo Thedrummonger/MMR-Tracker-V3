@@ -20,7 +20,12 @@ namespace TestingForm.GameDataCreation.MMR
                 GameCode = "MMR",
                 LogicVersion = 24,
                 WinCondition = "OtherCredits",
-                DefaultSettings = new LogicDictionaryData.DefaultSettings()
+                DefaultSettings = new LogicDictionaryData.DefaultSettings(),
+                SpoilerLogInstructions = new()
+                {
+                    ParserPath = "MMR",
+                    FileImports = new() { { "SpoilerLog", ("MMR Spoiler Log", ["txt"]) } }
+                }
             };
             MMRDictV16.DefaultSettings.CustomItemListString = "-------------------------40c-80000000----21ffff-ffffffff-ffffffff-f0000000-7bbeeffa-7fffffff-e6f1fffe-ffffffff";
             MMRDictV16.DefaultSettings.CustomJunkLocationsString = "------------------------------200000-----400000--f000";

@@ -4,7 +4,7 @@ using System.Diagnostics;
 using System.Linq;
 using Archipelago.MultiClient.Net;
 using Archipelago.MultiClient.Net.Enums;
-using MMR_Tracker_V3.SpoilerLogImporter;
+using MMR_Tracker_V3.SpoilerLogHandling;
 using MMR_Tracker_V3.TrackerObjectExtensions;
 using MMR_Tracker_V3.TrackerObjects;
 using static MMR_Tracker_V3.NetCode.NetData;
@@ -125,13 +125,6 @@ namespace MMR_Tracker_V3.NetCode
             APClient.Session.Items.ItemReceived += ArchipelagoItemReceived;
             APClient.Session.Locations.CheckedLocationsUpdated += ArchipelagoLocationChecked;
             APClient.Session.MessageLog.OnMessageReceived += ArchipelagoChatMessageReceived;
-        }
-
-        public void ApplySpoilerFromAPData()
-        {
-            var SpoilerLog = SpoilerLogImporter.Archipelago.CreateGenericSpoilerLog(Data.InstanceContainer);
-            var LogImported = SpoilerLogTools.ImportSpoilerLog(SpoilerLog, "", Data.InstanceContainer);
-            Data.InstanceContainer.logicCalculation.CalculateLogic();
         }
 
         public void SyncWithArchipelagoData()

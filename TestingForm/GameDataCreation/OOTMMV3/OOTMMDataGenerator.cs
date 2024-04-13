@@ -27,7 +27,12 @@ namespace TestingForm.GameDataCreation.OOTMMV3
             RootAreas = ["OOT SPAWN"],
             WinCondition = "Game_Clear",
             GameCode = "OOTMM",
-            LogicVersion = 3
+            LogicVersion = 3,
+            SpoilerLogInstructions = new()
+            {
+                ParserPath = "OOTMM",
+                FileImports = new() { { "SpoilerLog", ("OOTMM Spoiler Log", ["json", "txt"]) } }
+            }
         };
         public ExtraData extraData;
         public void GenerateOOTMMData()

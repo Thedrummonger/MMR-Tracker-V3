@@ -42,6 +42,17 @@
       "WFT 2nd Floor Skip"
     ]
   },
+  "SpoilerLogInstructions": {
+    "FileImports": {
+      "SpoilerLog": {
+        "Item1": "MMR Spoiler Log",
+        "Item2": [
+          "txt"
+        ]
+      }
+    },
+    "ParserPath": "MMR"
+  },
   "LocationList": {
     "MaskDeku": {
       "ID": "MaskDeku",
