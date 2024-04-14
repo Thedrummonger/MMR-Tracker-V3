@@ -91,6 +91,11 @@ namespace Windows_Form_Frontend
             {
                 MainInterfaceItemDisplayForm.Invoke(new MethodInvoker(delegate { MainInterfaceItemDisplayForm.CloseThread(); }));
             }
+            if (CurrentNetClientForm is not null)
+            {
+                CurrentNetClientForm.SkipCloseConfirmation = true;
+                CurrentNetClientForm.Close();
+            }
         }
 
         //Menu Strip

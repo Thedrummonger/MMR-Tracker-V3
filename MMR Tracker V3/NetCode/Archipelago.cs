@@ -181,5 +181,19 @@ namespace MMR_Tracker_V3.NetCode
             if (!Data.AutoProcessData || !Data.ReceiveData) { return; }
             SyncWithArchipelagoData();
         }
+
+        public static bool CheckForLocalAPServer()
+        {
+            foreach (Process process in Process.GetProcesses())
+            { 
+                if (!String.IsNullOrEmpty(process.MainWindowTitle) && 
+                    process.ProcessName == "ArchipelagoServer" && 
+                    process.MainWindowTitle.EndsWith("ArchipelagoServer.exe"))
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
     }
 }

@@ -49,6 +49,8 @@ namespace Windows_Form_Frontend
         //Form Actions
         private void NetClient_Load(object sender, EventArgs e)
         {
+            if (ArchipelagoConnectionHandler.CheckForLocalAPServer()) { APServerCache = "localhost"; }
+
             NetSessionData = new NetSessionData(txtServerAddress.Text, (int)nudPort.Value,
                 (int)nudPlayer.Value, txtSlotID.Text, txtGameName.Text, txtPassword.Text,
                 chkRecieveData.Checked, chkSendData.Checked, chkProcessData.Checked, chkAllowCheck.Checked,
@@ -71,13 +73,15 @@ namespace Windows_Form_Frontend
 
             ModeUpdating = false;
         }
+        public bool SkipCloseConfirmation = false;
         private void NetClient_FormClosing(object sender, FormClosingEventArgs e)
         {
-            if (InstanceContainer.netConnection.IsConnected())
+            if (InstanceContainer.netConnection.IsConnected() && !SkipCloseConfirmation)
             {
                 var result = MessageBox.Show($"Closing this windows will disable the active connection, are you sure?", "Close Net Socket", MessageBoxButtons.YesNo);
                 if (result != DialogResult.Yes) { e.Cancel = true; return; }
             }
+            SkipCloseConfirmation = false;
             LocationChecker.CheckStateChanged -= ListenerThread.TrackerDataHandeling_CheckedObjectsUpdate;
             PrintToConsole($"Connection closed manually");
             ConnectionHandling.CloseServer(InstanceContainer);
