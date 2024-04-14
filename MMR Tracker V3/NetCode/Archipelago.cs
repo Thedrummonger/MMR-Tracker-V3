@@ -171,14 +171,14 @@ namespace MMR_Tracker_V3.NetCode
         public void ArchipelagoLocationChecked(System.Collections.ObjectModel.ReadOnlyCollection<long> newCheckedLocations)
         {
             Debug.WriteLine("ArchipelagoLocationChecked");
-            if (!Data.AutoProcessData) { return; }
+            if (!Data.AutoProcessData || !Data.ReceiveData) { return; }
             SyncWithArchipelagoData();
         }
 
         public void ArchipelagoItemReceived(Archipelago.MultiClient.Net.Helpers.ReceivedItemsHelper helper)
         {
             Debug.WriteLine("ArchipelagoItemReceived");
-            if (!Data.AutoProcessData) { return; }
+            if (!Data.AutoProcessData || !Data.ReceiveData) { return; }
             SyncWithArchipelagoData();
         }
     }

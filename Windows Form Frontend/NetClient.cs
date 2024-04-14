@@ -73,7 +73,7 @@ namespace Windows_Form_Frontend
         }
         private void NetClient_FormClosing(object sender, FormClosingEventArgs e)
         {
-            if (InstanceContainer.netConnection.ServerConnection is not null && InstanceContainer.netConnection.ServerConnection.Connected)
+            if (InstanceContainer.netConnection.IsConnected())
             {
                 var result = MessageBox.Show($"Closing this windows will disable the active connection, are you sure?", "Close Net Socket", MessageBoxButtons.YesNo);
                 if (result != DialogResult.Yes) { e.Cancel = true; return; }
