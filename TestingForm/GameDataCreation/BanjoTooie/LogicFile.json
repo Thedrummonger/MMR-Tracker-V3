@@ -1,0 +1,674 @@
+{
+  "Menu": {
+    "locations": {},
+    "exits": {
+      "SM": "true"
+    },
+    "events": {}
+  },
+  "SM": {
+    "locations": {
+      "CHEATOSM1": "",
+      "JINJOIH5": "",
+      "FSWIM": ""
+    },
+    "exits": {
+      "IOHJV": "true"
+    },
+    "events": {}
+  },
+  "IOHJV": {
+    "locations": {
+      "JIGGYIH1": "",
+      "JIGGYIH2": "",
+      "JIGGYIH3": "",
+      "JIGGYIH4": "",
+      "JIGGYIH5": "",
+      "JIGGYIH6": "",
+      "JIGGYIH7": "",
+      "JIGGYIH8": "",
+      "JIGGYIH9": "",
+      "JIGGYIH10": "",
+      "TREBLEJV": ""
+    },
+    "exits": { 
+      "IOHWH": ""
+    },
+    "events": {}
+  },
+  "IOHWH": {
+    "locations": {
+      "JINJOIH1": "",
+      "W1": "",
+      "W2": "",
+      "W3": "",
+      "W4": "",
+      "W5": "",
+      "W6": "",
+      "W7": "",
+      "W8": ""
+    },
+    "exits": {
+      "MT": "",
+      "IOHPL": ""
+    },
+    "events": {}
+  },
+  "MT": {
+    "locations": {
+      "JINJOMT1": "",
+      "JINJOMT2": "",
+      "JINJOMT3": "",
+      "JINJOMT4": "",
+      "JINJOMT5": "",
+      "JIGGYMT1": "",
+      "JIGGYMT2": "",
+      "JIGGYMT3": "",
+      "JIGGYMT4": "",
+      "JIGGYMT5": "",
+      "JIGGYMT6": "",
+      "JIGGYMT7": "",
+      "JIGGYMT8": "",
+      "JIGGYMT9": "",
+      "JIGGYMT10": "",
+      "GLOWBOMT1": "",
+      "GLOWBOMT2": "",
+      "HONEYCMT1": "",
+      "HONEYCMT2": "",
+      "HONEYCMT3": "",
+      "CHEATOMT1": "",
+      "CHEATOMT2": "",
+      "CHEATOMT3": "",
+      "GGRAB": "",
+      "BBLASTER": "",
+      "EGGAIM": "",
+      "TREBLEMT": "",
+      "NOTEMT1": "",
+      "NOTEMT2": "",
+      "NOTEMT3": "",
+      "NOTEMT4": "",
+      "NOTEMT5": "",
+      "NOTEMT6": "",
+      "NOTEMT7": "",
+      "NOTEMT8": "",
+      "NOTEMT9": "",
+      "NOTEMT10": "",
+      "NOTEMT11": "",
+      "NOTEMT12": "",
+      "NOTEMT13": "",
+      "NOTEMT14": "",
+      "NOTEMT15": "",
+      "NOTEMT16": ""
+    },
+    "exits": {
+      "TL_HATCH": ""
+    },
+    "events": {}
+  },
+  "IOHPL": {
+    "locations": {
+      "JINJOIH4": "",
+      "HONEYCIH1": "",
+      "FEGGS": "",
+      "NOTEIH1": "",
+      "NOTEIH2": "",
+      "NOTEIH3": "",
+      "NOTEIH4": ""
+    },
+    "exits": {
+      "GM": "",
+      "IOHCT": "",
+      "IOHPG": ""
+    },
+    "events": {}
+  },
+  "GM": {
+    "locations": {
+      "JINJOGM1": "",
+      "JINJOGM2": "",
+      "JINJOGM3": "",
+      "JINJOGM4": "",
+      "JINJOGM5": "",
+      "JIGGYGM2": "",
+      "JIGGYGM3": "",
+      "JIGGYGM4": "",
+      "JIGGYGM5": "",
+      "JIGGYGM6": "",
+      "JIGGYGM7": "",
+      "JIGGYGM8": "",
+      "JIGGYGM9": "",
+      "JIGGYGM10": "",
+      "GLOWBOGM1": "",
+      "GLOWBOGM2": "",
+      "GLOWBOMEG": "",
+      "HONEYCGM1": "",
+      "HONEYCGM2": "",
+      "CHEATOGM1": "",
+      "CHEATOGM2": "",
+      "CHEATOGM3": "",
+      "BDRILL": "",
+      "BBAYONET": "",
+      "TREBLEGM": "",
+      "NOTEGGM1": "",
+      "NOTEGGM2": "",
+      "NOTEGGM3": "",
+      "NOTEGGM4": "",
+      "NOTEGGM5": "",
+      "NOTEGGM6": "",
+      "NOTEGGM7": "",
+      "NOTEGGM8": "",
+      "NOTEGGM9": "",
+      "NOTEGGM10": "",
+      "NOTEGGM11": "",
+      "NOTEGGM12": "",
+      "NOTEGGM13": "",
+      "NOTEGGM14": "",
+      "NOTEGGM15": "",
+      "NOTEGGM16": ""
+    },
+    "exits": {
+      "GMS": ""
+    },
+    "events": {}
+  },
+  "GMS": {
+    "locations": { "HONEYCGM3": "" },
+    "exits": {
+      "GM": "true",
+      "CHUFFY": ""
+    },
+    "events": {}
+  },
+  "CHUFFY": {
+    "locations": {
+      "JIGGYGM1": "",
+      "CHUFFY": ""
+    },
+    "exits": {
+      "IOHCTS": "",
+      "TLS": "",
+      "GIS": "",
+      "HPLS": "",
+      "WWS": "",
+      "HPIS": ""
+    },
+    "events": {}
+  },
+  "IOHPG": {
+    "locations": {
+      "GEGGS": "",
+      "NOTEIH5": "",
+      "NOTEIH6": "",
+      "NOTEIH7": "",
+      "NOTEIH8": ""
+    },
+    "exits": {
+      "WW": "",
+      "IOHWL": ""
+    },
+    "events": {}
+  },
+  "WW": {
+    "locations": {
+      "JINJOWW1": "",
+      "JINJOWW2": "",
+      "JINJOWW3": "",
+      "JINJOWW4": "",
+      "JINJOWW5": "",
+      "JIGGYWW1": "",
+      "JIGGYWW2": "",
+      "JIGGYWW3": "",
+      "JIGGYWW4": "",
+      "JIGGYWW5": "",
+      "JIGGYWW6": "",
+      "JIGGYWW7": "",
+      "JIGGYWW8": "",
+      "JIGGYWW9": "",
+      "JIGGYWW10": "",
+      "GLOWBOWW1": "",
+      "GLOWBOWW2": "",
+      "HONEYCWW1": "",
+      "HONEYCWW2": "",
+      "HONEYCWW3": "",
+      "CHEATOWW1": "",
+      "CHEATOWW2": "",
+      "CHEATOWW3": "",
+      "AIREAIM": "",
+      "SPLITUP": "",
+      "PACKWH": "",
+      "TREBLEWW": "",
+      "TRAINSWWW": "",
+      "NOTEWW1": "",
+      "NOTEWW2": "",
+      "NOTEWW3": "",
+      "NOTEWW4": "",
+      "NOTEWW5": "",
+      "NOTEWW6": "",
+      "NOTEWW7": "",
+      "NOTEWW8": "",
+      "NOTEWW9": "",
+      "NOTEWW10": "",
+      "NOTEWW11": "",
+      "NOTEWW12": "",
+      "NOTEWW13": "",
+      "NOTEWW14": "",
+      "NOTEWW15": "",
+      "NOTEWW16": ""
+    },
+    "exits": {
+      "WWS": ""
+    },
+    "events": {}
+  },
+  "WWS": {
+    "locations": {},
+    "exits": {
+      "WW": "",
+      "CHUFFY": ""
+    },
+    "events": {}
+  },
+  "IOHCT": {
+    "locations": {
+      "JINJOIH3": "",
+      "IEGGS": "",
+      "TRAINSWIH": ""
+    },
+    "exits": {
+      "JR": "",
+      "IOHCT_HFP_ENTRANCE": "",
+      "IOHCTS": ""
+    },
+    "events": {}
+  },
+  "IOHCTS": {
+    "locations": {},
+    "exits": {
+      "IOHCT": "",
+      "Chuffy": ""
+    },
+    "events": {}
+  },
+  "IOHCT_HFP_ENTRANCE": {
+    "locations": {
+      "GLOWBOIH1": "",
+      "NOTEIH9": "",
+      "NOTEIH10": "",
+      "NOTEIH11": "",
+      "NOTEIH12": ""
+    },
+    "exits": {
+      "HP": ""
+    },
+    "events": {}
+  },
+  "JR": {
+    "locations": {
+      "JRLDB1": "",
+      "JRLDB2": "",
+      "JRLDB3": "",
+      "JRLDB4": "",
+      "JRLDB5": "",
+      "JRLDB6": "",
+      "JRLDB7": "",
+      "JRLDB8": "",
+      "JRLDB9": "",
+      "JRLDB10": "",
+      "JRLDB11": "",
+      "JRLDB12": "",
+      "JRLDB13": "",
+      "JRLDB14": "",
+      "JRLDB15": "",
+      "JRLDB16": "",
+      "JRLDB17": "",
+      "JRLDB18": "",
+      "JRLDB19": "",
+      "JRLDB20": "",
+      "JRLDB21": "",
+      "JRLDB22": "",
+      "JRLDB23": "",
+      "JRLDB24": "",
+      "JRLDB25": "",
+      "JRLDB26": "",
+      "JRLDB27": "",
+      "JRLDB28": "",
+      "JRLDB29": "",
+      "JRLDB30": "",
+      "JINJOJR1": "",
+      "JINJOJR2": "",
+      "JINJOJR3": "",
+      "JINJOJR4": "",
+      "JINJOJR5": "",
+      "JINJOGI3": "",
+      "JIGGYJR1": "",
+      "JIGGYJR2": "",
+      "JIGGYJR3": "",
+      "JIGGYJR4": "",
+      "JIGGYJR5": "",
+      "JIGGYJR6": "",
+      "JIGGYJR7": "",
+      "JIGGYJR8": "",
+      "JIGGYJR9": "",
+      "JIGGYJR10": "",
+      "GLOWBOJR1": "",
+      "GLOWBOJR2": "",
+      "HONEYCJR1": "",
+      "HONEYCJR2": "",
+      "HONEYCJR3": "",
+      "CHEATOJR1": "",
+      "CHEATOJR2": "",
+      "CHEATOJR3": "",
+      "WWHACK": "",
+      "TTORP": "",
+      "AUQAIM": "",
+      "TREBLEJR": "",
+      "NOTEJRL1": "",
+      "NOTEJRL2": "",
+      "NOTEJRL3": "",
+      "NOTEJRL4": "",
+      "NOTEJRL5": "",
+      "NOTEJRL6": "",
+      "NOTEJRL7": "",
+      "NOTEJRL8": "",
+      "NOTEJRL9": "",
+      "NOTEJRL10": "",
+      "NOTEJRL11": "",
+      "NOTEJRL12": "",
+      "NOTEJRL13": "",
+      "NOTEJRL14": "",
+      "NOTEJRL15": "",
+      "NOTEJRL16": ""
+    },
+    "exits": {},
+    "events": {}
+  },
+  "IOHWL": {
+    "locations": {
+      "JINJOIH2": "",
+      "CEGGS": "",
+      "NOTEIH13": "",
+      "NOTEIH14": "",
+      "NOTEIH15": "",
+      "NOTEIH16": ""
+    },
+    "exits": {},
+    "events": {}
+  },
+  "TL": {
+    "locations": {
+      "JINJOTL1": "",
+      "JINJOTL2": "",
+      "JINJOTL3": "",
+      "JINJOTL4": "",
+      "JINJOTL5": "",
+      "JIGGYTD1": "",
+      "JIGGYTD3": "",
+      "JIGGYTD4": "",
+      "JIGGYTD5": "",
+      "JIGGYTD6": "",
+      "JIGGYTD7": "",
+      "JIGGYTD8": "",
+      "JIGGYTD9": "",
+      "JIGGYTD10": "",
+      "JIGGYHP7": "",
+      "GLOWBOTL1": "",
+      "GLOWBOTL2": "",
+      "HONEYCTL1": "",
+      "HONEYCTL2": "",
+      "HONEYCTL3": "",
+      "CHEATOTL1": "",
+      "CHEATOTL2": "",
+      "CHEATOTL3": "",
+      "SPRINGB": "",
+      "TAXPACK": "",
+      "TREBLETL": "",
+      "TRAINSWTD": "",
+      "NOTETDL1": "",
+      "NOTETDL2": "",
+      "NOTETDL3": "",
+      "NOTETDL4": "",
+      "NOTETDL5": "",
+      "NOTETDL6": "",
+      "NOTETDL7": "",
+      "NOTETDL8": "",
+      "NOTETDL9": "",
+      "NOTETDL10": "",
+      "NOTETDL11": "",
+      "NOTETDL12": "",
+      "NOTETDL13": "",
+      "NOTETDL14": "",
+      "NOTETDL15": "",
+      "NOTETDL16": ""
+    },
+    "exits": {
+      "TL_HATCH": "",
+      "TLS": ""
+    },
+    "events": {}
+  },
+  "TL_HATCH": {
+    "locations": { "HATCH": "" },
+    "exits": {},
+    "events": {}
+  },
+  "TLS": {
+    "locations": {},
+    "exits": {
+      "TL": "",
+      "CHUFFY": ""
+    },
+    "events": {}
+  },
+  "IOHQM": {
+    "locations": {},
+    "exits": {
+      "CK": "",
+      "GIO": ""
+    },
+    "events": {}
+  },
+  "GIO": {
+    "locations": { "TRAINSWGI": "" },
+    "exits": {
+      "GI1": ""
+    },
+    "events": {}
+  },
+  "GI1": {
+    "locations": {
+      "JIGGYGI8": "",
+      "JIGGYGI10": "",
+      "CHEATOGI1": "",
+      "SNPACK": "",
+      "CLAWBTS": "",
+      "NOTEGI4": "",
+      "NOTEGI5": "",
+      "NOTEGI13": "",
+      "NOTEGI14": "",
+      "NOTEGI11": "",
+      "NOTEGI12": ""
+    },
+    "exits": {
+      "GIS": "",
+      "GIO": "",
+      "GI2": ""
+    },
+    "events": {}
+  },
+  "GI2": {
+    "locations": {
+      "GLOWBOGI1": "",
+      "LSPRING": "",
+      "JIGGYGI7": "",
+      "TREBLEGI": "",
+      "NOTEGI6": "",
+      "NOTEGI7": "",
+      "NOTEGI8": "",
+      "NOTEGI9": "",
+      "NOTEGI10": ""
+    },
+    "exits": {
+      "GIO": "",
+      "GI3ALL": ""
+    },
+    "events": {}
+  },
+  "GI3ALL": {
+    "locations": {
+      "JINJOGI1": "",
+      "JINJOGI2": "",
+      "JINJOGI4": "",
+      "JINJOGI5": "",
+      "JIGGYGI1": "",
+      "JIGGYGI2": "",
+      "JIGGYGI3": "",
+      "JIGGYGI4": "",
+      "JIGGYGI5": "",
+      "JIGGYGI6": "",
+      "JIGGYGI9": "",
+      "HONEYCGI1": "",
+      "HONEYCGI3": "",
+      "GLOWBOGI2": "",
+      "CHEATOGI2": "",
+      "CHEATOGI3": "",
+      "NOTEGI15": "",
+      "NOTEGI16": ""
+    },
+    "exits": {
+      "GIO": "",
+      "GI2": ""
+    },
+    "events": {}
+  },
+  "GIS": {
+    "locations": {
+      "HONEYCGI2": "",
+      "NOTEGI1": "",
+      "NOTEGI2": "",
+      "NOTEGI3": ""
+    },
+    "exits": {
+      "GI1": "",
+      "CHUFFY": ""
+    },
+    "events": {}
+  },
+  "HP": {
+    "locations": {
+      "JINJOHP1": "",
+      "JINJOHP2": "",
+      "JINJOHP3": "",
+      "JINJOHP4": "",
+      "JINJOHP5": "",
+      "JIGGYHP1": "",
+      "JIGGYHP2": "",
+      "JIGGYHP3": "",
+      "JIGGYHP4": "",
+      "JIGGYHP6": "",
+      "JIGGYHP8": "",
+      "JIGGYHP9": "",
+      "JIGGYHP10": "",
+      "GLOWBOHP1": "",
+      "GLOWBOHP2": "",
+      "HONEYCHP1": "",
+      "HONEYCHP3": "",
+      "CHEATOHP1": "",
+      "CHEATOHP2": "",
+      "CHEATOHP3": "",
+      "SHPACK": "",
+      "GLIDE": "",
+      "TREBLEHP": "",
+      "TRAINSWHP1": "",
+      "TRAINSWHP2": "",
+      "NOTEHFP1": "",
+      "NOTEHFP2": "",
+      "NOTEHFP3": "",
+      "NOTEHFP4": "",
+      "NOTEHFP5": "",
+      "NOTEHFP6": "",
+      "NOTEHFP7": "",
+      "NOTEHFP8": "",
+      "NOTEHFP9": "",
+      "NOTEHFP10": "",
+      "NOTEHFP11": "",
+      "NOTEHFP12": "",
+      "NOTEHFP13": "",
+      "NOTEHFP14": "",
+      "NOTEHFP15": "",
+      "NOTEHFP16": ""
+    },
+    "exits": {},
+    "events": {}
+  },
+  "HPLS": {
+    "locations": { "HONEYCHP2": "" },
+    "exits": {
+      "HP": "",
+      "CHUFFY": ""
+    },
+    "events": {}
+  },
+  "HPIS": {
+    "locations": { "JIGGYHP5": "" },
+    "exits": {},
+    "events": {}
+  },
+  "CC": {
+    "locations": {
+      "JINJOCC1": "",
+      "JINJOCC2": "",
+      "JINJOCC3": "",
+      "JINJOCC4": "",
+      "JINJOCC5": "",
+      "JIGGYCC1": "",
+      "JIGGYCC2": "",
+      "JIGGYCC3": "",
+      "JIGGYCC4": "",
+      "JIGGYCC5": "",
+      "JIGGYCC6": "",
+      "JIGGYCC7": "",
+      "JIGGYCC8": "",
+      "JIGGYCC9": "",
+      "JIGGYCC10": "",
+      "JIGGYTD2": "",
+      "GLOWBOCC1": "",
+      "GLOWBOCC2": "",
+      "HONEYCCC1": "",
+      "HONEYCCC2": "",
+      "HONEYCCC3": "",
+      "CHEATOCC1": "",
+      "CHEATOCC2": "",
+      "CHEATOCC3": "",
+      "SAPACK": "",
+      "TREBLECC": "",
+      "NOTECCL1": "",
+      "NOTECCL2": "",
+      "NOTECCL3": "",
+      "NOTECCL4": "",
+      "NOTECCL5": "",
+      "NOTECCL6": "",
+      "NOTECCL7": "",
+      "NOTECCL8": "",
+      "NOTECCL9": "",
+      "NOTECCL10": "",
+      "NOTECCL11": "",
+      "NOTECCL12": "",
+      "NOTECCL13": "",
+      "NOTECCL14": "",
+      "NOTECCL15": "",
+      "NOTECCL16": ""
+    },
+    "exits": {},
+    "events": {}
+  },
+  "CK": {
+    "locations": {},
+    "exits": { "H1": "" },
+    "events": {}
+  },
+  "H1": {
+    "locations": { "HAG1": "" },
+    "exits": {},
+    "events": {}
+  }
+}
