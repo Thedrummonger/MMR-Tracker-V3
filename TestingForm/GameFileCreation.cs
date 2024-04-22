@@ -37,7 +37,7 @@ namespace TestingForm
             WinFormTesting.ActivateWinFormInterface();
             WinFormInstanceCreation.CreateWinFormInstance(JsonConvert.SerializeObject(Logic), JsonConvert.SerializeObject(dictionary));
             TestingUtility.TestLogicForInvalidItems(MainInterface.InstanceContainer);
-            //TestingUtility.TestLocationsForInvalidVanillaItem(MainInterface.InstanceContainer);
+            TestingUtility.TestLocationsForInvalidVanillaItem(MainInterface.InstanceContainer);
         }
         public static void LASCreateData()
         {

@@ -17,8 +17,9 @@ namespace MMR_Tracker_V3
             Dictionary<string, int> Groups = [];
             if (Instance.LogicDictionary.AreaOrder is not null && Instance.LogicDictionary.AreaOrder.Length > 0)
             {
-                foreach(var Line in Instance.LogicDictionary.AreaOrder)
+                foreach(var i in Instance.LogicDictionary.AreaOrder)
                 {
+                    var Line = i.ToLower().Trim();
                     if (!Groups.ContainsKey(Line))
                     {
                         Groups.Add(Line.Trim(), Groups.Count);
