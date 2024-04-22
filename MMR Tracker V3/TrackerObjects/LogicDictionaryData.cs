@@ -22,6 +22,7 @@ namespace MMR_Tracker_V3.TrackerObjects
             public string GameName { get; set; }
             public bool NetPlaySupported { get; set; } = false;
             public string[] RootAreas { get; set; }
+            public string[] AreaOrder { get; set; }
             public DefaultSettings DefaultSettings { get; set; }
             public SpoilerLogHandling.SpoilerLogInstructions SpoilerLogInstructions { get; set; }
             public Dictionary<string, DictionaryLocationEntries> LocationList { get; set; } = [];

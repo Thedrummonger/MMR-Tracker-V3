@@ -80,6 +80,7 @@ namespace TestingForm
                 new("Create PMR Data", GameFileCreation.PMRCreateData, UpdateDebugActions),
                 new("Create LAS Data", GameFileCreation.LASCreateData, UpdateDebugActions),
                 new("Create WWR Data", GameFileCreation.WWRCreateData, UpdateDebugActions),
+                new("Create BanjoTooie Data", GameFileCreation.BTCreateData, UpdateDebugActions),
                 new("Create Minecraft Data", GameFileCreation.MinecraftCreateData, UpdateDebugActions),
                 new("Test Archipelago", Archipelago, UpdateDebugActions),
                 new("Test Random Stuff", RandomTests, UpdateDebugActions),
