@@ -13,6 +13,18 @@ namespace TestingForm.GameDataCreation.BanjoTooie
 {
     internal class DataGenerator
     {
+        public class BTLogicArea
+        {
+            public Dictionary<string, BTLogicEntry> locations = [];
+            public Dictionary<string, BTLogicEntry> exits = [];
+            public Dictionary<string, BTLogicEntry> events = [];
+        }
+        public class BTLogicEntry
+        {
+            public string beginnerLogic = "";
+            public string normalLogic = "";
+            public string advancedLogic = "";
+        }
         public static void GenData(out MMRData.LogicFile Logic, out LogicDictionaryData.LogicDictionary dictionary)
         {
             var Locations = TestingUtility.DeserializeJsonFile<Dictionary<string, string>>(
@@ -25,6 +37,9 @@ namespace TestingForm.GameDataCreation.BanjoTooie
                 Path.Join(TestingReferences.GetOtherGameDataPath("BanjoTooie"), "LocationAreaMap.json"));
             var OriginalItems = TestingUtility.DeserializeJsonFile<Dictionary<string, string>>(
                 Path.Join(TestingReferences.GetOtherGameDataPath("BanjoTooie"), "OriginalItem.json"));
+
+            var WorldGraph = TestingUtility.DeserializeJsonFile<Dictionary<string, BTLogicArea>>(
+                Path.Join(TestingReferences.GetOtherGameDataPath("BanjoTooie"), "LogicFile.yaml"));
 
             dictionary = new()
             {
