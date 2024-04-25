@@ -1,0 +1,16 @@
+CK:
+  locations: {}
+  exits:
+    H1:
+      beginnerLogic: ''
+      normalLogic: ''
+      advancedLogic: ''
+  events: {}
+H1:
+  locations:
+    HAG1:
+      beginnerLogic: ''
+      normalLogic: ''
+      advancedLogic: ''
+  exits: {}
+  events: {}

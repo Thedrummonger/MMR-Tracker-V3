@@ -1,0 +1,76 @@
+Menu:
+  locations: {}
+  exits:
+    SM:
+      beginnerLogic: true
+      normalLogic: ''
+      advancedLogic: ''
+  events:
+    has_fire:
+      beginnerLogic: (IOHPG && HUMBAIH) || FEGGS
+      normalLogic: ''
+      advancedLogic: ''
+    long_swim:
+      beginnerLogic: MUMBOJR
+      normalLogic: BDRILL || MUMBOJR
+      advancedLogic: ''
+    SOLO_SAPACK:
+      beginnerLogic: SAPACK && SPLITUP
+      normalLogic: ''
+      advancedLogic: ''
+    SOLO_PACKWH:
+      beginnerLogic: PACKWH && SPLITUP
+      normalLogic: ''
+      advancedLogic: ''
+    SOLO_SHPACK:
+      beginnerLogic: SHPACK && SPLITUP
+      normalLogic: ''
+      advancedLogic: ''
+    SOLO_TAXPACK:
+      beginnerLogic: TAXPACK && SPLITUP
+      normalLogic: ''
+      advancedLogic: ''
+    SOLO_WWHACK:
+      beginnerLogic: WWHACK && SPLITUP
+      normalLogic: ''
+      advancedLogic: ''
+    SOLO_LSPRING:
+      beginnerLogic: LSPRING && SPLITUP
+      normalLogic: ''
+      advancedLogic: ''
+    SOLO_GLIDE:
+      beginnerLogic: GLIDE && SPLITUP
+      normalLogic: ''
+      advancedLogic: ''
+    SOLO_HATCH:
+      beginnerLogic: HATCH && SPLITUP
+      normalLogic: ''
+      advancedLogic: ''
+    can_use_battery:
+      beginnerLogic: SOLO_PACKWH && SOLO_TAXPACK
+      normalLogic: ''
+      advancedLogic: ''
+    can_beat_king_coal:
+      beginnerLogic: (option{randomize_chuffy} && CHUFFY) || (option{randomize_chuffy, false} && MUMBOGM && GMS)
+      normalLogic: ''
+      advancedLogic: ''
+SM:
+  locations:
+    CHEATOSM1:
+      beginnerLogic: true
+      normalLogic: ''
+      advancedLogic: ''
+    JINJOIH5:
+      beginnerLogic: TTORP
+      normalLogic: ''
+      advancedLogic: ''
+    FSWIM:
+      beginnerLogic: BDRILL
+      normalLogic: ''
+      advancedLogic: ''
+  exits:
+    IOHJV:
+      beginnerLogic: true
+      normalLogic: ''
+      advancedLogic: ''
+  events: {}

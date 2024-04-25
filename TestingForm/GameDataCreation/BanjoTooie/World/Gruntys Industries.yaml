@@ -1,0 +1,240 @@
+GIO:
+  locations:
+    TRAINSWGI:
+      beginnerLogic: ''
+      normalLogic: ''
+      advancedLogic: ''
+  exits:
+    GI1:
+      beginnerLogic: CLAWBTS
+      normalLogic: ''
+      advancedLogic: ''
+    IOHQM:
+      beginnerLogic: true
+      normalLogic: ''
+      advancedLogic: ''
+  events: {}
+GI1:
+  locations:
+    JIGGYGI8:
+      beginnerLogic: ''
+      normalLogic: ''
+      advancedLogic: ''
+    JIGGYGI10:
+      beginnerLogic: ''
+      normalLogic: ''
+      advancedLogic: ''
+    CHEATOGI1:
+      beginnerLogic: ''
+      normalLogic: ''
+      advancedLogic: ''
+    SNPACK:
+      beginnerLogic: ''
+      normalLogic: ''
+      advancedLogic: ''
+    CLAWBTS:
+      beginnerLogic: ''
+      normalLogic: ''
+      advancedLogic: ''
+    NOTEGI4:
+      beginnerLogic: ''
+      normalLogic: ''
+      advancedLogic: ''
+    NOTEGI5:
+      beginnerLogic: ''
+      normalLogic: ''
+      advancedLogic: ''
+    NOTEGI13:
+      beginnerLogic: ''
+      normalLogic: ''
+      advancedLogic: ''
+    NOTEGI14:
+      beginnerLogic: ''
+      normalLogic: ''
+      advancedLogic: ''
+    NOTEGI11:
+      beginnerLogic: ''
+      normalLogic: ''
+      advancedLogic: ''
+    NOTEGI12:
+      beginnerLogic: ''
+      normalLogic: ''
+      advancedLogic: ''
+  exits:
+    GIS:
+      beginnerLogic: true
+      normalLogic: ''
+      advancedLogic: ''
+    GIO:
+      beginnerLogic: SPLITUP
+      normalLogic: SPLITUP || CLAWBTS
+      advancedLogic: ''
+    GI2:
+      beginnerLogic: CLAWBTS
+      normalLogic: CLAWBTS || (SOLO_LSPRING && SOLO_GLIDE && SOLO_WWHACK) || EGGAIM
+      advancedLogic: ''
+  events: {}
+GI2:
+  locations:
+    GLOWBOGI1:
+      beginnerLogic: ''
+      normalLogic: ''
+      advancedLogic: ''
+    LSPRING:
+      beginnerLogic: ''
+      normalLogic: ''
+      advancedLogic: ''
+    JIGGYGI7:
+      beginnerLogic: ''
+      normalLogic: ''
+      advancedLogic: ''
+    TREBLEGI:
+      beginnerLogic: ''
+      normalLogic: ''
+      advancedLogic: ''
+    NOTEGI6:
+      beginnerLogic: ''
+      normalLogic: ''
+      advancedLogic: ''
+    NOTEGI7:
+      beginnerLogic: ''
+      normalLogic: ''
+      advancedLogic: ''
+    NOTEGI8:
+      beginnerLogic: ''
+      normalLogic: ''
+      advancedLogic: ''
+    NOTEGI9:
+      beginnerLogic: ''
+      normalLogic: ''
+      advancedLogic: ''
+    NOTEGI10:
+      beginnerLogic: ''
+      normalLogic: ''
+      advancedLogic: ''
+  exits:
+    GIO:
+      beginnerLogic: true
+      normalLogic: ''
+      advancedLogic: ''
+    GI3ALL:
+      beginnerLogic: (GGRAB || HUMBAGI) && CLAWBTS
+      normalLogic: HUMBAGI && CLAWBTS
+      advancedLogic: ''
+  events: {}
+GI3ALL:
+  locations:
+    JINJOGI1:
+      beginnerLogic: ''
+      normalLogic: ''
+      advancedLogic: ''
+    JINJOGI2:
+      beginnerLogic: ''
+      normalLogic: ''
+      advancedLogic: ''
+    JINJOGI4:
+      beginnerLogic: ''
+      normalLogic: ''
+      advancedLogic: ''
+    JINJOGI5:
+      beginnerLogic: ''
+      normalLogic: ''
+      advancedLogic: ''
+    JIGGYGI1:
+      beginnerLogic: ''
+      normalLogic: ''
+      advancedLogic: ''
+    JIGGYGI2:
+      beginnerLogic: ''
+      normalLogic: ''
+      advancedLogic: ''
+    JIGGYGI3:
+      beginnerLogic: ''
+      normalLogic: ''
+      advancedLogic: ''
+    JIGGYGI4:
+      beginnerLogic: ''
+      normalLogic: ''
+      advancedLogic: ''
+    JIGGYGI5:
+      beginnerLogic: ''
+      normalLogic: ''
+      advancedLogic: ''
+    JIGGYGI6:
+      beginnerLogic: ''
+      normalLogic: ''
+      advancedLogic: ''
+    JIGGYGI9:
+      beginnerLogic: ''
+      normalLogic: ''
+      advancedLogic: ''
+    HONEYCGI1:
+      beginnerLogic: ''
+      normalLogic: ''
+      advancedLogic: ''
+    HONEYCGI3:
+      beginnerLogic: ''
+      normalLogic: ''
+      advancedLogic: ''
+    GLOWBOGI2:
+      beginnerLogic: ''
+      normalLogic: ''
+      advancedLogic: ''
+    CHEATOGI2:
+      beginnerLogic: ''
+      normalLogic: ''
+      advancedLogic: ''
+    CHEATOGI3:
+      beginnerLogic: ''
+      normalLogic: ''
+      advancedLogic: ''
+    NOTEGI15:
+      beginnerLogic: ''
+      normalLogic: ''
+      advancedLogic: ''
+    NOTEGI16:
+      beginnerLogic: ''
+      normalLogic: ''
+      advancedLogic: ''
+  exits:
+    GIO:
+      beginnerLogic: true
+      normalLogic: ''
+      advancedLogic: ''
+    GI2:
+      beginnerLogic: true
+      normalLogic: ''
+      advancedLogic: ''
+  events:
+    can_beat_weldar:
+      beginnerLogic: can_use_battery && MUMBOGI && HUMBAGI && GEGGS && BDRILL
+      normalLogic: ''
+      advancedLogic: ''
+GIS:
+  locations:
+    HONEYCGI2:
+      beginnerLogic: ''
+      normalLogic: ''
+      advancedLogic: ''
+    NOTEGI1:
+      beginnerLogic: ''
+      normalLogic: ''
+      advancedLogic: ''
+    NOTEGI2:
+      beginnerLogic: ''
+      normalLogic: ''
+      advancedLogic: ''
+    NOTEGI3:
+      beginnerLogic: ''
+      normalLogic: ''
+      advancedLogic: ''
+  exits:
+    GI1:
+      beginnerLogic: true
+      normalLogic: ''
+      advancedLogic: ''
+    CHUFFY:
+      beginnerLogic: can_beat_king_coal && TRAINSWGI
+      normalLogic: ''
+      advancedLogic: ''
+  events: {}

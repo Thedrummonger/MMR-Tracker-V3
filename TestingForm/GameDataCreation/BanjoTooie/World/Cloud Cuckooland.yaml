@@ -1,0 +1,176 @@
+CC:
+  locations:
+    JINJOCC1:
+      beginnerLogic: ''
+      normalLogic: ''
+      advancedLogic: ''
+    JINJOCC2:
+      beginnerLogic: ''
+      normalLogic: ''
+      advancedLogic: ''
+    JINJOCC3:
+      beginnerLogic: ''
+      normalLogic: ''
+      advancedLogic: ''
+    JINJOCC4:
+      beginnerLogic: ''
+      normalLogic: ''
+      advancedLogic: ''
+    JINJOCC5:
+      beginnerLogic: ''
+      normalLogic: ''
+      advancedLogic: ''
+    JIGGYCC1:
+      beginnerLogic: ''
+      normalLogic: ''
+      advancedLogic: ''
+    JIGGYCC2:
+      beginnerLogic: ''
+      normalLogic: ''
+      advancedLogic: ''
+    JIGGYCC3:
+      beginnerLogic: ''
+      normalLogic: ''
+      advancedLogic: ''
+    JIGGYCC4:
+      beginnerLogic: ''
+      normalLogic: ''
+      advancedLogic: ''
+    JIGGYCC5:
+      beginnerLogic: ''
+      normalLogic: ''
+      advancedLogic: ''
+    JIGGYCC6:
+      beginnerLogic: ''
+      normalLogic: ''
+      advancedLogic: ''
+    JIGGYCC7:
+      beginnerLogic: ''
+      normalLogic: ''
+      advancedLogic: ''
+    JIGGYCC8:
+      beginnerLogic: ''
+      normalLogic: ''
+      advancedLogic: ''
+    JIGGYCC9:
+      beginnerLogic: ''
+      normalLogic: ''
+      advancedLogic: ''
+    JIGGYCC10:
+      beginnerLogic: ''
+      normalLogic: ''
+      advancedLogic: ''
+    JIGGYTD2:
+      beginnerLogic: ''
+      normalLogic: ''
+      advancedLogic: ''
+    GLOWBOCC1:
+      beginnerLogic: ''
+      normalLogic: ''
+      advancedLogic: ''
+    GLOWBOCC2:
+      beginnerLogic: ''
+      normalLogic: ''
+      advancedLogic: ''
+    HONEYCCC1:
+      beginnerLogic: ''
+      normalLogic: ''
+      advancedLogic: ''
+    HONEYCCC2:
+      beginnerLogic: ''
+      normalLogic: ''
+      advancedLogic: ''
+    HONEYCCC3:
+      beginnerLogic: ''
+      normalLogic: ''
+      advancedLogic: ''
+    CHEATOCC1:
+      beginnerLogic: ''
+      normalLogic: ''
+      advancedLogic: ''
+    CHEATOCC2:
+      beginnerLogic: ''
+      normalLogic: ''
+      advancedLogic: ''
+    CHEATOCC3:
+      beginnerLogic: ''
+      normalLogic: ''
+      advancedLogic: ''
+    SAPACK:
+      beginnerLogic: ''
+      normalLogic: ''
+      advancedLogic: ''
+    TREBLECC:
+      beginnerLogic: ''
+      normalLogic: ''
+      advancedLogic: ''
+    NOTECCL1:
+      beginnerLogic: ''
+      normalLogic: ''
+      advancedLogic: ''
+    NOTECCL2:
+      beginnerLogic: ''
+      normalLogic: ''
+      advancedLogic: ''
+    NOTECCL3:
+      beginnerLogic: ''
+      normalLogic: ''
+      advancedLogic: ''
+    NOTECCL4:
+      beginnerLogic: ''
+      normalLogic: ''
+      advancedLogic: ''
+    NOTECCL5:
+      beginnerLogic: ''
+      normalLogic: ''
+      advancedLogic: ''
+    NOTECCL6:
+      beginnerLogic: ''
+      normalLogic: ''
+      advancedLogic: ''
+    NOTECCL7:
+      beginnerLogic: ''
+      normalLogic: ''
+      advancedLogic: ''
+    NOTECCL8:
+      beginnerLogic: ''
+      normalLogic: ''
+      advancedLogic: ''
+    NOTECCL9:
+      beginnerLogic: ''
+      normalLogic: ''
+      advancedLogic: ''
+    NOTECCL10:
+      beginnerLogic: ''
+      normalLogic: ''
+      advancedLogic: ''
+    NOTECCL11:
+      beginnerLogic: ''
+      normalLogic: ''
+      advancedLogic: ''
+    NOTECCL12:
+      beginnerLogic: ''
+      normalLogic: ''
+      advancedLogic: ''
+    NOTECCL13:
+      beginnerLogic: ''
+      normalLogic: ''
+      advancedLogic: ''
+    NOTECCL14:
+      beginnerLogic: ''
+      normalLogic: ''
+      advancedLogic: ''
+    NOTECCL15:
+      beginnerLogic: ''
+      normalLogic: ''
+      advancedLogic: ''
+    NOTECCL16:
+      beginnerLogic: ''
+      normalLogic: ''
+      advancedLogic: ''
+  exits: {}
+  events: 
+    HFP_hot_water_cooled:
+      beginnerLogic: 'true'
+      normalLogic: ''
+      advancedLogic: ''

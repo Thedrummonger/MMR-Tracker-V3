@@ -1,0 +1,215 @@
+WW:
+  locations:
+    JINJOWW1:
+      beginnerLogic: true
+      normalLogic: ''
+      advancedLogic: ''
+    JINJOWW2:
+      beginnerLogic: 'GEGGS && EGGAIM'
+      normalLogic: 'GEGGS'
+      advancedLogic: ''
+    JINJOWW3:
+      beginnerLogic: 'GEGGS && HUMBAWW && GGRAB'
+      normalLogic: '(GEGGS || CEGGS) && HUMBAWW'
+      advancedLogic: ''
+    JINJOWW4:
+      beginnerLogic: true
+      normalLogic: ''
+      advancedLogic: ''
+    JINJOWW5:
+      beginnerLogic: 'GGRAB'
+      normalLogic: true
+      advancedLogic: ''
+    JIGGYWW1:
+      beginnerLogic: 'SPLITUP && (GEGGS)'
+      normalLogic: 'SPLITUP && (GEGGS || CEGGS)'
+      advancedLogic: ''
+    JIGGYWW2:
+      beginnerLogic: 'HUMBAWW && MUMBOWW && GGRAB'
+      normalLogic: 'HUMBAWW && MUMBOWW'
+      advancedLogic: ''
+    JIGGYWW3:
+      beginnerLogic: 'AIREAIM && EGGAIM && GEGGS'
+      normalLogic: ''
+      advancedLogic: ''
+    JIGGYWW4:
+      beginnerLogic: 'play_saucer_peril'
+      advancedLogic: ''
+    JIGGYWW5:
+      beginnerLogic: 'SPLITUP && AIREAIM && GEGGS'
+      normalLogic: 'SPLITUP && AIREAIM && (GEGGS || CEGGS)'
+      advancedLogic: ''
+    JIGGYWW6:
+      beginnerLogic: 'GGRAB'
+      normalLogic: true
+      advancedLogic: ''
+    JIGGYWW7:
+      beginnerLogic: 'HUMBAWW && MUMBOWW && TAXPACK && GEGGS && GGRAB'
+      normalLogic: 'HUMBAWW && MUMBOWW && TAXPACK && (GEGGS || CEGGS)'
+      advancedLogic: ''
+    JIGGYWW8:
+      beginnerLogic: 'MUMBOWW && HUMBAWW && GGRAB'
+      normalLogic: 'MUMBOWW && HUMBAWW'
+      advancedLogic: ''
+    JIGGYWW9:
+      beginnerLogic: 'HUMBAWW && SPLITUP && GGRAB'
+      normalLogic: 'HUMBAWW'
+      advancedLogic: ''
+    JIGGYWW10:
+      beginnerLogic: 'BDRILL && GEGGS'
+      normalLogic: ''
+      advancedLogic: ''
+    GLOWBOWW1:
+      beginnerLogic: 'GGRAB && HUMBAWW'
+      normalLogic: 'HUMBAWW'
+      advancedLogic: ''
+    GLOWBOWW2:
+      beginnerLogic: 'GGRAB'
+      normalLogic: true
+      advancedLogic: ''
+    HONEYCWW1:
+      beginnerLogic: 'GGRAB'
+      normalLogic: ''
+      advancedLogic: true
+    HONEYCWW2:
+      beginnerLogic: 'HUMBAWW'
+      normalLogic: ''
+      advancedLogic: ''
+    HONEYCWW3:
+      beginnerLogic: 'GEGGS'
+      normalLogic: '(GEGGS || CEGGS)'
+      advancedLogic: ''
+    CHEATOWW1:
+      beginnerLogic: 'GGRAB'
+      normalLogic: 'GGRAB || (SOLO_LSPRING && (SOLO_GLIDE || SOLO_WWHACK))'
+      advancedLogic: ''
+    CHEATOWW2:
+      beginnerLogic: 'HUMBAWW'
+      normalLogic: ''
+      advancedLogic: ''
+    CHEATOWW3:
+      beginnerLogic: 'play_saucer_peril'
+      normalLogic: ''
+      advancedLogic: ''
+    AIREAIM:
+      beginnerLogic: 'check_notes, 180'
+      normalLogic: ''
+      advancedLogic: ''
+    SPLITUP:
+      beginnerLogic: 'check_notes, 160'
+      normalLogic: ''
+      advancedLogic: ''
+    PACKWH:
+      beginnerLogic: 'SPLITUP && check_notes, 170'
+      normalLogic: ''
+      advancedLogic: ''
+    TREBLEWW:
+      beginnerLogic: 'GGRAB && HUMBAWW'
+      normalLogic: 'HUMBAWW'
+      advancedLogic: ''
+    TRAINSWWW:
+      beginnerLogic: 'GGRAB'
+      normalLogic: 'GGRAB || LSPRING'
+      advancedLogic: ''
+    NOTEWW1:
+      beginnerLogic: true
+      normalLogic: ''
+      advancedLogic: ''
+    NOTEWW2:
+      beginnerLogic: true
+      normalLogic: ''
+      advancedLogic: ''
+    NOTEWW3:
+      beginnerLogic: true
+      normalLogic: ''
+      advancedLogic: ''
+    NOTEWW4:
+      beginnerLogic: true
+      normalLogic: ''
+      advancedLogic: ''
+    NOTEWW5:
+      beginnerLogic: true
+      normalLogic: ''
+      advancedLogic: ''
+    NOTEWW6:
+      beginnerLogic: true
+      normalLogic: ''
+      advancedLogic: ''
+    NOTEWW7:
+      beginnerLogic: true
+      normalLogic: ''
+      advancedLogic: ''
+    NOTEWW8:
+      beginnerLogic: true
+      normalLogic: ''
+      advancedLogic: ''
+    NOTEWW9:
+      beginnerLogic: notes_ww_area51
+      normalLogic: ''
+      advancedLogic: ''
+    NOTEWW10:
+      beginnerLogic: notes_ww_area51
+      normalLogic: ''
+      advancedLogic: ''
+    NOTEWW11:
+      beginnerLogic: true
+      normalLogic: ''
+      advancedLogic: ''
+    NOTEWW12:
+      beginnerLogic: true
+      normalLogic: ''
+      advancedLogic: ''
+    NOTEWW13:
+      beginnerLogic: true
+      normalLogic: ''
+      advancedLogic: ''
+    NOTEWW14:
+      beginnerLogic: true
+      normalLogic: ''
+      advancedLogic: ''
+    NOTEWW15:
+      beginnerLogic: true
+      normalLogic: ''
+      advancedLogic: ''
+    NOTEWW16:
+      beginnerLogic: true
+      normalLogic: ''
+      advancedLogic: ''
+  exits:
+    WWS:
+      beginnerLogic: true
+      normalLogic: ''
+      advancedLogic: ''
+    IOHPG:
+      beginnerLogic: true
+      normalLogic: ''
+      advancedLogic: ''
+  events:
+    smuggle_food:
+      beginnerLogic: CLAWBTS
+      normalLogic: ''
+      advancedLogic: ''
+    free_golby:
+      beginnerLogic: GEGGS && TRAINSWWW
+      normalLogic: ''
+      advancedLogic: ''
+    play_saucer_peril:
+      beginnerLogic: 'HUMBAGM && MUMBOWW && HUMBAWW && saucer_door_open && GGRAB && GEGGS'
+      normalLogic: 'HUMBAGM && MUMBOWW && HUMBAWW && saucer_door_open && (GEGGS || CEGGS)'
+      advancedLogic: ''
+    notes_ww_area51:
+      beginnerLogic: GEGGS
+      normalLogic: GEGGS || CEGGS
+      advancedLogic: GEGGS || CEGGS || SPLITUP
+WWS:
+  locations: {}
+  exits:
+    WW:
+      beginnerLogic: true
+      normalLogic: ''
+      advancedLogic: ''
+    CHUFFY:
+      beginnerLogic: can_beat_king_coal && TRAINSWWW
+      normalLogic: ''
+      advancedLogic: ''
+  events: {}

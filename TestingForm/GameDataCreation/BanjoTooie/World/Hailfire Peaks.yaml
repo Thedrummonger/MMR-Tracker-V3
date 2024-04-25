@@ -1,0 +1,204 @@
+HP:
+  locations:
+    JINJOHP1:
+      beginnerLogic: ''
+      normalLogic: ''
+      advancedLogic: ''
+    JINJOHP2:
+      beginnerLogic: ''
+      normalLogic: ''
+      advancedLogic: ''
+    JINJOHP3:
+      beginnerLogic: ''
+      normalLogic: ''
+      advancedLogic: ''
+    JINJOHP4:
+      beginnerLogic: ''
+      normalLogic: ''
+      advancedLogic: ''
+    JINJOHP5:
+      beginnerLogic: ''
+      normalLogic: ''
+      advancedLogic: ''
+    JIGGYHP1:
+      beginnerLogic: ''
+      normalLogic: ''
+      advancedLogic: ''
+    JIGGYHP2:
+      beginnerLogic: ''
+      normalLogic: ''
+      advancedLogic: ''
+    JIGGYHP3:
+      beginnerLogic: ''
+      normalLogic: ''
+      advancedLogic: ''
+    JIGGYHP4:
+      beginnerLogic: ''
+      normalLogic: ''
+      advancedLogic: ''
+    JIGGYHP6:
+      beginnerLogic: ''
+      normalLogic: ''
+      advancedLogic: ''
+    JIGGYHP8:
+      beginnerLogic: ''
+      normalLogic: ''
+      advancedLogic: ''
+    JIGGYHP9:
+      beginnerLogic: ''
+      normalLogic: ''
+      advancedLogic: ''
+    JIGGYHP10:
+      beginnerLogic: ''
+      normalLogic: ''
+      advancedLogic: ''
+    GLOWBOHP1:
+      beginnerLogic: ''
+      normalLogic: ''
+      advancedLogic: ''
+    GLOWBOHP2:
+      beginnerLogic: ''
+      normalLogic: ''
+      advancedLogic: ''
+    HONEYCHP1:
+      beginnerLogic: ''
+      normalLogic: ''
+      advancedLogic: ''
+    HONEYCHP3:
+      beginnerLogic: ''
+      normalLogic: ''
+      advancedLogic: ''
+    CHEATOHP1:
+      beginnerLogic: ''
+      normalLogic: ''
+      advancedLogic: ''
+    CHEATOHP2:
+      beginnerLogic: ''
+      normalLogic: ''
+      advancedLogic: ''
+    CHEATOHP3:
+      beginnerLogic: ''
+      normalLogic: ''
+      advancedLogic: ''
+    SHPACK:
+      beginnerLogic: ''
+      normalLogic: ''
+      advancedLogic: ''
+    GLIDE:
+      beginnerLogic: ''
+      normalLogic: ''
+      advancedLogic: ''
+    TREBLEHP:
+      beginnerLogic: ''
+      normalLogic: ''
+      advancedLogic: ''
+    TRAINSWHP1:
+      beginnerLogic: ''
+      normalLogic: ''
+      advancedLogic: ''
+    TRAINSWHP2:
+      beginnerLogic: ''
+      normalLogic: ''
+      advancedLogic: ''
+    NOTEHFP1:
+      beginnerLogic: ''
+      normalLogic: ''
+      advancedLogic: ''
+    NOTEHFP2:
+      beginnerLogic: ''
+      normalLogic: ''
+      advancedLogic: ''
+    NOTEHFP3:
+      beginnerLogic: ''
+      normalLogic: ''
+      advancedLogic: ''
+    NOTEHFP4:
+      beginnerLogic: ''
+      normalLogic: ''
+      advancedLogic: ''
+    NOTEHFP5:
+      beginnerLogic: ''
+      normalLogic: ''
+      advancedLogic: ''
+    NOTEHFP6:
+      beginnerLogic: ''
+      normalLogic: ''
+      advancedLogic: ''
+    NOTEHFP7:
+      beginnerLogic: ''
+      normalLogic: ''
+      advancedLogic: ''
+    NOTEHFP8:
+      beginnerLogic: ''
+      normalLogic: ''
+      advancedLogic: ''
+    NOTEHFP9:
+      beginnerLogic: ''
+      normalLogic: ''
+      advancedLogic: ''
+    NOTEHFP10:
+      beginnerLogic: ''
+      normalLogic: ''
+      advancedLogic: ''
+    NOTEHFP11:
+      beginnerLogic: ''
+      normalLogic: ''
+      advancedLogic: ''
+    NOTEHFP12:
+      beginnerLogic: ''
+      normalLogic: ''
+      advancedLogic: ''
+    NOTEHFP13:
+      beginnerLogic: ''
+      normalLogic: ''
+      advancedLogic: ''
+    NOTEHFP14:
+      beginnerLogic: ''
+      normalLogic: ''
+      advancedLogic: ''
+    NOTEHFP15:
+      beginnerLogic: ''
+      normalLogic: ''
+      advancedLogic: ''
+    NOTEHFP16:
+      beginnerLogic: ''
+      normalLogic: ''
+      advancedLogic: ''
+  exits: 
+    IOHCT_HFP_ENTRANCE:
+      beginnerLogic: true
+      normalLogic: ''
+      advancedLogic: ''
+  events: 
+    cool_chuffy:
+      beginnerLogic: 'free_golby && TRAINSWHP1'
+      normalLogic: ''
+      advancedLogic: ''
+    drain_pool:
+      beginnerLogic: 'HFP_hot_water_cooled && SPLITUP && SHPACK'
+      normalLogic: ''
+      advancedLogic: ''
+HPLS:
+  locations:
+    HONEYCHP2:
+      beginnerLogic: ''
+      normalLogic: ''
+      advancedLogic: ''
+  exits:
+    HP:
+      beginnerLogic: ''
+      normalLogic: ''
+      advancedLogic: ''
+    CHUFFY:
+      beginnerLogic: ''
+      normalLogic: ''
+      advancedLogic: ''
+  events: {}
+HPIS:
+  locations:
+    JIGGYHP5:
+      beginnerLogic: ''
+      normalLogic: ''
+      advancedLogic: ''
+  exits: {}
+  events: {}

@@ -1,0 +1,284 @@
+IOHJV:
+  locations:
+    JIGGYIH1:
+      beginnerLogic: WJINJO
+      normalLogic: ''
+      advancedLogic: ''
+    JIGGYIH2:
+      beginnerLogic: OJINJO, 2
+      normalLogic: ''
+      advancedLogic: ''
+    JIGGYIH3:
+      beginnerLogic: YJINJO, 3
+      normalLogic: ''
+      advancedLogic: ''
+    JIGGYIH4:
+      beginnerLogic: BRJINJO, 4
+      normalLogic: ''
+      advancedLogic: ''
+    JIGGYIH5:
+      beginnerLogic: GJINJO, 5
+      normalLogic: ''
+      advancedLogic: ''
+    JIGGYIH6:
+      beginnerLogic: RJINJO, 6
+      normalLogic: ''
+      advancedLogic: ''
+    JIGGYIH7:
+      beginnerLogic: BLJINJO, 7
+      normalLogic: ''
+      advancedLogic: ''
+    JIGGYIH8:
+      beginnerLogic: PJINJO, 8
+      normalLogic: ''
+      advancedLogic: ''
+    JIGGYIH9:
+      beginnerLogic: BKJINJO, 9
+      normalLogic: ''
+      advancedLogic: ''
+    JIGGYIH10:
+      beginnerLogic: true
+      normalLogic: ''
+      advancedLogic: ''
+    TREBLEJV:
+      beginnerLogic: GGRAB
+      normalLogic: GGRAB
+      advancedLogic: true
+  exits:
+    IOHWH:
+      beginnerLogic: true
+      normalLogic: ''
+      advancedLogic: ''
+  events: {}
+IOHWH:
+  locations:
+    JINJOIH1:
+      beginnerLogic: true
+      normalLogic: ''
+      advancedLogic: ''
+    W1:
+      beginnerLogic: JIGGY, 1
+      normalLogic: ''
+      advancedLogic: ''
+    W2:
+      beginnerLogic: JIGGY, 4
+      normalLogic: ''
+      advancedLogic: ''
+    W3:
+      beginnerLogic: JIGGY, 8
+      normalLogic: ''
+      advancedLogic: ''
+    W4:
+      beginnerLogic: JIGGY, 14
+      normalLogic: ''
+      advancedLogic: ''
+    W5:
+      beginnerLogic: JIGGY, 20
+      normalLogic: ''
+      advancedLogic: ''
+    W6:
+      beginnerLogic: JIGGY, 28
+      normalLogic: ''
+      advancedLogic: ''
+    W7:
+      beginnerLogic: JIGGY, 36
+      normalLogic: ''
+      advancedLogic: ''
+    W8:
+      beginnerLogic: JIGGY, 45
+      normalLogic: ''
+      advancedLogic: ''
+  exits:
+    MT:
+      beginnerLogic: MTA
+      normalLogic: ''
+      advancedLogic: ''
+    IOHPL:
+      beginnerLogic: GGRAB
+      normalLogic: GGRAB
+      advancedLogic: true
+  events: {}
+IOHPL:
+  locations:
+    JINJOIH4:
+      beginnerLogic: BDRILL
+      normalLogic: ''
+      advancedLogic: ''
+    HONEYCIH1:
+      beginnerLogic: true
+      normalLogic: ''
+      advancedLogic: ''
+    FEGGS:
+      beginnerLogic: check_notes, 45
+      normalLogic: ''
+      advancedLogic: ''
+    NOTEIH1:
+      beginnerLogic: GGRAB
+      normalLogic: true
+      advancedLogic: ''
+    NOTEIH2:
+      beginnerLogic: GGRAB
+      normalLogic: true
+      advancedLogic: ''
+    NOTEIH3:
+      beginnerLogic: true
+      normalLogic: ''
+      advancedLogic: ''
+    NOTEIH4:
+      beginnerLogic: true
+      normalLogic: ''
+      advancedLogic: ''
+  exits:
+    GM:
+      beginnerLogic: GGA
+      normalLogic: ''
+      advancedLogic: ''
+    IOHCT:
+      beginnerLogic: SPLITUP
+      normalLogic: ''
+      advancedLogic: ''
+    IOHPG:
+      beginnerLogic: FEGGS && EGGAIM
+      normalLogic: FEGGS
+      advancedLogic: ''
+  events: {}
+IOHPG:
+  locations:
+    GEGGS:
+      beginnerLogic: 'check_notes, 110'
+      normalLogic: ''
+      advancedLogic: ''
+    NOTEIH5:
+      beginnerLogic: true
+      normalLogic: ''
+      advancedLogic: ''
+    NOTEIH6:
+      beginnerLogic: true
+      normalLogic: ''
+      advancedLogic: ''
+    NOTEIH7:
+      beginnerLogic: true
+      normalLogic: ''
+      advancedLogic: ''
+    NOTEIH8:
+      beginnerLogic: true
+      normalLogic: ''
+      advancedLogic: ''
+  exits:
+    WW:
+      beginnerLogic: 'WWA'
+      normalLogic: ''
+      advancedLogic: ''
+    IOHWL:
+      beginnerLogic: 'TTORP'
+      normalLogic: ''
+      advancedLogic: ''
+  events: {}
+IOHCT:
+  locations:
+    JINJOIH3:
+      beginnerLogic: 'CLAWBTS'
+      normalLogic: ''
+      advancedLogic: ''
+    IEGGS:
+      beginnerLogic: 'check_notes, 220'
+      normalLogic: ''
+      advancedLogic: ''
+    TRAINSWIH:
+      beginnerLogic: 'GGRAB'
+      normalLogic: ''
+      advancedLogic: ''
+  exits:
+    JR:
+      beginnerLogic: 'JRA'
+      normalLogic: ''
+      advancedLogic: ''
+    IOHCT_HFP_ENTRANCE:
+      beginnerLogic: true
+      normalLogic: ''
+      advancedLogic: ''
+    IOHCTS:
+      beginnerLogic: true
+      normalLogic: ''
+      advancedLogic: ''
+  events: {}
+IOHCTS:
+  locations: {}
+  exits:
+    IOHCT:
+      beginnerLogic: true
+      normalLogic: ''
+      advancedLogic: ''
+    Chuffy:
+      beginnerLogic: can_beat_king_coal && TRAINSWIH
+      normalLogic: ''
+      advancedLogic: ''
+  events: {}
+IOHCT_HFP_ENTRANCE:
+  locations:
+    GLOWBOIH1:
+      beginnerLogic: true
+      normalLogic: ''
+      advancedLogic: ''
+    NOTEIH9:
+      beginnerLogic: true
+      normalLogic: ''
+      advancedLogic: ''
+    NOTEIH10:
+      beginnerLogic: true
+      normalLogic: ''
+      advancedLogic: ''
+    NOTEIH11:
+      beginnerLogic: true
+      normalLogic: ''
+      advancedLogic: ''
+    NOTEIH12:
+      beginnerLogic: true
+      normalLogic: ''
+      advancedLogic: ''
+  exits:
+    HP:
+      beginnerLogic: HFA
+      normalLogic: ''
+      advancedLogic: ''
+  events: {}
+IOHWL:
+  locations:
+    JINJOIH2:
+      beginnerLogic: GGRAB
+      normalLogic: True
+      advancedLogic: ''
+    CEGGS:
+      beginnerLogic: 'check_notes, 315'
+      normalLogic: ''
+      advancedLogic: ''
+    NOTEIH13:
+      beginnerLogic: true
+      normalLogic: ''
+      advancedLogic: ''
+    NOTEIH14:
+      beginnerLogic: true
+      normalLogic: ''
+      advancedLogic: ''
+    NOTEIH15:
+      beginnerLogic: true
+      normalLogic: ''
+      advancedLogic: ''
+    NOTEIH16:
+      beginnerLogic: true
+      normalLogic: ''
+      advancedLogic: ''
+  exits: {}
+  events: {}
+IOHQM:
+  locations: {}
+  exits:
+    CK:
+      beginnerLogic: CKA && CLAWBTS
+      normalLogic: ''
+      advancedLogic: ''
+    GIO:
+      beginnerLogic: GIA
+      normalLogic: ''
+      advancedLogic: ''
+  events: {}
