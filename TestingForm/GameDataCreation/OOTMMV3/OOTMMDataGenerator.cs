@@ -24,7 +24,7 @@ namespace TestingForm.GameDataCreation.OOTMMV3
         public MMRData.LogicFile LogicFile = new() { GameCode = "OOTMM", Logic = [], Version = 3 };
         public LogicDictionaryData.LogicDictionary dictionary = new LogicDictionaryData.LogicDictionary()
         {
-            RootAreas = ["OOT SPAWN"],
+            RootAreas = ["MENU"],
             WinCondition = "Game_Clear",
             GameCode = "OOTMM",
             LogicVersion = 3,
@@ -65,12 +65,47 @@ namespace TestingForm.GameDataCreation.OOTMMV3
             HandleTingle();
             AddLogicTricks();
             FixAreaClearLogic();
+            HandleSingleGameEntranceLogic();
             //SettingCreation.CleanSettings();
             CleanLogic();
             FixAreas();
 
             File.WriteAllText(Path.Combine(TestingReferences.GetTestingLogicPresetsPath(), "DEV-OOTMM Casual.json"), LogicFile.ToFormattedJson());
             File.WriteAllText(Path.Combine(TestingReferences.GetTestingDictionaryPath(), "OOTMM V3.json"), dictionary.ToFormattedJson());
+        }
+
+        private void HandleSingleGameEntranceLogic()
+        {
+            var MenuToOOT = "MENU => OOT SPAWN";
+            var MenuToMM = "MENU => MM Clock Town";
+            LogicFile.Logic.Add(new JsonFormatLogicItem { Id = MenuToOOT, RequiredItems = ["setting{games, mm, false}"] });
+            LogicFile.Logic.Add(new JsonFormatLogicItem { Id = MenuToMM, RequiredItems = ["setting{games, mm}"] });
+            dictionary.EntranceList.Add(MenuToOOT, new LogicDictionaryData.DictionaryEntranceEntries
+            {
+                Area = MenuToOOT.TrimSplit("=>")[0],
+                Exit = MenuToOOT.TrimSplit("=>")[1],
+                ID = MenuToOOT,
+                RandomizableEntrance = false
+            });
+            dictionary.EntranceList.Add(MenuToMM, new LogicDictionaryData.DictionaryEntranceEntries
+            {
+                Area = MenuToMM.TrimSplit("=>")[0],
+                Exit = MenuToMM.TrimSplit("=>")[1],
+                ID = MenuToMM,
+                RandomizableEntrance = false
+            });
+            foreach(var entry in dictionary.EntranceList)
+            {
+                if (!HasGamecode(entry.Value.Area)) { continue; }
+                var AreaGameCode = OOTMMUtility.GetGamecode(entry.Value.Area);
+                var ExitGameCode = OOTMMUtility.GetGamecode(entry.Value.Exit);
+                var LogicEntry = LogicFile.Logic.FirstOrDefault(x => x.Id == entry.Key);
+                if (AreaGameCode != ExitGameCode && LogicEntry is not null)
+                {
+                    LogicEntry.RequiredItems.Add("setting{games, ootmm}");
+                    Debug.WriteLine($"Exit {entry.Key} Restricted to combo randomizer");
+                }
+            }
         }
 
         public void CleanLogic()
@@ -233,7 +268,7 @@ namespace TestingForm.GameDataCreation.OOTMMV3
         {
             var MM_BOSS_GREAT_BAY = LogicFile.Logic.First(x => x.Id == "MM_BOSS_GREAT_BAY_EVENT");
             var MM_BOSS_SNOWHEAD = LogicFile.Logic.First(x => x.Id == "MM_BOSS_SNOWHEAD_EVENT");
-            var MM_CLEAN_SWAMP = LogicFile.Logic.First(x => x.Id == "MM_CLEAN_SWAMP_EVENT");
+            var MM_BOSS_WOODFALL = LogicFile.Logic.First(x => x.Id == "MM_BOSS_WOODFALL_EVENT");
             var OOT_EVENT_WATER_TEMPLE_CLEARED = LogicFile.Logic.First(x => x.Id == "OOT_WATER_TEMPLE_CLEARED_EVENT");
 
             Dictionary<string, string> RandoAreaClear = new(){
@@ -253,7 +288,7 @@ namespace TestingForm.GameDataCreation.OOTMMV3
 
             CreateLogic(MM_BOSS_GREAT_BAY, "MM Great Bay Temple Boss Access", "MM Great Bay Temple Boss");
             CreateLogic(MM_BOSS_SNOWHEAD, "MM Snowhead Temple Boss Access", "MM Snowhead Temple Boss");
-            CreateLogic(MM_CLEAN_SWAMP, "MM Woodfall Temple Boss Access", "MM Woodfall Temple Boss");
+            CreateLogic(MM_BOSS_WOODFALL, "MM Woodfall Temple Boss Access", "MM Woodfall Temple Boss");
             CreateLogic(OOT_EVENT_WATER_TEMPLE_CLEARED, "OOT Water Temple Antichamber", "OOT Water Temple Boss");
 
             void CreateLogic(MMRData.JsonFormatLogicItem Item, string DungeonArea, string BossDoor)

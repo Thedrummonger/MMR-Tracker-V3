@@ -246,6 +246,12 @@ namespace TestingForm.GameDataCreation.OOTMMV3
             {
                 NewLogicItem = $"HAS_SPECIAL_{logicFuncData.RawParam}";
             }
+            else if (logicFuncData.function.In("flag_set", "flag_check_unset"))
+            {
+                //The tracker can't handle this kind of state checking,
+                //the macros that use these function do enough without these functions
+                NewLogicItem = true.ToString();
+            }
             return NewLogicItem != CurrentLogicItem;
         }
 

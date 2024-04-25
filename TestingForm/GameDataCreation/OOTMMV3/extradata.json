@@ -311,6 +311,7 @@
     "OOT_WALLET",
     "OOT_WEIRD_EGG",
     "OOT_ZELDA_LETTER",
+    "SHARED_SWORD",
     "SHARED_ARROW_FIRE",
     "SHARED_ARROW_ICE",
     "SHARED_ARROW_LIGHT",
@@ -710,7 +711,13 @@
     "MM_CLOCK3",
     "MM_CLOCK4",
     "MM_CLOCK5",
-    "MM_CLOCK6"
+    "MM_CLOCK6",
+    "OOT_SOUL_MISC_GS",
+    "OOT_SOUL_MISC_BUSINESS_SCRUB",
+    "MM_SOUL_MISC_GS",
+    "MM_SOUL_MISC_BUSINESS_SCRUB",
+    "SHARED_SOUL_MISC_GS",
+    "SHARED_SOUL_MISC_BUSINESS_SCRUB"
   ],
   "mm_masks": [
     "MM_MASK_CAPTAIN",
@@ -1255,6 +1262,7 @@
     "OOT_SWORD_KNIFE": "Giant's Knife",
     "OOT_SWORD_KOKIRI": "Kokiri Sword (OoT)",
     "OOT_SWORD_MASTER": "Master Sword",
+    "SHARED_SWORD": "Progressive Sword",
     "OOT_SWORD": "Progressive Sword (OoT)",
     "OOT_TUNIC_GORON": "Goron Tunic (OoT)",
     "OOT_TUNIC_ZORA": "Zora Tunic (OoT)",
@@ -1496,7 +1504,13 @@
     "MM_CLOCK6": "Clock (Night 3)",
     "MM_TRAP_RUPOOR": "Rupoor (MM)",
     "OOT_TRAP_RUPOOR": "Rupoor (OoT)",
-    "SHARED_TRAP_RUPOOR": "Rupoor"
+    "SHARED_TRAP_RUPOOR": "Rupoor",
+    "OOT_SOUL_MISC_GS": "Soul of Gold Skulltulas (OoT)",
+    "OOT_SOUL_MISC_BUSINESS_SCRUB": "Soul of Business Scrubs (OoT)",
+    "MM_SOUL_MISC_GS": "Soul of Gold Skulltulas (MM)",
+    "MM_SOUL_MISC_BUSINESS_SCRUB": "Soul of Business Scrubs (MM)",
+    "SHARED_SOUL_MISC_GS": "Soul of Gold Skulltulas",
+    "SHARED_SOUL_MISC_BUSINESS_SCRUB": "Soul of Business Scrubs"
   },
   "dungeons": {
     "DT": "Deku Tree",
@@ -1639,7 +1653,8 @@
     "MM_STOCK_POT_WAIT": "Wait outside Stock Pot Inn's roof for closing",
     "MM_STAGE_LIGHTS_DIN": "Light the Zora Hall Stage Lights using Din's Fire, Bow, and Hookshot",
     "MM_RANCH_FARORE": "Romani's Ranch locations using Farore's Wind and Time Reset",
-    "MM_EVAN_FARORE": "Evan's Piece of Heart using Farore's Wind and Time Reset"
+    "MM_EVAN_FARORE": "Evan's Piece of Heart using Farore's Wind and Time Reset",
+    "MM_KEG_TRIAL_HEATLESS": "Powder Keg Trial without Thawing Ice using Hookshot Anywhere"
   },
   "renewablelocations": [
     "MM Southern Swamp Scrub Shop",
@@ -1669,6 +1684,31 @@
     "fairy_spot"
   ],
   "options": [
+    {
+      "key": "games",
+      "name": "Games",
+      "category": "main",
+      "type": "enum",
+      "description": "The games.",
+      "values": [
+        {
+          "value": "ootmm",
+          "name": "OoT+MM",
+          "description": "The combo randomizer experience."
+        },
+        {
+          "value": "oot",
+          "name": "OoT Only",
+          "description": "Ocarina of Time Only."
+        },
+        {
+          "value": "mm",
+          "name": "MM Only",
+          "description": "Majora's Mask Only."
+        }
+      ],
+      "default": "ootmm"
+    },
     {
       "key": "mode",
       "name": "Mode",
@@ -1852,6 +1892,14 @@
       "type": "boolean",
       "description": "Prevents items that are part of a plando from being hinted",
       "default": true
+    },
+    {
+      "key": "extraHintRegions",
+      "name": "Extra Hint Regions",
+      "category": "main",
+      "type": "boolean",
+      "description": "Make the region hints more granular: Makes Goron Racetrack and Butler Race into their own regions, and splits Ganon Castle/Tower and Normal/Inverted Stone Tower Temple.",
+      "default": false
     },
     {
       "key": "hintImportance",
@@ -2900,7 +2948,7 @@
         {
           "value": "cycle",
           "name": "New Cycle",
-          "description": "Moon Crash will initiate a new cycle, keeping progress."
+          "description": "Moon Crash will initiate a new cycle, keeping progress. Saving is enabled on the Clock Tower Roof."
         }
       ],
       "default": "reset"
@@ -2929,6 +2977,22 @@
         }
       ],
       "default": "child"
+    },
+    {
+      "key": "swordlessAdult",
+      "name": "Allow adult link to be swordless",
+      "category": "main.events",
+      "type": "boolean",
+      "description": "Choose whether or not adult Link can be swordless",
+      "default": false
+    },
+    {
+      "key": "timeTravelSword",
+      "name": "Time Travel requires Master Sword",
+      "category": "main.events",
+      "type": "boolean",
+      "description": "Choose whether or not Link needs the Master Sword to travel through time",
+      "default": true
     },
     {
       "key": "doorOfTime",
@@ -2988,9 +3052,14 @@
           "description": "Mido will block the way to the Deku Tree until you have a Deku Shield and the Kokiri Sword."
         },
         {
+          "value": "vanilla",
+          "name": "Vanilla",
+          "description": "Mido will block the way to the Deku Tree, but the tree itself will be open as child."
+        },
+        {
           "value": "open",
           "name": "Open",
-          "description": "The Deku Tree will be open from the start"
+          "description": "Mido will not block the way, the Deku Tree will be open from the start"
         }
       ],
       "default": "open"
@@ -3359,6 +3428,14 @@
         }
       ],
       "default": "none"
+    },
+    {
+      "key": "crossGameFw",
+      "name": "Cross-Games Farore's Wind",
+      "category": "main.cross",
+      "type": "boolean",
+      "description": "Controls whether you can use Farore's Wind to warp between OOT and MM.",
+      "default": false
     },
     {
       "key": "csmc",
@@ -3836,6 +3913,14 @@
       "default": false
     },
     {
+      "key": "rupeeScaling",
+      "name": "Rupee Scaling",
+      "category": "items.extensions",
+      "type": "boolean",
+      "description": "Makes rupees worth twice as much with the Colossal Wallet, and twenty times as much with the Bottomless Wallet.",
+      "default": false
+    },
+    {
       "key": "skeletonKeyOot",
       "name": "Skeleton Key (OoT)",
       "category": "items.extensions",
@@ -3948,6 +4033,14 @@
       "default": false
     },
     {
+      "key": "extraChildSwordsOot",
+      "name": "Extra Child Swords (OoT)",
+      "category": "items.extensions",
+      "type": "boolean",
+      "description": "Add the various Majora's Mask swords in OoT, as upgrades to the kokiri sword.",
+      "default": false
+    },
+    {
       "key": "blastMaskOot",
       "name": "Blast Mask (OoT)",
       "category": "items.extensions",
@@ -4021,10 +4114,26 @@
     },
     {
       "key": "soulsNpcOot",
-      "name": "NPC Souls (OoT) (EXPERIMENTAL)",
+      "name": "NPC Souls (OoT)",
       "category": "items.extensions",
       "type": "boolean",
       "description": "Add NPC souls into the item pool. NPCs won't spawn unless their soul is obtained.",
+      "default": false
+    },
+    {
+      "key": "soulsMiscOot",
+      "name": "Misc. Souls (OoT)",
+      "category": "items.extensions",
+      "type": "boolean",
+      "description": "Add misc. souls into the item pool. Corresponding actors won't spawn unless their soul is obtained.",
+      "default": false
+    },
+    {
+      "key": "soulsMiscMm",
+      "name": "Misc. Souls (MM)",
+      "category": "items.extensions",
+      "type": "boolean",
+      "description": "Add misc. souls into the item pool. Corresponding actors won't spawn unless their soul is obtained.",
       "default": false
     },
     {
@@ -4276,6 +4385,13 @@
       "default": false
     },
     {
+      "key": "sharedSwords",
+      "name": "Shared Swords",
+      "category": "items.shared",
+      "type": "boolean",
+      "default": false
+    },
+    {
       "key": "sharedShields",
       "name": "Shared Shields",
       "category": "items.shared",
@@ -4285,6 +4401,13 @@
     {
       "key": "sharedSoulsEnemy",
       "name": "Shared Enemy Souls",
+      "category": "items.shared",
+      "type": "boolean",
+      "default": false
+    },
+    {
+      "key": "sharedSoulsMisc",
+      "name": "Shared Misc. Souls",
       "category": "items.shared",
       "type": "boolean",
       "default": false
@@ -4446,6 +4569,14 @@
       "default": false
     },
     {
+      "key": "agelessStrength",
+      "name": "Ageless Strength",
+      "category": "items.ageless",
+      "type": "boolean",
+      "description": "Allows Child Link to use adult strength upgrades",
+      "default": false
+    },
+    {
       "key": "erBoss",
       "name": "Boss Entrance Shuffle",
       "category": "entrances",
@@ -4490,6 +4621,106 @@
       "default": "none"
     },
     {
+      "key": "erGrottos",
+      "name": "Grotto Shuffle",
+      "category": "entrances",
+      "type": "enum",
+      "values": [
+        {
+          "value": "none",
+          "name": "None"
+        },
+        {
+          "value": "ownGame",
+          "name": "Own Game"
+        },
+        {
+          "value": "full",
+          "name": "Full"
+        }
+      ],
+      "description": "Shuffle grottos and graves.",
+      "default": "none"
+    },
+    {
+      "key": "erSelfLoops",
+      "name": "Allow Self-Loops",
+      "category": "entrances",
+      "type": "boolean",
+      "description": "Allow entrances to loop back to the same map. Might make the topology of the world very confusing.",
+      "default": false
+    },
+    {
+      "key": "erDecoupled",
+      "name": "Decoupled Entrances",
+      "category": "entrances",
+      "type": "boolean",
+      "description": "Makes the entrances decoupled from the exits. This means that the entrance you take does not have to be the same as the exit you take.",
+      "default": false
+    },
+    {
+      "key": "erMixed",
+      "name": "Mixed Pools",
+      "category": "entrances",
+      "type": "enum",
+      "values": [
+        {
+          "value": "none",
+          "name": "None"
+        },
+        {
+          "value": "ownGame",
+          "name": "Own Game"
+        },
+        {
+          "value": "full",
+          "name": "Full"
+        }
+      ],
+      "description": "Allow shuffling multiple pools together.",
+      "default": "none"
+    },
+    {
+      "key": "erMixedDungeons",
+      "name": "Mixed Pools - Dungeons",
+      "category": "entrances",
+      "type": "boolean",
+      "description": "If turned on, dungeons will be shuffled with other mixed pools.",
+      "default": false
+    },
+    {
+      "key": "erMixedRegions",
+      "name": "Mixed Pools - Regions",
+      "category": "entrances",
+      "type": "boolean",
+      "description": "If turned on, regions will be shuffled with other mixed pools.",
+      "default": false
+    },
+    {
+      "key": "erMixedOverworld",
+      "name": "Mixed Pools - Overworld",
+      "category": "entrances",
+      "type": "boolean",
+      "description": "If turned on, overworld entrances will be shuffled with other mixed pools.",
+      "default": false
+    },
+    {
+      "key": "erMixedIndoors",
+      "name": "Mixed Pools - Interiors",
+      "category": "entrances",
+      "type": "boolean",
+      "description": "If turned on, interiors will be shuffled with other mixed pools.",
+      "default": false
+    },
+    {
+      "key": "erMixedGrottos",
+      "name": "Mixed Pools - Grottos",
+      "category": "entrances",
+      "type": "boolean",
+      "description": "If turned on, grottos will be shuffled with other mixed pools.",
+      "default": false
+    },
+    {
       "key": "erWallmasters",
       "name": "Wallmaster Shuffle",
       "category": "entrances",
@@ -4510,6 +4741,14 @@
       ],
       "description": "Enables the ability for Wallmasters to take you to random locations within their own game or across both games, based on other entrance settings",
       "default": "none"
+    },
+    {
+      "key": "erSpawns",
+      "name": "Spawn Shuffle",
+      "category": "entrances",
+      "type": "boolean",
+      "description": "Shuffle the starting positions of the player.",
+      "default": false
     },
     {
       "key": "erMajorDungeons",
@@ -4623,6 +4862,28 @@
       "default": false
     },
     {
+      "key": "erOverworld",
+      "name": "Shuffle Overworld",
+      "category": "entrances",
+      "type": "enum",
+      "values": [
+        {
+          "value": "none",
+          "name": "None"
+        },
+        {
+          "value": "ownGame",
+          "name": "Own Game"
+        },
+        {
+          "value": "full",
+          "name": "Full"
+        }
+      ],
+      "default": "none",
+      "description": "Shuffle every overworld entrance."
+    },
+    {
       "key": "erIndoors",
       "name": "Shuffle Interiors",
       "category": "entrances",
@@ -4657,7 +4918,7 @@
       "name": "Shuffle Extra Interiors",
       "category": "entrances",
       "type": "boolean",
-      "description": "Shuffle additional, more complex interiors. These include:<br>- OOT: Link's House, Temple of Time, Windmill, Kak Potion Shop<br>- MM: Stock Pot Inn, Astral Observatory/Bombers' Hideout, Swamp Tourist Hut, Ikana Spring Cave",
+      "description": "Shuffle additional, more complex interiors. These include:<br>- OOT: Link's House, Temple of Time, Windmill, Kak Potion Shop<br>- MM: Stock Pot Inn, Astral Observatory/Bombers' Hideout, Swamp Tourist Hut, Ikana Spring Cave, Music Box House",
       "default": false
     },
     {

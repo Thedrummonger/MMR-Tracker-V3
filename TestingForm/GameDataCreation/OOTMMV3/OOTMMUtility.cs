@@ -127,9 +127,9 @@ namespace TestingForm.GameDataCreation.OOTMMV3
 
         public static bool IsLocationRenewable(this OOTMMPoolLocation location, string GameCode, ExtraData extraData)
         {
-            var ID = AddGameCodeToLogicID(location.id, GameCode);
-            if (ID.In(extraData.nonrenewablelocations)) { return false; }
-            if (ID.In(extraData.renewablelocations)) { return true; }
+            var ID = AddGameCodeToLogicID(location.location, GameCode, false);
+            if (extraData.nonrenewablelocations.Contains(ID)) { return false; }
+            if (extraData.renewablelocations.Contains(ID)) { return true; }
             if (location.type.In(extraData.renewabletypes)) { return true; }
             return false;
         }
