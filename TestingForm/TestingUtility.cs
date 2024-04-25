@@ -11,7 +11,7 @@ using static MMR_Tracker_V3.References;
 
 namespace TestingForm
 {
-    internal class TestingUtility
+    internal static class TestingUtility
     {
         public static string CreateTestingFilePath(string Name, string Extention = "txt")
         {
@@ -96,6 +96,12 @@ namespace TestingForm
             object yamlIsDumb = deserializer.Deserialize<object>(YAML);
             if (Format) { return JsonConvert.SerializeObject(yamlIsDumb, Utility.DefaultSerializerSettings); }
             return JsonConvert.SerializeObject(yamlIsDumb);
+        }
+
+        public static string ToYamlString(this object e)
+        {
+            var serializer = new YamlDotNet.Serialization.SerializerBuilder().Build();
+            return serializer.Serialize(e);
         }
 
         public static T DeserializeJsonFile<T>(string Path)
