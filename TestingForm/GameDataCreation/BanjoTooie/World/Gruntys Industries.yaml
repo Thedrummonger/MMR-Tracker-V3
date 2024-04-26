@@ -1,7 +1,7 @@
 GIO:
   locations:
     TRAINSWGI:
-      beginnerLogic: ''
+      beginnerLogic: true
       normalLogic: ''
       advancedLogic: ''
   exits:
@@ -17,47 +17,47 @@ GIO:
 GI1:
   locations:
     JIGGYGI8:
-      beginnerLogic: ''
-      normalLogic: ''
+      beginnerLogic: SOLO_SNPACK
+      normalLogic: SOLO_SNPACK || SOLO_PACKWH
       advancedLogic: ''
     JIGGYGI10:
-      beginnerLogic: ''
+      beginnerLogic: can_use_battery && SOLO_SAPACK && GGRAB
       normalLogic: ''
       advancedLogic: ''
     CHEATOGI1:
-      beginnerLogic: ''
-      normalLogic: ''
+      beginnerLogic: GEGGS
+      normalLogic: GEGGS || (CEGGS && BDRILL)
       advancedLogic: ''
     SNPACK:
-      beginnerLogic: ''
-      normalLogic: ''
+      beginnerLogic: GGRAB && can_use_battery && check_notes, 525
+      normalLogic: can_use_battery && check_notes, 525
       advancedLogic: ''
     CLAWBTS:
-      beginnerLogic: ''
+      beginnerLogic: check_notes, 505
       normalLogic: ''
       advancedLogic: ''
     NOTEGI4:
-      beginnerLogic: ''
+      beginnerLogic: GGRAB
       normalLogic: ''
-      advancedLogic: ''
+      advancedLogic: GI2 || GGRAB || SOLO_PACKWH || SOLO_LSPRING
     NOTEGI5:
-      beginnerLogic: ''
+      beginnerLogic: GGRAB
       normalLogic: ''
-      advancedLogic: ''
+      advancedLogic: GI2 || GGRAB || SOLO_PACKWH || SOLO_LSPRING
     NOTEGI13:
-      beginnerLogic: ''
+      beginnerLogic: true
       normalLogic: ''
       advancedLogic: ''
     NOTEGI14:
-      beginnerLogic: ''
+      beginnerLogic: true
       normalLogic: ''
       advancedLogic: ''
     NOTEGI11:
-      beginnerLogic: ''
+      beginnerLogic: can_use_battery
       normalLogic: ''
       advancedLogic: ''
     NOTEGI12:
-      beginnerLogic: ''
+      beginnerLogic: can_use_battery
       normalLogic: ''
       advancedLogic: ''
   exits:
@@ -77,39 +77,39 @@ GI1:
 GI2:
   locations:
     GLOWBOGI1:
-      beginnerLogic: ''
+      beginnerLogic: true
       normalLogic: ''
       advancedLogic: ''
     LSPRING:
-      beginnerLogic: ''
+      beginnerLogic: check_notes, 545
       normalLogic: ''
       advancedLogic: ''
     JIGGYGI7:
-      beginnerLogic: ''
+      beginnerLogic: SPLITUP
       normalLogic: ''
       advancedLogic: ''
     TREBLEGI:
-      beginnerLogic: ''
-      normalLogic: ''
+      beginnerLogic: SPLITUP
+      normalLogic: true
       advancedLogic: ''
     NOTEGI6:
-      beginnerLogic: ''
+      beginnerLogic: true
       normalLogic: ''
       advancedLogic: ''
     NOTEGI7:
-      beginnerLogic: ''
+      beginnerLogic: true
       normalLogic: ''
       advancedLogic: ''
     NOTEGI8:
-      beginnerLogic: ''
+      beginnerLogic: true
       normalLogic: ''
       advancedLogic: ''
     NOTEGI9:
-      beginnerLogic: ''
+      beginnerLogic: true
       normalLogic: ''
       advancedLogic: ''
     NOTEGI10:
-      beginnerLogic: ''
+      beginnerLogic: true
       normalLogic: ''
       advancedLogic: ''
   exits:
@@ -125,75 +125,75 @@ GI2:
 GI3ALL:
   locations:
     JINJOGI1:
-      beginnerLogic: ''
+      beginnerLogic: true
       normalLogic: ''
       advancedLogic: ''
     JINJOGI2:
-      beginnerLogic: ''
+      beginnerLogic: LSPRING
       normalLogic: ''
-      advancedLogic: ''
+      advancedLogic: LSPRING || (CEGGS && EGGAIM)
     JINJOGI4:
-      beginnerLogic: ''
+      beginnerLogic: true
       normalLogic: ''
       advancedLogic: ''
     JINJOGI5:
-      beginnerLogic: ''
+      beginnerLogic: SPLITUP
       normalLogic: ''
       advancedLogic: ''
     JIGGYGI1:
-      beginnerLogic: ''
+      beginnerLogic: can_beat_weldar && SOLO_SHPACK
       normalLogic: ''
       advancedLogic: ''
     JIGGYGI2:
-      beginnerLogic: ''
+      beginnerLogic: can_beat_weldar
       normalLogic: ''
       advancedLogic: ''
     JIGGYGI3:
-      beginnerLogic: ''
+      beginnerLogic: MUMBOGI && CLAWBTS && BBLASTER
       normalLogic: ''
       advancedLogic: ''
     JIGGYGI4:
-      beginnerLogic: ''
-      normalLogic: ''
+      beginnerLogic: HUMBAGI && BDRILL && GGRAB
+      normalLogic: HUMBAGI && BDRILL
       advancedLogic: ''
     JIGGYGI5:
-      beginnerLogic: ''
+      beginnerLogic: SPLITUP
       normalLogic: ''
-      advancedLogic: ''
+      advancedLogic: SPLITUP || (CEGGS && EGGAIM)
     JIGGYGI6:
-      beginnerLogic: ''
-      normalLogic: ''
-      advancedLogic: ''
+      beginnerLogic: MUMBOGI && GEGGS && EGGAIM && can_use_battery && HUMBAGI
+      normalLogic: MUMBOGI && GEGGS && EGGAIM && can_use_battery && (HUMBAGI || SOLO_LSPRING)
+      advancedLogic: MUMBOGI && GEGGS && can_use_battery
     JIGGYGI9:
-      beginnerLogic: ''
-      normalLogic: ''
+      beginnerLogic: can_use_battery && GGRAB
+      normalLogic: can_use_battery
       advancedLogic: ''
     HONEYCGI1:
-      beginnerLogic: ''
-      normalLogic: ''
+      beginnerLogic: GGRAB || SPLITUP
+      normalLogic: true
       advancedLogic: ''
     HONEYCGI3:
-      beginnerLogic: ''
+      beginnerLogic: true
       normalLogic: ''
       advancedLogic: ''
     GLOWBOGI2:
-      beginnerLogic: ''
+      beginnerLogic: true
       normalLogic: ''
       advancedLogic: ''
     CHEATOGI2:
-      beginnerLogic: ''
+      beginnerLogic: true
       normalLogic: ''
       advancedLogic: ''
     CHEATOGI3:
-      beginnerLogic: ''
+      beginnerLogic: can_beat_weldar
       normalLogic: ''
       advancedLogic: ''
     NOTEGI15:
-      beginnerLogic: ''
+      beginnerLogic: true
       normalLogic: ''
       advancedLogic: ''
     NOTEGI16:
-      beginnerLogic: ''
+      beginnerLogic: true
       normalLogic: ''
       advancedLogic: ''
   exits:
@@ -213,19 +213,19 @@ GI3ALL:
 GIS:
   locations:
     HONEYCGI2:
-      beginnerLogic: ''
-      normalLogic: ''
+      beginnerLogic: GGRAB
+      normalLogic: true
       advancedLogic: ''
     NOTEGI1:
-      beginnerLogic: ''
+      beginnerLogic: true
       normalLogic: ''
       advancedLogic: ''
     NOTEGI2:
-      beginnerLogic: ''
+      beginnerLogic: true
       normalLogic: ''
       advancedLogic: ''
     NOTEGI3:
-      beginnerLogic: ''
+      beginnerLogic: true
       normalLogic: ''
       advancedLogic: ''
   exits:

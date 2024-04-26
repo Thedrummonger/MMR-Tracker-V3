@@ -1,171 +1,171 @@
 CC:
   locations:
     JINJOCC1:
-      beginnerLogic: ''
-      normalLogic: ''
-      advancedLogic: ''
+      beginnerLogic: SOLO_SHPACK
+      normalLogic: SOLO_SHPACK || SOLO_LSPRING
+      advancedLogic: SOLO_SHPACK || SOLO_LSPRING || SOLO_GLIDE
     JINJOCC2:
-      beginnerLogic: ''
-      normalLogic: ''
+      beginnerLogic: SAPACK && grow_beanstalk && can_use_floatus
+      normalLogic: true
       advancedLogic: ''
     JINJOCC3:
-      beginnerLogic: ''
-      normalLogic: ''
-      advancedLogic: ''
+      beginnerLogic: SPLITUP
+      normalLogic: SPLITUP || (SPRINGB && BDRILL)
+      advancedLogic: SPLITUP || (SPRINGB && BDRILL) || (CEGGS && EGGAIM)
     JINJOCC4:
-      beginnerLogic: ''
+      beginnerLogic: true
       normalLogic: ''
       advancedLogic: ''
     JINJOCC5:
-      beginnerLogic: ''
+      beginnerLogic: true
       normalLogic: ''
       advancedLogic: ''
     JIGGYCC1:
-      beginnerLogic: ''
+      beginnerLogic: true
       normalLogic: ''
       advancedLogic: ''
     JIGGYCC2:
-      beginnerLogic: ''
+      beginnerLogic: SPRINGB && SOLO_SAPACK && grow_beanstalk && can_use_floatus
       normalLogic: ''
-      advancedLogic: ''
+      advancedLogic: SPRINGB && SOLO_SAPACK && grow_beanstalk && (can_use_floatus || SOLO_PACKWH)
     JIGGYCC3:
-      beginnerLogic: ''
+      beginnerLogic: can_play_gold_pot
       normalLogic: ''
       advancedLogic: ''
     JIGGYCC4:
-      beginnerLogic: ''
+      beginnerLogic: canary_mary_free
       normalLogic: ''
       advancedLogic: ''
     JIGGYCC5:
-      beginnerLogic: ''
+      beginnerLogic: HUMBACC
       normalLogic: ''
       advancedLogic: ''
     JIGGYCC6:
-      beginnerLogic: ''
+      beginnerLogic: HUMBACC
       normalLogic: ''
       advancedLogic: ''
     JIGGYCC7:
-      beginnerLogic: ''
+      beginnerLogic: SAPACK && grow_beanstalk && can_use_floatus && SOLO_SHPACK
       normalLogic: ''
       advancedLogic: ''
     JIGGYCC8:
-      beginnerLogic: ''
-      normalLogic: ''
+      beginnerLogic: SOLO_WWHACK
+      normalLogic: SPLITUP
       advancedLogic: ''
     JIGGYCC9:
-      beginnerLogic: ''
-      normalLogic: ''
+      beginnerLogic: CEGGS && GGRAB
+      normalLogic: CEGGS
       advancedLogic: ''
     JIGGYCC10:
-      beginnerLogic: ''
+      beginnerLogic: SOLO_SHPACK
       normalLogic: ''
       advancedLogic: ''
     JIGGYTD2:
-      beginnerLogic: ''
+      beginnerLogic: TTORP
       normalLogic: ''
       advancedLogic: ''
     GLOWBOCC1:
-      beginnerLogic: ''
+      beginnerLogic: true
       normalLogic: ''
       advancedLogic: ''
     GLOWBOCC2:
-      beginnerLogic: ''
-      normalLogic: ''
+      beginnerLogic: GGRAB
+      normalLogic: true
       advancedLogic: ''
     HONEYCCC1:
-      beginnerLogic: ''
+      beginnerLogic: BDRILL
       normalLogic: ''
       advancedLogic: ''
     HONEYCCC2:
-      beginnerLogic: ''
+      beginnerLogic: true
       normalLogic: ''
       advancedLogic: ''
     HONEYCCC3:
-      beginnerLogic: ''
+      beginnerLogic: true
       normalLogic: ''
       advancedLogic: ''
     CHEATOCC1:
-      beginnerLogic: ''
+      beginnerLogic: canary_mary_free
       normalLogic: ''
       advancedLogic: ''
     CHEATOCC2:
-      beginnerLogic: ''
+      beginnerLogic: can_play_gold_pot
       normalLogic: ''
       advancedLogic: ''
     CHEATOCC3:
-      beginnerLogic: ''
+      beginnerLogic: HUMBACC
       normalLogic: ''
       advancedLogic: ''
     SAPACK:
-      beginnerLogic: ''
+      beginnerLogic: SOLO_SHPACK && check_notes, 765
       normalLogic: ''
       advancedLogic: ''
     TREBLECC:
-      beginnerLogic: ''
+      beginnerLogic: true
       normalLogic: ''
       advancedLogic: ''
     NOTECCL1:
-      beginnerLogic: ''
+      beginnerLogic: true
       normalLogic: ''
       advancedLogic: ''
     NOTECCL2:
-      beginnerLogic: ''
+      beginnerLogic: true
       normalLogic: ''
       advancedLogic: ''
     NOTECCL3:
-      beginnerLogic: ''
-      normalLogic: ''
+      beginnerLogic: SOLO_SHPACK
+      normalLogic: SOLO_SHPACK || CEGGS
       advancedLogic: ''
     NOTECCL4:
-      beginnerLogic: ''
-      normalLogic: ''
+      beginnerLogic: SOLO_SHPACK
+      normalLogic: SOLO_SHPACK || CEGGS
       advancedLogic: ''
     NOTECCL5:
-      beginnerLogic: ''
+      beginnerLogic: true
       normalLogic: ''
       advancedLogic: ''
     NOTECCL6:
-      beginnerLogic: ''
+      beginnerLogic: true
       normalLogic: ''
       advancedLogic: ''
     NOTECCL7:
-      beginnerLogic: ''
+      beginnerLogic: true
       normalLogic: ''
       advancedLogic: ''
     NOTECCL8:
-      beginnerLogic: ''
+      beginnerLogic: true
       normalLogic: ''
       advancedLogic: ''
     NOTECCL9:
-      beginnerLogic: ''
+      beginnerLogic: true
       normalLogic: ''
       advancedLogic: ''
     NOTECCL10:
-      beginnerLogic: ''
+      beginnerLogic: true
       normalLogic: ''
       advancedLogic: ''
     NOTECCL11:
-      beginnerLogic: ''
+      beginnerLogic: true
       normalLogic: ''
       advancedLogic: ''
     NOTECCL12:
-      beginnerLogic: ''
+      beginnerLogic: true
       normalLogic: ''
       advancedLogic: ''
     NOTECCL13:
-      beginnerLogic: ''
+      beginnerLogic: true
       normalLogic: ''
       advancedLogic: ''
     NOTECCL14:
-      beginnerLogic: ''
+      beginnerLogic: true
       normalLogic: ''
       advancedLogic: ''
     NOTECCL15:
-      beginnerLogic: ''
+      beginnerLogic: true
       normalLogic: ''
       advancedLogic: ''
     NOTECCL16:
-      beginnerLogic: ''
+      beginnerLogic: true
       normalLogic: ''
       advancedLogic: ''
   exits: {}
@@ -174,3 +174,15 @@ CC:
       beginnerLogic: 'true'
       normalLogic: ''
       advancedLogic: ''
+    grow_beanstalk:
+      beginnerLogic: BDRILL && MUMBOCC
+      normalLogic: ''
+      advancedLogic: ''
+    can_use_floatus:
+      beginnerLogic: SOLO_TAXPACK && SOLO_HATCH
+      normalLogic: ''
+      advancedLogic: ''
+    can_play_gold_pot:
+      beginnerLogic: FEGGS && GEGGS && IEGGS && MUMBOCC
+      normalLogic: ''
+      advancedLogic: FEGGS && GEGGS && IEGGS && (MUMBOCC || SPLITUP)

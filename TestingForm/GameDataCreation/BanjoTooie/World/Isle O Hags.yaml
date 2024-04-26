@@ -88,6 +88,14 @@ IOHWH:
       beginnerLogic: JIGGY, 45
       normalLogic: ''
       advancedLogic: ''
+    W9:
+      beginnerLogic: JIGGY, 55
+      normalLogic: ''
+      advancedLogic: ''
+    H1A:
+      beginnerLogic: (setting{open_hag1} && JIGGY, 55) || JIGGY, 70
+      normalLogic: ''
+      advancedLogic: ''
   exits:
     MT:
       beginnerLogic: MTA

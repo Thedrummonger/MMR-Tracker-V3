@@ -1,171 +1,175 @@
 HP:
   locations:
     JINJOHP1:
-      beginnerLogic: ''
+      beginnerLogic: true
       normalLogic: ''
       advancedLogic: ''
     JINJOHP2:
-      beginnerLogic: ''
+      beginnerLogic: SOLO_SHPACK
       normalLogic: ''
       advancedLogic: ''
     JINJOHP3:
-      beginnerLogic: ''
-      normalLogic: ''
+      beginnerLogic: HUMBAHP
+      normalLogic: HUMBAHP || (CEGGS && EGGAIM)
       advancedLogic: ''
     JINJOHP4:
-      beginnerLogic: ''
-      normalLogic: ''
-      advancedLogic: ''
+      beginnerLogic: GLIDE && GEGGS && EGGAIM
+      normalLogic: GLIDE || (LSPRING && WWHACK)
+      advancedLogic: GLIDE || (LSPRING && WWHACK) || (CEGGS && EGGAIM)
     JINJOHP5:
-      beginnerLogic: ''
-      normalLogic: ''
+      beginnerLogic: FEGGS || GEGGS || BDRILL
+      normalLogic: FEGGS || GEGGS || BDRILL || CEGGS || MUMBOHP
       advancedLogic: ''
     JIGGYHP1:
-      beginnerLogic: ''
+      beginnerLogic: FEGGS && IEGGS && CLAWBTS
       normalLogic: ''
-      advancedLogic: ''
+      advancedLogic: FEGGS && IEGGS && (CLAWBTS || PACKWH)
     JIGGYHP2:
-      beginnerLogic: ''
+      beginnerLogic: true
       normalLogic: ''
       advancedLogic: ''
     JIGGYHP3:
-      beginnerLogic: ''
-      normalLogic: ''
+      beginnerLogic: MUMBOHP && FEGGS && TAXPACK
+      normalLogic: MUMBOHP && has_fire && TAXPACK
       advancedLogic: ''
     JIGGYHP4:
-      beginnerLogic: ''
+      beginnerLogic: SOLO_SHPACK
       normalLogic: ''
       advancedLogic: ''
     JIGGYHP6:
-      beginnerLogic: ''
-      normalLogic: ''
+      beginnerLogic: HUMBAHP && SOLO_SHPACK && GGRAB
+      normalLogic: HUMBAHP && SOLO_SHPACK && (GGRAB || SOLO_PACKWH)
       advancedLogic: ''
     JIGGYHP8:
-      beginnerLogic: ''
-      normalLogic: ''
+      beginnerLogic: HUMBAMT && MUMBOMT && GEGGS
+      normalLogic: HUMBAMT && MUMBOMT && (GEGGS || CEGGS || MUMBOHP)
       advancedLogic: ''
     JIGGYHP9:
-      beginnerLogic: ''
-      normalLogic: ''
-      advancedLogic: ''
+      beginnerLogic: ufo_free && BDRILL && SOLO_HATCH && SOLO_GLIDE && MUMBOHP
+      normalLogic: ufo_free && MUMBOHP && BDRILL && SOLO_HATCH && (SOLO_WWHACK || SOLO_GLIDE)
+      advancedLogic: jiggy_ufo && MUMBOHP && BDRILL && HATCH
     JIGGYHP10:
-      beginnerLogic: ''
+      beginnerLogic: SPLITUP && GGRAB
       normalLogic: ''
-      advancedLogic: ''
+      advancedLogic: SPLITUP && (GGRAB || SOLO_PACKWH)
     GLOWBOHP1:
-      beginnerLogic: ''
+      beginnerLogic: true
       normalLogic: ''
       advancedLogic: ''
     GLOWBOHP2:
-      beginnerLogic: ''
+      beginnerLogic: true
       normalLogic: ''
       advancedLogic: ''
     HONEYCHP1:
-      beginnerLogic: ''
-      normalLogic: ''
+      beginnerLogic: GEGGS && EGGAIM
+      normalLogic: (GEGGS && EGGAIM) || SPLITUP
       advancedLogic: ''
     HONEYCHP3:
-      beginnerLogic: ''
-      normalLogic: ''
+      beginnerLogic: GGRAB
+      normalLogic: true
       advancedLogic: ''
     CHEATOHP1:
-      beginnerLogic: ''
-      normalLogic: ''
+      beginnerLogic: CLAWBTS && GEGGS
+      normalLogic: CLAWBTS && (GEGGS || CEGGS || MUMBOHP)
       advancedLogic: ''
     CHEATOHP2:
-      beginnerLogic: ''
+      beginnerLogic: CEGGS || SHPACK
       normalLogic: ''
       advancedLogic: ''
     CHEATOHP3:
-      beginnerLogic: ''
-      normalLogic: ''
+      beginnerLogic: SPLITUP && GEGGS && EGGAIM
+      normalLogic: SPLITUP
       advancedLogic: ''
     SHPACK:
-      beginnerLogic: ''
+      beginnerLogic: SPLITUP && check_notes, 640
       normalLogic: ''
       advancedLogic: ''
     GLIDE:
-      beginnerLogic: ''
+      beginnerLogic: SPLITUP && check_notes, 660
       normalLogic: ''
       advancedLogic: ''
     TREBLEHP:
-      beginnerLogic: ''
-      normalLogic: ''
-      advancedLogic: ''
+      beginnerLogic: GEGGS && EGGAIM
+      normalLogic: (GEGGS && EGGAIM) || SPLITUP
+      advancedLogic: (GEGGS && EGGAIM) || SPLITUP || (CEGGS && EGGAIM)
     TRAINSWHP1:
-      beginnerLogic: ''
-      normalLogic: ''
+      beginnerLogic: GGRAB
+      normalLogic: true
       advancedLogic: ''
     TRAINSWHP2:
-      beginnerLogic: ''
+      beginnerLogic: HUMBAHP
       normalLogic: ''
       advancedLogic: ''
     NOTEHFP1:
-      beginnerLogic: ''
+      beginnerLogic: true
       normalLogic: ''
       advancedLogic: ''
     NOTEHFP2:
-      beginnerLogic: ''
+      beginnerLogic: true
       normalLogic: ''
       advancedLogic: ''
     NOTEHFP3:
-      beginnerLogic: ''
+      beginnerLogic: true
       normalLogic: ''
       advancedLogic: ''
     NOTEHFP4:
-      beginnerLogic: ''
+      beginnerLogic: true
       normalLogic: ''
       advancedLogic: ''
     NOTEHFP5:
-      beginnerLogic: ''
+      beginnerLogic: true
       normalLogic: ''
       advancedLogic: ''
     NOTEHFP6:
-      beginnerLogic: ''
+      beginnerLogic: true
       normalLogic: ''
       advancedLogic: ''
     NOTEHFP7:
-      beginnerLogic: ''
+      beginnerLogic: true
       normalLogic: ''
       advancedLogic: ''
     NOTEHFP8:
-      beginnerLogic: ''
+      beginnerLogic: true
       normalLogic: ''
       advancedLogic: ''
     NOTEHFP9:
-      beginnerLogic: ''
+      beginnerLogic: true
       normalLogic: ''
       advancedLogic: ''
     NOTEHFP10:
-      beginnerLogic: ''
+      beginnerLogic: true
       normalLogic: ''
       advancedLogic: ''
     NOTEHFP11:
-      beginnerLogic: ''
+      beginnerLogic: true
       normalLogic: ''
       advancedLogic: ''
     NOTEHFP12:
-      beginnerLogic: ''
+      beginnerLogic: true
       normalLogic: ''
       advancedLogic: ''
     NOTEHFP13:
-      beginnerLogic: ''
+      beginnerLogic: true
       normalLogic: ''
       advancedLogic: ''
     NOTEHFP14:
-      beginnerLogic: ''
+      beginnerLogic: true
       normalLogic: ''
       advancedLogic: ''
     NOTEHFP15:
-      beginnerLogic: ''
+      beginnerLogic: true
       normalLogic: ''
       advancedLogic: ''
     NOTEHFP16:
-      beginnerLogic: ''
+      beginnerLogic: true
       normalLogic: ''
       advancedLogic: ''
   exits: 
     IOHCT_HFP_ENTRANCE:
+      beginnerLogic: true
+      normalLogic: ''
+      advancedLogic: ''
+    HPLS:
       beginnerLogic: true
       normalLogic: ''
       advancedLogic: ''
@@ -181,23 +185,23 @@ HP:
 HPLS:
   locations:
     HONEYCHP2:
-      beginnerLogic: ''
-      normalLogic: ''
-      advancedLogic: ''
+      beginnerLogic: GGRAB
+      normalLogic: GGRAB || SOLO_LSPRING || SOLO_GLIDE
+      advancedLogic: GGRAB || SOLO_LSPRING || SOLO_GLIDE || (SPLITUP && CHUFFY && TRAINSWHP1) || (CEGGS && EGGAIM)
   exits:
     HP:
-      beginnerLogic: ''
+      beginnerLogic: true
       normalLogic: ''
       advancedLogic: ''
     CHUFFY:
-      beginnerLogic: ''
+      beginnerLogic: can_beat_king_coal && TRAINSWHP1
       normalLogic: ''
       advancedLogic: ''
   events: {}
 HPIS:
   locations:
     JIGGYHP5:
-      beginnerLogic: ''
+      beginnerLogic: true
       normalLogic: ''
       advancedLogic: ''
   exits: {}
