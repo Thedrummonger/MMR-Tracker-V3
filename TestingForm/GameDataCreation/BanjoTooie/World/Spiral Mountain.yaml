@@ -18,6 +18,10 @@ Menu:
       beginnerLogic: SAPACK && SPLITUP
       normalLogic: ''
       advancedLogic: ''
+    SOLO_SNPACK:
+      beginnerLogic: SNPACK && SPLITUP
+      normalLogic: ''
+      advancedLogic: ''
     SOLO_PACKWH:
       beginnerLogic: PACKWH && SPLITUP
       normalLogic: ''

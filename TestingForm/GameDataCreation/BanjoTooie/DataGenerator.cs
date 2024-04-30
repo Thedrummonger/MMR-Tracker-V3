@@ -8,11 +8,14 @@ using System.Text;
 using System.Threading.Tasks;
 using static MMR_Tracker_V3.TrackerObjects.LogicDictionaryData;
 using MMR_Tracker_V3;
+using Microsoft.VisualBasic.Logging;
+using MMR_Tracker_V3.Logic;
 
 namespace TestingForm.GameDataCreation.BanjoTooie
 {
     internal class DataGenerator
     {
+        static LogicStringParser logicparser = new LogicStringParser();
         public class BTLogicArea
         {
             public Dictionary<string, BTLogicEntry> locations = [];
@@ -25,7 +28,7 @@ namespace TestingForm.GameDataCreation.BanjoTooie
             public string normalLogic = "";
             public string advancedLogic = "";
         }
-        public static void GenData(out MMRData.LogicFile Logic, out LogicDictionaryData.LogicDictionary dictionary)
+        public static void GenData(out MMRData.LogicFile FinalLogic, out LogicDictionaryData.LogicDictionary Finaldictionary)
         {
             var Locations = TestingUtility.DeserializeJsonFile<Dictionary<string, string>>(
                Path.Join(TestingReferences.GetOtherGameDataPath("BanjoTooie"), "Locations.json"));
@@ -38,19 +41,19 @@ namespace TestingForm.GameDataCreation.BanjoTooie
             var OriginalItems = TestingUtility.DeserializeJsonFile<Dictionary<string, string>>(
                 Path.Join(TestingReferences.GetOtherGameDataPath("BanjoTooie"), "OriginalItem.json"));
 
-            var WorldGraph = TestingUtility.DeserializeJsonFile<Dictionary<string, BTLogicArea>>(
-                Path.Join(TestingReferences.GetOtherGameDataPath("BanjoTooie"), "LogicFile.yaml"));
+            var WorldGraphFolder = Path.Join(TestingReferences.GetOtherGameDataPath("BanjoTooie"), "World");
 
-            dictionary = new()
+            LogicDictionary dictionary = new()
             {
                 GameCode = "BT",
                 GameName = "Banjo Tooie",
                 LogicVersion = 1,
                 NetPlaySupported = true,
                 WinCondition = "VICTORY",
-                AreaOrder = AreaOrder()
+                AreaOrder = AreaOrder(),
+                RootAreas = ["Menu"]
             };
-            Logic = new()
+            MMRData.LogicFile Logic = new()
             {
                 Logic = [],
                 GameCode = "BT",
@@ -68,8 +71,6 @@ namespace TestingForm.GameDataCreation.BanjoTooie
                     SpoilerData = new MMRData.SpoilerlogReference { NetIDs = [location.Value] }
                 };
                 dictionary.LocationList.Add(location.Key, LocationData);
-
-                Logic.Logic.Add(new MMRData.JsonFormatLogicItem { Id = location.Key });
             }
             foreach(var item in Items)
             {
@@ -91,8 +92,84 @@ namespace TestingForm.GameDataCreation.BanjoTooie
                 item.OriginalItem = Jinjo;
             }
 
+            foreach(var i in Directory.GetFiles(WorldGraphFolder))
+            {
+                var WorldFile = TestingUtility.DeserializeYAMLFile<Dictionary<string, BTLogicArea>>(i);
+                foreach(var area in WorldFile)
+                {
+                    foreach(var loc in area.Value.locations)
+                    {
+                        AddLogicEntry(loc.Key, loc.Value.beginnerLogic, area.Key);
+                    }
+                    foreach (var loc in area.Value.events)
+                    {
+                        AddLogicEntry(loc.Key, loc.Value.beginnerLogic, area.Key);
+                    }
+                    foreach (var loc in area.Value.exits)
+                    {
+                        string ExitID = $"{area.Key} => {loc.Key}";
+                        AddLogicEntry(ExitID, loc.Value.beginnerLogic, area.Key);
+                        AddEntrance(ExitID, area.Key, loc.Key);
+                    }
+                }
+            }
+
+            dictionary.LogicEntryCollections.Add("check_notes", new OptionData.LogicEntryCollection
+            {
+                ID = "check_notes",
+                Entries = [.. Enumerable.Repeat("NOTE", 5), .. Enumerable.Repeat("TREBLE", 20)]
+            });
+
+            dictionary.ToggleOptions.Add("open_hag1", new OptionData.ToggleOption(null)
+            {
+                ID = "open_hag1",
+                Name = "HAG 1 Open",
+                Description = "HAG 1 boss fight is opened when Cauldron Keep is. Only 55 jiggies are needed to win.",
+                Value = true
+            }.CreateSimpleValues());
+
+            dictionary.ToggleOptions.Add("randomize_chuffy", new OptionData.ToggleOption(null)
+            {
+                ID = "randomize_chuffy",
+                Name = "Chuffy as a randomized AP Item.",
+                Description = "Chuffy is lost across the MultiWorld.",
+                Value = true
+            }.CreateSimpleValues());
+
+            foreach(var l in Logic.Logic)
+            {
+                LogicUtilities.RemoveRedundantConditionals(l);
+                LogicUtilities.MakeCommonConditionalsRequirements(l);
+                LogicUtilities.SortConditionals(l);
+            }
+
+            void AddEntrance(string ID, string Area, string Exit)
+            {
+                var itemData = new LogicDictionaryData.DictionaryEntranceEntries()
+                {
+                    ID = ID,
+                    Area = Area,
+                    Exit = Exit,
+                    RandomizableEntrance = false
+                };
+                dictionary.EntranceList.Add(ID, itemData);
+            }
+
+            void AddLogicEntry(string ID, string LogicString, string ParentArea)
+            {
+                MMRData.JsonFormatLogicItem logicItem = new()
+                {
+                    Id = ID,
+                    RequiredItems = [ParentArea],
+                    ConditionalItems = LogicStringConverter.ConvertLogicStringToConditional(logicparser, LogicString, ID)
+                };
+                Logic.Logic.Add(logicItem);
+            }
+
             File.WriteAllText(Path.Combine(TestingReferences.GetDevTestingPath(), "Banjo", "BTLogic.json"), Logic.ToFormattedJson());
             File.WriteAllText(Path.Combine(TestingReferences.GetDevTestingPath(), "Banjo", "BTDict.json"), dictionary.ToFormattedJson());
+            FinalLogic = Logic;
+            Finaldictionary = dictionary;
         }
 
         public static string[] AreaOrder()

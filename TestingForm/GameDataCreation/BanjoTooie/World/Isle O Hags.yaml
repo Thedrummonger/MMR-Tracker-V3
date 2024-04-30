@@ -276,7 +276,15 @@ IOHWL:
       beginnerLogic: true
       normalLogic: ''
       advancedLogic: ''
-  exits: {}
+  exits:
+    TL:
+      beginnerLogic: TDA
+      normalLogic: ''
+      advancedLogic: ''
+    CC:
+      beginnerLogic: CCA
+      normalLogic: ''
+      advancedLogic: ''
   events: {}
 IOHQM:
   locations: {}

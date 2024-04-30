@@ -25,8 +25,8 @@ TL:
       normalLogic: can_beat_terry && (GEGGS || BDRILL || CEGGS)
       advancedLogic: ''
     JIGGYTD3:
-      beginnerLogic: GEGGS && WW_train_station && CT_train_station && TRAINSWTD && SOLO_TAXPACK && MUMBOIH && BDRILL && MUMBOTD && EGGAIM
-      normalLogic: GEGGS && WW_train_station && CT_train_station && TRAINSWTD && SOLO_TAXPACK && MUMBOIH && BDRILL && MUMBOTD
+      beginnerLogic: GEGGS && TRAINSWWW && TRAINSWIH && TRAINSWTD && SOLO_TAXPACK && MUMBOIH && BDRILL && MUMBOTD && EGGAIM
+      normalLogic: GEGGS && TRAINSWWW && TRAINSWIH && TRAINSWTD && SOLO_TAXPACK && MUMBOIH && BDRILL && MUMBOTD
       advancedLogic: ''
     JIGGYTD4:
       beginnerLogic: can_beat_terry
