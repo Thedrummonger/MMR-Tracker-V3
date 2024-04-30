@@ -27,6 +27,17 @@ namespace TestingForm.GameDataCreation.BanjoTooie
             public string beginnerLogic = "";
             public string normalLogic = "";
             public string advancedLogic = "";
+
+            public string GetFinalLogicString(string ID)
+            {
+                if (string.IsNullOrWhiteSpace(beginnerLogic)) { throw new ArgumentNullException($"Logic for {ID} Not Implemented!"); }
+
+                if (string.IsNullOrWhiteSpace(normalLogic) && string.IsNullOrWhiteSpace(advancedLogic)) { return beginnerLogic; }
+
+                return $"((setting{{LogicMode, beginner}}) && ({beginnerLogic})) || " +
+                    $"((setting{{LogicMode, normal}}) && ({normalLogic})) || " +
+                    $"((setting{{LogicMode, advanced}}) && ({advancedLogic}))";
+            }
         }
         public static void GenData(out MMRData.LogicFile FinalLogic, out LogicDictionaryData.LogicDictionary Finaldictionary)
         {
