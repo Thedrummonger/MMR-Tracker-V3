@@ -83,6 +83,7 @@ namespace TestingForm
                 new("Create BanjoTooie Data", GameFileCreation.BTCreateData, UpdateDebugActions),
                 new("Create Minecraft Data", GameFileCreation.MinecraftCreateData, UpdateDebugActions),
                 new("Test Archipelago", Archipelago, UpdateDebugActions),
+                new("Test Py Spoiler Parser", TestPythonParser, UpdateDebugActions),
                 new("Test Random Stuff", RandomTests, UpdateDebugActions),
             ];
 
@@ -125,6 +126,12 @@ namespace TestingForm
         }
 
         settingTest Settings = new();
+
+        public void TestPythonParser()
+        {
+            string TestScriptPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "SpoilerLogHandling", "Python", "Testpy.py");
+            MMR_Tracker_V3.SpoilerLogHandling.Python.Test.ReadFromPyFile(TestScriptPath);
+        }
 
         private void RandomTests()
         {

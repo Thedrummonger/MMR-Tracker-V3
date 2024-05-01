@@ -3,6 +3,7 @@
   <PropertyGroup>
 	<TargetFramework>net8.0</TargetFramework>
 	<RootNamespace>MMR_Tracker_V3</RootNamespace>
+	<SatelliteResourceLanguages>en</SatelliteResourceLanguages>
   </PropertyGroup>
 
   <ItemGroup>
@@ -19,6 +20,16 @@
 	<Content Include="Recources\**">
 		<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
 	</Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="SpoilerLogHandling\Python\**">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="SpoilerLogHandling\Python\Class\" />
   </ItemGroup>
 
 </Project>
