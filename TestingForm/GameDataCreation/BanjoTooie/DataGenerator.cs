@@ -33,10 +33,20 @@ namespace TestingForm.GameDataCreation.BanjoTooie
                 if (string.IsNullOrWhiteSpace(beginnerLogic)) { throw new ArgumentNullException($"Logic for {ID} Not Implemented!"); }
 
                 if (string.IsNullOrWhiteSpace(normalLogic) && string.IsNullOrWhiteSpace(advancedLogic)) { return beginnerLogic; }
+                else if (string.IsNullOrWhiteSpace(normalLogic))
+                {
+                    return $"((setting{{logic_type, advanced, false}}) && ({beginnerLogic})) || " +
+                    $"((setting{{logic_type, advanced}}) && ({advancedLogic}))";
+                }
+                else if (string.IsNullOrWhiteSpace(advancedLogic))
+                {
+                    return $"((setting{{logic_type, beginner}}) && ({beginnerLogic})) || " +
+                    $"((setting{{logic_type, beginner, false}}) && ({normalLogic}))";
+                }
 
-                return $"((setting{{LogicMode, beginner}}) && ({beginnerLogic})) || " +
-                    $"((setting{{LogicMode, normal}}) && ({normalLogic})) || " +
-                    $"((setting{{LogicMode, advanced}}) && ({advancedLogic}))";
+                return $"((setting{{logic_type, beginner}}) && ({beginnerLogic})) || " +
+                    $"((setting{{logic_type, normal}}) && ({normalLogic})) || " +
+                    $"((setting{{logic_type, advanced}}) && ({advancedLogic}))";
             }
         }
         public static void GenData(out MMRData.LogicFile FinalLogic, out LogicDictionaryData.LogicDictionary Finaldictionary)
@@ -60,7 +70,7 @@ namespace TestingForm.GameDataCreation.BanjoTooie
                 GameName = "Banjo Tooie",
                 LogicVersion = 1,
                 NetPlaySupported = true,
-                WinCondition = "VICTORY",
+                WinCondition = "WIN",
                 AreaOrder = AreaOrder(),
                 RootAreas = ["Menu"]
             };
@@ -110,16 +120,16 @@ namespace TestingForm.GameDataCreation.BanjoTooie
                 {
                     foreach(var loc in area.Value.locations)
                     {
-                        AddLogicEntry(loc.Key, loc.Value.beginnerLogic, area.Key);
+                        AddLogicEntry(loc.Key, loc.Value.GetFinalLogicString(loc.Key), area.Key);
                     }
                     foreach (var loc in area.Value.events)
                     {
-                        AddLogicEntry(loc.Key, loc.Value.beginnerLogic, area.Key);
+                        AddLogicEntry(loc.Key, loc.Value.GetFinalLogicString(loc.Key), area.Key);
                     }
                     foreach (var loc in area.Value.exits)
                     {
                         string ExitID = $"{area.Key} => {loc.Key}";
-                        AddLogicEntry(ExitID, loc.Value.beginnerLogic, area.Key);
+                        AddLogicEntry(ExitID, loc.Value.GetFinalLogicString(loc.Key), area.Key);
                         AddEntrance(ExitID, area.Key, loc.Key);
                     }
                 }
@@ -142,12 +152,37 @@ namespace TestingForm.GameDataCreation.BanjoTooie
             dictionary.ToggleOptions.Add("randomize_chuffy", new OptionData.ToggleOption(null)
             {
                 ID = "randomize_chuffy",
-                Name = "Chuffy as a randomized AP Item.",
+                Name = "Chuffy as a randomized AP Item",
                 Description = "Chuffy is lost across the MultiWorld.",
                 Value = true
             }.CreateSimpleValues());
 
-            foreach(var l in Logic.Logic)
+            dictionary.ChoiceOptions.Add("logic_type", new OptionData.ChoiceOption(null)
+            {
+                ID = "logic_type",
+                Name = "Logic Type",
+                Description = "Choose your logic difficulty if you are expected to perform tricks to reach certain areas.",
+                Value = "beginner"
+            }.CreateSimpleValues(("beginner", "Beginner"), ("normal", "Normal"), ("advanced", "Advanced")));
+
+            dictionary.ChoiceOptions.Add("victory_condition", new OptionData.ChoiceOption(null)
+            {
+                ID = "victory_condition",
+                Name = "Victory Condition",
+                Description = "Choose which victory condition you want.",
+                Value = "hag1"
+            }.CreateSimpleValues(("hag1", "Hag 1"), ("minigame_hunt", "Minigames"), ("boss_hunt", "Bosses")));
+
+            Logic.Logic.Add(new MMRData.JsonFormatLogicItem
+            {
+                Id = "WIN",
+                ConditionalItems = [
+                    ["setting{victory_condition, hag1}", "VICTORY"],
+                    ["setting{victory_condition, minigame_hunt}", "MUMBOTOKEN, 15"],
+                    ["setting{victory_condition, boss_hunt}", "MUMBOTOKEN, 8"]]
+            });
+
+            foreach (var l in Logic.Logic)
             {
                 LogicUtilities.RemoveRedundantConditionals(l);
                 LogicUtilities.MakeCommonConditionalsRequirements(l);

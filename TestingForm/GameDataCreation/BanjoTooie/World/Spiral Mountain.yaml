@@ -10,6 +10,10 @@ Menu:
       beginnerLogic: (IOHPG && HUMBAIH) || FEGGS
       normalLogic: ''
       advancedLogic: ''
+    has_explosives:
+      beginnerLogic: GEGGS
+      normalLogic: GEGGS || CEGGS
+      advancedLogic: ''
     long_swim:
       beginnerLogic: MUMBOJR
       normalLogic: BDRILL || MUMBOJR

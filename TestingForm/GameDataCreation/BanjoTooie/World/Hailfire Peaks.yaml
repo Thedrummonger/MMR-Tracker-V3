@@ -47,7 +47,7 @@ HP:
     JIGGYHP9:
       beginnerLogic: ufo_free && BDRILL && SOLO_HATCH && SOLO_GLIDE && MUMBOHP
       normalLogic: ufo_free && MUMBOHP && BDRILL && SOLO_HATCH && (SOLO_WWHACK || SOLO_GLIDE)
-      advancedLogic: jiggy_ufo && MUMBOHP && BDRILL && HATCH
+      advancedLogic: ufo_free && MUMBOHP && BDRILL && HATCH
     JIGGYHP10:
       beginnerLogic: SPLITUP && GGRAB
       normalLogic: ''
@@ -172,6 +172,14 @@ HP:
     HPLS:
       beginnerLogic: true
       normalLogic: ''
+      advancedLogic: ''
+    MT:
+      beginnerLogic: false
+      normalLogic: has_explosives || MUMBOHP
+      advancedLogic: ''
+    JR:
+      beginnerLogic: false
+      normalLogic: HFP_hot_water_cooled || SPLITUP
       advancedLogic: ''
   events: 
     cool_chuffy:

@@ -306,6 +306,10 @@ JR:
       beginnerLogic: true
       normalLogic: ''
       advancedLogic: ''
+    GM:
+      beginnerLogic: false
+      normalLogic: can_reach_atlantis && TTORP && IEGGS && AUQAIM
+      advancedLogic: ''
   events:
     can_reach_atlantis:
       beginnerLogic: IEGGS && long_swim && AUQAIM

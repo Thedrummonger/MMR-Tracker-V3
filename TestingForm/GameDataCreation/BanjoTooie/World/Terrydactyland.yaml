@@ -185,6 +185,10 @@ TL:
       beginnerLogic: true
       normalLogic: ''
       advancedLogic: ''
+    WW:
+      beginnerLogic: false
+      normalLogic: MUMBOTD && HUMBATD
+      advancedLogic: ''
   events:
     can_beat_terry:
       beginnerLogic: EGGAIM && SPRINGB

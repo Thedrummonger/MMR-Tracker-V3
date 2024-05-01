@@ -70,6 +70,12 @@ namespace MMR_Tracker_V3.Logic
             }
 
             List<List<string>> TempConditionals = cleanedConditionals;
+
+            if (TempConditionals.Any(SetContainedFalseBool) && !TempConditionals.All(SetContainedFalseBool))
+            {
+                TempConditionals.RemoveAll(SetContainedFalseBool);
+            }
+
             if (entry.RequiredItems.Any())
             {
                 var NewConditionals = cleanedConditionals;
@@ -92,6 +98,11 @@ namespace MMR_Tracker_V3.Logic
             TempConditionals.RemoveAll(x => !x.Any());
 
             entry.ConditionalItems = TempConditionals;
+
+            bool SetContainedFalseBool(IEnumerable<string> set)
+            {
+                return set.Any(x => bool.TryParse(x, out bool PV) && !PV);
+            }
 
             bool IsRedundant(List<string> FocusedList, List<List<string>> CheckingList)
             {
