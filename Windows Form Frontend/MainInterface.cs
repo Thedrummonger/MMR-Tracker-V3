@@ -575,7 +575,8 @@ namespace Windows_Form_Frontend
             {
                 TrackerLocationDataList Data = new(WinFormUtils.CreateDivider(LBCheckedLocations), InstanceContainer, TXTCheckedSearch.Text, dataset);
                 Data.WriteLocations(MiscData.CheckState.Checked, false).WriteLocations(MiscData.CheckState.Checked, true)
-                    .WriteEntrances(MiscData.CheckState.Checked, true).WriteHints(MiscData.CheckState.Checked).WriteStartingItems().WriteOnlineItems();
+                    .WriteEntrances(MiscData.CheckState.Checked, true).WriteHints(MiscData.CheckState.Checked)
+                    .WriteStartingItems().WriteOnlineItems().WriteRemoteItemHints();
                 if (InstanceContainer.Instance.StaticOptions.ShowOptionsInListBox == DisplayListType.Checked) { Data.WriteOptions(); }
                 lblCheckedLocation.Text = $"Checked Locations: {Data.ItemsDisplayed}" + (Data.LocationsFiltered ? $"/{Data.ItemsFound}" : "");
                 foreach (var i in Data.FinalData)

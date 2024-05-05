@@ -96,11 +96,12 @@ namespace TestingForm
 
         private void Archipelago()
         {
-            MMR_Tracker_V3.NetCode.ArchipelagoConnector archipelago = 
-                new(Interaction.InputBox("Enter Game"), 
-                Interaction.InputBox("Enter Slot ID"), 
-                Interaction.InputBox("Enter Password"), 
-                Interaction.InputBox("Enter Server Address"));
+            string Game = Interaction.InputBox("Enter Game");
+            string Slot = Interaction.InputBox("Enter Slot ID");
+            string Passwrd = Interaction.InputBox("Enter Password");
+            string Server = Interaction.InputBox("Enter Server Address");
+
+            MMR_Tracker_V3.NetCode.ArchipelagoConnector archipelago = new(Game, Slot, Passwrd, Server);
 
             if (!archipelago.WasConnectionSuccess(out string[] Error)) {
                 MessageBox.Show(string.Join("\n", Error));
@@ -113,6 +114,7 @@ namespace TestingForm
                 archipelago.Session.Items.GetItemName(x.Item)));
             Debug.WriteLine(CleanData.ToFormattedJson());
             Debug.WriteLine(archipelago.GetLoginSuccessInfo().ToFormattedJson());
+            Debug.WriteLine(archipelago.Session.DataStorage.GetHints(archipelago.Session.ConnectionInfo.Slot).ToFormattedJson());
         }
 
         [Flags]

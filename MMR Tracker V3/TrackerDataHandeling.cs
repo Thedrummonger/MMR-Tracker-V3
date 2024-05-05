@@ -462,5 +462,32 @@ namespace MMR_Tracker_V3
             return Data;
         }
 
+        public static TrackerLocationDataList WriteRemoteItemHints(this TrackerLocationDataList Data)
+        {
+            if (Data.InstanceContainer.netConnection is not null && Data.InstanceContainer.netConnection.RemoteHints.Any())
+            {
+                var RemoteHintList = Data.InstanceContainer.netConnection.RemoteHints.ToArray();
+                var RemoteItemHints = Data.Reverse ? RemoteHintList.Reverse() : RemoteHintList;
+                bool DividerCreated = false;
+                List<RemoteLocationHint> RemoteHintObjs = [];
+                foreach (var item in RemoteItemHints)
+                {
+                    Data.ItemsFound++;
+                    if (!SearchStringParser.FilterSearch(Data.Instance, item, Data.Filter, item.ToString())) { continue; }
+                    if (!DividerCreated)
+                    {
+                        if (Data.FinalData.Count > 0) { Data.FinalData.Add(Data.Divider); }
+                        Data.FinalData.Add(new MiscData.Areaheader { Area = "MULTIWORLD ITEM HINTS" });
+                        DividerCreated = true;
+                    }
+                    Data.ItemsDisplayed++;
+                    RemoteHintObjs.Add(item);
+                }
+                RemoteHintObjs = RemoteHintObjs.OrderBy(x => x.Item.GetDictEntry().GetName()).ThenBy(x => x.Location).ThenBy(x => x.RemotePlayerID).ToList();
+                Data.FinalData.AddRange(RemoteHintObjs);
+            }
+            return Data;
+        }
+
     }
 }

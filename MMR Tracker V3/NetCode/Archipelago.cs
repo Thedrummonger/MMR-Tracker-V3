@@ -74,7 +74,7 @@ namespace MMR_Tracker_V3.NetCode
         }
         private LocationData.LocationObject GetLocationByNetID(string netID)
         {
-            if (!APLocationIDLookup.TryGetValue(netID, out string LocID)) { return null; }  
+            if (netID is null || !APLocationIDLookup.TryGetValue(netID, out string LocID)) { return null; }  
             return Data.InstanceContainer.Instance.GetLocationByID(LocID);
         }
         private void FillItemLookupDict()
@@ -90,7 +90,7 @@ namespace MMR_Tracker_V3.NetCode
         }
         private ItemData.ItemObject GetItemByNetID(string netID)
         {
-            if (!APItemIDLookup.TryGetValue(netID, out string LocID)) { return null; }
+            if (netID is null || !APItemIDLookup.TryGetValue(netID, out string LocID)) { return null; }
             return Data.InstanceContainer.Instance.GetItemByID(LocID);
         }
         public bool Connect(out List<string> Log)
@@ -132,9 +132,9 @@ namespace MMR_Tracker_V3.NetCode
             if (APLocationIDLookup is null) { FillLocationLookupDict(); }
             if (APItemIDLookup is null) { FillItemLookupDict(); }
             var Instance = Data.InstanceContainer.Instance;
-            var Sess = Data.InstanceContainer.netConnection.ArchipelagoClient.Session;
-            var AllItems = Sess.Items.AllItemsReceived.Select(x => (Sess.Items.GetItemName(x.Item), Sess.Locations.GetLocationNameFromId(x.Location), x.Player)).ToArray();
-            var AllLocations = Sess.Locations.AllLocationsChecked.Select(x => Sess.Locations.GetLocationNameFromId(x)).ToArray();
+            var Session = Data.InstanceContainer.netConnection.ArchipelagoClient.Session;
+            var AllItems = Session.Items.AllItemsReceived.Select(x => (Session.Items.GetItemName(x.Item), Session.Locations.GetLocationNameFromId(x.Location), x.Player)).ToArray();
+            var AllLocations = Session.Locations.AllLocationsChecked.Select(x => Session.Locations.GetLocationNameFromId(x)).ToArray();
             foreach (var i in Data.InstanceContainer.Instance.ItemPool.Values) { i.AmountAquiredOnline = []; }
             List<LocationData.LocationObject> ToCheck = new List<LocationData.LocationObject>();
             foreach (var Entry in AllItems)
@@ -161,6 +161,33 @@ namespace MMR_Tracker_V3.NetCode
                 ToCheck.Add(location);
             }
             LocationChecker.CheckSelectedItems(ToCheck, Data.InstanceContainer, new CheckItemSetting(MiscData.CheckState.Checked));
+
+            var HintData = Session.DataStorage.GetHints(Session.ConnectionInfo.Slot);
+
+            Instance.GetParentContainer().netConnection.RemoteHints.Clear();
+            List<LocationData.LocationObject> HintedLocations = [];
+            foreach(var i in HintData)
+            {
+                if (i.FindingPlayer == Session.ConnectionInfo.Slot)
+                {
+                    var HintLocation = GetLocationByNetID(Session.Locations.GetLocationNameFromId(i.LocationId));
+                    if (HintLocation is null) { continue; };
+                    if (HintLocation.CheckState == MiscData.CheckState.Unchecked && HintLocation.GetItemAtCheck() is not null)
+                    {
+                        HintedLocations.Add(HintLocation);
+                    }
+                }
+                else if (i.ReceivingPlayer == Session.ConnectionInfo.Slot && !i.Found)
+                {
+                    var itemName = Session.Items.GetItemName(i.ItemId);
+                    var itemObject = GetItemByNetID(itemName);
+                    var locationName = Session.Locations.GetLocationNameFromId(i.LocationId);
+                    Instance.GetParentContainer().netConnection.RemoteHints.Add(
+                        new HintData.RemoteLocationHint(itemObject, locationName, i.FindingPlayer));
+                }
+            }
+            LocationChecker.CheckSelectedItems(HintedLocations, Data.InstanceContainer, new CheckItemSetting(MiscData.CheckState.Marked));
+
             Data.RefreshMainForm();
         }
         public void ArchipelagoChatMessageReceived(Archipelago.MultiClient.Net.MessageLog.Messages.LogMessage message)

@@ -7,6 +7,7 @@ using System.IO;
 using System.Linq;
 using System.Net;
 using System.Net.Sockets;
+using static MMR_Tracker_V3.TrackerObjects.HintData;
 using static MMR_Tracker_V3.TrackerObjects.InstanceData;
 
 namespace MMR_Tracker_V3.NetCode
@@ -170,6 +171,7 @@ namespace MMR_Tracker_V3.NetCode
             public string SlotID { get; set; } = string.Empty;
             public string GameName { get; set; } = string.Empty;
             public Dictionary<int, string> PlayerNames { get; set; } = [];
+            public List<RemoteLocationHint> RemoteHints { get; set; } = [];
             public void Reset()
             {
                 OnlineMode = NetData.OnlineMode.None;
