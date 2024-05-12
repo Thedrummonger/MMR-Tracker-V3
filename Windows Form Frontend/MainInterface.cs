@@ -89,7 +89,7 @@ namespace Windows_Form_Frontend
             if (!PromptSave()) { e.Cancel = true; }
             if (Utility.OBJIsThreadSafe(MainInterfaceItemDisplayThread, MainInterfaceItemDisplayForm))
             {
-                MainInterfaceItemDisplayForm.Invoke(new MethodInvoker(delegate { MainInterfaceItemDisplayForm.CloseThread(); }));
+                MainInterfaceItemDisplayForm?.Invoke(new MethodInvoker(delegate { MainInterfaceItemDisplayForm.CloseThread(); }));
             }
             if (CurrentNetClientForm is not null)
             {
@@ -102,8 +102,6 @@ namespace Windows_Form_Frontend
 
         private void UndoRedo_Click(object sender, EventArgs e)
         {
-            Stopwatch TimeTotalItemSelect = new Stopwatch();
-            Utility.TimeCodeExecution(TimeTotalItemSelect, "Saving Tracker State (UTF8)", 1);
             if (sender == undoToolStripMenuItem)
             {
                 InstanceContainer.DoUndo();
@@ -112,7 +110,6 @@ namespace Windows_Form_Frontend
             {
                 InstanceContainer.DoRedo();
             }
-            Utility.TimeCodeExecution(TimeTotalItemSelect, "Undo/Redo Action", -1);
 
             InstanceContainer.logicCalculation.CalculateLogic();
             UpdateUI();
