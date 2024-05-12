@@ -140,7 +140,6 @@ namespace Windows_Form_Frontend
         {
             Invoke(new Action(() =>
             {
-                if (!chkRecieveData.Checked) { return; }
                 PrintToConsole(Content);
             }));
         }

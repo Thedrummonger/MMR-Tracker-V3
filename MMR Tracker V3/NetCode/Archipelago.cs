@@ -192,6 +192,11 @@ namespace MMR_Tracker_V3.NetCode
         }
         public void ArchipelagoChatMessageReceived(Archipelago.MultiClient.Net.MessageLog.Messages.LogMessage message)
         {
+            if (!Data.ReceiveData) { return; }
+            if (message is Archipelago.MultiClient.Net.MessageLog.Messages.HintItemSendLogMessage && Data.AutoProcessData)
+            {
+                SyncWithArchipelagoData();
+            }
             Data.Logger?.Invoke(message.ToString(), null);
         }
 
