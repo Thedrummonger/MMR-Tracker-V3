@@ -74,6 +74,7 @@ namespace TestingForm
                 new("Save Tracker State", WinFormTesting.SaveWinformTrackerState, UpdateDebugActions, WinFormTesting.CanSaveWinformTrackerState),
                 new("Load Tracker State", WinFormTesting.LoadWinformTrackerState, UpdateDebugActions, WinFormTesting.CanLoadWinformTrackerState),
                 new("Print Selected Object to Console", WinFormTesting.PrintWinformSelectedObject, UpdateDebugActions, () => WinFormTesting.LastSelectedObject is not null),
+                new("Give Item", WinFormTesting.GiveItem, UpdateDebugActions, WinFormTesting.WinformLoaded),
                 new("Create MMR Data", GameFileCreation.MMRCreateData, UpdateDebugActions),
                 new("Create TPR Data", GameFileCreation.TPRCreateData, UpdateDebugActions),
                 new("Create OOTMM Data", GameFileCreation.OOTMMCreateData, UpdateDebugActions),
@@ -82,7 +83,7 @@ namespace TestingForm
                 new("Create WWR Data", GameFileCreation.WWRCreateData, UpdateDebugActions),
                 new("Create BanjoTooie Data", GameFileCreation.BTCreateData, UpdateDebugActions),
                 new("Create Minecraft Data", GameFileCreation.MinecraftCreateData, UpdateDebugActions),
-                new("Test Archipelago", Archipelago, UpdateDebugActions),
+                new("Print Archipelago Server Data", Archipelago, UpdateDebugActions),
                 new("Test Py Spoiler Parser", TestPythonParser, UpdateDebugActions),
                 new("Test Random Stuff", RandomTests, UpdateDebugActions),
             ];
