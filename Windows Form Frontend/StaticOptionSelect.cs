@@ -60,10 +60,10 @@ namespace Windows_Form_Frontend
                 UILayoutsSTRING));
             OptionLines.Add(new OptionLine("Max Undo Actions",
                 TempOptionFile.MaxUndo, (val) => { TempOptionFile.SetMaxUndos((int)val); },
-                "Max amount of undo states the tracker should store\nThese can get quite large and eat up a lot of memory."));
+                "Max amount of undo states the tracker should store.\nThese can get quite large and eat up a lot of memory."));
             OptionLines.Add(new OptionLine("Show Unavailable Marked",
                 TempOptionFile.ShowUnavailableMarkedLocations, (val) => { TempOptionFile.ToggleShowUnavailableMarked((bool)val); },
-                "Should available locations that have been marked manually or through hints be displayed in the available locations list?"));
+                "Should locations that are not logically available that have been marked manually or through hints be displayed in the available locations list?"));
             OptionLines.Add(new OptionLine("Separate Unavailable Marked",
                 TempOptionFile.SeperateUnavailableMarkedLocations, (val) => { TempOptionFile.ToggleSeperateUnavailableMarked((bool)val); },
                 "If the above option is true, should those locations be separated at the bottom of the list box?"));
@@ -98,7 +98,7 @@ namespace Windows_Form_Frontend
                 "The font size the tracker should use"));
             OptionLines.Add(new OptionLine("Font Family",
                 TempOptionFile.GetFont().FontFamily.Name, (val) => { TempOptionFile.SetFont(UpdateFont((string)val, null)); },
-                "The font Family the tracker should use", FontFamily.Families.Select(x => x.Name).ToList()));
+                "The font family the tracker should use", FontFamily.Families.Select(x => x.Name).ToList()));
         }
 
         private void UpdateUILayout(string val)
