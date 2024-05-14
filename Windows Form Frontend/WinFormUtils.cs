@@ -137,15 +137,10 @@ namespace Windows_Form_Frontend
         public static void AdjustComboBoxWidth(ComboBox C)
         {
             Graphics g = C.CreateGraphics();
-            float longest = 0;
-            foreach (var i in C.Items)
-            {
-                SizeF textLength = g.MeasureString(i.ToString(), C.Font);
-                if (textLength.Width > longest)
-                    longest = textLength.Width;
-            }
+            IEnumerable<float> ItemSizes = C.Items.ToArray().Select(x => g.MeasureString(x.ToString(), C.Font).Width);
+            float longest = !ItemSizes.Any() ? -1 : ItemSizes.Max();
             if (longest > 0)
-                C.DropDownWidth = (int)longest;
+                C.DropDownWidth = (int)longest + SystemInformation.VerticalScrollBarWidth;
         }
 
         public static string[] SelectAndReadFile(string[] Filters, string Description)
@@ -167,6 +162,11 @@ namespace Windows_Form_Frontend
             {
                 return $"*.{Filter}|*.{Filter}";
             }
+        }
+
+        public static object[] ToArray(this ComboBox.ObjectCollection objectCollection)
+        {
+            return objectCollection.Cast<object>().ToArray();
         }
     }
 }

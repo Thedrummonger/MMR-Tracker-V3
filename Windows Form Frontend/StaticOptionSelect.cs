@@ -192,6 +192,7 @@ namespace Windows_Form_Frontend
                         if (i == StringValD) { comboBox.SelectedIndex = Ind; }
                         Ind++;
                     }
+                    comboBox.DropDown += (sender, e) => { WinFormUtils.AdjustComboBoxWidth(comboBox); };
                     comboBox.SelectedValueChanged += (sender, e) => { item.OnChange(comboBox.SelectedItem); Utility.PrintObjectToConsole(TempOptionFile); };
                     panel1.Controls.Add(comboBox);
                 }
