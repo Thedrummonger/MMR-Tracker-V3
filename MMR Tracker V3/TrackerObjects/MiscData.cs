@@ -224,6 +224,7 @@ namespace MMR_Tracker_V3.TrackerObjects
             public int PlayerID = _PlayerID;
             string PlayerNumber(int Player)
             {
+                if (ItemObject.GetParent().GetParentContainer().netConnection is null) { return Player.ToString(); }
                 if (ItemObject.GetParent().GetParentContainer().netConnection.PlayerNames.TryGetValue(Player, out string name))
                 {
                     return $"{Player} ({name})";

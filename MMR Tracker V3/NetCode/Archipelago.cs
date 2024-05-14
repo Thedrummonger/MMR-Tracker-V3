@@ -2,8 +2,11 @@
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
+using System.Threading.Tasks;
 using Archipelago.MultiClient.Net;
 using Archipelago.MultiClient.Net.Enums;
+using Archipelago.MultiClient.Net.Models;
+using Microsoft.FSharp.Control;
 using MMR_Tracker_V3.SpoilerLogHandling;
 using MMR_Tracker_V3.TrackerObjectExtensions;
 using MMR_Tracker_V3.TrackerObjects;
@@ -74,7 +77,7 @@ namespace MMR_Tracker_V3.NetCode
         }
         private LocationData.LocationObject GetLocationByNetID(string netID)
         {
-            if (!APLocationIDLookup.TryGetValue(netID, out string LocID)) { return null; }  
+            if (netID is null || !APLocationIDLookup.TryGetValue(netID, out string LocID)) { return null; }  
             return Data.InstanceContainer.Instance.GetLocationByID(LocID);
         }
         private void FillItemLookupDict()
@@ -90,7 +93,7 @@ namespace MMR_Tracker_V3.NetCode
         }
         private ItemData.ItemObject GetItemByNetID(string netID)
         {
-            if (!APItemIDLookup.TryGetValue(netID, out string LocID)) { return null; }
+            if (netID is null || !APItemIDLookup.TryGetValue(netID, out string LocID)) { return null; }
             return Data.InstanceContainer.Instance.GetItemByID(LocID);
         }
         public bool Connect(out List<string> Log)
@@ -127,14 +130,14 @@ namespace MMR_Tracker_V3.NetCode
             APClient.Session.MessageLog.OnMessageReceived += ArchipelagoChatMessageReceived;
         }
 
-        public void SyncWithArchipelagoData()
+        public void SyncWithArchipelagoData(bool FromListener = false)
         {
             if (APLocationIDLookup is null) { FillLocationLookupDict(); }
             if (APItemIDLookup is null) { FillItemLookupDict(); }
             var Instance = Data.InstanceContainer.Instance;
-            var Sess = Data.InstanceContainer.netConnection.ArchipelagoClient.Session;
-            var AllItems = Sess.Items.AllItemsReceived.Select(x => (Sess.Items.GetItemName(x.Item), Sess.Locations.GetLocationNameFromId(x.Location), x.Player)).ToArray();
-            var AllLocations = Sess.Locations.AllLocationsChecked.Select(x => Sess.Locations.GetLocationNameFromId(x)).ToArray();
+            var Session = Data.InstanceContainer.netConnection.ArchipelagoClient.Session;
+            var AllItems = Session.Items.AllItemsReceived.Select(x => (Session.Items.GetItemName(x.Item), Session.Locations.GetLocationNameFromId(x.Location), x.Player)).ToArray();
+            var AllLocations = Session.Locations.AllLocationsChecked.Select(x => Session.Locations.GetLocationNameFromId(x)).ToArray();
             foreach (var i in Data.InstanceContainer.Instance.ItemPool.Values) { i.AmountAquiredOnline = []; }
             List<LocationData.LocationObject> ToCheck = new List<LocationData.LocationObject>();
             foreach (var Entry in AllItems)
@@ -161,10 +164,50 @@ namespace MMR_Tracker_V3.NetCode
                 ToCheck.Add(location);
             }
             LocationChecker.CheckSelectedItems(ToCheck, Data.InstanceContainer, new CheckItemSetting(MiscData.CheckState.Checked));
+
+            Hint[] HintData = [];
+
+            //TODO Fix this eventually, GetHints breaks when called from a PacketReceived handler and GetHintsAsync causes an infinite loop
+            //For now just don't call it from a PacketReceived handler
+            if (!FromListener)
+            {
+                try { HintData = Session.DataStorage.GetHints(Session.ConnectionInfo.Slot); }
+                catch (Exception e) { Debug.WriteLine(e); }
+
+                Instance.GetParentContainer().netConnection.RemoteHints.Clear();
+                List<LocationData.LocationObject> HintedLocations = [];
+                foreach (var i in HintData)
+                {
+                    if (i.FindingPlayer == Session.ConnectionInfo.Slot)
+                    {
+                        var HintLocation = GetLocationByNetID(Session.Locations.GetLocationNameFromId(i.LocationId));
+                        if (HintLocation is null) { continue; };
+                        if (HintLocation.CheckState == MiscData.CheckState.Unchecked && HintLocation.GetItemAtCheck() is not null)
+                        {
+                            HintedLocations.Add(HintLocation);
+                        }
+                    }
+                    else if (i.ReceivingPlayer == Session.ConnectionInfo.Slot && !i.Found)
+                    {
+                        var itemName = Session.Items.GetItemName(i.ItemId);
+                        var itemObject = GetItemByNetID(itemName);
+                        var locationName = Session.Locations.GetLocationNameFromId(i.LocationId);
+                        Instance.GetParentContainer().netConnection.RemoteHints.Add(
+                            new HintData.RemoteLocationHint(itemObject, locationName, i.FindingPlayer));
+                    }
+                }
+                LocationChecker.CheckSelectedItems(HintedLocations, Data.InstanceContainer, new CheckItemSetting(MiscData.CheckState.Marked));
+            }
+
             Data.RefreshMainForm();
         }
         public void ArchipelagoChatMessageReceived(Archipelago.MultiClient.Net.MessageLog.Messages.LogMessage message)
         {
+            if (!Data.ReceiveData) { return; }
+            if (message is Archipelago.MultiClient.Net.MessageLog.Messages.HintItemSendLogMessage && Data.AutoProcessData)
+            {
+                SyncWithArchipelagoData(true);
+            }
             Data.Logger?.Invoke(message.ToString(), null);
         }
 
@@ -172,14 +215,14 @@ namespace MMR_Tracker_V3.NetCode
         {
             Debug.WriteLine("ArchipelagoLocationChecked");
             if (!Data.AutoProcessData || !Data.ReceiveData) { return; }
-            SyncWithArchipelagoData();
+            SyncWithArchipelagoData(true);
         }
 
         public void ArchipelagoItemReceived(Archipelago.MultiClient.Net.Helpers.ReceivedItemsHelper helper)
         {
             Debug.WriteLine("ArchipelagoItemReceived");
             if (!Data.AutoProcessData || !Data.ReceiveData) { return; }
-            SyncWithArchipelagoData();
+            SyncWithArchipelagoData(true);
         }
 
         public static bool CheckForLocalAPServer()

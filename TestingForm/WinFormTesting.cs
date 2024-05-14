@@ -117,5 +117,18 @@ namespace TestingForm
             MainInterface.InstanceContainer = new MMR_Tracker_V3.TrackerObjects.InstanceData.InstanceContainer();
             LastSelectedObject = null;
         }
+
+        internal static void GiveItem()
+        {
+            CheckItemForm checkItemForm = new([null], MainInterface.InstanceContainer);
+            checkItemForm.ShowDialog();
+            if (checkItemForm._Result.Count != 1) { return; }
+            var SelectedItem = checkItemForm._Result[0];
+            var Item = SelectedItem.GetItemLocation().ItemData.ItemID;
+            var ItemObject = MainInterface.InstanceContainer.Instance.GetItemByID(Item);
+            if (ItemObject is null) { return; }
+            ItemObject.AmountAquiredOnline.SetIfEmpty(MainInterface.InstanceContainer.netConnection.PlayerID, 0);
+            ItemObject.AmountAquiredOnline[MainInterface.InstanceContainer.netConnection.PlayerID]++;
+        }
     }
 }

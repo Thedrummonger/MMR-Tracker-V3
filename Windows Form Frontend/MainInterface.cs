@@ -89,7 +89,7 @@ namespace Windows_Form_Frontend
             if (!PromptSave()) { e.Cancel = true; }
             if (Utility.OBJIsThreadSafe(MainInterfaceItemDisplayThread, MainInterfaceItemDisplayForm))
             {
-                MainInterfaceItemDisplayForm.Invoke(new MethodInvoker(delegate { MainInterfaceItemDisplayForm.CloseThread(); }));
+                MainInterfaceItemDisplayForm?.Invoke(new MethodInvoker(delegate { MainInterfaceItemDisplayForm.CloseThread(); }));
             }
             if (CurrentNetClientForm is not null)
             {
@@ -102,8 +102,6 @@ namespace Windows_Form_Frontend
 
         private void UndoRedo_Click(object sender, EventArgs e)
         {
-            Stopwatch TimeTotalItemSelect = new Stopwatch();
-            Utility.TimeCodeExecution(TimeTotalItemSelect, "Saving Tracker State (UTF8)", 1);
             if (sender == undoToolStripMenuItem)
             {
                 InstanceContainer.DoUndo();
@@ -112,7 +110,6 @@ namespace Windows_Form_Frontend
             {
                 InstanceContainer.DoRedo();
             }
-            Utility.TimeCodeExecution(TimeTotalItemSelect, "Undo/Redo Action", -1);
 
             InstanceContainer.logicCalculation.CalculateLogic();
             UpdateUI();
@@ -575,7 +572,8 @@ namespace Windows_Form_Frontend
             {
                 TrackerLocationDataList Data = new(WinFormUtils.CreateDivider(LBCheckedLocations), InstanceContainer, TXTCheckedSearch.Text, dataset);
                 Data.WriteLocations(MiscData.CheckState.Checked, false).WriteLocations(MiscData.CheckState.Checked, true)
-                    .WriteEntrances(MiscData.CheckState.Checked, true).WriteHints(MiscData.CheckState.Checked).WriteStartingItems().WriteOnlineItems();
+                    .WriteEntrances(MiscData.CheckState.Checked, true).WriteHints(MiscData.CheckState.Checked)
+                    .WriteStartingItems().WriteOnlineItems().WriteRemoteItemHints();
                 if (InstanceContainer.Instance.StaticOptions.ShowOptionsInListBox == DisplayListType.Checked) { Data.WriteOptions(); }
                 lblCheckedLocation.Text = $"Checked Locations: {Data.ItemsDisplayed}" + (Data.LocationsFiltered ? $"/{Data.ItemsFound}" : "");
                 foreach (var i in Data.FinalData)

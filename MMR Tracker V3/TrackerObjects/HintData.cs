@@ -1,5 +1,7 @@
-﻿using System;
+﻿using Octokit;
+using System;
 using System.Collections.Generic;
+using static MMR_Tracker_V3.TrackerObjects.ItemData;
 using static MMR_Tracker_V3.TrackerObjects.MiscData;
 
 namespace MMR_Tracker_V3.TrackerObjects
@@ -38,6 +40,25 @@ namespace MMR_Tracker_V3.TrackerObjects
             public override LogicDictionaryData.DictionaryCheckableLocationEntry GetAbstractDictEntry() => GetDictEntry();
 
             public override CheckableLocationTypes LocationType() => CheckableLocationTypes.Hint;
+        }
+        public class RemoteLocationHint(ItemData.ItemObject _ItemObject, string RemoteLocation, int _PlayerID)
+        {
+            public ItemData.ItemObject Item = _ItemObject;
+            public string Location = RemoteLocation;
+            public int RemotePlayerID = _PlayerID;
+            string PlayerNumber(int Player)
+            {
+                if (Item.GetParent().GetParentContainer().netConnection is null) { return Player.ToString(); }
+                if (Item.GetParent().GetParentContainer().netConnection.PlayerNames.TryGetValue(Player, out string name))
+                {
+                    return $"{Player} ({name})";
+                }
+                return Player.ToString();
+            }
+            public override string ToString()
+            {
+                return $"{Item.GetDictEntry().GetName()}: {Location} [Player: {PlayerNumber(RemotePlayerID)}] ";
+            }
         }
     }
 }

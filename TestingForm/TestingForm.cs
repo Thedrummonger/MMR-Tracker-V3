@@ -74,6 +74,7 @@ namespace TestingForm
                 new("Save Tracker State", WinFormTesting.SaveWinformTrackerState, UpdateDebugActions, WinFormTesting.CanSaveWinformTrackerState),
                 new("Load Tracker State", WinFormTesting.LoadWinformTrackerState, UpdateDebugActions, WinFormTesting.CanLoadWinformTrackerState),
                 new("Print Selected Object to Console", WinFormTesting.PrintWinformSelectedObject, UpdateDebugActions, () => WinFormTesting.LastSelectedObject is not null),
+                new("Give Item", WinFormTesting.GiveItem, UpdateDebugActions, WinFormTesting.WinformLoaded),
                 new("Create MMR Data", GameFileCreation.MMRCreateData, UpdateDebugActions),
                 new("Create TPR Data", GameFileCreation.TPRCreateData, UpdateDebugActions),
                 new("Create OOTMM Data", GameFileCreation.OOTMMCreateData, UpdateDebugActions),
@@ -82,7 +83,7 @@ namespace TestingForm
                 new("Create WWR Data", GameFileCreation.WWRCreateData, UpdateDebugActions),
                 new("Create BanjoTooie Data", GameFileCreation.BTCreateData, UpdateDebugActions),
                 new("Create Minecraft Data", GameFileCreation.MinecraftCreateData, UpdateDebugActions),
-                new("Test Archipelago", Archipelago, UpdateDebugActions),
+                new("Print Archipelago Server Data", Archipelago, UpdateDebugActions),
                 new("Test Py Spoiler Parser", TestPythonParser, UpdateDebugActions),
                 new("Test Random Stuff", RandomTests, UpdateDebugActions),
             ];
@@ -96,11 +97,12 @@ namespace TestingForm
 
         private void Archipelago()
         {
-            MMR_Tracker_V3.NetCode.ArchipelagoConnector archipelago = 
-                new(Interaction.InputBox("Enter Game"), 
-                Interaction.InputBox("Enter Slot ID"), 
-                Interaction.InputBox("Enter Password"), 
-                Interaction.InputBox("Enter Server Address"));
+            string Game = Interaction.InputBox("Enter Game");
+            string Slot = Interaction.InputBox("Enter Slot ID");
+            string Passwrd = Interaction.InputBox("Enter Password");
+            string Server = Interaction.InputBox("Enter Server Address");
+
+            MMR_Tracker_V3.NetCode.ArchipelagoConnector archipelago = new(Game, Slot, Passwrd, Server);
 
             if (!archipelago.WasConnectionSuccess(out string[] Error)) {
                 MessageBox.Show(string.Join("\n", Error));
@@ -113,6 +115,7 @@ namespace TestingForm
                 archipelago.Session.Items.GetItemName(x.Item)));
             Debug.WriteLine(CleanData.ToFormattedJson());
             Debug.WriteLine(archipelago.GetLoginSuccessInfo().ToFormattedJson());
+            Debug.WriteLine(archipelago.Session.DataStorage.GetHints(archipelago.Session.ConnectionInfo.Slot).ToFormattedJson());
         }
 
         [Flags]

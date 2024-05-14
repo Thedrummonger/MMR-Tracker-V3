@@ -126,7 +126,8 @@ namespace Windows_Form_Frontend
             MainInterface.InstanceContainer.logicCalculation.CalculateLogic();
             Invoke(new Action(() =>
             {
-                MainInterface.CurrentProgram.PrintToListBox();
+                Debug.WriteLine("Updating Main Form");
+                ParentWindowsForm.UpdateUI();
             }));
         }
         private void PrintToConsole(IEnumerable<string> Content)
@@ -144,7 +145,6 @@ namespace Windows_Form_Frontend
         {
             Invoke(new Action(() =>
             {
-                if (!chkRecieveData.Checked) { return; }
                 PrintToConsole(Content);
             }));
         }
