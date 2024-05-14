@@ -107,7 +107,7 @@ namespace Windows_Form_Frontend
             container.Refresh();
         }
 
-        public static Font GetFont(this OptionFile optionFile)
+        public static Font GetFont(this TrackerSettings.OptionFile optionFile)
         {
             return GetFontFromString(optionFile.WinformData.FormFont);
         }

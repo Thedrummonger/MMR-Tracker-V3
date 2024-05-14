@@ -10,7 +10,7 @@ GIO:
       normalLogic: ''
       advancedLogic: ''
     IOHQM:
-      beginnerLogic: true
+      beginnerLogic: GIA
       normalLogic: ''
       advancedLogic: ''
   events: {}

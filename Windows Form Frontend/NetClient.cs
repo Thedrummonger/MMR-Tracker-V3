@@ -41,14 +41,19 @@ namespace Windows_Form_Frontend
         bool ModeUpdating = false;
 
         private OnlineMode CurrentMode = OnlineMode.None;
-        private string ServerCache = "127.0.0.1";
-        private int PortCache = 25570;
-        private string APServerCache = "archipelago.gg";
-        private int APPortCache = 38281;
+        private string ServerCache;
+        private int PortCache;
+        private string APServerCache;
+        private int APPortCache;
 
         //Form Actions
         private void NetClient_Load(object sender, EventArgs e)
         {
+            ServerCache = InstanceContainer.Instance.StaticOptions.OptionFile.NetConfig.ServerIP;
+            PortCache = InstanceContainer.Instance.StaticOptions.OptionFile.NetConfig.ServerPort;
+            APServerCache = InstanceContainer.Instance.StaticOptions.OptionFile.NetConfig.APServerIP;
+            APPortCache = InstanceContainer.Instance.StaticOptions.OptionFile.NetConfig.APServerPort;
+
             if (ArchipelagoConnectionHandler.CheckForLocalAPServer()) { APServerCache = "localhost"; }
 
             NetSessionData = new NetSessionData(txtServerAddress.Text, (int)nudPort.Value,
@@ -253,6 +258,8 @@ namespace Windows_Form_Frontend
             PrintToConsole(Log);
             UpdateUI();
             if (!Connected) { return; }
+            TrackerSettings.UpdateDefaultOptionFile(x => x.SetServerIP(txtServerAddress.Text).SetServerPort((int)nudPort.Value));
+            InstanceContainer.Instance.StaticOptions.OptionFile.SetServerIP(txtServerAddress.Text).SetServerPort((int)nudPort.Value);
             string ExitReason = await ListenerThread.OpenListenThread();
             PrintToConsole(ExitReason);
             ConnectionHandling.CloseServer(InstanceContainer);
@@ -264,6 +271,8 @@ namespace Windows_Form_Frontend
             var Connected = archipelagoConnection.Connect(out List<string> Log);
             PrintToConsole(Log);
             if (!Connected) { return ; }
+            TrackerSettings.UpdateDefaultOptionFile(x => x.SetAPServerIP(txtServerAddress.Text).SetAPServerPort((int)nudPort.Value));
+            InstanceContainer.Instance.StaticOptions.OptionFile.SetAPServerIP(txtServerAddress.Text).SetAPServerPort((int)nudPort.Value);
             nudPlayer.Value = InstanceContainer.netConnection.ArchipelagoClient.Session.ConnectionInfo.Slot;
             if (InstanceContainer.Instance.SpoilerLog is null)
             {

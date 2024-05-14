@@ -1,4 +1,5 @@
 ﻿using MMR_Tracker_V3;
+using MMR_Tracker_V3.TrackerObjects;
 using Newtonsoft.Json;
 using System.Diagnostics;
 using System.IO;
@@ -39,10 +40,7 @@ namespace Windows_Form_Frontend
             MainInterface.InstanceContainer.CurrentSavePath = "";
             MainInterface.InstanceContainer.GenerateInstance();
 
-            if (File.Exists(References.Globalpaths.OptionFile))
-            {
-                MainInterface.InstanceContainer.Instance.StaticOptions.OptionFile = JsonConvert.DeserializeObject<MMR_Tracker_V3.TrackerObjects.InstanceData.OptionFile>(File.ReadAllText(References.Globalpaths.OptionFile));
-            }
+            MainInterface.InstanceContainer.Instance.StaticOptions.OptionFile = TrackerSettings.ReadDefaultOptionsFile();
 
             ApplyWinFormSpecificData(MainInterface.InstanceContainer.Instance);
 

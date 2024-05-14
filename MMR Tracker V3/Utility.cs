@@ -537,13 +537,10 @@ namespace MMR_Tracker_V3
         public static SaveType TestSaveFileType(string FilePath, InstanceData.TrackerInstance instance)
         {
             var Options = instance?.StaticOptions?.OptionFile;
-            if (Options is null && File.Exists(References.Globalpaths.OptionFile))
-            {
-                Options = JsonConvert.DeserializeObject<OptionFile>(File.ReadAllText(References.Globalpaths.OptionFile));
-            }
+            Options ??= TrackerSettings.ReadDefaultOptionsFile();
             string Content = File.ReadAllText(FilePath);
             var ByteContent = File.ReadAllBytes(FilePath);
-            if (Options?.CompressSave ?? false)
+            if (Options.CompressSave)
             {
                 if (TestCompressedByteSave(ByteContent)) { return SaveType.CompressedByte; };
                 if (TestStandardSave(Content)) { return SaveType.Standard; };

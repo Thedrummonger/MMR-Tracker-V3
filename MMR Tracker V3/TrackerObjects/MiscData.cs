@@ -33,11 +33,11 @@ namespace MMR_Tracker_V3.TrackerObjects
             {
                 return Area + ":::" + InList.ToString();
             }
-            public bool IsMinimized(DisplayListType InList, Options OptionFile)
+            public bool IsMinimized(DisplayListType InList, TrackerSettings.Options OptionFile)
             {
                 return OptionFile.MinimizedHeaders.Contains(GetHideID(InList));
             }
-            public bool SetMinimized(DisplayListType InList, Options OptionFile, bool Minimize)
+            public bool SetMinimized(DisplayListType InList, TrackerSettings.Options OptionFile, bool Minimize)
             {
                 if (Minimize) { return OptionFile.MinimizedHeaders.Add(GetHideID(InList)); }
                 return OptionFile.MinimizedHeaders.Remove(GetHideID(InList));

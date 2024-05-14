@@ -13,13 +13,13 @@ namespace Windows_Form_Frontend
 {
     public partial class StaticOptionSelect : Form
     {
-        private MMR_Tracker_V3.TrackerObjects.InstanceData.OptionFile TempOptionFile;
-        private MMR_Tracker_V3.TrackerObjects.InstanceData.TrackerInstance _Instance;
-        public StaticOptionSelect(MMR_Tracker_V3.TrackerObjects.InstanceData.TrackerInstance Instance)
+        private TrackerSettings.OptionFile TempOptionFile;
+        private InstanceData.TrackerInstance _Instance;
+        public StaticOptionSelect(InstanceData.TrackerInstance Instance)
         {
             InitializeComponent();
             _Instance = Instance;
-            TempOptionFile = GenericCopier<MMR_Tracker_V3.TrackerObjects.InstanceData.OptionFile>.DeepCopy(_Instance.StaticOptions.OptionFile);
+            TempOptionFile = _Instance.StaticOptions.OptionFile.Copy();
             PopulateOptions();
         }
 
@@ -48,7 +48,7 @@ namespace Windows_Form_Frontend
         {
             OptionLines.Clear();
             OptionLines.Add(new OptionLine("Check for Updates",
-                TempOptionFile.CheckForUpdate, (val) => { TempOptionFile.CheckForUpdate = (bool)val; },
+                TempOptionFile.CheckForUpdate, (val) => { TempOptionFile.ToggleUpdateCheck((bool)val); },
                 "Should the tracker check for updates and notify you when a new one is available?"));
             OptionLines.Add(new OptionLine("UI Layout",
                 UILayoutsSTRING[(int)TempOptionFile.WinformData.UILayout], (val) => { UpdateUILayout((string)val); },
@@ -59,25 +59,25 @@ namespace Windows_Form_Frontend
                 "Compact will only show one list box at a time.\nYou can select which list box is show in the \"View\" tab",
                 UILayoutsSTRING));
             OptionLines.Add(new OptionLine("Max Undo Actions",
-                TempOptionFile.MaxUndo, (val) => { TempOptionFile.MaxUndo = (int)val; },
+                TempOptionFile.MaxUndo, (val) => { TempOptionFile.SetMaxUndos((int)val); },
                 "Max amount of undo states the tracker should store\nThese can get quite large and eat up a lot of memory."));
             OptionLines.Add(new OptionLine("Show Unavailable Marked",
-                TempOptionFile.ShowUnavailableMarkedLocations, (val) => { TempOptionFile.ShowUnavailableMarkedLocations = (bool)val; },
+                TempOptionFile.ShowUnavailableMarkedLocations, (val) => { TempOptionFile.ToggleShowUnavailableMarked((bool)val); },
                 "Should available locations that have been marked manually or through hints be displayed in the available locations list?"));
             OptionLines.Add(new OptionLine("Separate Unavailable Marked",
-                TempOptionFile.SeperateUnavailableMarkedLocations, (val) => { TempOptionFile.SeperateUnavailableMarkedLocations = (bool)val; },
+                TempOptionFile.SeperateUnavailableMarkedLocations, (val) => { TempOptionFile.ToggleSeperateUnavailableMarked((bool)val); },
                 "If the above option is true, should those locations be separated at the bottom of the list box?"));
             OptionLines.Add(new OptionLine("Show Entrance List",
-                TempOptionFile.EntranceRandoFeatures, (val) => { TempOptionFile.EntranceRandoFeatures = (bool)val; },
+                TempOptionFile.EntranceRandoFeatures, (val) => { TempOptionFile.ToggleEntranceFeatures((bool)val); },
                 "Should an additional list box be added to show entrances?\nIf this is disable entrances will be shown in the valid locations list"));
             OptionLines.Add(new OptionLine("Couple Entrances",
-                TempOptionFile.AutoCheckCoupleEntrances, (val) => { TempOptionFile.AutoCheckCoupleEntrances = (bool)val; },
+                TempOptionFile.AutoCheckCoupleEntrances, (val) => { TempOptionFile.ToggleCheckCoupled((bool)val); },
                 "When an entrance is checked, should the paired entrance be checked automatically?\nShould be disabled if playing with decoupled entrances"));
             OptionLines.Add(new OptionLine("Pathfinder Unrandomized Exits",
-                TempOptionFile.ShowMacroExitsPathfinder, (val) => { TempOptionFile.ShowMacroExitsPathfinder = (bool)val; },
+                TempOptionFile.ShowMacroExitsPathfinder, (val) => { TempOptionFile.TogglePathfinderMacros((bool)val); },
                 "By default pathfinder will only show links between randomized exits, Should all links be shown instead?"));
             OptionLines.Add(new OptionLine("Pathfinder Redundant Paths",
-                TempOptionFile.ShowRedundantPathfinder, (val) => { TempOptionFile.ShowRedundantPathfinder = (bool)val; },
+                TempOptionFile.ShowRedundantPathfinder, (val) => { TempOptionFile.ToggleRedundantPaths((bool)val); },
                 "Should longer paths be listed as an option in the pathfinder.\r\n\r\n" +
                 "For example if the following path is available\r\n" +
                 "A > B > C > D\r\n" +
@@ -88,22 +88,22 @@ namespace Windows_Form_Frontend
                 "To prevent program instability, a cap is implemented which may prevent exceptionally long \r\n" +
                 "paths from being found. if the only available path exceeds this cap, no path will be found."));
             OptionLines.Add(new OptionLine("ToolTips",
-                TempOptionFile.WinformData.ShowEntryNameTooltip, (val) => { TempOptionFile.WinformData.ShowEntryNameTooltip = (bool)val; },
+                TempOptionFile.WinformData.ShowEntryNameTooltip, (val) => { TempOptionFile.SetEntryTooltip((bool)val); },
                 "Should the tracker display tooltips that show the full text of an entry when you mouse over it?"));
             OptionLines.Add(new OptionLine("Compressed Save File",
-                TempOptionFile.CompressSave, (val) => { TempOptionFile.CompressSave = (bool)val; },
+                TempOptionFile.CompressSave, (val) => { TempOptionFile.ToggleCompressSave((bool)val); },
                 "Should the tracker compress it's save files to save space?\nThe save file will no longer be human readable and can't be edited manually."));
             OptionLines.Add(new OptionLine("Font Size",
-                TempOptionFile.GetFont().Size, (val) => { TempOptionFile.WinformData.FormFont = UpdateFont(null, (float)val); },
+                TempOptionFile.GetFont().Size, (val) => { TempOptionFile.SetFont(UpdateFont(null, (float)val)); },
                 "The font size the tracker should use"));
             OptionLines.Add(new OptionLine("Font Family",
-                TempOptionFile.GetFont().FontFamily.Name, (val) => { TempOptionFile.WinformData.FormFont = UpdateFont((string)val, null); },
+                TempOptionFile.GetFont().FontFamily.Name, (val) => { TempOptionFile.SetFont(UpdateFont((string)val, null)); },
                 "The font Family the tracker should use", FontFamily.Families.Select(x => x.Name).ToList()));
         }
 
         private void UpdateUILayout(string val)
         {
-            TempOptionFile.WinformData.UILayout = UILayoutsENUM[Array.IndexOf(UILayoutsSTRING, val)];
+            TempOptionFile.SetUILayout(UILayoutsENUM[Array.IndexOf(UILayoutsSTRING, val)]);
         }
 
         private string UpdateFont(string FontFamily, float? FontSize)
@@ -224,7 +224,7 @@ namespace Windows_Form_Frontend
 
         private void Button_Set_Default(object sender, EventArgs e)
         {
-            File.WriteAllText(References.Globalpaths.OptionFile, JsonConvert.SerializeObject(TempOptionFile, Utility.DefaultSerializerSettings));
+            TrackerSettings.WriteOptionFile(TempOptionFile);
         }
 
         private void Button_ResetFont(object sender, EventArgs e)

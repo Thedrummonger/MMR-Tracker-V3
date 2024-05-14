@@ -181,7 +181,7 @@ WW:
       normalLogic: ''
       advancedLogic: ''
     IOHPG:
-      beginnerLogic: true
+      beginnerLogic: WWA
       normalLogic: ''
       advancedLogic: ''
   events:

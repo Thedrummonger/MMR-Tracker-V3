@@ -11,19 +11,14 @@ namespace MMR_Tracker_V3
         public static TrackerVersionStatus GetTrackerVersionStatus()
         {
             TrackerVersionStatus VersionStatus = new TrackerVersionStatus();
-            if (File.Exists(References.Globalpaths.OptionFile))
+
+            VersionStatus.DoUpdateCheck = TrackerObjects.TrackerSettings.ReadDefaultOptionsFile().CheckForUpdate;
+
+            if (!VersionStatus.DoUpdateCheck)
             {
-                TrackerObjects.InstanceData.OptionFile options;
-                try { options = JsonConvert.DeserializeObject<TrackerObjects.InstanceData.OptionFile>(File.ReadAllText(References.Globalpaths.OptionFile)); }
-                catch { Debug.WriteLine("could not parse options.txt"); return VersionStatus; }
-                if (!options.CheckForUpdate)
-                {
-                    Debug.WriteLine("Checking for updates not enabled");
-                    return VersionStatus;
-                }
+                Debug.WriteLine("Checking for updates not enabled");
+                return VersionStatus;
             }
-            else { return VersionStatus; }
-            VersionStatus.DoUpdateCheck = true;
             try
             {
                 var client = new GitHubClient(new ProductHeaderValue("MMR-Tracker-V3"));
@@ -46,16 +41,9 @@ namespace MMR_Tracker_V3
 
         public static void DisableUpdateChecks()
         {
-            MMR_Tracker_V3.TrackerObjects.InstanceData.OptionFile options = new MMR_Tracker_V3.TrackerObjects.InstanceData.OptionFile();
-            if (File.Exists(References.Globalpaths.OptionFile))
-            {
-                try { options = JsonConvert.DeserializeObject<MMR_Tracker_V3.TrackerObjects.InstanceData.OptionFile>(File.ReadAllText(References.Globalpaths.OptionFile)); }
-                catch { Debug.WriteLine("could not parse options.txt"); }
-            }
-            options.CheckForUpdate = false;
-            References.TrackerVersionStatus.DoUpdateCheck = false;
-            try { File.WriteAllText(References.Globalpaths.OptionFile, JsonConvert.SerializeObject(options, Utility.DefaultSerializerSettings)); }
-            catch (Exception ex) { Debug.WriteLine($"could not write to options.txt {ex}"); }
+            var DefaultOptions = TrackerObjects.TrackerSettings.ReadDefaultOptionsFile();
+            DefaultOptions.ToggleUpdateCheck(false);
+            TrackerObjects.TrackerSettings.WriteOptionFile(DefaultOptions);
         }
 
         public class TrackerVersionStatus

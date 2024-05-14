@@ -42,7 +42,7 @@ namespace MMR_Tracker_V3.TrackerObjects
             public SpoilerLogFileData SpoilerLog { get; set; } = null;
             public Dictionary<string, JsonFormatLogicItem> RuntimeLogic { get; set; } = [];
             public LocationProxyData LocationProxyData { get; set; } = new LocationProxyData();
-            public Options StaticOptions { get; set; } = new Options();
+            public TrackerSettings.Options StaticOptions { get; set; } = new TrackerSettings.Options();
             public PriceData PriceData { get; set; } = new PriceData();
             public InstanceReference InstanceReference { get; set; } = new InstanceReference();
             public Dictionary<string, Dictionary<string, LogicItemData>> UnlockData { get; set; } = [];
@@ -73,40 +73,6 @@ namespace MMR_Tracker_V3.TrackerObjects
         {
             public Dictionary<string, ActionItemEdit> OptionActionItemEdits { get; set; } = [];
             public Dictionary<string, List<string>> OptionActionCollectionEdits { get; set; } = [];
-        }
-
-        [Serializable]
-        public class Options
-        {
-            public DisplayListType? ShowOptionsInListBox { get; set; } = null;
-
-            public HashSet<string> MinimizedHeaders { get; set; } = [];
-            public OptionFile OptionFile { get; set; } = new OptionFile();
-        }
-
-        [Serializable]
-        public class OptionFile
-        {
-            public bool CheckForUpdate { get; set; } = true;
-            public bool CheckHintMarkItem { get; set; } = true;
-            public bool CompressSave { get; set; } = true;
-            public bool ShowUnavailableMarkedLocations { get; set; } = true;
-            public bool SeperateUnavailableMarkedLocations { get; set; } = true;
-            public bool ShowMacroExitsPathfinder { get; set; } = false;
-            public bool ShowRedundantPathfinder { get; set; } = false;
-            public bool AutoCheckCoupleEntrances { get { return _AutoCheckCoupleEntrances; } set { _AutoCheckCoupleEntrances = value; } }
-            private bool _AutoCheckCoupleEntrances = true;
-            public bool EntranceRandoFeatures { get; set; } = true;
-            public int MaxUndo { get; set; } = 10;
-            public WinformData WinformData { get; set; } = new WinformData();
-        }
-
-        [Serializable]
-        public class WinformData
-        {
-            public string FormFont { get; set; } = string.Empty;
-            public UILayout UILayout { get; set; } = UILayout.Vertical;
-            public bool ShowEntryNameTooltip { get; set; } = true;
         }
 
         [Serializable]
