@@ -228,25 +228,38 @@ namespace Windows_Form_Frontend
         }
         private void btnConnect_Click(object sender, EventArgs e)
         {
-            if (!InstanceContainer.netConnection.IsConnected())
-            {
-                if (!NetData.IsIpAddress(txtServerAddress.Text, out IPAddress ParsedAddress))
-                {
-                    PrintToConsole($"{txtServerAddress.Text} Was not a valid IP address");
-                    return;
-                }
-                PrintToConsole($"Connecting to server {ParsedAddress}:{nudPort.Value}");
-                lbConsole.Refresh();
-                if ((OnlineMode)cmbGameType.SelectedItem == OnlineMode.Archipelago) { ConnectToArchipelago(); }
-                else { ConnectToWebServer(); }
-            }
+            if (!InstanceContainer.netConnection.IsConnected()) { Connect(); }
             else
             {
                 PrintToConsole(["Closing Server", "Client Closed Manually"]);
                 ConnectionHandling.CloseServer(InstanceContainer);
             }
-            Debug.WriteLine("Connection Complete");
             UpdateUI();
+        }
+
+        private void Connect()
+        {
+            if (!NetData.IsIpAddress(txtServerAddress.Text, out IPAddress ParsedAddress))
+            {
+                PrintToConsole($"{txtServerAddress.Text} Was not a valid IP address");
+                return;
+            }
+            PrintToConsole($"Connecting to server {ParsedAddress}:{nudPort.Value}");
+            lbConsole.Refresh();
+            switch ((OnlineMode)cmbGameType.SelectedItem)
+            {
+                case OnlineMode.Coop:
+                case OnlineMode.Multiworld:
+                    ConnectToWebServer();
+                    break;
+                case OnlineMode.Archipelago:
+                    ConnectToArchipelago();
+                    break;
+                case OnlineMode.None:
+                default:
+                    PrintToConsole($"Game Mode Invalid");
+                    return;
+            }
         }
 
         //Misc
