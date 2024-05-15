@@ -9,11 +9,11 @@ namespace TestingForm.GameDataCreation.Minecraft
     {
         public static void ReadAndParse(out MMRData.LogicFile Logic, out LogicDictionaryData.LogicDictionary dictionary)
         {
-            var excluded_locations = TestingUtility.DeserializeJsonFile<Data.MC_excluded_locations>(Data.MCPaths.excluded_locations_File);
-            var items = TestingUtility.DeserializeJsonFile<Data.MC_items>(Data.MCPaths.items_File);
-            var locations = TestingUtility.DeserializeJsonFile<Data.MC_locations>(Data.MCPaths.locations_File);
-            var regions = TestingUtility.DeserializeJsonFile<Data.MC_regions>(Data.MCPaths.regions_File);
-            var logic = TestingUtility.DeserializeJsonFile<Data.MC_logic>(Data.MCPaths.logic_File);
+            var excluded_locations = Utility.DeserializeJsonFile<Data.MC_excluded_locations>(Data.MCPaths.excluded_locations_File);
+            var items = Utility.DeserializeJsonFile<Data.MC_items>(Data.MCPaths.items_File);
+            var locations = Utility.DeserializeJsonFile<Data.MC_locations>(Data.MCPaths.locations_File);
+            var regions = Utility.DeserializeJsonFile<Data.MC_regions>(Data.MCPaths.regions_File);
+            var logic = Utility.DeserializeJsonFile<Data.MC_logic>(Data.MCPaths.logic_File);
 
 
             LogicStringParser MCLogicParser = new(quotes: '\'');

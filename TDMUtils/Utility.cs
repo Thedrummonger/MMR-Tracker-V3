@@ -226,6 +226,12 @@ namespace TDMUtils
         {
             return JsonConvert.SerializeObject(o, NewtonsoftExtensions.DefaultSerializerSettings);
         }
+
+        public static string ToYamlString(this object e)
+        {
+            var serializer = new YamlDotNet.Serialization.SerializerBuilder().Build();
+            return serializer.Serialize(e);
+        }
         /// <summary>
         /// Checks if an object represents a value that could be interpreted as a boolean
         /// </summary>

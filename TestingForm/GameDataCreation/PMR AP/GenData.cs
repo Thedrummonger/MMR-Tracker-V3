@@ -37,11 +37,11 @@ namespace TestingForm.GameDataCreation.PMR_AP
             LogicStringParser logicStringParser = new LogicStringParser(LogicStringParser.OperatorType.PyStyle, quotes: '|');
             var PMRRegionsFolder = Path.Combine(TestingReferences.GetDevTestingPath(), "PMR", "PMR_APWorld-main", "data", "regions");
 
-            var Items = TestingUtility.DeserializeJsonFile<Dictionary<string, List<object>>>
+            var Items = Utility.DeserializeJsonFile<Dictionary<string, List<object>>>
                 (Path.Combine(TestingReferences.GetOtherGameDataPath("PMR AP"), "Items.json"));
-            var Locations = TestingUtility.DeserializeJsonFile<Dictionary<string, List<object>>>
+            var Locations = Utility.DeserializeJsonFile<Dictionary<string, List<object>>>
                 (Path.Combine(TestingReferences.GetOtherGameDataPath("PMR AP"), "Locations.json"));
-            var Macros = TestingUtility.DeserializeJsonFile<Dictionary<string, string>>
+            var Macros = Utility.DeserializeJsonFile<Dictionary<string, string>>
                 (Path.Combine(TestingReferences.GetDevTestingPath(), "PMR", "PMR_APWorld-main", "data", "LogicHelpers.json"));
 
             dictionary = new LogicDictionaryData.LogicDictionary()
@@ -92,7 +92,7 @@ namespace TestingForm.GameDataCreation.PMR_AP
             foreach(var File in Directory.GetFiles(PMRRegionsFolder))
             {
                 if (Path.GetFileNameWithoutExtension(File).In("bowser's_castle_boss_rush", "bowser's_castle_shortened")) { continue; }
-                var RegionFile = TestingUtility.DeserializeJsonFile<List<PMRRegion>>(File);
+                var RegionFile = Utility.DeserializeJsonFile<List<PMRRegion>>(File);
                 foreach (var Region in RegionFile)
                 {
                     RegionsDict[$"{Region.area_id}|{Region.map_id}"] = Path.GetFileNameWithoutExtension(File).Replace("_", " ").ConvertToCamelCase();

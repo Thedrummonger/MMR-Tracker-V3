@@ -21,15 +21,15 @@ namespace TestingForm.GameDataCreation.LinksAwakeningSwitch
         public static void GenData(out MMRData.LogicFile OutLogic, out LogicDictionaryData.LogicDictionary outDict)
         {
             var LogicFile = File.ReadAllText(Paths.RandoLogicFile());
-            var LogicFileYamlString = TestingUtility.ConvertYamlStringToJsonString(LogicFile);
+            var LogicFileYamlString = Utility.ConvertYamlStringToJsonString(LogicFile);
             var LogicFileObject = JsonConvert.DeserializeObject<Dictionary<string, Dictionary<string, string>>>(LogicFileYamlString);
 
             var ItemsFile = File.ReadAllText(Paths.RandoItemsFile());
-            var ItemsFileYamlString = TestingUtility.ConvertYamlStringToJsonString(ItemsFile, true);
+            var ItemsFileYamlString = Utility.ConvertYamlStringToJsonString(ItemsFile, true);
             var ItemsFileObject = JsonConvert.DeserializeObject<LASItemPool>(ItemsFileYamlString);
 
             var LocationsFile = File.ReadAllText(Paths.RandoLocationsFile());
-            var LocationsFileYamlString = TestingUtility.ConvertYamlStringToJsonString(LocationsFile, true);
+            var LocationsFileYamlString = Utility.ConvertYamlStringToJsonString(LocationsFile, true);
             var LocationsFileObject = JsonConvert.DeserializeObject<Dictionary<string, List<string>>>(LocationsFileYamlString);
 
             LogicDictionaryData.LogicDictionary logicDictionary = new LogicDictionaryData.LogicDictionary()

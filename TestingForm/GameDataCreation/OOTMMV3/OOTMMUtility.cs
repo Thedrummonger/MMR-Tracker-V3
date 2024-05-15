@@ -117,12 +117,12 @@ namespace TestingForm.GameDataCreation.OOTMMV3
 
         public static T DeserializeYAMLFile<T>(string Path)
         {
-            var Json = TestingUtility.ConvertYamlStringToJsonString(File.ReadAllText(Path), true);
+            var Json = Utility.ConvertYamlStringToJsonString(File.ReadAllText(Path), true);
             return JsonConvert.DeserializeObject<T>(Json);
         }
         public static T DeserializeCSVFile<T>(string Path)
         {
-            var Json = TestingUtility.ConvertCsvFileToJsonObject(File.ReadAllLines(Path));
+            var Json = Utility.ConvertCsvFileToJsonObject(File.ReadAllLines(Path));
             return JsonConvert.DeserializeObject<T>(Json);
         }
 

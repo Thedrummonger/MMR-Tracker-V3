@@ -10,16 +10,17 @@ namespace TDMUtils
 
     public static class SaveCompressor
     {
-        public enum SaveType
+        public enum CompressionFormat
         {
-            Standard,
-            Compressed,
-            CompressedByte,
+            None,
+            Base64,
+            Byte,
             error
         }
-        public class CompressedSave(string Save)
+        public class CompressedFile(string FileContent)
         {
-            public byte[] Bytes { get; } = Compress(Save);
+            public string Uncompressed { get; } = FileContent;
+            public byte[] Bytes { get; } = Compress(FileContent);
 
             public override string ToString()
             {
@@ -71,29 +72,30 @@ namespace TDMUtils
             return Convert.ToBase64String(byteData);
         }
 
-        public static SaveType TestSaveFileType<T>(string FilePath, bool PrioritizeCompressed)
+        public static CompressionFormat GetFileCompressionFormat<T>(string FilePath, bool PrioritizeCompressed)
         {
+            if (!File.Exists(FilePath)) { return CompressionFormat.error; }
             string Content = File.ReadAllText(FilePath);
             var ByteContent = File.ReadAllBytes(FilePath);
             if (PrioritizeCompressed)
             {
-                if (TestCompressedByteSave<T>(ByteContent)) { return SaveType.CompressedByte; };
-                if (TestStandardSave<T>(Content)) { return SaveType.Standard; };
+                if (TestForByteFile<T>(ByteContent)) { return CompressionFormat.Byte; };
+                if (TestForUncompressedFile<T>(Content)) { return CompressionFormat.None; };
             }
             else
             {
-                if (TestStandardSave<T>(Content)) { return SaveType.Standard; };
-                if (TestCompressedByteSave<T>(ByteContent)) { return SaveType.CompressedByte; };
+                if (TestForUncompressedFile<T>(Content)) { return CompressionFormat.None; };
+                if (TestForByteFile<T>(ByteContent)) { return CompressionFormat.Byte; };
             }
-            if (TestCompressedSave<T>(Content)) { return SaveType.Compressed; }; //This type is never used but check for it just incase
-            return SaveType.error;
+            if (TestForCompressedFile<T>(Content)) { return CompressionFormat.Base64; }; //This type is never used but check for it just incase
+            return CompressionFormat.error;
         }
 
-        public static bool TestStandardSave<T>(string FileContent)
+        private static bool TestForUncompressedFile<T>(string FileContent)
         {
             return Utility.isJsonTypeOf<T>(FileContent);
         }
-        public static bool TestCompressedSave<T>(string FileContent)
+        private static bool TestForCompressedFile<T>(string FileContent)
         {
             try
             {
@@ -105,7 +107,7 @@ namespace TDMUtils
                 return false;
             }
         }
-        public static bool TestCompressedByteSave<T>(byte[] FileContent)
+        private static bool TestForByteFile<T>(byte[] FileContent)
         {
             try
             {
@@ -118,20 +120,15 @@ namespace TDMUtils
             }
         }
 
-        public static string GetSaveStringFromFile<T>(string FilePath, bool PrioritizeCompressed)
+        public static string DecompressFile<T>(string FilePath, bool PrioritizeCompressed)
         {
-            switch (SaveCompressor.TestSaveFileType<T>(FilePath, PrioritizeCompressed))
+            return GetFileCompressionFormat<T>(FilePath, PrioritizeCompressed) switch
             {
-                case SaveCompressor.SaveType.Standard:
-                    return File.ReadAllText(FilePath);
-                case SaveCompressor.SaveType.Compressed:
-                    var Decomp = SaveCompressor.Decompress(File.ReadAllText(FilePath));
-                    return (Decomp);
-                case SaveCompressor.SaveType.CompressedByte:
-                    var ByteDecomp = SaveCompressor.Decompress(File.ReadAllBytes(FilePath));
-                    return (ByteDecomp);
-            }
-            return string.Empty;
+                CompressionFormat.None => File.ReadAllText(FilePath),
+                CompressionFormat.Base64 => Decompress(File.ReadAllText(FilePath)),
+                CompressionFormat.Byte => Decompress(File.ReadAllBytes(FilePath)),
+                _ => string.Empty,
+            };
         }
     }
 }

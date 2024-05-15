@@ -52,15 +52,15 @@ namespace TestingForm.GameDataCreation.BanjoTooie
         }
         public static void GenData(out MMRData.LogicFile FinalLogic, out LogicDictionaryData.LogicDictionary Finaldictionary)
         {
-            var Locations = TestingUtility.DeserializeJsonFile<Dictionary<string, string>>(
+            var Locations = Utility.DeserializeJsonFile<Dictionary<string, string>>(
                Path.Join(TestingReferences.GetOtherGameDataPath("BanjoTooie"), "Locations.json"));
-            var Items = TestingUtility.DeserializeJsonFile<Dictionary<string, string>>(
+            var Items = Utility.DeserializeJsonFile<Dictionary<string, string>>(
                 Path.Join(TestingReferences.GetOtherGameDataPath("BanjoTooie"), "Items.json"));
-            var Regions = TestingUtility.DeserializeJsonFile<Dictionary<string, string>>(
+            var Regions = Utility.DeserializeJsonFile<Dictionary<string, string>>(
                Path.Join(TestingReferences.GetOtherGameDataPath("BanjoTooie"), "Regions.json"));
-            var AreaMap = TestingUtility.DeserializeJsonFile<Dictionary<string, string[]>>(
+            var AreaMap = Utility.DeserializeJsonFile<Dictionary<string, string[]>>(
                 Path.Join(TestingReferences.GetOtherGameDataPath("BanjoTooie"), "LocationAreaMap.json"));
-            var OriginalItems = TestingUtility.DeserializeJsonFile<Dictionary<string, string>>(
+            var OriginalItems = Utility.DeserializeJsonFile<Dictionary<string, string>>(
                 Path.Join(TestingReferences.GetOtherGameDataPath("BanjoTooie"), "OriginalItem.json"));
 
             var WorldGraphFolder = Path.Join(TestingReferences.GetOtherGameDataPath("BanjoTooie"), "World");
@@ -116,7 +116,7 @@ namespace TestingForm.GameDataCreation.BanjoTooie
 
             foreach(var i in Directory.GetFiles(WorldGraphFolder))
             {
-                var WorldFile = TestingUtility.DeserializeYAMLFile<Dictionary<string, BTLogicArea>>(i);
+                var WorldFile = Utility.DeserializeYAMLFile<Dictionary<string, BTLogicArea>>(i);
                 foreach(var area in WorldFile)
                 {
                     foreach(var loc in area.Value.locations)

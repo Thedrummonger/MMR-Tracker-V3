@@ -143,7 +143,7 @@ namespace MMR_Tracker_V3.TrackerObjects
                 {
                     if (Instance.StaticOptions.OptionFile.CompressSave)
                     {
-                        var CompressedSave = new SaveCompressor.CompressedSave(Instance.ToString());
+                        var CompressedSave = new SaveCompressor.CompressedFile(Instance.ToString());
                         File.WriteAllBytes(SavePath, CompressedSave.Bytes);
                     }
                     else
@@ -164,7 +164,7 @@ namespace MMR_Tracker_V3.TrackerObjects
             public bool LoadInsanceFromFile(string Path)
             {
                 if (!File.Exists(Path)) { return false; }
-                string SerializedSave = SaveCompressor.GetSaveStringFromFile<TrackerInstance>(Path, TrackerSettings.ReadDefaultOptionsFile().CompressSave);
+                string SerializedSave = SaveCompressor.DecompressFile<TrackerInstance>(Path, TrackerSettings.ReadDefaultOptionsFile().CompressSave);
                 if (SerializedSave == string.Empty) { return false; }
                 return LoadSave(SerializedSave);
             }
