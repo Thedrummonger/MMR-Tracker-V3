@@ -24,6 +24,7 @@
 
   <ItemGroup>
     <None Remove="recources\Headers.yaml" />
+    <None Remove="recources\presets\WebPresets.yaml" />
   </ItemGroup>
 
   <ItemGroup>

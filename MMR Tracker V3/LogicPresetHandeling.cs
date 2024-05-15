@@ -7,6 +7,12 @@ namespace MMR_Tracker_V3
 {
     public class LogicPresetHandeling
     {
+        public class WebPreset
+        {
+            public string Name;
+            public string Logic;
+            public string Dictionary = null;
+        }
         public class PresetlogicData
         {
             public string Name { get; set; } = null;
@@ -19,41 +25,35 @@ namespace MMR_Tracker_V3
         }
         public static List<PresetlogicData> GetLogicPresets()
         {
-            PresetlogicData PresetEntry = new PresetlogicData();
             List<PresetlogicData> Entries = new List<PresetlogicData>();
             if (File.Exists(References.Globalpaths.WebPresets))
             {
+                WebPreset[] webPresets;
+                try { webPresets = Utility.DeserializeYAMLFile<WebPreset[]>(References.Globalpaths.WebPresets); }
+                catch { webPresets = []; }
                 System.Net.WebClient wc = new System.Net.WebClient();
-                bool ErrorEntry = false;
-                foreach (var i in File.ReadAllLines(References.Globalpaths.WebPresets))
+
+                foreach (var i in webPresets)
                 {
-                    if (i.StartsWith("Name:"))
+                    if (string.IsNullOrWhiteSpace(i.Name) || string.IsNullOrWhiteSpace(i.Logic)) { continue; }
+                    PresetlogicData PresetEntry = new() { Name = i.Name };
+                    try { PresetEntry.LogicString = wc.DownloadString(i.Logic.Trim()); }
+                    catch { continue; }
+                    if (!string.IsNullOrWhiteSpace(i.Dictionary))
                     {
-                        ErrorEntry = false;
-                        PresetEntry = new PresetlogicData();
-                        PresetEntry.Name = Regex.Replace(i, "Name:", "", RegexOptions.IgnoreCase).Trim();
+                        try { PresetEntry.DictionaryString = wc.DownloadString(i.Dictionary.Trim()); }
+                        catch { continue; }
                     }
-                    if (i.StartsWith("Dictionary:") && !ErrorEntry)
-                    {
-                        try { PresetEntry.DictionaryString = wc.DownloadString(Regex.Replace(i, "Dictionary:", "", RegexOptions.IgnoreCase).Trim()); }
-                        catch { ErrorEntry = true; }
-                    }
-                    if (i.StartsWith("Address:") && !ErrorEntry)
-                    {
-                        try
-                        {
-                            PresetEntry.LogicString = wc.DownloadString(Regex.Replace(i, "Address:", "", RegexOptions.IgnoreCase).Trim());
-                            Entries.Add(PresetEntry);
-                        }
-                        catch { ErrorEntry = true; }
-                    }
+                    Entries.Add(PresetEntry);
                 }
             }
             foreach (var i in Directory.GetFiles(References.Globalpaths.PresetFolder).Where(x => x != References.Globalpaths.WebPresets))
             {
-                PresetEntry = new PresetlogicData();
-                PresetEntry.Name = Path.GetFileNameWithoutExtension(i);
-                PresetEntry.LogicString = File.ReadAllText(i);
+                var PresetEntry = new PresetlogicData
+                {
+                    Name = Path.GetFileNameWithoutExtension(i),
+                    LogicString = File.ReadAllText(i)
+                };
                 Entries.Add(PresetEntry);
             }
             return Entries;

@@ -24,7 +24,7 @@ namespace MMR_Tracker_V3
 
             public static readonly string BaseDictionaryPath = Path.Combine(RecourcesFolder, "Dictionaries");
             public static readonly string HeaderSortingFile = Path.Combine(RecourcesFolder, "Headers.yaml");
-            public static readonly string WebPresets = Path.Combine(PresetFolder, "WebPresets.txt");
+            public static readonly string WebPresets = Path.Combine(PresetFolder, "WebPresets.yaml");
 
             public static readonly string BaseAppdataPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "MMRTracker");
             public static readonly string OptionFile = Path.Combine(BaseAppdataPath, "options.txt");

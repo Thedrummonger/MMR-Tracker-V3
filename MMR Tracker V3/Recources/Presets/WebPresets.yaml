@@ -1,0 +1,20 @@
+#Each preset is a YAML object consiting of a Name, Logic and (Optional) Dictionary field
+#Name Defines the display name of the preset in the tracker
+#Logic is the Web address to the RAW logic file
+#Dictionary is the Web address to the RAW Dictionary File. 
+#If no dictionary is given the tracker will look for a dictionary in the Recources/Dictionaries Folder
+#
+#Example:
+#- Name: Example Logic
+#  Logic: https://pastebin.com/raw/ExAmPlElOgIc123
+#
+#You can define a custom dictionary for your logic by adding the "Dictionary" line and the link to the dictionary file
+#Example:
+#- Name: TPR Casual
+#  Dictionary: https://raw.githubusercontent.com/Thedrummonger/MMR-Tracker-V3/master/MMR%20Tracker%20V3/Recources/Dictionaries/TPR%20V1.json
+#  Logic: https://raw.githubusercontent.com/Thedrummonger/MMR-Tracker-V3/master/MMR%20Tracker%20V3/Recources/Presets/DEV-TPR%20Casual.json
+
+- Name: MMR Casual
+  Logic: https://raw.githubusercontent.com/ZoeyZolotova/mm-rando/dev/MMR.Randomizer/Resources/REQ_CASUAL.txt
+- Name: MMR Glitched
+  Logic: https://raw.githubusercontent.com/ZoeyZolotova/mm-rando/dev/MMR.Randomizer/Resources/REQ_CASUAL.txt
