@@ -138,9 +138,8 @@ namespace TestingForm
 
         private void RandomTests()
         {
-            var PMYAML = Path.Combine(TestingReferences.GetDevTestingPath(), "PM Sample.yaml");
-            var testing = TestingUtility.DeserializeYAMLFile<object>(PMYAML);
-            Debug.WriteLine(testing.ToFormattedJson());
+            Font F = SystemFonts.DefaultFont;
+            Debug.WriteLine(F.ToFormattedJson());
         }
 
         private void RegexTesting()

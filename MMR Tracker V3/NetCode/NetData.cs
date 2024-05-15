@@ -205,13 +205,14 @@ namespace MMR_Tracker_V3.NetCode
         public static bool IsIpAddress(string Input, out IPAddress IP)
         {
             bool WasIP = true;
-            IP = null;
             var Segments = Input.Split('.');
-            if (Segments.Length != 4) { WasIP = false; }
+            if (Segments.Length != 4 || Segments.Any(x => x.Any(y => !char.IsDigit(y)))) { WasIP = false; }
             if (!IPAddress.TryParse(Input, out IP)) { WasIP = false; }
             if (!WasIP)
             {
-                IPAddress[] addresslist = Dns.GetHostAddresses(Input);
+                IPAddress[] addresslist;
+                try { addresslist = Dns.GetHostAddresses(Input); } 
+                catch { addresslist = []; }
                 if (addresslist.Length != 0)
                 {
                     WasIP = true;
