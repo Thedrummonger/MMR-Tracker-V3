@@ -23,6 +23,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Remove="recources\Headers.yaml" />
+  </ItemGroup>
+
+  <ItemGroup>
     <None Update="SpoilerLogHandling\Python\**">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>

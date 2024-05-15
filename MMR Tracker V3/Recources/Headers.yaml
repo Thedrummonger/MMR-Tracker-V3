@@ -1,0 +1,307 @@
+#The tracker will sort location areas in the same order you list them in this file
+#Each section is a YAML object with two lists
+#The Games list defines what game codes should use this order. If games list is empty or does not exist in the object the order will be used for all games
+#The Headers list contains area headers and their order in the list is the order they will appear on the tracker
+# a single game can be defined in multiple lists and the order of the list will be taken into account.
+
+- Games:
+    - TPR
+  Headers:
+    # Ordon and Faron
+    - Ordona Province
+    - Faron Woods
+    - Hyrule Field - Faron Province
+    - 
+    # Eldin
+    - Hyrule Field - Eldin Province
+    - Eldin Lantern Cave
+    - Eldin Stockcave
+    - Kakariko Village
+    - Death Mountain
+    - 
+    # Lanayru
+    - Lake Hylia
+    - Lake Lantern Cave
+    - Zoras Domain
+    - Hyrule Field - Lanayru Province
+    - Castle Town
+    - 
+    # Mirror Dungeon Areas
+    - Gerudo Desert
+    - Snowpeak Province
+    - Hidden Village
+    - Sacred Grove
+    - 
+    # Temples
+    - Cave of Ordeals
+    - Forest Temple
+    - Goron Mines
+    - Lakebed Temple
+    - Arbiters Grounds
+    - Snowpeak Ruins
+    - Temple of Time
+    - City in The Sky
+    - Palace of Twilight
+    - Hyrule Castle
+
+- Games:
+    - MMR
+    - OOTMM
+  Headers:    
+    #Ocarina of Time
+    - Egg Hatching
+    - Inside Eggs
+    - Kokiri Forest
+    - Lost Woods
+    - Sacred Forest Meadow
+    - Hyrule Field
+    - Lon Lon Ranch
+    - Kakariko
+    - Kakariko Village
+    - Graveyard
+    - Kakariko Graveyard
+    - Castle Town
+    - Market
+    - Market Pot House
+    - Temple of Time
+    - Hyrule Castle
+    - Outside Ganon's Castle
+    - Death Mountain Trail
+    - Death Mountain
+    - Goron City
+    - Death Mountain Crater
+    - Zoras River
+    - Zora's River
+    - Zoras Domain
+    - Zora's Domain
+    - Zora's Fountain
+    - Lake Hylia
+    - Gerudo Valley
+    - Gerudo Fortress
+    - Gerudo's Fortress
+    - Thieves' Hideout
+    - Haunted Wasteland
+    - Desert Colossus
+    
+    #Misc Dungeon Reward
+    - Sacred Realm
+
+    #Child Dungeons
+    - Deku Tree
+    - Dodongo's Cavern
+    - Jabu-Jabu's Belly
+    - Jabu Jabu's Belly
+
+    #Mini Dungeons
+    - Bottom of the Well
+    - Ice Cavern
+    - Gerudo Training Ground
+    - Gerudo's Training Ground
+
+    #Adult Dungeons
+    - Forest Temple
+    - Fire Temple
+    - Water Temple
+    - Shadow Temple
+    - Spirit Temple
+    - Ganon's Castle
+
+    #Majoras Mask
+    - Clock Town
+    - Beneath Clocktown
+    - North Clock Town
+    - Deku Playground Items
+    - East Clock Town
+    - South Clock Town
+    - West Clock Town
+    - Clock Tower Roof
+    - Stock Pot Inn
+    - Laundry Pool
+    - Beneath Clocktown
+    - Termina
+    - Termina Field
+    - Astral Observatory
+    - Milk Road
+    - Romani Ranch
+    - Swamp
+    - Road to Southern Swamp
+    - Southern Swamp
+    - Swamp Spider House Items
+    - Deku Palace
+    - Butler Race Items
+    - Woodfall
+    - Mountains
+    - Path to Mountain Village
+    - Mountain Village
+    - Twin Islands
+    - Goron Race Items
+    - Goron Village
+    - Path to Snowhead
+    - Snowhead
+    - Bay
+    - Great Bay
+    - Great Bay Coast
+    - Ocean Spider House Items
+    - Great Bay Cape
+    - Zora Cape
+    - Zora Hall
+    - Pinnacle Rock
+    - Great Bay 
+    - Pirate Fortress
+    - Pirates Fortress
+    - Pirates' Fortress Exterior
+    - Pirates' Fortress Interior
+    - Pirates' Fortress Sewer
+    - Pirates' Fortress Sewers
+    - Canyon
+    - Ikana Road
+    - Road to Ikana
+    - Ikana Graveyard
+    - Ikana Canyon
+    - Secret Shrine
+    - Beneath the Well
+    - Ikana Castle
+    - Stone 
+    - Stone Tower
+    - Tingle Map
+    - Tingle
+    - Bottle Catch
+    - Dungeon Entrance
+    - Dungeon Entrances
+    - BossDoor Entrance
+    - BossDoor Entrances
+    - Owl Warp
+    - Interior
+    - Grottos
+
+    #Spider Houses
+    - Swamp Skull House
+    - Swamp Spider House
+    - Ocean Skull House
+    - Ocean Spider House
+
+    #Dungeons
+    - Woodfall Temple
+    - Woodfall Temple Fairies
+    - Woodfall Temple Stray Fairies
+    - Snowhead Temple
+    - Snowhead Temple Fairies
+    - Snowhead Temple Stray Fairies
+    - Great Bay Temple
+    - Great Bay Temple Fairies
+    - Great Bay Temple Stray Fairies
+    - Stone Tower Temple
+    - Inverted Stone Tower Temple
+    - Stone Tower Temple Fairies
+    - Stone Tower Temple Stray Fairies
+
+    #Misc Dungeon Reward
+    - Giant's Dream
+    - The Moon
+
+#PMR
+- Games:
+    - PMR
+  Headers:  
+    - Goomba Region
+    - Toad Town
+    - Toad Town Tunnels
+    - Koopa Region
+    - Koopa Bros Fortress
+    - Mt Rugged
+    - Dry Dry Desert
+    - Dry Dry Outpost
+    - Dry Dry Ruins
+    - Forever Forest
+    - Boo's Mansion
+    - Gusty Gulch
+    - Tubba's Castle
+    - Shy Guy's Toybox
+    - Jade Jungle
+    - Mt Lavalava
+    - Flower Fields
+    - Shiver Region
+    - Crystal Palace
+    - Shooting Star Summit
+    - Peach's Castle Grounds
+    - Peach's Castle
+    - Bowser's Castle
+
+    
+#WWR
+- Games:
+    - WWR
+  Headers:  
+    - The Great Sea
+    - Mailbox
+    - Forsaken Fortress
+    - Forsaken Fortress Sector
+    - Star Island
+    - Northern Fairy Island
+    - Gale Isle
+    - Crescent Moon Island
+    - Seven-Star Isles
+    - Overlook Island
+    - Four-Eye Reef
+    - Mother and Child Isles
+    - Spectacle Island
+    - Windfall Island
+    - Pawprint Isle
+    - Dragon Roost Island
+    - Flight Control Platform
+    - Western Fairy Island
+    - Rock Spire Isle
+    - Tingle Island
+    - Northern Triangle Island
+    - Eastern Fairy Island
+    - Fire Mountain
+    - Star Belt Archipelago
+    - Three-Eye Reef
+    - Greatfish Isle
+    - Cyclops Reef
+    - Six-Eye Reef
+    - Tower of the Gods
+    - Tower of the Gods Sector
+    - Eastern Triangle Island
+    - Thorned Fairy Island
+    - Needle Rock Isle
+    - Islet of Steel
+    - Stone Watcher Island
+    - Southern Triangle Island
+    - Private Oasis
+    - Bomb Island
+    - Bird's Peak Rock
+    - Diamond Steppe Island
+    - Five-Eye Reef
+    - Shark Island
+    - Southern Fairy Island
+    - Ice Ring Isle
+    - Forest Haven
+    - Cliff Plateau Isles
+    - Horseshoe Island
+    - Outset Island
+    - Headstone Island
+    - Two-Eye Reef
+    - Angular Isles
+    - Boating Course
+    - Five-Star Isles
+    - Dragon Roost Cavern
+    - Forbidden Woods
+    - Earth Temple
+    - Wind Temple
+    - Hyrule
+    - Ganon's Tower
+
+    - Secret Cave Entrance
+    - Inner Cave Entrance
+    - Fairy Fountain Entrance
+    - Dungeon Entrance
+    - Boss Entrance
+    - MiniBoss Entrance 
+
+-  Headers:  
+    - Misc
+    - MULTIREGION
+    - Gossip Stone
+    - Multiworld
+    - Starting Items
