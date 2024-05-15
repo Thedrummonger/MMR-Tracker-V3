@@ -11,6 +11,10 @@ namespace TDMUtils
 {
     public static class Utility
     {
+        public static T DeepClone<T>(this T obj)
+        {
+            return obj.SerializeConvert <T>();
+        }
         /// <summary>
         /// Replaces a range of text in a string with a replacement string
         /// </summary>

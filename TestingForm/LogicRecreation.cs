@@ -26,7 +26,7 @@ namespace MMR_Tracker_V3
         public static void SaveTrackerState(MMR_Tracker_V3.TrackerObjects.InstanceData.InstanceContainer InstanceContainer)
         {
             SaveState state = new SaveState();
-            state.SpoilerData = InstanceContainer.Instance.SpoilerLog is null ? null : GenericCopier<InstanceData.SpoilerLogFileData>.DeepCopy(InstanceContainer.Instance.SpoilerLog);
+            state.SpoilerData = InstanceContainer.Instance.SpoilerLog is null ? null : InstanceContainer.Instance.SpoilerLog.DeepClone();
             foreach (var i in InstanceContainer.Instance.LocationPool)
             {
                 i.Value.GetPrice(out int P, out char C);
