@@ -6,6 +6,7 @@ using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
+using TDMUtils;
 using static TestingForm.GameDataCreation.OOTMMV3.OOTMMDataClasses;
 
 namespace TestingForm.GameDataCreation.OOTMMV3

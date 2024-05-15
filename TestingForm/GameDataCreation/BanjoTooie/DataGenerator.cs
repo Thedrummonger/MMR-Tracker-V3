@@ -10,6 +10,7 @@ using static MMR_Tracker_V3.TrackerObjects.LogicDictionaryData;
 using MMR_Tracker_V3;
 using Microsoft.VisualBasic.Logging;
 using MMR_Tracker_V3.Logic;
+using TDMUtils;
 
 namespace TestingForm.GameDataCreation.BanjoTooie
 {

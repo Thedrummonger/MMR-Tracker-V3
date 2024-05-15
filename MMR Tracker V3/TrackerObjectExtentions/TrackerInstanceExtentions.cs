@@ -9,6 +9,7 @@ using static MMR_Tracker_V3.TrackerObjects.InstanceData;
 using static MMR_Tracker_V3.TrackerObjects.ItemData;
 using static MMR_Tracker_V3.TrackerObjects.LocationData;
 using static MMR_Tracker_V3.TrackerObjects.OptionData;
+using TDMUtils;
 
 namespace MMR_Tracker_V3.TrackerObjectExtensions
 {
@@ -255,7 +256,7 @@ namespace MMR_Tracker_V3.TrackerObjectExtensions
                     break;
             }
 
-            Utility.DeepCloneLogic(LogicFileEntry.RequiredItems, LogicFileEntry.ConditionalItems, out List<string> CopyRequirements, out List<List<string>> CopyConditionals);
+            LogicUtilities.DeepCloneLogic(LogicFileEntry.RequiredItems, LogicFileEntry.ConditionalItems, out List<string> CopyRequirements, out List<List<string>> CopyConditionals);
 
             location.GetPrice(out int p, out char c);
             if (p > -1 && !instance.PriceData.GetCapacityMap(c).ContainsValue(ID) && DoEdits)

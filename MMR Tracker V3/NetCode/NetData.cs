@@ -7,6 +7,7 @@ using System.IO;
 using System.Linq;
 using System.Net;
 using System.Net.Sockets;
+using TDMUtils;
 using static MMR_Tracker_V3.TrackerObjects.HintData;
 using static MMR_Tracker_V3.TrackerObjects.InstanceData;
 
@@ -150,7 +151,7 @@ namespace MMR_Tracker_V3.NetCode
                 if (!File.Exists(ConfigFilePath)) { WriteNewConfig(); }
                 else
                 {
-                    try { _ = JsonConvert.DeserializeObject<ConfigFile>(File.ReadAllText(ConfigFilePath), Utility.DefaultSerializerSettings); }
+                    try { _ = JsonConvert.DeserializeObject<ConfigFile>(File.ReadAllText(ConfigFilePath), NewtonsoftExtensions.DefaultSerializerSettings); }
                     catch { WriteNewConfig(); }
                 }
             }

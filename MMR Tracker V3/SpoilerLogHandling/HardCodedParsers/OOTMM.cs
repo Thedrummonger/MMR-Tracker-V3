@@ -7,6 +7,7 @@ using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using TDMUtils;
 
 namespace MMR_Tracker_V3.SpoilerLogHandling.HardCodedParsers
 {

@@ -17,6 +17,7 @@ using static MMR_Tracker_V3.TrackerObjects.InstanceData;
 using MMR_Tracker_V3.Logic;
 using Microsoft.VisualBasic;
 using MMR_Tracker_V3.SpoilerLogHandling;
+using TDMUtils;
 
 namespace Windows_Form_Frontend
 {

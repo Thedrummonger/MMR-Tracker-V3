@@ -3,6 +3,7 @@ using MMR_Tracker_V3.TrackerObjectExtensions;
 using MMR_Tracker_V3.TrackerObjects;
 using Newtonsoft.Json;
 using System.Diagnostics;
+using TDMUtils;
 using YamlDotNet.Serialization;
 using static MMR_Tracker_V3.References;
 #pragma warning disable CS8602 // Dereference of a possibly null reference.
@@ -20,7 +21,7 @@ namespace TestingForm
 
         public static void CreateTestingFile(object Data, string Name, string Extention = "txt")
         {
-            File.WriteAllText(CreateTestingFilePath(Name, Extention), JsonConvert.SerializeObject(Data, MMR_Tracker_V3.Utility.DefaultSerializerSettings));
+            File.WriteAllText(CreateTestingFilePath(Name, Extention), JsonConvert.SerializeObject(Data, NewtonsoftExtensions.DefaultSerializerSettings));
         }
 
         public static void TestLogicForInvalidItems(MMR_Tracker_V3.TrackerObjects.InstanceData.InstanceContainer Container)
@@ -81,7 +82,7 @@ namespace TestingForm
                 DevINI.TestingFolder = dialog.SelectedPath;
                 PathsUpdated = true;
             }
-            if (PathsUpdated) { File.WriteAllText(Globalpaths.DevFile, JsonConvert.SerializeObject(DevINI, MMR_Tracker_V3.Utility.DefaultSerializerSettings)); }
+            if (PathsUpdated) { File.WriteAllText(Globalpaths.DevFile, JsonConvert.SerializeObject(DevINI, NewtonsoftExtensions.DefaultSerializerSettings)); }
         }
 
         /// <summary>
@@ -94,7 +95,7 @@ namespace TestingForm
         {
             var deserializer = new YamlDotNet.Serialization.DeserializerBuilder().Build();
             object yamlIsDumb = deserializer.Deserialize<object>(YAML);
-            if (Format) { return JsonConvert.SerializeObject(yamlIsDumb, Utility.DefaultSerializerSettings); }
+            if (Format) { return JsonConvert.SerializeObject(yamlIsDumb, NewtonsoftExtensions.DefaultSerializerSettings); }
             return JsonConvert.SerializeObject(yamlIsDumb);
         }
 
@@ -155,7 +156,7 @@ namespace TestingForm
                 listObjResult.Add(objResult);
             }
 
-            return JsonConvert.SerializeObject(listObjResult, Utility.DefaultSerializerSettings);
+            return JsonConvert.SerializeObject(listObjResult, NewtonsoftExtensions.DefaultSerializerSettings);
         }
     }
 }

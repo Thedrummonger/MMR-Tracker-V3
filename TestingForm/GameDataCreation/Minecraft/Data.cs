@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using TDMUtils;
 
 namespace TestingForm.GameDataCreation.Minecraft
 {
@@ -49,7 +50,7 @@ namespace TestingForm.GameDataCreation.Minecraft
             public (string key, string[] values) ParseObj(object[] vals)
             {
                 if (vals[1] is string s) { return ((string)vals[0], new string[] { s }); }
-                return ((string)vals[0], MMR_Tracker_V3.Utility.SerializeConvert<string[]>(vals[1]));
+                return ((string)vals[0], Utility.SerializeConvert<string[]>(vals[1]));
             }
         }
         public class MC_logic

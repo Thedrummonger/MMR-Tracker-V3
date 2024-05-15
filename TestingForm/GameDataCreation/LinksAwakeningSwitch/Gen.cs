@@ -12,6 +12,7 @@ using MMR_Tracker_V3.Logic;
 using MMR_Tracker_V3.TrackerObjects;
 using static MMR_Tracker_V3.TrackerObjects.OptionData;
 using static MMR_Tracker_V3.TrackerObjects.LogicDictionaryData;
+using TDMUtils;
 
 namespace TestingForm.GameDataCreation.LinksAwakeningSwitch
 {

@@ -7,6 +7,7 @@ using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using TDMUtils;
 
 namespace MMR_Tracker_V3.SpoilerLogHandling.HardCodedParsers
 {
@@ -40,7 +41,7 @@ namespace MMR_Tracker_V3.SpoilerLogHandling.HardCodedParsers
                 if (i.Key == "startingItems")
                 {
                     Debug.WriteLine(i.Value.GetType());
-                    foreach (var item in Utility.SerializeConvert<List<string>>(i.Value))
+                    foreach (var item in TDMUtils.Utility.SerializeConvert<List<string>>(i.Value))
                     {
                         var ItemObj = I.GetItemByID(item);
                         if (ItemObj is null)
@@ -54,7 +55,7 @@ namespace MMR_Tracker_V3.SpoilerLogHandling.HardCodedParsers
                 }
                 if (i.Key == "excludedChecks")
                 {
-                    foreach (var Location in Utility.SerializeConvert<List<string>>(i.Value))
+                    foreach (var Location in TDMUtils.Utility.SerializeConvert<List<string>>(i.Value))
                     {
                         var LocationObj = I.GetLocationByID(Location);
                         if (LocationObj is null)

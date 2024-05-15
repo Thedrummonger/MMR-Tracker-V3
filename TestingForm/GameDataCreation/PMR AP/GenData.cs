@@ -9,6 +9,7 @@ using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using TDMUtils;
 
 namespace TestingForm.GameDataCreation.PMR_AP
 {
@@ -314,8 +315,8 @@ namespace TestingForm.GameDataCreation.PMR_AP
 
             string FinalDictFile = Path.Combine(TestingReferences.GetTestingDictionaryPath(), @"PMR V1.json");
             string FinalLogicFile = Path.Combine(TestingReferences.GetTestingLogicPresetsPath(), @"DEV-PMR Casual.json");
-            File.WriteAllText(FinalLogicFile, JsonConvert.SerializeObject(Logic, Utility.DefaultSerializerSettings));
-            File.WriteAllText(FinalDictFile, JsonConvert.SerializeObject(dictionary, Utility.DefaultSerializerSettings));
+            File.WriteAllText(FinalLogicFile, JsonConvert.SerializeObject(Logic, NewtonsoftExtensions.DefaultSerializerSettings));
+            File.WriteAllText(FinalDictFile, JsonConvert.SerializeObject(dictionary, NewtonsoftExtensions.DefaultSerializerSettings));
         }
         public class PMRRegion
         {

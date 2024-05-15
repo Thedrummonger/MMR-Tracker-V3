@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Text;
+using TDMUtils;
 
 namespace MMR_Tracker_V3.Logic
 {
@@ -180,6 +181,19 @@ namespace MMR_Tracker_V3.Logic
             }
             entry.RequiredItems = NewReq;
             entry.ConditionalItems = NewConditional;
+        }
+        /// <summary>
+        /// Deep Clones the Requirements and Conditionals from a MMR JsonFormattedLogicObject
+        /// </summary>
+        /// <param name="Requirements">Source Requirements</param>
+        /// <param name="Conditionals">Source Conditionals</param>
+        /// <param name="NewRequirements">Cloned Requirements</param>
+        /// <param name="NewConditionals">Cloned Conditionals</param>
+        public static void DeepCloneLogic(List<string> Requirements, List<List<string>> Conditionals, out List<string> NewRequirements, out List<List<string>> NewConditionals)
+        {
+
+            NewRequirements = Requirements.ConvertAll(o => (string)o.Clone());
+            NewConditionals = Conditionals.ConvertAll(p => p.ConvertAll(o => (string)o.Clone()));
         }
     }
     public static class LogicStringConverter

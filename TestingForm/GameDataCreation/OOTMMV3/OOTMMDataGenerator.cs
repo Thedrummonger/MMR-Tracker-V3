@@ -15,6 +15,7 @@ using static MMR_Tracker_V3.Logic.LogicUtilities;
 using static MMR_Tracker_V3.TrackerObjects.MMRData;
 using static TestingForm.GameDataCreation.OOTMMV3.OOTMMDataClasses;
 using static TestingForm.GameDataCreation.OOTMMV3.OOTMMUtility;
+using TDMUtils;
 
 namespace TestingForm.GameDataCreation.OOTMMV3
 {

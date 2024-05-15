@@ -29,7 +29,7 @@ namespace MMR_Tracker_V3
             {
                 Debug.WriteLine("Reading Headers from Header File");
                 HeaderSortingFile[] headerSortingFile = [];
-                try { headerSortingFile = Utility.DeserializeYAMLFile<HeaderSortingFile[]>(References.Globalpaths.HeaderSortingFile); }
+                try { headerSortingFile = TDMUtils.Utility.DeserializeYAMLFile<HeaderSortingFile[]>(References.Globalpaths.HeaderSortingFile); }
                 catch { Debug.WriteLine("Header File Could Not Be parsed"); return []; }
                 var ValidHeaders = headerSortingFile.Where(x => x.Games is null || x.Games.Count == 0 || x.Games.Contains(Instance.LogicDictionary.GameCode));
                 var SortOrder = ValidHeaders.SelectMany(x => x.Headers).Distinct().Select((s, ind) => new { s, ind }).ToDictionary(x => x.s.ToLower(), x => x.ind);

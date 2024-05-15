@@ -9,6 +9,7 @@ using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using TDMUtils;
 using Windows_Form_Frontend;
 
 namespace TestingForm
@@ -52,7 +53,7 @@ namespace TestingForm
             MMRData.LogicFile CasualLogic = JsonConvert.DeserializeObject<MMRData.LogicFile>(File.ReadAllText(Path.Combine(TestingReferences.GetDevTestingPath(), "MMR 116", "REQ_CASUAL.txt")));
             var MMRDictV16 = GameDataCreation.MMR.GenData.CreateMMRFiles();
 
-            File.WriteAllText(Path.Combine(TestingReferences.GetLibraryDictionaryPath(), "MMR V24.json"), JsonConvert.SerializeObject(MMRDictV16, MMR_Tracker_V3.Utility.DefaultSerializerSettings));
+            File.WriteAllText(Path.Combine(TestingReferences.GetLibraryDictionaryPath(), "MMR V24.json"), JsonConvert.SerializeObject(MMRDictV16, NewtonsoftExtensions.DefaultSerializerSettings));
 
             TestingUtility.CreateTestingFile(MMRDictV16, @"MMR 116\MMRV16Dict", "json");
 
@@ -80,7 +81,7 @@ namespace TestingForm
             //Testing.PrintObjectToConsole(MMR_Tracker_V3.OtherGames.TPRando.ParseMacrosFromCode.ReadMacrosFromCode());
 
             List<string> Areas = MainInterface.InstanceContainer.Instance.LocationPool.Values.Select(x => x.GetDictEntry().Area).Distinct().ToList();
-            MMR_Tracker_V3.Utility.PrintObjectToConsole(Areas);
+            Utility.PrintObjectToConsole(Areas);
 
             List<string> Bugs = MainInterface.InstanceContainer.Instance.ItemPool.Values.Where(x => x.ID.StartsWith("Female_") || x.ID.StartsWith("Male_")).Select(x => x.ID).ToList();
             string AnyBug = string.Join(" or ", Bugs);

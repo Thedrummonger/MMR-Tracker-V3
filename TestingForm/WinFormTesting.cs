@@ -10,6 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Windows_Form_Frontend;
 using static MMR_Tracker_V3.TrackerObjects.MiscData;
+using TDMUtils;
 
 namespace TestingForm
 {
@@ -64,7 +65,7 @@ namespace TestingForm
             string RandomizedItem = null;
             EntranceData.EntranceRandoDestination RandomizedExit = null;
             Debug.WriteLine($"Data for {LastSelectedObject}=========================================================");
-            Debug.WriteLine(JsonConvert.SerializeObject(LastSelectedObject, MMR_Tracker_V3.Utility.DefaultSerializerSettings));
+            Debug.WriteLine(JsonConvert.SerializeObject(LastSelectedObject, NewtonsoftExtensions.DefaultSerializerSettings));
             if (LastSelectedObject is CheckableLocation DebugCLOObj)
             {
                 Debug.WriteLine($"Dictionary Entry");
@@ -92,9 +93,9 @@ namespace TestingForm
                 if (Item is not null)
                 {
                     Debug.WriteLine($"Randomized Item");
-                    Debug.WriteLine(JsonConvert.SerializeObject(Item, MMR_Tracker_V3.Utility.DefaultSerializerSettings));
+                    Debug.WriteLine(JsonConvert.SerializeObject(Item, NewtonsoftExtensions.DefaultSerializerSettings));
                     Debug.WriteLine($"Randomized Item Dictionary Entry");
-                    Debug.WriteLine(JsonConvert.SerializeObject(Item?.GetDictEntry(), MMR_Tracker_V3.Utility.DefaultSerializerSettings));
+                    Debug.WriteLine(JsonConvert.SerializeObject(Item?.GetDictEntry(), NewtonsoftExtensions.DefaultSerializerSettings));
                 }
             }
             if (RandomizedExit is not null)
@@ -103,9 +104,9 @@ namespace TestingForm
                 if (Destination is not null)
                 {
                     Debug.WriteLine($"Destination");
-                    Debug.WriteLine(JsonConvert.SerializeObject(Destination, MMR_Tracker_V3.Utility.DefaultSerializerSettings));
+                    Debug.WriteLine(JsonConvert.SerializeObject(Destination, NewtonsoftExtensions.DefaultSerializerSettings));
                     Debug.WriteLine($"Destination Dictionary Entry");
-                    Debug.WriteLine(JsonConvert.SerializeObject(Destination?.GetDictEntry(), MMR_Tracker_V3.Utility.DefaultSerializerSettings));
+                    Debug.WriteLine(JsonConvert.SerializeObject(Destination?.GetDictEntry(), NewtonsoftExtensions.DefaultSerializerSettings));
                 }
             }
             Debug.WriteLine(MainInterface.CurrentProgram.ActiveControl.Name);

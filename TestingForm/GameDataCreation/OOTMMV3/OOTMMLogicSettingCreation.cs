@@ -8,6 +8,7 @@ using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
+using TDMUtils;
 using static MMR_Tracker_V3.TrackerObjects.MMRData;
 
 namespace TestingForm.GameDataCreation.OOTMMV3

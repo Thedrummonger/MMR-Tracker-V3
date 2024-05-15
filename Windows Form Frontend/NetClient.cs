@@ -21,6 +21,7 @@ using System.Net;
 using Archipelago.MultiClient.Net.Packets;
 using static System.Runtime.InteropServices.JavaScript.JSType;
 using MMR_Tracker_V3.SpoilerLogHandling;
+using TDMUtils;
 
 namespace Windows_Form_Frontend
 {

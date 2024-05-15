@@ -17,6 +17,7 @@ using MMR_Tracker_V3;
 using FParsec;
 using MMR_Tracker_V3.Logic;
 using System.Text.RegularExpressions;
+using TDMUtils;
 
 namespace TestingForm
 {
@@ -175,8 +176,8 @@ namespace TestingForm
             dynamic ChoiceOption = new OptionData.ChoiceOption(null);
             dynamic MultiOption = new OptionData.MultiSelectOption(null);
 
-            bool t1 = MMR_Tracker_V3.Utility.DynamicMethodExists(ChoiceOption, "SetValue");
-            bool t2 = MMR_Tracker_V3.Utility.DynamicMethodExists(MultiOption, "SetValue");
+            bool t1 = Utility.DynamicMethodExists(ChoiceOption, "SetValue");
+            bool t2 = Utility.DynamicMethodExists(MultiOption, "SetValue");
             Debug.WriteLine(t1);
             Debug.WriteLine(t2);
 

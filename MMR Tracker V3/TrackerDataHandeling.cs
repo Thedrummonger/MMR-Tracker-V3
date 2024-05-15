@@ -185,7 +185,7 @@ namespace MMR_Tracker_V3
             return false;
         }
 
-        static bool IsHidden(object obj) { return Utility.DynamicPropertyExist(obj, "Hidden") && (obj as dynamic).Hidden; }
+        static bool IsHidden(object obj) { return TDMUtils.Utility.DynamicPropertyExist(obj, "Hidden") && (obj as dynamic).Hidden; }
 
         public static string GetLocationDisplayName(dynamic obj, InstanceData.InstanceContainer instance)
         {
