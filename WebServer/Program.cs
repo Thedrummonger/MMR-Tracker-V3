@@ -12,6 +12,7 @@ using FParsec;
 using MMR_Tracker_V3;
 using MathNet.Numerics.Statistics;
 using MMR_Tracker_V3.NetCode;
+using TDMUtils;
 
 namespace WebServer
 {
@@ -21,7 +22,7 @@ namespace WebServer
         {
             //The the config file values
             NetData.ConfigFile.VerifyConfig();
-            NetData.ConfigFile cfg = JsonConvert.DeserializeObject<NetData.ConfigFile>(File.ReadAllText(NetData.ConfigFile.ConfigFilePath), MMR_Tracker_V3.Utility.DefaultSerializerSettings)??new NetData.ConfigFile().SetDefaultExamples();
+            NetData.ConfigFile cfg = JsonConvert.DeserializeObject<NetData.ConfigFile>(File.ReadAllText(NetData.ConfigFile.ConfigFilePath), TDMUtils.NewtonsoftExtensions.DefaultSerializerSettings)??new NetData.ConfigFile().SetDefaultExamples();
 
             if (cfg.ServerGameMode == NetData.OnlineMode.None)
             {
@@ -45,8 +46,9 @@ namespace WebServer
             }
             else if (cfg.ServerGameMode == NetData.OnlineMode.Archipelago)
             {
-                Console.WriteLine($"This web server can not run Archipelago games. " +
-                    $"\nTo connect to an Archipelago server, enter the servers address in the client");
+                Console.WriteLine($"This web server is only meant standalone tracker based multiplayer and can not run Archipelago games. " +
+                    $"\nThe tracker can connect directly to the Archipelago server and sync with data from there." +
+                    $"\nTo connect to an Archipelago server, Select the Archipelago Gamemmode and enter the servers address in the client");
                 Console.ReadKey();
                 return;
             }
