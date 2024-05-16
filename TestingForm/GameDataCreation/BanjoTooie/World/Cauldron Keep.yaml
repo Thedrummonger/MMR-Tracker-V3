@@ -1,16 +1,8 @@
 CK:
   locations: {}
-  exits:
-    H1:
-      beginnerLogic: H1A && (SOLO_PACKWH || SOLO_SAPACK || SOLO_SHPACK)
-      normalLogic: ''
-      advancedLogic: ''
+  exits: {}
   events: {}
 H1:
-  locations:
-    HAG1:
-      beginnerLogic: BBLASTER && CEGGS
-      normalLogic: ''
-      advancedLogic: ''
+  locations: {}
   exits: {}
   events: {}
