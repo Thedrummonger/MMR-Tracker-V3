@@ -197,30 +197,10 @@ namespace MMR_Tracker_V3.NetCode
             if (args.Length < 1) { return; }
             foreach (var arg in args)
             {
-                if (IP is null && IsIpAddress(arg, out IPAddress ArgIP)) { IP = ArgIP; }
+                if (IP is null && Utility.IsIpAddress(arg, out IPAddress ArgIP)) { IP = ArgIP; }
                 if (Port < 0 && int.TryParse(arg, out int ArgPort)) { Port = ArgPort; }
                 if (IP is not null && Port > -1) { return; }
             }
-        }
-
-        public static bool IsIpAddress(string Input, out IPAddress IP)
-        {
-            bool WasIP = true;
-            var Segments = Input.Split('.');
-            if (Segments.Length != 4 || Segments.Any(x => x.Any(y => !char.IsDigit(y)))) { WasIP = false; }
-            if (!IPAddress.TryParse(Input, out IP)) { WasIP = false; }
-            if (!WasIP)
-            {
-                IPAddress[] addresslist;
-                try { addresslist = Dns.GetHostAddresses(Input); } 
-                catch { addresslist = []; }
-                if (addresslist.Length != 0)
-                {
-                    WasIP = true;
-                    IP = addresslist.First();
-                }
-            }
-            return WasIP;
         }
     }
 }

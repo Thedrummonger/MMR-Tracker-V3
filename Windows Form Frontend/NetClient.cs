@@ -240,7 +240,7 @@ namespace Windows_Form_Frontend
 
         private void Connect()
         {
-            if (!NetData.IsIpAddress(txtServerAddress.Text, out IPAddress ParsedAddress))
+            if (!Utility.IsIpAddress(txtServerAddress.Text, out IPAddress ParsedAddress))
             {
                 PrintToConsole($"{txtServerAddress.Text} Was not a valid IP address");
                 return;

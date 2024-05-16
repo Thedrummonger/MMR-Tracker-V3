@@ -427,5 +427,25 @@ namespace TDMUtils
             return Regex.Replace(Input, "([a-z])([A-Z])", "$1 $2");
         }
 
+        public static bool IsIpAddress(string Input, out IPAddress IP)
+        {
+            bool WasIP = true;
+            var Segments = Input.Split('.');
+            if (Segments.Length != 4 || Segments.Any(x => x.Any(y => !char.IsDigit(y)))) { WasIP = false; }
+            if (!IPAddress.TryParse(Input, out IP)) { WasIP = false; }
+            if (!WasIP)
+            {
+                IPAddress[] addresslist;
+                try { addresslist = Dns.GetHostAddresses(Input); }
+                catch { addresslist = []; }
+                if (addresslist.Length != 0)
+                {
+                    WasIP = true;
+                    IP = addresslist.First();
+                }
+            }
+            return WasIP;
+        }
+
     }
 }
