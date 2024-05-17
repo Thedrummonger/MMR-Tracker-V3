@@ -1,11 +1,4 @@
-﻿
-using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Windows_Form_Frontend;
+﻿using System.Diagnostics;
 
 namespace TestingForm
 {
@@ -19,12 +12,19 @@ namespace TestingForm
             CLITrackerActive = true;
             RemoveCLIDebugListener();
             DLLImport.ShowWindow(DLLImport.GetConsoleWindow(), DLLImport.SW_SHOW);
-            CLIFrontEnd.Program.Main(Environment.GetCommandLineArgs());
-            //freezes thread while CLI is running. Continues here when CLI exits
-            Console.Clear();
-            DLLImport.ShowWindow(DLLImport.GetConsoleWindow(), DLLImport.SW_HIDE);
-            CLITrackerActive = false;
             TestingForm.CurrentForm.UpdateDebugActions();
+            Task.Run(() =>
+            {
+                CLIFrontEnd.Program.Main(Environment.GetCommandLineArgs());
+                //freezes thread while CLI is running. Continues here when CLI exits
+                Console.Clear();
+                DLLImport.ShowWindow(DLLImport.GetConsoleWindow(), DLLImport.SW_HIDE);
+                CLITrackerActive = false;
+                TestingForm.CurrentForm.Invoke(new MethodInvoker(delegate ()
+                {
+                    TestingForm.CurrentForm.UpdateDebugActions();
+                }));
+            });
         }
 
         public static bool IsCLIActive() { return CLITrackerActive; }

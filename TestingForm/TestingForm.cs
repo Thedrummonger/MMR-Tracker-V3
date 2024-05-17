@@ -69,9 +69,9 @@ namespace TestingForm
             List<DevAction> DevFunctions =
             [
                 new("Open WinForm Tracker Debug", WinFormTesting.ActivateWinFormInterface, UpdateDebugActions, () => !WinFormTesting.WinformLoaded()),
-                new("Print Debug to Console", CLITrackerTesting.AddCLIDebugListener, UpdateDebugActions, CLITrackerTesting.IsCLIDebugListenerInactive),
-                new("Stop Printing Debug to Console", CLITrackerTesting.RemoveCLIDebugListener, UpdateDebugActions, CLITrackerTesting.IsCLIDebugListenerActive),
-                new("Open CLI Tracker Debug", CLITrackerTesting.OpenCLITracker, UpdateDebugActions),
+                new("Print Debug to Console", CLITrackerTesting.AddCLIDebugListener, UpdateDebugActions, () => CLITrackerTesting.IsCLIDebugListenerInactive() && !CLITrackerTesting.IsCLIActive()),
+                new("Stop Printing Debug to Console", CLITrackerTesting.RemoveCLIDebugListener, UpdateDebugActions, () =>CLITrackerTesting.IsCLIDebugListenerActive() && !CLITrackerTesting.IsCLIActive()),
+                new("Open CLI Tracker Debug", CLITrackerTesting.OpenCLITracker, UpdateDebugActions, () => !CLITrackerTesting.IsCLIActive()),
                 new("Save Tracker State", WinFormTesting.SaveWinformTrackerState, UpdateDebugActions, WinFormTesting.CanSaveWinformTrackerState),
                 new("Load Tracker State", WinFormTesting.LoadWinformTrackerState, UpdateDebugActions, WinFormTesting.CanLoadWinformTrackerState),
                 new("Print Selected Object to Console", WinFormTesting.PrintWinformSelectedObject, UpdateDebugActions, () => WinFormTesting.LastSelectedObject is not null),

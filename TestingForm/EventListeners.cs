@@ -24,7 +24,7 @@ namespace TestingForm
 
         private static void WinFormInstanceCreation_InstanceCreated(MMR_Tracker_V3.TrackerObjects.InstanceData.InstanceContainer obj)
         {
-            TestingForm.CurrentForm.UpdateDebugActions();
+            TestingForm.CurrentForm.Invoke(new MethodInvoker(TestingForm.CurrentForm.UpdateDebugActions));
         }
 
         private static void LBSelectedIndexChanged(object? sender, EventArgs e)
