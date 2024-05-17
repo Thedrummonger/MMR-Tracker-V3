@@ -47,6 +47,12 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Reference Include="TDMUtils">
+      <HintPath>..\TDMUtils.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+  <ItemGroup>
     <None Update="ItemTrackerData\MMR.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>

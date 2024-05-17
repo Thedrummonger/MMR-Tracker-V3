@@ -10,7 +10,6 @@ using System.Linq;
 using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
-using YamlDotNet.Core;
 using static MMR_Tracker_V3.Logic.LogicUtilities;
 using static MMR_Tracker_V3.TrackerObjects.MMRData;
 using static TestingForm.GameDataCreation.OOTMMV3.OOTMMDataClasses;

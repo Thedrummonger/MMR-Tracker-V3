@@ -12,6 +12,7 @@
     <PackageReference Include="MathNet.Symbolics" Version="0.24.0" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
     <PackageReference Include="Octokit" Version="8.1.1" />
+    <PackageReference Include="Utf8Json" Version="1.3.7" />
   </ItemGroup>
 
   <ItemGroup>
@@ -36,7 +37,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\TDMUtils\TDMUtils.csproj" />
+    <Reference Include="TDMUtils">
+      <HintPath>..\TDMUtils.dll</HintPath>
+    </Reference>
   </ItemGroup>
 
 </Project>

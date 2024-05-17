@@ -12,4 +12,10 @@
     <ProjectReference Include="..\MMR Tracker V3\MMR Tracker V3.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Reference Include="TDMUtils">
+      <HintPath>..\TDMUtils.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
 </Project>

@@ -18,7 +18,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebServer", "WebServer\WebS
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CLIFrontEnd", "CLIFrontEnd\CLIFrontEnd.csproj", "{5403C876-1EF8-41DC-BB2A-22681243118E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TDMUtils", "TDMUtils\TDMUtils.csproj", "{E34A0C51-561D-43D2-9CDE-83F9FBB5C8C4}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Lib", "Lib", "{6A604ABE-22D3-44AE-A215-7FAD479CE2B8}"
+	ProjectSection(SolutionItems) = preProject
+		TDMUtils.dll = TDMUtils.dll
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -46,10 +49,6 @@ Global
 		{5403C876-1EF8-41DC-BB2A-22681243118E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5403C876-1EF8-41DC-BB2A-22681243118E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5403C876-1EF8-41DC-BB2A-22681243118E}.Release|Any CPU.Build.0 = Release|Any CPU
-		{E34A0C51-561D-43D2-9CDE-83F9FBB5C8C4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{E34A0C51-561D-43D2-9CDE-83F9FBB5C8C4}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{E34A0C51-561D-43D2-9CDE-83F9FBB5C8C4}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{E34A0C51-561D-43D2-9CDE-83F9FBB5C8C4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -4,7 +4,6 @@ using MMR_Tracker_V3.TrackerObjects;
 using Newtonsoft.Json;
 using System.Diagnostics;
 using TDMUtils;
-using YamlDotNet.Serialization;
 using static MMR_Tracker_V3.References;
 #pragma warning disable CS8602 // Dereference of a possibly null reference.
 #pragma warning disable CS8603 // Possible null reference return.

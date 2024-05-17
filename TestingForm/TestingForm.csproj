@@ -36,4 +36,10 @@
 	  </Content>
   </ItemGroup>
 
+  <ItemGroup>
+    <Reference Include="TDMUtils">
+      <HintPath>..\TDMUtils.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
 </Project>
