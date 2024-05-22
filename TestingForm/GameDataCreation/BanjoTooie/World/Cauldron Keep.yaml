@@ -1,8 +1,20 @@
-CK:
-  locations: {}
-  exits: {}
-  events: {}
-H1:
-  locations: {}
-  exits: {}
-  events: {}
+Key: Cauldron Keep
+Value:
+  CK:
+    Locations: {}
+    Exits:
+      H1:
+        BegginerLogic: ''
+        NormalLogic: ''
+        AdvancedLogic: ''
+        GlitchedLogic: ''
+    Macros: {}
+  H1:
+    Locations:
+      HAG1:
+        BegginerLogic: ''
+        NormalLogic: ''
+        AdvancedLogic: ''
+        GlitchedLogic: ''
+    Exits: {}
+    Macros: {}

@@ -236,7 +236,7 @@
   "TRAINSWHP2": "*",
   "TRAINSWWW": "*",
 
-  "CHUFFY": "CHUFFY",
+  "CHUFFY": "*",
 
   //Cheato Pages
   "CHEATOMT1": "PAGES",
@@ -436,7 +436,23 @@
   "GEGGS": "*",
   "CEGGS": "*",
   "IEGGS": "*",
-  "FSWIM": "*",
+
+  //NPCS
+  "ROYSTEN": "",
+  "CHEATOR1": "",
+  "CHEATOR2": "",
+  "CHEATOR3": "",
+  "CHEATOR4": "",
+  "CHEATOR5": "",
+
+
+  //Stop N Swap
+  "PMEGG": "",
+  "PMEGGH": "",
+  "BMEGG": "",
+  "BMEGGH": "",
+  "YMEGGH": "",
+  "IKEY": "",
 
   //Bosses
   "HAG1": "VICTORY",

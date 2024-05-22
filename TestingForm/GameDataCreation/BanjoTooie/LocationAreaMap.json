@@ -3,7 +3,9 @@
   "SM": [
     "CHEATOSM1",
     "JINJOIH5",
-    "FSWIM"
+    "PMEGG",
+    "BMEGG"
+    //    FSWIM
   ],
   "IOHJV": [
     "JIGGYIH1",
@@ -16,10 +18,14 @@
     "JIGGYIH8",
     "JIGGYIH9",
     "JIGGYIH10",
-    "TREBLEJV"
+    "TREBLEJV",
+    "IKEY"
   ],
   "IOHWH": [
     "JINJOIH1",
+    "YMEGGH",
+    "PMEGGH",
+    "BMEGGH",
 
     "W1",
     "W2",
@@ -28,7 +34,8 @@
     "W5",
     "W6",
     "W7",
-    "W8"
+    "W8",
+    "W9"
   ],
   "MT": [
     "JINJOMT1",
@@ -85,7 +92,7 @@
     "NOTEIH4"
   ],
   "GM": [
-    "JINJOGM1",
+    // JINJOGM1, moved to GMWSJT
     "JINJOGM2",
     "JINJOGM3",
     "JINJOGM4",
@@ -104,6 +111,7 @@
     "GLOWBOMEG",
     "HONEYCGM1",
     "HONEYCGM2",
+    "HONEYCGM3",
     "CHEATOGM1",
     "CHEATOGM2",
     "CHEATOGM3",
@@ -127,12 +135,13 @@
     "NOTEGGM15",
     "NOTEGGM16"
   ],
-  "GMS": [
-    "HONEYCGM3"
+  "GMWSJT": [
+    "JINJOGM1"
   ],
   "CHUFFY": [
     "JIGGYGM1",
     "CHUFFY"
+
   ],
   "IOHPG": [
     "GEGGS",
@@ -187,15 +196,12 @@
     "NOTEWW15",
     "NOTEWW16"
   ],
-  "WWS": [
-  ],
   "IOHCT": [
     "JINJOIH3",
     "IEGGS",
     "TRAINSWIH"
 
   ],
-  "IOHCTS": [],
   "IOHCT_HFP_ENTRANCE": [
     "GLOWBOIH1",
     "NOTEIH9",
@@ -336,7 +342,6 @@
   "TL_HATCH": [
     "HATCH"
   ],
-  "TLS": [],
   "IOHQM": [],
   "GIO": [
     "TRAINSWGI"
@@ -346,10 +351,14 @@
     "JIGGYGI8",
     "JIGGYGI10",
     "CHEATOGI1",
+    "HONEYCGI2",
     "SNPACK",
     "CLAWBTS",
     "NOTEGI4",
     "NOTEGI5",
+    "NOTEGI1",
+    "NOTEGI2",
+    "NOTEGI3",
     "NOTEGI13",
     "NOTEGI14",
     "NOTEGI11",
@@ -358,6 +367,7 @@
   "GI2": [
     "GLOWBOGI1",
     "LSPRING",
+    "JINJOGI2",
     "JIGGYGI7",
     "TREBLEGI",
     "NOTEGI6",
@@ -368,7 +378,6 @@
   ],
   "GI3ALL": [
     "JINJOGI1",
-    "JINJOGI2",
     "JINJOGI4",
     "JINJOGI5",
     "JIGGYGI1",
@@ -387,12 +396,6 @@
     "NOTEGI16"
 
   ],
-  "GIS": [
-    "HONEYCGI2",
-    "NOTEGI1",
-    "NOTEGI2",
-    "NOTEGI3"
-  ],
   "HP": [
     "JINJOHP1",
     "JINJOHP2",
@@ -403,6 +406,7 @@
     "JIGGYHP2",
     "JIGGYHP3",
     "JIGGYHP4",
+    "JIGGYHP5",
     "JIGGYHP6",
     //JIGGYHP7, // in TDL
     "JIGGYHP8",
@@ -411,6 +415,7 @@
     "GLOWBOHP1",
     "GLOWBOHP2",
     "HONEYCHP1",
+    "HONEYCHP2",
     "HONEYCHP3",
     "CHEATOHP1",
     "CHEATOHP2",
@@ -436,12 +441,6 @@
     "NOTEHFP14",
     "NOTEHFP15",
     "NOTEHFP16"
-  ],
-  "HPLS": [
-    "HONEYCHP2"
-  ],
-  "HPIS": [
-    "JIGGYHP5"
   ],
   "CC": [
     "JINJOCC1",
