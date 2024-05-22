@@ -233,4 +233,24 @@ Value:
         NormalLogic: ''
         AdvancedLogic: ''
         GlitchedLogic: ''
-    Macros: {}
+    Macros:
+      jiggy_peril:
+        BegginerLogic: ''
+        NormalLogic: ''
+        AdvancedLogic: ''
+        GlitchedLogic: ''
+      notes_ww_area51:
+        BegginerLogic: ''
+        NormalLogic: ''
+        AdvancedLogic: ''
+        GlitchedLogic: ''
+      smuggle_food:
+        BegginerLogic: ''
+        NormalLogic: ''
+        AdvancedLogic: ''
+        GlitchedLogic: ''
+      glitchedInfernoAccess:
+        BegginerLogic: ''
+        NormalLogic: ''
+        AdvancedLogic: ''
+        GlitchedLogic: ''

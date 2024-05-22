@@ -127,7 +127,12 @@ Value:
         NormalLogic: ''
         AdvancedLogic: ''
         GlitchedLogic: ''
-    Macros: {}
+    Macros:
+      notes_gi_floor1:
+        BegginerLogic: ''
+        NormalLogic: ''
+        AdvancedLogic: ''
+        GlitchedLogic: ''
   GI2:
     Locations:
       GLOWBOGI1:
@@ -295,4 +300,9 @@ Value:
         NormalLogic: ''
         AdvancedLogic: ''
         GlitchedLogic: ''
-    Macros: {}
+    Macros:
+      can_beat_weldar:
+        BegginerLogic: ''
+        NormalLogic: ''
+        AdvancedLogic: ''
+        GlitchedLogic: ''

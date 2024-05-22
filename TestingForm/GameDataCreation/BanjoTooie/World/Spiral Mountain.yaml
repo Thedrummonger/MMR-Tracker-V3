@@ -8,7 +8,27 @@ Value:
         NormalLogic: ''
         AdvancedLogic: ''
         GlitchedLogic: ''
-    Macros: {}
+    Macros:
+      has_fire:
+        BegginerLogic: ''
+        NormalLogic: ''
+        AdvancedLogic: ''
+        GlitchedLogic: ''
+      has_explosives:
+        BegginerLogic: ''
+        NormalLogic: ''
+        AdvancedLogic: ''
+        GlitchedLogic: ''
+      can_beat_king_coal:
+        BegginerLogic: ''
+        NormalLogic: ''
+        AdvancedLogic: ''
+        GlitchedLogic: ''
+      can_use_battery:
+        BegginerLogic: ''
+        NormalLogic: ''
+        AdvancedLogic: ''
+        GlitchedLogic: ''
   SM:
     Locations:
       CHEATOSM1:

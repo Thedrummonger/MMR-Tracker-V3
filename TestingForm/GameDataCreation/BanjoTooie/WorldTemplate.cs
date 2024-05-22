@@ -94,6 +94,59 @@ namespace TestingForm.GameDataCreation.BanjoTooie
             WorldFiles["Cauldron Keep"]["CK"] = new(); //Cauldron Keep
             WorldFiles["Cauldron Keep"]["H1"] = new(); //HAG 1
 
+            //EVENTS
+
+            WorldFiles["Spiral Mountain"]["Menu"].Macros.Add("has_fire", new());
+            WorldFiles["Spiral Mountain"]["Menu"].Macros.Add("has_explosives", new());
+            WorldFiles["Spiral Mountain"]["Menu"].Macros.Add("can_beat_king_coal", new());
+            WorldFiles["Spiral Mountain"]["Menu"].Macros.Add("can_use_battery", new());
+
+            WorldFiles["Isle O Hags"]["IOHPL"].Macros.Add("notes_plateau", new());
+
+            WorldFiles["Mayahem Temple"]["MT"].Macros.Add("jiggy_treasure_chamber", new());
+            WorldFiles["Mayahem Temple"]["MT"].Macros.Add("MT_flight_pad", new());
+            WorldFiles["Mayahem Temple"]["MT"].Macros.Add("jiggy_merry_maggie", new());
+            WorldFiles["Mayahem Temple"]["MT"].Macros.Add("prison_compound_open", new());
+            WorldFiles["Mayahem Temple"]["MT"].Macros.Add("dilberta_free", new());
+            WorldFiles["Mayahem Temple"]["MT"].Macros.Add("can_access_JSG", new());
+            WorldFiles["Mayahem Temple"]["MT"].Macros.Add("glitchedJSGAccess", new());
+
+            WorldFiles["Glitter Gulch Mine"]["GM"].Macros.Add("honeycomb_prospector", new());
+            WorldFiles["Glitter Gulch Mine"]["GM"].Macros.Add("GM_boulders", new());
+            WorldFiles["Glitter Gulch Mine"]["GM"].Macros.Add("canary_mary_free", new());
+            WorldFiles["Glitter Gulch Mine"]["GM"].Macros.Add("saucer_door_open", new());
+
+            WorldFiles["Witchyworld"]["WW"].Macros.Add("jiggy_peril", new());
+            WorldFiles["Witchyworld"]["WW"].Macros.Add("notes_ww_area51", new());
+            WorldFiles["Witchyworld"]["WW"].Macros.Add("smuggle_food", new());
+            WorldFiles["Witchyworld"]["WW"].Macros.Add("glitchedInfernoAccess", new());
+
+            WorldFiles["Jolly Rogers Lagoon"]["JR"].Macros.Add("jiggy_see_mee", new());
+            WorldFiles["Jolly Rogers Lagoon"]["JR"].Macros.Add("jiggy_ufo", new());
+            WorldFiles["Jolly Rogers Lagoon"]["JR"].Macros.Add("doubloon_ledge", new());
+            WorldFiles["Jolly Rogers Lagoon"]["JR"].Macros.Add("doubloon_dirtpatch", new());
+            WorldFiles["Jolly Rogers Lagoon"]["JR"].Macros.Add("notes_jrl_blubs", new());
+            WorldFiles["Jolly Rogers Lagoon"]["JR"].Macros.Add("notes_jrl_eels", new());
+            WorldFiles["Jolly Rogers Lagoon"]["JR"].Macros.Add("can_reach_atlantis", new());
+            WorldFiles["Jolly Rogers Lagoon"]["JR"].Macros.Add("long_swim", new());
+
+            WorldFiles["Terrydactyland"]["TL"].Macros.Add("jiggy_stomping_plains", new());
+            WorldFiles["Terrydactyland"]["TL"].Macros.Add("can_beat_terry", new());
+            WorldFiles["Terrydactyland"]["TL"].Macros.Add("oogle_boogles_open", new());
+
+            WorldFiles["Gruntys Industries"]["GI1"].Macros.Add("notes_gi_floor1", new());
+
+            WorldFiles["Gruntys Industries"]["GI3ALL"].Macros.Add("can_beat_weldar", new());
+
+            WorldFiles["Hailfire Peaks"]["HP"].Macros.Add("HFP_to_MT", new());
+            WorldFiles["Hailfire Peaks"]["HP"].Macros.Add("HFP_to_JRL", new());
+
+            WorldFiles["Cloud Cuckooland"]["CC"].Macros.Add("jiggy_gold_pot", new());
+            WorldFiles["Cloud Cuckooland"]["CC"].Macros.Add("notes_ccl_silo", new());
+            WorldFiles["Cloud Cuckooland"]["CC"].Macros.Add("HFP_hot_water_cooled", new());
+            WorldFiles["Cloud Cuckooland"]["CC"].Macros.Add("grow_beanstalk", new());
+            WorldFiles["Cloud Cuckooland"]["CC"].Macros.Add("can_use_floatus", new());
+            WorldFiles["Cloud Cuckooland"]["CC"].Macros.Add("can_play_gold_pot", new());
 
             //EXITS
 

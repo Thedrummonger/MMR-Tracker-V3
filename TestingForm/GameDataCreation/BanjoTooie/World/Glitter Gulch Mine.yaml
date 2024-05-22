@@ -228,7 +228,27 @@ Value:
         NormalLogic: ''
         AdvancedLogic: ''
         GlitchedLogic: ''
-    Macros: {}
+    Macros:
+      honeycomb_prospector:
+        BegginerLogic: ''
+        NormalLogic: ''
+        AdvancedLogic: ''
+        GlitchedLogic: ''
+      GM_boulders:
+        BegginerLogic: ''
+        NormalLogic: ''
+        AdvancedLogic: ''
+        GlitchedLogic: ''
+      canary_mary_free:
+        BegginerLogic: ''
+        NormalLogic: ''
+        AdvancedLogic: ''
+        GlitchedLogic: ''
+      saucer_door_open:
+        BegginerLogic: ''
+        NormalLogic: ''
+        AdvancedLogic: ''
+        GlitchedLogic: ''
   GMWSJT:
     Locations:
       JINJOGM1:

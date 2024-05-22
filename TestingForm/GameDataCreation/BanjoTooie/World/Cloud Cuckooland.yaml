@@ -213,4 +213,34 @@ Value:
         AdvancedLogic: ''
         GlitchedLogic: ''
     Exits: {}
-    Macros: {}
+    Macros:
+      jiggy_gold_pot:
+        BegginerLogic: ''
+        NormalLogic: ''
+        AdvancedLogic: ''
+        GlitchedLogic: ''
+      notes_ccl_silo:
+        BegginerLogic: ''
+        NormalLogic: ''
+        AdvancedLogic: ''
+        GlitchedLogic: ''
+      HFP_hot_water_cooled:
+        BegginerLogic: ''
+        NormalLogic: ''
+        AdvancedLogic: ''
+        GlitchedLogic: ''
+      grow_beanstalk:
+        BegginerLogic: ''
+        NormalLogic: ''
+        AdvancedLogic: ''
+        GlitchedLogic: ''
+      can_use_floatus:
+        BegginerLogic: ''
+        NormalLogic: ''
+        AdvancedLogic: ''
+        GlitchedLogic: ''
+      can_play_gold_pot:
+        BegginerLogic: ''
+        NormalLogic: ''
+        AdvancedLogic: ''
+        GlitchedLogic: ''
