@@ -3,256 +3,251 @@ Value:
   GM:
     Locations:
       JINJOGM2:
-        BegginerLogic: ''
+        BegginerLogic: HUMBAGM
         NormalLogic: ''
         AdvancedLogic: ''
         GlitchedLogic: ''
       JINJOGM3:
-        BegginerLogic: ''
+        BegginerLogic: true
         NormalLogic: ''
         AdvancedLogic: ''
         GlitchedLogic: ''
       JINJOGM4:
-        BegginerLogic: ''
+        BegginerLogic: honeycomb_prospector
         NormalLogic: ''
         AdvancedLogic: ''
         GlitchedLogic: ''
       JINJOGM5:
-        BegginerLogic: ''
+        BegginerLogic: true
         NormalLogic: ''
         AdvancedLogic: ''
         GlitchedLogic: ''
       JIGGYGM2:
-        BegginerLogic: ''
+        BegginerLogic: canary_mary_free
         NormalLogic: ''
         AdvancedLogic: ''
         GlitchedLogic: ''
       JIGGYGM3:
-        BegginerLogic: ''
-        NormalLogic: ''
+        BegginerLogic: FEGGS && EGGAIM
+        NormalLogic: True
         AdvancedLogic: ''
         GlitchedLogic: ''
       JIGGYGM4:
-        BegginerLogic: ''
+        BegginerLogic: true
         NormalLogic: ''
         AdvancedLogic: ''
         GlitchedLogic: ''
       JIGGYGM5:
-        BegginerLogic: ''
+        BegginerLogic: BBLASTER && BBAYONET && GM_boulders
         NormalLogic: ''
         AdvancedLogic: ''
         GlitchedLogic: ''
       JIGGYGM6:
-        BegginerLogic: ''
+        BegginerLogic: dilberta_free
         NormalLogic: ''
         AdvancedLogic: ''
         GlitchedLogic: ''
       JIGGYGM7:
-        BegginerLogic: ''
+        BegginerLogic: MUMBOGM
         NormalLogic: ''
         AdvancedLogic: ''
         GlitchedLogic: ''
       JIGGYGM8:
-        BegginerLogic: ''
-        NormalLogic: ''
-        AdvancedLogic: ''
+        BegginerLogic: SPRINGB
+        NormalLogic: SPRINGB || ((WWHACK || GLIDE) && (BDRILL || HUMBAGM))
+        AdvancedLogic: SPRINGB || ((WWHACK || GLIDE) && (BDRILL || HUMBAGM)) || (CEGGS && EGGAIM)
         GlitchedLogic: ''
       JIGGYGM9:
-        BegginerLogic: ''
-        NormalLogic: ''
+        BegginerLogic: GM_boulders && SPLITUP
+        NormalLogic: GM_boulders
         AdvancedLogic: ''
         GlitchedLogic: ''
       JIGGYGM10:
-        BegginerLogic: ''
-        NormalLogic: ''
+        BegginerLogic: HUMBAGM
+        NormalLogic: True
         AdvancedLogic: ''
         GlitchedLogic: ''
       GLOWBOGM1:
-        BegginerLogic: ''
+        BegginerLogic: true
         NormalLogic: ''
         AdvancedLogic: ''
         GlitchedLogic: ''
       GLOWBOGM2:
-        BegginerLogic: ''
+        BegginerLogic: true
         NormalLogic: ''
         AdvancedLogic: ''
         GlitchedLogic: ''
       GLOWBOMEG:
-        BegginerLogic: ''
+        BegginerLogic: TTORP && IKEY
         NormalLogic: ''
         AdvancedLogic: ''
         GlitchedLogic: ''
       HONEYCGM1:
-        BegginerLogic: ''
+        BegginerLogic: GM_boulders
         NormalLogic: ''
         AdvancedLogic: ''
         GlitchedLogic: ''
       HONEYCGM2:
-        BegginerLogic: ''
+        BegginerLogic: honeycomb_prospector
         NormalLogic: ''
         AdvancedLogic: ''
         GlitchedLogic: ''
       HONEYCGM3:
-        BegginerLogic: ''
+        BegginerLogic: true
         NormalLogic: ''
         AdvancedLogic: ''
         GlitchedLogic: ''
       CHEATOGM1:
-        BegginerLogic: ''
+        BegginerLogic: canary_mary_free
         NormalLogic: ''
         AdvancedLogic: ''
         GlitchedLogic: ''
       CHEATOGM2:
-        BegginerLogic: ''
+        BegginerLogic: true
         NormalLogic: ''
         AdvancedLogic: ''
         GlitchedLogic: ''
       CHEATOGM3:
-        BegginerLogic: ''
+        BegginerLogic: GGRAB
         NormalLogic: ''
-        AdvancedLogic: ''
+        AdvancedLogic: true
         GlitchedLogic: ''
       BDRILL:
-        BegginerLogic: ''
+        BegginerLogic: check_notes, 85
         NormalLogic: ''
         AdvancedLogic: ''
         GlitchedLogic: ''
       BBAYONET:
-        BegginerLogic: ''
+        BegginerLogic: GM_boulders && check_notes, 95
         NormalLogic: ''
         AdvancedLogic: ''
         GlitchedLogic: ''
       TREBLEGM:
-        BegginerLogic: ''
+        BegginerLogic: true
         NormalLogic: ''
         AdvancedLogic: ''
         GlitchedLogic: ''
       NOTEGGM1:
-        BegginerLogic: ''
+        BegginerLogic: true
         NormalLogic: ''
         AdvancedLogic: ''
         GlitchedLogic: ''
       NOTEGGM2:
-        BegginerLogic: ''
+        BegginerLogic: true
         NormalLogic: ''
         AdvancedLogic: ''
         GlitchedLogic: ''
       NOTEGGM3:
-        BegginerLogic: ''
+        BegginerLogic: true
         NormalLogic: ''
         AdvancedLogic: ''
         GlitchedLogic: ''
       NOTEGGM4:
-        BegginerLogic: ''
+        BegginerLogic: true
         NormalLogic: ''
         AdvancedLogic: ''
         GlitchedLogic: ''
       NOTEGGM5:
-        BegginerLogic: ''
+        BegginerLogic: true
         NormalLogic: ''
         AdvancedLogic: ''
         GlitchedLogic: ''
       NOTEGGM6:
-        BegginerLogic: ''
+        BegginerLogic: true
         NormalLogic: ''
         AdvancedLogic: ''
         GlitchedLogic: ''
       NOTEGGM7:
-        BegginerLogic: ''
+        BegginerLogic: true
         NormalLogic: ''
         AdvancedLogic: ''
         GlitchedLogic: ''
       NOTEGGM8:
-        BegginerLogic: ''
+        BegginerLogic: true
         NormalLogic: ''
         AdvancedLogic: ''
         GlitchedLogic: ''
       NOTEGGM9:
-        BegginerLogic: ''
+        BegginerLogic: true
         NormalLogic: ''
         AdvancedLogic: ''
         GlitchedLogic: ''
       NOTEGGM10:
-        BegginerLogic: ''
+        BegginerLogic: true
         NormalLogic: ''
         AdvancedLogic: ''
         GlitchedLogic: ''
       NOTEGGM11:
-        BegginerLogic: ''
+        BegginerLogic: true
         NormalLogic: ''
         AdvancedLogic: ''
         GlitchedLogic: ''
       NOTEGGM12:
-        BegginerLogic: ''
+        BegginerLogic: true
         NormalLogic: ''
         AdvancedLogic: ''
         GlitchedLogic: ''
       NOTEGGM13:
-        BegginerLogic: ''
+        BegginerLogic: true
         NormalLogic: ''
         AdvancedLogic: ''
         GlitchedLogic: ''
       NOTEGGM14:
-        BegginerLogic: ''
+        BegginerLogic: true
         NormalLogic: ''
         AdvancedLogic: ''
         GlitchedLogic: ''
       NOTEGGM15:
-        BegginerLogic: ''
+        BegginerLogic: true
         NormalLogic: ''
         AdvancedLogic: ''
         GlitchedLogic: ''
       NOTEGGM16:
-        BegginerLogic: ''
+        BegginerLogic: true
         NormalLogic: ''
         AdvancedLogic: ''
         GlitchedLogic: ''
     Exits:
       GMWSJT:
-        BegginerLogic: ''
-        NormalLogic: ''
-        AdvancedLogic: ''
+        BegginerLogic: False
+        NormalLogic: WWHACK && LSPRING && GLIDE && GM_boulders
+        AdvancedLogic: (WWHACK && LSPRING && GLIDE && GM_boulders) || (CEGGS && EGGAIM)
         GlitchedLogic: ''
       IOHPL:
-        BegginerLogic: ''
-        NormalLogic: ''
+        BegginerLogic: GGA
+        NormalLogic: true
         AdvancedLogic: ''
         GlitchedLogic: ''
       CHUFFY:
-        BegginerLogic: ''
+        BegginerLogic: can_beat_king_coal
         NormalLogic: ''
         AdvancedLogic: ''
         GlitchedLogic: ''
       WW:
-        BegginerLogic: ''
+        BegginerLogic: False
         NormalLogic: ''
         AdvancedLogic: ''
-        GlitchedLogic: ''
+        GlitchedLogic: HUMBAGM && CEGGS
     Macros:
       honeycomb_prospector:
-        BegginerLogic: ''
+        BegginerLogic: GM_boulders
         NormalLogic: ''
         AdvancedLogic: ''
-        GlitchedLogic: ''
+        GlitchedLogic: true
       GM_boulders:
-        BegginerLogic: ''
+        BegginerLogic: BDRILL || HUMBAGM
         NormalLogic: ''
         AdvancedLogic: ''
         GlitchedLogic: ''
       canary_mary_free:
-        BegginerLogic: ''
-        NormalLogic: ''
-        AdvancedLogic: ''
-        GlitchedLogic: ''
-      saucer_door_open:
-        BegginerLogic: ''
-        NormalLogic: ''
+        BegginerLogic: HUMBAGM
+        NormalLogic: HUMBAGM || CEGGS
         AdvancedLogic: ''
         GlitchedLogic: ''
   GMWSJT:
     Locations:
       JINJOGM1:
-        BegginerLogic: ''
+        BegginerLogic: true
         NormalLogic: ''
         AdvancedLogic: ''
         GlitchedLogic: ''
@@ -261,43 +256,43 @@ Value:
   CHUFFY:
     Locations:
       JIGGYGM1:
-        BegginerLogic: ''
+        BegginerLogic: can_beat_king_coal
         NormalLogic: ''
         AdvancedLogic: ''
         GlitchedLogic: ''
       CHUFFY:
-        BegginerLogic: ''
+        BegginerLogic: can_beat_king_coal
         NormalLogic: ''
         AdvancedLogic: ''
         GlitchedLogic: ''
     Exits:
       GM:
-        BegginerLogic: ''
+        BegginerLogic: CHUFFY
         NormalLogic: ''
         AdvancedLogic: ''
         GlitchedLogic: ''
       WW:
-        BegginerLogic: ''
+        BegginerLogic: CHUFFY && TRAINSWWW
         NormalLogic: ''
         AdvancedLogic: ''
         GlitchedLogic: ''
       IOHCT:
-        BegginerLogic: ''
+        BegginerLogic: CHUFFY && TRAINSWIH
         NormalLogic: ''
         AdvancedLogic: ''
         GlitchedLogic: ''
       TL:
-        BegginerLogic: ''
+        BegginerLogic: CHUFFY && TRAINSWTD
         NormalLogic: ''
         AdvancedLogic: ''
         GlitchedLogic: ''
       GI1:
-        BegginerLogic: ''
+        BegginerLogic: CHUFFY && TRAINSWGI
         NormalLogic: ''
         AdvancedLogic: ''
         GlitchedLogic: ''
       HP:
-        BegginerLogic: ''
+        BegginerLogic: CHUFFY && TRAINSWHP1
         NormalLogic: ''
         AdvancedLogic: ''
         GlitchedLogic: ''

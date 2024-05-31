@@ -254,3 +254,8 @@ Value:
         NormalLogic: ''
         AdvancedLogic: ''
         GlitchedLogic: ''
+      saucer_door_open:
+        BegginerLogic: GGRAB && GEGGS
+        NormalLogic: GGRAB || (EGGAIM && GEGGS) || ((GEGGS || CEGGS) && LSPRING && GLIDE)
+        AdvancedLogic: GGRAB || (EGGAIM && (GEGGS || CEGGS)) || ((GEGGS || CEGGS) && LSPRING && GLIDE)
+        GlitchedLogic: GGRAB || (EGGAIM && (GEGGS || CEGGS)) || ((GEGGS || CEGGS) && LSPRING && GLIDE) || (GM && CEGGS)

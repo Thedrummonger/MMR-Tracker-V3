@@ -394,6 +394,11 @@ Value:
         NormalLogic: ''
         AdvancedLogic: ''
         GlitchedLogic: ''
+      jiggy_merry_maggie:
+        BegginerLogic: ''
+        NormalLogic: ''
+        AdvancedLogic: ''
+        GlitchedLogic: ''
       doubloon_ledge:
         BegginerLogic: ''
         NormalLogic: ''

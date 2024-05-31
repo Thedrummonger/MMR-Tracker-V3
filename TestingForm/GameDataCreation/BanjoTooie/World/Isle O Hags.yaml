@@ -3,68 +3,68 @@ Value:
   IOHJV:
     Locations:
       JIGGYIH1:
-        BegginerLogic: ''
+        BegginerLogic: WJINJO, 1
         NormalLogic: ''
         AdvancedLogic: ''
         GlitchedLogic: ''
       JIGGYIH2:
-        BegginerLogic: ''
+        BegginerLogic: OJINJO, 2
         NormalLogic: ''
         AdvancedLogic: ''
         GlitchedLogic: ''
       JIGGYIH3:
-        BegginerLogic: ''
+        BegginerLogic: YJINJO, 3
         NormalLogic: ''
         AdvancedLogic: ''
         GlitchedLogic: ''
       JIGGYIH4:
-        BegginerLogic: ''
+        BegginerLogic: BRJINJO, 4
         NormalLogic: ''
         AdvancedLogic: ''
         GlitchedLogic: ''
       JIGGYIH5:
-        BegginerLogic: ''
+        BegginerLogic: GJINJO, 5
         NormalLogic: ''
         AdvancedLogic: ''
         GlitchedLogic: ''
       JIGGYIH6:
-        BegginerLogic: ''
+        BegginerLogic: RJINJO, 6
         NormalLogic: ''
         AdvancedLogic: ''
         GlitchedLogic: ''
       JIGGYIH7:
-        BegginerLogic: ''
+        BegginerLogic: BLJINJO, 7
         NormalLogic: ''
         AdvancedLogic: ''
         GlitchedLogic: ''
       JIGGYIH8:
-        BegginerLogic: ''
+        BegginerLogic: PJINJO, 8
         NormalLogic: ''
         AdvancedLogic: ''
         GlitchedLogic: ''
       JIGGYIH9:
-        BegginerLogic: ''
+        BegginerLogic: BKJINJO, 10
         NormalLogic: ''
         AdvancedLogic: ''
         GlitchedLogic: ''
       JIGGYIH10:
-        BegginerLogic: ''
+        BegginerLogic: true
         NormalLogic: ''
         AdvancedLogic: ''
         GlitchedLogic: ''
       TREBLEJV:
-        BegginerLogic: ''
+        BegginerLogic: GGRAB
         NormalLogic: ''
-        AdvancedLogic: ''
+        AdvancedLogic: true
         GlitchedLogic: ''
       IKEY:
-        BegginerLogic: ''
+        BegginerLogic: GGRAB
         NormalLogic: ''
-        AdvancedLogic: ''
+        AdvancedLogic: GGRAB || (CEGGS || EGGAIM)
         GlitchedLogic: ''
     Exits:
       IOHWH:
-        BegginerLogic: ''
+        BegginerLogic: true
         NormalLogic: ''
         AdvancedLogic: ''
         GlitchedLogic: ''
@@ -72,176 +72,212 @@ Value:
   IOHWH:
     Locations:
       JINJOIH1:
-        BegginerLogic: ''
+        BegginerLogic: true
         NormalLogic: ''
         AdvancedLogic: ''
         GlitchedLogic: ''
       YMEGGH:
-        BegginerLogic: ''
+        BegginerLogic: (has_explosives || BDRILL) && SOLO_HATCH
         NormalLogic: ''
         AdvancedLogic: ''
         GlitchedLogic: ''
       PMEGGH:
-        BegginerLogic: ''
+        BegginerLogic: PMEGG
         NormalLogic: ''
         AdvancedLogic: ''
         GlitchedLogic: ''
       BMEGGH:
-        BegginerLogic: ''
+        BegginerLogic: BMEGG
         NormalLogic: ''
         AdvancedLogic: ''
         GlitchedLogic: ''
       W1:
-        BegginerLogic: ''
+        BegginerLogic: > 
+            (option{game_length, quick} && JIGGY, 1) || 
+            (option{game_length, normal} && JIGGY, 1) || 
+            (option{game_length, long} && JIGGY, 1) ||
+            (option{game_length, custom} && JIGGY, world_1)
         NormalLogic: ''
         AdvancedLogic: ''
         GlitchedLogic: ''
       W2:
-        BegginerLogic: ''
+        BegginerLogic: > 
+            (option{game_length, quick} && JIGGY, 3) || 
+            (option{game_length, normal} && JIGGY, 4) || 
+            (option{game_length, long} && JIGGY, 8) ||
+            (option{game_length, custom} && JIGGY, world_2)
         NormalLogic: ''
         AdvancedLogic: ''
         GlitchedLogic: ''
       W3:
-        BegginerLogic: ''
+        BegginerLogic: > 
+            (option{game_length, quick} && JIGGY, 6) || 
+            (option{game_length, normal} && JIGGY, 8) || 
+            (option{game_length, long} && JIGGY, 16) ||
+            (option{game_length, custom} && JIGGY, world_3)
         NormalLogic: ''
         AdvancedLogic: ''
         GlitchedLogic: ''
       W4:
-        BegginerLogic: ''
+        BegginerLogic: > 
+            (option{game_length, quick} && JIGGY, 10) || 
+            (option{game_length, normal} && JIGGY, 14) || 
+            (option{game_length, long} && JIGGY, 25) ||
+            (option{game_length, custom} && JIGGY, world_4)
         NormalLogic: ''
         AdvancedLogic: ''
         GlitchedLogic: ''
       W5:
-        BegginerLogic: ''
+        BegginerLogic: > 
+            (option{game_length, quick} && JIGGY, 15) || 
+            (option{game_length, normal} && JIGGY, 20) || 
+            (option{game_length, long} && JIGGY, 34) ||
+            (option{game_length, custom} && JIGGY, world_5)
         NormalLogic: ''
         AdvancedLogic: ''
         GlitchedLogic: ''
       W6:
-        BegginerLogic: ''
+        BegginerLogic: > 
+            (option{game_length, quick} && JIGGY, 21) || 
+            (option{game_length, normal} && JIGGY, 28) || 
+            (option{game_length, long} && JIGGY, 43) ||
+            (option{game_length, custom} && JIGGY, world_6)
         NormalLogic: ''
         AdvancedLogic: ''
         GlitchedLogic: ''
       W7:
-        BegginerLogic: ''
+        BegginerLogic: > 
+            (option{game_length, quick} && JIGGY, 28) || 
+            (option{game_length, normal} && JIGGY, 36) || 
+            (option{game_length, long} && JIGGY, 52) ||
+            (option{game_length, custom} && JIGGY, world_7)
         NormalLogic: ''
         AdvancedLogic: ''
         GlitchedLogic: ''
       W8:
-        BegginerLogic: ''
+        BegginerLogic: > 
+            (option{game_length, quick} && JIGGY, 36) || 
+            (option{game_length, normal} && JIGGY, 45) || 
+            (option{game_length, long} && JIGGY, 61) ||
+            (option{game_length, custom} && JIGGY, world_8)
         NormalLogic: ''
         AdvancedLogic: ''
         GlitchedLogic: ''
       W9:
-        BegginerLogic: ''
+        BegginerLogic: > 
+            (option{game_length, quick} && JIGGY, 44) || 
+            (option{game_length, normal} && JIGGY, 55) || 
+            (option{game_length, long} && JIGGY, 70) ||
+            (option{game_length, custom} && JIGGY, world_9)
         NormalLogic: ''
         AdvancedLogic: ''
         GlitchedLogic: ''
     Exits:
       MT:
-        BegginerLogic: ''
+        BegginerLogic: MTA
         NormalLogic: ''
         AdvancedLogic: ''
         GlitchedLogic: ''
       IOHPL:
-        BegginerLogic: ''
+        BegginerLogic: GGRAB
         NormalLogic: ''
-        AdvancedLogic: ''
+        AdvancedLogic: true
         GlitchedLogic: ''
     Macros: {}
   IOHPL:
     Locations:
       JINJOIH4:
-        BegginerLogic: ''
+        BegginerLogic: BDRILL
         NormalLogic: ''
         AdvancedLogic: ''
-        GlitchedLogic: ''
+        GlitchedLogic: true
       HONEYCIH1:
-        BegginerLogic: ''
+        BegginerLogic: true
         NormalLogic: ''
         AdvancedLogic: ''
         GlitchedLogic: ''
       FEGGS:
-        BegginerLogic: ''
+        BegginerLogic: check_notes, 45
         NormalLogic: ''
         AdvancedLogic: ''
         GlitchedLogic: ''
       NOTEIH1:
-        BegginerLogic: ''
+        BegginerLogic: notes_plateau
         NormalLogic: ''
         AdvancedLogic: ''
         GlitchedLogic: ''
       NOTEIH2:
-        BegginerLogic: ''
+        BegginerLogic: notes_plateau
         NormalLogic: ''
         AdvancedLogic: ''
         GlitchedLogic: ''
       NOTEIH3:
-        BegginerLogic: ''
+        BegginerLogic: true
         NormalLogic: ''
         AdvancedLogic: ''
         GlitchedLogic: ''
       NOTEIH4:
-        BegginerLogic: ''
+        BegginerLogic: true
         NormalLogic: ''
         AdvancedLogic: ''
         GlitchedLogic: ''
     Exits:
       GM:
-        BegginerLogic: ''
+        BegginerLogic: gm_jiggy
         NormalLogic: ''
         AdvancedLogic: ''
-        GlitchedLogic: ''
+        GlitchedLogic: true
       IOHPG:
-        BegginerLogic: ''
+        BegginerLogic: FEGGS || EGGAIM
         NormalLogic: ''
         AdvancedLogic: ''
         GlitchedLogic: ''
       IOHCT:
-        BegginerLogic: ''
+        BegginerLogic: SPLITUP
         NormalLogic: ''
         AdvancedLogic: ''
         GlitchedLogic: ''
     Macros:
       notes_plateau:
-        BegginerLogic: ''
-        NormalLogic: ''
+        BegginerLogic: GGRAB
+        NormalLogic: true
         AdvancedLogic: ''
         GlitchedLogic: ''
   IOHPG:
     Locations:
       GEGGS:
-        BegginerLogic: ''
+        BegginerLogic: check_notes, 110
         NormalLogic: ''
         AdvancedLogic: ''
         GlitchedLogic: ''
       NOTEIH5:
-        BegginerLogic: ''
+        BegginerLogic: true
         NormalLogic: ''
         AdvancedLogic: ''
         GlitchedLogic: ''
       NOTEIH6:
-        BegginerLogic: ''
+        BegginerLogic: true
         NormalLogic: ''
         AdvancedLogic: ''
         GlitchedLogic: ''
       NOTEIH7:
-        BegginerLogic: ''
+        BegginerLogic: true
         NormalLogic: ''
         AdvancedLogic: ''
         GlitchedLogic: ''
       NOTEIH8:
-        BegginerLogic: ''
+        BegginerLogic: true
         NormalLogic: ''
         AdvancedLogic: ''
         GlitchedLogic: ''
     Exits:
       WW:
-        BegginerLogic: ''
+        BegginerLogic: WWA
         NormalLogic: ''
         AdvancedLogic: ''
         GlitchedLogic: ''
       IOHWL:
-        BegginerLogic: ''
+        BegginerLogic: TTORP
         NormalLogic: ''
         AdvancedLogic: ''
         GlitchedLogic: ''
@@ -249,38 +285,33 @@ Value:
   IOHCT:
     Locations:
       JINJOIH3:
-        BegginerLogic: ''
+        BegginerLogic: CLAWBTS
         NormalLogic: ''
-        AdvancedLogic: ''
+        AdvancedLogic: CLAWBTS || (CEGGS && EGGAIM)
         GlitchedLogic: ''
       IEGGS:
-        BegginerLogic: ''
+        BegginerLogic: check_notes, 220
         NormalLogic: ''
         AdvancedLogic: ''
         GlitchedLogic: ''
       TRAINSWIH:
-        BegginerLogic: ''
+        BegginerLogic: GGRAB
         NormalLogic: ''
         AdvancedLogic: ''
         GlitchedLogic: ''
     Exits:
       IOHCT_HFP_ENTRANCE:
-        BegginerLogic: ''
-        NormalLogic: ''
-        AdvancedLogic: ''
-        GlitchedLogic: ''
-      HP:
-        BegginerLogic: ''
+        BegginerLogic: true
         NormalLogic: ''
         AdvancedLogic: ''
         GlitchedLogic: ''
       JR:
-        BegginerLogic: ''
+        BegginerLogic: JRA
         NormalLogic: ''
         AdvancedLogic: ''
         GlitchedLogic: ''
       CHUFFY:
-        BegginerLogic: ''
+        BegginerLogic: can_beat_king_coal && TRAINSWIH
         NormalLogic: ''
         AdvancedLogic: ''
         GlitchedLogic: ''
@@ -288,82 +319,87 @@ Value:
   IOHCT_HFP_ENTRANCE:
     Locations:
       GLOWBOIH1:
-        BegginerLogic: ''
+        BegginerLogic: true
         NormalLogic: ''
         AdvancedLogic: ''
         GlitchedLogic: ''
       NOTEIH9:
-        BegginerLogic: ''
+        BegginerLogic: true
         NormalLogic: ''
         AdvancedLogic: ''
         GlitchedLogic: ''
       NOTEIH10:
-        BegginerLogic: ''
+        BegginerLogic: true
         NormalLogic: ''
         AdvancedLogic: ''
         GlitchedLogic: ''
       NOTEIH11:
-        BegginerLogic: ''
+        BegginerLogic: true
         NormalLogic: ''
         AdvancedLogic: ''
         GlitchedLogic: ''
       NOTEIH12:
-        BegginerLogic: ''
+        BegginerLogic: true
         NormalLogic: ''
         AdvancedLogic: ''
         GlitchedLogic: ''
-    Exits: {}
+    Exits: 
+      HP:
+        BegginerLogic: HFA
+        NormalLogic: ''
+        AdvancedLogic: ''
+        GlitchedLogic: ''
     Macros: {}
   IOHWL:
     Locations:
       JINJOIH2:
-        BegginerLogic: ''
-        NormalLogic: ''
+        BegginerLogic: GGRAB
+        NormalLogic: true
         AdvancedLogic: ''
         GlitchedLogic: ''
       CEGGS:
-        BegginerLogic: ''
+        BegginerLogic: check_notes, 315
         NormalLogic: ''
         AdvancedLogic: ''
         GlitchedLogic: ''
       NOTEIH13:
-        BegginerLogic: ''
+        BegginerLogic: true
         NormalLogic: ''
         AdvancedLogic: ''
         GlitchedLogic: ''
       NOTEIH14:
-        BegginerLogic: ''
+        BegginerLogic: true
         NormalLogic: ''
         AdvancedLogic: ''
         GlitchedLogic: ''
       NOTEIH15:
-        BegginerLogic: ''
+        BegginerLogic: true
         NormalLogic: ''
         AdvancedLogic: ''
         GlitchedLogic: ''
       NOTEIH16:
-        BegginerLogic: ''
+        BegginerLogic: true
         NormalLogic: ''
         AdvancedLogic: ''
         GlitchedLogic: ''
     Exits:
       IOHPG:
-        BegginerLogic: ''
+        BegginerLogic: TTORP
         NormalLogic: ''
         AdvancedLogic: ''
-        GlitchedLogic: ''
+        GlitchedLogic: True
       IOHQM:
-        BegginerLogic: ''
+        BegginerLogic: SPRINGB
         NormalLogic: ''
         AdvancedLogic: ''
         GlitchedLogic: ''
       TL:
-        BegginerLogic: ''
+        BegginerLogic: TDA
         NormalLogic: ''
         AdvancedLogic: ''
         GlitchedLogic: ''
       CC:
-        BegginerLogic: ''
+        BegginerLogic: CCA
         NormalLogic: ''
         AdvancedLogic: ''
         GlitchedLogic: ''
@@ -372,18 +408,18 @@ Value:
     Locations: {}
     Exits:
       GIO:
-        BegginerLogic: ''
+        BegginerLogic: GIA
         NormalLogic: ''
         AdvancedLogic: ''
         GlitchedLogic: ''
       IOHWL:
-        BegginerLogic: ''
-        NormalLogic: ''
+        BegginerLogic: GGRAB
+        NormalLogic: true
         AdvancedLogic: ''
         GlitchedLogic: ''
       CK:
-        BegginerLogic: ''
+        BegginerLogic: CLAWBTS && CKA
         NormalLogic: ''
         AdvancedLogic: ''
-        GlitchedLogic: ''
+        GlitchedLogic: CLAWBTS || (GEGGS && CEGGS && EGGAIM)
     Macros: {}

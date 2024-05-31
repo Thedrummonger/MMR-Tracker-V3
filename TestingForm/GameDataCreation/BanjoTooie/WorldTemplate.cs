@@ -103,9 +103,10 @@ namespace TestingForm.GameDataCreation.BanjoTooie
 
             WorldFiles["Isle O Hags"]["IOHPL"].Macros.Add("notes_plateau", new());
 
+            WorldFiles["Mayahem Temple"]["MT"].Macros.Add("jiggy_targitzan", new());
+            WorldFiles["Mayahem Temple"]["MT"].Macros.Add("jiggy_mayhem_kickball", new());
             WorldFiles["Mayahem Temple"]["MT"].Macros.Add("jiggy_treasure_chamber", new());
             WorldFiles["Mayahem Temple"]["MT"].Macros.Add("MT_flight_pad", new());
-            WorldFiles["Mayahem Temple"]["MT"].Macros.Add("jiggy_merry_maggie", new());
             WorldFiles["Mayahem Temple"]["MT"].Macros.Add("prison_compound_open", new());
             WorldFiles["Mayahem Temple"]["MT"].Macros.Add("dilberta_free", new());
             WorldFiles["Mayahem Temple"]["MT"].Macros.Add("can_access_JSG", new());
@@ -114,15 +115,16 @@ namespace TestingForm.GameDataCreation.BanjoTooie
             WorldFiles["Glitter Gulch Mine"]["GM"].Macros.Add("honeycomb_prospector", new());
             WorldFiles["Glitter Gulch Mine"]["GM"].Macros.Add("GM_boulders", new());
             WorldFiles["Glitter Gulch Mine"]["GM"].Macros.Add("canary_mary_free", new());
-            WorldFiles["Glitter Gulch Mine"]["GM"].Macros.Add("saucer_door_open", new());
 
             WorldFiles["Witchyworld"]["WW"].Macros.Add("jiggy_peril", new());
             WorldFiles["Witchyworld"]["WW"].Macros.Add("notes_ww_area51", new());
             WorldFiles["Witchyworld"]["WW"].Macros.Add("smuggle_food", new());
             WorldFiles["Witchyworld"]["WW"].Macros.Add("glitchedInfernoAccess", new());
+            WorldFiles["Witchyworld"]["WW"].Macros.Add("saucer_door_open", new());
 
             WorldFiles["Jolly Rogers Lagoon"]["JR"].Macros.Add("jiggy_see_mee", new());
             WorldFiles["Jolly Rogers Lagoon"]["JR"].Macros.Add("jiggy_ufo", new());
+            WorldFiles["Jolly Rogers Lagoon"]["JR"].Macros.Add("jiggy_merry_maggie", new());
             WorldFiles["Jolly Rogers Lagoon"]["JR"].Macros.Add("doubloon_ledge", new());
             WorldFiles["Jolly Rogers Lagoon"]["JR"].Macros.Add("doubloon_dirtpatch", new());
             WorldFiles["Jolly Rogers Lagoon"]["JR"].Macros.Add("notes_jrl_blubs", new());

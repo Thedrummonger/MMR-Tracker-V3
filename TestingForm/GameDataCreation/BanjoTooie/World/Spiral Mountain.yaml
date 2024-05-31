@@ -4,56 +4,56 @@ Value:
     Locations: {}
     Exits:
       SM:
-        BegginerLogic: ''
+        BegginerLogic: true
         NormalLogic: ''
         AdvancedLogic: ''
         GlitchedLogic: ''
     Macros:
       has_fire:
-        BegginerLogic: ''
+        BegginerLogic: FEGGS || (HUMBAIH && IOHPG)
         NormalLogic: ''
         AdvancedLogic: ''
         GlitchedLogic: ''
       has_explosives:
-        BegginerLogic: ''
-        NormalLogic: ''
+        BegginerLogic: GEGGS
+        NormalLogic: GEGGS || CEGGS
         AdvancedLogic: ''
         GlitchedLogic: ''
       can_beat_king_coal:
-        BegginerLogic: ''
+        BegginerLogic: (MUMBOGM && GM && setting{randomize_chuffy}) || (CHUFFY && setting{randomize_chuffy, false})
         NormalLogic: ''
         AdvancedLogic: ''
         GlitchedLogic: ''
       can_use_battery:
-        BegginerLogic: ''
+        BegginerLogic: SOLO_PACKWH && SOLO_TAXPACK
         NormalLogic: ''
         AdvancedLogic: ''
         GlitchedLogic: ''
   SM:
     Locations:
       CHEATOSM1:
-        BegginerLogic: ''
+        BegginerLogic: true
         NormalLogic: ''
         AdvancedLogic: ''
         GlitchedLogic: ''
       JINJOIH5:
-        BegginerLogic: ''
+        BegginerLogic: TTORP
         NormalLogic: ''
         AdvancedLogic: ''
         GlitchedLogic: ''
       PMEGG:
-        BegginerLogic: ''
+        BegginerLogic: GEGGS
         NormalLogic: ''
         AdvancedLogic: ''
-        GlitchedLogic: ''
+        GlitchedLogic: has_explosives
       BMEGG:
-        BegginerLogic: ''
+        BegginerLogic: GGRAB
         NormalLogic: ''
-        AdvancedLogic: ''
+        AdvancedLogic: GGRAB || (CEGGS && EGGAIM)
         GlitchedLogic: ''
     Exits:
       IOHJV:
-        BegginerLogic: ''
+        BegginerLogic: true
         NormalLogic: ''
         AdvancedLogic: ''
         GlitchedLogic: ''

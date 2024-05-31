@@ -3,264 +3,269 @@ Value:
   MT:
     Locations:
       JINJOMT1:
-        BegginerLogic: ''
-        NormalLogic: ''
+        BegginerLogic: GGRAB && MUMBOMT
+        NormalLogic: MUMBOMT
         AdvancedLogic: ''
-        GlitchedLogic: ''
+        GlitchedLogic: glitchedJSGAccess
       JINJOMT2:
-        BegginerLogic: ''
+        BegginerLogic: MT_flight_pad
         NormalLogic: ''
-        AdvancedLogic: ''
+        AdvancedLogic: MT_flight_pad || (CEGGS && EGGAIM)
         GlitchedLogic: ''
       JINJOMT3:
-        BegginerLogic: ''
+        BegginerLogic: BBLASTER
         NormalLogic: ''
         AdvancedLogic: ''
         GlitchedLogic: ''
       JINJOMT4:
-        BegginerLogic: ''
+        BegginerLogic: true
         NormalLogic: ''
         AdvancedLogic: ''
         GlitchedLogic: ''
       JINJOMT5:
-        BegginerLogic: ''
+        BegginerLogic: true
         NormalLogic: ''
         AdvancedLogic: ''
         GlitchedLogic: ''
       JIGGYMT1:
-        BegginerLogic: ''
+        BegginerLogic: jiggy_targitzan
         NormalLogic: ''
         AdvancedLogic: ''
         GlitchedLogic: ''
       JIGGYMT2:
-        BegginerLogic: ''
+        BegginerLogic: BBLASTER
         NormalLogic: ''
         AdvancedLogic: ''
         GlitchedLogic: ''
       JIGGYMT3:
-        BegginerLogic: ''
+        BegginerLogic: HUMBAMT && MUMBOMT
         NormalLogic: ''
         AdvancedLogic: ''
-        GlitchedLogic: ''
+        GlitchedLogic: HUMBAMT && glitchedJSGAccess
       JIGGYMT4:
-        BegginerLogic: ''
-        NormalLogic: ''
-        AdvancedLogic: ''
+        BegginerLogic: EGGAIM
+        NormalLogic: EGGAIM || (MT_flight_pad && AIREAIM)
+        AdvancedLogic: True
         GlitchedLogic: ''
       JIGGYMT5:
-        BegginerLogic: ''
+        BegginerLogic: EGGAIM && (GGRAB || MT_flight_pad)
         NormalLogic: ''
         AdvancedLogic: ''
         GlitchedLogic: ''
       JIGGYMT6:
-        BegginerLogic: ''
+        BegginerLogic: MUMBOMT
         NormalLogic: ''
         AdvancedLogic: ''
-        GlitchedLogic: ''
+        GlitchedLogic: MUMBOMT || (glitchedJSGAccess && CEGGS)
       JIGGYMT7:
-        BegginerLogic: ''
+        BegginerLogic: GGRAB && prison_compound_open
         NormalLogic: ''
         AdvancedLogic: ''
         GlitchedLogic: ''
       JIGGYMT8:
-        BegginerLogic: ''
+        BegginerLogic: BDRILL && prison_compound_open
         NormalLogic: ''
-        AdvancedLogic: ''
+        AdvancedLogic: prison_compound_open
         GlitchedLogic: ''
       JIGGYMT9:
-        BegginerLogic: ''
+        BegginerLogic: true
         NormalLogic: ''
         AdvancedLogic: ''
         GlitchedLogic: ''
       JIGGYMT10:
-        BegginerLogic: ''
-        NormalLogic: ''
+        BegginerLogic: GGRAB && MUMBOMT
+        NormalLogic: MUMBOMT
         AdvancedLogic: ''
-        GlitchedLogic: ''
+        GlitchedLogic: glitchedJSGAccess
       GLOWBOMT1:
-        BegginerLogic: ''
+        BegginerLogic: true
         NormalLogic: ''
         AdvancedLogic: ''
         GlitchedLogic: ''
       GLOWBOMT2:
-        BegginerLogic: ''
+        BegginerLogic: can_access_JSG
         NormalLogic: ''
         AdvancedLogic: ''
         GlitchedLogic: ''
       HONEYCMT1:
-        BegginerLogic: ''
-        NormalLogic: ''
+        BegginerLogic: HUMBAMT && MUMBOMT
+        NormalLogic: (HUMBAMT && MUMBOMT) || CEGGS
         AdvancedLogic: ''
         GlitchedLogic: ''
       HONEYCMT2:
-        BegginerLogic: ''
-        NormalLogic: ''
+        BegginerLogic: GGRAB
+        NormalLogic: true
         AdvancedLogic: ''
         GlitchedLogic: ''
       HONEYCMT3:
-        BegginerLogic: ''
-        NormalLogic: ''
+        BegginerLogic: EGGAIM
+        NormalLogic: EGGAIM || MT_flight_pad
         AdvancedLogic: ''
         GlitchedLogic: ''
       CHEATOMT1:
-        BegginerLogic: ''
+        BegginerLogic: MT_flight_pad || (EGGAIM && GGRAB)
         NormalLogic: ''
-        AdvancedLogic: ''
+        AdvancedLogic: MT_flight_pad || (EGGAIM && GGRAB) || (CEGGS && EGGAIM)
         GlitchedLogic: ''
       CHEATOMT2:
-        BegginerLogic: ''
+        BegginerLogic: prison_compound_open && GGRAB
         NormalLogic: ''
         AdvancedLogic: ''
         GlitchedLogic: ''
       CHEATOMT3:
-        BegginerLogic: ''
+        BegginerLogic: MUMBOMT && GGRAB
         NormalLogic: ''
-        AdvancedLogic: ''
+        AdvancedLogic: glitchedJSGAccess && GGRAB
         GlitchedLogic: ''
       GGRAB:
-        BegginerLogic: ''
+        BegginerLogic: can_access_JSG && check_notes, 35
         NormalLogic: ''
         AdvancedLogic: ''
         GlitchedLogic: ''
       BBLASTER:
-        BegginerLogic: ''
+        BegginerLogic: check_notes, 30
         NormalLogic: ''
         AdvancedLogic: ''
         GlitchedLogic: ''
       EGGAIM:
-        BegginerLogic: ''
+        BegginerLogic: check_notes, 25
         NormalLogic: ''
         AdvancedLogic: ''
         GlitchedLogic: ''
       TREBLEMT:
-        BegginerLogic: ''
+        BegginerLogic: true
         NormalLogic: ''
         AdvancedLogic: ''
         GlitchedLogic: ''
       NOTEMT1:
-        BegginerLogic: ''
+        BegginerLogic: true
         NormalLogic: ''
         AdvancedLogic: ''
         GlitchedLogic: ''
       NOTEMT2:
-        BegginerLogic: ''
+        BegginerLogic: true
         NormalLogic: ''
         AdvancedLogic: ''
         GlitchedLogic: ''
       NOTEMT3:
-        BegginerLogic: ''
+        BegginerLogic: true
         NormalLogic: ''
         AdvancedLogic: ''
         GlitchedLogic: ''
       NOTEMT4:
-        BegginerLogic: ''
+        BegginerLogic: true
         NormalLogic: ''
         AdvancedLogic: ''
         GlitchedLogic: ''
       NOTEMT5:
-        BegginerLogic: ''
+        BegginerLogic: true
         NormalLogic: ''
         AdvancedLogic: ''
         GlitchedLogic: ''
       NOTEMT6:
-        BegginerLogic: ''
+        BegginerLogic: true
         NormalLogic: ''
         AdvancedLogic: ''
         GlitchedLogic: ''
       NOTEMT7:
-        BegginerLogic: ''
+        BegginerLogic: true
         NormalLogic: ''
         AdvancedLogic: ''
         GlitchedLogic: ''
       NOTEMT8:
-        BegginerLogic: ''
+        BegginerLogic: true
         NormalLogic: ''
         AdvancedLogic: ''
         GlitchedLogic: ''
       NOTEMT9:
-        BegginerLogic: ''
+        BegginerLogic: true
         NormalLogic: ''
         AdvancedLogic: ''
         GlitchedLogic: ''
       NOTEMT10:
-        BegginerLogic: ''
+        BegginerLogic: true
         NormalLogic: ''
         AdvancedLogic: ''
         GlitchedLogic: ''
       NOTEMT11:
-        BegginerLogic: ''
+        BegginerLogic: true
         NormalLogic: ''
         AdvancedLogic: ''
         GlitchedLogic: ''
       NOTEMT12:
-        BegginerLogic: ''
+        BegginerLogic: true
         NormalLogic: ''
         AdvancedLogic: ''
         GlitchedLogic: ''
       NOTEMT13:
-        BegginerLogic: ''
+        BegginerLogic: true
         NormalLogic: ''
         AdvancedLogic: ''
         GlitchedLogic: ''
       NOTEMT14:
-        BegginerLogic: ''
+        BegginerLogic: true
         NormalLogic: ''
         AdvancedLogic: ''
         GlitchedLogic: ''
       NOTEMT15:
-        BegginerLogic: ''
+        BegginerLogic: true
         NormalLogic: ''
         AdvancedLogic: ''
         GlitchedLogic: ''
       NOTEMT16:
-        BegginerLogic: ''
+        BegginerLogic: true
         NormalLogic: ''
         AdvancedLogic: ''
         GlitchedLogic: ''
     Exits:
       TL_HATCH:
-        BegginerLogic: ''
+        BegginerLogic: jiggy_treasure_chamber
         NormalLogic: ''
         AdvancedLogic: ''
         GlitchedLogic: ''
       GM:
-        BegginerLogic: ''
+        BegginerLogic: dilberta_free
         NormalLogic: ''
         AdvancedLogic: ''
         GlitchedLogic: ''
     Macros:
+      jiggy_targitzan:
+        BegginerLogic: BBLASTER
+        NormalLogic: ''
+        AdvancedLogic: ''
+        GlitchedLogic: ''
+      jiggy_mayhem_kickball:
+        BegginerLogic: HUMBAMT && MUMBOMT
+        NormalLogic: ''
+        AdvancedLogic: ''
+        GlitchedLogic: HUMBAMT && glitchedJSGAccess
       jiggy_treasure_chamber:
-        BegginerLogic: ''
+        BegginerLogic: EGGAIM && (GGRAB || MT_flight_pad)
         NormalLogic: ''
         AdvancedLogic: ''
         GlitchedLogic: ''
       MT_flight_pad:
-        BegginerLogic: ''
-        NormalLogic: ''
-        AdvancedLogic: ''
-        GlitchedLogic: ''
-      jiggy_merry_maggie:
-        BegginerLogic: ''
+        BegginerLogic: BDRILL || MUMBOMT
         NormalLogic: ''
         AdvancedLogic: ''
         GlitchedLogic: ''
       prison_compound_open:
-        BegginerLogic: ''
-        NormalLogic: ''
+        BegginerLogic: GEGGS || MUMBOMT
+        NormalLogic: GEGGS || MUMBOMT || CEGGS
         AdvancedLogic: ''
         GlitchedLogic: ''
       dilberta_free:
-        BegginerLogic: ''
-        NormalLogic: ''
+        BegginerLogic: prison_compound_open && BDRILL && HUMBAMT
+        NormalLogic: prison_compound_open && BDRILL
         AdvancedLogic: ''
         GlitchedLogic: ''
       can_access_JSG:
-        BegginerLogic: ''
+        BegginerLogic: MUMBOMT
         NormalLogic: ''
         AdvancedLogic: ''
-        GlitchedLogic: ''
+        GlitchedLogic: glitchedJSGAccess
       glitchedJSGAccess:
-        BegginerLogic: ''
+        BegginerLogic: false
         NormalLogic: ''
         AdvancedLogic: ''
-        GlitchedLogic: ''
+        GlitchedLogic: MT_flight_pad || MUMBOMT
