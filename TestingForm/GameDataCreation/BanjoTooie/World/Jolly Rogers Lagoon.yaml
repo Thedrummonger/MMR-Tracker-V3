@@ -3,429 +3,429 @@ Value:
   JR:
     Locations:
       JRLDB1:
-        BegginerLogic: ''
+        BegginerLogic: true
         NormalLogic: ''
         AdvancedLogic: ''
         GlitchedLogic: ''
       JRLDB2:
-        BegginerLogic: ''
+        BegginerLogic: true
         NormalLogic: ''
         AdvancedLogic: ''
         GlitchedLogic: ''
       JRLDB3:
-        BegginerLogic: ''
+        BegginerLogic: true
         NormalLogic: ''
         AdvancedLogic: ''
         GlitchedLogic: ''
       JRLDB4:
-        BegginerLogic: ''
+        BegginerLogic: true
         NormalLogic: ''
         AdvancedLogic: ''
         GlitchedLogic: ''
       JRLDB5:
-        BegginerLogic: ''
+        BegginerLogic: true
         NormalLogic: ''
         AdvancedLogic: ''
         GlitchedLogic: ''
       JRLDB6:
-        BegginerLogic: ''
+        BegginerLogic: true
         NormalLogic: ''
         AdvancedLogic: ''
         GlitchedLogic: ''
       JRLDB7:
-        BegginerLogic: ''
+        BegginerLogic: true
         NormalLogic: ''
         AdvancedLogic: ''
         GlitchedLogic: ''
       JRLDB8:
-        BegginerLogic: ''
+        BegginerLogic: true
         NormalLogic: ''
         AdvancedLogic: ''
         GlitchedLogic: ''
       JRLDB9:
-        BegginerLogic: ''
+        BegginerLogic: true
         NormalLogic: ''
         AdvancedLogic: ''
         GlitchedLogic: ''
       JRLDB10:
-        BegginerLogic: ''
+        BegginerLogic: true
         NormalLogic: ''
         AdvancedLogic: ''
         GlitchedLogic: ''
       JRLDB11:
-        BegginerLogic: ''
+        BegginerLogic: true
         NormalLogic: ''
         AdvancedLogic: ''
         GlitchedLogic: ''
       JRLDB12:
-        BegginerLogic: ''
+        BegginerLogic: true
         NormalLogic: ''
         AdvancedLogic: ''
         GlitchedLogic: ''
       JRLDB13:
-        BegginerLogic: ''
+        BegginerLogic: true
         NormalLogic: ''
         AdvancedLogic: ''
         GlitchedLogic: ''
       JRLDB14:
-        BegginerLogic: ''
+        BegginerLogic: true
         NormalLogic: ''
         AdvancedLogic: ''
         GlitchedLogic: ''
       JRLDB15:
-        BegginerLogic: ''
+        BegginerLogic: true
         NormalLogic: ''
         AdvancedLogic: ''
         GlitchedLogic: ''
       JRLDB16:
-        BegginerLogic: ''
+        BegginerLogic: true
         NormalLogic: ''
         AdvancedLogic: ''
         GlitchedLogic: ''
       JRLDB17:
-        BegginerLogic: ''
+        BegginerLogic: true
         NormalLogic: ''
         AdvancedLogic: ''
         GlitchedLogic: ''
       JRLDB18:
-        BegginerLogic: ''
+        BegginerLogic: true
         NormalLogic: ''
         AdvancedLogic: ''
         GlitchedLogic: ''
       JRLDB19:
-        BegginerLogic: ''
+        BegginerLogic: doubloon_dirtpatch
         NormalLogic: ''
         AdvancedLogic: ''
         GlitchedLogic: ''
       JRLDB20:
-        BegginerLogic: ''
+        BegginerLogic: doubloon_dirtpatch
         NormalLogic: ''
         AdvancedLogic: ''
         GlitchedLogic: ''
       JRLDB21:
-        BegginerLogic: ''
+        BegginerLogic: doubloon_dirtpatch
         NormalLogic: ''
         AdvancedLogic: ''
         GlitchedLogic: ''
       JRLDB22:
-        BegginerLogic: ''
+        BegginerLogic: true
         NormalLogic: ''
         AdvancedLogic: ''
         GlitchedLogic: ''
       JRLDB23:
-        BegginerLogic: ''
+        BegginerLogic: true
         NormalLogic: ''
         AdvancedLogic: ''
         GlitchedLogic: ''
       JRLDB24:
-        BegginerLogic: ''
+        BegginerLogic: true
         NormalLogic: ''
         AdvancedLogic: ''
         GlitchedLogic: ''
       JRLDB25:
-        BegginerLogic: ''
+        BegginerLogic: true
         NormalLogic: ''
         AdvancedLogic: ''
         GlitchedLogic: ''
       JRLDB26:
-        BegginerLogic: ''
+        BegginerLogic: true
         NormalLogic: ''
         AdvancedLogic: ''
         GlitchedLogic: ''
       JRLDB27:
-        BegginerLogic: ''
+        BegginerLogic: true
         NormalLogic: ''
         AdvancedLogic: ''
         GlitchedLogic: ''
       JRLDB28:
-        BegginerLogic: ''
+        BegginerLogic: true
         NormalLogic: ''
         AdvancedLogic: ''
         GlitchedLogic: ''
       JRLDB29:
-        BegginerLogic: ''
+        BegginerLogic: true
         NormalLogic: ''
         AdvancedLogic: ''
         GlitchedLogic: ''
       JRLDB30:
-        BegginerLogic: ''
+        BegginerLogic: true
         NormalLogic: ''
         AdvancedLogic: ''
         GlitchedLogic: ''
       JINJOJR1:
-        BegginerLogic: ''
-        NormalLogic: ''
-        AdvancedLogic: ''
+        BegginerLogic: DOUBLOON, 28
+        NormalLogic: DOUBLOON, 28 || ((GEGGS || CEGGS) && (SOLO_PACKWH || SOLO_SAPACK || (SOLO_LSPRING && GLIDE)))
+        AdvancedLogic: true
         GlitchedLogic: ''
       JINJOJR2:
-        BegginerLogic: ''
+        BegginerLogic: true
         NormalLogic: ''
         AdvancedLogic: ''
         GlitchedLogic: ''
       JINJOJR3:
-        BegginerLogic: ''
+        BegginerLogic: jiggy_merry_maggie
         NormalLogic: ''
         AdvancedLogic: ''
         GlitchedLogic: ''
       JINJOJR4:
-        BegginerLogic: ''
-        NormalLogic: ''
-        AdvancedLogic: ''
+        BegginerLogic: can_reach_atlantis && GGRAB
+        NormalLogic: can_reach_atlantis
+        AdvancedLogic: true
         GlitchedLogic: ''
       JINJOJR5:
-        BegginerLogic: ''
+        BegginerLogic: can_reach_atlantis
         NormalLogic: ''
-        AdvancedLogic: ''
+        AdvancedLogic: HUMBAJR || AUQAIM || TTORP
         GlitchedLogic: ''
       JINJOGI3:
-        BegginerLogic: ''
+        BegginerLogic: can_reach_atlantis && TTORP
         NormalLogic: ''
-        AdvancedLogic: ''
+        AdvancedLogic: IEGGS && AUQAIM && TTORP
         GlitchedLogic: ''
       JIGGYJR1:
-        BegginerLogic: ''
+        BegginerLogic: HUMBAJR && can_reach_atlantis
         NormalLogic: ''
-        AdvancedLogic: ''
+        AdvancedLogic: HUMBAJR
         GlitchedLogic: ''
       JIGGYJR2:
-        BegginerLogic: ''
-        NormalLogic: ''
+        BegginerLogic: HATCH && GEGGS
+        NormalLogic: HATCH && (GEGGS || CEGGS)
         AdvancedLogic: ''
         GlitchedLogic: ''
       JIGGYJR3:
-        BegginerLogic: ''
+        BegginerLogic: can_reach_atlantis
         NormalLogic: ''
-        AdvancedLogic: ''
+        AdvancedLogic: AUQAIM || (HUMBAJR && EGGAIM)
         GlitchedLogic: ''
       JIGGYJR4:
-        BegginerLogic: ''
-        NormalLogic: ''
+        BegginerLogic: HFP_hot_water_cooled && (GEGGS || BDRILL)
+        NormalLogic: (GEGGS || CEGGS || BDRILL) && HFP_hot_water_cooled
         AdvancedLogic: ''
         GlitchedLogic: ''
       JIGGYJR5:
-        BegginerLogic: ''
-        NormalLogic: ''
-        AdvancedLogic: ''
+        BegginerLogic: GEGGS && SPLITUP && SOLO_GLIDE
+        NormalLogic: (GEGGS || CEGGS) && SPLITUP && SOLO_GLIDE
+        AdvancedLogic: ((GEGGS || CEGGS) && SPLITUP && SOLO_GLIDE) || (CEGGS && EGGAIM)
         GlitchedLogic: ''
       JIGGYJR6:
-        BegginerLogic: ''
+        BegginerLogic: jiggy_merry_maggie
         NormalLogic: ''
         AdvancedLogic: ''
         GlitchedLogic: ''
       JIGGYJR7:
-        BegginerLogic: ''
-        NormalLogic: ''
-        AdvancedLogic: ''
+        BegginerLogic: can_reach_atlantis && GEGGS
+        NormalLogic: can_reach_atlantis && GEGGS && (HUMBAJR || MUMBOJR)
+        AdvancedLogic: GEGGS && AUQAIM && ((TTORP && BDRILL) || MUMBOJR || HUMBAJR)
         GlitchedLogic: ''
       JIGGYJR8:
-        BegginerLogic: ''
+        BegginerLogic: can_reach_atlantis && TTORP
         NormalLogic: ''
-        AdvancedLogic: ''
+        AdvancedLogic: TTORP
         GlitchedLogic: ''
       JIGGYJR9:
-        BegginerLogic: ''
+        BegginerLogic: DOUBLOON, 23
         NormalLogic: ''
         AdvancedLogic: ''
         GlitchedLogic: ''
       JIGGYJR10:
-        BegginerLogic: ''
+        BegginerLogic: jiggy_ufo
         NormalLogic: ''
         AdvancedLogic: ''
         GlitchedLogic: ''
       GLOWBOJR1:
-        BegginerLogic: ''
+        BegginerLogic: true
         NormalLogic: ''
         AdvancedLogic: ''
         GlitchedLogic: ''
       GLOWBOJR2:
-        BegginerLogic: ''
+        BegginerLogic: can_reach_atlantis
         NormalLogic: ''
-        AdvancedLogic: ''
+        AdvancedLogic: true
         GlitchedLogic: ''
       HONEYCJR1:
-        BegginerLogic: ''
+        BegginerLogic: can_reach_atlantis && TTORP
         NormalLogic: ''
-        AdvancedLogic: ''
+        AdvancedLogic: TTORP
         GlitchedLogic: ''
       HONEYCJR2:
-        BegginerLogic: ''
+        BegginerLogic: can_reach_atlantis
         NormalLogic: ''
-        AdvancedLogic: ''
+        AdvancedLogic: true
         GlitchedLogic: ''
       HONEYCJR3:
-        BegginerLogic: ''
-        NormalLogic: ''
-        AdvancedLogic: ''
+        BegginerLogic: (GEGGS || BDRILL) && GGRAB
+        NormalLogic: ((GEGGS || BDRILL || CEGGS) && GGRAB) || ((GEGGS || CEGGS) && (SOLO_GLIDE || (SOLO_LSPRING && SOLO_WWHACK)))
+        AdvancedLogic: ((GEGGS || BDRILL || CEGGS) && GGRAB) || ((GEGGS || CEGGS) && (SOLO_GLIDE || (SOLO_LSPRING && SOLO_WWHACK))) || (CEGGS && EGGAIM)
         GlitchedLogic: ''
       CHEATOJR1:
-        BegginerLogic: ''
+        BegginerLogic: DOUBLOON, 28
         NormalLogic: ''
         AdvancedLogic: ''
         GlitchedLogic: ''
       CHEATOJR2:
-        BegginerLogic: ''
-        NormalLogic: ''
-        AdvancedLogic: ''
+        BegginerLogic: TTORP && (MUMBOJR || has_explosives)
+        NormalLogic: TTORP
+        AdvancedLogic: jiggy_see_mee
         GlitchedLogic: ''
       CHEATOJR3:
-        BegginerLogic: ''
-        NormalLogic: ''
+        BegginerLogic: can_reach_atlantis && TTORP && SOLO_GLIDE
+        NormalLogic: can_reach_atlantis && TTORP && (SOLO_GLIDE || SOLO_LSPRING || (SOLO_PACKWH && GGRAB))
         AdvancedLogic: ''
         GlitchedLogic: ''
       WWHACK:
-        BegginerLogic: ''
+        BegginerLogic: has_explosives && SPLITUP && check_notes, 265
         NormalLogic: ''
         AdvancedLogic: ''
         GlitchedLogic: ''
       TTORP:
-        BegginerLogic: ''
+        BegginerLogic: can_reach_atlantis && GGRAB && check_notes, 290
         NormalLogic: ''
         AdvancedLogic: ''
         GlitchedLogic: ''
       AUQAIM:
-        BegginerLogic: ''
+        BegginerLogic: (has_explosives || DOUBLOON, 28) && check_notes, 275
         NormalLogic: ''
         AdvancedLogic: ''
         GlitchedLogic: ''
       TREBLEJR:
-        BegginerLogic: ''
+        BegginerLogic: can_reach_atlantis
         NormalLogic: ''
-        AdvancedLogic: ''
+        AdvancedLogic: AUQAIM || TTORP || HUMBAJR
         GlitchedLogic: ''
       NOTEJRL1:
-        BegginerLogic: ''
+        BegginerLogic: true
         NormalLogic: ''
         AdvancedLogic: ''
         GlitchedLogic: ''
       NOTEJRL2:
-        BegginerLogic: ''
+        BegginerLogic: true
         NormalLogic: ''
         AdvancedLogic: ''
         GlitchedLogic: ''
       NOTEJRL3:
-        BegginerLogic: ''
+        BegginerLogic: true
         NormalLogic: ''
         AdvancedLogic: ''
         GlitchedLogic: ''
       NOTEJRL4:
-        BegginerLogic: ''
+        BegginerLogic: notes_jrl_blubs
         NormalLogic: ''
         AdvancedLogic: ''
         GlitchedLogic: ''
       NOTEJRL5:
-        BegginerLogic: ''
+        BegginerLogic: notes_jrl_blubs
         NormalLogic: ''
         AdvancedLogic: ''
         GlitchedLogic: ''
       NOTEJRL6:
-        BegginerLogic: ''
+        BegginerLogic: true
         NormalLogic: ''
         AdvancedLogic: ''
         GlitchedLogic: ''
       NOTEJRL7:
-        BegginerLogic: ''
+        BegginerLogic: true
         NormalLogic: ''
         AdvancedLogic: ''
         GlitchedLogic: ''
       NOTEJRL8:
-        BegginerLogic: ''
+        BegginerLogic: true
         NormalLogic: ''
         AdvancedLogic: ''
         GlitchedLogic: ''
       NOTEJRL9:
-        BegginerLogic: ''
+        BegginerLogic: true
         NormalLogic: ''
         AdvancedLogic: ''
         GlitchedLogic: ''
       NOTEJRL10:
-        BegginerLogic: ''
+        BegginerLogic: true
         NormalLogic: ''
         AdvancedLogic: ''
         GlitchedLogic: ''
       NOTEJRL11:
-        BegginerLogic: ''
+        BegginerLogic: true
         NormalLogic: ''
         AdvancedLogic: ''
         GlitchedLogic: ''
       NOTEJRL12:
-        BegginerLogic: ''
+        BegginerLogic: true
         NormalLogic: ''
         AdvancedLogic: ''
         GlitchedLogic: ''
       NOTEJRL13:
-        BegginerLogic: ''
+        BegginerLogic: true
         NormalLogic: ''
         AdvancedLogic: ''
         GlitchedLogic: ''
       NOTEJRL14:
-        BegginerLogic: ''
+        BegginerLogic: true
         NormalLogic: ''
         AdvancedLogic: ''
         GlitchedLogic: ''
       NOTEJRL15:
-        BegginerLogic: ''
+        BegginerLogic: true
         NormalLogic: ''
         AdvancedLogic: ''
         GlitchedLogic: ''
       NOTEJRL16:
-        BegginerLogic: ''
+        BegginerLogic: true
         NormalLogic: ''
         AdvancedLogic: ''
         GlitchedLogic: ''
     Exits:
       GMWSJT:
-        BegginerLogic: ''
+        BegginerLogic: can_reach_atlantis && TTORP
         NormalLogic: ''
-        AdvancedLogic: ''
+        AdvancedLogic: IEGGS && AUQAIM && TTORP
         GlitchedLogic: ''
       IOHCT:
-        BegginerLogic: ''
-        NormalLogic: ''
+        BegginerLogic: JRA
+        NormalLogic: true
         AdvancedLogic: ''
         GlitchedLogic: ''
     Macros:
       jiggy_see_mee:
-        BegginerLogic: ''
+        BegginerLogic: can_reach_atlantis && TTORP
         NormalLogic: ''
-        AdvancedLogic: ''
+        AdvancedLogic: TTORP
         GlitchedLogic: ''
       jiggy_ufo:
-        BegginerLogic: ''
+        BegginerLogic: MUMBOJR && TTORP && EGGAIM && IEGGS
         NormalLogic: ''
         AdvancedLogic: ''
         GlitchedLogic: ''
       jiggy_merry_maggie:
-        BegginerLogic: ''
+        BegginerLogic: can_reach_atlantis
         NormalLogic: ''
-        AdvancedLogic: ''
+        AdvancedLogic: AUQAIM
         GlitchedLogic: ''
       doubloon_ledge:
-        BegginerLogic: ''
-        NormalLogic: ''
+        BegginerLogic: SPLITUP && GEGGS
+        NormalLogic: SPLITUP && (GEGGS || CEGGS)
         AdvancedLogic: ''
         GlitchedLogic: ''
       doubloon_dirtpatch:
-        BegginerLogic: ''
-        NormalLogic: ''
+        BegginerLogic: BDRILL || GEGGS
+        NormalLogic: BDRILL || GEGGS || CEGGS
         AdvancedLogic: ''
         GlitchedLogic: ''
       notes_jrl_blubs:
-        BegginerLogic: ''
-        NormalLogic: ''
+        BegginerLogic: MUMBOJR && (AUQAIM || TTORP)
+        NormalLogic: AUQAIM || TTORP
         AdvancedLogic: ''
         GlitchedLogic: ''
       notes_jrl_eels:
-        BegginerLogic: ''
+        BegginerLogic: can_reach_atlantis
         NormalLogic: ''
-        AdvancedLogic: ''
+        AdvancedLogic: true
         GlitchedLogic: ''
       can_reach_atlantis:
-        BegginerLogic: ''
+        BegginerLogic: IEGGS && long_swim && AUQAIM
         NormalLogic: ''
         AdvancedLogic: ''
         GlitchedLogic: ''
       long_swim:
-        BegginerLogic: ''
-        NormalLogic: ''
+        BegginerLogic: MUMBOJR
+        NormalLogic: MUMBOJR || BDRILL
         AdvancedLogic: ''
         GlitchedLogic: ''

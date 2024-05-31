@@ -3,254 +3,254 @@ Value:
   WW:
     Locations:
       JINJOWW1:
-        BegginerLogic: ''
+        BegginerLogic: true
         NormalLogic: ''
         AdvancedLogic: ''
         GlitchedLogic: ''
       JINJOWW2:
-        BegginerLogic: ''
-        NormalLogic: ''
+        BegginerLogic: GEGGS && EGGAIM
+        NormalLogic: GEGGS
         AdvancedLogic: ''
         GlitchedLogic: ''
       JINJOWW3:
-        BegginerLogic: ''
-        NormalLogic: ''
+        BegginerLogic: GEGGS && HUMBAWW && GGRAB
+        NormalLogic: (GEGGS || CEGGS) && HUMBAWW
         AdvancedLogic: ''
-        GlitchedLogic: ''
+        GlitchedLogic: (GEGGS && HUMBAWW) || CEGGS
       JINJOWW4:
-        BegginerLogic: ''
+        BegginerLogic: true
         NormalLogic: ''
         AdvancedLogic: ''
         GlitchedLogic: ''
       JINJOWW5:
-        BegginerLogic: ''
-        NormalLogic: ''
+        BegginerLogic: GGRAB
+        NormalLogic: true
         AdvancedLogic: ''
         GlitchedLogic: ''
       JIGGYWW1:
-        BegginerLogic: ''
-        NormalLogic: ''
+        BegginerLogic: SPLITUP && GEGGS
+        NormalLogic: SPLITUP && (GEGGS || CEGGS)
         AdvancedLogic: ''
         GlitchedLogic: ''
       JIGGYWW2:
-        BegginerLogic: ''
-        NormalLogic: ''
+        BegginerLogic: HUMBAWW && MUMBOWW && GGRAB
+        NormalLogic: HUMBAWW && MUMBOWW
         AdvancedLogic: ''
-        GlitchedLogic: ''
+        GlitchedLogic: (HUMBAWW && MUMBOWW) || (setting{speed_up_minigames} && GEGGS && CEGGS)
       JIGGYWW3:
-        BegginerLogic: ''
+        BegginerLogic: AIREAIM && EGGAIM && GEGGS
         NormalLogic: ''
         AdvancedLogic: ''
         GlitchedLogic: ''
       JIGGYWW4:
-        BegginerLogic: ''
+        BegginerLogic: jiggy_peril
         NormalLogic: ''
         AdvancedLogic: ''
         GlitchedLogic: ''
       JIGGYWW5:
-        BegginerLogic: ''
-        NormalLogic: ''
+        BegginerLogic: SPLITUP && AIREAIM && GEGGS
+        NormalLogic: SPLITUP && AIREAIM && (GEGGS || CEGGS)
         AdvancedLogic: ''
         GlitchedLogic: ''
       JIGGYWW6:
-        BegginerLogic: ''
-        NormalLogic: ''
+        BegginerLogic: GGRAB
+        NormalLogic: true
         AdvancedLogic: ''
         GlitchedLogic: ''
       JIGGYWW7:
-        BegginerLogic: ''
-        NormalLogic: ''
-        AdvancedLogic: ''
-        GlitchedLogic: ''
+        BegginerLogic: HUMBAWW && MUMBOWW && SOLO_TAXPACK && GEGGS && GGRAB
+        NormalLogic: HUMBAWW && MUMBOWW && SOLO_TAXPACK && (GEGGS || CEGGS)
+        AdvancedLogic: HUMBAWW && MUMBOWW && SOLO_TAXPACK
+        GlitchedLogic: ((HUMBAWW && MUMBOWW) || CEGGS) && SOLO_TAXPACK
       JIGGYWW8:
-        BegginerLogic: ''
-        NormalLogic: ''
+        BegginerLogic: MUMBOWW && HUMBAWW && GGRAB
+        NormalLogic: MUMBOWW && HUMBAWW
         AdvancedLogic: ''
-        GlitchedLogic: ''
+        GlitchedLogic: MUMBOWW && (HUMBAWW || CEGGS)
       JIGGYWW9:
-        BegginerLogic: ''
-        NormalLogic: ''
+        BegginerLogic: HUMBAWW && SPLITUP && GGRAB
+        NormalLogic: HUMBAWW
         AdvancedLogic: ''
-        GlitchedLogic: ''
+        GlitchedLogic: glitchedInfernoAccess
       JIGGYWW10:
-        BegginerLogic: ''
+        BegginerLogic: BDRILL && GEGGS
         NormalLogic: ''
         AdvancedLogic: ''
         GlitchedLogic: ''
       GLOWBOWW1:
-        BegginerLogic: ''
-        NormalLogic: ''
+        BegginerLogic: GGRAB && HUMBAWW
+        NormalLogic: HUMBAWW
         AdvancedLogic: ''
-        GlitchedLogic: ''
+        GlitchedLogic: glitchedInfernoAccess
       GLOWBOWW2:
-        BegginerLogic: ''
-        NormalLogic: ''
+        BegginerLogic: GGRAB
+        NormalLogic: true
         AdvancedLogic: ''
         GlitchedLogic: ''
       HONEYCWW1:
-        BegginerLogic: ''
+        BegginerLogic: GGRAB
         NormalLogic: ''
-        AdvancedLogic: ''
+        AdvancedLogic: true
         GlitchedLogic: ''
       HONEYCWW2:
-        BegginerLogic: ''
-        NormalLogic: ''
+        BegginerLogic: GGRAB && HUMBAWW
+        NormalLogic: HUMBAWW
         AdvancedLogic: ''
-        GlitchedLogic: ''
+        GlitchedLogic: glitchedInfernoAccess
       HONEYCWW3:
-        BegginerLogic: ''
-        NormalLogic: ''
+        BegginerLogic: GEGGS
+        NormalLogic: GEGGS || CEGGS
         AdvancedLogic: ''
         GlitchedLogic: ''
       CHEATOWW1:
-        BegginerLogic: ''
-        NormalLogic: ''
-        AdvancedLogic: ''
+        BegginerLogic: GGRAB
+        NormalLogic: GGRAB || (LSPRING && (WWHACK || GLIDE))
+        AdvancedLogic: GGRAB || (LSPRING && (WWHACK || GLIDE)) || (CEGGS && EGGAIM)
         GlitchedLogic: ''
       CHEATOWW2:
-        BegginerLogic: ''
-        NormalLogic: ''
+        BegginerLogic: GGRAB && HUMBAWW
+        NormalLogic: HUMBAWW
         AdvancedLogic: ''
-        GlitchedLogic: ''
+        GlitchedLogic: glitchedInfernoAccess
       CHEATOWW3:
-        BegginerLogic: ''
+        BegginerLogic: jiggy_peril
         NormalLogic: ''
         AdvancedLogic: ''
         GlitchedLogic: ''
       AIREAIM:
-        BegginerLogic: ''
+        BegginerLogic: check_notes, 180
         NormalLogic: ''
         AdvancedLogic: ''
         GlitchedLogic: ''
       SPLITUP:
-        BegginerLogic: ''
+        BegginerLogic: check_notes, 160
         NormalLogic: ''
         AdvancedLogic: ''
         GlitchedLogic: ''
       PACKWH:
-        BegginerLogic: ''
+        BegginerLogic: SPLITUP && check_notes, 170
         NormalLogic: ''
         AdvancedLogic: ''
         GlitchedLogic: ''
       TREBLEWW:
-        BegginerLogic: ''
-        NormalLogic: ''
+        BegginerLogic: GGRAB && HUMBAWW
+        NormalLogic: HUMBAWW
         AdvancedLogic: ''
-        GlitchedLogic: ''
+        GlitchedLogic: HUMBAWW || CEGGS
       TRAINSWWW:
-        BegginerLogic: ''
-        NormalLogic: ''
+        BegginerLogic: GGRAB
+        NormalLogic: GGRAB || SOLO_LSPRING
         AdvancedLogic: ''
         GlitchedLogic: ''
       NOTEWW1:
-        BegginerLogic: ''
+        BegginerLogic: true
         NormalLogic: ''
         AdvancedLogic: ''
         GlitchedLogic: ''
       NOTEWW2:
-        BegginerLogic: ''
+        BegginerLogic: true
         NormalLogic: ''
         AdvancedLogic: ''
         GlitchedLogic: ''
       NOTEWW3:
-        BegginerLogic: ''
+        BegginerLogic: true
         NormalLogic: ''
         AdvancedLogic: ''
         GlitchedLogic: ''
       NOTEWW4:
-        BegginerLogic: ''
+        BegginerLogic: true
         NormalLogic: ''
         AdvancedLogic: ''
         GlitchedLogic: ''
       NOTEWW5:
-        BegginerLogic: ''
+        BegginerLogic: true
         NormalLogic: ''
         AdvancedLogic: ''
         GlitchedLogic: ''
       NOTEWW6:
-        BegginerLogic: ''
+        BegginerLogic: true
         NormalLogic: ''
         AdvancedLogic: ''
         GlitchedLogic: ''
       NOTEWW7:
-        BegginerLogic: ''
+        BegginerLogic: true
         NormalLogic: ''
         AdvancedLogic: ''
         GlitchedLogic: ''
       NOTEWW8:
-        BegginerLogic: ''
+        BegginerLogic: true
         NormalLogic: ''
         AdvancedLogic: ''
         GlitchedLogic: ''
       NOTEWW9:
-        BegginerLogic: ''
+        BegginerLogic: notes_ww_area51
         NormalLogic: ''
         AdvancedLogic: ''
         GlitchedLogic: ''
       NOTEWW10:
-        BegginerLogic: ''
+        BegginerLogic: notes_ww_area51
         NormalLogic: ''
         AdvancedLogic: ''
         GlitchedLogic: ''
       NOTEWW11:
-        BegginerLogic: ''
+        BegginerLogic: true
         NormalLogic: ''
         AdvancedLogic: ''
         GlitchedLogic: ''
       NOTEWW12:
-        BegginerLogic: ''
+        BegginerLogic: true
         NormalLogic: ''
         AdvancedLogic: ''
         GlitchedLogic: ''
       NOTEWW13:
-        BegginerLogic: ''
+        BegginerLogic: true
         NormalLogic: ''
         AdvancedLogic: ''
         GlitchedLogic: ''
       NOTEWW14:
-        BegginerLogic: ''
+        BegginerLogic: true
         NormalLogic: ''
         AdvancedLogic: ''
         GlitchedLogic: ''
       NOTEWW15:
-        BegginerLogic: ''
+        BegginerLogic: true
         NormalLogic: ''
         AdvancedLogic: ''
         GlitchedLogic: ''
       NOTEWW16:
-        BegginerLogic: ''
+        BegginerLogic: true
         NormalLogic: ''
         AdvancedLogic: ''
         GlitchedLogic: ''
     Exits:
       IOHPG:
-        BegginerLogic: ''
+        BegginerLogic: WWA
         NormalLogic: ''
         AdvancedLogic: ''
         GlitchedLogic: ''
       CHUFFY:
-        BegginerLogic: ''
+        BegginerLogic: can_beat_king_coal && TRAINSWWW
         NormalLogic: ''
         AdvancedLogic: ''
         GlitchedLogic: ''
     Macros:
       jiggy_peril:
-        BegginerLogic: ''
-        NormalLogic: ''
+        BegginerLogic: HUMBAGM && MUMBOWW && HUMBAWW && saucer_door_open && GGRAB && GM && GEGGS
+        NormalLogic: HUMBAGM && MUMBOWW && HUMBAWW && saucer_door_open && GM && (GEGGS || CEGGS)
         AdvancedLogic: ''
         GlitchedLogic: ''
       notes_ww_area51:
-        BegginerLogic: ''
-        NormalLogic: ''
-        AdvancedLogic: ''
+        BegginerLogic: GEGGS
+        NormalLogic: GEGGS || CEGGS
+        AdvancedLogic: GEGGS || CEGGS || SPLITUP
         GlitchedLogic: ''
       smuggle_food:
-        BegginerLogic: ''
+        BegginerLogic: CLAWBTS
         NormalLogic: ''
         AdvancedLogic: ''
         GlitchedLogic: ''
       glitchedInfernoAccess:
-        BegginerLogic: ''
+        BegginerLogic: HUMBAWW || CEGGS
         NormalLogic: ''
         AdvancedLogic: ''
         GlitchedLogic: ''

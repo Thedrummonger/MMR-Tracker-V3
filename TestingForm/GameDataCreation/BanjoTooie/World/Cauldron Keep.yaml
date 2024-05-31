@@ -4,7 +4,7 @@ Value:
     Locations: {}
     Exits:
       H1:
-        BegginerLogic: ''
+        BegginerLogic: (setting{open_hag1} || JIGGY, 70) && (SOLO_PACKWH || SOLO_SAPACK || SOLO_SHPACK)
         NormalLogic: ''
         AdvancedLogic: ''
         GlitchedLogic: ''
@@ -12,9 +12,20 @@ Value:
   H1:
     Locations:
       HAG1:
-        BegginerLogic: ''
+        BegginerLogic: BBLASTER && CEGGS
         NormalLogic: ''
         AdvancedLogic: ''
         GlitchedLogic: ''
     Exits: {}
-    Macros: {}
+    Macros:
+      GameCleared:
+        BegginerLogic: >
+            (setting{victory_condition, hag1} && VICTORY) ||
+            (setting{victory_condition, minigame_hunt} && MUMBOTOKEN, 15) ||
+            (setting{victory_condition, boss_hunt} && MUMBOTOKEN, 8) ||
+            (setting{victory_condition, jinjo_family_rescue} && MUMBOTOKEN, 9) ||
+            (setting{victory_condition, wonder_wing_challenge} && MUMBOTOKEN, 32 && VICTORY) ||
+            (setting{victory_condition, token_hunt} && MUMBOTOKEN, token_hunt_length) ||
+        NormalLogic: ''
+        AdvancedLogic: ''
+        GlitchedLogic: ''
