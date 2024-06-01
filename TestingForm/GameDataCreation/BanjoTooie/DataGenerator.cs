@@ -17,39 +17,6 @@ namespace TestingForm.GameDataCreation.BanjoTooie
     internal class DataGenerator
     {
         static LogicStringParser logicparser = new LogicStringParser();
-        public class BTLogicArea
-        {
-            public Dictionary<string, BTLogicEntry> locations = [];
-            public Dictionary<string, BTLogicEntry> exits = [];
-            public Dictionary<string, BTLogicEntry> events = [];
-        }
-        public class BTLogicEntry
-        {
-            public string beginnerLogic = "";
-            public string normalLogic = "";
-            public string advancedLogic = "";
-
-            public string GetFinalLogicString(string ID)
-            {
-                if (string.IsNullOrWhiteSpace(beginnerLogic)) { throw new ArgumentNullException($"Logic for {ID} Not Implemented!"); }
-
-                if (string.IsNullOrWhiteSpace(normalLogic) && string.IsNullOrWhiteSpace(advancedLogic)) { return beginnerLogic; }
-                else if (string.IsNullOrWhiteSpace(normalLogic))
-                {
-                    return $"((setting{{logic_type, advanced, false}}) && ({beginnerLogic})) || " +
-                    $"((setting{{logic_type, advanced}}) && ({advancedLogic}))";
-                }
-                else if (string.IsNullOrWhiteSpace(advancedLogic))
-                {
-                    return $"((setting{{logic_type, beginner}}) && ({beginnerLogic})) || " +
-                    $"((setting{{logic_type, beginner, false}}) && ({normalLogic}))";
-                }
-
-                return $"((setting{{logic_type, beginner}}) && ({beginnerLogic})) || " +
-                    $"((setting{{logic_type, normal}}) && ({normalLogic})) || " +
-                    $"((setting{{logic_type, advanced}}) && ({advancedLogic}))";
-            }
-        }
         public static void GenData(out MMRData.LogicFile FinalLogic, out LogicDictionaryData.LogicDictionary Finaldictionary)
         {
             var Locations = Utility.DeserializeJsonFile<Dictionary<string, string>>(
@@ -68,12 +35,17 @@ namespace TestingForm.GameDataCreation.BanjoTooie
             LogicDictionary dictionary = new()
             {
                 GameCode = "BT",
-                GameName = "Banjo Tooie",
+                GameName = "Banjo-Tooie",
                 LogicVersion = 1,
                 NetPlaySupported = true,
-                WinCondition = "WIN",
+                WinCondition = "GameCleared",
                 AreaOrder = AreaOrder(),
-                RootAreas = ["Menu"]
+                RootAreas = ["Menu"],
+                SpoilerLogInstructions = new()
+                {
+                    ArchipelagoParserPath = "BT",
+                    ArchipelagoFileImports = new() { { "APPlayerFile", ("Archipelago Player YAML", ["yaml", "txt"]) } }
+                }
             };
             MMRData.LogicFile Logic = new()
             {
@@ -116,18 +88,18 @@ namespace TestingForm.GameDataCreation.BanjoTooie
 
             foreach(var i in Directory.GetFiles(WorldGraphFolder))
             {
-                var WorldFile = Utility.DeserializeYAMLFile<Dictionary<string, BTLogicArea>>(i);
-                foreach(var area in WorldFile)
+                var WorldFile = Utility.DeserializeYAMLFile<KeyValuePair<string, Dictionary<string, WorldTemplate.WorldArea>>>(i);
+                foreach(var area in WorldFile.Value)
                 {
-                    foreach(var loc in area.Value.locations)
+                    foreach(var loc in area.Value.Locations)
                     {
                         AddLogicEntry(loc.Key, loc.Value.GetFinalLogicString(loc.Key), area.Key);
                     }
-                    foreach (var loc in area.Value.events)
+                    foreach (var loc in area.Value.Macros)
                     {
                         AddLogicEntry(loc.Key, loc.Value.GetFinalLogicString(loc.Key), area.Key);
                     }
-                    foreach (var loc in area.Value.exits)
+                    foreach (var loc in area.Value.Exits)
                     {
                         string ExitID = $"{area.Key} => {loc.Key}";
                         AddLogicEntry(ExitID, loc.Value.GetFinalLogicString(loc.Key), area.Key);
@@ -158,13 +130,21 @@ namespace TestingForm.GameDataCreation.BanjoTooie
                 Value = true
             }.CreateSimpleValues());
 
+            dictionary.ToggleOptions.Add("speed_up_minigames", new OptionData.ToggleOption(null)
+            {
+                ID = "speed_up_minigames",
+                Name = "Speed Up Minigames",
+                Description = "Start 3-round minigames at Round 3",
+                Value = true
+            }.CreateSimpleValues());
+
             dictionary.ChoiceOptions.Add("logic_type", new OptionData.ChoiceOption(null)
             {
                 ID = "logic_type",
                 Name = "Logic Type",
                 Description = "Choose your logic difficulty if you are expected to perform tricks to reach certain areas.",
                 Value = "beginner"
-            }.CreateSimpleValues(("beginner", "Beginner"), ("normal", "Normal"), ("advanced", "Advanced")));
+            }.CreateSimpleValues(("beginner", "Beginner"), ("normal", "Normal"), ("advanced", "Advanced"), ("glitched", "Glitched")));
 
             dictionary.ChoiceOptions.Add("victory_condition", new OptionData.ChoiceOption(null)
             {
@@ -172,16 +152,46 @@ namespace TestingForm.GameDataCreation.BanjoTooie
                 Name = "Victory Condition",
                 Description = "Choose which victory condition you want.",
                 Value = "hag1"
-            }.CreateSimpleValues(("hag1", "Hag 1"), ("minigame_hunt", "Minigames"), ("boss_hunt", "Bosses")));
+            }.CreateSimpleValues(
+                ("hag1", "Hag 1"), 
+                ("minigame_hunt", "Minigames"), 
+                ("boss_hunt", "Bosses"), 
+                ("jinjo_family_rescue", "Jinjo Families"),
+                ("wonder_wing_challenge", "Wonder Wing Challenge"),
+                ("token_hunt", "Token Hunt")));
 
-            Logic.Logic.Add(new MMRData.JsonFormatLogicItem
+            dictionary.ChoiceOptions.Add("game_length", new OptionData.ChoiceOption(null)
             {
-                Id = "WIN",
-                ConditionalItems = [
-                    ["setting{victory_condition, hag1}", "VICTORY"],
-                    ["setting{victory_condition, minigame_hunt}", "MUMBOTOKEN, 15"],
-                    ["setting{victory_condition, boss_hunt}", "MUMBOTOKEN, 8"]]
+                ID = "game_length",
+                Name = "World Requirements",
+                Description = "Choose how quickly the worlds open between each over.",
+                Value = "normal"
+            }.CreateSimpleValues(("quick", "Quick"),("normal", "Normal"),("long", "Long"),("custom", "Custom")));
+
+            int[] worldDefaults = [1, 4, 8, 14, 20, 28, 36, 45, 55];
+            for (int i = 1; i <= 9; i++)
+            {
+                dictionary.IntOptions.Add($"world_{i}", new OptionData.IntOption(null)
+                {
+                    Name = $"World {i} Jiggy requirement",
+                    ID = $"world_{i}",
+                    Value = worldDefaults[i-1],
+                    SubCategory = "World Requirements",
+                    Conditionals = [["setting{game_length, custom}"]]
+                });
+            }
+            dictionary.IntOptions.Add($"token_hunt_length", new OptionData.IntOption(null)
+            {
+                Name = $"Token Hunt Length",
+                ID = $"token_hunt_length",
+                Value = 5,
+                Conditionals = [["setting{victory_condition, token_hunt}"]]
             });
+
+            string[] Solo_Moves = ["GLIDE", "HATCH", "LSPRING", "PACKWH", "SAPACK", "SHPACK", "SNPACK", "TAXPACK", "WWHACK"];
+            foreach(var i in Solo_Moves) {
+                Logic.Logic.Add(new MMRData.JsonFormatLogicItem { Id = $"SOLO_{i}", RequiredItems = ["SPLITUP", i] });
+            }
 
             foreach (var l in Logic.Logic)
             {
@@ -189,6 +199,8 @@ namespace TestingForm.GameDataCreation.BanjoTooie
                 LogicUtilities.MakeCommonConditionalsRequirements(l);
                 LogicUtilities.SortConditionals(l);
             }
+
+            MumboTokenLocationHandeling.AddMumbo(dictionary, Logic);
 
             void AddEntrance(string ID, string Area, string Exit)
             {
@@ -272,6 +284,7 @@ namespace TestingForm.GameDataCreation.BanjoTooie
         public static string[] GetItemTypes(string Key)
         {
             if (Key == "VICTORY") { return ["VICTORY"]; }
+            if (Key == "MUMBOTOKEN") { return ["item", "MUMBOTOKEN"]; }
             return ["item"];
         }
         public static string GetVanillaItems(Dictionary<string, string> OriginalItemDict, string Key)

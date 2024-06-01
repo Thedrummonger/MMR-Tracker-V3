@@ -288,7 +288,7 @@ namespace Windows_Form_Frontend
             TrackerSettings.UpdateDefaultOptionFile(x => x.SetAPServerIP(txtServerAddress.Text).SetAPServerPort((int)nudPort.Value));
             InstanceContainer.Instance.StaticOptions.OptionFile.SetAPServerIP(txtServerAddress.Text).SetAPServerPort((int)nudPort.Value);
             nudPlayer.Value = InstanceContainer.netConnection.ArchipelagoClient.Session.ConnectionInfo.Slot;
-            if (InstanceContainer.Instance.SpoilerLog is null)
+            if (InstanceContainer.Instance.SpoilerLog is null && InstanceContainer.Instance.LogicDictionary.SpoilerLogInstructions is not null)
             {
                 var Result = MessageBox.Show("Would you like to apply spoiler data?", "Import spoiler", MessageBoxButtons.YesNo);
                 if (Result == DialogResult.Yes) 

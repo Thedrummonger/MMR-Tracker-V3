@@ -241,7 +241,7 @@ Value:
     Macros:
       jiggy_stomping_plains:
         BegginerLogic: IEGGS && SPRINGB
-        NormalLogic: SPRINGB && (SOLO_WWHACK || GLIDE_GLIDE || IEGGS)
+        NormalLogic: SPRINGB && (SOLO_WWHACK || SOLO_GLIDE || IEGGS)
         AdvancedLogic: SPRINGB
         GlitchedLogic: true
       can_beat_terry:

@@ -140,7 +140,7 @@ namespace MMR_Tracker_V3.NetCode
             var AllItems = Session.Items.AllItemsReceived.Select(x => (Session.Items.GetItemName(x.Item), Session.Locations.GetLocationNameFromId(x.Location), x.Player)).ToArray();
             var AllLocations = Session.Locations.AllLocationsChecked.Select(x => Session.Locations.GetLocationNameFromId(x)).ToArray();
             foreach (var i in Data.InstanceContainer.Instance.ItemPool.Values) { i.AmountAquiredOnline = []; }
-            List<LocationData.LocationObject> ToCheck = new List<LocationData.LocationObject>();
+            List<LocationData.LocationObject> ToCheck = [];
             foreach (var Entry in AllItems)
             {
                 bool IsLocal = Entry.Player == Data.InstanceContainer.netConnection.PlayerID;
@@ -153,7 +153,8 @@ namespace MMR_Tracker_V3.NetCode
                 }
                 else if (IsLocal && location is not null && location.CheckState != MiscData.CheckState.Checked)
                 {
-                    location.Randomizeditem.Item = Entry.Item1;
+                    if (Item is null) { Debug.WriteLine($"Server sent unknown item {Entry.Item1}"); }
+                    location.Randomizeditem.Item = Item is null ? Entry.Item1 : Item.ID;
                     ToCheck.Add(location);
                 }
             }

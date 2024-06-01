@@ -242,6 +242,7 @@ namespace MMR_Tracker_V3.SpoilerLogHandling
                 "PMR" => HardCodedParsers.PMR.ParseSpoiler(IC.Instance, DataStore),
                 "TPR" => HardCodedParsers.TPR.readAndApplySpoilerLog(IC.Instance, DataStore),
                 "MC" => HardCodedParsers.Minecraft.ReadSpoiler(IC.Instance, DataStore),
+                "BT" => HardCodedParsers.BanjoTooie.ReadSpoiler(IC.Instance, DataStore),
                 "OOTMM" => HardCodedParsers.OOTMMSpoilerLogTools.readAndApplySpoilerLog(IC.Instance, DataStore),
                 _ => null,
             };

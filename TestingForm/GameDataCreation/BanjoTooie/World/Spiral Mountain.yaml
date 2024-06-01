@@ -20,7 +20,7 @@ Value:
         AdvancedLogic: ''
         GlitchedLogic: ''
       can_beat_king_coal:
-        BegginerLogic: (MUMBOGM && GM && setting{randomize_chuffy}) || (CHUFFY && setting{randomize_chuffy, false})
+        BegginerLogic: (MUMBOGM && GM && setting{randomize_chuffy, false}) || (CHUFFY && setting{randomize_chuffy})
         NormalLogic: ''
         AdvancedLogic: ''
         GlitchedLogic: ''

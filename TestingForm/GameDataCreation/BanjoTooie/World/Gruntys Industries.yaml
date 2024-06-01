@@ -251,7 +251,7 @@ Value:
         GlitchedLogic: ''
       JIGGYGI6:
         BegginerLogic: MUMBOGI && GEGGS && EGGAIM && can_use_battery && HUMBAGI
-        NormalLogic: MUMBOGI && GEGGS && ((EGGAIM && HUMBAGI) || SOLO_LSPRING)) && can_use_battery
+        NormalLogic: MUMBOGI && GEGGS && ((EGGAIM && HUMBAGI) || SOLO_LSPRING) && can_use_battery
         AdvancedLogic: MUMBOGI && GEGGS && can_use_battery
         GlitchedLogic: GEGGS && ((MUMBOGI && can_use_battery) || CEGGS)
       JIGGYGI9:

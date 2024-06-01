@@ -64,8 +64,8 @@ Value:
         GlitchedLogic: ''
       JIGGYHP9:
         BegginerLogic: jiggy_ufo && BDRILL && SOLO_HATCH && SOLO_GLIDE && MUMBOHP
-        NormalLogic: jiggy_ufo && MUMBOHP && BDRILL && && SOLO_HATCH && (SOLO_WWHACK || SOLO_GLIDE)
-        AdvancedLogic: jiggy_ufo && MUMBOHP && BDRILL && && SOLO_HATCH
+        NormalLogic: jiggy_ufo && MUMBOHP && BDRILL && SOLO_HATCH && (SOLO_WWHACK || SOLO_GLIDE)
+        AdvancedLogic: jiggy_ufo && MUMBOHP && BDRILL && SOLO_HATCH
         GlitchedLogic: ''
       JIGGYHP10:
         BegginerLogic: SPLITUP && GGRAB

@@ -22,6 +22,52 @@ namespace TestingForm.GameDataCreation.BanjoTooie
             public string NormalLogic = "";
             public string AdvancedLogic = "";
             public string GlitchedLogic = "";
+
+            public string GetFinalLogicString(string ID)
+            {
+                if (string.IsNullOrWhiteSpace(BegginerLogic)) { throw new ArgumentNullException($"Logic for {ID} Not Implemented!"); }
+                else if (hasNoLogic(NormalLogic, AdvancedLogic, GlitchedLogic))
+                {
+                    return BegginerLogic;
+                }
+                else if (hasLogic(NormalLogic) && hasNoLogic(AdvancedLogic, GlitchedLogic))
+                {
+                    return
+                        $"(setting{{logic_type, beginner}} && ({BegginerLogic})) || " +
+                        $"(setting{{logic_type, beginner, false}} && ({NormalLogic}))";
+                }
+                else if (hasLogic(AdvancedLogic) && hasNoLogic(NormalLogic, GlitchedLogic))
+                {
+                    return
+                        $"((setting{{logic_type, beginner}} || setting{{logic_type, normal}}) && ({BegginerLogic})) || " +
+                        $"((setting{{logic_type, advanced}} || setting{{logic_type, glitched}}) && ({AdvancedLogic}))";
+                }
+                else if (hasLogic(GlitchedLogic) && hasNoLogic(NormalLogic, AdvancedLogic))
+                {
+                    return
+                        $"(setting{{logic_type, glitched, false}} && ({BegginerLogic})) || " +
+                        $"(setting{{logic_type, glitched}} && ({GlitchedLogic}))";
+                }
+
+                if (hasNoLogic(NormalLogic)) { NormalLogic = BegginerLogic; }
+                if (hasNoLogic(AdvancedLogic)) { AdvancedLogic = NormalLogic; }
+                if (hasNoLogic(GlitchedLogic)) { GlitchedLogic = AdvancedLogic; }
+
+                return
+                    $"(setting{{logic_type, beginner}} && ({BegginerLogic})) || " +
+                    $"(setting{{logic_type, normal}} && ({NormalLogic})) || " +
+                    $"(setting{{logic_type, advanced}} && ({AdvancedLogic})) || " +
+                    $"(setting{{logic_type, glitched}} && ({GlitchedLogic}))";
+            }
+        }
+
+        private static bool hasLogic(params string[] args)
+        {
+            return !args.Any(string.IsNullOrWhiteSpace);
+        }
+        private static bool hasNoLogic(params string[] args)
+        {
+            return args.All(string.IsNullOrWhiteSpace);
         }
 
         public void WriteWorldFiles()

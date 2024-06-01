@@ -91,8 +91,8 @@ namespace MMR_Tracker_V3.TrackerObjects
                 {
                     foreach (var optionVal in ValueList)
                     {
-                        if (CaseSensitive && optionVal.Key.Equals(Value)) { return optionVal.Key; }
-                        else if (!CaseSensitive && optionVal.Key.Equals(Value, StringComparison.CurrentCultureIgnoreCase)) { return optionVal.Key; }
+                        if (CaseSensitive && optionVal.Key.Equals(stringBoolVal)) { return optionVal.Key; }
+                        else if (!CaseSensitive && optionVal.Key.Equals(stringBoolVal, StringComparison.CurrentCultureIgnoreCase)) { return optionVal.Key; }
                     }
                     throw new Exception($"{_Value.GetType().Name} {_Value} Could not be applied to a choice option");
                 }

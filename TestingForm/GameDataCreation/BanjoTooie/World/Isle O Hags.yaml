@@ -223,7 +223,7 @@ Value:
         GlitchedLogic: ''
     Exits:
       GM:
-        BegginerLogic: gm_jiggy
+        BegginerLogic: GGA
         NormalLogic: ''
         AdvancedLogic: ''
         GlitchedLogic: true
