@@ -3,244 +3,239 @@ Value:
   CC:
     Locations:
       JINJOCC1:
-        BegginerLogic: ''
-        NormalLogic: ''
-        AdvancedLogic: ''
+        BegginerLogic: SOLO_SHPACK
+        NormalLogic: SOLO_SHPACK || SOLO_LSPRING
+        AdvancedLogic: SOLO_SHPACK || SOLO_LSPRING || (SPLITUP && CEGGS && EGGAIM)
         GlitchedLogic: ''
       JINJOCC2:
-        BegginerLogic: ''
-        NormalLogic: ''
+        BegginerLogic: SAPACK && grow_beanstalk && can_use_floatus
+        NormalLogic: True
         AdvancedLogic: ''
         GlitchedLogic: ''
       JINJOCC3:
-        BegginerLogic: ''
-        NormalLogic: ''
-        AdvancedLogic: ''
+        BegginerLogic: SPLITUP
+        NormalLogic: SPLITUP || (SPRINGB && BDRILL)
+        AdvancedLogic: SPLITUP || (SPRINGB && BDRILL) || (CEGGS && EGGAIM)
         GlitchedLogic: ''
       JINJOCC4:
-        BegginerLogic: ''
+        BegginerLogic: True
         NormalLogic: ''
         AdvancedLogic: ''
         GlitchedLogic: ''
       JINJOCC5:
-        BegginerLogic: ''
+        BegginerLogic: True
         NormalLogic: ''
         AdvancedLogic: ''
         GlitchedLogic: ''
       JIGGYCC1:
-        BegginerLogic: ''
+        BegginerLogic: true
         NormalLogic: ''
         AdvancedLogic: ''
         GlitchedLogic: ''
       JIGGYCC2:
-        BegginerLogic: ''
+        BegginerLogic: SPRINGB && SOLO_SAPACK && grow_beanstalk && can_use_floatus
         NormalLogic: ''
-        AdvancedLogic: ''
+        AdvancedLogic: SPRINGB && SOLO_SAPACK && grow_beanstalk && (can_use_floatus || SOLO_PACKWH)
         GlitchedLogic: ''
       JIGGYCC3:
-        BegginerLogic: ''
+        BegginerLogic: jiggy_gold_pot
         NormalLogic: ''
         AdvancedLogic: ''
         GlitchedLogic: ''
       JIGGYCC4:
-        BegginerLogic: ''
+        BegginerLogic: canary_mary_free
         NormalLogic: ''
         AdvancedLogic: ''
         GlitchedLogic: ''
       JIGGYCC5:
-        BegginerLogic: ''
+        BegginerLogic: HUMBACC
         NormalLogic: ''
         AdvancedLogic: ''
         GlitchedLogic: ''
       JIGGYCC6:
-        BegginerLogic: ''
+        BegginerLogic: HUMBACC
         NormalLogic: ''
         AdvancedLogic: ''
         GlitchedLogic: ''
       JIGGYCC7:
-        BegginerLogic: ''
+        BegginerLogic: SAPACK && grow_beanstalk && can_use_floatus && SOLO_SHPACK
         NormalLogic: ''
         AdvancedLogic: ''
-        GlitchedLogic: ''
+        GlitchedLogic: True
       JIGGYCC8:
-        BegginerLogic: ''
-        NormalLogic: ''
+        BegginerLogic: SOLO_WWHACK
+        NormalLogic: SPLITUP
         AdvancedLogic: ''
         GlitchedLogic: ''
       JIGGYCC9:
-        BegginerLogic: ''
-        NormalLogic: ''
+        BegginerLogic: CEGGS && GGRAB
+        NormalLogic: CEGGS
         AdvancedLogic: ''
         GlitchedLogic: ''
       JIGGYCC10:
-        BegginerLogic: ''
+        BegginerLogic: SOLO_SHPACK
         NormalLogic: ''
         AdvancedLogic: ''
         GlitchedLogic: ''
       JIGGYTD2:
-        BegginerLogic: ''
+        BegginerLogic: TTORP
         NormalLogic: ''
         AdvancedLogic: ''
         GlitchedLogic: ''
       GLOWBOCC1:
-        BegginerLogic: ''
+        BegginerLogic: true
         NormalLogic: ''
         AdvancedLogic: ''
         GlitchedLogic: ''
       GLOWBOCC2:
-        BegginerLogic: ''
-        NormalLogic: ''
+        BegginerLogic: GGRAB
+        NormalLogic: true
         AdvancedLogic: ''
         GlitchedLogic: ''
       HONEYCCC1:
-        BegginerLogic: ''
+        BegginerLogic: BDRILL
         NormalLogic: ''
         AdvancedLogic: ''
         GlitchedLogic: ''
       HONEYCCC2:
-        BegginerLogic: ''
+        BegginerLogic: true
         NormalLogic: ''
         AdvancedLogic: ''
         GlitchedLogic: ''
       HONEYCCC3:
-        BegginerLogic: ''
+        BegginerLogic: true
         NormalLogic: ''
         AdvancedLogic: ''
         GlitchedLogic: ''
       CHEATOCC1:
-        BegginerLogic: ''
+        BegginerLogic: canary_mary_free
         NormalLogic: ''
         AdvancedLogic: ''
         GlitchedLogic: ''
       CHEATOCC2:
-        BegginerLogic: ''
+        BegginerLogic: cheato_potgold
         NormalLogic: ''
         AdvancedLogic: ''
         GlitchedLogic: ''
       CHEATOCC3:
-        BegginerLogic: ''
+        BegginerLogic: HUMBACC
         NormalLogic: ''
         AdvancedLogic: ''
         GlitchedLogic: ''
       SAPACK:
-        BegginerLogic: ''
+        BegginerLogic: SOLO_SHPACK && check_notes, 765
         NormalLogic: ''
         AdvancedLogic: ''
         GlitchedLogic: ''
       TREBLECC:
-        BegginerLogic: ''
+        BegginerLogic: true
         NormalLogic: ''
         AdvancedLogic: ''
         GlitchedLogic: ''
       NOTECCL1:
-        BegginerLogic: ''
+        BegginerLogic: true
         NormalLogic: ''
         AdvancedLogic: ''
         GlitchedLogic: ''
       NOTECCL2:
-        BegginerLogic: ''
+        BegginerLogic: true
         NormalLogic: ''
         AdvancedLogic: ''
         GlitchedLogic: ''
       NOTECCL3:
-        BegginerLogic: ''
+        BegginerLogic: notes_ccl_silo
         NormalLogic: ''
         AdvancedLogic: ''
         GlitchedLogic: ''
       NOTECCL4:
-        BegginerLogic: ''
+        BegginerLogic: notes_ccl_silo
         NormalLogic: ''
         AdvancedLogic: ''
         GlitchedLogic: ''
       NOTECCL5:
-        BegginerLogic: ''
+        BegginerLogic: true
         NormalLogic: ''
         AdvancedLogic: ''
         GlitchedLogic: ''
       NOTECCL6:
-        BegginerLogic: ''
+        BegginerLogic: true
         NormalLogic: ''
         AdvancedLogic: ''
         GlitchedLogic: ''
       NOTECCL7:
-        BegginerLogic: ''
+        BegginerLogic: true
         NormalLogic: ''
         AdvancedLogic: ''
         GlitchedLogic: ''
       NOTECCL8:
-        BegginerLogic: ''
+        BegginerLogic: true
         NormalLogic: ''
         AdvancedLogic: ''
         GlitchedLogic: ''
       NOTECCL9:
-        BegginerLogic: ''
+        BegginerLogic: true
         NormalLogic: ''
         AdvancedLogic: ''
         GlitchedLogic: ''
       NOTECCL10:
-        BegginerLogic: ''
+        BegginerLogic: true
         NormalLogic: ''
         AdvancedLogic: ''
         GlitchedLogic: ''
       NOTECCL11:
-        BegginerLogic: ''
+        BegginerLogic: true
         NormalLogic: ''
         AdvancedLogic: ''
         GlitchedLogic: ''
       NOTECCL12:
-        BegginerLogic: ''
+        BegginerLogic: true
         NormalLogic: ''
         AdvancedLogic: ''
         GlitchedLogic: ''
       NOTECCL13:
-        BegginerLogic: ''
+        BegginerLogic: true
         NormalLogic: ''
         AdvancedLogic: ''
         GlitchedLogic: ''
       NOTECCL14:
-        BegginerLogic: ''
+        BegginerLogic: true
         NormalLogic: ''
         AdvancedLogic: ''
         GlitchedLogic: ''
       NOTECCL15:
-        BegginerLogic: ''
+        BegginerLogic: true
         NormalLogic: ''
         AdvancedLogic: ''
         GlitchedLogic: ''
       NOTECCL16:
-        BegginerLogic: ''
+        BegginerLogic: true
         NormalLogic: ''
         AdvancedLogic: ''
         GlitchedLogic: ''
     Exits: {}
     Macros:
       jiggy_gold_pot:
-        BegginerLogic: ''
+        BegginerLogic: FEGGS && GEGGS && IEGGS && MUMBOCC
         NormalLogic: ''
-        AdvancedLogic: ''
+        AdvancedLogic: FEGGS && GEGGS && IEGGS && (MUMBOCC || SPLITUP)
         GlitchedLogic: ''
       notes_ccl_silo:
-        BegginerLogic: ''
-        NormalLogic: ''
+        BegginerLogic: SOLO_SHPACK
+        NormalLogic: SOLO_SHPACK || CEGGS
         AdvancedLogic: ''
         GlitchedLogic: ''
       HFP_hot_water_cooled:
-        BegginerLogic: ''
+        BegginerLogic: HP && SPLITUP
         NormalLogic: ''
         AdvancedLogic: ''
         GlitchedLogic: ''
       grow_beanstalk:
-        BegginerLogic: ''
+        BegginerLogic: BDRILL && MUMBOCC
         NormalLogic: ''
         AdvancedLogic: ''
         GlitchedLogic: ''
       can_use_floatus:
-        BegginerLogic: ''
-        NormalLogic: ''
-        AdvancedLogic: ''
-        GlitchedLogic: ''
-      can_play_gold_pot:
-        BegginerLogic: ''
+        BegginerLogic: SOLO_TAXPACK && SOLO_HATCH
         NormalLogic: ''
         AdvancedLogic: ''
         GlitchedLogic: ''

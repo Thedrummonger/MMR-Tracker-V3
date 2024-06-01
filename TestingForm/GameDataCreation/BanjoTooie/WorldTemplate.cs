@@ -152,7 +152,6 @@ namespace TestingForm.GameDataCreation.BanjoTooie
             WorldFiles["Cloud Cuckooland"]["CC"].Macros.Add("HFP_hot_water_cooled", new());
             WorldFiles["Cloud Cuckooland"]["CC"].Macros.Add("grow_beanstalk", new());
             WorldFiles["Cloud Cuckooland"]["CC"].Macros.Add("can_use_floatus", new());
-            WorldFiles["Cloud Cuckooland"]["CC"].Macros.Add("can_play_gold_pot", new());
 
             //EXITS
 

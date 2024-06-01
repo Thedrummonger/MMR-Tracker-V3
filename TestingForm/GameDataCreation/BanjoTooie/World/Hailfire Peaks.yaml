@@ -3,249 +3,249 @@ Value:
   HP:
     Locations:
       JINJOHP1:
-        BegginerLogic: ''
+        BegginerLogic: true
         NormalLogic: ''
         AdvancedLogic: ''
         GlitchedLogic: ''
       JINJOHP2:
-        BegginerLogic: ''
+        BegginerLogic: SOLO_SHPACK
         NormalLogic: ''
         AdvancedLogic: ''
         GlitchedLogic: ''
       JINJOHP3:
-        BegginerLogic: ''
+        BegginerLogic: HUMBAHP
         NormalLogic: ''
-        AdvancedLogic: ''
+        AdvancedLogic: HUMBAHP || (CEGGS && EGGAIM)
         GlitchedLogic: ''
       JINJOHP4:
-        BegginerLogic: ''
-        NormalLogic: ''
-        AdvancedLogic: ''
+        BegginerLogic: SOLO_GLIDE && GEGGS && EGGAIM
+        NormalLogic: SOLO_GLIDE || (SOLO_LSPRING && SOLO_WWHACK)
+        AdvancedLogic: SOLO_GLIDE || (SOLO_LSPRING && SOLO_WWHACK) || (CEGGS && EGGAIM)
         GlitchedLogic: ''
       JINJOHP5:
-        BegginerLogic: ''
-        NormalLogic: ''
+        BegginerLogic: FEGGS || GEGGS || BDRILL
+        NormalLogic: FEGGS || GEGGS || BDRILL || CEGGS || MUMBOHP
         AdvancedLogic: ''
         GlitchedLogic: ''
       JIGGYHP1:
-        BegginerLogic: ''
+        BegginerLogic: FEGGS && IEGGS && CLAWBTS
         NormalLogic: ''
-        AdvancedLogic: ''
+        AdvancedLogic: '' #FEGGS && IEGGS && CLAWBTS && SOLO_PACKWH #Actual Logic Requireds Pack Wack to prevent softlocks which doesnt matter here
         GlitchedLogic: ''
       JIGGYHP2:
-        BegginerLogic: ''
+        BegginerLogic: true
         NormalLogic: ''
         AdvancedLogic: ''
         GlitchedLogic: ''
       JIGGYHP3:
-        BegginerLogic: ''
-        NormalLogic: ''
+        BegginerLogic: MUMBOHP && FEGGS && SOLO_TAXPACK
+        NormalLogic: MUMBOHP && has_fire && SOLO_TAXPACK
         AdvancedLogic: ''
         GlitchedLogic: ''
       JIGGYHP4:
-        BegginerLogic: ''
+        BegginerLogic: SOLO_SHPACK
         NormalLogic: ''
         AdvancedLogic: ''
-        GlitchedLogic: ''
+        GlitchedLogic: SOLO_SHPACK || CEGGS || SOLO_LSPRING
       JIGGYHP5:
-        BegginerLogic: ''
-        NormalLogic: ''
+        BegginerLogic: can_beat_king_coal && GEGGS && EGGAIM && TRAINSWHP1 && TRAINSWHP2 && WW
+        NormalLogic: can_beat_king_coal && GEGGS && TRAINSWHP1 && TRAINSWHP2 && WW
         AdvancedLogic: ''
         GlitchedLogic: ''
       JIGGYHP6:
-        BegginerLogic: ''
-        NormalLogic: ''
+        BegginerLogic: HUMBAHP && SOLO_SHPACK && GGRAB
+        NormalLogic: HUMBAHP && SOLO_SHPACK && (SOLO_PACKWH || GGRAB)
         AdvancedLogic: ''
         GlitchedLogic: ''
       JIGGYHP8:
-        BegginerLogic: ''
-        NormalLogic: ''
+        BegginerLogic: HUMBAMT && MUMBOMT && GEGGS
+        NormalLogic: HUMBAMT && MUMBOMT && (GEGGS || CEGGS || MUMBOHP)
         AdvancedLogic: ''
         GlitchedLogic: ''
       JIGGYHP9:
-        BegginerLogic: ''
-        NormalLogic: ''
-        AdvancedLogic: ''
+        BegginerLogic: jiggy_ufo && BDRILL && SOLO_HATCH && SOLO_GLIDE && MUMBOHP
+        NormalLogic: jiggy_ufo && MUMBOHP && BDRILL && && SOLO_HATCH && (SOLO_WWHACK || SOLO_GLIDE)
+        AdvancedLogic: jiggy_ufo && MUMBOHP && BDRILL && && SOLO_HATCH
         GlitchedLogic: ''
       JIGGYHP10:
-        BegginerLogic: ''
+        BegginerLogic: SPLITUP && GGRAB
         NormalLogic: ''
-        AdvancedLogic: ''
-        GlitchedLogic: ''
+        AdvancedLogic: SPLITUP && (GGRAB || SOLO_PACKWH)
+        GlitchedLogic: (SPLITUP && (GGRAB || SOLO_PACKWH)) || (CEGGS && (SPLITUP || EGGAIM))
       GLOWBOHP1:
-        BegginerLogic: ''
+        BegginerLogic: true
         NormalLogic: ''
         AdvancedLogic: ''
         GlitchedLogic: ''
       GLOWBOHP2:
-        BegginerLogic: ''
+        BegginerLogic: true
         NormalLogic: ''
         AdvancedLogic: ''
         GlitchedLogic: ''
       HONEYCHP1:
-        BegginerLogic: ''
-        NormalLogic: ''
+        BegginerLogic: GEGGS && EGGAIM
+        NormalLogic: (GEGGS && EGGAIM) || SPLITUP
         AdvancedLogic: ''
         GlitchedLogic: ''
       HONEYCHP2:
-        BegginerLogic: ''
-        NormalLogic: ''
-        AdvancedLogic: ''
+        BegginerLogic: GGRAB
+        NormalLogic: GGRAB || SOLO_LSPRING || SOLO_GLIDE
+        AdvancedLogic: GGRAB || SOLO_LSPRING || SOLO_GLIDE || (SPLITUP && CHUFFY && TRAINSWHP1) || (CEGGS && EGGAIM)
         GlitchedLogic: ''
       HONEYCHP3:
-        BegginerLogic: ''
-        NormalLogic: ''
+        BegginerLogic: GGRAB
+        NormalLogic: True
         AdvancedLogic: ''
         GlitchedLogic: ''
       CHEATOHP1:
-        BegginerLogic: ''
-        NormalLogic: ''
+        BegginerLogic: CLAWBTS && GEGGS
+        NormalLogic: CLAWBTS && (GEGGS || CEGGS || MUMBOHP)
         AdvancedLogic: ''
-        GlitchedLogic: ''
+        GlitchedLogic: true
       CHEATOHP2:
-        BegginerLogic: ''
+        BegginerLogic: CEGGS || SOLO_SHPACK
         NormalLogic: ''
         AdvancedLogic: ''
         GlitchedLogic: ''
       CHEATOHP3:
-        BegginerLogic: ''
-        NormalLogic: ''
-        AdvancedLogic: ''
+        BegginerLogic: SPLITUP && GEGGS && EGGAIM
+        NormalLogic: SPLITUP
+        AdvancedLogic: SPLITUP || (GEGGS && CEGGS && EGGAIM)
         GlitchedLogic: ''
       SHPACK:
-        BegginerLogic: ''
+        BegginerLogic: SPLITUP && check_notes, 640
         NormalLogic: ''
         AdvancedLogic: ''
         GlitchedLogic: ''
       GLIDE:
-        BegginerLogic: ''
+        BegginerLogic: SPLITUP && check_notes, 660
         NormalLogic: ''
         AdvancedLogic: ''
         GlitchedLogic: ''
       TREBLEHP:
-        BegginerLogic: ''
-        NormalLogic: ''
-        AdvancedLogic: ''
+        BegginerLogic: GEGGS && EGGAIM
+        NormalLogic: (GEGGS && EGGAIM) || SPLITUP
+        AdvancedLogic: (GEGGS && EGGAIM) || SPLITUP || (CEGGS && EGGAIM)
         GlitchedLogic: ''
       TRAINSWHP1:
-        BegginerLogic: ''
-        NormalLogic: ''
+        BegginerLogic: GGRAB
+        NormalLogic: true
         AdvancedLogic: ''
         GlitchedLogic: ''
       TRAINSWHP2:
-        BegginerLogic: ''
+        BegginerLogic: HUMBAHP
         NormalLogic: ''
         AdvancedLogic: ''
         GlitchedLogic: ''
       NOTEHFP1:
-        BegginerLogic: ''
+        BegginerLogic: true
         NormalLogic: ''
         AdvancedLogic: ''
         GlitchedLogic: ''
       NOTEHFP2:
-        BegginerLogic: ''
+        BegginerLogic: true
         NormalLogic: ''
         AdvancedLogic: ''
         GlitchedLogic: ''
       NOTEHFP3:
-        BegginerLogic: ''
+        BegginerLogic: true
         NormalLogic: ''
         AdvancedLogic: ''
         GlitchedLogic: ''
       NOTEHFP4:
-        BegginerLogic: ''
+        BegginerLogic: true
         NormalLogic: ''
         AdvancedLogic: ''
         GlitchedLogic: ''
       NOTEHFP5:
-        BegginerLogic: ''
+        BegginerLogic: true
         NormalLogic: ''
         AdvancedLogic: ''
         GlitchedLogic: ''
       NOTEHFP6:
-        BegginerLogic: ''
+        BegginerLogic: true
         NormalLogic: ''
         AdvancedLogic: ''
         GlitchedLogic: ''
       NOTEHFP7:
-        BegginerLogic: ''
+        BegginerLogic: true
         NormalLogic: ''
         AdvancedLogic: ''
         GlitchedLogic: ''
       NOTEHFP8:
-        BegginerLogic: ''
+        BegginerLogic: true
         NormalLogic: ''
         AdvancedLogic: ''
         GlitchedLogic: ''
       NOTEHFP9:
-        BegginerLogic: ''
+        BegginerLogic: true
         NormalLogic: ''
         AdvancedLogic: ''
         GlitchedLogic: ''
       NOTEHFP10:
-        BegginerLogic: ''
+        BegginerLogic: true
         NormalLogic: ''
         AdvancedLogic: ''
         GlitchedLogic: ''
       NOTEHFP11:
-        BegginerLogic: ''
+        BegginerLogic: true
         NormalLogic: ''
         AdvancedLogic: ''
         GlitchedLogic: ''
       NOTEHFP12:
-        BegginerLogic: ''
+        BegginerLogic: true
         NormalLogic: ''
         AdvancedLogic: ''
         GlitchedLogic: ''
       NOTEHFP13:
-        BegginerLogic: ''
+        BegginerLogic: true
         NormalLogic: ''
         AdvancedLogic: ''
         GlitchedLogic: ''
       NOTEHFP14:
-        BegginerLogic: ''
+        BegginerLogic: true
         NormalLogic: ''
         AdvancedLogic: ''
         GlitchedLogic: ''
       NOTEHFP15:
-        BegginerLogic: ''
+        BegginerLogic: true
         NormalLogic: ''
         AdvancedLogic: ''
         GlitchedLogic: ''
       NOTEHFP16:
-        BegginerLogic: ''
+        BegginerLogic: true
         NormalLogic: ''
         AdvancedLogic: ''
         GlitchedLogic: ''
     Exits:
       IOHCT_HFP_ENTRANCE:
-        BegginerLogic: ''
-        NormalLogic: ''
+        BegginerLogic: HFA
+        NormalLogic: true
         AdvancedLogic: ''
         GlitchedLogic: ''
       MT:
-        BegginerLogic: ''
+        BegginerLogic: HFP_to_MT
         NormalLogic: ''
         AdvancedLogic: ''
         GlitchedLogic: ''
       JR:
-        BegginerLogic: ''
+        BegginerLogic: HFP_to_JRL
         NormalLogic: ''
         AdvancedLogic: ''
         GlitchedLogic: ''
       CHUFFY:
-        BegginerLogic: ''
+        BegginerLogic: can_beat_king_coal && TRAINSWHP1
         NormalLogic: ''
         AdvancedLogic: ''
         GlitchedLogic: ''
     Macros:
       HFP_to_MT:
-        BegginerLogic: ''
-        NormalLogic: ''
+        BegginerLogic: GEGGS
+        NormalLogic: GEGGS || CEGGS || MUMBOHP
         AdvancedLogic: ''
         GlitchedLogic: ''
       HFP_to_JRL:
-        BegginerLogic: ''
+        BegginerLogic: CC && SPLITUP
         NormalLogic: ''
         AdvancedLogic: ''
-        GlitchedLogic: ''
+        GlitchedLogic: (CC && SPLITUP) || GGRAB
