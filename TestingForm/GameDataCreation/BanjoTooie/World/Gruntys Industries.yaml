@@ -3,28 +3,28 @@ Value:
   GIO:
     Locations:
       TRAINSWGI:
-        BegginerLogic: ''
+        BegginerLogic: true
         NormalLogic: ''
         AdvancedLogic: ''
         GlitchedLogic: ''
     Exits:
       GI1:
-        BegginerLogic: ''
+        BegginerLogic: False
         NormalLogic: ''
         AdvancedLogic: ''
-        GlitchedLogic: ''
+        GlitchedLogic: CEGGS && EGGAIM
       GI2:
-        BegginerLogic: ''
+        BegginerLogic: False
         NormalLogic: ''
         AdvancedLogic: ''
-        GlitchedLogic: ''
+        GlitchedLogic: CEGGS
       GI3ALL:
-        BegginerLogic: ''
-        NormalLogic: ''
+        BegginerLogic: False
+        NormalLogic: CLAWBTS
         AdvancedLogic: ''
         GlitchedLogic: ''
       IOHQM:
-        BegginerLogic: ''
+        BegginerLogic: GIA
         NormalLogic: ''
         AdvancedLogic: ''
         GlitchedLogic: ''
@@ -32,277 +32,282 @@ Value:
   GI1:
     Locations:
       JIGGYGI8:
-        BegginerLogic: ''
-        NormalLogic: ''
+        BegginerLogic: SOLO_SNPACK
+        NormalLogic: SOLO_SNPACK || SOLO_PACKWH
         AdvancedLogic: ''
-        GlitchedLogic: ''
+        GlitchedLogic: SOLO_SNPACK || SOLO_PACKWH || (EGGAIM && CEGGS && BBASH)
       JIGGYGI10:
-        BegginerLogic: ''
-        NormalLogic: ''
+        BegginerLogic: can_use_battery && SOLO_SAPACK && GGRAB
+        NormalLogic: can_use_battery
         AdvancedLogic: ''
         GlitchedLogic: ''
       CHEATOGI1:
-        BegginerLogic: ''
-        NormalLogic: ''
+        BegginerLogic: GEGGS
+        NormalLogic: GEGGS || (CEGGS && BDRILL)
         AdvancedLogic: ''
         GlitchedLogic: ''
       HONEYCGI2:
-        BegginerLogic: ''
-        NormalLogic: ''
+        BegginerLogic: GGRAB
+        NormalLogic: true
         AdvancedLogic: ''
         GlitchedLogic: ''
       SNPACK:
-        BegginerLogic: ''
-        NormalLogic: ''
+        BegginerLogic: GGRAB && can_use_battery && check_notes, 525
+        NormalLogic: can_use_battery && check_notes, 525
         AdvancedLogic: ''
         GlitchedLogic: ''
       CLAWBTS:
-        BegginerLogic: ''
+        BegginerLogic: check_notes, 505
         NormalLogic: ''
         AdvancedLogic: ''
         GlitchedLogic: ''
       NOTEGI4:
-        BegginerLogic: ''
+        BegginerLogic: notes_gi_floor1
         NormalLogic: ''
         AdvancedLogic: ''
         GlitchedLogic: ''
       NOTEGI5:
-        BegginerLogic: ''
+        BegginerLogic: notes_gi_floor1
         NormalLogic: ''
         AdvancedLogic: ''
         GlitchedLogic: ''
       NOTEGI1:
-        BegginerLogic: ''
+        BegginerLogic: true
         NormalLogic: ''
         AdvancedLogic: ''
         GlitchedLogic: ''
       NOTEGI2:
-        BegginerLogic: ''
+        BegginerLogic: true
         NormalLogic: ''
         AdvancedLogic: ''
         GlitchedLogic: ''
       NOTEGI3:
-        BegginerLogic: ''
+        BegginerLogic: true
         NormalLogic: ''
         AdvancedLogic: ''
         GlitchedLogic: ''
       NOTEGI13:
-        BegginerLogic: ''
+        BegginerLogic: true
         NormalLogic: ''
         AdvancedLogic: ''
         GlitchedLogic: ''
       NOTEGI14:
-        BegginerLogic: ''
+        BegginerLogic: true
         NormalLogic: ''
         AdvancedLogic: ''
         GlitchedLogic: ''
       NOTEGI11:
-        BegginerLogic: ''
+        BegginerLogic: can_use_battery
         NormalLogic: ''
         AdvancedLogic: ''
         GlitchedLogic: ''
       NOTEGI12:
-        BegginerLogic: ''
+        BegginerLogic: can_use_battery
         NormalLogic: ''
         AdvancedLogic: ''
         GlitchedLogic: ''
     Exits:
       GIO:
-        BegginerLogic: ''
+        BegginerLogic: SPLITUP
         NormalLogic: ''
         AdvancedLogic: ''
         GlitchedLogic: ''
       GI2:
-        BegginerLogic: ''
+        BegginerLogic: can_access_gi_fl1_2fl2
         NormalLogic: ''
         AdvancedLogic: ''
         GlitchedLogic: ''
       GI3ALL:
-        BegginerLogic: ''
+        BegginerLogic: False
         NormalLogic: ''
         AdvancedLogic: ''
-        GlitchedLogic: ''
+        GlitchedLogic: BBASH
       CHUFFY:
-        BegginerLogic: ''
+        BegginerLogic: can_beat_king_coal && TRAINSWGI
         NormalLogic: ''
         AdvancedLogic: ''
         GlitchedLogic: ''
     Macros:
       notes_gi_floor1:
-        BegginerLogic: ''
+        BegginerLogic: GGRAB
         NormalLogic: ''
+        AdvancedLogic: can_access_gi_fl1_2fl2 || GGRAB || SOLO_PACKWH || SOLO_LSPRING || (CEGGS && EGGAIM)
+        GlitchedLogic: ''
+      can_access_gi_fl1_2fl2:
+        BegginerLogic: CLAWBTS
+        NormalLogic: CLAWBTS || (SOLO_LSPRING && SOLO_GLIDE && (WWHACK || EGGAIM))
         AdvancedLogic: ''
         GlitchedLogic: ''
   GI2:
     Locations:
       GLOWBOGI1:
-        BegginerLogic: ''
+        BegginerLogic: true
         NormalLogic: ''
         AdvancedLogic: ''
         GlitchedLogic: ''
       LSPRING:
-        BegginerLogic: ''
+        BegginerLogic: check_notes, 545
         NormalLogic: ''
         AdvancedLogic: ''
         GlitchedLogic: ''
       JINJOGI2:
-        BegginerLogic: ''
+        BegginerLogic: SOLO_LSPRING
         NormalLogic: ''
-        AdvancedLogic: ''
+        AdvancedLogic: SOLO_LSPRING || (CEGGS && EGGAIM)
         GlitchedLogic: ''
       JIGGYGI7:
-        BegginerLogic: ''
+        BegginerLogic: SPLITUP
         NormalLogic: ''
-        AdvancedLogic: ''
+        AdvancedLogic: SPLITUP || (CEGGS && EGGAIM)
         GlitchedLogic: ''
       TREBLEGI:
-        BegginerLogic: ''
-        NormalLogic: ''
+        BegginerLogic: SPLITUP
+        NormalLogic: true
         AdvancedLogic: ''
         GlitchedLogic: ''
       NOTEGI6:
-        BegginerLogic: ''
+        BegginerLogic: true
         NormalLogic: ''
         AdvancedLogic: ''
         GlitchedLogic: ''
       NOTEGI7:
-        BegginerLogic: ''
+        BegginerLogic: true
         NormalLogic: ''
         AdvancedLogic: ''
         GlitchedLogic: ''
       NOTEGI8:
-        BegginerLogic: ''
+        BegginerLogic: true
         NormalLogic: ''
         AdvancedLogic: ''
         GlitchedLogic: ''
       NOTEGI9:
-        BegginerLogic: ''
+        BegginerLogic: true
         NormalLogic: ''
         AdvancedLogic: ''
         GlitchedLogic: ''
       NOTEGI10:
-        BegginerLogic: ''
+        BegginerLogic: true
         NormalLogic: ''
         AdvancedLogic: ''
         GlitchedLogic: ''
     Exits:
       GIO:
-        BegginerLogic: ''
+        BegginerLogic: true
         NormalLogic: ''
         AdvancedLogic: ''
         GlitchedLogic: ''
       GI1:
-        BegginerLogic: ''
-        NormalLogic: ''
+        BegginerLogic: GGRAB
+        NormalLogic: true
         AdvancedLogic: ''
         GlitchedLogic: ''
       GI3ALL:
-        BegginerLogic: ''
-        NormalLogic: ''
+        BegginerLogic: (GGRAB && CLAWBTS) || HUMBAGI
+        NormalLogic: HUMBAGI || CLAWBTS || SOLO_LSPRING
         AdvancedLogic: ''
         GlitchedLogic: ''
     Macros: {}
   GI3ALL:
     Locations:
       JINJOGI1:
-        BegginerLogic: ''
+        BegginerLogic: true
         NormalLogic: ''
         AdvancedLogic: ''
         GlitchedLogic: ''
       JINJOGI4:
-        BegginerLogic: ''
+        BegginerLogic: true
         NormalLogic: ''
         AdvancedLogic: ''
         GlitchedLogic: ''
       JINJOGI5:
-        BegginerLogic: ''
+        BegginerLogic: SPLITUP
         NormalLogic: ''
         AdvancedLogic: ''
-        GlitchedLogic: ''
+        GlitchedLogic: true
       JIGGYGI1:
-        BegginerLogic: ''
+        BegginerLogic: can_beat_weldar && SOLO_SHPACK
         NormalLogic: ''
         AdvancedLogic: ''
-        GlitchedLogic: ''
+        GlitchedLogic: can_use_battery && (TTORP || SOLO_SHPACK)
       JIGGYGI2:
-        BegginerLogic: ''
+        BegginerLogic: can_beat_weldar
         NormalLogic: ''
         AdvancedLogic: ''
         GlitchedLogic: ''
       JIGGYGI3:
-        BegginerLogic: ''
+        BegginerLogic: MUMBOGI && CLAWBTS && BBLASTER
         NormalLogic: ''
         AdvancedLogic: ''
-        GlitchedLogic: ''
+        GlitchedLogic: (MUMBOGI || BBASH) && CLAWBTS && BBLASTER
       JIGGYGI4:
-        BegginerLogic: ''
-        NormalLogic: ''
+        BegginerLogic: HUMBAGI && BDRILL && GGRAB
+        NormalLogic: HUMBAGI && BDRILL
         AdvancedLogic: ''
         GlitchedLogic: ''
       JIGGYGI5:
-        BegginerLogic: ''
+        BegginerLogic: SPLITUP
         NormalLogic: ''
-        AdvancedLogic: ''
+        AdvancedLogic: SPLITUP || (CEGGS && EGGAIM)
         GlitchedLogic: ''
       JIGGYGI6:
-        BegginerLogic: ''
-        NormalLogic: ''
-        AdvancedLogic: ''
-        GlitchedLogic: ''
+        BegginerLogic: MUMBOGI && GEGGS && EGGAIM && can_use_battery && HUMBAGI
+        NormalLogic: MUMBOGI && GEGGS && ((EGGAIM && HUMBAGI) || SOLO_LSPRING)) && can_use_battery
+        AdvancedLogic: MUMBOGI && GEGGS && can_use_battery
+        GlitchedLogic: GEGGS && ((MUMBOGI && can_use_battery) || CEGGS)
       JIGGYGI9:
-        BegginerLogic: ''
-        NormalLogic: ''
+        BegginerLogic: can_use_battery && GGRAB
+        NormalLogic: can_use_battery
         AdvancedLogic: ''
         GlitchedLogic: ''
       HONEYCGI1:
-        BegginerLogic: ''
-        NormalLogic: ''
+        BegginerLogic: GGRAB || SPLITUP
+        NormalLogic: True
         AdvancedLogic: ''
         GlitchedLogic: ''
       HONEYCGI3:
-        BegginerLogic: ''
+        BegginerLogic: True
         NormalLogic: ''
         AdvancedLogic: ''
         GlitchedLogic: ''
       GLOWBOGI2:
-        BegginerLogic: ''
+        BegginerLogic: True
         NormalLogic: ''
         AdvancedLogic: ''
         GlitchedLogic: ''
       CHEATOGI2:
-        BegginerLogic: ''
+        BegginerLogic: True
         NormalLogic: ''
         AdvancedLogic: ''
         GlitchedLogic: ''
       CHEATOGI3:
-        BegginerLogic: ''
+        BegginerLogic: can_beat_weldar
         NormalLogic: ''
         AdvancedLogic: ''
         GlitchedLogic: ''
       NOTEGI15:
-        BegginerLogic: ''
+        BegginerLogic: True
         NormalLogic: ''
         AdvancedLogic: ''
         GlitchedLogic: ''
       NOTEGI16:
-        BegginerLogic: ''
+        BegginerLogic: True
         NormalLogic: ''
         AdvancedLogic: ''
         GlitchedLogic: ''
     Exits:
       GIO:
-        BegginerLogic: ''
+        BegginerLogic: true
         NormalLogic: ''
         AdvancedLogic: ''
         GlitchedLogic: ''
       GI2:
-        BegginerLogic: ''
+        BegginerLogic: true
         NormalLogic: ''
         AdvancedLogic: ''
         GlitchedLogic: ''
     Macros:
       can_beat_weldar:
-        BegginerLogic: ''
+        BegginerLogic: can_use_battery && MUMBOGI && HUMBAGI && GEGGS && BDRILL
         NormalLogic: ''
         AdvancedLogic: ''
         GlitchedLogic: ''

@@ -26,6 +26,8 @@ namespace TestingForm.GameDataCreation.BanjoTooie
 
         public void WriteWorldFiles()
         {
+            var Verify = MessageBox.Show("Wipe all existing logic?", "Don't do that", MessageBoxButtons.YesNo);
+            if (Verify == DialogResult.No) { return; }
             Populate();
             foreach(var file in WorldFiles)
             {
@@ -135,8 +137,10 @@ namespace TestingForm.GameDataCreation.BanjoTooie
             WorldFiles["Terrydactyland"]["TL"].Macros.Add("jiggy_stomping_plains", new());
             WorldFiles["Terrydactyland"]["TL"].Macros.Add("can_beat_terry", new());
             WorldFiles["Terrydactyland"]["TL"].Macros.Add("oogle_boogles_open", new());
+            WorldFiles["Terrydactyland"]["TL"].Macros.Add("can_access_taxi_pack_silo", new());
 
             WorldFiles["Gruntys Industries"]["GI1"].Macros.Add("notes_gi_floor1", new());
+            WorldFiles["Gruntys Industries"]["GI1"].Macros.Add("can_access_gi_fl1_2fl2", new());
 
             WorldFiles["Gruntys Industries"]["GI3ALL"].Macros.Add("can_beat_weldar", new());
 
