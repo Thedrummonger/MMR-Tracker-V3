@@ -24,9 +24,16 @@ namespace TestingForm.GameDataCreation.OOTMMV3
             public string[] renewabletypes;
             public Dictionary<string, string> names;
             public Dictionary<string, string> dungeons;
-            public Dictionary<string, string> glitches;
-            public Dictionary<string, string> tricks;
+            public Dictionary<string, OOTMMTrickData> tricks;
             public OOTMMSetting[] options;
+        }
+        public class OOTMMTrickData
+        {
+            public string game;
+            public string name;
+            public string tooltip;
+            public string linkText;
+            public bool? glitch;
         }
         public class OOTMMSetting
         {

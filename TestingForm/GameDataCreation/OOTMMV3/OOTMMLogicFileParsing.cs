@@ -188,9 +188,9 @@ namespace TestingForm.GameDataCreation.OOTMMV3
                     }
                 }
             }
-            else if (logicFuncData.function.In("trick", "glitch"))
+            else if (logicFuncData.function.In("trick"))
             {
-                NewLogicItem = $"trick{{{OOTMMUtility.AddGameCodeToLogicID(logicFuncData.Param[0], GameCode)}}}";
+                NewLogicItem = $"trick{{{logicFuncData.Param[0]}}}";
             }
             else if (logicFuncData.function == "event")
             {
@@ -247,7 +247,7 @@ namespace TestingForm.GameDataCreation.OOTMMV3
             {
                 NewLogicItem = $"HAS_SPECIAL_{logicFuncData.RawParam}";
             }
-            else if (logicFuncData.function.In("flag_set", "flag_check_unset"))
+            else if (logicFuncData.function.In("flag_on", "flag_off"))
             {
                 //The tracker can't handle this kind of state checking,
                 //the macros that use these function do enough without these functions

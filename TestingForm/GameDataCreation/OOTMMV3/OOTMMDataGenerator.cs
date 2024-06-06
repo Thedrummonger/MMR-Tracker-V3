@@ -124,27 +124,25 @@ namespace TestingForm.GameDataCreation.OOTMMV3
 
         public void AddLogicTricks()
         {
-            foreach (var i in extraData.tricks.OrderBy(x => x.Value))
+            foreach (var i in extraData.tricks.OrderBy(x => x.Key))
             {
-                addTrick(i.Key, i.Value, "Tricks");
-            }
-            foreach (var i in extraData.glitches.OrderBy(x => x.Value))
-            {
-                addTrick(i.Key, i.Value, "Glitches");
+                addTrick(i.Key, i.Value);
             }
 
-            void addTrick(string ID, string Name, string Type)
+            void addTrick(string ID, OOTMMTrickData Trick)
             {
+                bool IsGlitch = Trick.glitch is not null && (bool)Trick.glitch;
                 LogicFile.Logic.Add(new MMRData.JsonFormatLogicItem
                 {
                     Id = ID,
                     IsTrick = true,
-                    TrickCategory = $"{GetGamecode(ID)} {Type}"
+                    TrickCategory = $"{Trick.game} {(IsGlitch ? "Glitches" : "Tricks")}",
+                    TrickTooltip = Trick.tooltip,
                 });
                 dictionary.MacroList.Add(ID, new LogicDictionaryData.DictionaryMacroEntry
                 {
                     ID = ID,
-                    Name = Name
+                    Name = Trick.name
                 });
             }
         }
@@ -305,10 +303,11 @@ namespace TestingForm.GameDataCreation.OOTMMV3
         public void FixAreas()
         {
             Dictionary<string, string> Areas = [];
-            var VanillaSPL = File.ReadAllLines(Path.Combine(OOTMMPaths.OOTMMTestingFolderPath, "AreaSpoilers", "AreaListVanilla.txt"));
-            var MQSPL = File.ReadAllLines(Path.Combine(OOTMMPaths.OOTMMTestingFolderPath, "AreaSpoilers", "AreaListMQ.txt"));
-            Read(VanillaSPL);
-            Read(MQSPL);
+            var VanillaSpoiler = Path.Combine(OOTMMPaths.OOTMMTestingFolderPath, "AreaSpoilers", "AreaListVanilla.txt");
+            var MQSpoiler = Path.Combine(OOTMMPaths.OOTMMTestingFolderPath, "AreaSpoilers", "AreaListMQ.txt");
+            if (File.Exists(VanillaSpoiler)) { Read(File.ReadAllLines(VanillaSpoiler)); }
+            if (File.Exists(MQSpoiler)) { Read(File.ReadAllLines(MQSpoiler)); }
+            
             void Read(string[] VanillaSPL)
             {
                 bool AtData = false;
