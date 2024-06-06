@@ -138,6 +138,7 @@ namespace TestingForm.GameDataCreation.OOTMMV3
                     IsTrick = true,
                     TrickCategory = $"{Trick.game} {(IsGlitch ? "Glitches" : "Tricks")}",
                     TrickTooltip = Trick.tooltip,
+                    TrickUrl = Trick.linkText
                 });
                 dictionary.MacroList.Add(ID, new LogicDictionaryData.DictionaryMacroEntry
                 {

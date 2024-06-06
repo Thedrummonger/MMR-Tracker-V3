@@ -142731,7 +142731,8 @@
       "TimeSetup": "None",
       "IsTrick": true,
       "TrickTooltip": "All hidden grottos will no longer require the Stone of Agony for logic.",
-      "TrickCategory": "oot Tricks"
+      "TrickCategory": "oot Tricks",
+      "TrickUrl": "https://www.zeldadungeon.net/wiki/Ocarina_of_Time_Secret_Grottos"
     },
     {
       "Id": "OOT_JABU_BOSS_HIGH_SWITCH",

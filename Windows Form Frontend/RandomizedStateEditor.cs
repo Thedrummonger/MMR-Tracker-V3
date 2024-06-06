@@ -5,9 +5,12 @@ using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Diagnostics;
+using System.Drawing;
 using System.IO;
 using System.Linq;
+using System.Security.Policy;
 using System.Windows.Forms;
+using TDMUtils;
 
 namespace Windows_Form_Frontend
 {
@@ -390,6 +393,46 @@ namespace Windows_Form_Frontend
             PrinttrickData();
             UpdatedSettingStrings();
             ChangesMade = true;
+        }
+
+        private void lvTricks_MouseUp(object sender, MouseEventArgs e)
+        {
+            ListView lv = sender as ListView;
+            Point localPoint = lv.PointToClient(Cursor.Position);
+            ListViewItem index = lv.GetItemAt(localPoint.X, localPoint.Y);
+            if (index == null) { return; }
+            if (e.Button == MouseButtons.Right)
+            {
+                //if ((ModifierKeys & Keys.Control) != Keys.Control) { lv.SelectedItems.Clear(); }
+                lv.SelectedItems.Clear();
+                index.Selected = true;
+                //ShowContextMenu(LB);
+                ContextMenuStrip contextMenuStrip = new ContextMenuStrip();
+                if (index.Tag is MacroObject MO)
+                {
+                    var Logic = _Instance.GetLogic(MO.ID, false);
+                    Debug.WriteLine(Logic.ToFormattedJson());
+                    var ToggleItem = new ToolStripMenuItem
+                    {
+                        Text = "Toggle"
+                    };
+                    ToggleItem.Click += (sender, e) => { index.Checked = !index.Checked; };
+                    contextMenuStrip.Items.Add(ToggleItem);
+                    if (!string.IsNullOrWhiteSpace(Logic?.TrickUrl))
+                    {
+                        var TrickVideo = new ToolStripMenuItem
+                        {
+                            Text = "Reference Link"
+                        };
+                        TrickVideo.Click += (sender, e) => { Process.Start("explorer.exe", Logic.TrickUrl); };
+                        contextMenuStrip.Items.Add(TrickVideo);
+                    }
+                }
+                if (contextMenuStrip.Items.Count > 0)
+                {
+                    contextMenuStrip.Show(Cursor.Position);
+                }
+            }
         }
     }
 }

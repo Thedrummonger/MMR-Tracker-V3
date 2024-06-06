@@ -214,6 +214,7 @@ namespace Windows_Form_Frontend
             lvTricks.UseCompatibleStateImageBehavior = false;
             lvTricks.View = System.Windows.Forms.View.Details;
             lvTricks.ItemChecked += lvTricks_ItemChecked;
+            lvTricks.MouseUp += lvTricks_MouseUp;
             // 
             // Tricks
             // 

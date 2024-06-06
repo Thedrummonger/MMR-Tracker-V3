@@ -279,7 +279,8 @@ namespace MMR_Tracker_V3.TrackerObjectExtensions
                 TimeNeeded = LogicFileEntry is null ? TimeOfDay.None : LogicFileEntry.TimeNeeded,
                 TimeSetup = LogicFileEntry is null ? TimeOfDay.None : LogicFileEntry.TimeSetup,
                 TrickCategory = LogicFileEntry?.TrickCategory,
-                TrickTooltip = LogicFileEntry?.TrickTooltip
+                TrickTooltip = LogicFileEntry?.TrickTooltip,
+                TrickUrl = LogicFileEntry?.TrickUrl
             };
         }
 
