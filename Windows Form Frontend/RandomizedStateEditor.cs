@@ -222,6 +222,7 @@ namespace Windows_Form_Frontend
             {
                 var DictEntry = i.GetDictEntry();
                 string DisplayName = DictEntry.Name ?? i.ID;
+                if (_Instance.GetLogic(i.ID, false).TrickUrl is not null) { DisplayName = "ⓘ" + DisplayName; }
                 if (!SearchStringParser.FilterSearch(_Instance, i, txtTrickSearch.Text, DisplayName)) { continue; }
                 if (CurrentCategory != (_Instance.GetLogic(i.ID, false).TrickCategory ?? ""))
                 {
@@ -424,7 +425,7 @@ namespace Windows_Form_Frontend
                         {
                             Text = "Reference Link"
                         };
-                        TrickVideo.Click += (sender, e) => { Process.Start("explorer.exe", Logic.TrickUrl); };
+                        TrickVideo.Click += (sender, e) => { Process.Start(new ProcessStartInfo(Logic.TrickUrl) { UseShellExecute = true }); };
                         contextMenuStrip.Items.Add(TrickVideo);
                     }
                 }

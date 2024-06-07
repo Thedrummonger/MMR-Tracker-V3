@@ -18,6 +18,7 @@ using MMR_Tracker_V3.Logic;
 using Microsoft.VisualBasic;
 using MMR_Tracker_V3.SpoilerLogHandling;
 using TDMUtils;
+using Microsoft.VisualBasic.Logging;
 
 namespace Windows_Form_Frontend
 {
@@ -68,21 +69,26 @@ namespace Windows_Form_Frontend
 
         public void MainInterface_Load(object sender, EventArgs e)
         {
-            DoUpdateCheck();
+            if (!DoUpdateCheck())
+            {
+                this.Close();
+                return;
+            }
             UpdateUI();
             AlignUIElements();
             WinFormInstanceCreation.ApplyUserPretLogic();
         }
 
-        public void DoUpdateCheck()
+        public bool DoUpdateCheck()
         {
             References.TrackerVersionStatus = UpdateManager.GetTrackerVersionStatus();
-            if (References.TrackerVersionStatus.VersionStatus == UpdateManager.versionStatus.outdated)
+            if (References.TrackerVersionStatus.VersionStatus == UpdateManager.versionStatus.outdated || true)
             {
                 var Download = MessageBox.Show($"Your tracker version {References.trackerVersion} is out of Date. Would you like to download the latest version {References.TrackerVersionStatus.LatestVersion.TagName}?\n\nTo disable this message click \"cancel\" or disable \"Check for Updates\" in the options file", "Tracker Out of Date", MessageBoxButtons.YesNoCancel);
-                if (Download == DialogResult.Yes) { { System.Diagnostics.Process.Start("explorer.exe", References.TrackerVersionStatus.LatestVersion.HtmlUrl); this.Close(); return; } }
+                if (Download == DialogResult.Yes) { { Process.Start(new ProcessStartInfo(References.TrackerVersionStatus.LatestVersion.HtmlUrl) { UseShellExecute = true }); return false; } }
                 else if (Download == DialogResult.Cancel) { UpdateManager.DisableUpdateChecks(); }
             }
+            return true;
         }
 
         private void MainInterface_FormClosing(object sender, FormClosingEventArgs e)

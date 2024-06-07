@@ -33,6 +33,7 @@ namespace TestingForm.GameDataCreation.OOTMMV3
             public string name;
             public string tooltip;
             public string linkText;
+            public string linkVideo;
             public bool? glitch;
         }
         public class OOTMMSetting
