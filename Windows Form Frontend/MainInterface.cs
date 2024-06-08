@@ -77,12 +77,28 @@ namespace Windows_Form_Frontend
             UpdateUI();
             AlignUIElements();
             WinFormInstanceCreation.ApplyUserPretLogic();
+            ParseCLIArgs();
+        }
+
+        private void ParseCLIArgs()
+        {
+            string[] arguments = Environment.GetCommandLineArgs();
+            if (arguments.Length <= 1) { return; }
+            var file = arguments[1];
+            if (Path.GetExtension(file).EndsWith("mmrtsav"))
+            {
+                LoadSAVFile(file);
+            }
+            else if (Path.GetExtension(file).ToLower().EndsWith("json"))
+            {
+                LoadLogicFile(file);
+            }
         }
 
         public bool DoUpdateCheck()
         {
             References.TrackerVersionStatus = UpdateManager.GetTrackerVersionStatus();
-            if (References.TrackerVersionStatus.VersionStatus == UpdateManager.versionStatus.outdated || true)
+            if (References.TrackerVersionStatus.VersionStatus == UpdateManager.versionStatus.outdated)
             {
                 var Download = MessageBox.Show($"Your tracker version {References.trackerVersion} is out of Date. Would you like to download the latest version {References.TrackerVersionStatus.LatestVersion.TagName}?\n\nTo disable this message click \"cancel\" or disable \"Check for Updates\" in the options file", "Tracker Out of Date", MessageBoxButtons.YesNoCancel);
                 if (Download == DialogResult.Yes) { { Process.Start(new ProcessStartInfo(References.TrackerVersionStatus.LatestVersion.HtmlUrl) { UseShellExecute = true }); return false; } }
@@ -132,7 +148,12 @@ namespace Windows_Form_Frontend
             OpenFileDialog fileDialog = new OpenFileDialog();
             var Result = fileDialog.ShowDialog();
             if (Result == DialogResult.Cancel || !File.Exists(fileDialog.FileName)) { return; }
-            var LogicData = LogicFileParser.GetLogicData(fileDialog.FileName);
+            LoadLogicFile(fileDialog.FileName);
+        }
+
+        private void LoadLogicFile(string filename)
+        {
+            var LogicData = LogicFileParser.GetLogicData(filename);
             if (LogicData is null) { MessageBox.Show("Invalid File\nPlease select either a logic file or MMR spoiler log"); return; }
             string Logic = string.Join("", LogicData);
             WinFormInstanceCreation.CreateWinFormInstance(Logic);
@@ -171,17 +192,22 @@ namespace Windows_Form_Frontend
             openFileDialog.ShowDialog();
             if (openFileDialog.FileName != "")
             {
-                if (!InstanceContainer.LoadInsanceFromFile(openFileDialog.FileName))
-                {
-                    MessageBox.Show("Save File Not Valid");
-                    return;
-                }
-                InstanceContainer.CurrentSavePath = openFileDialog.FileName;
-                InstanceContainer.logicCalculation.CalculateLogic();
-                UpdateUI();
-                UpdateDynamicUserOptions();
-                AlignUIElements();
+                LoadSAVFile(openFileDialog.FileName);
             }
+        }
+
+        private void LoadSAVFile(string Path)
+        {
+            if (!InstanceContainer.LoadInsanceFromFile(Path))
+            {
+                MessageBox.Show("Save File Not Valid");
+                return;
+            }
+            InstanceContainer.CurrentSavePath = Path;
+            InstanceContainer.logicCalculation.CalculateLogic();
+            UpdateUI();
+            UpdateDynamicUserOptions();
+            AlignUIElements();
         }
 
         //Menu Strip => Options
