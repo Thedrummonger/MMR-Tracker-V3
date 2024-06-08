@@ -453,7 +453,6 @@ namespace Windows_Form_Frontend
             {
                 if (InstanceContainer.Instance.CombineEntrancesWithLocations() && ViewFocus == DisplayListType.Entrances) { ViewFocus = DisplayListType.Locations; }
 
-                SetObjectVisibility(ViewFocus == DisplayListType.Locations, ViewFocus == DisplayListType.Checked, ViewFocus == DisplayListType.Entrances, false);
                 tlpMaster.ColumnStyles[0] = new ColumnStyle(SizeType.Percent, 100F);
                 tlpMaster.ColumnStyles[1] = new ColumnStyle(SizeType.Percent, 0F);
                 tlpMaster.RowStyles[0] = new RowStyle(SizeType.Percent, 100F);
@@ -461,13 +460,16 @@ namespace Windows_Form_Frontend
                 switch (ViewFocus)
                 {
                     case DisplayListType.Locations:
-                        tlpLocations.Controls.AddRange(TLPLocationsControls.ToArray());
+                        tlpLocations.Controls.AddRange([.. TLPLocationsControls]);
+                        SetObjectVisibility(true, false, false, false);
                         break;
                     case DisplayListType.Checked:
-                        tlpLocations.Controls.AddRange(TLPCheckedControls.ToArray());
+                        tlpLocations.Controls.AddRange([.. TLPCheckedControls]);
+                        SetObjectVisibility(false, true, false, false);
                         break;
                     case DisplayListType.Entrances:
-                        tlpLocations.Controls.AddRange(TLPEntranceControls.ToArray());
+                        tlpLocations.Controls.AddRange([.. TLPEntranceControls]);
+                        SetObjectVisibility(false, false, true, false);
                         break;
                 }
             }
@@ -480,17 +482,17 @@ namespace Windows_Form_Frontend
                 tlpMaster.ColumnStyles[1] = new ColumnStyle(SizeType.Percent, 50F);
                 if (InstanceContainer.Instance.StaticOptions.OptionFile.WinformData.UILayout == UILayout.Horizontal)
                 {
-                    tlpLocations.Controls.AddRange(TLPLocationsControls.ToArray());
-                    tlpChecked.Controls.AddRange(TLPEntranceControls.ToArray());
-                    tlpEntrances.Controls.AddRange(TLPCheckedControls.ToArray());
-                    tlpPathFinder.Controls.AddRange(TLPPathfinderControls.ToArray());
+                    tlpLocations.Controls.AddRange([.. TLPLocationsControls]);
+                    tlpChecked.Controls.AddRange([.. TLPEntranceControls]);
+                    tlpEntrances.Controls.AddRange([.. TLPCheckedControls]);
+                    tlpPathFinder.Controls.AddRange([.. TLPPathfinderControls]);
                 }
                 else
                 {
-                    tlpLocations.Controls.AddRange(TLPLocationsControls.ToArray());
-                    tlpChecked.Controls.AddRange(TLPCheckedControls.ToArray());
-                    tlpEntrances.Controls.AddRange(TLPEntranceControls.ToArray());
-                    tlpPathFinder.Controls.AddRange(TLPPathfinderControls.ToArray());
+                    tlpLocations.Controls.AddRange([.. TLPLocationsControls]);
+                    tlpChecked.Controls.AddRange([.. TLPCheckedControls]);
+                    tlpEntrances.Controls.AddRange([.. TLPEntranceControls]);
+                    tlpPathFinder.Controls.AddRange([.. TLPPathfinderControls]);
                 }
             }
             else
@@ -502,8 +504,8 @@ namespace Windows_Form_Frontend
                     tlpMaster.ColumnStyles[1] = new ColumnStyle(SizeType.Percent, 50F);
                     tlpMaster.RowStyles[0] = new RowStyle(SizeType.Percent, 100F);
                     tlpMaster.RowStyles[1] = new RowStyle(SizeType.Percent, 0F);
-                    tlpLocations.Controls.AddRange(TLPLocationsControls.ToArray());
-                    tlpEntrances.Controls.AddRange(TLPCheckedControls.ToArray());
+                    tlpLocations.Controls.AddRange([.. TLPLocationsControls]);
+                    tlpEntrances.Controls.AddRange([.. TLPCheckedControls]);
                 }
                 else
                 {
@@ -511,44 +513,18 @@ namespace Windows_Form_Frontend
                     tlpMaster.ColumnStyles[1] = new ColumnStyle(SizeType.Percent, 0F);
                     tlpMaster.RowStyles[0] = new RowStyle(SizeType.Percent, 50F);
                     tlpMaster.RowStyles[1] = new RowStyle(SizeType.Percent, 50F);
-                    tlpLocations.Controls.AddRange(TLPLocationsControls.ToArray());
-                    tlpChecked.Controls.AddRange(TLPCheckedControls.ToArray());
+                    tlpLocations.Controls.AddRange([.. TLPLocationsControls]);
+                    tlpChecked.Controls.AddRange([.. TLPCheckedControls]);
                 }
             }
         }
 
         public void SetObjectVisibility(bool Available, bool Checked, bool Entrance, bool Pathfinder)
         {
-            var UpperLeftLBL = lblAvailableLocation;
-            var UpperRightLBL = lblAvailableEntrances;
-            var LowerLeftLBL = lblCheckedLocation;
-            var LowerRightLBL = label4;
-            var LowerRight2LBL = label5;
-            var LowerRight3LBL = label6;
-
-            UpperLeftLBL.Visible = Available;
-            BTNSetItem.Visible = Available;
-            TXTLocSearch.Visible = Available;
-            LBValidLocations.Visible = Available;
-
-            LowerLeftLBL.Visible = Checked;
-            CHKShowAll.Visible = Checked;
-            TXTCheckedSearch.Visible = Checked;
-            LBCheckedLocations.Visible = Checked;
-
-            UpperRightLBL.Visible = Entrance;
-            BTNSetEntrance.Visible = Entrance;
-            TXTEntSearch.Visible = Entrance;
-            LBValidEntrances.Visible = Entrance;
-            LowerRightLBL.Visible = Entrance;
-            BTNFindPath.Visible = Entrance;
-
-            LowerRight2LBL.Visible = Pathfinder;
-            LowerRight3LBL.Visible = Pathfinder;
-            CMBStart.Visible = Pathfinder;
-            CMBEnd.Visible = Pathfinder;
-            LBPathFinder.Visible = Pathfinder;
-            lblSwapPathfinder.Visible = Pathfinder;
+            TLPLocationsControls.ForEach(x => x.Visible = Available);
+            TLPCheckedControls.ForEach(x => x.Visible = Checked);
+            TLPEntranceControls.ForEach(x => x.Visible = Entrance);
+            TLPPathfinderControls.ForEach(x => x.Visible = Pathfinder);
         }
 
         public void PrintToListBox(List<ListBox> ToUpdate = null)
