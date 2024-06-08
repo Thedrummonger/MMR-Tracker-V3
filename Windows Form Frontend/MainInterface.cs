@@ -631,7 +631,7 @@ namespace Windows_Form_Frontend
             SavetoolStripMenuItem.Visible = (InstanceContainer.Instance != null);
             SaveAsToolStripMenuItem.Visible = (InstanceContainer.Instance != null) && !string.IsNullOrWhiteSpace(InstanceContainer.CurrentSavePath);
             spoilerLogToolsToolStripMenuItem.Visible = (InstanceContainer.Instance != null);
-            importSpoilerLogToolStripMenuItem.Visible = (InstanceContainer.Instance != null);
+            importSpoilerLogToolStripMenuItem.Visible = (InstanceContainer.Instance != null) && InstanceContainer.Instance.SpoilerLogSupported();
             PathFinderToolStripMenuItem.Visible = (InstanceContainer.Instance != null && InstanceContainer.Instance.GetAllRandomizableExits().Count > 0);
             netClientToolStripMenuItem.Visible = (InstanceContainer.Instance != null && InstanceContainer.Instance.LogicDictionary.NetPlaySupported);
 

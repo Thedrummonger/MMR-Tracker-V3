@@ -31,7 +31,7 @@ namespace TestingForm.GameDataCreation.OOTMMV3
             SpoilerLogInstructions = new()
             {
                 ParserPath = "OOTMM",
-                FileImports = new() { { "SpoilerLog", ("OOTMM Spoiler Log", ["json", "txt"]) } }
+                FileImports = new() { { "SpoilerLog", ("OOTMM Spoiler Log", ["txt"]) } }
             }
         };
         public ExtraData extraData;
