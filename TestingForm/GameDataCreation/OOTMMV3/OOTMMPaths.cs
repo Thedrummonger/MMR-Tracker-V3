@@ -22,5 +22,6 @@ namespace TestingForm.GameDataCreation.OOTMMV3
         public static string MMHintsFile { get { return Path.Combine(DataSRCFolderPath, "hints", "hints_mm.csv"); } }
         public static string EntranceFile { get { return Path.Combine(DataSRCFolderPath, "defs", "entrances.yml"); } }
         public static string ExtraDataFile { get { return Path.Combine(TestingReferences.GetOtherGameDataPath("OOTMMV3"), "extradata.json"); } }
+        public static string AreaFile { get { return Path.Combine(TestingReferences.GetOtherGameDataPath("OOTMMV3"), "areas.json"); } }
     }
 }
