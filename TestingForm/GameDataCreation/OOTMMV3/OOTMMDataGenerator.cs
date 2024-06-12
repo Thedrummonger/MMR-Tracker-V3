@@ -18,6 +18,21 @@ using TDMUtils;
 
 namespace TestingForm.GameDataCreation.OOTMMV3
 {
+    public class OOTMMExtraFunctions
+    {
+        public static void WriteAreaFile()
+        {
+            var OOTMMDict = Utility.LoadObjectFromFileOrDefault<LogicDictionaryData.LogicDictionary>
+                (Path.Join(References.Globalpaths.BaseDictionaryPath, "OOTMM V3.json"));
+
+            Dictionary<string, string> AreaDict = [];
+            foreach(var i in OOTMMDict.LocationList.Values)
+            {
+                AreaDict[i.ID] = i.Area;
+            }
+            Utility.PrintObjectToConsole(AreaDict);
+        }
+    }
     public class OOTMMDataGenerator
     {
         public LogicStringParser LogicStringParser = new();
