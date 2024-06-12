@@ -46,7 +46,7 @@ namespace TestingForm.GameDataCreation.OOTMMV3
             SpoilerLogInstructions = new()
             {
                 ParserPath = "OOTMM",
-                FileImports = new() { { "SpoilerLog", ("OOTMM Spoiler Log", ["json", "txt"]) } }
+                FileImports = new() { { "SpoilerLog", ("OOTMM Spoiler Log", ["txt"]) } }
             }
         };
         public ExtraData extraData;
@@ -153,7 +153,7 @@ namespace TestingForm.GameDataCreation.OOTMMV3
                     IsTrick = true,
                     TrickCategory = $"{Trick.game} {(IsGlitch ? "Glitches" : "Tricks")}",
                     TrickTooltip = Trick.tooltip,
-                    TrickUrl = Trick.linkText
+                    TrickUrl = Trick.linkText??Trick.linkVideo
                 });
                 dictionary.MacroList.Add(ID, new LogicDictionaryData.DictionaryMacroEntry
                 {

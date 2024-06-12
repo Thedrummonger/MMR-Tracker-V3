@@ -141808,7 +141808,8 @@
       "TimeSetup": "None",
       "IsTrick": true,
       "TrickTooltip": "Guess the Bomber Code for Astral Observatory.  There are 120 Combinations. (The Video Link is a backflip over him)",
-      "TrickCategory": "mm Tricks"
+      "TrickCategory": "mm Tricks",
+      "TrickUrl": "https://www.youtube.com/watch?v=W6DhLXzJn0A&ab_channel=Tyler%2706"
     },
     {
       "Id": "MM_CAPTAIN_SKIP",
@@ -141841,7 +141842,8 @@
       "TimeSetup": "None",
       "IsTrick": true,
       "TrickTooltip": "Climb the Mountain Village wall without Lens of Truth.",
-      "TrickCategory": "mm Tricks"
+      "TrickCategory": "mm Tricks",
+      "TrickUrl": "https://www.youtube.com/watch?v=X_IQYkJ49zA&ab_channel=dodo"
     },
     {
       "Id": "MM_DOG_RACE_CHEST_NOTHING",
@@ -141852,7 +141854,8 @@
       "TimeSetup": "None",
       "IsTrick": true,
       "TrickTooltip": "Climb the fence and make a precise jump to get to the chest in the Doggy Racetrack area",
-      "TrickCategory": "mm Tricks"
+      "TrickCategory": "mm Tricks",
+      "TrickUrl": "https://www.youtube.com/watch?v=DlpBZq579Ds&ab_channel=PushyMisumi"
     },
     {
       "Id": "MM_ESCAPE_CAGE",
@@ -141907,7 +141910,8 @@
       "TimeSetup": "None",
       "IsTrick": true,
       "TrickTooltip": "Light the four torches using somewhat precise arrow shots",
-      "TrickCategory": "mm Tricks"
+      "TrickCategory": "mm Tricks",
+      "TrickUrl": "https://www.youtube.com/watch?v=McXOXYxYiqw"
     },
     {
       "Id": "MM_GBT_FAIRY2_HOOK",
@@ -141984,7 +141988,8 @@
       "TimeSetup": "None",
       "IsTrick": true,
       "TrickTooltip": "Using bombs or a keg, use the Goron Pound to leap into the air and get damaged by the explosion to hop over fences",
-      "TrickCategory": "mm Tricks"
+      "TrickCategory": "mm Tricks",
+      "TrickUrl": "https://www.youtube.com/watch?v=lLMT2-wNs9w&ab_channel=KokiriKid07"
     },
     {
       "Id": "MM_GYORG_IRONS",
@@ -142028,7 +142033,8 @@
       "TimeSetup": "None",
       "IsTrick": true,
       "TrickTooltip": "With a precise hookshot postition, you can hit the first tree instead of using the ice arrows to get closer",
-      "TrickCategory": "mm Tricks"
+      "TrickCategory": "mm Tricks",
+      "TrickUrl": "https://www.youtube.com/watch?v=VtMx8XIE0tA&ab_channel=yogamoanyo"
     },
     {
       "Id": "MM_IGOS_DINS",
@@ -142072,7 +142078,8 @@
       "TimeSetup": "None",
       "IsTrick": true,
       "TrickTooltip": "Jump off of a piece of rubble to the slope on the wall, and jump outside the fenced wall.  Walk around the edge to get to the other side.",
-      "TrickCategory": "mm Tricks"
+      "TrickCategory": "mm Tricks",
+      "TrickUrl": "https://www.youtube.com/watch?v=9af_q8oYBhA&t=1s"
     },
     {
       "Id": "MM_ISTT_CHUCHU_LESS",
@@ -142105,7 +142112,8 @@
       "TimeSetup": "None",
       "IsTrick": true,
       "TrickTooltip": "Using a precise bomb long jump, you can make it to the switch on the left side of the room, normally blocked by the wall",
-      "TrickCategory": "mm Tricks"
+      "TrickCategory": "mm Tricks",
+      "TrickUrl": "https://www.youtube.com/watch?v=UAG9jbjKwek&ab_channel=Gigopler"
     },
     {
       "Id": "MM_ISTT_EYEGORE",
@@ -142116,7 +142124,8 @@
       "TimeSetup": "None",
       "IsTrick": true,
       "TrickTooltip": "Using either hookshot and light arrows, or bombs for a recoil jump, skip portions of the dungeon using the central bridge with an Eyegore on it",
-      "TrickCategory": "mm Tricks"
+      "TrickCategory": "mm Tricks",
+      "TrickUrl": "https://www.youtube.com/watch?v=PxUhL6pombo&list=PLJoiLTDPjgenwpASzbu07cLnUSGZcIUnB&index=52&ab_channel=dodo"
     },
     {
       "Id": "MM_ISTT_RUPEES_GORON",
@@ -142203,7 +142212,8 @@
       "TimeSetup": "None",
       "IsTrick": true,
       "TrickTooltip": "Go to Pinnacle Rock blind. The Signs are your markers for turns.",
-      "TrickCategory": "mm Tricks"
+      "TrickCategory": "mm Tricks",
+      "TrickUrl": "https://www.youtube.com/watch?v=Ye7lu1kSxpQ&ab_channel=Rahylia"
     },
     {
       "Id": "MM_ONE_MASK_STONE_TOWER",
@@ -142214,7 +142224,8 @@
       "TimeSetup": "None",
       "IsTrick": true,
       "TrickTooltip": "Play the Elegy of Emptiness on a specific block to climb a certain portion of Stone Tower",
-      "TrickCategory": "mm Tricks"
+      "TrickCategory": "mm Tricks",
+      "TrickUrl": "https://www.youtube.com/watch?v=I3xLE1X9Iiw&t=3s&ab_channel=dodo"
     },
     {
       "Id": "MM_OOB_MOVEMENT",
@@ -142236,7 +142247,8 @@
       "TimeSetup": "None",
       "IsTrick": true,
       "TrickTooltip": "Jump onto on of the doorframes to skip planting the beans, removing bottle for this check",
-      "TrickCategory": "mm Tricks"
+      "TrickCategory": "mm Tricks",
+      "TrickUrl": "https://www.youtube.com/watch?v=sL30HLF9tAQ&ab_channel=PushyMisumi"
     },
     {
       "Id": "MM_PALACE_GUARD_SKIP",
@@ -142247,7 +142259,8 @@
       "TimeSetup": "None",
       "IsTrick": true,
       "TrickTooltip": "With a precise backflip on the fence, jump over the guards as human link",
-      "TrickCategory": "mm Tricks"
+      "TrickCategory": "mm Tricks",
+      "TrickUrl": "https://www.youtube.com/watch?v=-4F9lzES7tM&ab_channel=Pokemongenius88"
     },
     {
       "Id": "MM_PATH_SNOWHEAD_HOVERS",
@@ -142280,7 +142293,8 @@
       "TimeSetup": "None",
       "IsTrick": true,
       "TrickTooltip": "Get good at counting to 10",
-      "TrickCategory": "mm Tricks"
+      "TrickCategory": "mm Tricks",
+      "TrickUrl": "https://www.youtube.com/watch?v=bAlGLPkp8go&ab_channel=ZZtheCat2"
     },
     {
       "Id": "MM_RANCH_FARORE",
@@ -142302,7 +142316,8 @@
       "TimeSetup": "None",
       "IsTrick": true,
       "TrickTooltip": "Climb the roof with a precise jump to access the South Clock town Chest",
-      "TrickCategory": "mm Tricks"
+      "TrickCategory": "mm Tricks",
+      "TrickUrl": "https://www.youtube.com/watch?v=8_tjO86vRsY&ab_channel=PushyMisumi"
     },
     {
       "Id": "MM_SHT_HOT_WATER",
@@ -142324,7 +142339,8 @@
       "TimeSetup": "None",
       "IsTrick": true,
       "TrickTooltip": "Destroy the snowballs with fire arrows or bombs and then jump down.  A precise jump slash may help getting onto the platform.",
-      "TrickCategory": "mm Tricks"
+      "TrickCategory": "mm Tricks",
+      "TrickUrl": "https://youtube.com/clip/UgkxwCrliqwRiCbljfpozhmsnlzVwSUaAI0N"
     },
     {
       "Id": "MM_SHT_STICKS_RUN",
@@ -142368,7 +142384,8 @@
       "TimeSetup": "None",
       "IsTrick": true,
       "TrickTooltip": "Use Goron's ground pound in front of the Tourist Center door to clip through the roof and reach the heart piece",
-      "TrickCategory": "mm Tricks"
+      "TrickCategory": "mm Tricks",
+      "TrickUrl": "https://www.youtube.com/watch?v=HvH5NaTsf5w&list=PLuteuW9RqeG0NfhzoiZlJ1HQM2BdHftzg&index=5&ab_channel=Pokemongenius88"
     },
     {
       "Id": "MM_ST_UPDRAFTS",
@@ -142500,7 +142517,8 @@
       "TimeSetup": "None",
       "IsTrick": true,
       "TrickTooltip": "Swim around the back of Zora Hall to get there without Zora' mask",
-      "TrickCategory": "mm Tricks"
+      "TrickCategory": "mm Tricks",
+      "TrickUrl": "https://www.youtube.com/watch?v=j4GiWM0xgtA&ab_channel=Rahylia"
     },
     {
       "Id": "MM_ZORA_HALL_SCRUB_HP_NO_DEKU",
@@ -142511,7 +142529,8 @@
       "TimeSetup": "None",
       "IsTrick": true,
       "TrickTooltip": "As either Goron or Zora Link, jump up to the heart piece.  Linked playlist has both versions.",
-      "TrickCategory": "mm Tricks"
+      "TrickCategory": "mm Tricks",
+      "TrickUrl": "https://www.youtube.com/playlist?list=PL7AtrmSRvw6JxohRTRK61ZGSvuIL5rq0w"
     },
     {
       "Id": "OOT_ADULT_GALLERY_TT",
@@ -142533,7 +142552,8 @@
       "TimeSetup": "None",
       "IsTrick": true,
       "TrickTooltip": "Blue Fire has the ability to break mudwalls. Turning this on will allow the Blue Fire Arrows to be logical for breaking these.",
-      "TrickCategory": "oot Tricks"
+      "TrickCategory": "oot Tricks",
+      "TrickUrl": "https://www.youtube.com/watch?v=XXAFs1cfRrc&ab_channel=ThatWelshKaren"
     },
     {
       "Id": "OOT_BLIND_WASTELAND",
@@ -142544,7 +142564,8 @@
       "TimeSetup": "None",
       "IsTrick": true,
       "TrickTooltip": "Turning this on may expect the player to cross the wasteland both ways without the Poe Guide.",
-      "TrickCategory": "oot Tricks"
+      "TrickCategory": "oot Tricks",
+      "TrickUrl": "https://www.youtube.com/watch?v=h5_EiPTjdEk&ab_channel=DanielBaamonde"
     },
     {
       "Id": "OOT_COLOSSUS_GS_NO_BEAN",
@@ -142588,7 +142609,8 @@
       "TimeSetup": "None",
       "IsTrick": true,
       "TrickTooltip": "Adult can jump to the upper platforms in the Bomb Bag room, removing the need for a projectile.",
-      "TrickCategory": "oot Tricks"
+      "TrickCategory": "oot Tricks",
+      "TrickUrl": "https://www.youtube.com/watch?v=LEvlWAvpqfo&ab_channel=I_Buy_Slingshats"
     },
     {
       "Id": "OOT_DEAD_HAND_STICKS",
@@ -142599,7 +142621,8 @@
       "TimeSetup": "None",
       "IsTrick": true,
       "TrickTooltip": "Fighting Dead Hand as child with Deku Sticks requires all 10 if you only use slashes. This trick removes the mercy of fighting it with a sword.",
-      "TrickCategory": "oot Tricks"
+      "TrickCategory": "oot Tricks",
+      "TrickUrl": "https://www.youtube.com/watch?v=gROY5Y66xeA&ab_channel=dotzo"
     },
     {
       "Id": "OOT_DEKU_SKIP",
@@ -142610,7 +142633,8 @@
       "TimeSetup": "None",
       "IsTrick": true,
       "TrickTooltip": "Child is able to jump to the upper portion of the basement without going around.",
-      "TrickCategory": "oot Tricks"
+      "TrickCategory": "oot Tricks",
+      "TrickUrl": "https://www.youtube.com/watch?v=TSAk3x-zHcI&ab_channel=AnnoyedTortoise"
     },
     {
       "Id": "OOT_DMT_RED_ROCK_GS",
@@ -142621,7 +142645,8 @@
       "TimeSetup": "None",
       "IsTrick": true,
       "TrickTooltip": "Adult can obtain the Gold Skulltulas on Death Mountain without the Hammer. The upper one can be backflipped into after spin attacking it. The lower one can be hookshotted or jumped onto from above to collect.",
-      "TrickCategory": "oot Tricks"
+      "TrickCategory": "oot Tricks",
+      "TrickUrl": "https://www.youtube.com/playlist?list=PL7AtrmSRvw6LAJRTwCEb0VzuOFj9BpPZ-"
     },
     {
       "Id": "OOT_DOMAIN_CUCCO",
@@ -142632,7 +142657,8 @@
       "TimeSetup": "None",
       "IsTrick": true,
       "TrickTooltip": "Child can carry a cucco from the front or plateau of Zora's River and fly behind the waterfall.",
-      "TrickCategory": "oot Tricks"
+      "TrickCategory": "oot Tricks",
+      "TrickUrl": "https://www.youtube.com/watch?v=shR5yahUifs&ab_channel=EmptyGarbageCan"
     },
     {
       "Id": "OOT_DOMAIN_HOVER",
@@ -142643,7 +142669,8 @@
       "TimeSetup": "None",
       "IsTrick": true,
       "TrickTooltip": "Rolling once with Hover Boots at an angle can get you enough distance to get behind the waterfall.",
-      "TrickCategory": "oot Tricks"
+      "TrickCategory": "oot Tricks",
+      "TrickUrl": "https://www.youtube.com/watch?v=y4iK6uiw0Xs&ab_channel=ZeldaSpeedRuns"
     },
     {
       "Id": "OOT_ENTER_JABU",
@@ -142665,7 +142692,8 @@
       "TimeSetup": "None",
       "IsTrick": true,
       "TrickTooltip": "Link is able to hookshot to the vines above the east courtyard using only Hookshot.",
-      "TrickCategory": "oot Tricks"
+      "TrickCategory": "oot Tricks",
+      "TrickUrl": "https://www.youtube.com/watch?v=Lr3TpVdNg2k&ab_channel=dotzo"
     },
     {
       "Id": "OOT_FORTRESS_JUMPS",
@@ -142720,7 +142748,8 @@
       "TimeSetup": "None",
       "IsTrick": true,
       "TrickTooltip": "Using the Megaton Hammer against a wall will cause Link to hammer through it. This can be used to hit some switches through walls.",
-      "TrickCategory": "oot Tricks"
+      "TrickCategory": "oot Tricks",
+      "TrickUrl": "https://www.youtube.com/watch?v=R18uZdwXRPA&ab_channel=Numbers"
     },
     {
       "Id": "OOT_HIDDEN_GROTTOS",
@@ -142776,7 +142805,8 @@
       "TimeSetup": "None",
       "IsTrick": true,
       "TrickTooltip": "Adult can jump onto the fence next to King Zora and then jump down behind him.",
-      "TrickCategory": "oot Tricks"
+      "TrickCategory": "oot Tricks",
+      "TrickUrl": "https://www.youtube.com/watch?v=rfp9MZPgme4&ab_channel=Kryal"
     },
     {
       "Id": "OOT_LAB_DIVE_NO_GOLD_SCALE",
@@ -142787,7 +142817,8 @@
       "TimeSetup": "None",
       "IsTrick": true,
       "TrickTooltip": "Using Iron Boots and Hookshot, it is possible to obtain this check without the Golden Scale.",
-      "TrickCategory": "oot Tricks"
+      "TrickCategory": "oot Tricks",
+      "TrickUrl": "https://www.youtube.com/watch?v=7ihH-wBP0PM&ab_channel=dotzo"
     },
     {
       "Id": "OOT_LAB_WALL_GS",
@@ -142798,7 +142829,8 @@
       "TimeSetup": "None",
       "IsTrick": true,
       "TrickTooltip": "It is possible to obtain this Gold Skulltula by jump slashing it, then jump slashing into the token.",
-      "TrickCategory": "oot Tricks"
+      "TrickCategory": "oot Tricks",
+      "TrickUrl": "https://www.youtube.com/watch?v=ThUyxj3psSM&ab_channel=Link98OoT"
     },
     {
       "Id": "OOT_LAKE_SHORTCUT",
@@ -142831,7 +142863,8 @@
       "TimeSetup": "None",
       "IsTrick": true,
       "TrickTooltip": "This bean can be collected using Hookshot at a precise angle after killing it with Bow, Din's Fire, Bombchus, or Longshot.",
-      "TrickCategory": "oot Tricks"
+      "TrickCategory": "oot Tricks",
+      "TrickUrl": "https://www.youtube.com/watch?v=YFLxEw2_PBw&ab_channel=dotzo"
     },
     {
       "Id": "OOT_MAN_ON_ROOF",
@@ -142842,7 +142875,8 @@
       "TimeSetup": "None",
       "IsTrick": true,
       "TrickTooltip": "Child can sidehop off the watchtower to reach this man, and Adult can jump onto the Potion Shop roof from the gate to Death Mountain to then reach the man.",
-      "TrickCategory": "oot Tricks"
+      "TrickCategory": "oot Tricks",
+      "TrickUrl": "https://www.youtube.com/watch?v=3-1BY24Fu-Y&ab_channel=dotzo"
     },
     {
       "Id": "OOT_MIDO_SKIP",
@@ -142853,7 +142887,8 @@
       "TimeSetup": "None",
       "IsTrick": true,
       "TrickTooltip": "As Adult, Mido can be backflipped over from the front with a specific angle. It can be done with nothing, but logic will expect a first-person item to make it easier.",
-      "TrickCategory": "oot Tricks"
+      "TrickCategory": "oot Tricks",
+      "TrickUrl": "https://www.youtube.com/watch?v=ll8e7h9vFag&ab_channel=ZeldaSpeedRuns"
     },
     {
       "Id": "OOT_MQ_GTG_FLAMES",
@@ -142875,7 +142910,8 @@
       "TimeSetup": "None",
       "IsTrick": true,
       "TrickTooltip": "The Gold Skulltula next to Pierre can be reached using only Hover Boots and somewhat precise platforming.",
-      "TrickCategory": "oot Tricks"
+      "TrickCategory": "oot Tricks",
+      "TrickUrl": "https://www.youtube.com/watch?v=RaggmtTEBuM"
     },
     {
       "Id": "OOT_MQ_ICE_SCARE_NOTHING",
@@ -142908,7 +142944,8 @@
       "TimeSetup": "None",
       "IsTrick": true,
       "TrickTooltip": "Some walls and gates, despite their appearance, only have collision on one side. Turning this on may expect you to know of these and walk through them. Some examples are the Kakariko Gate as child and the awning behind Impa's House.",
-      "TrickCategory": "oot Tricks"
+      "TrickCategory": "oot Tricks",
+      "TrickUrl": "https://www.youtube.com/watch?v=OnnNUZVW8Gw&ab_channel=StoneeBadLuck"
     },
     {
       "Id": "OOT_REVERSE_DAMPE",
@@ -142930,7 +142967,8 @@
       "TimeSetup": "None",
       "IsTrick": true,
       "TrickTooltip": "By backwalking across the left side, one can cross the River of Sand forwards. Going backwards, one can backwalk at a slight angle.",
-      "TrickCategory": "oot Tricks"
+      "TrickCategory": "oot Tricks",
+      "TrickUrl": "https://www.youtube.com/watch?v=PLHJY1KRvtg&ab_channel=dotzo"
     },
     {
       "Id": "OOT_SHADOW_BOAT_EARLY",
@@ -142952,7 +142990,8 @@
       "TimeSetup": "None",
       "IsTrick": true,
       "TrickTooltip": "With a precise setup, it is possible to light all of the torches for the Shadow Temple Entrance with a mix of fire arrows and normal arrow. The timing is very quick.",
-      "TrickCategory": "oot Tricks"
+      "TrickCategory": "oot Tricks",
+      "TrickUrl": "https://www.youtube.com/watch?v=im3IXe__8ww&ab_channel=Exodus122"
     },
     {
       "Id": "OOT_SHADOW_TEMPLE_STICKS",
@@ -142963,7 +143002,8 @@
       "TimeSetup": "None",
       "IsTrick": true,
       "TrickTooltip": "Turning this on will enable Fire Arrows and Ageless Sticks to enter Shadow Temple in logic.",
-      "TrickCategory": "oot Tricks"
+      "TrickCategory": "oot Tricks",
+      "TrickUrl": "Link Needed"
     },
     {
       "Id": "OOT_SPIRIT_BOSS_CLIMB_NO_HOOK",
@@ -142974,7 +143014,8 @@
       "TimeSetup": "None",
       "IsTrick": true,
       "TrickTooltip": "It is possible to reach Twinrova without Hookshot by climbing to the top of the statue, then using Hover Boots and jump slashing to the gate.",
-      "TrickCategory": "oot Tricks"
+      "TrickCategory": "oot Tricks",
+      "TrickUrl": "https://www.youtube.com/watch?v=hobCEU1bY-s"
     },
     {
       "Id": "OOT_SPIRIT_CHILD_HOVER",
@@ -143029,7 +143070,8 @@
       "TimeSetup": "None",
       "IsTrick": true,
       "TrickTooltip": "Rolling with Hover Boots next to Darunia's room can get you to the volcano without the bean plant.",
-      "TrickCategory": "oot Tricks"
+      "TrickCategory": "oot Tricks",
+      "TrickUrl": "https://www.youtube.com/watch?v=rbxaO5lNUTU&ab_channel=StoneeBadLuck"
     },
     {
       "Id": "OOT_WATER_GOLD_SCALE",
@@ -143051,7 +143093,8 @@
       "TimeSetup": "None",
       "IsTrick": true,
       "TrickTooltip": "Using Longshot, Link can hook to the torches at the bottom in front of the room he meets Ruto.",
-      "TrickCategory": "oot Tricks"
+      "TrickCategory": "oot Tricks",
+      "TrickUrl": "Link Needed"
     },
     {
       "Id": "OOT_WATER_PIT_GS_CHU",
@@ -143095,7 +143138,8 @@
       "TimeSetup": "None",
       "IsTrick": true,
       "TrickTooltip": "Adult can jump off the small stone posts to reach the central spinning platform.",
-      "TrickCategory": "oot Tricks"
+      "TrickCategory": "oot Tricks",
+      "TrickUrl": "https://www.youtube.com/watch?v=vDl7lr4Ecv8&ab_channel=dotzo"
     },
     {
       "Id": "OOT_ZR_FALLS_HOOK",

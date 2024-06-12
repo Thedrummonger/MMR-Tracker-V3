@@ -471,28 +471,28 @@ namespace Windows_Form_Frontend
             // importSpoilerLogToolStripMenuItem
             // 
             importSpoilerLogToolStripMenuItem.Name = "importSpoilerLogToolStripMenuItem";
-            importSpoilerLogToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            importSpoilerLogToolStripMenuItem.Size = new System.Drawing.Size(172, 22);
             importSpoilerLogToolStripMenuItem.Text = "Import Spoiler Log";
             importSpoilerLogToolStripMenuItem.Click += importSpoilerLogToolStripMenuItem_Click;
             // 
             // spoilerLogToolsToolStripMenuItem
             // 
             spoilerLogToolsToolStripMenuItem.Name = "spoilerLogToolsToolStripMenuItem";
-            spoilerLogToolsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            spoilerLogToolsToolStripMenuItem.Size = new System.Drawing.Size(172, 22);
             spoilerLogToolsToolStripMenuItem.Text = "Spoiler Log Tools";
             spoilerLogToolsToolStripMenuItem.Click += spoilerLogToolsToolStripMenuItem_Click;
             // 
             // PathFinderToolStripMenuItem
             // 
             PathFinderToolStripMenuItem.Name = "PathFinderToolStripMenuItem";
-            PathFinderToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            PathFinderToolStripMenuItem.Size = new System.Drawing.Size(172, 22);
             PathFinderToolStripMenuItem.Text = "Path Finder";
             PathFinderToolStripMenuItem.Click += PathFinderToolStripMenuItem_Click;
             // 
             // netClientToolStripMenuItem
             // 
             netClientToolStripMenuItem.Name = "netClientToolStripMenuItem";
-            netClientToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            netClientToolStripMenuItem.Size = new System.Drawing.Size(172, 22);
             netClientToolStripMenuItem.Text = "Net Client";
             netClientToolStripMenuItem.Click += netClientToolStripMenuItem_Click;
             // 

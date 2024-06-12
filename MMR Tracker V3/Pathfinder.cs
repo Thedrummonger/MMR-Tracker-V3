@@ -3,6 +3,7 @@ using MMR_Tracker_V3.TrackerObjectExtensions;
 using MMR_Tracker_V3.TrackerObjects;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Diagnostics;
 using System.Linq;
 
 namespace MMR_Tracker_V3
@@ -11,6 +12,7 @@ namespace MMR_Tracker_V3
     {
         public List<Dictionary<string, string>> FinalPath = new List<Dictionary<string, string>>();
 
+        //Dictionary<AreaID, Dictionary<ExitID, Destination Object At Exit>
         public Dictionary<string, Dictionary<string, EntranceData.EntranceRandoDestination>> EntranceMap = new Dictionary<string, Dictionary<string, EntranceData.EntranceRandoDestination>>();
         public Dictionary<string, EntranceData.EntranceRandoDestination> Warps = new Dictionary<string, EntranceData.EntranceRandoDestination>();
         public Dictionary<string, int> SeenAreas = new Dictionary<string, int>();
@@ -77,7 +79,7 @@ namespace MMR_Tracker_V3
                         string Area = stop.Key;
                         string Exit = stop.Value;
 
-                        var ExitObject = instance.GetExitByAreaIDAndExitID(Area, Exit);
+                        var ExitObject = instance.GetExitByLogicID(Exit);
 
                         bool ExitValid = ExitObject is not null;
                         bool IsDestination = string.IsNullOrWhiteSpace(Exit);
@@ -85,7 +87,7 @@ namespace MMR_Tracker_V3
                             ExitObject.IsRandomizableEntrance() && 
                             (ExitObject.IsRandomized() || ExitObject.IsUnrandomized(MiscData.UnrandState.Manual));
 
-                        if (IsRandomizedExit || IsDestination || ShowMacro) { FormattedPath.Add(Area, Exit); }
+                        if (IsRandomizedExit || IsDestination || ShowMacro) { FormattedPath.Add(Area, ExitObject?.ExitID??Exit); }
                         Index++;
                     }
                     FinalPath.Add(FormattedPath);

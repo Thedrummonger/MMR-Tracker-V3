@@ -8,6 +8,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using TDMUtils;
 using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace MMR_Tracker_V3.SpoilerLogHandling
@@ -172,6 +173,15 @@ namespace MMR_Tracker_V3.SpoilerLogHandling
             Dictionary<string, object> DataStore = new() { { "Archipelago", APData } };
             foreach (var file in ArchipelagoFileImports ?? []) { DataStore.Add(file.Key, FileSelectorReader(file.Value.FileExtentions, file.Value.Description)); }
             return DataStore;
+        }
+
+        public bool SupportsSpoiler()
+        {
+            return !ParserPath.IsNullOrWhiteSpace() && FileImports.Count > 0;
+        }
+        public bool SupportsAPSpoiler()
+        {
+            return !ArchipelagoParserPath.IsNullOrWhiteSpace();
         }
     }
     public static class SpoilerTools

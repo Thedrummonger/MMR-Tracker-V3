@@ -377,5 +377,16 @@ namespace MMR_Tracker_V3.TrackerObjectExtensions
             if (Instance == null) { return true; }
             return !Instance.StaticOptions.OptionFile.EntranceRandoFeatures || !Instance.GetAllRandomizableExits().Any(x => x.IsRandomized());
         }
+
+        public static bool SpoilerLogSupported(this InstanceData.TrackerInstance Instance)
+        {
+            if (Instance.LogicDictionary.SpoilerLogInstructions is null) { return false; }
+            return Instance.LogicDictionary.SpoilerLogInstructions.SupportsSpoiler();
+        }
+        public static bool APSpoilerLogSupported(this InstanceData.TrackerInstance Instance)
+        {
+            if (Instance.LogicDictionary.SpoilerLogInstructions is null) { return false; }
+            return Instance.LogicDictionary.SpoilerLogInstructions.SupportsAPSpoiler();
+        }
     }
 }

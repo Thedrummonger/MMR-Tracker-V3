@@ -21,12 +21,10 @@ namespace MMR_Tracker_V3
         {
             if (Instance.LogicDictionary.AreaOrder is not null && Instance.LogicDictionary.AreaOrder.Length > 0)
             {
-                Debug.WriteLine("Reading Headers from Dictionary");
                 return Instance.LogicDictionary.AreaOrder.Distinct().Select((s, ind) => new { s, ind }).ToDictionary(x => x.s.ToLower(), x => x.ind);
             }
             else if (File.Exists(References.Globalpaths.HeaderSortingFile))
             {
-                Debug.WriteLine("Reading Headers from Header File");
                 HeaderSortingFile[] headerSortingFile = [];
                 try { headerSortingFile = TDMUtils.Utility.DeserializeYAMLFile<HeaderSortingFile[]>(References.Globalpaths.HeaderSortingFile); }
                 catch { Debug.WriteLine("Header File Could Not Be parsed"); return []; }
@@ -36,7 +34,6 @@ namespace MMR_Tracker_V3
             }
             else
             {
-                Debug.WriteLine("No header order found"); 
                 return []; 
             }
         }
