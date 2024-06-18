@@ -32,6 +32,14 @@ namespace TestingForm
             TestingUtility.TestLogicForInvalidItems(MainInterface.InstanceContainer);
             //TestingUtility.TestLocationsForInvalidVanillaItem(MainInterface.InstanceContainer);
         }
+        public static void WWHDRCreateData()
+        {
+            GameDataCreation.WindWakerHD.Generate.GenerateData(out MMRData.LogicFile Logic, out LogicDictionaryData.LogicDictionary dictionary);
+            WinFormTesting.ActivateWinFormInterface();
+            WinFormInstanceCreation.CreateWinFormInstance(JsonConvert.SerializeObject(Logic), JsonConvert.SerializeObject(dictionary));
+            TestingUtility.TestLogicForInvalidItems(MainInterface.InstanceContainer);
+            TestingUtility.TestLocationsForInvalidVanillaItem(MainInterface.InstanceContainer);
+        }
         public static void BTCreateData()
         {
             GameDataCreation.BanjoTooie.DataGenerator.GenData(out MMRData.LogicFile Logic, out LogicDictionaryData.LogicDictionary dictionary);
