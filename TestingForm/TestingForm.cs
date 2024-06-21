@@ -18,6 +18,7 @@ using FParsec;
 using MMR_Tracker_V3.Logic;
 using System.Text.RegularExpressions;
 using TDMUtils;
+using TestingForm.GameDataCreation.OOTMMV3;
 
 namespace TestingForm
 {
@@ -79,6 +80,7 @@ namespace TestingForm
                 new("Create MMR Data", GameFileCreation.MMRCreateData, UpdateDebugActions),
                 new("Create TPR Data", GameFileCreation.TPRCreateData, UpdateDebugActions),
                 new("Create OOTMM Data", GameFileCreation.OOTMMCreateData, UpdateDebugActions),
+                new("Create OOTMM Areas", OOTMMExtraFunctions.WriteAreaFile, UpdateDebugActions),
                 new("Create PMR Data", GameFileCreation.PMRCreateData, UpdateDebugActions),
                 new("Create LAS Data", GameFileCreation.LASCreateData, UpdateDebugActions),
                 new("Create WWR Data", GameFileCreation.WWRCreateData, UpdateDebugActions),

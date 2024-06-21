@@ -192,14 +192,15 @@ namespace TestingForm.GameDataCreation.MMR
                 ProgressiveItemData[i.ID] = $"{i.ProgressiveGroup}|MMRTProgressive{i.ID}";
             }
 
+            AddSimpleToggle("RandomizeDungeonEntrances", "Shuffle Dungeon Entrances", "Main Settings", false);
+            AddSimpleToggle("AddSongs", "Mix Songs With Items", "Main Settings", false);
+            AddSimpleToggle("RandomizeBossRooms", "Shuffle Boss Rooms", "Main Settings", false);
+            AddSimpleToggle("RandomizeEnemies", "Randomize Enemies", "Main Settings", false);
             AddSimpleToggle("ProgressiveUpgrades", "Progressive Upgrades", "Main Settings", false);
             var ProgressiveUpgradesReplacements = CreateLogicReplacement(MMRDictV16.ToggleOptions["ProgressiveUpgrades"].Enabled);
             AddLogicReplacement(ProgressiveUpgradesReplacements, ProgressiveItemData.Select(x => $"{x.Key}|{x.Value.Split('|')[1]}").ToArray());
             ProgressiveUpgradesReplacements.LocationBlacklist = ProgressiveItemData.Values.Select(x => x.Split('|')[1]).ToArray();
             MMRDictV16.ToggleOptions["ProgressiveUpgrades"].Enabled.Actions.ItemNameOverride = ProgressiveItemData.ToDictionary(x => x.Key, x => x.Value.Split('|')[0]);
-
-            //Randomized Enemies
-            AddSimpleToggle("RandomizeEnemies", "Randomize Enemies", "Main Settings", false);
 
             //==========================================================================================================================================================================
             //Boss Remian Moon Requirement
@@ -241,6 +242,8 @@ namespace TestingForm.GameDataCreation.MMR
             string[] AllFairies = AllSwampFairies.Concat(AllMountainFairies).Concat(AllOceanFairies).Concat(AllCanyonFairies).Select(x => x + "|true").ToArray();
             AddLogicReplacement(CreateLogicReplacement(MMRDictV16.MultiSelectOptions["StrayFairyMode"].ValueList["ChestsOnly"]), AllFairies);
 
+            AddSimpleMultiSelect("DungeonNavigationMode", "Dungeon Navigation Mode", "Main Settings", "KeepWithinTemples", "KeepWithinArea", "KeepWithinOverworld", "CompassRevealsBoss");
+
             //Movement Gimicks
 
             AddSimpleChoice("MovementMode", "Gravity/Speed", "Gimmicks", "Default", "Default", "HighSpeed", "SuperLowGravity", "LowGravity", "HighGravity");
@@ -251,6 +254,9 @@ namespace TestingForm.GameDataCreation.MMR
             AddSimpleToggle("HookshotAnySurface", "Hookshot Any Surface", "Gimmicks", false);
             AddSimpleToggle("ClimbMostSurfaces", "Climb Most Surfaces", "Gimmicks", false);
             AddSimpleToggle("IronGoron", "Iron Goron", "Gimmicks", false);
+
+            AddSimpleChoice("ClockSpeed", "Clock Speed", "Gimmicks", "Default", "Default", "VerySlow", "Slow", "Fast", "VeryFast", "SuperFast");
+            AddSimpleChoice("AutoInvert", "Auto Invert", "Gimmicks", "Never", "Never", "FirstCycle", "Always");
 
             AddSimpleChoice("DamageMode", "Damage Mode", "Gimmicks", "Default", "Default", "Double", "Quadruple", "OHKO", "Doom");
             AddSimpleChoice("DamageEffect", "Damage Effects", "Gimmicks", "Default", "Default", "Fire", "Ice", "Shock", "Knockdown", "Random");
@@ -274,6 +280,14 @@ namespace TestingForm.GameDataCreation.MMR
 
             AddSimpleToggle("FewerHealthDrops", "Fewer Health Drops", "Gimmicks", false);
 
+            AddSimpleToggle("TakeDamageOnEpona", "On Epona", "Gimmicks/More Damage Sources", false);
+            AddSimpleToggle("TakeDamageWhileShielding", "While Shielding", "Gimmicks/More Damage Sources", false);
+            AddSimpleToggle("TakeDamageFromVoid", "From Void", "Gimmicks/More Damage Sources", false);
+            AddSimpleToggle("TakeDamageFromGorons", "From Gorons", "Gimmicks/More Damage Sources", false);
+            AddSimpleToggle("TakeDamageFromGibdosFaster", "From Gibdos Faster", "Gimmicks/More Damage Sources", false);
+            AddSimpleToggle("TakeDamageGettingCaught", "Getting Caught", "Gimmicks/More Damage Sources", false);
+            AddSimpleToggle("TakeDamageFromDog", "From Dog", "Gimmicks/More Damage Sources", false);
+            AddSimpleToggle("TakeDamageFromDexihands", "From Dexihand", "Gimmicks/More Damage Sources", false);
 
             AddSimpleChoice("BlastMaskCooldown", "Blast Mask Cooldown", "Gimmicks", "Default", "Default", "Instant", "VeryShort", "Short", "Long", "VeryLong");
             AddSimpleChoice("NutandStickDrops", "Nut and Stick Drops", "Gimmicks", "Default", "Default", "Light", "Medium", "Extra", "Mayhem");
@@ -308,25 +322,25 @@ namespace TestingForm.GameDataCreation.MMR
             AddSimpleToggle("QuickTextEnabled", "Quick Text", "Comfort", false);
             AddSimpleToggle("FastPush", "Increase Push Speed", "Comfort", false);
             AddSimpleToggle("CloseCows", "Close Cows", "Comfort", false);
-            //Imporived Picture Box
+            AddSimpleToggle("EnablePictoboxSubject", "Improved PictoBox", "Comfort", true);
             AddSimpleToggle("LenientGoronSpikes", "Lenient Goron Spikes", "Comfort", false);
-            //Target Health Bar
-            //Fill Wallet
-            //Hidden Ruppe Sparkle
+            AddSimpleToggle("TargetHealthBar", "Target Health Bar", "Comfort", false);
+            AddSimpleToggle("FillWallet", "Fill Wallet on Upgrade", "Comfort", false);
+            AddSimpleToggle("HiddenRupeesSparkle", "Hidden Rupees Sparkle", "Comfort", false);
             AddSimpleToggle("SaferGlitches", "Safer Glitches", "Comfort", false);
-            //Improved Cmaera
-            //Easy Frame By Frame
-            //Treasure Game Spoilers
-            //Update Shops
+            AddSimpleToggle("ImprovedCamera", "Improved Camera", "Comfort", false);
+            AddSimpleToggle("EasyFrameByFrame", "Easy Frame By Frame", "Comfort", false);
+            AddSimpleChoice("ChestGameMinimap", "Treasure Chest Game Spoiler", "Comfort", "Off", "Off", "Minimal", "ConditionalSpoiler", "Spoiler");
+            AddSimpleToggle("ShopModels", "Update Shops", "Comfort", false);
             AddSimpleToggle("UpdateChests", "Update Chests", "Comfort", false);
-            //Update World Models
-            //Update NPC Text
-            //No Downgrades
+            AddSimpleToggle("UpdateWorldModels", "Update World Models", "Comfort", false);
+            AddSimpleToggle("UpdateNPCText", "Update NPC Text", "Comfort", false);
+            AddSimpleToggle("PreventDowngrades", "Prevent Downgrades", "Comfort", false);
             AddSimpleToggle("FixEponaSword", "Fix Epona Sword", "Comfort", false);
             AddSimpleToggle("QuestItemStorage", "Quest Item Storage", "Comfort", false);
-            //Quest Items through Time
-            //Arrow Cycling
-            //Elegy Speedup
+            AddSimpleToggle("KeepQuestTradeThroughTime", "Quest Items Through Time", "Comfort", false);
+            AddSimpleToggle("ArrowCycling", "Arrow Cycling", "Comfort", false);
+            AddSimpleToggle("ElegySpeedup", "Elegy Speedup", "Comfort", false);
 
             //==========================================================================================================================================================================
             //Bombchu Drops Option
@@ -336,9 +350,9 @@ namespace TestingForm.GameDataCreation.MMR
             AddAdditionalConditional(BombchuDropMMRTbombchu10, "ChestIkanaSecretShrineGrotto", "ChestTerminaGrottoBombchu", "ChestGreatBayCapeGrotto", "ChestGraveyardGrotto", "ChestToIkanaGrotto", "ChestToGoronRaceGrotto");
             BombchuDropMMRTbombchu10.LocationWhitelist = new string[] { "MMRTbombchu10", "Any Bombchu Pack" };
 
-            //Tollerant Gossip Angle
-            //Detect Stray Fairy
-            //Detect Skulltulla
+            AddSimpleToggle("TolerantGossipStones", "Tolerant Gossip Angle", "Comfort", false);
+            AddSimpleToggle("FairyMaskShimmer", "Detect Stray Fairies", "Comfort", false);
+            AddSimpleToggle("SkulltulaTokenSounds", "Detect Skulltula Tokens", "Comfort", false);
 
             //==========================================================================================================================================================================
             //Static Edits

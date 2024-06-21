@@ -18,6 +18,21 @@ using TDMUtils;
 
 namespace TestingForm.GameDataCreation.OOTMMV3
 {
+    public class OOTMMExtraFunctions
+    {
+        public static void WriteAreaFile()
+        {
+            var OOTMMDict = Utility.LoadObjectFromFileOrDefault<LogicDictionaryData.LogicDictionary>
+                (Path.Join(References.Globalpaths.BaseDictionaryPath, "OOTMM V3.json"));
+
+            Dictionary<string, string> AreaDict = [];
+            foreach(var i in OOTMMDict.LocationList.Values)
+            {
+                AreaDict[i.ID] = i.Area;
+            }
+            File.WriteAllText(OOTMMPaths.AreaFile, AreaDict.ToFormattedJson());
+        }
+    }
     public class OOTMMDataGenerator
     {
         public LogicStringParser LogicStringParser = new();
@@ -306,9 +321,16 @@ namespace TestingForm.GameDataCreation.OOTMMV3
             Dictionary<string, string> Areas = [];
             var VanillaSpoiler = Path.Combine(OOTMMPaths.OOTMMTestingFolderPath, "AreaSpoilers", "AreaListVanilla.txt");
             var MQSpoiler = Path.Combine(OOTMMPaths.OOTMMTestingFolderPath, "AreaSpoilers", "AreaListMQ.txt");
+            if (File.Exists(OOTMMPaths.AreaFile))
+            {
+                foreach (var l in Utility.LoadObjectFromFileOrDefault<Dictionary<string, string>>(OOTMMPaths.AreaFile))
+                {
+                    Areas[l.Key] = l.Value;
+                }
+            }
             if (File.Exists(VanillaSpoiler)) { Read(File.ReadAllLines(VanillaSpoiler)); }
             if (File.Exists(MQSpoiler)) { Read(File.ReadAllLines(MQSpoiler)); }
-            
+
             void Read(string[] VanillaSPL)
             {
                 bool AtData = false;
@@ -327,6 +349,7 @@ namespace TestingForm.GameDataCreation.OOTMMV3
                     Areas[data[0]] = CurrentArea;
                 }
             }
+
             Debug.WriteLine($"Missing Area Locations:");
             foreach (var l in dictionary.LocationList.Values)
             {
