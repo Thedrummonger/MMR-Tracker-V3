@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
+using TDMUtils;
 using static MMR_Tracker_V3.TrackerObjects.InstanceData;
 using static MMR_Tracker_V3.TrackerObjects.MiscData;
 
@@ -85,6 +86,72 @@ namespace Windows_Form_Frontend
             ContextMenuBuilder.AddClearPriceAction(() => mainInterface.PrintToListBox());
             ContextMenuBuilder.AddItemAtCheckAction(SelectItemFunc, PrintCheckItemResult);
             ContextMenuBuilder.AddItemInAreaAction(SelectItemFunc, PrintCheckItemResult);
+
+            ContextMenuBuilder.AddBasic("Edit Spoiler Assigned Item",
+                () => {
+                    IEnumerable <LocationData.LocationObject> selectedLocations = contextMenu.ItemGroupings.CheckableLocations.Where(x =>
+                        x.CheckState == MiscData.CheckState.Unchecked &&
+                        x is LocationData.LocationObject lo &&
+                        !lo.Randomizeditem.SpoilerLogGivenItem.IsNullOrWhiteSpace()
+                    ).Cast<LocationData.LocationObject>();
+                    CheckItemForm checkItemForm = new(selectedLocations, IC);
+                    checkItemForm.ShowDialog();
+                    foreach(var i in checkItemForm._Result)
+                    {
+                        i.GetItemLocation().Check.Randomizeditem.SpoilerLogGivenItem = i.GetItemLocation().ItemData.ItemID;
+                    }
+                },
+                () => {
+                    return contextMenu.ItemGroupings.CheckableLocations.Any(x => 
+                        x.CheckState == MiscData.CheckState.Unchecked && 
+                        x is LocationData.LocationObject lo && 
+                        !lo.Randomizeditem.SpoilerLogGivenItem.IsNullOrWhiteSpace()
+                    ); 
+                });
+
+            ContextMenuBuilder.AddBasic("Edit Spoiler Assigned Hint",
+                () => {
+                    IEnumerable<HintData.HintObject> selectedLocations = contextMenu.ItemGroupings.CheckableLocations.Where(x =>
+                        x.CheckState == MiscData.CheckState.Unchecked &&
+                        x is HintData.HintObject lo &&
+                        !lo.SpoilerHintText.IsNullOrWhiteSpace()
+                    ).Cast<HintData.HintObject>();
+                    CheckItemForm checkItemForm = new(selectedLocations, IC);
+                    checkItemForm.ShowDialog();
+                    foreach (var i in checkItemForm._Result)
+                    {
+                        i.GetGossipHint().HintCheck.SpoilerHintText = i.GetGossipHint().HintText;
+                    }
+                },
+                () => {
+                    return contextMenu.ItemGroupings.CheckableLocations.Any(x =>
+                        x.CheckState == MiscData.CheckState.Unchecked &&
+                        x is HintData.HintObject lo &&
+                        !lo.SpoilerHintText.IsNullOrWhiteSpace()
+                    );
+                });
+
+            ContextMenuBuilder.AddBasic("Edit Spoiler Assigned Destination",
+                () => {
+                    IEnumerable<EntranceData.EntranceRandoExit> selectedLocations = contextMenu.ItemGroupings.CheckableLocations.Where(x =>
+                        x.CheckState == MiscData.CheckState.Unchecked &&
+                        x is EntranceData.EntranceRandoExit lo &&
+                        lo.SpoilerDefinedDestinationExit is not null
+                    ).Cast<EntranceData.EntranceRandoExit>();
+                    CheckItemForm checkItemForm = new(selectedLocations, IC);
+                    checkItemForm.ShowDialog();
+                    foreach (var i in checkItemForm._Result)
+                    {
+                        i.GetExitDestination().Exit.SpoilerDefinedDestinationExit = i.GetExitDestination().Destination;
+                    }
+                },
+                () => {
+                    return contextMenu.ItemGroupings.CheckableLocations.Any(x =>
+                        x.CheckState == MiscData.CheckState.Unchecked &&
+                        x is EntranceData.EntranceRandoExit lo &&
+                        lo.SpoilerDefinedDestinationExit is not null
+                    );
+                });
 
             ContextMenuStrip contextMenuStrip = new ContextMenuStrip();
             foreach (var i in contextMenu.GetMenu())

@@ -13,6 +13,10 @@ namespace Windows_Form_Frontend
 {
     public partial class CheckItemForm : Form
     {
+        public class DummyLocation(string _name)
+        {
+            public string Name = _name;
+        }
         List<object> _CheckList;
         public List<ManualCheckObjectResult> _Result = new List<ManualCheckObjectResult>();
         InstanceContainer _Container;
@@ -73,6 +77,10 @@ namespace Windows_Form_Frontend
             {
                 WriteTrackerExits(ExitObject);
             }
+            else if (_CheckList[0] is DummyLocation dl)
+            {
+                WriteBasicItemSelect(dl.Name);
+            }
             else if (_CheckList[0] is null)
             {
                 WriteBasicItemSelect();
@@ -113,10 +121,10 @@ namespace Windows_Form_Frontend
             listBox1.DataSource = EnteredItems;
         }
 
-        private void WriteBasicItemSelect()
+        private void WriteBasicItemSelect(string Display = null)
         {
             FormatUIItems(false, false, "");
-            this.Text = "Select Item";
+            this.Text = Display ?? "Select Item";
             List<ItemData.ItemObject> EnteredItems = [];
             List<string> Names = [];
             foreach (var i in _Container.Instance.ItemPool.Values)
