@@ -1,15 +1,8 @@
 ﻿using MMR_Tracker_V3.Logic;
-using MMR_Tracker_V3;
 using Newtonsoft.Json;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using TDMUtils;
 using static MMR_Tracker_V3.TrackerObjects.MMRData;
 using static TestingForm.GameDataCreation.OOTMMV3.OOTMMDataClasses;
-using MMR_Tracker_V3.TrackerObjects;
-using TDMUtils;
 
 namespace TestingForm.GameDataCreation.OOTMMV3
 {
@@ -21,7 +14,7 @@ namespace TestingForm.GameDataCreation.OOTMMV3
         {
             foreach (var worldFile in Directory.GetFiles(OOTMMPaths.OOTWorldFolderPath))
             {
-                var Json = Utility.ConvertYamlStringToJsonString(File.ReadAllText(worldFile), true);
+                var Json = DataFileUtilities.ConvertYamlStringToJsonString(File.ReadAllText(worldFile), true);
                 Dictionary<string, OOTMMLocationArea> locationArea = JsonConvert.DeserializeObject<Dictionary<string, OOTMMLocationArea>>(Json);
                 foreach (var area in locationArea)
                 {
@@ -33,7 +26,7 @@ namespace TestingForm.GameDataCreation.OOTMMV3
             }
             foreach (var worldFile in Directory.GetFiles(OOTMMPaths.MQWorldFolderPath))
             {
-                var Json = Utility.ConvertYamlStringToJsonString(File.ReadAllText(worldFile), true);
+                var Json = DataFileUtilities.ConvertYamlStringToJsonString(File.ReadAllText(worldFile), true);
                 Dictionary<string, OOTMMLocationArea> locationArea = JsonConvert.DeserializeObject<Dictionary<string, OOTMMLocationArea>>(Json);
                 foreach (var area in locationArea)
                 {
@@ -45,7 +38,7 @@ namespace TestingForm.GameDataCreation.OOTMMV3
             }
             foreach (var worldFile in Directory.GetFiles(OOTMMPaths.MMWorldFolderPath))
             {
-                var Json = Utility.ConvertYamlStringToJsonString(File.ReadAllText(worldFile), true);
+                var Json = DataFileUtilities.ConvertYamlStringToJsonString(File.ReadAllText(worldFile), true);
                 Dictionary<string, OOTMMLocationArea> locationArea = JsonConvert.DeserializeObject<Dictionary<string, OOTMMLocationArea>>(Json);
                 foreach (var area in locationArea)
                 {
@@ -55,11 +48,11 @@ namespace TestingForm.GameDataCreation.OOTMMV3
                     foreach (var locLogic in area.Value.events) { AddLogicEntry(area.Value, area.Key, locLogic.Key, locLogic.Value, "MM", false, OOTMMDataType.Event); }
                 }
             }
-            var CommonMacroJson = Utility.ConvertYamlStringToJsonString(File.ReadAllText(OOTMMPaths.CommonMacroFile), true);
+            var CommonMacroJson = DataFileUtilities.ConvertYamlStringToJsonString(File.ReadAllText(OOTMMPaths.CommonMacroFile), true);
             Dictionary<string, string> CommonMacros = JsonConvert.DeserializeObject<Dictionary<string, string>>(CommonMacroJson);
-            var MMMacroJson = Utility.ConvertYamlStringToJsonString(File.ReadAllText(OOTMMPaths.MMMacroFile), true);
+            var MMMacroJson = DataFileUtilities.ConvertYamlStringToJsonString(File.ReadAllText(OOTMMPaths.MMMacroFile), true);
             Dictionary<string, string> MMMacros = JsonConvert.DeserializeObject<Dictionary<string, string>>(MMMacroJson);
-            var OOTMacroJson = Utility.ConvertYamlStringToJsonString(File.ReadAllText(OOTMMPaths.OOTMacroFile), true);
+            var OOTMacroJson = DataFileUtilities.ConvertYamlStringToJsonString(File.ReadAllText(OOTMMPaths.OOTMacroFile), true);
             Dictionary<string, string> OOTMacros = JsonConvert.DeserializeObject<Dictionary<string, string>>(OOTMacroJson);
 
             foreach (var macro in MMMacros)

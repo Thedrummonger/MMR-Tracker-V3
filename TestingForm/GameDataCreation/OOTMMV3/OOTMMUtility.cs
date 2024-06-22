@@ -1,9 +1,6 @@
 ﻿using MathNet.Symbolics;
-using MMR_Tracker_V3;
 using MMR_Tracker_V3.Logic;
 using Newtonsoft.Json;
-using System.Diagnostics;
-using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
 using TDMUtils;
@@ -117,12 +114,12 @@ namespace TestingForm.GameDataCreation.OOTMMV3
 
         public static T DeserializeYAMLFile<T>(string Path)
         {
-            var Json = Utility.ConvertYamlStringToJsonString(File.ReadAllText(Path), true);
+            var Json = DataFileUtilities.ConvertYamlStringToJsonString(File.ReadAllText(Path), true);
             return JsonConvert.DeserializeObject<T>(Json);
         }
         public static T DeserializeCSVFile<T>(string Path)
         {
-            var Json = Utility.ConvertCsvFileToJsonObject(File.ReadAllLines(Path));
+            var Json = DataFileUtilities.ConvertCsvFileToJsonObject(File.ReadAllLines(Path));
             return JsonConvert.DeserializeObject<T>(Json);
         }
 

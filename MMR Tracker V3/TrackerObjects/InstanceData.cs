@@ -1,20 +1,19 @@
 ﻿using MMR_Tracker_V3.Logic;
-using MMR_Tracker_V3.TrackerObjectExtensions;
+using MMR_Tracker_V3.NetCode;
+using MMR_Tracker_V3.SpoilerLogHandling;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
-using static MMR_Tracker_V3.TrackerObjects.MiscData;
-using static MMR_Tracker_V3.TrackerObjects.MMRData;
+using TDMUtils;
 using static MMR_Tracker_V3.TrackerObjects.HintData;
 using static MMR_Tracker_V3.TrackerObjects.ItemData;
 using static MMR_Tracker_V3.TrackerObjects.LocationData;
 using static MMR_Tracker_V3.TrackerObjects.LogicDictionaryData;
+using static MMR_Tracker_V3.TrackerObjects.MiscData;
+using static MMR_Tracker_V3.TrackerObjects.MMRData;
 using static MMR_Tracker_V3.TrackerObjects.OptionData;
-using MMR_Tracker_V3.NetCode;
-using MMR_Tracker_V3.SpoilerLogHandling;
-using TDMUtils;
 
 namespace MMR_Tracker_V3.TrackerObjects
 {

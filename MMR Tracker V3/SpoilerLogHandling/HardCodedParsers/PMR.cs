@@ -2,13 +2,8 @@
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
-using System.Diagnostics;
-using System.IO;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using TDMUtils;
-using static MMR_Tracker_V3.TrackerObjects.OptionData;
 
 namespace MMR_Tracker_V3.SpoilerLogHandling.HardCodedParsers
 {
@@ -37,7 +32,7 @@ namespace MMR_Tracker_V3.SpoilerLogHandling.HardCodedParsers
             if (DataStore["Archipelago"] is not Archipelago.GenericAPSpoiler genericAPSpoiler) { return null; }
             if (DataStore.TryGetValue("APPlayerFile", out object PF) && PF is string[] APPlayerFile && APPlayerFile.Any())
             {
-                var DataFileJsonString = Utility.ConvertYamlStringToJsonString(string.Join(Environment.NewLine, APPlayerFile));
+                var DataFileJsonString = DataFileUtilities.ConvertYamlStringToJsonString(string.Join(Environment.NewLine, APPlayerFile));
                 var DataFile = JsonConvert.DeserializeObject<Dictionary<string, object>>(DataFileJsonString);
                 var PMRData = DataFile["Paper Mario"].SerializeConvert<Dictionary<string, object>>();
                 foreach(var entry in PMRData)

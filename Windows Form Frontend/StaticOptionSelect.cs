@@ -1,14 +1,12 @@
-﻿using MMR_Tracker_V3;
-using MMR_Tracker_V3.TrackerObjects;
-using Newtonsoft.Json;
+﻿using MMR_Tracker_V3.TrackerObjects;
 using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Drawing;
-using System.IO;
 using System.Linq;
 using System.Windows.Forms;
-using TDMUtils;
+using static TDMUtils.EnumerableUtilities;
+using static TDMUtils.MiscUtilities;
 
 namespace Windows_Form_Frontend
 {
@@ -41,8 +39,8 @@ namespace Windows_Form_Frontend
             }
         }
 
-        private readonly MiscData.UILayout[] UILayoutsENUM = Utility.EnumAsArray<MiscData.UILayout>().ToArray();
-        private readonly string[] UILayoutsSTRING = Utility.EnumAsStringArray<MiscData.UILayout>().ToArray();
+        private readonly MiscData.UILayout[] UILayoutsENUM = EnumAsArray<MiscData.UILayout>().ToArray();
+        private readonly string[] UILayoutsSTRING = EnumAsStringArray<MiscData.UILayout>().ToArray();
 
         private List<OptionLine> OptionLines = new List<OptionLine>();
         private void PopulateOptions()
@@ -168,19 +166,19 @@ namespace Windows_Form_Frontend
                 if (item.Value is bool BoolVal)
                 {
                     CheckBox toggle = new() { Location = Location = new Point(XOffset(Description), y), Checked = BoolVal };
-                    toggle.CheckStateChanged += (sender, ee) => { item.OnChange(toggle.Checked); Utility.PrintObjectToConsole(TempOptionFile); };
+                    toggle.CheckStateChanged += (sender, ee) => { item.OnChange(toggle.Checked); PrintObjectToConsole(TempOptionFile); };
                     panel1.Controls.Add(toggle);
                 }
                 else if (item.Value is float FloatVal)
                 {
                     NumericUpDown nud = new NumericUpDown() { Location = new Point(XOffset(Description), y), Value = (decimal)FloatVal, Width = 40 };
-                    nud.ValueChanged += (sender, e) => { item.OnChange((float)nud.Value); Utility.PrintObjectToConsole(TempOptionFile); };
+                    nud.ValueChanged += (sender, e) => { item.OnChange((float)nud.Value); PrintObjectToConsole(TempOptionFile); };
                     panel1.Controls.Add(nud);
                 }
                 else if (item.Value is int intVal)
                 {
                     NumericUpDown nud = new NumericUpDown() { Location = new Point(XOffset(Description), y), Value = intVal, Width = 40 };
-                    nud.ValueChanged += (sender, e) => { item.OnChange((int)nud.Value); Utility.PrintObjectToConsole(TempOptionFile); };
+                    nud.ValueChanged += (sender, e) => { item.OnChange((int)nud.Value); PrintObjectToConsole(TempOptionFile); };
                     panel1.Controls.Add(nud);
                 }
                 else if (item.Value is string StringValD && item.ValidValues is IEnumerable<string> ListVal)
@@ -194,7 +192,7 @@ namespace Windows_Form_Frontend
                         Ind++;
                     }
                     comboBox.DropDown += (sender, e) => { WinFormUtils.AdjustComboBoxWidth(comboBox); };
-                    comboBox.SelectedValueChanged += (sender, e) => { item.OnChange(comboBox.SelectedItem); Utility.PrintObjectToConsole(TempOptionFile); };
+                    comboBox.SelectedValueChanged += (sender, e) => { item.OnChange(comboBox.SelectedItem); PrintObjectToConsole(TempOptionFile); };
                     panel1.Controls.Add(comboBox);
                 }
                 else

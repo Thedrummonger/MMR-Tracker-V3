@@ -1,13 +1,9 @@
-﻿using Microsoft.VisualBasic.Logging;
-using MMR_Tracker_V3.Logic;
+﻿using MMR_Tracker_V3.Logic;
 using MMR_Tracker_V3.TrackerObjects;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using TDMUtils;
-using YamlDotNet.Core.Tokens;
+using static TDMUtils.DataFileUtilities;
+using static TDMUtils.MiscUtilities;
+using static TDMUtils.StringUtilities;
 using static TestingForm.GameDataCreation.WindWakerHD.DataStructure;
 
 namespace TestingForm.GameDataCreation.WindWakerHD
@@ -35,11 +31,11 @@ namespace TestingForm.GameDataCreation.WindWakerHD
             var WWHDRTestingPath = Path.Combine(TestingReferences.GetDevTestingPath(), "WWHD");
             var DataPath = Path.Combine(WWHDRTestingPath, "TWWHD-Randomizer-main", "logic", "data");
 
-            var EntranceShuffleTable = Utility.DeserializeYAMLFile<List<EntranceShuffleTableEntry>>(Path.Combine(DataPath, "entrance_shuffle_table.yaml"));
-            var ItemData = Utility.DeserializeYAMLFile<List<DataStructure.ItemData>>(Path.Combine(DataPath, "item_data.yaml"));
-            var LocationData = Utility.DeserializeYAMLFile<List<DataStructure.LocationData>>(Path.Combine(DataPath, "location_data.yaml"));
-            var Macros = Utility.DeserializeYAMLFile<Dictionary<string, string>>(Path.Combine(DataPath, "macros.yaml"));
-            var World = Utility.DeserializeYAMLFile<List<WorldLocation>>(Path.Combine(DataPath, "world.yaml"));
+            var EntranceShuffleTable = DeserializeYAMLFile<List<EntranceShuffleTableEntry>>(Path.Combine(DataPath, "entrance_shuffle_table.yaml"));
+            var ItemData = DeserializeYAMLFile<List<DataStructure.ItemData>>(Path.Combine(DataPath, "item_data.yaml"));
+            var LocationData = DeserializeYAMLFile<List<DataStructure.LocationData>>(Path.Combine(DataPath, "location_data.yaml"));
+            var Macros = DeserializeYAMLFile<Dictionary<string, string>>(Path.Combine(DataPath, "macros.yaml"));
+            var World = DeserializeYAMLFile<List<WorldLocation>>(Path.Combine(DataPath, "world.yaml"));
 
             Dictionary<string, string> LogicCache = [];
             HashSet<(string, string)> Exits = [];

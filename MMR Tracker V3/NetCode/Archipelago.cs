@@ -1,18 +1,15 @@
-﻿using System;
+﻿using Archipelago.MultiClient.Net;
+using Archipelago.MultiClient.Net.Enums;
+using Archipelago.MultiClient.Net.Models;
+using MMR_Tracker_V3.TrackerObjectExtensions;
+using MMR_Tracker_V3.TrackerObjects;
+using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
-using System.Threading.Tasks;
-using Archipelago.MultiClient.Net;
-using Archipelago.MultiClient.Net.Enums;
-using Archipelago.MultiClient.Net.Models;
-using Microsoft.FSharp.Control;
-using MMR_Tracker_V3.SpoilerLogHandling;
-using MMR_Tracker_V3.TrackerObjectExtensions;
-using MMR_Tracker_V3.TrackerObjects;
+using TDMUtils;
 using static MMR_Tracker_V3.NetCode.NetData;
 using static MMR_Tracker_V3.TrackerObjects.MiscData;
-using TDMUtils;
 
 namespace MMR_Tracker_V3.NetCode
 {

@@ -215,10 +215,10 @@ namespace MMR_Tracker_V3.Logic
             }
             catch (Exception e)
             {
-                Utility.PrintObjectToConsole(ParsedLogic);
-                Utility.PrintObjectToConsole(MathString);
-                Utility.PrintObjectToConsole(ExpandedMathString);
-                Utility.PrintObjectToConsole(MathLogicArray);
+                MiscUtilities.PrintObjectToConsole(ParsedLogic);
+                MiscUtilities.PrintObjectToConsole(MathString);
+                MiscUtilities.PrintObjectToConsole(ExpandedMathString);
+                MiscUtilities.PrintObjectToConsole(MathLogicArray);
                 throw new Exception($"Error Parsing Logic Line for {LogicID}\n{LogicLine}\n{ParsedLogic}\n{MathString}\n{ExpandedMathString}\n{MathLogicArray}\n{e.Message}");
             }
         }

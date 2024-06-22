@@ -1,12 +1,9 @@
-﻿using MathNet.Symbolics;
-using MMR_Tracker_V3.TrackerObjects;
-using System;
+﻿using MMR_Tracker_V3.TrackerObjects;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using TDMUtils;
 
 namespace MMR_Tracker_V3
 {
@@ -26,7 +23,7 @@ namespace MMR_Tracker_V3
             else if (File.Exists(References.Globalpaths.HeaderSortingFile))
             {
                 HeaderSortingFile[] headerSortingFile = [];
-                try { headerSortingFile = TDMUtils.Utility.DeserializeYAMLFile<HeaderSortingFile[]>(References.Globalpaths.HeaderSortingFile); }
+                try { headerSortingFile = DataFileUtilities.DeserializeYAMLFile<HeaderSortingFile[]>(References.Globalpaths.HeaderSortingFile); }
                 catch { Debug.WriteLine("Header File Could Not Be parsed"); return []; }
                 var ValidHeaders = headerSortingFile.Where(x => x.Games is null || x.Games.Count == 0 || x.Games.Contains(Instance.LogicDictionary.GameCode));
                 var SortOrder = ValidHeaders.SelectMany(x => x.Headers).Distinct().Select((s, ind) => new { s, ind }).ToDictionary(x => x.s.ToLower(), x => x.ind);

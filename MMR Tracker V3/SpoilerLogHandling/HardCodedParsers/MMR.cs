@@ -1,5 +1,4 @@
-﻿using MathNet.Symbolics;
-using MMR_Tracker_V3.Logic;
+﻿using MMR_Tracker_V3.Logic;
 using MMR_Tracker_V3.TrackerObjectExtensions;
 using MMR_Tracker_V3.TrackerObjects;
 using Newtonsoft.Json;
@@ -7,8 +6,6 @@ using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using TDMUtils;
 using static MMR_Tracker_V3.TrackerObjects.InstanceData;
 using static MMR_Tracker_V3.TrackerObjects.MiscData;
@@ -317,7 +314,7 @@ namespace MMR_Tracker_V3.SpoilerLogHandling.HardCodedParsers
                     if (string.IsNullOrWhiteSpace(i.SpoilerHintText))
                     {
                         Debug.WriteLine($"No hint given for {i.GetDictEntry().Name}");
-                        i.SpoilerHintText = Utility.PickRandom(GossipJunkMessages);
+                        i.SpoilerHintText = EnumerableUtilities.PickRandom(GossipJunkMessages);
                     }
                 }
             }

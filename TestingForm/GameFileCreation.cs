@@ -1,16 +1,9 @@
-﻿using Microsoft.VisualBasic.Logging;
-using MMR_Tracker_V3;
-using MMR_Tracker_V3.TrackerObjects;
+﻿using MMR_Tracker_V3.TrackerObjects;
 using Newtonsoft.Json;
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using System.Diagnostics;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using TDMUtils;
 using Windows_Form_Frontend;
+using static TDMUtils.MiscUtilities;
 
 namespace TestingForm
 {
@@ -89,7 +82,7 @@ namespace TestingForm
             //Testing.PrintObjectToConsole(MMR_Tracker_V3.OtherGames.TPRando.ParseMacrosFromCode.ReadMacrosFromCode());
 
             List<string> Areas = MainInterface.InstanceContainer.Instance.LocationPool.Values.Select(x => x.GetDictEntry().Area).Distinct().ToList();
-            Utility.PrintObjectToConsole(Areas);
+            PrintObjectToConsole(Areas);
 
             List<string> Bugs = MainInterface.InstanceContainer.Instance.ItemPool.Values.Where(x => x.ID.StartsWith("Female_") || x.ID.StartsWith("Male_")).Select(x => x.ID).ToList();
             string AnyBug = string.Join(" or ", Bugs);

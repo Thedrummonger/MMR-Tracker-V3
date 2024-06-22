@@ -4,7 +4,6 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.IO;
-using System.Linq;
 using System.Net;
 using System.Net.Sockets;
 using TDMUtils;
@@ -197,7 +196,7 @@ namespace MMR_Tracker_V3.NetCode
             if (args.Length < 1) { return; }
             foreach (var arg in args)
             {
-                if (IP is null && Utility.IsIpAddress(arg, out IPAddress ArgIP)) { IP = ArgIP; }
+                if (IP is null && StringUtilities.IsIpAddress(arg, out IPAddress ArgIP)) { IP = ArgIP; }
                 if (Port < 0 && int.TryParse(arg, out int ArgPort)) { Port = ArgPort; }
                 if (IP is not null && Port > -1) { return; }
             }

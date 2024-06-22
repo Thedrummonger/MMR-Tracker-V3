@@ -3,8 +3,8 @@ using MMR_Tracker_V3.TrackerObjects;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
-using static MMR_Tracker_V3.TrackerObjects.MiscData;
 using TDMUtils;
+using static MMR_Tracker_V3.TrackerObjects.MiscData;
 
 namespace MMR_Tracker_V3.Logic
 {

@@ -1,14 +1,10 @@
-﻿using MMR_Tracker_V3.NetCode;
-using MMR_Tracker_V3.TrackerObjectExtensions;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Globalization;
 using System.Linq;
-using System.Net.Sockets;
 using static MMR_Tracker_V3.TrackerDataHandling;
 using static MMR_Tracker_V3.TrackerObjects.InstanceData;
-using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace MMR_Tracker_V3.TrackerObjects
 {

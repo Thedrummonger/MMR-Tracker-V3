@@ -1,5 +1,4 @@
-﻿using MMR_Tracker_V3;
-using MMR_Tracker_V3.Logic;
+﻿using MMR_Tracker_V3.Logic;
 using MMR_Tracker_V3.TrackerObjects;
 using TDMUtils;
 
@@ -9,11 +8,11 @@ namespace TestingForm.GameDataCreation.Minecraft
     {
         public static void ReadAndParse(out MMRData.LogicFile Logic, out LogicDictionaryData.LogicDictionary dictionary)
         {
-            var excluded_locations = Utility.DeserializeJsonFile<Data.MC_excluded_locations>(Data.MCPaths.excluded_locations_File);
-            var items = Utility.DeserializeJsonFile<Data.MC_items>(Data.MCPaths.items_File);
-            var locations = Utility.DeserializeJsonFile<Data.MC_locations>(Data.MCPaths.locations_File);
-            var regions = Utility.DeserializeJsonFile<Data.MC_regions>(Data.MCPaths.regions_File);
-            var logic = Utility.DeserializeJsonFile<Data.MC_logic>(Data.MCPaths.logic_File);
+            var excluded_locations = DataFileUtilities.DeserializeJsonFile<Data.MC_excluded_locations>(Data.MCPaths.excluded_locations_File);
+            var items = DataFileUtilities.DeserializeJsonFile<Data.MC_items>(Data.MCPaths.items_File);
+            var locations = DataFileUtilities.DeserializeJsonFile<Data.MC_locations>(Data.MCPaths.locations_File);
+            var regions = DataFileUtilities.DeserializeJsonFile<Data.MC_regions>(Data.MCPaths.regions_File);
+            var logic = DataFileUtilities.DeserializeJsonFile<Data.MC_logic>(Data.MCPaths.logic_File);
 
 
             LogicStringParser MCLogicParser = new(quotes: '\'');

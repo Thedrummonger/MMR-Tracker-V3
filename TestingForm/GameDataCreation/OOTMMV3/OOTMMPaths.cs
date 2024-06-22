@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace TestingForm.GameDataCreation.OOTMMV3
+﻿namespace TestingForm.GameDataCreation.OOTMMV3
 {
     internal class OOTMMPaths
     {

@@ -1,34 +1,29 @@
-﻿using Microsoft.VisualBasic.Logging;
-using MMR_Tracker_V3;
-using MMR_Tracker_V3.Logic;
+﻿using MMR_Tracker_V3.Logic;
 using MMR_Tracker_V3.TrackerObjects;
 using Newtonsoft.Json;
-using System;
-using System.Collections.Generic;
 using System.Diagnostics;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using TDMUtils;
+using static TDMUtils.MiscUtilities;
+using static TDMUtils.StringUtilities;
 
 namespace TestingForm.GameDataCreation.PMR_AP
 {
     public class GenData
     {
-        public static string GetItemType(List<object> e) { return Utility.SerializeConvert<string>(e[0]); }
-        public static string GetItemProgression(List<object> e) { return Utility.SerializeConvert<string>(e[1]); }
-        public static int GetItemID(List<object> e) { return Utility.SerializeConvert<int>(e[2]); }
-        public static int GetItemBasePrice(List<object> e) { return Utility.SerializeConvert<int>(e[3]); }
-        public static bool IsItemUnused(List<object> e) { return Utility.SerializeConvert<bool>(e[4]); }
-        public static bool IsItemDupe(List<object> e) { return Utility.SerializeConvert<bool>(e[5]); }
-        public static bool IsItemNotPlaced(List<object> e) { return Utility.SerializeConvert<bool>(e[6]); }
-        public static string GetLocationFullID(List<object> e) { return Utility.SerializeConvert<string>(e[0]); }
-        public static string GetLocationType(List<object> e) { return Utility.SerializeConvert<string>(e[1]); }
-        public static int GetLocationAreaID(List<object> e) { return Utility.SerializeConvert<int>(e[2]); }
-        public static int GetLocationMapID(List<object> e) { return Utility.SerializeConvert<int>(e[3]); }
-        public static int GetLocationMapAreaID(List<object> e) { return Utility.SerializeConvert<int>(e[4]); }
-        public static string GetLocationVanillaItem(List<object> e) { return Utility.SerializeConvert<string>(e[6]); }
-        public static string GetLocationKeyName(List<object> e) { return Utility.SerializeConvert<string>(e[7]); }
+        public static string GetItemType(List<object> e) { return MiscUtilities.SerializeConvert<string>(e[0]); }
+        public static string GetItemProgression(List<object> e) { return MiscUtilities.SerializeConvert<string>(e[1]); }
+        public static int GetItemID(List<object> e) { return MiscUtilities.SerializeConvert<int>(e[2]); }
+        public static int GetItemBasePrice(List<object> e) { return MiscUtilities.SerializeConvert<int>(e[3]); }
+        public static bool IsItemUnused(List<object> e) { return MiscUtilities.SerializeConvert<bool>(e[4]); }
+        public static bool IsItemDupe(List<object> e) { return MiscUtilities.SerializeConvert<bool>(e[5]); }
+        public static bool IsItemNotPlaced(List<object> e) { return MiscUtilities.SerializeConvert<bool>(e[6]); }
+        public static string GetLocationFullID(List<object> e) { return MiscUtilities.SerializeConvert<string>(e[0]); }
+        public static string GetLocationType(List<object> e) { return MiscUtilities.SerializeConvert<string>(e[1]); }
+        public static int GetLocationAreaID(List<object> e) { return MiscUtilities.SerializeConvert<int>(e[2]); }
+        public static int GetLocationMapID(List<object> e) { return MiscUtilities.SerializeConvert<int>(e[3]); }
+        public static int GetLocationMapAreaID(List<object> e) { return MiscUtilities.SerializeConvert<int>(e[4]); }
+        public static string GetLocationVanillaItem(List<object> e) { return MiscUtilities.SerializeConvert<string>(e[6]); }
+        public static string GetLocationKeyName(List<object> e) { return MiscUtilities.SerializeConvert<string>(e[7]); }
         public static void ReadAndGenData(out MMRData.LogicFile Logic, out LogicDictionaryData.LogicDictionary dictionary)
         {
             //need to set | as the 'Quote' char because the area names don't follow standard logic convention and
@@ -37,11 +32,11 @@ namespace TestingForm.GameDataCreation.PMR_AP
             LogicStringParser logicStringParser = new LogicStringParser(LogicStringParser.OperatorType.PyStyle, quotes: '|');
             var PMRRegionsFolder = Path.Combine(TestingReferences.GetDevTestingPath(), "PMR", "PMR_APWorld-main", "data", "regions");
 
-            var Items = Utility.DeserializeJsonFile<Dictionary<string, List<object>>>
+            var Items = DataFileUtilities.DeserializeJsonFile<Dictionary<string, List<object>>>
                 (Path.Combine(TestingReferences.GetOtherGameDataPath("PMR AP"), "Items.json"));
-            var Locations = Utility.DeserializeJsonFile<Dictionary<string, List<object>>>
+            var Locations = DataFileUtilities.DeserializeJsonFile<Dictionary<string, List<object>>>
                 (Path.Combine(TestingReferences.GetOtherGameDataPath("PMR AP"), "Locations.json"));
-            var Macros = Utility.DeserializeJsonFile<Dictionary<string, string>>
+            var Macros = DataFileUtilities.DeserializeJsonFile<Dictionary<string, string>>
                 (Path.Combine(TestingReferences.GetDevTestingPath(), "PMR", "PMR_APWorld-main", "data", "LogicHelpers.json"));
 
             dictionary = new LogicDictionaryData.LogicDictionary()
@@ -92,7 +87,7 @@ namespace TestingForm.GameDataCreation.PMR_AP
             foreach(var File in Directory.GetFiles(PMRRegionsFolder))
             {
                 if (Path.GetFileNameWithoutExtension(File).In("bowser's_castle_boss_rush", "bowser's_castle_shortened")) { continue; }
-                var RegionFile = Utility.DeserializeJsonFile<List<PMRRegion>>(File);
+                var RegionFile = DataFileUtilities.DeserializeJsonFile<List<PMRRegion>>(File);
                 foreach (var Region in RegionFile)
                 {
                     RegionsDict[$"{Region.area_id}|{Region.map_id}"] = Path.GetFileNameWithoutExtension(File).Replace("_", " ").ConvertToCamelCase();

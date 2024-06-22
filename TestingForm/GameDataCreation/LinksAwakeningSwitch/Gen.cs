@@ -1,18 +1,9 @@
-﻿using Microsoft.VisualBasic.Logging;
-using MMR_Tracker_V3;
-using Newtonsoft.Json;
-using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using static TestingForm.GameDataCreation.LinksAwakeningSwitch.Data;
-using MMR_Tracker_V3.Logic;
+﻿using MMR_Tracker_V3.Logic;
 using MMR_Tracker_V3.TrackerObjects;
-using static MMR_Tracker_V3.TrackerObjects.OptionData;
-using static MMR_Tracker_V3.TrackerObjects.LogicDictionaryData;
+using Newtonsoft.Json;
 using TDMUtils;
+using static MMR_Tracker_V3.TrackerObjects.LogicDictionaryData;
+using static TestingForm.GameDataCreation.LinksAwakeningSwitch.Data;
 
 namespace TestingForm.GameDataCreation.LinksAwakeningSwitch
 {
@@ -21,15 +12,15 @@ namespace TestingForm.GameDataCreation.LinksAwakeningSwitch
         public static void GenData(out MMRData.LogicFile OutLogic, out LogicDictionaryData.LogicDictionary outDict)
         {
             var LogicFile = File.ReadAllText(Paths.RandoLogicFile());
-            var LogicFileYamlString = Utility.ConvertYamlStringToJsonString(LogicFile);
+            var LogicFileYamlString = DataFileUtilities.ConvertYamlStringToJsonString(LogicFile);
             var LogicFileObject = JsonConvert.DeserializeObject<Dictionary<string, Dictionary<string, string>>>(LogicFileYamlString);
 
             var ItemsFile = File.ReadAllText(Paths.RandoItemsFile());
-            var ItemsFileYamlString = Utility.ConvertYamlStringToJsonString(ItemsFile, true);
+            var ItemsFileYamlString = DataFileUtilities.ConvertYamlStringToJsonString(ItemsFile, true);
             var ItemsFileObject = JsonConvert.DeserializeObject<LASItemPool>(ItemsFileYamlString);
 
             var LocationsFile = File.ReadAllText(Paths.RandoLocationsFile());
-            var LocationsFileYamlString = Utility.ConvertYamlStringToJsonString(LocationsFile, true);
+            var LocationsFileYamlString = DataFileUtilities.ConvertYamlStringToJsonString(LocationsFile, true);
             var LocationsFileObject = JsonConvert.DeserializeObject<Dictionary<string, List<string>>>(LocationsFileYamlString);
 
             LogicDictionaryData.LogicDictionary logicDictionary = new LogicDictionaryData.LogicDictionary()

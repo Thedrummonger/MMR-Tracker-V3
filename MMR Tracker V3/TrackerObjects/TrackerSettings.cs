@@ -3,13 +3,8 @@ using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using TDMUtils;
 using static MMR_Tracker_V3.TrackerObjects.MiscData;
-using static MMR_Tracker_V3.TrackerObjects.TrackerSettings;
-using static MMR_Tracker_V3.UpdateManager;
 
 namespace MMR_Tracker_V3.TrackerObjects
 {
@@ -44,7 +39,7 @@ namespace MMR_Tracker_V3.TrackerObjects
 
             public OptionFile Copy()
             {
-                return Utility.SerializeConvert<OptionFile>(this);
+                return MiscUtilities.SerializeConvert<OptionFile>(this);
             }
             public OptionFile ToggleUpdateCheck(bool? Value = null) { CheckForUpdate = Value is null ? !CheckForUpdate : (bool)Value; return this; }
             public OptionFile ToggleHintMarkItem(bool? Value = null) { CheckHintMarkItem = Value is null ? !CheckHintMarkItem : (bool)Value; return this; }

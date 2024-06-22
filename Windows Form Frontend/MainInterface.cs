@@ -1,7 +1,8 @@
 ﻿using MMR_Tracker_V3;
+using MMR_Tracker_V3.Logic;
+using MMR_Tracker_V3.SpoilerLogHandling;
 using MMR_Tracker_V3.TrackerObjectExtensions;
 using MMR_Tracker_V3.TrackerObjects;
-using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -12,13 +13,10 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using static MMR_Tracker_V3.TrackerObjects.MiscData;
 using static MMR_Tracker_V3.TrackerObjects.InstanceData;
-using MMR_Tracker_V3.Logic;
-using Microsoft.VisualBasic;
-using MMR_Tracker_V3.SpoilerLogHandling;
-using TDMUtils;
-using Microsoft.VisualBasic.Logging;
+using static MMR_Tracker_V3.TrackerObjects.MiscData;
+using static TDMUtils.EnumerableUtilities;
+using static TDMUtils.MiscUtilities;
 
 namespace Windows_Form_Frontend
 {
@@ -110,7 +108,7 @@ namespace Windows_Form_Frontend
         private void MainInterface_FormClosing(object sender, FormClosingEventArgs e)
         {
             if (!PromptSave()) { e.Cancel = true; }
-            if (Utility.OBJIsThreadSafe(MainInterfaceItemDisplayThread, MainInterfaceItemDisplayForm))
+            if (OBJIsThreadSafe(MainInterfaceItemDisplayThread, MainInterfaceItemDisplayForm))
             {
                 MainInterfaceItemDisplayForm?.Invoke(new MethodInvoker(delegate { MainInterfaceItemDisplayForm.CloseThread(); }));
             }
@@ -281,9 +279,9 @@ namespace Windows_Form_Frontend
             }
             else
             {
-                checkState = Utility.DynamicPropertyExist(entry, "CheckState") ? entry.CheckState : MiscData.CheckState.Checked;
-                starred = Utility.DynamicPropertyExist(entry, "Starred") ? entry.Starred : false;
-                Available = Utility.DynamicPropertyExist(entry, "Available") ? entry.Available : true;
+                checkState = DynamicPropertyExist(entry, "CheckState") ? entry.CheckState : MiscData.CheckState.Checked;
+                starred = DynamicPropertyExist(entry, "Starred") ? entry.Starred : false;
+                Available = DynamicPropertyExist(entry, "Available") ? entry.Available : true;
             }
         }
 
@@ -1008,7 +1006,7 @@ namespace Windows_Form_Frontend
                 MainInterfaceItemDisplayForm = new ItemDisplay(this, WinFormImageUtils.GetImageSheet());
                 MainInterfaceItemDisplayThread = new Thread(new ThreadStart(() => MainInterfaceItemDisplayForm.ShowDialog()));
                 MainInterfaceItemDisplayThread.Start();
-                while (!Utility.OBJIsThreadSafe(MainInterfaceItemDisplayThread, MainInterfaceItemDisplayForm)) { Thread.Sleep(10); }
+                while (!OBJIsThreadSafe(MainInterfaceItemDisplayThread, MainInterfaceItemDisplayForm)) { Thread.Sleep(10); }
                 SendDataToItemDisplay();
             }
             else
@@ -1023,7 +1021,7 @@ namespace Windows_Form_Frontend
 
         private async void SendDataToItemDisplay()
         {
-            if (!Utility.OBJIsThreadSafe(MainInterfaceItemDisplayThread, MainInterfaceItemDisplayForm)) { return; }
+            if (!OBJIsThreadSafe(MainInterfaceItemDisplayThread, MainInterfaceItemDisplayForm)) { return; }
             var newState = WinFormImageUtils.CaptureTrackerState(InstanceContainer.Instance);
             await Task.Run(() => MainInterfaceItemDisplayForm.Invoke(new MethodInvoker(delegate { MainInterfaceItemDisplayForm.UpdateData(newState); })));
         }

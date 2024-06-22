@@ -1,10 +1,10 @@
-﻿using MMR_Tracker_V3;
-using MMR_Tracker_V3.Logic;
+﻿using MMR_Tracker_V3.Logic;
 using MMR_Tracker_V3.TrackerObjects;
 using Newtonsoft.Json;
 using System.Diagnostics;
 using System.Text.RegularExpressions;
-using TDMUtils;
+using static TDMUtils.DataFileUtilities;
+using static TDMUtils.StringUtilities;
 
 namespace TestingForm.GameDataCreation.WindWakerRando
 {
@@ -24,15 +24,15 @@ namespace TestingForm.GameDataCreation.WindWakerRando
             var WWRCodeFolder = Path.Combine(TestingReferences.GetOtherGameDataPath("WindWakerRando"));
             var EntranceListFile = Path.Combine(WWRCodeFolder, "EntranceList.json");
             var ItemListFile = Path.Combine(WWRCodeFolder, "ItemList.json");
-            var Entrances = Utility.DeserializeJsonFile<Dictionary<string, string[]>>(EntranceListFile);
-            var Items = Utility.DeserializeJsonFile<string[]>(ItemListFile);
+            var Entrances = DeserializeJsonFile<Dictionary<string, string[]>>(EntranceListFile);
+            var Items = DeserializeJsonFile<string[]>(ItemListFile);
 
             var WWRtestingFolder = Path.Combine(TestingReferences.GetDevTestingPath(), "WW");
             var LogicFolderPath = Path.Combine(WWRtestingFolder, "wwrando-master", "logic");
             var ItemLocationsFile = Path.Combine(LogicFolderPath, "item_locations.txt");
             var MacroFile = Path.Combine(LogicFolderPath, "macros.txt");
-            var Locations = Utility.DeserializeYAMLFile<Dictionary<string, WWRLocation>>(ItemLocationsFile);
-            var Macros = Utility.DeserializeYAMLFile<Dictionary<string, string>>(MacroFile);
+            var Locations = DeserializeYAMLFile<Dictionary<string, WWRLocation>>(ItemLocationsFile);
+            var Macros = DeserializeYAMLFile<Dictionary<string, string>>(MacroFile);
 
             MMRData.LogicFile logicFile = new() { Logic = [], GameCode = "WWR", Version = 2 };
             LogicDictionaryData.LogicDictionary dictFile = new() { 

@@ -1,14 +1,9 @@
-﻿using MMR_Tracker_V3.TrackerObjectExtensions;
-using MMR_Tracker_V3.TrackerObjects;
+﻿using MMR_Tracker_V3.TrackerObjects;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
-using System.Diagnostics;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using TDMUtils;
-using YamlDotNet.Core.Tokens;
 using static MMR_Tracker_V3.SpoilerLogHandling.Archipelago;
 
 namespace MMR_Tracker_V3.SpoilerLogHandling.HardCodedParsers
@@ -21,7 +16,7 @@ namespace MMR_Tracker_V3.SpoilerLogHandling.HardCodedParsers
             if (!DataStore.ContainsKey("Archipelago") || DataStore["Archipelago"] is not GenericAPSpoiler SpoilerLog) { return null; }
             if (DataStore.TryGetValue("APPlayerFile", out object PF) && PF is string[] APPlayerFile && APPlayerFile.Any())
             {
-                var DataFileJsonString = Utility.ConvertYamlStringToJsonString(string.Join(Environment.NewLine, APPlayerFile));
+                var DataFileJsonString = DataFileUtilities.ConvertYamlStringToJsonString(string.Join(Environment.NewLine, APPlayerFile));
                 var DataFile = JsonConvert.DeserializeObject<Dictionary<string, object>>(DataFileJsonString);
                 var PMRData = DataFile["Banjo-Tooie"].SerializeConvert<Dictionary<string, object>>();
                 foreach (var entry in PMRData)

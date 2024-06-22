@@ -1,24 +1,12 @@
-using MMR_Tracker_V3.TrackerObjects;
-using Windows_Form_Frontend;
-using System.Diagnostics;
-using MMR_Tracker_V3.TrackerObjectExtensions;
-using System.Net;
-using System.Net.Sockets;
-using System.Text;
-using MathNet.Numerics.Statistics;
-using System.Security.Policy;
-using System.IO;
-using Octokit;
 using Microsoft.VisualBasic;
-using Newtonsoft.Json;
-using MathNet.Numerics;
-using System;
-using MMR_Tracker_V3;
-using FParsec;
-using MMR_Tracker_V3.Logic;
+using MMR_Tracker_V3.TrackerObjects;
+using System.Diagnostics;
 using System.Text.RegularExpressions;
 using TDMUtils;
 using TestingForm.GameDataCreation.OOTMMV3;
+using Windows_Form_Frontend;
+using static TDMUtils.DataFileUtilities;
+using static TDMUtils.MiscUtilities;
 
 namespace TestingForm
 {
@@ -180,8 +168,8 @@ namespace TestingForm
             dynamic ChoiceOption = new OptionData.ChoiceOption(null);
             dynamic MultiOption = new OptionData.MultiSelectOption(null);
 
-            bool t1 = Utility.DynamicMethodExists(ChoiceOption, "SetValue");
-            bool t2 = Utility.DynamicMethodExists(MultiOption, "SetValue");
+            bool t1 = DynamicMethodExists(ChoiceOption, "SetValue");
+            bool t2 = DynamicMethodExists(MultiOption, "SetValue");
             Debug.WriteLine(t1);
             Debug.WriteLine(t2);
 

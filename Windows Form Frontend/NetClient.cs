@@ -1,27 +1,22 @@
-﻿using MathNet.Numerics.Statistics;
-using Microsoft.VisualBasic;
+﻿using Archipelago.MultiClient.Net.Packets;
 using MMR_Tracker_V3;
+using MMR_Tracker_V3.NetCode;
+using MMR_Tracker_V3.SpoilerLogHandling;
 using MMR_Tracker_V3.TrackerObjectExtensions;
 using MMR_Tracker_V3.TrackerObjects;
-using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
-using System.Data;
 using System.Diagnostics;
 using System.Linq;
-using System.Net.Sockets;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using static MMR_Tracker_V3.TrackerObjects.InstanceData;
-using static MMR_Tracker_V3.TrackerObjects.MiscData;
-using static MMR_Tracker_V3.NetCode.NetData;
-using MMR_Tracker_V3.NetCode;
 using System.Net;
-using Archipelago.MultiClient.Net.Packets;
-using static System.Runtime.InteropServices.JavaScript.JSType;
-using MMR_Tracker_V3.SpoilerLogHandling;
-using TDMUtils;
+using System.Text;
+using System.Windows.Forms;
+using static MMR_Tracker_V3.NetCode.NetData;
+using static MMR_Tracker_V3.TrackerObjects.InstanceData;
+using static TDMUtils.DataFileUtilities;
+using static TDMUtils.EnumerableUtilities;
+using static TDMUtils.MiscUtilities;
+using static TDMUtils.StringUtilities;
 
 namespace Windows_Form_Frontend
 {
@@ -66,7 +61,7 @@ namespace Windows_Form_Frontend
             ModeUpdating = true;
             LocationChecker.CheckStateChanged += ListenerThread.TrackerDataHandeling_CheckedObjectsUpdate;
 
-            cmbGameType.DataSource = Utility.EnumAsArray<NetData.OnlineMode>();
+            cmbGameType.DataSource = EnumAsArray<NetData.OnlineMode>();
             cmbGameType.SelectedIndexChanged += CmbGameType_SelectedIndexChanged;
 
             txtServerAddress.Text = ServerCache;
@@ -240,7 +235,7 @@ namespace Windows_Form_Frontend
 
         private void Connect()
         {
-            if (!Utility.IsIpAddress(txtServerAddress.Text, out IPAddress ParsedAddress))
+            if (!IsIpAddress(txtServerAddress.Text, out IPAddress ParsedAddress))
             {
                 PrintToConsole($"{txtServerAddress.Text} Was not a valid IP address");
                 return;

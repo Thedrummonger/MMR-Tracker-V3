@@ -1,7 +1,5 @@
-﻿using Octokit;
-using System;
+﻿using System;
 using System.Collections.Generic;
-using static MMR_Tracker_V3.TrackerObjects.ItemData;
 using static MMR_Tracker_V3.TrackerObjects.MiscData;
 
 namespace MMR_Tracker_V3.TrackerObjects

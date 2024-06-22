@@ -1,12 +1,7 @@
-﻿using MathNet.Numerics;
-using MMR_Tracker_V3.TrackerObjectExtensions;
+﻿using MMR_Tracker_V3.TrackerObjectExtensions;
 using MMR_Tracker_V3.TrackerObjects;
-using Newtonsoft.Json;
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using TDMUtils;
 using static MMR_Tracker_V3.SpoilerLogHandling.Archipelago;
 
@@ -40,7 +35,7 @@ namespace MMR_Tracker_V3.SpoilerLogHandling.HardCodedParsers
             }
             else if (SpoilerLog.SlotData.TryGetValue("structures", out object EntMapObj))
             {
-                var EntranceMap = Utility.SerializeConvert<Dictionary<string, string>>(EntMapObj);
+                var EntranceMap = MiscUtilities.SerializeConvert<Dictionary<string, string>>(EntMapObj);
                 foreach (var Entry in EntranceMap)
                 {
                     var exit = Instance.ExitPool.Values.First(x => x.GetDictEntry().Area == Entry.Key);

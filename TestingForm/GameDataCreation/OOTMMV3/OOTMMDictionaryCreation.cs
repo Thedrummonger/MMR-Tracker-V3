@@ -1,13 +1,5 @@
-﻿using MMR_Tracker_V3;
-using MMR_Tracker_V3.TrackerObjects;
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using MMR_Tracker_V3.TrackerObjects;
 using TDMUtils;
-using static MMR_Tracker_V3.TrackerObjects.MMRData;
 using static TestingForm.GameDataCreation.OOTMMV3.OOTMMDataClasses;
 
 namespace TestingForm.GameDataCreation.OOTMMV3

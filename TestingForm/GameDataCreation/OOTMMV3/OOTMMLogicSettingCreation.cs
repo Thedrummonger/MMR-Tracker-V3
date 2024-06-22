@@ -1,15 +1,7 @@
-﻿using MMR_Tracker_V3;
-using MMR_Tracker_V3.Logic;
+﻿using MMR_Tracker_V3.Logic;
 using MMR_Tracker_V3.TrackerObjects;
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Linq;
-using System.Security.Cryptography;
-using System.Text;
-using System.Threading.Tasks;
 using TDMUtils;
-using static MMR_Tracker_V3.TrackerObjects.MMRData;
+using static TDMUtils.StringUtilities;
 
 namespace TestingForm.GameDataCreation.OOTMMV3
 {
@@ -69,7 +61,7 @@ namespace TestingForm.GameDataCreation.OOTMMV3
             {
                 ID = Setting.key,
                 Name = Setting.name,
-                SubCategory = Utility.ConvertToCamelCase(Setting.category.Replace(".", "/")),
+                SubCategory = StringUtilities.ConvertToCamelCase(Setting.category.Replace(".", "/")),
                 EnabledValues = [],
                 ValueList = [],
                 Priority = OptionPriority,
@@ -95,7 +87,7 @@ namespace TestingForm.GameDataCreation.OOTMMV3
             {
                 ID = Setting.key,
                 Name = Setting.name,
-                SubCategory = Utility.ConvertToCamelCase(Setting.category.Replace(".", "/")),
+                SubCategory = StringUtilities.ConvertToCamelCase(Setting.category.Replace(".", "/")),
                 Value = Setting.defaultvalue.ToString(),
                 ValueList = new Dictionary<string, OptionData.OptionValue>(),
                 Description = Setting.description,
@@ -113,7 +105,7 @@ namespace TestingForm.GameDataCreation.OOTMMV3
             {
                 ID = Setting.key,
                 Name = Setting.name,
-                SubCategory = Utility.ConvertToCamelCase(Setting.category.Replace(".", "/")),
+                SubCategory = StringUtilities.ConvertToCamelCase(Setting.category.Replace(".", "/")),
                 Description = Setting.description,
                 Priority = OptionPriority
             };
@@ -129,7 +121,7 @@ namespace TestingForm.GameDataCreation.OOTMMV3
             {
                 ID = Setting.key,
                 Name = Setting.name,
-                SubCategory = Utility.ConvertToCamelCase(Setting.category.Replace(".", "/")),
+                SubCategory = StringUtilities.ConvertToCamelCase(Setting.category.Replace(".", "/")),
                 Value = (int)Setting.defaultvalue,
                 Priority = OptionPriority,
                 Description = Setting.description,
@@ -294,7 +286,7 @@ namespace TestingForm.GameDataCreation.OOTMMV3
                     return x;
                 });
             }
-            Utility.PrintObjectToConsole(logicAlteringSettings);
+            MiscUtilities.PrintObjectToConsole(logicAlteringSettings);
             foreach (var key in Generator.dictionary.ChoiceOptions.Keys)
             {
                 var entry = Generator.dictionary.ChoiceOptions[key];

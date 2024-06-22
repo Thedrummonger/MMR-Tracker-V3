@@ -1,13 +1,4 @@
-﻿using MathNet.Numerics;
-using MMR_Tracker_V3.TrackerObjects;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using static CLIFrontEnd.CLIUtility;
-using static MMR_Tracker_V3.TrackerObjects.LocationData;
-using static System.Runtime.InteropServices.JavaScript.JSType;
+﻿using MMR_Tracker_V3.TrackerObjects;
 
 namespace CLIFrontEnd
 {

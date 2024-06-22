@@ -7,7 +7,6 @@ using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Windows.Forms;
-using static MMR_Tracker_V3.TrackerObjects.InstanceData;
 
 namespace Windows_Form_Frontend
 {

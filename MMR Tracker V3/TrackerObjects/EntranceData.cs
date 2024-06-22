@@ -1,6 +1,4 @@
-﻿using MathNet.Numerics;
-using MMR_Tracker_V3.TrackerObjectExtensions;
-using System;
+﻿using MMR_Tracker_V3.TrackerObjectExtensions;
 using System.Collections.Generic;
 using System.Linq;
 using static MMR_Tracker_V3.TrackerObjects.MiscData;

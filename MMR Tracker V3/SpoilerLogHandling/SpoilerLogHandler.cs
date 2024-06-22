@@ -2,14 +2,10 @@
 using MMR_Tracker_V3.TrackerObjects;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using TDMUtils;
-using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace MMR_Tracker_V3.SpoilerLogHandling
 {

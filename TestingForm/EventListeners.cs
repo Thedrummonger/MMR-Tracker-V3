@@ -1,12 +1,4 @@
 ﻿using MMR_Tracker_V3;
-using MMR_Tracker_V3.TrackerObjects;
-using Newtonsoft.Json;
-using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Windows_Form_Frontend;
 
 namespace TestingForm

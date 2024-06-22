@@ -3,13 +3,13 @@ using MMR_Tracker_V3.TrackerObjects;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using static MMR_Tracker_V3.TrackerObjects.MiscData;
+using TDMUtils;
 using static MMR_Tracker_V3.TrackerObjects.EntranceData;
 using static MMR_Tracker_V3.TrackerObjects.InstanceData;
 using static MMR_Tracker_V3.TrackerObjects.ItemData;
 using static MMR_Tracker_V3.TrackerObjects.LocationData;
+using static MMR_Tracker_V3.TrackerObjects.MiscData;
 using static MMR_Tracker_V3.TrackerObjects.OptionData;
-using TDMUtils;
 
 namespace MMR_Tracker_V3.TrackerObjectExtensions
 {

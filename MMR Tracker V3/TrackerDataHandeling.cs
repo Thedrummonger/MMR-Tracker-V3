@@ -1,9 +1,9 @@
-﻿using MathNet.Numerics;
-using MMR_Tracker_V3.TrackerObjectExtensions;
+﻿using MMR_Tracker_V3.TrackerObjectExtensions;
 using MMR_Tracker_V3.TrackerObjects;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using TDMUtils;
 using static MMR_Tracker_V3.TrackerObjects.EntranceData;
 using static MMR_Tracker_V3.TrackerObjects.HintData;
 using static MMR_Tracker_V3.TrackerObjects.LocationData;
@@ -185,7 +185,7 @@ namespace MMR_Tracker_V3
             return false;
         }
 
-        static bool IsHidden(object obj) { return TDMUtils.Utility.DynamicPropertyExist(obj, "Hidden") && (obj as dynamic).Hidden; }
+        static bool IsHidden(object obj) { return MiscUtilities.DynamicPropertyExist(obj, "Hidden") && (obj as dynamic).Hidden; }
 
         public static string GetLocationDisplayName(dynamic obj, InstanceData.InstanceContainer instance)
         {

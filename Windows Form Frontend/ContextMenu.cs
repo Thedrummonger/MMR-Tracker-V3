@@ -1,17 +1,11 @@
-﻿using MMR_Tracker_V3.TrackerObjects;
+﻿using MMR_Tracker_V3;
+using MMR_Tracker_V3.TrackerObjects;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using static MMR_Tracker_V3.TrackerObjects.InstanceData;
 using static MMR_Tracker_V3.TrackerObjects.MiscData;
-using MMR_Tracker_V3.TrackerObjectExtensions;
-using MMR_Tracker_V3;
-using System.Diagnostics;
-using Microsoft.VisualBasic.Logging;
-using Octokit;
 
 namespace Windows_Form_Frontend
 {

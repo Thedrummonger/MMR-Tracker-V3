@@ -1,16 +1,8 @@
-﻿using MMR_Tracker_V3.TrackerObjects;
-using System;
-using System.Collections.Generic;
+﻿using MMR_Tracker_V3.Logic;
+using MMR_Tracker_V3.TrackerObjects;
 using System.Diagnostics;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using static MMR_Tracker_V3.TrackerObjects.LogicDictionaryData;
-using MMR_Tracker_V3;
-using Microsoft.VisualBasic.Logging;
-using MMR_Tracker_V3.Logic;
-using TDMUtils;
+using static TDMUtils.DataFileUtilities;
 
 namespace TestingForm.GameDataCreation.BanjoTooie
 {
@@ -19,15 +11,15 @@ namespace TestingForm.GameDataCreation.BanjoTooie
         static LogicStringParser logicparser = new LogicStringParser();
         public static void GenData(out MMRData.LogicFile FinalLogic, out LogicDictionaryData.LogicDictionary Finaldictionary)
         {
-            var Locations = Utility.DeserializeJsonFile<Dictionary<string, string>>(
+            var Locations = DeserializeJsonFile<Dictionary<string, string>>(
                Path.Join(TestingReferences.GetOtherGameDataPath("BanjoTooie"), "Locations.json"));
-            var Items = Utility.DeserializeJsonFile<Dictionary<string, string>>(
+            var Items = DeserializeJsonFile<Dictionary<string, string>>(
                 Path.Join(TestingReferences.GetOtherGameDataPath("BanjoTooie"), "Items.json"));
-            var Regions = Utility.DeserializeJsonFile<Dictionary<string, string>>(
+            var Regions = DeserializeJsonFile<Dictionary<string, string>>(
                Path.Join(TestingReferences.GetOtherGameDataPath("BanjoTooie"), "Regions.json"));
-            var AreaMap = Utility.DeserializeJsonFile<Dictionary<string, string[]>>(
+            var AreaMap = DeserializeJsonFile<Dictionary<string, string[]>>(
                 Path.Join(TestingReferences.GetOtherGameDataPath("BanjoTooie"), "LocationAreaMap.json"));
-            var OriginalItems = Utility.DeserializeJsonFile<Dictionary<string, string>>(
+            var OriginalItems = DeserializeJsonFile<Dictionary<string, string>>(
                 Path.Join(TestingReferences.GetOtherGameDataPath("BanjoTooie"), "OriginalItem.json"));
 
             var WorldGraphFolder = Path.Join(TestingReferences.GetOtherGameDataPath("BanjoTooie"), "World");
@@ -88,7 +80,7 @@ namespace TestingForm.GameDataCreation.BanjoTooie
 
             foreach(var i in Directory.GetFiles(WorldGraphFolder))
             {
-                var WorldFile = Utility.DeserializeYAMLFile<KeyValuePair<string, Dictionary<string, WorldTemplate.WorldArea>>>(i);
+                var WorldFile = DeserializeYAMLFile<KeyValuePair<string, Dictionary<string, WorldTemplate.WorldArea>>>(i);
                 foreach(var area in WorldFile.Value)
                 {
                     foreach(var loc in area.Value.Locations)

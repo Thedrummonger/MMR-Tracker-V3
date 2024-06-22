@@ -1,20 +1,13 @@
-﻿using MathNet.Symbolics;
-using MMR_Tracker_V3;
+﻿using MMR_Tracker_V3;
 using MMR_Tracker_V3.Logic;
 using MMR_Tracker_V3.TrackerObjects;
 using Newtonsoft.Json;
-using System;
-using System.Collections.Generic;
 using System.Diagnostics;
-using System.Linq;
-using System.Linq.Expressions;
-using System.Text;
-using System.Threading.Tasks;
+using TDMUtils;
 using static MMR_Tracker_V3.Logic.LogicUtilities;
 using static MMR_Tracker_V3.TrackerObjects.MMRData;
 using static TestingForm.GameDataCreation.OOTMMV3.OOTMMDataClasses;
 using static TestingForm.GameDataCreation.OOTMMV3.OOTMMUtility;
-using TDMUtils;
 
 namespace TestingForm.GameDataCreation.OOTMMV3
 {
@@ -22,7 +15,7 @@ namespace TestingForm.GameDataCreation.OOTMMV3
     {
         public static void WriteAreaFile()
         {
-            var OOTMMDict = Utility.LoadObjectFromFileOrDefault<LogicDictionaryData.LogicDictionary>
+            var OOTMMDict = DataFileUtilities.LoadObjectFromFileOrDefault<LogicDictionaryData.LogicDictionary>
                 (Path.Join(References.Globalpaths.BaseDictionaryPath, "OOTMM V3.json"));
 
             Dictionary<string, string> AreaDict = [];
@@ -323,7 +316,7 @@ namespace TestingForm.GameDataCreation.OOTMMV3
             var MQSpoiler = Path.Combine(OOTMMPaths.OOTMMTestingFolderPath, "AreaSpoilers", "AreaListMQ.txt");
             if (File.Exists(OOTMMPaths.AreaFile))
             {
-                foreach (var l in Utility.LoadObjectFromFileOrDefault<Dictionary<string, string>>(OOTMMPaths.AreaFile))
+                foreach (var l in DataFileUtilities.LoadObjectFromFileOrDefault<Dictionary<string, string>>(OOTMMPaths.AreaFile))
                 {
                     Areas[l.Key] = l.Value;
                 }

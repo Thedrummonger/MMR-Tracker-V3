@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using TDMUtils;
+﻿using static TDMUtils.DataFileUtilities;
 
 namespace TestingForm.GameDataCreation.BanjoTooie
 {
@@ -284,7 +279,7 @@ namespace TestingForm.GameDataCreation.BanjoTooie
             WorldFiles["Glitter Gulch Mine"]["CHUFFY"].Exits.Add("HP", new());
 
             //LOCATIONS
-            var AreaMap = Utility.DeserializeJsonFile<Dictionary<string, string[]>>(
+            var AreaMap = DeserializeJsonFile<Dictionary<string, string[]>>(
                 Path.Join(TestingReferences.GetOtherGameDataPath("BanjoTooie"), "LocationAreaMap.json"));
 
             foreach(var area in AreaMap)
