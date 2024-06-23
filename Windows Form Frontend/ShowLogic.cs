@@ -1,4 +1,5 @@
-﻿using MMR_Tracker_V3;
+﻿using MathNet.Numerics;
+using MMR_Tracker_V3;
 using MMR_Tracker_V3.Logic;
 using MMR_Tracker_V3.TrackerObjectExtensions;
 using MMR_Tracker_V3.TrackerObjects;
@@ -246,7 +247,7 @@ namespace Windows_Form_Frontend
             }
             foreach (var cond in Logic.ConditionalItems)
             {
-                StandardListBoxItem boxItem = new StandardListBoxItem() { Display = string.Join(" | ", cond.Select(x => GetDisplayName(x))), Tag = cond };
+                StandardListBoxItem boxItem = new StandardListBoxItem() { Display = string.Join(" | ", cond.Select(GetDisplayName)), Tag = cond };
                 lbCond.Items.Add(boxItem);
             }
             Updating = false;
@@ -490,7 +491,9 @@ namespace Windows_Form_Frontend
         }
         private string GetDisplayName(string i)
         {
-            return i + (IC.logicCalculation.LogicEntryAquired(i) ? "*" : "");
+            var data = IC.Instance.GetLogicItemData(i);
+            if (data.Type == LogicItemTypes.LogicEntryCollection) { Debug.WriteLine(((OptionData.LogicEntryCollection)data.Object).GetValue(IC.Instance).ToFormattedJson()); }
+            return i + (data.IntOptionCount is null ? "" : $"[{data.IntOptionCount.Value}]") + (IC.logicCalculation.LogicEntryAquired(i) ? "*" : "");
         }
 
         private void btnGoTo_Click(object sender, EventArgs e)

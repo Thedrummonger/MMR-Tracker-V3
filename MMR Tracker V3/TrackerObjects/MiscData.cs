@@ -201,6 +201,7 @@ namespace MMR_Tracker_V3.TrackerObjects
             public int Amount;
             public bool Literal;
             public bool HadItemCount;
+            public OptionData.IntOption? IntOptionCount;
             public LogicItemTypes Type;
         }
 

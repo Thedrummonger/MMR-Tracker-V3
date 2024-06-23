@@ -18,10 +18,19 @@ namespace MMR_Tracker_V3.TrackerObjectExtensions
         public static LogicItemData GetLogicItemData(this InstanceData.TrackerInstance Instance, string LogicItem)
         {
             if (LogicItem == null) { return new LogicItemData(); }
-            bool MultiItem = Instance.MultipleItemEntry(LogicItem, out string _LogicItem, out int Amount);
+            bool MultiItem = Instance.MultipleItemEntry(LogicItem, out string _LogicItem, out int Amount, out string IntOption);
             bool Literal = _LogicItem.IsLiteralID(out _LogicItem);
             var type = Instance.GetItemEntryType(_LogicItem, Literal, out object obj);
-            return new LogicItemData { CleanID = _LogicItem, Literal = Literal, RawID = LogicItem, Type = type, Amount = Amount, Object = obj, HadItemCount = MultiItem };
+            return new LogicItemData { 
+                CleanID = _LogicItem, 
+                Literal = Literal, 
+                RawID = LogicItem, 
+                Type = type, 
+                Amount = Amount, 
+                Object = obj, 
+                HadItemCount = MultiItem,
+                IntOptionCount = IntOption is null ? null : Instance.IntOptions[IntOption],
+            };
         }
         public static ItemObject GetItemByID(this InstanceData.TrackerInstance instance, string item)
         {
@@ -304,11 +313,15 @@ namespace MMR_Tracker_V3.TrackerObjectExtensions
             return false;
         }
 
-
         public static bool MultipleItemEntry(this InstanceData.TrackerInstance instance, string Entry, out string Item, out int Amount)
+        {
+            return MultipleItemEntry(instance, Entry, out Item, out Amount, out _);
+        }
+        public static bool MultipleItemEntry(this InstanceData.TrackerInstance instance, string Entry, out string Item, out int Amount, out string IntOption)
         {
             Item = Entry;
             Amount = 1;
+            IntOption = null;
             if (!Entry.Contains(",")) { return false; }
             if (LogicFunctions.IsLogicFunction(Entry)) { return false; }
             var data = Entry.Split(',').Select(x => x.Trim()).ToArray();
@@ -320,6 +333,7 @@ namespace MMR_Tracker_V3.TrackerObjectExtensions
             }
             else if (instance.IntOptions.ContainsKey(data[1]))
             {
+                IntOption = data[1];
                 Amount = instance.IntOptions[data[1]].Value;
                 return true;
             }
