@@ -172,11 +172,20 @@ namespace MMR_Tracker_V3.NetCode
             public string GameName { get; set; } = string.Empty;
             public Dictionary<int, string> PlayerNames { get; set; } = [];
             public List<RemoteLocationHint> RemoteHints { get; set; } = [];
-            public void Reset()
+            public void CloseAndReset()
             {
+                if (ServerConnection is not null && ServerConnection.Connected)
+                {
+                    ServerConnection.GetStream().Close();
+                    ServerConnection.Close();
+                    ServerConnection = null;
+                }
+                if (ArchipelagoClient is not null)
+                {
+                    ArchipelagoClient.Close();
+                    ArchipelagoClient = null;
+                }
                 OnlineMode = NetData.OnlineMode.None;
-                ServerConnection = null;
-                ArchipelagoClient = null;
                 PlayerID = -1;
                 SlotID = string.Empty;
                 GameName = string.Empty;

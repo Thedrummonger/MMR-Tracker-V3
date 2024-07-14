@@ -291,7 +291,7 @@ namespace Windows_Form_Frontend
                     SpoilerTools.ApplySpoilerLog(InstanceContainer, WinFormUtils.SelectAndReadFile);
                 }
             }
-            archipelagoConnection.SyncWithArchipelagoData();
+            archipelagoConnection.StartRefreshTimer();
             ParentWindowsForm.UpdateUI();
             archipelagoConnection.ActivateListers();
         }

@@ -7,6 +7,7 @@ using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
+using System.Threading;
 using TDMUtils;
 using static MMR_Tracker_V3.NetCode.NetData;
 using static MMR_Tracker_V3.TrackerObjects.MiscData;
@@ -15,6 +16,8 @@ namespace MMR_Tracker_V3.NetCode
 {
     public class ArchipelagoConnector
     {
+        private Timer RefreshTimer;
+        public bool HasNewData = true;
         public ArchipelagoSession Session;
         LoginResult result;
         List<string> errorMessage = [];
@@ -43,6 +46,17 @@ namespace MMR_Tracker_V3.NetCode
         public bool WasConnectionSuccess(out string[] Error) { Error = [.. errorMessage]; return result is LoginSuccessful; }
         public LoginSuccessful GetLoginSuccessInfo() { return (LoginSuccessful)result; }
         public LoginFailure GetLoginFailureInfo() { return (LoginFailure)result; }
+
+        public void StartRefreshTimer(TimerCallback Callback)
+        {
+            RefreshTimer = new Timer(Callback, null, 0, 1000);
+        }
+
+        public void Close()
+        {
+            RefreshTimer.Dispose();
+            Session.Socket.DisconnectAsync();
+        }
 
         public string[] GetAllLocations()
         {
@@ -128,6 +142,11 @@ namespace MMR_Tracker_V3.NetCode
             APClient.Session.MessageLog.OnMessageReceived += ArchipelagoChatMessageReceived;
         }
 
+        public void StartRefreshTimer()
+        {
+            Data.InstanceContainer.netConnection.ArchipelagoClient.StartRefreshTimer(_ => ArchipelagoRefreshTimerTick());
+        }
+
         public void SyncWithArchipelagoData(bool FromListener = false)
         {
             if (APLocationIDLookup is null) { FillLocationLookupDict(); }
@@ -137,7 +156,7 @@ namespace MMR_Tracker_V3.NetCode
             var AllItems = Session.Items.AllItemsReceived.Select(x => (Session.Items.GetItemName(x.Item), Session.Locations.GetLocationNameFromId(x.Location), x.Player)).ToArray();
             var AllLocations = Session.Locations.AllLocationsChecked.Select(x => Session.Locations.GetLocationNameFromId(x)).ToArray();
             foreach (var i in Data.InstanceContainer.Instance.ItemPool.Values) { i.AmountAquiredOnline = []; }
-            List<LocationData.LocationObject> ToCheck = [];
+            HashSet<LocationData.LocationObject> ToCheck = [];
             foreach (var Entry in AllItems)
             {
                 bool IsLocal = Entry.Player == Data.InstanceContainer.netConnection.PlayerID;
@@ -166,8 +185,8 @@ namespace MMR_Tracker_V3.NetCode
 
             Hint[] HintData = [];
 
-            //TODO Fix this eventually, GetHints breaks when called from a PacketReceived handler and GetHintsAsync causes an infinite loop
-            //For now just don't call it from a PacketReceived handler
+            // If for whatever reason this method is called from a listener thread (it should never be)
+            // don't process hint data as that will cause an infinite loop for some reason.
             if (!FromListener)
             {
                 try { HintData = Session.DataStorage.GetHints(Session.ConnectionInfo.Slot); }
@@ -197,38 +216,44 @@ namespace MMR_Tracker_V3.NetCode
                 }
                 LocationChecker.CheckSelectedItems(HintedLocations, Data.InstanceContainer, new CheckItemSetting(MiscData.CheckState.Marked));
             }
-
+            Data.InstanceContainer.netConnection.ArchipelagoClient.HasNewData = false;
             Data.RefreshMainForm();
         }
         public void ArchipelagoChatMessageReceived(Archipelago.MultiClient.Net.MessageLog.Messages.LogMessage message)
         {
             if (!Data.ReceiveData) { return; }
-            if (message is Archipelago.MultiClient.Net.MessageLog.Messages.HintItemSendLogMessage && Data.AutoProcessData)
+            if (message is Archipelago.MultiClient.Net.MessageLog.Messages.HintItemSendLogMessage)
             {
-                SyncWithArchipelagoData(true);
+                Data.InstanceContainer.netConnection.ArchipelagoClient.HasNewData = true;
             }
             Data.Logger?.Invoke(message.ToString(), null);
         }
 
+        public void ArchipelagoRefreshTimerTick()
+        {
+            if (Data.InstanceContainer.netConnection?.ArchipelagoClient is null) { return; }
+            if (!Data.AutoProcessData || !Data.InstanceContainer.netConnection.ArchipelagoClient.HasNewData) { return; }
+            Debug.WriteLine("ArchipelagoDataUpdated");
+            SyncWithArchipelagoData();
+        }
+
         public void ArchipelagoLocationChecked(System.Collections.ObjectModel.ReadOnlyCollection<long> newCheckedLocations)
         {
-            Debug.WriteLine("ArchipelagoLocationChecked");
-            if (!Data.AutoProcessData || !Data.ReceiveData) { return; }
-            SyncWithArchipelagoData(true);
+            if (!Data.ReceiveData) { return; }
+            Data.InstanceContainer.netConnection.ArchipelagoClient.HasNewData = true;
         }
 
         public void ArchipelagoItemReceived(Archipelago.MultiClient.Net.Helpers.ReceivedItemsHelper helper)
         {
-            Debug.WriteLine("ArchipelagoItemReceived");
-            if (!Data.AutoProcessData || !Data.ReceiveData) { return; }
-            SyncWithArchipelagoData(true);
+            if (!Data.ReceiveData) { return; }
+            Data.InstanceContainer.netConnection.ArchipelagoClient.HasNewData = true;
         }
 
         public static bool CheckForLocalAPServer()
         {
             foreach (Process process in Process.GetProcesses())
             { 
-                if (!String.IsNullOrEmpty(process.MainWindowTitle) && 
+                if (!process.MainWindowTitle.IsNullOrEmpty() && 
                     process.ProcessName == "ArchipelagoServer" && 
                     process.MainWindowTitle.EndsWith("ArchipelagoServer.exe"))
                 {

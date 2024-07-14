@@ -13,17 +13,7 @@ namespace MMR_Tracker_V3.NetCode
     {
         public static void CloseServer(InstanceContainer InstanceContainer)
         {
-            if (InstanceContainer.netConnection.ServerConnection is not null && InstanceContainer.netConnection.ServerConnection.Connected)
-            {
-                InstanceContainer.netConnection.ServerConnection.GetStream().Close();
-                InstanceContainer.netConnection.ServerConnection.Close();
-            }
-            if (InstanceContainer.netConnection.ArchipelagoClient is not null)
-            {
-                InstanceContainer.netConnection.ArchipelagoClient.Session.Socket.DisconnectAsync();
-            }
-            InstanceContainer.netConnection.Reset();
-
+            InstanceContainer.netConnection.CloseAndReset();
         }
         public static bool ConnectToWebServer(InstanceContainer InstanceContainer, string Address, int Port, int PlayerID, string Password, NetData.OnlineMode ClientMode, out List<string> Log)
         {
