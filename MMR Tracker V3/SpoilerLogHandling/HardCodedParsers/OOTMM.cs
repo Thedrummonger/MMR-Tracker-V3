@@ -43,6 +43,7 @@ namespace MMR_Tracker_V3.SpoilerLogHandling.HardCodedParsers
             List<string> JunkLocationData = GetListFromSpoiler(log, "Junk Locations");
             List<string> MQDungeons = GetListFromSpoiler(log, "MQ Dungeons");
             List<string> AccessConditions = GetListFromSpoiler(log, "Special Conditions");
+            List<string> PrecompletedDungeons = GetListFromSpoiler(log, "Pre-Completed Dungeons");
 
             Debug.WriteLine("\nApplying Settings");
             ApplySettings(Instance, SettingData);
@@ -60,6 +61,8 @@ namespace MMR_Tracker_V3.SpoilerLogHandling.HardCodedParsers
             ApplyHintData(Instance, ParseHintData(Instance, HintData));
             Debug.WriteLine("\nApplying Junk Locations");
             SetjunkedLocations(Instance, JunkLocationData);
+            Debug.WriteLine("\nJunking Pre Completed Dungeons");
+            JunkPrecompletedDungeons(Instance, log, PrecompletedDungeons);
             Debug.WriteLine("\nApplying Entrance Data");
             ApplyEntrances(Instance, ExitData);
 
@@ -246,7 +249,7 @@ namespace MMR_Tracker_V3.SpoilerLogHandling.HardCodedParsers
                 }
                 else
                 {
-                    throw new Exception($"Setting {setting.Key} did not exist");
+                    //throw new Exception($"Setting {setting.Key} did not exist");
                     Debug.WriteLine($"Setting {setting.Key} did not exist");
                 }
 
@@ -522,6 +525,53 @@ namespace MMR_Tracker_V3.SpoilerLogHandling.HardCodedParsers
                 else { CurrentKey = x; }
             }
             return Result;
+        }
+
+        public static void JunkPrecompletedDungeons(InstanceData.TrackerInstance instance, string[] Log, List<string> PrecompletedDungeons)
+        {
+            Dictionary<string, string> dungeonKeyToHeaderMap = new Dictionary<string, string>()
+            {
+                {"Shadow Temple", "Shadow" },
+                {"Forest Temple", "Forest" },
+                {"Fire Temple", "Fire" },
+                {"Woodfall Temple", "WF" },
+                {"Great Bay Temple", "GB" },
+                {"Spirit Temple", "Spirit" },
+                {"Stone Tower Temple", "ST" },
+                {"Snowhead Temple", "SH" },
+                {"Jabu-Jabu's Belly", "JJ" },
+                {"Dodongo's Cavern", "DC" },
+                {"Deku Tree", "DT" },
+                {"Water Temple", "Water" },
+            };
+            bool AtData = false;
+            bool InPreComDungeon = false;
+            string CurrentHeader = "";
+            List<string> PrecompletedLocations = [];
+            foreach(var i in Log)
+            {
+                string item = i.Trim();
+                if (item.StartsWith("Location List")) { AtData = true; continue; }
+                if (!AtData) { continue; }
+                if (item.EndsWith("):")) 
+                {
+                    InPreComDungeon = false;
+                    CurrentHeader = i[..(i.IndexOf("(")-1)].Trim(); 
+                    if (dungeonKeyToHeaderMap.TryGetValue(CurrentHeader, out string DunKey) && PrecompletedDungeons.Contains(DunKey))
+                    {
+                        InPreComDungeon = true;
+                    }
+                    continue; 
+                }
+                if (item.IsNullOrWhiteSpace()) { continue; }
+
+                string location = item.SplitOnce(':').Item1.Trim();
+                if (InPreComDungeon && instance.GetLocationByID(location) is not null)
+                {
+                    Debug.WriteLine($"{CurrentHeader}: {location} was precompleted");
+                    instance.GetLocationByID(location).SetRandomizedState(MiscData.RandomizedState.ForcedJunk);
+                }
+            }
         }
     }
 }
