@@ -166,7 +166,7 @@ namespace MMR_Tracker_V3.NetCode
 
         }
 
-        public void TrackerDataHandeling_CheckedObjectsUpdate(List<object> ObjectsUpdated, InstanceData.TrackerInstance instance)
+        public void SendUpdateToServer(List<object> ObjectsUpdated, InstanceData.TrackerInstance instance)
         {
             if (Data.InstanceContainer.netConnection.IsConnected()) { return; }
             if (!Data.InstanceContainer.netConnection.OnlineMode.In(OnlineMode.Coop, OnlineMode.Multiworld)) { return; }

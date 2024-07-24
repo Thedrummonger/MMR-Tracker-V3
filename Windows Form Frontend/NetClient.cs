@@ -57,7 +57,7 @@ namespace Windows_Form_Frontend
             WebServerConnection = new WebServerConnector(NetSessionData);
             archipelagoConnection = new ArchipelagoConnectionHandler(NetSessionData);
             ModeUpdating = true;
-            LocationChecker.CheckStateChanged += WebServerConnection.TrackerDataHandeling_CheckedObjectsUpdate;
+            LocationChecker.CheckStateChanged += WebServerConnection.SendUpdateToServer;
 
             cmbGameType.DataSource = EnumAsArray<NetData.OnlineMode>();
             cmbGameType.SelectedIndexChanged += CmbGameType_SelectedIndexChanged;
@@ -81,7 +81,7 @@ namespace Windows_Form_Frontend
                 if (result != DialogResult.Yes) { e.Cancel = true; return; }
             }
             SkipCloseConfirmation = false;
-            LocationChecker.CheckStateChanged -= WebServerConnection.TrackerDataHandeling_CheckedObjectsUpdate;
+            LocationChecker.CheckStateChanged -= WebServerConnection.SendUpdateToServer;
             PrintToConsole($"Connection closed manually");
             ConnectionHandling.CloseServer(InstanceContainer);
             ParentWindowsForm.CurrentNetClientForm = null;
