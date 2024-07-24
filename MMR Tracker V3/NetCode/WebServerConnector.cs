@@ -14,7 +14,7 @@ using static MMR_Tracker_V3.TrackerObjects.MiscData;
 
 namespace MMR_Tracker_V3.NetCode
 {
-    public class ListenerThread(NetSessionData Data)
+    public class WebServerConnector(NetSessionData Data)
     {
         public Dictionary<string, string> LocationDataToProcess = new Dictionary<string, string>();
         public Dictionary<int, Dictionary<string, int>> ItemDataToProcess = new Dictionary<int, Dictionary<string, int>>();
@@ -166,21 +166,22 @@ namespace MMR_Tracker_V3.NetCode
 
         }
 
-        public void TrackerDataHandeling_CheckedObjectsUpdate(List<object> ObjectsUpdated, TrackerInstance Instance)
+        public void TrackerDataHandeling_CheckedObjectsUpdate(List<object> ObjectsUpdated, InstanceData.TrackerInstance instance)
         {
+            if (Data.InstanceContainer.netConnection.IsConnected()) { return; }
+            if (!Data.InstanceContainer.netConnection.OnlineMode.In(OnlineMode.Coop, OnlineMode.Multiworld)) { return; }
+            if (!Data.SendData) { return; }
             var LocationsUpdated = ObjectsUpdated.Where(x => x is LocationData.LocationObject lo && (lo.Randomizeditem.OwningPlayer > -1) || Data.InstanceContainer.netConnection.OnlineMode != OnlineMode.Multiworld)
                 .Select(x => (LocationData.LocationObject)x);
-            if (Data.InstanceContainer.netConnection.IsConnected()) { return; }
-            if (!Data.SendData) { return; }
 
             NetData.NetPacket? packet;
             switch (Data.InstanceContainer.netConnection.OnlineMode)
             {
                 case OnlineMode.Multiworld:
-                    packet = PacketCreation.CreateMultiWorldPacket(Data.PlayerID, Data.Password, Instance, LocationsUpdated);
+                    packet = PacketCreation.CreateMultiWorldPacket(Data.PlayerID, Data.Password, Data.InstanceContainer.Instance, LocationsUpdated);
                     break;
                 case OnlineMode.Coop:
-                    packet = PacketCreation.CreateCoopPacket(Data.PlayerID, Data.Password, Instance, LocationsUpdated);
+                    packet = PacketCreation.CreateCoopPacket(Data.PlayerID, Data.Password, Data.InstanceContainer.Instance, LocationsUpdated);
                     break;
                 default: return;
             }

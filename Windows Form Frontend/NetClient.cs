@@ -24,7 +24,7 @@ namespace Windows_Form_Frontend
     {
         MainInterface ParentWindowsForm;
         InstanceContainer InstanceContainer;
-        ListenerThread ListenerThread;
+        WebServerConnector WebServerConnection;
         NetSessionData NetSessionData;
         ArchipelagoConnectionHandler archipelagoConnection;
         public NetClient(MainInterface testingForm, InstanceContainer C)
@@ -52,14 +52,12 @@ namespace Windows_Form_Frontend
 
             if (ArchipelagoConnectionHandler.CheckForLocalAPServer()) { APServerCache = "localhost"; }
 
-            NetSessionData = new NetSessionData(txtServerAddress.Text, (int)nudPort.Value,
-                (int)nudPlayer.Value, txtSlotID.Text, txtGameName.Text, txtPassword.Text,
-                chkRecieveData.Checked, chkSendData.Checked, chkProcessData.Checked, chkAllowCheck.Checked,
-                PrintToConsoleThreadSafe, UpdateUI, UpdateMainForm, InstanceContainer);
-            ListenerThread = new ListenerThread(NetSessionData);
+            NetSessionData = new NetSessionData(PrintToConsoleThreadSafe, UpdateUI, UpdateMainForm, InstanceContainer);
+            UpdateNetSessionParams();
+            WebServerConnection = new WebServerConnector(NetSessionData);
             archipelagoConnection = new ArchipelagoConnectionHandler(NetSessionData);
             ModeUpdating = true;
-            LocationChecker.CheckStateChanged += ListenerThread.TrackerDataHandeling_CheckedObjectsUpdate;
+            LocationChecker.CheckStateChanged += WebServerConnection.TrackerDataHandeling_CheckedObjectsUpdate;
 
             cmbGameType.DataSource = EnumAsArray<NetData.OnlineMode>();
             cmbGameType.SelectedIndexChanged += CmbGameType_SelectedIndexChanged;
@@ -83,7 +81,7 @@ namespace Windows_Form_Frontend
                 if (result != DialogResult.Yes) { e.Cancel = true; return; }
             }
             SkipCloseConfirmation = false;
-            LocationChecker.CheckStateChanged -= ListenerThread.TrackerDataHandeling_CheckedObjectsUpdate;
+            LocationChecker.CheckStateChanged -= WebServerConnection.TrackerDataHandeling_CheckedObjectsUpdate;
             PrintToConsole($"Connection closed manually");
             ConnectionHandling.CloseServer(InstanceContainer);
             ParentWindowsForm.CurrentNetClientForm = null;
@@ -109,7 +107,7 @@ namespace Windows_Form_Frontend
             cmbGameType.Enabled = !Connected;
             txtChatMessage.Enabled = Connected;
             btnSendChat.Enabled = Connected;
-            btnProcessData.Enabled = (ListenerThread.LocationDataToProcess.Any() || ListenerThread.ItemDataToProcess.Any() || IsArchipelago) && Connected;
+            btnProcessData.Enabled = (WebServerConnection.LocationDataToProcess.Any() || WebServerConnection.ItemDataToProcess.Any() || IsArchipelago) && Connected;
             chkAllowCheck.Enabled = IsCoop;
             chkSendData.Enabled = !IsArchipelago && !IsNone;
             chkRecieveData.Enabled = !IsNone;
@@ -190,11 +188,11 @@ namespace Windows_Form_Frontend
         {
             if (InstanceContainer.netConnection.OnlineMode == OnlineMode.Coop)
             {
-                ListenerThread.ProcessSharedLocations();
+                WebServerConnection.ProcessSharedLocations();
             }
             else if (InstanceContainer.netConnection.OnlineMode == OnlineMode.Multiworld)
             {
-                ListenerThread.ProcessMultiworldItems();
+                WebServerConnection.ProcessMultiworldItems();
             }
             else if (InstanceContainer.netConnection.OnlineMode == OnlineMode.Archipelago)
             {
@@ -261,15 +259,13 @@ namespace Windows_Form_Frontend
         //Misc
         private async void ConnectToWebServer()
         {
-            var Connected = ConnectionHandling.ConnectToWebServer(
-                InstanceContainer, txtServerAddress.Text, (int)nudPort.Value,
-                (int)nudPlayer.Value, txtPassword.Text, CurrentMode, out List<string> Log);
+            var Connected = ConnectionHandling.ConnectToWebServer(NetSessionData, CurrentMode, out List<string> Log);
             PrintToConsole(Log);
             UpdateUI();
             if (!Connected) { return; }
             TrackerSettings.UpdateDefaultOptionFile(x => x.SetServerIP(txtServerAddress.Text).SetServerPort((int)nudPort.Value));
             InstanceContainer.Instance.StaticOptions.OptionFile.SetServerIP(txtServerAddress.Text).SetServerPort((int)nudPort.Value);
-            string ExitReason = await ListenerThread.OpenListenThread();
+            string ExitReason = await WebServerConnection.OpenListenThread();
             PrintToConsole(ExitReason);
             ConnectionHandling.CloseServer(InstanceContainer);
             UpdateUI();
@@ -277,7 +273,7 @@ namespace Windows_Form_Frontend
         }
         private void ConnectToArchipelago()
         {
-            var Connected = archipelagoConnection.Connect(out List<string> Log);
+            var Connected = ConnectionHandling.ConnectToAPServer(NetSessionData, out List<string> Log);
             PrintToConsole(Log);
             if (!Connected) { return ; }
             TrackerSettings.UpdateDefaultOptionFile(x => x.SetAPServerIP(txtServerAddress.Text).SetAPServerPort((int)nudPort.Value));

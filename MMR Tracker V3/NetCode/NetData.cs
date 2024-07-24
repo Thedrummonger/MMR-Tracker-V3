@@ -33,25 +33,18 @@ namespace MMR_Tracker_V3.NetCode
             [Description("Archipelago")]
             Archipelago = 4
         }
-        public class NetSessionData(
-            string _ServerAddress, int _ServerPort,
-            int _PlayerID, string _SlotID, string _GameName,
-            string _Password,
-            bool _ReceiveData, bool _SendData, bool _AutoProcessData, bool _AllowLocationChecking,
-            Action<string, object[]> _Logger, Action _RefreshNetForm, Action _RefreshMainForm,
-            InstanceContainer _InstanceContainer
-        )
+        public class NetSessionData(Action<string, object[]> _Logger, Action _RefreshNetForm, Action _RefreshMainForm, InstanceContainer _InstanceContainer)
         {
-            public string ServerAddress = _ServerAddress;
-            public int ServerPort = _ServerPort;
-            public int PlayerID = _PlayerID;
-            public string SlotID = _SlotID;
-            public string GameName = _GameName;
-            public string Password = _Password;
-            public bool ReceiveData = _ReceiveData;
-            public bool SendData = _SendData;
-            public bool AutoProcessData = _AutoProcessData;
-            public bool AllowLocationChecking = _AllowLocationChecking;
+            public string ServerAddress;
+            public int ServerPort;
+            public int PlayerID;
+            public string SlotID;
+            public string GameName;
+            public string Password;
+            public bool ReceiveData;
+            public bool SendData;
+            public bool AutoProcessData;
+            public bool AllowLocationChecking;
             public Action<string, object[]> Logger = _Logger;
             public Action Refresh = _RefreshNetForm;
             public Action RefreshMainForm = _RefreshMainForm;

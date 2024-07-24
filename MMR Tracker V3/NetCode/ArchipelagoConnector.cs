@@ -108,31 +108,6 @@ namespace MMR_Tracker_V3.NetCode
             if (netID is null || !APItemIDLookup.TryGetValue(netID, out string LocID)) { return null; }
             return Data.InstanceContainer.Instance.GetItemByID(LocID);
         }
-        public bool Connect(out List<string> Log)
-        {
-            Log = new List<string>();
-            string ServerAddress = $"{Data.ServerAddress}:{Data.ServerPort}";
-            Data.InstanceContainer.netConnection.ArchipelagoClient =
-                new ArchipelagoConnector(Data.GameName, Data.SlotID, Data.Password, ServerAddress);
-
-            if (!Data.InstanceContainer.netConnection.ArchipelagoClient.WasConnectionSuccess(out string[] Error))
-            {
-                Log.Add(string.Join("\n", Error));
-                Data.InstanceContainer.netConnection.ArchipelagoClient = null;
-                return false;
-            }
-            var APClient = Data.InstanceContainer.netConnection.ArchipelagoClient;
-            var ConnectionInfo = APClient.GetLoginSuccessInfo();
-            Log.Add($"Connected to {ServerAddress}");
-            Data.InstanceContainer.netConnection.OnlineMode = OnlineMode.Archipelago;
-            Data.InstanceContainer.netConnection.PlayerID = Data.InstanceContainer.netConnection.ArchipelagoClient.Session.ConnectionInfo.Slot;
-            Data.InstanceContainer.netConnection.SlotID = Data.SlotID;
-            Data.InstanceContainer.netConnection.GameName = Data.GameName;
-
-            Data.InstanceContainer.netConnection.PlayerNames = APClient.Session.Players.AllPlayers.ToDictionary(x => x.Slot, x => x.Name);
-            
-            return true;
-        }
 
         public void ActivateListers()
         {
