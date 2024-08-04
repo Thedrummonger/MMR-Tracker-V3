@@ -442,12 +442,18 @@ namespace Windows_Form_Frontend
             tlpEntrances.Controls.Clear();
             tlpChecked.Controls.Clear();
             tlpPathFinder.Controls.Clear();
+
             if (InstanceContainer == null || InstanceContainer.Instance == null)
             {
                 SetObjectVisibility(false, false, false, false);
                 return;
             }
-            else if (InstanceContainer.Instance.StaticOptions.OptionFile.WinformData.UILayout == UILayout.Compact)
+
+            float LeftSize = InstanceContainer.Instance.StaticOptions.OptionFile.WinformData.ColumnSize;
+            float RightSize = 100F - LeftSize;
+            float TopSize = InstanceContainer.Instance.StaticOptions.OptionFile.WinformData.RowSize;
+            float BottomSize = 100F - TopSize;
+            if (InstanceContainer.Instance.StaticOptions.OptionFile.WinformData.UILayout == UILayout.Compact)
             {
                 if (InstanceContainer.Instance.CombineEntrancesWithLocations() && ViewFocus == DisplayListType.Entrances) { ViewFocus = DisplayListType.Locations; }
 
@@ -474,10 +480,10 @@ namespace Windows_Form_Frontend
             else if (!InstanceContainer.Instance.CombineEntrancesWithLocations())
             {
                 SetObjectVisibility(true, true, true, true);
-                tlpMaster.RowStyles[0] = new RowStyle(SizeType.Percent, 50F);
-                tlpMaster.RowStyles[1] = new RowStyle(SizeType.Percent, 50F);
-                tlpMaster.ColumnStyles[0] = new ColumnStyle(SizeType.Percent, 50F);
-                tlpMaster.ColumnStyles[1] = new ColumnStyle(SizeType.Percent, 50F);
+                tlpMaster.RowStyles[0] = new RowStyle(SizeType.Percent, TopSize);
+                tlpMaster.RowStyles[1] = new RowStyle(SizeType.Percent, BottomSize);
+                tlpMaster.ColumnStyles[0] = new ColumnStyle(SizeType.Percent, LeftSize);
+                tlpMaster.ColumnStyles[1] = new ColumnStyle(SizeType.Percent, RightSize);
                 if (InstanceContainer.Instance.StaticOptions.OptionFile.WinformData.UILayout == UILayout.Horizontal)
                 {
                     tlpLocations.Controls.AddRange([.. TLPLocationsControls]);
@@ -498,8 +504,8 @@ namespace Windows_Form_Frontend
                 SetObjectVisibility(true, true, false, false);
                 if (InstanceContainer.Instance.StaticOptions.OptionFile.WinformData.UILayout == UILayout.Horizontal)
                 {
-                    tlpMaster.ColumnStyles[0] = new ColumnStyle(SizeType.Percent, 50F);
-                    tlpMaster.ColumnStyles[1] = new ColumnStyle(SizeType.Percent, 50F);
+                    tlpMaster.ColumnStyles[0] = new ColumnStyle(SizeType.Percent, LeftSize);
+                    tlpMaster.ColumnStyles[1] = new ColumnStyle(SizeType.Percent, RightSize);
                     tlpMaster.RowStyles[0] = new RowStyle(SizeType.Percent, 100F);
                     tlpMaster.RowStyles[1] = new RowStyle(SizeType.Percent, 0F);
                     tlpLocations.Controls.AddRange([.. TLPLocationsControls]);
@@ -509,8 +515,8 @@ namespace Windows_Form_Frontend
                 {
                     tlpMaster.ColumnStyles[0] = new ColumnStyle(SizeType.Percent, 100F);
                     tlpMaster.ColumnStyles[1] = new ColumnStyle(SizeType.Percent, 0F);
-                    tlpMaster.RowStyles[0] = new RowStyle(SizeType.Percent, 50F);
-                    tlpMaster.RowStyles[1] = new RowStyle(SizeType.Percent, 50F);
+                    tlpMaster.RowStyles[0] = new RowStyle(SizeType.Percent, TopSize);
+                    tlpMaster.RowStyles[1] = new RowStyle(SizeType.Percent, BottomSize);
                     tlpLocations.Controls.AddRange([.. TLPLocationsControls]);
                     tlpChecked.Controls.AddRange([.. TLPCheckedControls]);
                 }

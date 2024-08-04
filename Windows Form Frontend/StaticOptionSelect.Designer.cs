@@ -38,6 +38,8 @@ namespace Windows_Form_Frontend
             label1 = new System.Windows.Forms.Label();
             richTextBox1 = new System.Windows.Forms.RichTextBox();
             button3 = new System.Windows.Forms.Button();
+            panel2 = new System.Windows.Forms.Panel();
+            panel2.SuspendLayout();
             SuspendLayout();
             // 
             // toolTip1
@@ -49,14 +51,15 @@ namespace Windows_Form_Frontend
             // 
             // panel1
             // 
+            panel1.AutoSize = true;
             panel1.Location = new System.Drawing.Point(12, 12);
             panel1.Name = "panel1";
-            panel1.Size = new System.Drawing.Size(370, 321);
+            panel1.Size = new System.Drawing.Size(370, 166);
             panel1.TabIndex = 46;
             // 
             // button1
             // 
-            button1.Location = new System.Drawing.Point(12, 339);
+            button1.Location = new System.Drawing.Point(0, 3);
             button1.Name = "button1";
             button1.Size = new System.Drawing.Size(208, 30);
             button1.TabIndex = 47;
@@ -66,7 +69,7 @@ namespace Windows_Form_Frontend
             // 
             // button2
             // 
-            button2.Location = new System.Drawing.Point(226, 339);
+            button2.Location = new System.Drawing.Point(211, 3);
             button2.Name = "button2";
             button2.Size = new System.Drawing.Size(156, 30);
             button2.TabIndex = 48;
@@ -77,7 +80,7 @@ namespace Windows_Form_Frontend
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new System.Drawing.Point(12, 372);
+            label1.Location = new System.Drawing.Point(0, 39);
             label1.Name = "label1";
             label1.Size = new System.Drawing.Size(103, 18);
             label1.TabIndex = 49;
@@ -85,7 +88,7 @@ namespace Windows_Form_Frontend
             // 
             // richTextBox1
             // 
-            richTextBox1.Location = new System.Drawing.Point(121, 372);
+            richTextBox1.Location = new System.Drawing.Point(109, 39);
             richTextBox1.Name = "richTextBox1";
             richTextBox1.Size = new System.Drawing.Size(261, 56);
             richTextBox1.TabIndex = 50;
@@ -93,7 +96,7 @@ namespace Windows_Form_Frontend
             // 
             // button3
             // 
-            button3.Location = new System.Drawing.Point(12, 394);
+            button3.Location = new System.Drawing.Point(0, 61);
             button3.Name = "button3";
             button3.Size = new System.Drawing.Size(103, 34);
             button3.TabIndex = 51;
@@ -101,22 +104,34 @@ namespace Windows_Form_Frontend
             button3.UseVisualStyleBackColor = true;
             button3.Click += Button_ResetFont;
             // 
+            // panel2
+            // 
+            panel2.AutoSize = true;
+            panel2.Controls.Add(button1);
+            panel2.Controls.Add(button3);
+            panel2.Controls.Add(button2);
+            panel2.Controls.Add(richTextBox1);
+            panel2.Controls.Add(label1);
+            panel2.Location = new System.Drawing.Point(12, 184);
+            panel2.Name = "panel2";
+            panel2.Size = new System.Drawing.Size(373, 99);
+            panel2.TabIndex = 52;
+            // 
             // StaticOptionSelect
             // 
             AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            ClientSize = new System.Drawing.Size(398, 440);
-            Controls.Add(button3);
-            Controls.Add(richTextBox1);
-            Controls.Add(label1);
-            Controls.Add(button2);
-            Controls.Add(button1);
+            ClientSize = new System.Drawing.Size(398, 297);
+            Controls.Add(panel2);
             Controls.Add(panel1);
             Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
             Icon = (System.Drawing.Icon)resources.GetObject("$this.Icon");
             Name = "StaticOptionSelect";
             Text = "Options";
             Load += StaticOptionSelect_Load;
+            Shown += StaticOptionSelect_Shown;
+            panel2.ResumeLayout(false);
+            panel2.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -129,5 +144,6 @@ namespace Windows_Form_Frontend
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.RichTextBox richTextBox1;
         private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Panel panel2;
     }
 }

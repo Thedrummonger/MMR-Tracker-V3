@@ -50,14 +50,36 @@ namespace MMR_Tracker_V3.TrackerObjects
             public OptionFile ToggleRedundantPaths(bool? Value = null) { ShowRedundantPathfinder = Value is null ? !ShowRedundantPathfinder : (bool)Value; return this; }
             public OptionFile ToggleCheckCoupled(bool? Value = null) { AutoCheckCoupleEntrances = Value is null ? !AutoCheckCoupleEntrances : (bool)Value; return this; }
             public OptionFile ToggleEntranceFeatures(bool? Value = null) { EntranceRandoFeatures = Value is null ? !EntranceRandoFeatures : (bool)Value; return this; }
-            public OptionFile SetMaxUndos(int Value) { MaxUndo = Value; return this; }
-            public OptionFile SetFont(string Value) { this.WinformData.FormFont = Value; return this; }
             public OptionFile SetUILayout(UILayout Value) { this.WinformData.UILayout = Value; return this; }
             public OptionFile SetEntryTooltip(bool? Value = null) { this.WinformData.ShowEntryNameTooltip = Value is null ? !this.WinformData.ShowEntryNameTooltip : (bool)Value; return this; }
             public OptionFile SetServerIP(string Value) { this.NetConfig.ServerIP = Value; return this; }
             public OptionFile SetServerPort(int Value) { this.NetConfig.ServerPort = Value; return this; }
             public OptionFile SetAPServerIP(string Value) { this.NetConfig.APServerIP = Value; return this; }
             public OptionFile SetAPServerPort(int Value) { this.NetConfig.APServerPort = Value; return this; }
+
+            public OptionFile SetColumnSize(float val)
+            {
+                float newVal = val;
+                if (val > 80) { newVal = 80; }
+                if (val < 20) { newVal = 20; }
+                this.WinformData.ColumnSize = newVal;
+                return this;
+            }
+
+            public OptionFile SetRowSize(float val)
+            {
+                float newVal = val;
+                if (val > 80) { newVal = 80; }
+                if (val < 20) { newVal = 20; }
+                this.WinformData.RowSize = newVal;
+                return this;
+            }
+            public OptionFile SetMaxUndos(int Value) 
+            { 
+                MaxUndo = Value < 0 ? 0 : Value; 
+                return this;
+            }
+            public OptionFile SetFont(string Value) { this.WinformData.FormFont = Value; return this; }
         }
 
         public class NetConfig
@@ -73,6 +95,8 @@ namespace MMR_Tracker_V3.TrackerObjects
         {
             public string FormFont { get; set; } = string.Empty;
             public UILayout UILayout { get; set; } = UILayout.Vertical;
+            public float RowSize { get; set; } = 50F;
+            public float ColumnSize { get; set; } = 50F;
             public bool ShowEntryNameTooltip { get; set; } = true;
         }
 

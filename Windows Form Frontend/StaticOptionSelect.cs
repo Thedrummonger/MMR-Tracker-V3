@@ -39,6 +39,18 @@ namespace Windows_Form_Frontend
             }
         }
 
+        private class MinMax(int? min, int? max)
+        {
+            public int GetMin() { return min ?? int.MinValue; }
+            public int GetMax() { return max ?? int.MaxValue; }
+            public NumericUpDown ApplyToNud(NumericUpDown NUD)
+            {
+                NUD.Minimum = GetMin();
+                NUD.Maximum = GetMax();
+                return NUD;
+            }
+        }
+
         private readonly MiscData.UILayout[] UILayoutsENUM = EnumAsArray<MiscData.UILayout>().ToArray();
         private readonly string[] UILayoutsSTRING = EnumAsStringArray<MiscData.UILayout>().ToArray();
 
@@ -57,9 +69,15 @@ namespace Windows_Form_Frontend
                 "With Entrances Disabled\nVertical:\nL\nC\n\nHorizontal\nLC\n\n" +
                 "Compact will only show one list box at a time.\nYou can select which list box is show in the \"View\" tab",
                 UILayoutsSTRING));
+            OptionLines.Add(new OptionLine("Column Size",
+                TempOptionFile.WinformData.ColumnSize, (val) => { TempOptionFile.SetColumnSize((float)val); },
+                "The percentage of the screen the left most list boxes will occupy", new MinMax(20, 80)));
+            OptionLines.Add(new OptionLine("Row Size",
+                TempOptionFile.WinformData.RowSize, (val) => { TempOptionFile.SetRowSize((float)val); },
+                "The percentage of the screen the top most list boxes will occupy", new MinMax(20, 80)));
             OptionLines.Add(new OptionLine("Max Undo Actions",
                 TempOptionFile.MaxUndo, (val) => { TempOptionFile.SetMaxUndos((int)val); },
-                "Max amount of undo states the tracker should store.\nThese can get quite large and eat up a lot of memory."));
+                "Max amount of undo states the tracker should store.\nThese can get quite large and eat up a lot of memory.", new MinMax(0, null)));
             OptionLines.Add(new OptionLine("Show Unavailable Marked",
                 TempOptionFile.ShowUnavailableMarkedLocations, (val) => { TempOptionFile.ToggleShowUnavailableMarked((bool)val); },
                 "Should locations that are not logically available that have been marked manually or through hints be displayed in the available locations list?"));
@@ -94,7 +112,7 @@ namespace Windows_Form_Frontend
                 "Should the tracker compress it's save files to save space?\nThe save file will no longer be human readable and can't be edited manually."));
             OptionLines.Add(new OptionLine("Font Size",
                 TempOptionFile.GetFont().Size, (val) => { TempOptionFile.SetFont(UpdateFont(null, (float)val)); },
-                "The font size the tracker should use"));
+                "The font size the tracker should use", new MinMax(6, null)));
             OptionLines.Add(new OptionLine("Font Family",
                 TempOptionFile.GetFont().FontFamily.Name, (val) => { TempOptionFile.SetFont(UpdateFont((string)val, null)); },
                 "The font family the tracker should use", FontFamily.Families.Select(x => x.Name).ToList()));
@@ -171,14 +189,30 @@ namespace Windows_Form_Frontend
                 }
                 else if (item.Value is float FloatVal)
                 {
-                    NumericUpDown nud = new NumericUpDown() { Location = new Point(XOffset(Description), y), Value = (decimal)FloatVal, Width = 40 };
-                    nud.ValueChanged += (sender, e) => { item.OnChange((float)nud.Value); PrintObjectToConsole(TempOptionFile); };
+                    NumericUpDown nud = new NumericUpDown() 
+                    { 
+                        Location = new Point(XOffset(Description), y), 
+                        Value = (decimal)FloatVal, 
+                        Width = 40,
+                        Maximum = int.MaxValue,
+                        Minimum = int.MinValue,
+                    };
+                    nud.ValueChanged += (sender, e) => { item.OnChange((float)nud.Value); PrintObjectToConsole(TempOptionFile); }; 
+                    if (item.ValidValues is MinMax MinMax) { MinMax.ApplyToNud(nud); }
                     panel1.Controls.Add(nud);
                 }
                 else if (item.Value is int intVal)
                 {
-                    NumericUpDown nud = new NumericUpDown() { Location = new Point(XOffset(Description), y), Value = intVal, Width = 40 };
+                    NumericUpDown nud = new NumericUpDown() 
+                    { 
+                        Location = new Point(XOffset(Description), y), 
+                        Value = intVal, 
+                        Width = 40,
+                        Maximum = int.MaxValue,
+                        Minimum = int.MinValue,
+                    };
                     nud.ValueChanged += (sender, e) => { item.OnChange((int)nud.Value); PrintObjectToConsole(TempOptionFile); };
+                    if (item.ValidValues is MinMax MinMax) { MinMax.ApplyToNud(nud); }
                     panel1.Controls.Add(nud);
                 }
                 else if (item.Value is string StringValD && item.ValidValues is IEnumerable<string> ListVal)
@@ -208,7 +242,7 @@ namespace Windows_Form_Frontend
                 y += deltaY;
             }
             richTextBox1.Font = TempOptionFile.GetFont();
-            richTextBox1.Text = "Example 123";
+            richTextBox1.Text = "Example @ 123 !";
         }
 
         private void StaticOptionSelect_Load(object sender, EventArgs e)
@@ -232,6 +266,13 @@ namespace Windows_Form_Frontend
             TempOptionFile.WinformData.FormFont = WinFormUtils.ConvertFontToString(SystemFonts.DefaultFont);
             PopulateOptions();
             PopulateListView();
+        }
+
+        private void StaticOptionSelect_Shown(object sender, EventArgs e)
+        {
+            panel2.Location = new Point(panel2.Location.X, panel1.Location.Y + panel1.Height + 4);
+            this.AutoSize = true;
+            this.AutoSizeMode = AutoSizeMode.GrowOnly;
         }
     }
 }
