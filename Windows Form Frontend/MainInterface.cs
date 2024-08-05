@@ -933,7 +933,10 @@ namespace Windows_Form_Frontend
 
         private void LB_KeyDown(object sender, KeyEventArgs e)
         {
-            if (ModifierKeys == Keys.Control)
+            var OptionFile = InstanceContainer.Instance.StaticOptions.OptionFile;
+            var SizeMod = ModifierKeys.HasFlag(Keys.Shift) ? 5 : 1;
+            var ActiveControl = this.ActiveControl;
+            if (ModifierKeys.HasFlag(Keys.Control))
             {
                 switch (e.KeyCode)
                 {
@@ -942,13 +945,30 @@ namespace Windows_Form_Frontend
                         for (int i = 0; i < (sender as ListBox).Items.Count; i++) { (sender as ListBox).SetSelected(i, true); }
                         (sender as ListBox).EndUpdate();
                         break;
+                    case Keys.Left:
+                        OptionFile.SetColumnSize(OptionFile.WinformData.ColumnSize - SizeMod);
+                        AlignUIElements();
+                        break;
+                    case Keys.Right:
+                        OptionFile.SetColumnSize(OptionFile.WinformData.ColumnSize + SizeMod);
+                        AlignUIElements();
+                        break;
+                    case Keys.Up:
+                        OptionFile.SetRowSize(OptionFile.WinformData.RowSize - SizeMod);
+                        AlignUIElements();
+                        break;
+                    case Keys.Down:
+                        OptionFile.SetRowSize(OptionFile.WinformData.RowSize + SizeMod);
+                        AlignUIElements();
+                        break;
                 }
             }
+            this.ActiveControl = ActiveControl;
         }
 
         private void preventKeyShortcuts(object sender, KeyPressEventArgs e)
         {
-            if (ModifierKeys == Keys.Control &&
+            if (ModifierKeys.HasFlag(Keys.Control) &&
                 this.ActiveControl != TXTLocSearch &&
                 this.ActiveControl != TXTEntSearch &&
                 this.ActiveControl != TXTCheckedSearch)
