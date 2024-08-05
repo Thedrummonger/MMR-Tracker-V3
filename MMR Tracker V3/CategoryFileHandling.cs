@@ -7,7 +7,7 @@ using TDMUtils;
 
 namespace MMR_Tracker_V3
 {
-    internal class CategoryFileHandling
+    public class CategoryFileHandling
     {
         public class HeaderSortingFile
         {

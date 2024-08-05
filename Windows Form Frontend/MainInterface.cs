@@ -548,12 +548,13 @@ namespace Windows_Form_Frontend
             }
 
             var dataset = TrackerDataHandling.CreateDataSets(InstanceContainer.Instance);
+            var Categories = CategoryFileHandling.GetCategoriesFromFile(InstanceContainer.Instance);
 
             bool InMinimized = false;
 
             if (ToUpdate.Contains(LBValidLocations))
             {
-                var Data = new TrackerLocationDataList(WinFormUtils.CreateDivider(LBValidLocations), InstanceContainer, TXTLocSearch.Text, dataset).ShowUnavailable(CHKShowAll.Checked);
+                var Data = new TrackerLocationDataList(WinFormUtils.CreateDivider(LBValidLocations), InstanceContainer, TXTLocSearch.Text, dataset, Categories).ShowUnavailable(CHKShowAll.Checked);
                 Data.WriteLocations(MiscData.CheckState.Unchecked, false).WriteLocations(MiscData.CheckState.Unchecked, true);
                 if (InstanceContainer.Instance.CombineEntrancesWithLocations()) { Data.WriteEntrances(MiscData.CheckState.Unchecked, true); }
                 Data.WriteHints(MiscData.CheckState.Unchecked);
@@ -569,7 +570,7 @@ namespace Windows_Form_Frontend
             }
             if (ToUpdate.Contains(LBValidEntrances) && !InstanceContainer.Instance.CombineEntrancesWithLocations())
             {
-                var Data = new TrackerLocationDataList(WinFormUtils.CreateDivider(LBValidEntrances), InstanceContainer, TXTEntSearch.Text, dataset).ShowUnavailable(CHKShowAll.Checked);
+                var Data = new TrackerLocationDataList(WinFormUtils.CreateDivider(LBValidEntrances), InstanceContainer, TXTEntSearch.Text, dataset, Categories).ShowUnavailable(CHKShowAll.Checked);
                 Data.WriteEntrances(MiscData.CheckState.Unchecked, false);
                 if (InstanceContainer.Instance.StaticOptions.ShowOptionsInListBox == DisplayListType.Entrances) { Data.WriteOptions(); }
                 lblAvailableEntrances.Text = $"Available Entrances: {Data.ItemsDisplayed}" + (Data.LocationsFiltered ? $"/{Data.ItemsFound}" : "");
@@ -583,7 +584,7 @@ namespace Windows_Form_Frontend
             }
             if (ToUpdate.Contains(LBCheckedLocations))
             {
-                TrackerLocationDataList Data = new(WinFormUtils.CreateDivider(LBCheckedLocations), InstanceContainer, TXTCheckedSearch.Text, dataset);
+                TrackerLocationDataList Data = new(WinFormUtils.CreateDivider(LBCheckedLocations), InstanceContainer, TXTCheckedSearch.Text, dataset, Categories);
                 Data.WriteLocations(MiscData.CheckState.Checked, false).WriteLocations(MiscData.CheckState.Checked, true)
                     .WriteEntrances(MiscData.CheckState.Checked, true).WriteHints(MiscData.CheckState.Checked)
                     .WriteStartingItems().WriteOnlineItems().WriteRemoteItemHints();
