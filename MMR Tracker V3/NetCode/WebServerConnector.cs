@@ -153,7 +153,7 @@ namespace MMR_Tracker_V3.NetCode
                 foreach (var obj in O)
                 {
                     LocationData.LocationObject location = obj as LocationData.LocationObject;
-                    Results.Add(new ManualCheckObjectResult().SetLocation(location, LocationDataToProcess[location.ID]));
+                    Results.Add(new ManualCheckObjectResult().SetItemLocation(location, LocationDataToProcess[location.ID]));
                 }
                 return Results;
             });
@@ -168,7 +168,7 @@ namespace MMR_Tracker_V3.NetCode
 
         public void SendUpdateToServer(List<object> ObjectsUpdated, InstanceData.TrackerInstance instance)
         {
-            if (Data.InstanceContainer.netConnection.IsConnected()) { return; }
+            if (!Data.InstanceContainer.netConnection.IsConnected()) { return; }
             if (!Data.InstanceContainer.netConnection.OnlineMode.In(OnlineMode.Coop, OnlineMode.Multiworld)) { return; }
             if (!Data.SendData) { return; }
             var LocationsUpdated = ObjectsUpdated.Where(x => x is LocationData.LocationObject lo && (lo.Randomizeditem.OwningPlayer > -1) || Data.InstanceContainer.netConnection.OnlineMode != OnlineMode.Multiworld)

@@ -2,7 +2,7 @@
   "LogicVersion": 24,
   "GameCode": "MMR",
   "WinCondition": "OtherCredits",
-  "NetPlaySupported": false,
+  "NetPlaySupported": true,
   "DefaultSettings": {
     "CustomItemListString": "-------------------------40c-80000000----21ffff-ffffffff-ffffffff-f0000000-7bbeeffa-7fffffff-e6f1fffe-ffffffff",
     "CustomStartingItemListString": "--1fbfc-5800000-",
