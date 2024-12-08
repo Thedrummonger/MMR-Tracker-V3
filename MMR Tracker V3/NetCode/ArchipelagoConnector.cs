@@ -192,6 +192,7 @@ namespace MMR_Tracker_V3.NetCode
                 LocationChecker.CheckSelectedItems(HintedLocations, Data.InstanceContainer, new CheckItemSetting(MiscData.CheckState.Marked));
             }
             Data.InstanceContainer.netConnection.ArchipelagoClient.HasNewData = false;
+            Data.InstanceContainer.UnsavedChanges = true;
             Data.RefreshMainForm();
         }
         public void ArchipelagoChatMessageReceived(Archipelago.MultiClient.Net.MessageLog.Messages.LogMessage message)
