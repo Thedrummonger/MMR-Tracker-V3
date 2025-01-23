@@ -60,13 +60,25 @@ namespace Windows_Form_Frontend
             LocationChecker.CheckStateChanged += WebServerConnection.SendUpdateToServer;
 
             cmbGameType.DataSource = EnumAsArray<NetData.OnlineMode>();
-            cmbGameType.SelectedIndexChanged += CmbGameType_SelectedIndexChanged;
-
-            txtServerAddress.Text = ServerCache;
-            nudPort.Value = PortCache;
-            nudPlayer.Value = 1;
 
             txtGameName.Text = InstanceContainer.Instance.LogicDictionary.GameName;
+            if (InstanceContainer.Instance.NetConnectionCache is not null)
+            {
+                txtServerAddress.Text = InstanceContainer.Instance.NetConnectionCache.IP;
+                nudPort.Value = InstanceContainer.Instance.NetConnectionCache.Port;
+                txtPassword.Text = InstanceContainer.Instance.NetConnectionCache.Password;
+                txtSlotID.Text = InstanceContainer.Instance.NetConnectionCache.PlayerName;
+                cmbGameType.SelectedItem = InstanceContainer.Instance.NetConnectionCache.Mode;
+                nudPlayer.Value = InstanceContainer.Instance.NetConnectionCache.Slot;
+            }
+            else
+            {
+                txtServerAddress.Text = ServerCache;
+                nudPort.Value = PortCache;
+                nudPlayer.Value = 1;
+            }
+
+            cmbGameType.SelectedIndexChanged += CmbGameType_SelectedIndexChanged;
 
             UpdateUI();
 
@@ -265,6 +277,15 @@ namespace Windows_Form_Frontend
             if (!Connected) { return; }
             TrackerSettings.UpdateDefaultOptionFile(x => x.SetServerIP(txtServerAddress.Text).SetServerPort((int)nudPort.Value));
             InstanceContainer.Instance.StaticOptions.OptionFile.SetServerIP(txtServerAddress.Text).SetServerPort((int)nudPort.Value);
+            InstanceContainer.Instance.NetConnectionCache = new ConnectionCache
+            {
+                IP = txtServerAddress.Text,
+                Port = (int)nudPort.Value,
+                Mode = (OnlineMode)cmbGameType.SelectedItem,
+                PlayerName = txtSlotID.Text,
+                Password = txtPassword.Text,
+                Slot = (int)nudPlayer.Value
+            };
             string ExitReason = await WebServerConnection.OpenListenThread();
             PrintToConsole(ExitReason);
             ConnectionHandling.CloseServer(InstanceContainer);
@@ -279,6 +300,15 @@ namespace Windows_Form_Frontend
             TrackerSettings.UpdateDefaultOptionFile(x => x.SetAPServerIP(txtServerAddress.Text).SetAPServerPort((int)nudPort.Value));
             InstanceContainer.Instance.StaticOptions.OptionFile.SetAPServerIP(txtServerAddress.Text).SetAPServerPort((int)nudPort.Value);
             nudPlayer.Value = InstanceContainer.netConnection.ArchipelagoClient.Session.ConnectionInfo.Slot;
+            InstanceContainer.Instance.NetConnectionCache = new ConnectionCache
+            {
+                IP = txtServerAddress.Text,
+                Port = (int)nudPort.Value,
+                Mode = (OnlineMode)cmbGameType.SelectedItem,
+                PlayerName = txtSlotID.Text,
+                Password = txtPassword.Text,
+                Slot = (int)nudPlayer.Value
+            };
             if (InstanceContainer.Instance.SpoilerLog is null && InstanceContainer.Instance.APSpoilerLogSupported())
             {
                 var Result = MessageBox.Show("Would you like to apply spoiler data?", "Import spoiler", MessageBoxButtons.YesNo);

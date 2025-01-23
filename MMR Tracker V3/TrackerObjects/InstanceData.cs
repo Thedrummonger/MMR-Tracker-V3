@@ -46,6 +46,7 @@ namespace MMR_Tracker_V3.TrackerObjects
             public PriceData PriceData { get; set; } = new PriceData();
             public InstanceReference InstanceReference { get; set; } = new InstanceReference();
             public Dictionary<string, Dictionary<string, LogicItemData>> UnlockData { get; set; } = [];
+            public ConnectionCache NetConnectionCache { get; set; } = null;
             public override string ToString()
             {
                 return Newtonsoft.Json.JsonConvert.SerializeObject(this, _NewtonsoftJsonSerializerOptions);
@@ -86,6 +87,16 @@ namespace MMR_Tracker_V3.TrackerObjects
                 if (CapacityMap.TryGetValue(Currency, out Dictionary<int, string> value)) { return value; }
                 return [];
             }
+        }
+
+        public class ConnectionCache
+        {
+            public string IP;
+            public int Port;
+            public string Password;
+            public string PlayerName;
+            public int Slot;
+            public NetData.OnlineMode Mode;
         }
 
         public class ReferenceData
