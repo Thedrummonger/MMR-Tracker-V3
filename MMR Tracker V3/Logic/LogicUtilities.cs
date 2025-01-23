@@ -1,11 +1,8 @@
-﻿using MathNet.Symbolics;
-using MMR_Tracker_V3.TrackerObjects;
+﻿using MMR_Tracker_V3.TrackerObjects;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
-using System.Text;
-using TDMUtils;
 
 namespace MMR_Tracker_V3.Logic
 {
@@ -200,26 +197,18 @@ namespace MMR_Tracker_V3.Logic
     {
         public static List<List<string>> ConvertLogicStringToConditional(LogicStringParser Parser, string LogicLine, string LogicID, bool Invert = false)
         {
-            var ParsedLogic = new List<LogicStringParser.LogicItem>();
-            var MathString = "";
-            var ExpandedMathString = "";
-            var MathLogicArray = new List<List<string>>();
-            if (string.IsNullOrWhiteSpace(LogicLine)) { return new List<List<string>>(); }
+            if (string.IsNullOrWhiteSpace(LogicLine)) { return []; }
             try
             {
-                ParsedLogic = Parser.ParseLogicString(LogicLine);
-                MathString = ConvertLogicParserObjectToMathString(ParsedLogic, out Dictionary<string, string> RefMap, out _);
-                ExpandedMathString = ExpandMathExpressionString(MathString);
-                MathLogicArray = ConvertMathStringToArray(ExpandedMathString, Invert);
-                return RestorelogicValues(MathLogicArray, RefMap);
+                List<LogicStringParser.LogicItem> items = Parser.ParseLogicString(LogicLine);
+                IBoolExpr ast = Parse(items);
+                IBoolExpr dnfAst = ast.ToDNF();
+                List<List<string>> clauses = FlattenDnf(dnfAst);
+                return clauses;
             }
             catch (Exception e)
             {
-                MiscUtilities.PrintObjectToConsole(ParsedLogic);
-                MiscUtilities.PrintObjectToConsole(MathString);
-                MiscUtilities.PrintObjectToConsole(ExpandedMathString);
-                MiscUtilities.PrintObjectToConsole(MathLogicArray);
-                throw new Exception($"Error Parsing Logic Line for {LogicID}\n{LogicLine}\n{ParsedLogic}\n{MathString}\n{ExpandedMathString}\n{MathLogicArray}\n{e.Message}");
+                throw new Exception($"Error Parsing Logic Line for {LogicID}\n{LogicLine}\n{e.Message}");
             }
         }
 
@@ -235,107 +224,172 @@ namespace MMR_Tracker_V3.Logic
             return ConvertLogicStringToConditional(Parser, Stringify, LogicID);
         }
 
-        private static string ConvertLogicParserObjectToMathString(List<LogicStringParser.LogicItem> Logic, out Dictionary<string, string> Ref, out Dictionary<char, string> OperatorMap)
+        private interface IBoolExpr { }
+
+        private class VarExpr(string name) : IBoolExpr
         {
-            int CurrentLetterIndex = 1;
-            string Mathstring = "";
-            var TextToLetter = new Dictionary<string, string>();
-            Ref = new Dictionary<string, string>();
-            OperatorMap = new Dictionary<char, string>();
-            foreach (var i in Logic)
+            public string Name { get; } = name;
+        }
+
+        private class AndExpr(IBoolExpr left, IBoolExpr right) : IBoolExpr
+        {
+            public IBoolExpr Left { get; } = left;
+            public IBoolExpr Right { get; } = right;
+        }
+
+        private class OrExpr(IBoolExpr left, IBoolExpr right) : IBoolExpr
+        {
+            public IBoolExpr Left { get; } = left;
+            public IBoolExpr Right { get; } = right;
+        }
+
+        private static IBoolExpr Parse(List<LogicStringParser.LogicItem> items)
+        {
+            int index = 0;
+            return ParseOrExpr(items, ref index);
+        }
+
+        // Grammar with precedence:
+        // OR-level:   ParseOrExpr -> ParseAndExpr { OR_OP ParseAndExpr }
+        // AND-level:  ParseAndExpr -> ParsePrimary { AND_OP ParsePrimary }
+        // Primary:    variable | "(" ParseOrExpr ")"
+
+        private static IBoolExpr ParseOrExpr(List<LogicStringParser.LogicItem> items, ref int index)
+        {
+            IBoolExpr left = ParseAndExpr(items, ref index);
+
+            while (index < items.Count && items[index].Type == LogicStringParser.EntryType.OrOp)
             {
-                if (i.Type == LogicStringParser.EntryType.OpenPar)
+                index++; // skip the OR token
+                IBoolExpr right = ParseAndExpr(items, ref index);
+                left = new OrExpr(left, right);
+            }
+            return left;
+        }
+
+        private static IBoolExpr ParseAndExpr(List<LogicStringParser.LogicItem> items, ref int index)
+        {
+            IBoolExpr left = ParsePrimary(items, ref index);
+
+            while (index < items.Count && items[index].Type == LogicStringParser.EntryType.AndOp)
+            {
+                index++; // skip the AND token
+                IBoolExpr right = ParsePrimary(items, ref index);
+                left = new AndExpr(left, right);
+            }
+            return left;
+        }
+
+        private static IBoolExpr ParsePrimary(List<LogicStringParser.LogicItem> items, ref int index)
+        {
+            if (index >= items.Count)
+            {
+                throw new Exception("Unexpected end of tokens while parsing.");
+            }
+
+            var token = items[index];
+
+            if (token.Type == LogicStringParser.EntryType.OpenPar)
+            {
+                index++; // skip '('
+                IBoolExpr expr = ParseOrExpr(items, ref index);
+
+                if (index >= items.Count || items[index].Type != LogicStringParser.EntryType.ClosePar)
                 {
-                    OperatorMap['('] = i.Text;
-                    Mathstring += '(';
+                    throw new Exception("Missing closing parenthesis");
                 }
-                else if (i.Type == LogicStringParser.EntryType.ClosePar)
-                {
-                    OperatorMap[')'] = i.Text;
-                    Mathstring += ')';
-                }
-                else if (i.Type == LogicStringParser.EntryType.AndOp)
-                {
-                    OperatorMap['*'] = i.Text;
-                    Mathstring += '*';
-                }
-                else if (i.Type == LogicStringParser.EntryType.OrOp)
-                {
-                    OperatorMap['+'] = i.Text;
-                    Mathstring += '+';
-                }
-                else
-                {
-                    if (!TextToLetter.ContainsKey(i.Text))
+
+                index++; // skip ')'
+                return expr;
+            }
+            else
+            {
+                // It's a variable, e.g. "Item1"
+                index++;
+                return new VarExpr(token.Text);
+            }
+        }
+
+        private static IBoolExpr ToDNF(this IBoolExpr expr)
+        {
+            switch (expr)
+            {
+                case VarExpr v:
+                    // Single variable => already simplest form
+                    return v;
+
+                case AndExpr andExpr:
+                    // Convert children first
+                    var leftAnd = andExpr.Left.ToDNF();
+                    var rightAnd = andExpr.Right.ToDNF();
+                    return DistributeAnd(leftAnd, rightAnd);
+
+                case OrExpr orExpr:
+                    // Convert children first
+                    var leftOr = orExpr.Left.ToDNF();
+                    var rightOr = orExpr.Right.ToDNF();
+                    return new OrExpr(leftOr, rightOr);
+
+                default:
+                    throw new InvalidOperationException("Unknown expression type in DNF converter");
+            }
+        }
+        private static IBoolExpr DistributeAnd(IBoolExpr left, IBoolExpr right)
+        {
+            if (left is OrExpr leftOr)
+            {
+                var leftDistributed = DistributeAnd(leftOr.Left, right);
+                var rightDistributed = DistributeAnd(leftOr.Right, right);
+                return new OrExpr(leftDistributed, rightDistributed);
+            }
+            else if (right is OrExpr rightOr)
+            {
+                var leftDistributed = DistributeAnd(left, rightOr.Left);
+                var rightDistributed = DistributeAnd(left, rightOr.Right);
+                return new OrExpr(leftDistributed, rightDistributed);
+            }
+            else
+            {
+                // Both sides are not OR => just And them
+                return new AndExpr(left, right);
+            }
+        }
+
+        private static List<List<string>> FlattenDnf(IBoolExpr expr)
+        {
+            switch (expr)
+            {
+                case VarExpr v:
+                    // Single variable => single clause with one item
+                    return [[v.Name]];
+
+                case AndExpr andExpr:
+                    // Cross product of left and right
+                    var leftAndClauses = FlattenDnf(andExpr.Left);
+                    var rightAndClauses = FlattenDnf(andExpr.Right);
+
+                    var result = new List<List<string>>();
+                    foreach (var lc in leftAndClauses)
                     {
-                        TextToLetter.Add(i.Text, IndexToLetter(CurrentLetterIndex));
-                        Ref.Add(IndexToLetter(CurrentLetterIndex), i.Text);
-                        CurrentLetterIndex++;
+                        foreach (var rc in rightAndClauses)
+                        {
+                            // Combine the two sub-lists
+                            var combined = new List<string>(lc);
+                            combined.AddRange(rc);
+                            result.Add(combined);
+                        }
                     }
-                    Mathstring += TextToLetter[i.Text];
-                }
-            }
-            return Mathstring;
-        }
+                    return result;
 
-        public static string IndexToLetter(int index)
-        {
-            int ColumnBase = 26;
-            int DigitMax = 7; // ceil(log26(Int32.Max))
-            string Digits = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-            if (index <= 0)
-                throw new IndexOutOfRangeException("index must be a positive number");
+                case OrExpr orExpr:
+                    // Union of left and right
+                    var leftOrClauses = FlattenDnf(orExpr.Left);
+                    var rightOrClauses = FlattenDnf(orExpr.Right);
+                    leftOrClauses.AddRange(rightOrClauses);
+                    return leftOrClauses;
 
-            if (index <= ColumnBase)
-                return Digits[index - 1].ToString();
-
-            var sb = new StringBuilder().Append(' ', DigitMax);
-            var current = index;
-            var offset = DigitMax;
-            while (current > 0)
-            {
-                sb[--offset] = Digits[--current % ColumnBase];
-                current /= ColumnBase;
-            }
-            return sb.ToString(offset, DigitMax - offset);
-        }
-
-        private static string ExpandMathExpressionString(string MathLogic)
-        {
-            Expression LogicSet = Infix.ParseOrThrow(MathLogic);
-            var Output = Algebraic.Expand(LogicSet);
-            return Infix.Format(Output).Replace(" ", "");
-        }
-
-        private static List<List<string>> ConvertMathStringToArray(string MathString, bool invert = false)
-        {
-            if (invert)
-            {
-                MathString = MathString.Replace("+", "++").Replace("*", "**");
-                MathString = MathString.Replace("++", "*").Replace("**", "+");
-            }
-            var MathArray = MathString.Split('+').Select(x => x.Split('*').ToList()).ToList();
-            List<List<string>> CleanedArray = new List<List<string>>();
-            foreach (var set in MathArray)
-            {
-                List<string> CleanedSet = new List<string>();
-                foreach (var item in set)
-                {
-                    if (int.TryParse(item, out _)) { continue; }
-                    CleanedSet.Add(item);
-                }
-                if (CleanedSet.Any()) { CleanedArray.Add(CleanedSet); }
-            }
-            return CleanedArray;
-        }
-
-        private static List<List<string>> RestorelogicValues(List<List<string>> MathLogicArray, Dictionary<string, string> logicObjectMap)
-        {
-            return MathLogicArray.Select(x => x.Select(y => Convert(y)).ToList()).ToList();
-            string Convert(string entry)
-            {
-                if (entry.Contains('^')) { entry = entry[..entry.IndexOf("^")]; }
-                return logicObjectMap[entry];
+                default:
+                    throw new InvalidOperationException("Unknown expression type in FlattenDnf");
             }
         }
 

@@ -1,6 +1,6 @@
-﻿using MathNet.Symbolics;
-using MMR_Tracker_V3.Logic;
+﻿using MMR_Tracker_V3.Logic;
 using Newtonsoft.Json;
+using System.Data;
 using System.Text;
 using System.Text.RegularExpressions;
 using TDMUtils;
@@ -28,12 +28,20 @@ namespace TestingForm.GameDataCreation.OOTMMV3
         public static bool IsMathExpression(string input, out int result)
         {
             result = 0;
-            Expression LogicSet = Infix.ParseOrUndefined(input);
-            if (LogicSet == null) { return false; }
-            //var Output = Algebraic.Expand(LogicSet);
-            var Solved = Infix.Format(LogicSet);
-            if (!int.TryParse(Solved, out result)) { return false; }
-            return true;
+            if (!Regex.IsMatch(input, @"^[0-9+\-*/()\s]+$"))
+                return false;
+
+            try
+            {
+                var dt = new DataTable();
+                var value = dt.Compute(input, string.Empty);
+                result = Convert.ToInt32(value);
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
         }
 
         public static string GetMQString(OOTMMLocationArea data, bool ISMQ, string GameCode)
