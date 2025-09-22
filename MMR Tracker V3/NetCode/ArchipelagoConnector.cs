@@ -33,7 +33,7 @@ namespace MMR_Tracker_V3.NetCode
             if (string.IsNullOrWhiteSpace(Address)) { Address = "127.0.0.1"; }
             string Password = string.IsNullOrWhiteSpace(Pass) ? null : Pass;
             Session = ArchipelagoSessionFactory.CreateSession(Address, Port);
-            try { result = Session.TryConnectAndLogin(Game, Slot, ItemsHandlingFlags.AllItems, new Version(0,4,5), ["Tracker"], null, Password, true); }
+            try { result = Session.TryConnectAndLogin(Game, Slot, ItemsHandlingFlags.AllItems, new Version(0,6,3), ["Tracker"], null, Password, true); }
             catch (Exception ex) { result = new LoginFailure(ex.GetBaseException().Message); }
             if (!result.Successful)
             {

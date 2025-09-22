@@ -8,6 +8,14 @@
     "Menu"
   ],
   "SpoilerLogInstructions": {
+    "ArchipelagoFileImports": {
+      "APPatchFile": {
+        "Item1": "Archipelago Pikmin 2 Patch File",
+        "Item2": [
+          "appik2"
+        ]
+      }
+    },
     "ArchipelagoParserPath": "PIK2"
   },
   "LocationList": {
@@ -24,7 +32,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "VoR Courage Reactor"
+        ]
       }
     },
     "VoR Utter Scrap": {
@@ -40,7 +50,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "VoR Utter Scrap"
+        ]
       }
     },
     "VoR Pink Menace": {
@@ -56,7 +68,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "VoR Pink Menace"
+        ]
       }
     },
     "VoR Spiny Alien Treat": {
@@ -72,7 +86,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "VoR Spiny Alien Treat"
+        ]
       }
     },
     "VoR Temporal Mechanism": {
@@ -88,7 +104,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "VoR Temporal Mechanism"
+        ]
       }
     },
     "VoR Unspeakable Wonder": {
@@ -104,7 +122,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "VoR Unspeakable Wonder"
+        ]
       }
     },
     "VoR Fossilized Ursidae": {
@@ -120,7 +140,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "VoR Fossilized Ursidae"
+        ]
       }
     },
     "EC Citrus Lump": {
@@ -136,7 +158,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "EC Citrus Lump"
+        ]
       }
     },
     "EC Quenching Emblem": {
@@ -152,7 +176,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "EC Quenching Emblem"
+        ]
       }
     },
     "EC Spherical Atlas": {
@@ -168,7 +194,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "EC Spherical Atlas"
+        ]
       }
     },
     "SC Exhausted Superstick": {
@@ -184,7 +212,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "SC Exhausted Superstick"
+        ]
       }
     },
     "SC Nouveau Table": {
@@ -200,7 +230,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "SC Nouveau Table"
+        ]
       }
     },
     "SC Network Mainbrain": {
@@ -216,7 +248,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "SC Network Mainbrain"
+        ]
       }
     },
     "SC Spirit Flogger": {
@@ -232,7 +266,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "SC Spirit Flogger"
+        ]
       }
     },
     "SC Coiled Launcher": {
@@ -248,7 +284,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "SC Coiled Launcher"
+        ]
       }
     },
     "SC Omega Flywheel": {
@@ -264,7 +302,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "SC Omega Flywheel"
+        ]
       }
     },
     "SC Superstrong Stabilizer": {
@@ -280,7 +320,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "SC Superstrong Stabilizer"
+        ]
       }
     },
     "SC Adamantine Girdle": {
@@ -296,7 +338,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "SC Adamantine Girdle"
+        ]
       }
     },
     "SC Mystical Disc": {
@@ -312,7 +356,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "SC Mystical Disc"
+        ]
       }
     },
     "SC Repair Juggernaut": {
@@ -328,7 +374,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "SC Repair Juggernaut"
+        ]
       }
     },
     "SC Space Wave Receiver": {
@@ -344,7 +392,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "SC Space Wave Receiver"
+        ]
       }
     },
     "SC Vacuum Processor": {
@@ -360,7 +410,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "SC Vacuum Processor"
+        ]
       }
     },
     "SC Furious Adhesive": {
@@ -376,7 +428,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "SC Furious Adhesive"
+        ]
       }
     },
     "SC Indomitable CPU": {
@@ -392,7 +446,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "SC Indomitable CPU"
+        ]
       }
     },
     "SC Thirst Activator": {
@@ -408,7 +464,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "SC Thirst Activator"
+        ]
       }
     },
     "SC Stellar Orb": {
@@ -424,7 +482,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "SC Stellar Orb"
+        ]
       }
     },
     "FC Essence of Rage": {
@@ -440,7 +500,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "FC Essence of Rage"
+        ]
       }
     },
     "FC Essential Furnishing": {
@@ -456,7 +518,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "FC Essential Furnishing"
+        ]
       }
     },
     "FC Icon of Progress": {
@@ -472,7 +536,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "FC Icon of Progress"
+        ]
       }
     },
     "FC Joy Receptacle": {
@@ -488,7 +554,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "FC Joy Receptacle"
+        ]
       }
     },
     "FC Danger Chime": {
@@ -504,7 +572,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "FC Danger Chime"
+        ]
       }
     },
     "FC Fleeting Art Form": {
@@ -520,7 +590,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "FC Fleeting Art Form"
+        ]
       }
     },
     "FC Gemstar Husband": {
@@ -536,7 +608,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "FC Gemstar Husband"
+        ]
       }
     },
     "FC Innocence Lost": {
@@ -552,7 +626,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "FC Innocence Lost"
+        ]
       }
     },
     "FC Omniscient Sphere": {
@@ -568,7 +644,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "FC Omniscient Sphere"
+        ]
       }
     },
     "FC Brute Knuckles": {
@@ -584,7 +662,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "FC Brute Knuckles"
+        ]
       }
     },
     "FC Priceless Statue": {
@@ -600,7 +680,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "FC Priceless Statue"
+        ]
       }
     },
     "FC Worthless Statue": {
@@ -616,7 +698,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "FC Worthless Statue"
+        ]
       }
     },
     "FC Flame Tiller": {
@@ -632,7 +716,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "FC Flame Tiller"
+        ]
       }
     },
     "FC Spouse Alert": {
@@ -648,7 +734,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "FC Spouse Alert"
+        ]
       }
     },
     "FC Repugnant Appendage": {
@@ -664,7 +752,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "FC Repugnant Appendage"
+        ]
       }
     },
     "AW Sunseed Berry": {
@@ -680,7 +770,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "AW Sunseed Berry"
+        ]
       }
     },
     "AW Chance Totem": {
@@ -696,7 +788,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "AW Chance Totem"
+        ]
       }
     },
     "AW Pilgrim Bulb": {
@@ -712,7 +806,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "AW Pilgrim Bulb"
+        ]
       }
     },
     "AW Geographic Projection": {
@@ -728,7 +824,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "AW Geographic Projection"
+        ]
       }
     },
     "AW Healing Cask": {
@@ -744,7 +842,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "AW Healing Cask"
+        ]
       }
     },
     "AW Decorative Goo": {
@@ -760,7 +860,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "AW Decorative Goo"
+        ]
       }
     },
     "AW Air Brake": {
@@ -776,7 +878,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "AW Air Brake"
+        ]
       }
     },
     "HoB Stone of Glory": {
@@ -792,7 +896,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "HoB Stone of Glory"
+        ]
       }
     },
     "HoB Cosmic Archive": {
@@ -808,7 +914,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "HoB Cosmic Archive"
+        ]
       }
     },
     "HoB Strife Monolith": {
@@ -824,7 +932,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "HoB Strife Monolith"
+        ]
       }
     },
     "HoB Dream Architect": {
@@ -840,7 +950,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "HoB Dream Architect"
+        ]
       }
     },
     "HoB Luck Wafer": {
@@ -856,7 +968,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "HoB Luck Wafer"
+        ]
       }
     },
     "HoB Prototype Detector": {
@@ -872,7 +986,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "HoB Prototype Detector"
+        ]
       }
     },
     "WFG Alien Billboard": {
@@ -888,7 +1004,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "WFG Alien Billboard"
+        ]
       }
     },
     "WFG Drought Ender": {
@@ -904,7 +1022,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "WFG Drought Ender"
+        ]
       }
     },
     "WFG Petrified Heart": {
@@ -920,7 +1040,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "WFG Petrified Heart"
+        ]
       }
     },
     "WFG Superstick Textile": {
@@ -936,7 +1058,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "WFG Superstick Textile"
+        ]
       }
     },
     "WFG Survival Ointment": {
@@ -952,7 +1076,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "WFG Survival Ointment"
+        ]
       }
     },
     "WFG Toxic Toadstool": {
@@ -968,7 +1094,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "WFG Toxic Toadstool"
+        ]
       }
     },
     "WFG Five-man Napsack": {
@@ -984,7 +1112,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "WFG Five-man Napsack"
+        ]
       }
     },
     "BK Crystal Clover": {
@@ -1000,7 +1130,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "BK Crystal Clover"
+        ]
       }
     },
     "BK Tear Stone": {
@@ -1016,7 +1148,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "BK Tear Stone"
+        ]
       }
     },
     "BK Olimarnite Shell": {
@@ -1032,7 +1166,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "BK Olimarnite Shell"
+        ]
       }
     },
     "BK Crystal King": {
@@ -1048,7 +1184,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "BK Crystal King"
+        ]
       }
     },
     "BK Unknown Merit": {
@@ -1064,7 +1202,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "BK Unknown Merit"
+        ]
       }
     },
     "BK Anxious Sprout": {
@@ -1080,7 +1220,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "BK Anxious Sprout"
+        ]
       }
     },
     "BK Colossal Fossil": {
@@ -1096,7 +1238,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "BK Colossal Fossil"
+        ]
       }
     },
     "BK Eternal Emerald Eye": {
@@ -1112,7 +1256,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "BK Eternal Emerald Eye"
+        ]
       }
     },
     "BK Forged Courage": {
@@ -1128,7 +1274,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "BK Forged Courage"
+        ]
       }
     },
     "BK Gyroid Bust": {
@@ -1144,7 +1292,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "BK Gyroid Bust"
+        ]
       }
     },
     "SH Crystallized Telekinesis": {
@@ -1160,7 +1310,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "SH Crystallized Telekinesis"
+        ]
       }
     },
     "SH Leviathan Feather": {
@@ -1176,7 +1328,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "SH Leviathan Feather"
+        ]
       }
     },
     "SH Combustion Berry": {
@@ -1192,7 +1346,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "SH Combustion Berry"
+        ]
       }
     },
     "SH Taste Sensation": {
@@ -1208,7 +1364,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "SH Taste Sensation"
+        ]
       }
     },
     "SH Meat Satchel": {
@@ -1224,7 +1382,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "SH Meat Satchel"
+        ]
       }
     },
     "SH Crystallized Telepathy": {
@@ -1240,7 +1400,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "SH Crystallized Telepathy"
+        ]
       }
     },
     "SH Cupid's Grenade": {
@@ -1256,7 +1418,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "SH Cupid's Grenade"
+        ]
       }
     },
     "SH Heavy-duty Magnetizer": {
@@ -1272,7 +1436,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "SH Heavy-duty Magnetizer"
+        ]
       }
     },
     "SH Crystallized Clairvoyance": {
@@ -1288,7 +1454,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "SH Crystallized Clairvoyance"
+        ]
       }
     },
     "SH Emperor Whistle": {
@@ -1304,7 +1472,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "SH Emperor Whistle"
+        ]
       }
     },
     "SH Salivatrix": {
@@ -1320,7 +1490,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "SH Salivatrix"
+        ]
       }
     },
     "SH Science Project": {
@@ -1336,7 +1508,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "SH Science Project"
+        ]
       }
     },
     "SH Stupendous Lens": {
@@ -1352,7 +1526,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "SH Stupendous Lens"
+        ]
       }
     },
     "SH Triple Sugar Threat": {
@@ -1368,7 +1544,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "SH Triple Sugar Threat"
+        ]
       }
     },
     "SH Justice Alloy": {
@@ -1384,7 +1562,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "SH Justice Alloy"
+        ]
       }
     },
     "PP Gherkin Gate": {
@@ -1400,7 +1580,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "PP Gherkin Gate"
+        ]
       }
     },
     "PP Impediment Scourge": {
@@ -1416,7 +1598,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "PP Impediment Scourge"
+        ]
       }
     },
     "PP Aquatic Mine": {
@@ -1432,7 +1616,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "PP Aquatic Mine"
+        ]
       }
     },
     "PP Fortified Delicacy": {
@@ -1448,7 +1634,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "PP Fortified Delicacy"
+        ]
       }
     },
     "PP Onion Replica": {
@@ -1464,7 +1652,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "PP Onion Replica"
+        ]
       }
     },
     "PP Optical Illustration": {
@@ -1480,7 +1670,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "PP Optical Illustration"
+        ]
       }
     },
     "PP Massage Girdle": {
@@ -1496,7 +1688,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "PP Massage Girdle"
+        ]
       }
     },
     "CoS Love Nugget": {
@@ -1512,7 +1706,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "CoS Love Nugget"
+        ]
       }
     },
     "CoS Creative Inspiration": {
@@ -1528,7 +1724,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "CoS Creative Inspiration"
+        ]
       }
     },
     "CoS Lip Service": {
@@ -1544,7 +1742,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "CoS Lip Service"
+        ]
       }
     },
     "CoS Paradoxical Enigma": {
@@ -1560,7 +1760,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "CoS Paradoxical Enigma"
+        ]
       }
     },
     "CoS Memorial Shell": {
@@ -1576,7 +1778,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "CoS Memorial Shell"
+        ]
       }
     },
     "CoS Patience Tester": {
@@ -1592,7 +1796,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "CoS Patience Tester"
+        ]
       }
     },
     "CoS Flame of Tomorrow": {
@@ -1608,7 +1814,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "CoS Flame of Tomorrow"
+        ]
       }
     },
     "CoS King of Sweets": {
@@ -1624,7 +1832,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "CoS King of Sweets"
+        ]
       }
     },
     "CoS Time Capsule": {
@@ -1640,7 +1850,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "CoS Time Capsule"
+        ]
       }
     },
     "CoS Regal Diamond": {
@@ -1656,7 +1868,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "CoS Regal Diamond"
+        ]
       }
     },
     "CoS The Key": {
@@ -1672,7 +1886,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "CoS The Key"
+        ]
       }
     },
     "GK Master's Instrument": {
@@ -1688,7 +1904,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "GK Master's Instrument"
+        ]
       }
     },
     "GK Massive Lid": {
@@ -1704,7 +1922,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "GK Massive Lid"
+        ]
       }
     },
     "GK Imperative Cookie": {
@@ -1720,7 +1940,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "GK Imperative Cookie"
+        ]
       }
     },
     "GK Director of Destiny": {
@@ -1736,7 +1958,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "GK Director of Destiny"
+        ]
       }
     },
     "GK Harmonic Synthesizer": {
@@ -1752,7 +1976,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "GK Harmonic Synthesizer"
+        ]
       }
     },
     "GK Invigorator": {
@@ -1768,7 +1994,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "GK Invigorator"
+        ]
       }
     },
     "GK Happiness Emblem": {
@@ -1784,7 +2012,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "GK Happiness Emblem"
+        ]
       }
     },
     "GK White Goodness": {
@@ -1800,7 +2030,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "GK White Goodness"
+        ]
       }
     },
     "GK Boom Cone": {
@@ -1816,7 +2048,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "GK Boom Cone"
+        ]
       }
     },
     "GK Sulking Antenna": {
@@ -1832,7 +2066,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "GK Sulking Antenna"
+        ]
       }
     },
     "GK Dream Material": {
@@ -1848,7 +2084,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "GK Dream Material"
+        ]
       }
     },
     "GK Hideous Victual": {
@@ -1864,7 +2102,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "GK Hideous Victual"
+        ]
       }
     },
     "GK Meat of Champions": {
@@ -1880,7 +2120,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "GK Meat of Champions"
+        ]
       }
     },
     "GK Sweet Dreamer": {
@@ -1896,7 +2138,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "GK Sweet Dreamer"
+        ]
       }
     },
     "SR Merciless Extractor": {
@@ -1912,7 +2156,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "SR Merciless Extractor"
+        ]
       }
     },
     "SR Durable Energy Cell": {
@@ -1928,7 +2174,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "SR Durable Energy Cell"
+        ]
       }
     },
     "SR Sud Generator": {
@@ -1944,7 +2192,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "SR Sud Generator"
+        ]
       }
     },
     "SR Mirrored Stage": {
@@ -1960,7 +2210,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "SR Mirrored Stage"
+        ]
       }
     },
     "SR Scrumptious Shell": {
@@ -1976,7 +2228,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "SR Scrumptious Shell"
+        ]
       }
     },
     "SR Vorpal Platter": {
@@ -1992,7 +2246,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "SR Vorpal Platter"
+        ]
       }
     },
     "SR Arboreal Frippery": {
@@ -2008,7 +2264,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "SR Arboreal Frippery"
+        ]
       }
     },
     "SR Broken Food Master": {
@@ -2024,7 +2282,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "SR Broken Food Master"
+        ]
       }
     },
     "SR Endless Repository": {
@@ -2040,7 +2300,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "SR Endless Repository"
+        ]
       }
     },
     "SR Pondering Emblem": {
@@ -2056,7 +2318,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "SR Pondering Emblem"
+        ]
       }
     },
     "SR Abstract Masterpiece": {
@@ -2072,7 +2336,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "SR Abstract Masterpiece"
+        ]
       }
     },
     "SR Behemoth Jaw": {
@@ -2088,7 +2354,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "SR Behemoth Jaw"
+        ]
       }
     },
     "SR Rubber Ugly": {
@@ -2104,7 +2372,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "SR Rubber Ugly"
+        ]
       }
     },
     "SR Amplified Amplifier": {
@@ -2120,7 +2390,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "SR Amplified Amplifier"
+        ]
       }
     },
     "SMGC Bug Bait": {
@@ -2136,7 +2408,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "SMGC Bug Bait"
+        ]
       }
     },
     "SMGC Diet Doomer": {
@@ -2152,7 +2426,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "SMGC Diet Doomer"
+        ]
       }
     },
     "SMGC Pastry Wheel": {
@@ -2168,7 +2444,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "SMGC Pastry Wheel"
+        ]
       }
     },
     "SMGC Chocolate Cushion": {
@@ -2184,7 +2462,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "SMGC Chocolate Cushion"
+        ]
       }
     },
     "SMGC Comfort Cookie": {
@@ -2200,7 +2480,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "SMGC Comfort Cookie"
+        ]
       }
     },
     "SMGC Confection Hoop": {
@@ -2216,7 +2498,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "SMGC Confection Hoop"
+        ]
       }
     },
     "SMGC Activity Arouser": {
@@ -2232,7 +2516,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "SMGC Activity Arouser"
+        ]
       }
     },
     "SMGC Compelling Cookie": {
@@ -2248,7 +2534,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "SMGC Compelling Cookie"
+        ]
       }
     },
     "SMGC Succulent Mattress": {
@@ -2264,7 +2552,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "SMGC Succulent Mattress"
+        ]
       }
     },
     "SMGC Drone Supplies": {
@@ -2280,7 +2570,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "SMGC Drone Supplies"
+        ]
       }
     },
     "SMGC Pale Passion": {
@@ -2296,7 +2588,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "SMGC Pale Passion"
+        ]
       }
     },
     "SMGC Proton AA": {
@@ -2312,7 +2606,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "SMGC Proton AA"
+        ]
       }
     },
     "SMGC Professional Noisemaker": {
@@ -2328,7 +2624,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "SMGC Professional Noisemaker"
+        ]
       }
     },
     "WW Doomsday Apparatus": {
@@ -2344,7 +2642,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "WW Doomsday Apparatus"
+        ]
       }
     },
     "WW Seed of Greed": {
@@ -2360,7 +2660,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "WW Seed of Greed"
+        ]
       }
     },
     "WW Anti-hiccup Fungus": {
@@ -2376,7 +2678,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "WW Anti-hiccup Fungus"
+        ]
       }
     },
     "WW Armored Nut": {
@@ -2392,7 +2696,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "WW Armored Nut"
+        ]
       }
     },
     "WW Conifer Spire": {
@@ -2408,7 +2714,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "WW Conifer Spire"
+        ]
       }
     },
     "CoC Enamel Buster": {
@@ -2424,7 +2732,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "CoC Enamel Buster"
+        ]
       }
     },
     "CoC Mirth Sphere": {
@@ -2440,7 +2750,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "CoC Mirth Sphere"
+        ]
       }
     },
     "CoC Essence of Despair": {
@@ -2456,7 +2768,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "CoC Essence of Despair"
+        ]
       }
     },
     "CoC Frosty Bauble": {
@@ -2472,7 +2786,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "CoC Frosty Bauble"
+        ]
       }
     },
     "CoC Gemstar Wife": {
@@ -2488,7 +2804,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "CoC Gemstar Wife"
+        ]
       }
     },
     "CoC Child of the Earth": {
@@ -2504,7 +2822,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "CoC Child of the Earth"
+        ]
       }
     },
     "CoC Infernal Vegetable": {
@@ -2520,7 +2840,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "CoC Infernal Vegetable"
+        ]
       }
     },
     "CoC Milk Tub": {
@@ -2536,7 +2858,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "CoC Milk Tub"
+        ]
       }
     },
     "CoC Mysterious Remains": {
@@ -2552,7 +2876,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "CoC Mysterious Remains"
+        ]
       }
     },
     "CoC Growshroom": {
@@ -2568,7 +2894,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "CoC Growshroom"
+        ]
       }
     },
     "CoC Princess Pearl": {
@@ -2584,7 +2912,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "CoC Princess Pearl"
+        ]
       }
     },
     "CoC Fuel Reservoir": {
@@ -2600,7 +2930,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "CoC Fuel Reservoir"
+        ]
       }
     },
     "CoC Impenetrable Cookie": {
@@ -2616,7 +2948,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "CoC Impenetrable Cookie"
+        ]
       }
     },
     "CoC Fruit Guard": {
@@ -2632,7 +2966,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "CoC Fruit Guard"
+        ]
       }
     },
     "CoC Maternal Sculpture": {
@@ -2648,7 +2984,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "CoC Maternal Sculpture"
+        ]
       }
     },
     "CoC Wiggle Noggin": {
@@ -2664,7 +3002,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "CoC Wiggle Noggin"
+        ]
       }
     },
     "CoC Silencer": {
@@ -2680,7 +3020,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "CoC Silencer"
+        ]
       }
     },
     "HoH Corpulent Nut": {
@@ -2696,7 +3038,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "HoH Corpulent Nut"
+        ]
       }
     },
     "HoH Essence of True Love": {
@@ -2712,7 +3056,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "HoH Essence of True Love"
+        ]
       }
     },
     "HoH Love Sphere": {
@@ -2728,7 +3074,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "HoH Love Sphere"
+        ]
       }
     },
     "HoH Lustrous Element": {
@@ -2744,7 +3092,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "HoH Lustrous Element"
+        ]
       }
     },
     "HoH Nutrient Silo": {
@@ -2760,7 +3110,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "HoH Nutrient Silo"
+        ]
       }
     },
     "HoH Joyless Jewel": {
@@ -2776,7 +3128,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "HoH Joyless Jewel"
+        ]
       }
     },
     "HoH Dimensional Slicer": {
@@ -2792,7 +3146,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "HoH Dimensional Slicer"
+        ]
       }
     },
     "HoH Treasured Gyro Block": {
@@ -2808,7 +3164,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "HoH Treasured Gyro Block"
+        ]
       }
     },
     "HoH Favorite Gyro Block": {
@@ -2824,7 +3182,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "HoH Favorite Gyro Block"
+        ]
       }
     },
     "HoH Lost Gyro Block": {
@@ -2840,7 +3200,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "HoH Lost Gyro Block"
+        ]
       }
     },
     "HoH Memorable Gyro Block": {
@@ -2856,7 +3218,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "HoH Memorable Gyro Block"
+        ]
       }
     },
     "HoH Fond Gyro Block": {
@@ -2872,7 +3236,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "HoH Fond Gyro Block"
+        ]
       }
     },
     "HoH Remembered Old Buddy": {
@@ -2888,7 +3254,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "HoH Remembered Old Buddy"
+        ]
       }
     },
     "DD Disguised Delicacy": {
@@ -2904,7 +3272,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "DD Disguised Delicacy"
+        ]
       }
     },
     "DD Implement of Toil": {
@@ -2920,7 +3290,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "DD Implement of Toil"
+        ]
       }
     },
     "DD Manual Honer": {
@@ -2936,7 +3308,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "DD Manual Honer"
+        ]
       }
     },
     "DD Glee Spinner": {
@@ -2952,7 +3326,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "DD Glee Spinner"
+        ]
       }
     },
     "DD Mirrored Element": {
@@ -2968,7 +3344,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "DD Mirrored Element"
+        ]
       }
     },
     "DD Insect Condo": {
@@ -2984,7 +3362,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "DD Insect Condo"
+        ]
       }
     },
     "DD Future Orb": {
@@ -3000,7 +3380,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "DD Future Orb"
+        ]
       }
     },
     "DD Essence of Desire": {
@@ -3016,7 +3398,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "DD Essence of Desire"
+        ]
       }
     },
     "DD Extreme Perspirator": {
@@ -3032,7 +3416,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "DD Extreme Perspirator"
+        ]
       }
     },
     "DD Possessed Squash": {
@@ -3048,7 +3434,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "DD Possessed Squash"
+        ]
       }
     },
     "DD Talisman of Life": {
@@ -3064,7 +3452,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "DD Talisman of Life"
+        ]
       }
     },
     "DD Boss Stone": {
@@ -3080,7 +3470,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "DD Boss Stone"
+        ]
       }
     },
     "DD Yellow Taste Tyrant": {
@@ -3096,7 +3488,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "DD Yellow Taste Tyrant"
+        ]
       }
     },
     "DD Stringent Container": {
@@ -3112,7 +3506,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "DD Stringent Container"
+        ]
       }
     },
     "DD Universal Com": {
@@ -3128,7 +3524,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "DD Universal Com"
+        ]
       }
     },
     "DD Hypnotic Platter": {
@@ -3144,7 +3542,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "DD Hypnotic Platter"
+        ]
       }
     },
     "DD Comedy Bomb": {
@@ -3160,7 +3560,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "DD Comedy Bomb"
+        ]
       }
     },
     "DD Flare Cannon": {
@@ -3176,7 +3578,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "DD Flare Cannon"
+        ]
       }
     },
     "DD Monster Pump": {
@@ -3192,7 +3596,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "DD Monster Pump"
+        ]
       }
     },
     "DD Shock Therapist": {
@@ -3208,7 +3614,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "DD Shock Therapist"
+        ]
       }
     },
     "DD King of Bugs": {
@@ -3224,7 +3632,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "DD King of Bugs"
+        ]
       }
     },
     "VoR Onion": {
@@ -3291,7 +3701,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "Rubber Ugly"
+        ]
       }
     },
     "Insect Condo": {
@@ -3305,7 +3717,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "Insect Condo"
+        ]
       }
     },
     "Meat Satchel": {
@@ -3319,7 +3733,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "Meat Satchel"
+        ]
       }
     },
     "Coiled Launcher": {
@@ -3333,7 +3749,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "Coiled Launcher"
+        ]
       }
     },
     "Confection Hoop": {
@@ -3347,7 +3765,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "Confection Hoop"
+        ]
       }
     },
     "Omniscient Sphere": {
@@ -3361,7 +3781,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "Omniscient Sphere"
+        ]
       }
     },
     "Love Sphere": {
@@ -3375,7 +3797,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "Love Sphere"
+        ]
       }
     },
     "Mirth Sphere": {
@@ -3389,7 +3813,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "Mirth Sphere"
+        ]
       }
     },
     "Maternal Sculpture": {
@@ -3403,7 +3829,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "Maternal Sculpture"
+        ]
       }
     },
     "Stupendous Lens": {
@@ -3417,7 +3845,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "Stupendous Lens"
+        ]
       }
     },
     "Leviathan Feather": {
@@ -3431,7 +3861,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "Leviathan Feather"
+        ]
       }
     },
     "Superstrong Stabilizer": {
@@ -3445,7 +3877,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "Superstrong Stabilizer"
+        ]
       }
     },
     "Space Wave Receiver": {
@@ -3459,7 +3893,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "Space Wave Receiver"
+        ]
       }
     },
     "Joy Receptacle": {
@@ -3473,7 +3909,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "Joy Receptacle"
+        ]
       }
     },
     "Worthless Statue": {
@@ -3487,7 +3925,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "Worthless Statue"
+        ]
       }
     },
     "Priceless Statue": {
@@ -3501,7 +3941,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "Priceless Statue"
+        ]
       }
     },
     "Triple Sugar Threat": {
@@ -3515,7 +3957,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "Triple Sugar Threat"
+        ]
       }
     },
     "King of Sweets": {
@@ -3529,7 +3973,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "King of Sweets"
+        ]
       }
     },
     "Diet Doomer": {
@@ -3543,7 +3989,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "Diet Doomer"
+        ]
       }
     },
     "Pale Passion": {
@@ -3557,7 +4005,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "Pale Passion"
+        ]
       }
     },
     "Boom Cone": {
@@ -3571,7 +4021,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "Boom Cone"
+        ]
       }
     },
     "Bug Bait": {
@@ -3585,7 +4037,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "Bug Bait"
+        ]
       }
     },
     "Milk Tub": {
@@ -3599,7 +4053,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "Milk Tub"
+        ]
       }
     },
     "Petrified Heart": {
@@ -3613,7 +4069,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "Petrified Heart"
+        ]
       }
     },
     "Regal Diamond": {
@@ -3627,7 +4085,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "Regal Diamond"
+        ]
       }
     },
     "Princess Pearl": {
@@ -3641,7 +4101,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "Princess Pearl"
+        ]
       }
     },
     "Silencer": {
@@ -3655,7 +4117,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "Silencer"
+        ]
       }
     },
     "Armored Nut": {
@@ -3669,7 +4133,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "Armored Nut"
+        ]
       }
     },
     "Chocolate Cushion": {
@@ -3683,7 +4149,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "Chocolate Cushion"
+        ]
       }
     },
     "Sweet Dreamer": {
@@ -3697,7 +4165,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "Sweet Dreamer"
+        ]
       }
     },
     "Cosmic Archive": {
@@ -3711,7 +4181,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "Cosmic Archive"
+        ]
       }
     },
     "Cupid's Grenade": {
@@ -3725,7 +4197,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "Cupid's Grenade"
+        ]
       }
     },
     "Science Project": {
@@ -3739,7 +4213,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "Science Project"
+        ]
       }
     },
     "Manual Honer": {
@@ -3753,7 +4229,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "Manual Honer"
+        ]
       }
     },
     "Broken Food Master": {
@@ -3767,7 +4245,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "Broken Food Master"
+        ]
       }
     },
     "Sud Generator": {
@@ -3781,7 +4261,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "Sud Generator"
+        ]
       }
     },
     "Wiggle Noggin": {
@@ -3795,7 +4277,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "Wiggle Noggin"
+        ]
       }
     },
     "Omega Flywheel": {
@@ -3809,7 +4293,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "Omega Flywheel"
+        ]
       }
     },
     "Lustrous Element": {
@@ -3823,7 +4309,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "Lustrous Element"
+        ]
       }
     },
     "Superstick Textile": {
@@ -3837,7 +4325,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "Superstick Textile"
+        ]
       }
     },
     "Possessed Squash": {
@@ -3851,7 +4341,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "Possessed Squash"
+        ]
       }
     },
     "Gyroid Bust": {
@@ -3865,7 +4357,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "Gyroid Bust"
+        ]
       }
     },
     "Sunseed Berry": {
@@ -3879,7 +4373,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "Sunseed Berry"
+        ]
       }
     },
     "Glee Spinner": {
@@ -3893,7 +4389,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "Glee Spinner"
+        ]
       }
     },
     "Decorative Goo": {
@@ -3907,7 +4405,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "Decorative Goo"
+        ]
       }
     },
     "Anti-hiccup Fungus": {
@@ -3921,7 +4421,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "Anti-hiccup Fungus"
+        ]
       }
     },
     "Crystal King": {
@@ -3935,7 +4437,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "Crystal King"
+        ]
       }
     },
     "Fossilized Ursidae": {
@@ -3949,7 +4453,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "Fossilized Ursidae"
+        ]
       }
     },
     "Time Capsule": {
@@ -3963,7 +4469,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "Time Capsule"
+        ]
       }
     },
     "Olimarnite Shell": {
@@ -3977,7 +4485,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "Olimarnite Shell"
+        ]
       }
     },
     "Conifer Spire": {
@@ -3991,7 +4501,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "Conifer Spire"
+        ]
       }
     },
     "Abstract Masterpiece": {
@@ -4005,7 +4517,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "Abstract Masterpiece"
+        ]
       }
     },
     "Arboreal Frippery": {
@@ -4019,7 +4533,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "Arboreal Frippery"
+        ]
       }
     },
     "Onion Replica": {
@@ -4033,7 +4549,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "Onion Replica"
+        ]
       }
     },
     "Infernal Vegetable": {
@@ -4047,7 +4565,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "Infernal Vegetable"
+        ]
       }
     },
     "Adamantine Girdle": {
@@ -4061,7 +4581,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "Adamantine Girdle"
+        ]
       }
     },
     "Director of Destiny": {
@@ -4075,7 +4597,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "Director of Destiny"
+        ]
       }
     },
     "Colossal Fossil": {
@@ -4089,7 +4613,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "Colossal Fossil"
+        ]
       }
     },
     "Invigorator": {
@@ -4103,7 +4629,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "Invigorator"
+        ]
       }
     },
     "Vacuum Processor": {
@@ -4117,7 +4645,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "Vacuum Processor"
+        ]
       }
     },
     "Mirrored Element": {
@@ -4131,7 +4661,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "Mirrored Element"
+        ]
       }
     },
     "Nouveau Table": {
@@ -4145,7 +4677,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "Nouveau Table"
+        ]
       }
     },
     "Pink Menace": {
@@ -4159,7 +4693,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "Pink Menace"
+        ]
       }
     },
     "Frosty Bauble": {
@@ -4173,7 +4709,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "Frosty Bauble"
+        ]
       }
     },
     "Gemstar Husband": {
@@ -4187,7 +4725,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "Gemstar Husband"
+        ]
       }
     },
     "Gemstar Wife": {
@@ -4201,7 +4741,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "Gemstar Wife"
+        ]
       }
     },
     "Universal Com": {
@@ -4215,7 +4757,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "Universal Com"
+        ]
       }
     },
     "Joyless Jewel": {
@@ -4229,7 +4773,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "Joyless Jewel"
+        ]
       }
     },
     "Fleeting Art Form": {
@@ -4243,7 +4789,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "Fleeting Art Form"
+        ]
       }
     },
     "Innocence Lost": {
@@ -4257,7 +4805,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "Innocence Lost"
+        ]
       }
     },
     "Icon of Progress": {
@@ -4271,7 +4821,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "Icon of Progress"
+        ]
       }
     },
     "Unspeakable Wonder": {
@@ -4285,7 +4837,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "Unspeakable Wonder"
+        ]
       }
     },
     "Aquatic Mine": {
@@ -4299,7 +4853,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "Aquatic Mine"
+        ]
       }
     },
     "Temporal Mechanism": {
@@ -4313,7 +4869,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "Temporal Mechanism"
+        ]
       }
     },
     "Essential Furnishing": {
@@ -4327,7 +4885,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "Essential Furnishing"
+        ]
       }
     },
     "Flame Tiller": {
@@ -4341,7 +4901,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "Flame Tiller"
+        ]
       }
     },
     "Doomsday Apparatus": {
@@ -4355,7 +4917,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "Doomsday Apparatus"
+        ]
       }
     },
     "Impediment Scourge": {
@@ -4369,7 +4933,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "Impediment Scourge"
+        ]
       }
     },
     "Future Orb": {
@@ -4383,7 +4949,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "Future Orb"
+        ]
       }
     },
     "Shock Therapist": {
@@ -4397,7 +4965,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "Shock Therapist"
+        ]
       }
     },
     "Flare Cannon": {
@@ -4411,7 +4981,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "Flare Cannon"
+        ]
       }
     },
     "Comedy Bomb": {
@@ -4425,7 +4997,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "Comedy Bomb"
+        ]
       }
     },
     "Monster Pump": {
@@ -4439,7 +5013,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "Monster Pump"
+        ]
       }
     },
     "Mystical Disc": {
@@ -4453,7 +5029,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "Mystical Disc"
+        ]
       }
     },
     "Vorpal Platter": {
@@ -4467,7 +5045,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "Vorpal Platter"
+        ]
       }
     },
     "Taste Sensation": {
@@ -4481,7 +5061,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "Taste Sensation"
+        ]
       }
     },
     "Lip Service": {
@@ -4495,7 +5077,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "Lip Service"
+        ]
       }
     },
     "Utter Scrap": {
@@ -4509,7 +5093,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "Utter Scrap"
+        ]
       }
     },
     "Paradoxical Enigma": {
@@ -4523,7 +5109,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "Paradoxical Enigma"
+        ]
       }
     },
     "King of Bugs": {
@@ -4537,7 +5125,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "King of Bugs"
+        ]
       }
     },
     "Essence of Rage": {
@@ -4551,7 +5141,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "Essence of Rage"
+        ]
       }
     },
     "Essence of Despair": {
@@ -4565,7 +5157,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "Essence of Despair"
+        ]
       }
     },
     "Essence of True Love": {
@@ -4579,7 +5173,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "Essence of True Love"
+        ]
       }
     },
     "Essence of Desire": {
@@ -4593,7 +5189,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "Essence of Desire"
+        ]
       }
     },
     "Citrus Lump": {
@@ -4607,7 +5205,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "Citrus Lump"
+        ]
       }
     },
     "Behemoth Jaw": {
@@ -4621,7 +5221,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "Behemoth Jaw"
+        ]
       }
     },
     "Anxious Sprout": {
@@ -4635,7 +5237,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "Anxious Sprout"
+        ]
       }
     },
     "Implement of Toil": {
@@ -4649,7 +5253,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "Implement of Toil"
+        ]
       }
     },
     "Luck Wafer": {
@@ -4663,7 +5269,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "Luck Wafer"
+        ]
       }
     },
     "Meat of Champions": {
@@ -4677,7 +5285,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "Meat of Champions"
+        ]
       }
     },
     "Talisman of Life": {
@@ -4691,7 +5301,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "Talisman of Life"
+        ]
       }
     },
     "Strife Monolith": {
@@ -4705,7 +5317,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "Strife Monolith"
+        ]
       }
     },
     "Boss Stone": {
@@ -4719,7 +5333,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "Boss Stone"
+        ]
       }
     },
     "Toxic Toadstool": {
@@ -4733,7 +5349,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "Toxic Toadstool"
+        ]
       }
     },
     "Growshroom": {
@@ -4747,7 +5365,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "Growshroom"
+        ]
       }
     },
     "Indomitable CPU": {
@@ -4761,7 +5381,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "Indomitable CPU"
+        ]
       }
     },
     "Network Mainbrain": {
@@ -4775,7 +5397,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "Network Mainbrain"
+        ]
       }
     },
     "Repair Juggernaut": {
@@ -4789,7 +5413,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "Repair Juggernaut"
+        ]
       }
     },
     "Exhausted Superstick": {
@@ -4803,7 +5429,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "Exhausted Superstick"
+        ]
       }
     },
     "Pastry Wheel": {
@@ -4817,7 +5445,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "Pastry Wheel"
+        ]
       }
     },
     "Combustion Berry": {
@@ -4831,7 +5461,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "Combustion Berry"
+        ]
       }
     },
     "Imperative Cookie": {
@@ -4845,7 +5477,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "Imperative Cookie"
+        ]
       }
     },
     "Compelling Cookie": {
@@ -4859,7 +5493,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "Compelling Cookie"
+        ]
       }
     },
     "Impenetrable Cookie": {
@@ -4873,7 +5509,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "Impenetrable Cookie"
+        ]
       }
     },
     "Comfort Cookie": {
@@ -4887,7 +5525,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "Comfort Cookie"
+        ]
       }
     },
     "Succulent Mattress": {
@@ -4901,7 +5541,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "Succulent Mattress"
+        ]
       }
     },
     "Corpulent Nut": {
@@ -4915,7 +5557,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "Corpulent Nut"
+        ]
       }
     },
     "Alien Billboard": {
@@ -4929,7 +5573,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "Alien Billboard"
+        ]
       }
     },
     "Massage Girdle": {
@@ -4943,7 +5589,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "Massage Girdle"
+        ]
       }
     },
     "Crystallized Telepathy": {
@@ -4957,7 +5605,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "Crystallized Telepathy"
+        ]
       }
     },
     "Crystallized Telekinesis": {
@@ -4971,7 +5621,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "Crystallized Telekinesis"
+        ]
       }
     },
     "Crystallized Clairvoyance": {
@@ -4985,7 +5637,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "Crystallized Clairvoyance"
+        ]
       }
     },
     "Eternal Emerald Eye": {
@@ -4999,7 +5653,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "Eternal Emerald Eye"
+        ]
       }
     },
     "Tear Stone": {
@@ -5013,7 +5669,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "Tear Stone"
+        ]
       }
     },
     "Crystal Clover": {
@@ -5027,7 +5685,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "Crystal Clover"
+        ]
       }
     },
     "Danger Chime": {
@@ -5041,7 +5701,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "Danger Chime"
+        ]
       }
     },
     "Sulking Antenna": {
@@ -5055,7 +5717,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "Sulking Antenna"
+        ]
       }
     },
     "Spouse Alert": {
@@ -5069,7 +5733,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "Spouse Alert"
+        ]
       }
     },
     "Master's Instrument": {
@@ -5083,7 +5749,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "Master's Instrument"
+        ]
       }
     },
     "Extreme Perspirator": {
@@ -5097,7 +5765,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "Extreme Perspirator"
+        ]
       }
     },
     "Pilgrim Bulb": {
@@ -5111,7 +5781,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "Pilgrim Bulb"
+        ]
       }
     },
     "Stone of Glory": {
@@ -5125,7 +5797,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "Stone of Glory"
+        ]
       }
     },
     "Furious Adhesive": {
@@ -5139,7 +5813,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "Furious Adhesive"
+        ]
       }
     },
     "Quenching Emblem": {
@@ -5153,7 +5829,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "Quenching Emblem"
+        ]
       }
     },
     "Flame of Tomorrow": {
@@ -5167,7 +5845,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "Flame of Tomorrow"
+        ]
       }
     },
     "Love Nugget": {
@@ -5181,7 +5861,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "Love Nugget"
+        ]
       }
     },
     "Child of the Earth": {
@@ -5195,7 +5877,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "Child of the Earth"
+        ]
       }
     },
     "Disguised Delicacy": {
@@ -5209,7 +5893,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "Disguised Delicacy"
+        ]
       }
     },
     "Proton AA": {
@@ -5223,7 +5909,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "Proton AA"
+        ]
       }
     },
     "Fuel Reservoir": {
@@ -5237,7 +5925,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "Fuel Reservoir"
+        ]
       }
     },
     "Optical Illustration": {
@@ -5251,7 +5941,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "Optical Illustration"
+        ]
       }
     },
     "Durable Energy Cell": {
@@ -5265,7 +5957,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "Durable Energy Cell"
+        ]
       }
     },
     "Courage Reactor": {
@@ -5279,7 +5973,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "Courage Reactor"
+        ]
       }
     },
     "Thirst Activator": {
@@ -5293,7 +5989,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "Thirst Activator"
+        ]
       }
     },
     "Harmonic Synthesizer": {
@@ -5307,7 +6005,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "Harmonic Synthesizer"
+        ]
       }
     },
     "Merciless Extractor": {
@@ -5321,7 +6021,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "Merciless Extractor"
+        ]
       }
     },
     "Remembered Old Buddy": {
@@ -5335,7 +6037,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "Remembered Old Buddy"
+        ]
       }
     },
     "Fond Gyro Block": {
@@ -5349,7 +6053,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "Fond Gyro Block"
+        ]
       }
     },
     "Memorable Gyro Block": {
@@ -5363,7 +6069,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "Memorable Gyro Block"
+        ]
       }
     },
     "Lost Gyro Block": {
@@ -5377,7 +6085,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "Lost Gyro Block"
+        ]
       }
     },
     "Favorite Gyro Block": {
@@ -5391,7 +6101,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "Favorite Gyro Block"
+        ]
       }
     },
     "Treasured Gyro Block": {
@@ -5405,7 +6117,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "Treasured Gyro Block"
+        ]
       }
     },
     "Fortified Delicacy": {
@@ -5419,7 +6133,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "Fortified Delicacy"
+        ]
       }
     },
     "Scrumptious Shell": {
@@ -5433,7 +6149,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "Scrumptious Shell"
+        ]
       }
     },
     "Memorial Shell": {
@@ -5447,7 +6165,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "Memorial Shell"
+        ]
       }
     },
     "Chance Totem": {
@@ -5461,7 +6181,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "Chance Totem"
+        ]
       }
     },
     "Dream Architect": {
@@ -5475,7 +6197,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "Dream Architect"
+        ]
       }
     },
     "Spiny Alien Treat": {
@@ -5489,7 +6213,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "Spiny Alien Treat"
+        ]
       }
     },
     "Spirit Flogger": {
@@ -5503,7 +6229,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "Spirit Flogger"
+        ]
       }
     },
     "Mirrored Stage": {
@@ -5517,7 +6245,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "Mirrored Stage"
+        ]
       }
     },
     "Enamel Buster": {
@@ -5531,7 +6261,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "Enamel Buster"
+        ]
       }
     },
     "Drought Ender": {
@@ -5545,7 +6277,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "Drought Ender"
+        ]
       }
     },
     "White Goodness": {
@@ -5559,7 +6293,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "White Goodness"
+        ]
       }
     },
     "Salivatrix": {
@@ -5573,7 +6309,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "Salivatrix"
+        ]
       }
     },
     "Creative Inspiration": {
@@ -5587,7 +6325,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "Creative Inspiration"
+        ]
       }
     },
     "Massive Lid": {
@@ -5601,7 +6341,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "Massive Lid"
+        ]
       }
     },
     "Happiness Emblem": {
@@ -5615,7 +6357,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "Happiness Emblem"
+        ]
       }
     },
     "Survival Ointment": {
@@ -5629,7 +6373,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "Survival Ointment"
+        ]
       }
     },
     "Mysterious Remains": {
@@ -5643,7 +6389,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "Mysterious Remains"
+        ]
       }
     },
     "Dimensional Slicer": {
@@ -5657,7 +6405,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "Dimensional Slicer"
+        ]
       }
     },
     "Yellow Taste Tyrant": {
@@ -5671,7 +6421,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "Yellow Taste Tyrant"
+        ]
       }
     },
     "Hypnotic Platter": {
@@ -5685,7 +6437,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "Hypnotic Platter"
+        ]
       }
     },
     "Gherkin Gate": {
@@ -5699,7 +6453,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "Gherkin Gate"
+        ]
       }
     },
     "Healing Cask": {
@@ -5713,7 +6469,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "Healing Cask"
+        ]
       }
     },
     "Pondering Emblem": {
@@ -5727,7 +6485,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "Pondering Emblem"
+        ]
       }
     },
     "Activity Arouser": {
@@ -5741,7 +6501,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "Activity Arouser"
+        ]
       }
     },
     "Stringent Container": {
@@ -5755,7 +6517,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "Stringent Container"
+        ]
       }
     },
     "Patience Tester": {
@@ -5769,7 +6533,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "Patience Tester"
+        ]
       }
     },
     "Endless Repository": {
@@ -5783,7 +6549,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "Endless Repository"
+        ]
       }
     },
     "Fruit Guard": {
@@ -5797,7 +6565,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "Fruit Guard"
+        ]
       }
     },
     "Nutrient Silo": {
@@ -5811,7 +6581,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "Nutrient Silo"
+        ]
       }
     },
     "Drone Supplies": {
@@ -5825,7 +6597,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "Drone Supplies"
+        ]
       }
     },
     "Unknown Merit": {
@@ -5839,7 +6613,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "Unknown Merit"
+        ]
       }
     },
     "Seed of Greed": {
@@ -5853,7 +6629,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "Seed of Greed"
+        ]
       }
     },
     "Heavy-Duty Magnetizer": {
@@ -5867,7 +6645,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "Heavy-Duty Magnetizer"
+        ]
       }
     },
     "Air Brake": {
@@ -5881,7 +6661,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "Air Brake"
+        ]
       }
     },
     "Hideous Victual": {
@@ -5895,7 +6677,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "Hideous Victual"
+        ]
       }
     },
     "Emperor Whistle": {
@@ -5909,7 +6693,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "Emperor Whistle"
+        ]
       }
     },
     "Red Onion": {
@@ -5924,7 +6710,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "Red Onion"
+        ]
       }
     },
     "Yellow Onion": {
@@ -5939,7 +6727,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "Yellow Onion"
+        ]
       }
     },
     "Blue Onion": {
@@ -5954,7 +6744,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "Blue Onion"
+        ]
       }
     },
     "EC Entrance Key": {
@@ -5968,7 +6760,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "EC Entrance Key"
+        ]
       }
     },
     "SC Entrance Key": {
@@ -5982,7 +6776,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "SC Entrance Key"
+        ]
       }
     },
     "FC Entrance Key": {
@@ -5996,7 +6792,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "FC Entrance Key"
+        ]
       }
     },
     "HoB Entrance Key": {
@@ -6010,7 +6808,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "HoB Entrance Key"
+        ]
       }
     },
     "WFG Entrance Key": {
@@ -6024,7 +6824,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "WFG Entrance Key"
+        ]
       }
     },
     "BK Entrance Key": {
@@ -6038,7 +6840,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "BK Entrance Key"
+        ]
       }
     },
     "SH Entrance Key": {
@@ -6052,7 +6856,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "SH Entrance Key"
+        ]
       }
     },
     "CoS Entrance Key": {
@@ -6066,7 +6872,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "CoS Entrance Key"
+        ]
       }
     },
     "GK Entrance Key": {
@@ -6080,7 +6888,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "GK Entrance Key"
+        ]
       }
     },
     "SR Entrance Key": {
@@ -6094,7 +6904,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "SR Entrance Key"
+        ]
       }
     },
     "SMGC Entrance Key": {
@@ -6108,7 +6920,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "SMGC Entrance Key"
+        ]
       }
     },
     "CoC Entrance Key": {
@@ -6122,7 +6936,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "CoC Entrance Key"
+        ]
       }
     },
     "HoH Entrance Key": {
@@ -6136,7 +6952,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "HoH Entrance Key"
+        ]
       }
     },
     "DD Entrance Key": {
@@ -6150,7 +6968,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "DD Entrance Key"
+        ]
       }
     },
     "Brute Knuckles": {
@@ -6164,7 +6984,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "Brute Knuckles"
+        ]
       }
     },
     "Dream Material": {
@@ -6178,7 +7000,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "Dream Material"
+        ]
       }
     },
     "Amplified Amplifier": {
@@ -6192,7 +7016,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "Amplified Amplifier"
+        ]
       }
     },
     "Professional Noisemaker": {
@@ -6206,7 +7032,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "Professional Noisemaker"
+        ]
       }
     },
     "Stellar Orb": {
@@ -6220,7 +7048,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "Stellar Orb"
+        ]
       }
     },
     "Justice Alloy": {
@@ -6234,7 +7064,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "Justice Alloy"
+        ]
       }
     },
     "Forged Courage": {
@@ -6248,7 +7080,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "Forged Courage"
+        ]
       }
     },
     "Repugnant Appendage": {
@@ -6262,7 +7096,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "Repugnant Appendage"
+        ]
       }
     },
     "Prototype Detector": {
@@ -6276,7 +7112,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "Prototype Detector"
+        ]
       }
     },
     "Five-man Napsack": {
@@ -6290,7 +7128,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "Five-man Napsack"
+        ]
       }
     },
     "Spherical Atlas": {
@@ -6304,7 +7144,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "Spherical Atlas"
+        ]
       }
     },
     "Geographic Projection": {
@@ -6318,7 +7160,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "Geographic Projection"
+        ]
       }
     },
     "The Key": {
@@ -6332,7 +7176,9 @@
         "GossipHintNames": [],
         "PriceDataNames": [],
         "Tags": [],
-        "NetIDs": []
+        "NetIDs": [
+          "The Key"
+        ]
       }
     }
   },

@@ -203,6 +203,7 @@ namespace TestingForm.GameDataCreation.Pikmin2
                 Entry.OriginalItem = data.Item2;
                 Entry.ValidItemTypes = ["item"];
                 Entry.ID = i.Name;
+                Entry.SpoilerData.NetIDs = [i.Name];
                 Logicdictionary.LocationList.Add(i.Name, Entry);
 
                 MMRData.JsonFormatLogicItem LogicItem = new MMRData.JsonFormatLogicItem();
@@ -215,6 +216,7 @@ namespace TestingForm.GameDataCreation.Pikmin2
             {
                 LogicDictionaryData.DictionaryItemEntries Item = new LogicDictionaryData.DictionaryItemEntries();
                 Item.ID = i.Key;
+                Item.SpoilerData.NetIDs = [i.Key];
                 Item.ItemTypes = i.Key.EndsWith("Onion") ?["item", "onion"] : ["item"];
                 Item.Name = i.Key;
                 if (i.Key.EndsWith("key") && Areas.AbbrevToName.TryGetValue(i.Key.SplitOnce(' ').Item1, out var AreaName))
@@ -293,7 +295,7 @@ namespace TestingForm.GameDataCreation.Pikmin2
             logicFile.Logic.Add(new()
             {
                 Id = "VoR Onion",
-                RequiredItems = ["VoR", "onions shuffled"]
+                RequiredItems = ["VoR", "setting{onion_shuffle, vanilla, false}"]
             });
 
             Logicdictionary.LocationList.Add("AW Onion", new()

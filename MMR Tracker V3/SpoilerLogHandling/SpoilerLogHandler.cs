@@ -250,6 +250,7 @@ namespace MMR_Tracker_V3.SpoilerLogHandling
                 "MC" => HardCodedParsers.Minecraft.ReadSpoiler(IC.Instance, DataStore),
                 "BT" => HardCodedParsers.BanjoTooie.ReadSpoiler(IC.Instance, DataStore),
                 "OOTMM" => HardCodedParsers.OOTMMSpoilerLogTools.readAndApplySpoilerLog(IC.Instance, DataStore),
+                "PIK2" => HardCodedParsers.Pikmin2.ReadSpoiler(IC.Instance, DataStore),
                 _ => null,
             };
         }

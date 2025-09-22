@@ -2733,7 +2733,7 @@
       "Id": "VoR Onion",
       "RequiredItems": [
         "VoR",
-        "onions shuffled"
+        "setting{onion_shuffle, vanilla, false}"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
