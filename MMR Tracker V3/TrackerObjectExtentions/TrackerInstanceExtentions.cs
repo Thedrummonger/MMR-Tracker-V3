@@ -180,6 +180,7 @@ namespace MMR_Tracker_V3.TrackerObjectExtensions
                 {
                     region = area.ExitID,
                     from = area.ParentAreaID,
+                    DisplayOverride = $"{area.GetDictEntry().DisplayExit??area.GetDictEntry().Exit} <= {area.GetDictEntry().DisplayArea ?? area.GetDictEntry().Area}" 
                 };
                 if (!SearchStringParser.FilterSearch(_Instance, Entry, Filter, Entry.ToString())) { continue; }
                 EnteredItems.Add(Entry);

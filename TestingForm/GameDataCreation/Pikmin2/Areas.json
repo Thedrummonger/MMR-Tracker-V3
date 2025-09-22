@@ -1,0 +1,42 @@
+{
+  "abbrevToName": {
+    "VoR": "Valley of Repose",
+    "AW": "Awakening Wood",
+    "PP": "Perplexing Pool",
+    "WW": "Wistful Wild",
+    "EC": "Emergence Cave",
+    "SC": "Subterranean Complex",
+    "FC": "Frontier Cavern",
+    "HoB": "Hole of Beasts",
+    "WFG": "White Flower Garden",
+    "BK": "Bulblax Kingdom",
+    "SH": "Snagret Hole",
+    "CoS": "Citadel of Spiders",
+    "GK": "Glutton's Kitchen",
+    "SR": "Shower Room",
+    "SMGC": "Submerged Castle",
+    "CoC": "Cavern of Chaos",
+    "HoH": "Hole of Heroes",
+    "DD": "Dream Den"
+  },
+  "nameToAbbrev": {
+    "Valley of Repose": "VoR",
+    "Awakening Wood": "AW",
+    "Perplexing Pool": "PP",
+    "Wistful Wild": "WW",
+    "Emergence Cave": "EC",
+    "Subterranean Complex": "SC",
+    "Frontier Cavern": "FC",
+    "Hole of Beasts": "HoB",
+    "White Flower Garden": "WFG",
+    "Bulblax Kingdom": "BK",
+    "Snagret Hole": "SH",
+    "Citadel of Spiders": "CoS",
+    "Glutton's Kitchen": "GK",
+    "Shower Room": "SR",
+    "Submerged Castle": "SMGC",
+    "Cavern of Chaos": "CoC",
+    "Hole of Heroes": "HoH",
+    "Dream Den": "DD"
+  }
+}

@@ -1,0 +1,58 @@
+{
+  "EC": {
+    "requirements": [],
+    "rootArea": "VoR"
+  },
+  "SC": {
+    "requirements": [ "blue", "white" ],
+    "rootArea": "VoR"
+  },
+  "FC": {
+    "requirements": [ "blue" ],
+    "rootArea": "VoR"
+  },
+  "HoB": {
+    "requirements": [],
+    "rootArea": "AW"
+  },
+  "WFG": {
+    "requirements": [ "purple" ],
+    "rootArea": "AW"
+  },
+  "BK": {
+    "requirements": [ "white", "yellow" ],
+    "rootArea": "AW"
+  },
+  "SH": {
+    "requirements": [ "white", "blue" ],
+    "rootArea": "AW"
+  },
+  "CoS": {
+    "requirements": [],
+    "rootArea": "PP"
+  },
+  "GK": {
+    "requirements": [ "yellow" ],
+    "rootArea": "PP"
+  },
+  "SR": {
+    "requirements": [ "yellow", "blue" ],
+    "rootArea": "PP"
+  },
+  "SMGC": {
+    "requirements": [ "blue" ],
+    "rootArea": "PP"
+  },
+  "CoC": {
+    "requirements": [],
+    "rootArea": "WW"
+  },
+  "HoH": {
+    "requirements": [ "blue", "yellow" ],
+    "rootArea": "WW"
+  },
+  "DD": {
+    "requirements": [ "blue", "white" ],
+    "rootArea": "WW"
+  }
+}

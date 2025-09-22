@@ -9,6 +9,14 @@ namespace TestingForm
 {
     internal class GameFileCreation
     {
+        public static void Pikmin2CreateData()
+        {
+            GameDataCreation.Pikmin2.GenerateData.ReadAndParse(out MMRData.LogicFile Logic, out LogicDictionaryData.LogicDictionary dictionary);
+            WinFormTesting.ActivateWinFormInterface();
+            WinFormInstanceCreation.CreateWinFormInstance(JsonConvert.SerializeObject(Logic), JsonConvert.SerializeObject(dictionary));
+            TestingUtility.TestLogicForInvalidItems(MainInterface.InstanceContainer);
+            TestingUtility.TestLocationsForInvalidVanillaItem(MainInterface.InstanceContainer);
+        }
         public static void MinecraftCreateData()
         {
             GameDataCreation.Minecraft.CreateData.ReadAndParse(out MMRData.LogicFile Logic, out LogicDictionaryData.LogicDictionary dictionary);

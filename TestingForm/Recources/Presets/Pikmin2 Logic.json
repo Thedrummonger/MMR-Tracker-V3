@@ -1,0 +1,2771 @@
+{
+  "Version": 1,
+  "GameCode": "PIK2",
+  "Logic": [
+    {
+      "Id": "Menu => VoR",
+      "RequiredItems": [],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "Menu => AW",
+      "RequiredItems": [],
+      "ConditionalItems": [
+        [
+          "Spherical Atlas"
+        ],
+        [
+          "option{progressive_globes, progressive}",
+          "Geographic Projection"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "Menu => PP",
+      "RequiredItems": [],
+      "ConditionalItems": [
+        [
+          "Spherical Atlas",
+          "Geographic Projection"
+        ],
+        [
+          "option{progressive_globes, non_progressive}",
+          "Geographic Projection"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "Menu => WW",
+      "RequiredItems": [
+        "Spherical Atlas",
+        "Geographic Projection",
+        "Debt Paid"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "Debt Paid",
+      "RequiredItems": [
+        "TreasureValue, debt"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "VoR Courage Reactor",
+      "RequiredItems": [
+        "VoR"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "VoR Utter Scrap",
+      "RequiredItems": [
+        "VoR"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "VoR Pink Menace",
+      "RequiredItems": [
+        "has blue pikmin",
+        "VoR"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "VoR Spiny Alien Treat",
+      "RequiredItems": [
+        "has blue pikmin",
+        "VoR"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "VoR Temporal Mechanism",
+      "RequiredItems": [
+        "has blue pikmin",
+        "VoR"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "VoR Unspeakable Wonder",
+      "RequiredItems": [
+        "has blue pikmin",
+        "VoR"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "VoR Fossilized Ursidae",
+      "RequiredItems": [
+        "has blue pikmin",
+        "has yellow pikmin",
+        "VoR"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "EC Citrus Lump",
+      "RequiredItems": [
+        "EC"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "EC Quenching Emblem",
+      "RequiredItems": [
+        "EC"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "EC Spherical Atlas",
+      "RequiredItems": [
+        "EC"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "SC Exhausted Superstick",
+      "RequiredItems": [
+        "has white pikmin",
+        "SC"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "SC Nouveau Table",
+      "RequiredItems": [
+        "has white pikmin",
+        "SC"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "SC Network Mainbrain",
+      "RequiredItems": [
+        "SC"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "SC Spirit Flogger",
+      "RequiredItems": [
+        "SC"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "SC Coiled Launcher",
+      "RequiredItems": [
+        "SC"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "SC Omega Flywheel",
+      "RequiredItems": [
+        "SC"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "SC Superstrong Stabilizer",
+      "RequiredItems": [
+        "SC"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "SC Adamantine Girdle",
+      "RequiredItems": [
+        "SC"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "SC Mystical Disc",
+      "RequiredItems": [
+        "SC"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "SC Repair Juggernaut",
+      "RequiredItems": [
+        "has white pikmin",
+        "SC"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "SC Space Wave Receiver",
+      "RequiredItems": [
+        "has white pikmin",
+        "SC"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "SC Vacuum Processor",
+      "RequiredItems": [
+        "has white pikmin",
+        "SC"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "SC Furious Adhesive",
+      "RequiredItems": [
+        "SC"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "SC Indomitable CPU",
+      "RequiredItems": [
+        "SC"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "SC Thirst Activator",
+      "RequiredItems": [
+        "SC"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "SC Stellar Orb",
+      "RequiredItems": [
+        "SC"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "FC Essence of Rage",
+      "RequiredItems": [
+        "FC"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "FC Essential Furnishing",
+      "RequiredItems": [
+        "FC"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "FC Icon of Progress",
+      "RequiredItems": [
+        "FC"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "FC Joy Receptacle",
+      "RequiredItems": [
+        "FC"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "FC Danger Chime",
+      "RequiredItems": [
+        "has white pikmin",
+        "FC"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "FC Fleeting Art Form",
+      "RequiredItems": [
+        "has white pikmin",
+        "FC"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "FC Gemstar Husband",
+      "RequiredItems": [
+        "has white pikmin",
+        "FC"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "FC Innocence Lost",
+      "RequiredItems": [
+        "FC"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "FC Omniscient Sphere",
+      "RequiredItems": [
+        "FC"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "FC Brute Knuckles",
+      "RequiredItems": [
+        "FC"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "FC Priceless Statue",
+      "RequiredItems": [
+        "has blue pikmin",
+        "FC"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "FC Worthless Statue",
+      "RequiredItems": [
+        "has blue pikmin",
+        "FC"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "FC Flame Tiller",
+      "RequiredItems": [
+        "FC"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "FC Spouse Alert",
+      "RequiredItems": [
+        "FC"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "FC Repugnant Appendage",
+      "RequiredItems": [
+        "FC"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "AW Sunseed Berry",
+      "RequiredItems": [
+        "AW"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "AW Chance Totem",
+      "RequiredItems": [
+        "has white pikmin",
+        "AW"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "AW Pilgrim Bulb",
+      "RequiredItems": [
+        "AW"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "AW Geographic Projection",
+      "RequiredItems": [
+        "has white pikmin",
+        "AW"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "AW Healing Cask",
+      "RequiredItems": [
+        "has yellow pikmin",
+        "AW"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "AW Decorative Goo",
+      "RequiredItems": [
+        "has yellow pikmin",
+        "AW"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "AW Air Brake",
+      "RequiredItems": [
+        "has blue pikmin",
+        "AW"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "HoB Stone of Glory",
+      "RequiredItems": [
+        "HoB"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "HoB Cosmic Archive",
+      "RequiredItems": [
+        "HoB"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "HoB Strife Monolith",
+      "RequiredItems": [
+        "HoB"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "HoB Dream Architect",
+      "RequiredItems": [
+        "HoB"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "HoB Luck Wafer",
+      "RequiredItems": [
+        "HoB"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "HoB Prototype Detector",
+      "RequiredItems": [
+        "HoB"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "WFG Alien Billboard",
+      "RequiredItems": [
+        "WFG"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "WFG Drought Ender",
+      "RequiredItems": [
+        "WFG"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "WFG Petrified Heart",
+      "RequiredItems": [
+        "WFG"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "WFG Superstick Textile",
+      "RequiredItems": [
+        "WFG"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "WFG Survival Ointment",
+      "RequiredItems": [
+        "has white pikmin",
+        "WFG"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "WFG Toxic Toadstool",
+      "RequiredItems": [
+        "has white pikmin",
+        "WFG"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "WFG Five-man Napsack",
+      "RequiredItems": [
+        "WFG"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "BK Crystal Clover",
+      "RequiredItems": [
+        "BK"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "BK Tear Stone",
+      "RequiredItems": [
+        "BK"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "BK Olimarnite Shell",
+      "RequiredItems": [
+        "BK"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "BK Crystal King",
+      "RequiredItems": [
+        "BK"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "BK Unknown Merit",
+      "RequiredItems": [
+        "BK"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "BK Anxious Sprout",
+      "RequiredItems": [
+        "BK"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "BK Colossal Fossil",
+      "RequiredItems": [
+        "BK"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "BK Eternal Emerald Eye",
+      "RequiredItems": [
+        "BK"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "BK Forged Courage",
+      "RequiredItems": [
+        "BK"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "BK Gyroid Bust",
+      "RequiredItems": [
+        "BK"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "SH Crystallized Telekinesis",
+      "RequiredItems": [
+        "SH"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "SH Leviathan Feather",
+      "RequiredItems": [
+        "SH"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "SH Combustion Berry",
+      "RequiredItems": [
+        "SH"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "SH Taste Sensation",
+      "RequiredItems": [
+        "SH"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "SH Meat Satchel",
+      "RequiredItems": [
+        "SH"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "SH Crystallized Telepathy",
+      "RequiredItems": [
+        "SH"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "SH Cupid's Grenade",
+      "RequiredItems": [
+        "SH"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "SH Heavy-duty Magnetizer",
+      "RequiredItems": [
+        "SH"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "SH Crystallized Clairvoyance",
+      "RequiredItems": [
+        "SH"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "SH Emperor Whistle",
+      "RequiredItems": [
+        "SH"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "SH Salivatrix",
+      "RequiredItems": [
+        "has blue pikmin",
+        "has white pikmin",
+        "SH"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "SH Science Project",
+      "RequiredItems": [
+        "has blue pikmin",
+        "has white pikmin",
+        "SH"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "SH Stupendous Lens",
+      "RequiredItems": [
+        "has blue pikmin",
+        "has white pikmin",
+        "SH"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "SH Triple Sugar Threat",
+      "RequiredItems": [
+        "has blue pikmin",
+        "has white pikmin",
+        "SH"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "SH Justice Alloy",
+      "RequiredItems": [
+        "SH"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "PP Gherkin Gate",
+      "RequiredItems": [
+        "has yellow pikmin",
+        "PP"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "PP Impediment Scourge",
+      "RequiredItems": [
+        "has yellow pikmin",
+        "PP"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "PP Aquatic Mine",
+      "RequiredItems": [
+        "has blue pikmin",
+        "PP"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "PP Fortified Delicacy",
+      "RequiredItems": [
+        "has blue pikmin",
+        "PP"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "PP Onion Replica",
+      "RequiredItems": [
+        "has blue pikmin",
+        "PP"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "PP Optical Illustration",
+      "RequiredItems": [
+        "has blue pikmin",
+        "has yellow pikmin",
+        "PP"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "PP Massage Girdle",
+      "RequiredItems": [
+        "has blue pikmin",
+        "PP"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "CoS Love Nugget",
+      "RequiredItems": [
+        "CoS"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "CoS Creative Inspiration",
+      "RequiredItems": [
+        "CoS"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "CoS Lip Service",
+      "RequiredItems": [
+        "CoS"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "CoS Paradoxical Enigma",
+      "RequiredItems": [
+        "CoS"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "CoS Memorial Shell",
+      "RequiredItems": [
+        "CoS"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "CoS Patience Tester",
+      "RequiredItems": [
+        "CoS"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "CoS Flame of Tomorrow",
+      "RequiredItems": [
+        "CoS"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "CoS King of Sweets",
+      "RequiredItems": [
+        "CoS"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "CoS Time Capsule",
+      "RequiredItems": [
+        "CoS"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "CoS Regal Diamond",
+      "RequiredItems": [
+        "CoS"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "CoS The Key",
+      "RequiredItems": [
+        "CoS"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "GK Master's Instrument",
+      "RequiredItems": [
+        "GK"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "GK Massive Lid",
+      "RequiredItems": [
+        "has yellow pikmin",
+        "GK"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "GK Imperative Cookie",
+      "RequiredItems": [
+        "has yellow pikmin",
+        "GK"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "GK Director of Destiny",
+      "RequiredItems": [
+        "GK"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "GK Harmonic Synthesizer",
+      "RequiredItems": [
+        "GK"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "GK Invigorator",
+      "RequiredItems": [
+        "has yellow pikmin",
+        "GK"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "GK Happiness Emblem",
+      "RequiredItems": [
+        "GK"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "GK White Goodness",
+      "RequiredItems": [
+        "has yellow pikmin",
+        "GK"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "GK Boom Cone",
+      "RequiredItems": [
+        "GK"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "GK Sulking Antenna",
+      "RequiredItems": [
+        "GK"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "GK Dream Material",
+      "RequiredItems": [
+        "GK"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "GK Hideous Victual",
+      "RequiredItems": [
+        "GK"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "GK Meat of Champions",
+      "RequiredItems": [
+        "GK"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "GK Sweet Dreamer",
+      "RequiredItems": [
+        "GK"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "SR Merciless Extractor",
+      "RequiredItems": [
+        "SR"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "SR Durable Energy Cell",
+      "RequiredItems": [
+        "has white pikmin",
+        "SR"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "SR Sud Generator",
+      "RequiredItems": [
+        "has white pikmin",
+        "SR"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "SR Mirrored Stage",
+      "RequiredItems": [
+        "has blue pikmin",
+        "SR"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "SR Scrumptious Shell",
+      "RequiredItems": [
+        "has blue pikmin",
+        "SR"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "SR Vorpal Platter",
+      "RequiredItems": [
+        "has blue pikmin",
+        "SR"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "SR Arboreal Frippery",
+      "RequiredItems": [
+        "SR"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "SR Broken Food Master",
+      "RequiredItems": [
+        "has blue pikmin",
+        "SR"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "SR Endless Repository",
+      "RequiredItems": [
+        "has blue pikmin",
+        "SR"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "SR Pondering Emblem",
+      "RequiredItems": [
+        "has blue pikmin",
+        "SR"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "SR Abstract Masterpiece",
+      "RequiredItems": [
+        "has blue pikmin",
+        "SR"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "SR Behemoth Jaw",
+      "RequiredItems": [
+        "has blue pikmin",
+        "SR"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "SR Rubber Ugly",
+      "RequiredItems": [
+        "has blue pikmin",
+        "SR"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "SR Amplified Amplifier",
+      "RequiredItems": [
+        "SR"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "SMGC Bug Bait",
+      "RequiredItems": [
+        "has blue pikmin",
+        "SMGC"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "SMGC Diet Doomer",
+      "RequiredItems": [
+        "has blue pikmin",
+        "SMGC"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "SMGC Pastry Wheel",
+      "RequiredItems": [
+        "has blue pikmin",
+        "SMGC"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "SMGC Chocolate Cushion",
+      "RequiredItems": [
+        "has blue pikmin",
+        "SMGC"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "SMGC Comfort Cookie",
+      "RequiredItems": [
+        "has blue pikmin",
+        "SMGC"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "SMGC Confection Hoop",
+      "RequiredItems": [
+        "has blue pikmin",
+        "SMGC"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "SMGC Activity Arouser",
+      "RequiredItems": [
+        "has blue pikmin",
+        "SMGC"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "SMGC Compelling Cookie",
+      "RequiredItems": [
+        "has blue pikmin",
+        "SMGC"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "SMGC Succulent Mattress",
+      "RequiredItems": [
+        "has blue pikmin",
+        "SMGC"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "SMGC Drone Supplies",
+      "RequiredItems": [
+        "has blue pikmin",
+        "SMGC"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "SMGC Pale Passion",
+      "RequiredItems": [
+        "has blue pikmin",
+        "SMGC"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "SMGC Proton AA",
+      "RequiredItems": [
+        "has blue pikmin",
+        "SMGC"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "SMGC Professional Noisemaker",
+      "RequiredItems": [
+        "has blue pikmin",
+        "has purple pikmin",
+        "SMGC"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "WW Doomsday Apparatus",
+      "RequiredItems": [
+        "WW"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "WW Seed of Greed",
+      "RequiredItems": [
+        "has blue pikmin",
+        "WW"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "WW Anti-hiccup Fungus",
+      "RequiredItems": [
+        "has blue pikmin",
+        "has white pikmin",
+        "WW"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "WW Armored Nut",
+      "RequiredItems": [
+        "has blue pikmin",
+        "WW"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "WW Conifer Spire",
+      "RequiredItems": [
+        "has yellow pikmin",
+        "WW"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "CoC Enamel Buster",
+      "RequiredItems": [
+        "CoC"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "CoC Mirth Sphere",
+      "RequiredItems": [
+        "CoC"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "CoC Essence of Despair",
+      "RequiredItems": [
+        "has red pikmin",
+        "CoC"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "CoC Frosty Bauble",
+      "RequiredItems": [
+        "has red pikmin",
+        "CoC"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "CoC Gemstar Wife",
+      "RequiredItems": [
+        "has red pikmin",
+        "CoC"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "CoC Child of the Earth",
+      "RequiredItems": [
+        "CoC"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "CoC Infernal Vegetable",
+      "RequiredItems": [
+        "CoC"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "CoC Milk Tub",
+      "RequiredItems": [
+        "has blue pikmin",
+        "CoC"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "CoC Mysterious Remains",
+      "RequiredItems": [
+        "has blue pikmin",
+        "CoC"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "CoC Growshroom",
+      "RequiredItems": [
+        "has blue pikmin",
+        "CoC"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "CoC Princess Pearl",
+      "RequiredItems": [
+        "has blue pikmin",
+        "CoC"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "CoC Fuel Reservoir",
+      "RequiredItems": [
+        "has white pikmin",
+        "CoC"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "CoC Impenetrable Cookie",
+      "RequiredItems": [
+        "has white pikmin",
+        "CoC"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "CoC Fruit Guard",
+      "RequiredItems": [
+        "CoC"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "CoC Maternal Sculpture",
+      "RequiredItems": [
+        "has blue pikmin",
+        "has white pikmin",
+        "CoC"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "CoC Wiggle Noggin",
+      "RequiredItems": [
+        "has blue pikmin",
+        "has white pikmin",
+        "CoC"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "CoC Silencer",
+      "RequiredItems": [
+        "CoC"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "HoH Corpulent Nut",
+      "RequiredItems": [
+        "HoH"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "HoH Essence of True Love",
+      "RequiredItems": [
+        "HoH"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "HoH Love Sphere",
+      "RequiredItems": [
+        "HoH"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "HoH Lustrous Element",
+      "RequiredItems": [
+        "HoH"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "HoH Nutrient Silo",
+      "RequiredItems": [
+        "has blue pikmin",
+        "HoH"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "HoH Joyless Jewel",
+      "RequiredItems": [
+        "HoH"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "HoH Dimensional Slicer",
+      "RequiredItems": [
+        "has red pikmin",
+        "HoH"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "HoH Treasured Gyro Block",
+      "RequiredItems": [
+        "has white pikmin",
+        "HoH"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "HoH Favorite Gyro Block",
+      "RequiredItems": [
+        "HoH"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "HoH Lost Gyro Block",
+      "RequiredItems": [
+        "HoH"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "HoH Memorable Gyro Block",
+      "RequiredItems": [
+        "has blue pikmin",
+        "HoH"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "HoH Fond Gyro Block",
+      "RequiredItems": [
+        "has blue pikmin",
+        "HoH"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "HoH Remembered Old Buddy",
+      "RequiredItems": [
+        "HoH"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "DD Disguised Delicacy",
+      "RequiredItems": [
+        "has white pikmin",
+        "DD"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "DD Implement of Toil",
+      "RequiredItems": [
+        "DD"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "DD Manual Honer",
+      "RequiredItems": [
+        "has yellow pikmin",
+        "DD"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "DD Glee Spinner",
+      "RequiredItems": [
+        "has white pikmin",
+        "DD"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "DD Mirrored Element",
+      "RequiredItems": [
+        "has white pikmin",
+        "DD"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "DD Insect Condo",
+      "RequiredItems": [
+        "has red pikmin",
+        "DD"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "DD Future Orb",
+      "RequiredItems": [
+        "DD"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "DD Essence of Desire",
+      "RequiredItems": [
+        "DD"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "DD Extreme Perspirator",
+      "RequiredItems": [
+        "has white pikmin",
+        "DD"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "DD Possessed Squash",
+      "RequiredItems": [
+        "has white pikmin",
+        "DD"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "DD Talisman of Life",
+      "RequiredItems": [
+        "has blue pikmin",
+        "DD"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "DD Boss Stone",
+      "RequiredItems": [
+        "has white pikmin",
+        "DD"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "DD Yellow Taste Tyrant",
+      "RequiredItems": [
+        "has white pikmin",
+        "DD"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "DD Stringent Container",
+      "RequiredItems": [
+        "has white pikmin",
+        "DD"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "DD Universal Com",
+      "RequiredItems": [
+        "has white pikmin",
+        "DD"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "DD Hypnotic Platter",
+      "RequiredItems": [
+        "DD"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "DD Comedy Bomb",
+      "RequiredItems": [
+        "DD"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "DD Flare Cannon",
+      "RequiredItems": [
+        "DD"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "DD Monster Pump",
+      "RequiredItems": [
+        "DD"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "DD Shock Therapist",
+      "RequiredItems": [
+        "DD"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "DD King of Bugs",
+      "RequiredItems": [
+        "DD"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "VoR => EC",
+      "RequiredItems": [],
+      "ConditionalItems": [
+        [
+          "setting{cave_keys, all_unlocked}"
+        ],
+        [
+          "EC Entrance Key"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "VoR => SC",
+      "RequiredItems": [
+        "has blue pikmin",
+        "has white pikmin"
+      ],
+      "ConditionalItems": [
+        [
+          "setting{cave_keys, all_unlocked}"
+        ],
+        [
+          "SC Entrance Key"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "VoR => FC",
+      "RequiredItems": [
+        "has blue pikmin"
+      ],
+      "ConditionalItems": [
+        [
+          "setting{cave_keys, all_unlocked}"
+        ],
+        [
+          "FC Entrance Key"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "AW => HoB",
+      "RequiredItems": [],
+      "ConditionalItems": [
+        [
+          "setting{cave_keys, all_unlocked}"
+        ],
+        [
+          "HoB Entrance Key"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "AW => WFG",
+      "RequiredItems": [
+        "has purple pikmin"
+      ],
+      "ConditionalItems": [
+        [
+          "setting{cave_keys, all_unlocked}"
+        ],
+        [
+          "WFG Entrance Key"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "AW => BK",
+      "RequiredItems": [
+        "has white pikmin",
+        "has yellow pikmin"
+      ],
+      "ConditionalItems": [
+        [
+          "setting{cave_keys, all_unlocked}"
+        ],
+        [
+          "BK Entrance Key"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "AW => SH",
+      "RequiredItems": [
+        "has white pikmin",
+        "has blue pikmin"
+      ],
+      "ConditionalItems": [
+        [
+          "setting{cave_keys, all_unlocked}"
+        ],
+        [
+          "SH Entrance Key"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "PP => CoS",
+      "RequiredItems": [],
+      "ConditionalItems": [
+        [
+          "setting{cave_keys, all_unlocked}"
+        ],
+        [
+          "CoS Entrance Key"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "PP => GK",
+      "RequiredItems": [
+        "has yellow pikmin"
+      ],
+      "ConditionalItems": [
+        [
+          "setting{cave_keys, all_unlocked}"
+        ],
+        [
+          "GK Entrance Key"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "PP => SR",
+      "RequiredItems": [
+        "has yellow pikmin",
+        "has blue pikmin"
+      ],
+      "ConditionalItems": [
+        [
+          "setting{cave_keys, all_unlocked}"
+        ],
+        [
+          "SR Entrance Key"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "PP => SMGC",
+      "RequiredItems": [
+        "has blue pikmin"
+      ],
+      "ConditionalItems": [
+        [
+          "setting{cave_keys, all_unlocked}"
+        ],
+        [
+          "SMGC Entrance Key"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "WW => CoC",
+      "RequiredItems": [],
+      "ConditionalItems": [
+        [
+          "setting{cave_keys, all_unlocked}"
+        ],
+        [
+          "CoC Entrance Key"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "WW => HoH",
+      "RequiredItems": [
+        "has blue pikmin",
+        "has yellow pikmin"
+      ],
+      "ConditionalItems": [
+        [
+          "setting{cave_keys, all_unlocked}"
+        ],
+        [
+          "HoH Entrance Key"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "WW => DD",
+      "RequiredItems": [
+        "has blue pikmin",
+        "has white pikmin"
+      ],
+      "ConditionalItems": [
+        [
+          "setting{cave_keys, all_unlocked}"
+        ],
+        [
+          "DD Entrance Key"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "has red pikmin",
+      "RequiredItems": [],
+      "ConditionalItems": [
+        [
+          "setting{onion_shuffle, vanilla}",
+          "VoR"
+        ],
+        [
+          "Red Onion"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "has yellow pikmin",
+      "RequiredItems": [],
+      "ConditionalItems": [
+        [
+          "setting{onion_shuffle, vanilla}",
+          "PP",
+          "has white pikmin"
+        ],
+        [
+          "Yellow Onion"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "has blue pikmin",
+      "RequiredItems": [],
+      "ConditionalItems": [
+        [
+          "setting{onion_shuffle, vanilla}",
+          "AW",
+          "has yellow pikmin"
+        ],
+        [
+          "Blue Onion"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "has white pikmin",
+      "RequiredItems": [],
+      "ConditionalItems": [
+        [
+          "AW"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "has purple pikmin",
+      "RequiredItems": [],
+      "ConditionalItems": [
+        [
+          "VoR"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "onions shuffled",
+      "RequiredItems": [],
+      "ConditionalItems": [
+        [
+          "setting{onion_shuffle, exclude_vanilla}"
+        ],
+        [
+          "setting{onion_shuffle, shuffle}"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "VoR Onion",
+      "RequiredItems": [
+        "VoR",
+        "onions shuffled"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "AW Onion",
+      "RequiredItems": [
+        "AW",
+        "onions shuffled",
+        "has yellow pikmin"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "PP Onion",
+      "RequiredItems": [
+        "PP",
+        "onions shuffled",
+        "has white pikmin"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    }
+  ]
+}

@@ -76,6 +76,7 @@ namespace TestingForm
                 new("Create BanjoTooie Data", GameFileCreation.BTCreateData, UpdateDebugActions),
                 new("Create BanjoTooie Logic File Templates", () => { new GameDataCreation.BanjoTooie.WorldTemplate().WriteWorldFiles(); }, UpdateDebugActions),
                 new("Create Minecraft Data", GameFileCreation.MinecraftCreateData, UpdateDebugActions),
+                new("Create Pikmin2 Data", GameFileCreation.Pikmin2CreateData, UpdateDebugActions),
                 new("Print Archipelago Server Data", Archipelago, UpdateDebugActions),
                 new("Test Py Spoiler Parser", TestPythonParser, UpdateDebugActions),
                 new("Test Random Stuff", RandomTests, UpdateDebugActions),

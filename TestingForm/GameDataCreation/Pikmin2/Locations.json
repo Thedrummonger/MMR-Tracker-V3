@@ -1,0 +1,1007 @@
+[
+  {
+    "name": "VoR Courage Reactor",
+    "type": "overworld",
+    "requirements": []
+  },
+  {
+    "name": "VoR Utter Scrap",
+    "type": "overworld",
+    "requirements": []
+  },
+  {
+    "name": "VoR Pink Menace",
+    "type": "overworld",
+    "requirements": [ "blue" ]
+  },
+  {
+    "name": "VoR Spiny Alien Treat",
+    "type": "overworld",
+    "requirements": [ "blue" ]
+  },
+  {
+    "name": "VoR Temporal Mechanism",
+    "type": "overworld_enemy",
+    "requirements": [ "blue" ]
+  },
+  {
+    "name": "VoR Unspeakable Wonder",
+    "type": "overworld",
+    "requirements": [ "blue" ]
+  },
+  {
+    "name": "VoR Fossilized Ursidae",
+    "type": "overworld",
+    "requirements": [ "blue", "yellow" ]
+  },
+  {
+    "name": "EC Citrus Lump",
+    "type": "cave",
+    "requirements": []
+  },
+  {
+    "name": "EC Quenching Emblem",
+    "type": "cave",
+    "requirements": []
+  },
+  {
+    "name": "EC Spherical Atlas",
+    "type": "cave",
+    "requirements": []
+  },
+  {
+    "name": "SC Exhausted Superstick",
+    "type": "cave",
+    "requirements": [ "white" ]
+  },
+  {
+    "name": "SC Nouveau Table",
+    "type": "cave",
+    "requirements": [ "white" ]
+  },
+  {
+    "name": "SC Network Mainbrain",
+    "type": "cave",
+    "requirements": []
+  },
+  {
+    "name": "SC Spirit Flogger",
+    "type": "cave",
+    "requirements": []
+  },
+  {
+    "name": "SC Coiled Launcher",
+    "type": "cave",
+    "requirements": []
+  },
+  {
+    "name": "SC Omega Flywheel",
+    "type": "cave",
+    "requirements": []
+  },
+  {
+    "name": "SC Superstrong Stabilizer",
+    "type": "cave_enemy",
+    "requirements": []
+  },
+  {
+    "name": "SC Adamantine Girdle",
+    "type": "cave",
+    "requirements": []
+  },
+  {
+    "name": "SC Mystical Disc",
+    "type": "cave",
+    "requirements": []
+  },
+  {
+    "name": "SC Repair Juggernaut",
+    "type": "cave",
+    "requirements": [ "white" ]
+  },
+  {
+    "name": "SC Space Wave Receiver",
+    "type": "cave",
+    "requirements": [ "white" ]
+  },
+  {
+    "name": "SC Vacuum Processor",
+    "type": "cave",
+    "requirements": [ "white" ]
+  },
+  {
+    "name": "SC Furious Adhesive",
+    "type": "cave",
+    "requirements": []
+  },
+  {
+    "name": "SC Indomitable CPU",
+    "type": "cave_enemy",
+    "requirements": []
+  },
+  {
+    "name": "SC Thirst Activator",
+    "type": "cave",
+    "requirements": []
+  },
+  {
+    "name": "SC Stellar Orb",
+    "type": "cave_enemy",
+    "requirements": []
+  },
+  {
+    "name": "FC Essence of Rage",
+    "type": "cave",
+    "requirements": []
+  },
+  {
+    "name": "FC Essential Furnishing",
+    "type": "cave",
+    "requirements": []
+  },
+  {
+    "name": "FC Icon of Progress",
+    "type": "cave",
+    "requirements": []
+  },
+  {
+    "name": "FC Joy Receptacle",
+    "type": "cave",
+    "requirements": []
+  },
+  {
+    "name": "FC Danger Chime",
+    "type": "cave_enemy",
+    "requirements": [ "white" ]
+  },
+  {
+    "name": "FC Fleeting Art Form",
+    "type": "cave",
+    "requirements": [ "white" ]
+  },
+  {
+    "name": "FC Gemstar Husband",
+    "type": "cave",
+    "requirements": [ "white" ]
+  },
+  {
+    "name": "FC Innocence Lost",
+    "type": "cave",
+    "requirements": []
+  },
+  {
+    "name": "FC Omniscient Sphere",
+    "type": "cave",
+    "requirements": []
+  },
+  {
+    "name": "FC Brute Knuckles",
+    "type": "cave_enemy",
+    "requirements": []
+  },
+  {
+    "name": "FC Priceless Statue",
+    "type": "cave",
+    "requirements": [ "blue" ]
+  },
+  {
+    "name": "FC Worthless Statue",
+    "type": "cave",
+    "requirements": [ "blue" ]
+  },
+  {
+    "name": "FC Flame Tiller",
+    "type": "cave",
+    "requirements": []
+  },
+  {
+    "name": "FC Spouse Alert",
+    "type": "cave",
+    "requirements": []
+  },
+  {
+    "name": "FC Repugnant Appendage",
+    "type": "cave_enemy",
+    "requirements": []
+  },
+  {
+    "name": "AW Sunseed Berry",
+    "type": "overworld",
+    "requirements": []
+  },
+  {
+    "name": "AW Chance Totem",
+    "type": "overworld",
+    "requirements": [ "white" ]
+  },
+  {
+    "name": "AW Pilgrim Bulb",
+    "type": "overworld",
+    "requirements": []
+  },
+  {
+    "name": "AW Geographic Projection",
+    "type": "overworld",
+    "requirements": [ "white" ]
+  },
+  {
+    "name": "AW Healing Cask",
+    "type": "overworld",
+    "requirements": [ "yellow" ]
+  },
+  {
+    "name": "AW Decorative Goo",
+    "type": "overworld",
+    "requirements": [ "yellow" ]
+  },
+  {
+    "name": "AW Air Brake",
+    "type": "overworld",
+    "requirements": [ "blue" ]
+  },
+  {
+    "name": "HoB Stone of Glory",
+    "type": "cave",
+    "requirements": []
+  },
+  {
+    "name": "HoB Cosmic Archive",
+    "type": "cave",
+    "requirements": []
+  },
+  {
+    "name": "HoB Strife Monolith",
+    "type": "cave",
+    "requirements": []
+  },
+  {
+    "name": "HoB Dream Architect",
+    "type": "cave_enemy",
+    "requirements": []
+  },
+  {
+    "name": "HoB Luck Wafer",
+    "type": "cave",
+    "requirements": []
+  },
+  {
+    "name": "HoB Prototype Detector",
+    "type": "cave_enemy",
+    "requirements": []
+  },
+  {
+    "name": "WFG Alien Billboard",
+    "type": "cave",
+    "requirements": []
+  },
+  {
+    "name": "WFG Drought Ender",
+    "type": "cave",
+    "requirements": []
+  },
+  {
+    "name": "WFG Petrified Heart",
+    "type": "cave",
+    "requirements": []
+  },
+  {
+    "name": "WFG Superstick Textile",
+    "type": "cave",
+    "requirements": []
+  },
+  {
+    "name": "WFG Survival Ointment",
+    "type": "cave",
+    "requirements": [ "white" ]
+  },
+  {
+    "name": "WFG Toxic Toadstool",
+    "type": "cave",
+    "requirements": [ "white" ]
+  },
+  {
+    "name": "WFG Five-man Napsack",
+    "type": "cave_enemy",
+    "requirements": []
+  },
+  {
+    "name": "BK Crystal Clover",
+    "type": "cave_enemy",
+    "requirements": []
+  },
+  {
+    "name": "BK Tear Stone",
+    "type": "cave",
+    "requirements": []
+  },
+  {
+    "name": "BK Olimarnite Shell",
+    "type": "cave",
+    "requirements": []
+  },
+  {
+    "name": "BK Crystal King",
+    "type": "cave_enemy",
+    "requirements": []
+  },
+  {
+    "name": "BK Unknown Merit",
+    "type": "cave_enemy",
+    "requirements": []
+  },
+  {
+    "name": "BK Anxious Sprout",
+    "type": "cave",
+    "requirements": []
+  },
+  {
+    "name": "BK Colossal Fossil",
+    "type": "cave",
+    "requirements": []
+  },
+  {
+    "name": "BK Eternal Emerald Eye",
+    "type": "cave_enemy",
+    "requirements": []
+  },
+  {
+    "name": "BK Forged Courage",
+    "type": "cave_enemy",
+    "requirements": []
+  },
+  {
+    "name": "BK Gyroid Bust",
+    "type": "cave",
+    "requirements": []
+  },
+  {
+    "name": "SH Crystallized Telekinesis",
+    "type": "cave_enemy",
+    "requirements": []
+  },
+  {
+    "name": "SH Leviathan Feather",
+    "type": "cave",
+    "requirements": []
+  },
+  {
+    "name": "SH Combustion Berry",
+    "type": "cave",
+    "requirements": []
+  },
+  {
+    "name": "SH Taste Sensation",
+    "type": "cave",
+    "requirements": []
+  },
+  {
+    "name": "SH Meat Satchel",
+    "type": "cave_enemy",
+    "requirements": []
+  },
+  {
+    "name": "SH Crystallized Telepathy",
+    "type": "cave",
+    "requirements": []
+  },
+  {
+    "name": "SH Cupid's Grenade",
+    "type": "cave",
+    "requirements": []
+  },
+  {
+    "name": "SH Heavy-duty Magnetizer",
+    "type": "cave_enemy",
+    "requirements": []
+  },
+  {
+    "name": "SH Crystallized Clairvoyance",
+    "type": "cave_enemy",
+    "requirements": []
+  },
+  {
+    "name": "SH Emperor Whistle",
+    "type": "cave_enemy",
+    "requirements": []
+  },
+  {
+    "name": "SH Salivatrix",
+    "type": "cave",
+    "requirements": [ "blue", "white" ]
+  },
+  {
+    "name": "SH Science Project",
+    "type": "cave",
+    "requirements": [ "blue", "white" ]
+  },
+  {
+    "name": "SH Stupendous Lens",
+    "type": "cave_enemy",
+    "requirements": [ "blue", "white" ]
+  },
+  {
+    "name": "SH Triple Sugar Threat",
+    "type": "cave_enemy",
+    "requirements": [ "blue", "white" ]
+  },
+  {
+    "name": "SH Justice Alloy",
+    "type": "cave_enemy",
+    "requirements": []
+  },
+  {
+    "name": "PP Gherkin Gate",
+    "type": "overworld",
+    "requirements": [ "yellow" ]
+  },
+  {
+    "name": "PP Impediment Scourge",
+    "type": "overworld",
+    "requirements": [ "yellow" ]
+  },
+  {
+    "name": "PP Aquatic Mine",
+    "type": "overworld_enemy",
+    "requirements": [ "blue" ]
+  },
+  {
+    "name": "PP Fortified Delicacy",
+    "type": "overworld",
+    "requirements": [ "blue" ]
+  },
+  {
+    "name": "PP Onion Replica",
+    "type": "overworld",
+    "requirements": [ "blue" ]
+  },
+  {
+    "name": "PP Optical Illustration",
+    "type": "overworld",
+    "requirements": [ "blue", "yellow" ]
+  },
+  {
+    "name": "PP Massage Girdle",
+    "type": "overworld",
+    "requirements": [ "blue" ]
+  },
+  {
+    "name": "CoS Love Nugget",
+    "type": "cave",
+    "requirements": []
+  },
+  {
+    "name": "CoS Creative Inspiration",
+    "type": "cave_enemy",
+    "requirements": []
+  },
+  {
+    "name": "CoS Lip Service",
+    "type": "cave",
+    "requirements": []
+  },
+  {
+    "name": "CoS Paradoxical Enigma",
+    "type": "cave",
+    "requirements": []
+  },
+  {
+    "name": "CoS Memorial Shell",
+    "type": "cave",
+    "requirements": []
+  },
+  {
+    "name": "CoS Patience Tester",
+    "type": "cave",
+    "requirements": []
+  },
+  {
+    "name": "CoS Flame of Tomorrow",
+    "type": "cave",
+    "requirements": []
+  },
+  {
+    "name": "CoS King of Sweets",
+    "type": "cave_enemy",
+    "requirements": []
+  },
+  {
+    "name": "CoS Time Capsule",
+    "type": "cave",
+    "requirements": []
+  },
+  {
+    "name": "CoS Regal Diamond",
+    "type": "cave",
+    "requirements": []
+  },
+  {
+    "name": "CoS The Key",
+    "type": "cave_enemy",
+    "requirements": []
+  },
+  {
+    "name": "GK Master's Instrument",
+    "type": "cave",
+    "requirements": []
+  },
+  {
+    "name": "GK Massive Lid",
+    "type": "cave",
+    "requirements": [ "yellow" ]
+  },
+  {
+    "name": "GK Imperative Cookie",
+    "type": "cave",
+    "requirements": [ "yellow" ]
+  },
+  {
+    "name": "GK Director of Destiny",
+    "type": "cave",
+    "requirements": []
+  },
+  {
+    "name": "GK Harmonic Synthesizer",
+    "type": "cave",
+    "requirements": []
+  },
+  {
+    "name": "GK Invigorator",
+    "type": "cave",
+    "requirements": [ "yellow" ]
+  },
+  {
+    "name": "GK Happiness Emblem",
+    "type": "cave_enemy",
+    "requirements": []
+  },
+  {
+    "name": "GK White Goodness",
+    "type": "cave",
+    "requirements": [ "yellow" ]
+  },
+  {
+    "name": "GK Boom Cone",
+    "type": "cave",
+    "requirements": []
+  },
+  {
+    "name": "GK Sulking Antenna",
+    "type": "cave",
+    "requirements": []
+  },
+  {
+    "name": "GK Dream Material",
+    "type": "cave_enemy",
+    "requirements": []
+  },
+  {
+    "name": "GK Hideous Victual",
+    "type": "cave",
+    "requirements": []
+  },
+  {
+    "name": "GK Meat of Champions",
+    "type": "cave",
+    "requirements": []
+  },
+  {
+    "name": "GK Sweet Dreamer",
+    "type": "cave",
+    "requirements": []
+  },
+  {
+    "name": "SR Merciless Extractor",
+    "type": "cave",
+    "requirements": []
+  },
+  {
+    "name": "SR Durable Energy Cell",
+    "type": "cave",
+    "requirements": [ "white" ]
+  },
+  {
+    "name": "SR Sud Generator",
+    "type": "cave",
+    "requirements": [ "white" ]
+  },
+  {
+    "name": "SR Mirrored Stage",
+    "type": "cave_enemy",
+    "requirements": [ "blue" ]
+  },
+  {
+    "name": "SR Scrumptious Shell",
+    "type": "cave",
+    "requirements": [ "blue" ]
+  },
+  {
+    "name": "SR Vorpal Platter",
+    "type": "cave",
+    "requirements": [ "blue" ]
+  },
+  {
+    "name": "SR Arboreal Frippery",
+    "type": "cave",
+    "requirements": []
+  },
+  {
+    "name": "SR Broken Food Master",
+    "type": "cave",
+    "requirements": [ "blue" ]
+  },
+  {
+    "name": "SR Endless Repository",
+    "type": "cave",
+    "requirements": [ "blue" ]
+  },
+  {
+    "name": "SR Pondering Emblem",
+    "type": "cave",
+    "requirements": [ "blue" ]
+  },
+  {
+    "name": "SR Abstract Masterpiece",
+    "type": "cave",
+    "requirements": [ "blue" ]
+  },
+  {
+    "name": "SR Behemoth Jaw",
+    "type": "cave",
+    "requirements": [ "blue" ]
+  },
+  {
+    "name": "SR Rubber Ugly",
+    "type": "cave",
+    "requirements": [ "blue" ]
+  },
+  {
+    "name": "SR Amplified Amplifier",
+    "type": "cave_enemy",
+    "requirements": []
+  },
+  {
+    "name": "SMGC Bug Bait",
+    "type": "cave_enemy",
+    "requirements": [ "blue" ]
+  },
+  {
+    "name": "SMGC Diet Doomer",
+    "type": "cave",
+    "requirements": [ "blue" ]
+  },
+  {
+    "name": "SMGC Pastry Wheel",
+    "type": "cave",
+    "requirements": [ "blue" ]
+  },
+  {
+    "name": "SMGC Chocolate Cushion",
+    "type": "cave",
+    "requirements": [ "blue" ]
+  },
+  {
+    "name": "SMGC Comfort Cookie",
+    "type": "cave_enemy",
+    "requirements": [ "blue" ]
+  },
+  {
+    "name": "SMGC Confection Hoop",
+    "type": "cave",
+    "requirements": [ "blue" ]
+  },
+  {
+    "name": "SMGC Activity Arouser",
+    "type": "cave_enemy",
+    "requirements": [ "blue" ]
+  },
+  {
+    "name": "SMGC Compelling Cookie",
+    "type": "cave",
+    "requirements": [ "blue" ]
+  },
+  {
+    "name": "SMGC Succulent Mattress",
+    "type": "cave",
+    "requirements": [ "blue" ]
+  },
+  {
+    "name": "SMGC Drone Supplies",
+    "type": "cave",
+    "requirements": [ "blue" ]
+  },
+  {
+    "name": "SMGC Pale Passion",
+    "type": "cave_enemy",
+    "requirements": [ "blue" ]
+  },
+  {
+    "name": "SMGC Proton AA",
+    "type": "cave",
+    "requirements": [ "blue" ]
+  },
+  {
+    "name": "SMGC Professional Noisemaker",
+    "type": "cave_enemy",
+    "requirements": [ "blue", "purple" ]
+  },
+  {
+    "name": "WW Doomsday Apparatus",
+    "type": "overworld",
+    "requirements": []
+  },
+  {
+    "name": "WW Seed of Greed",
+    "type": "overworld_enemy",
+    "requirements": [ "blue" ]
+  },
+  {
+    "name": "WW Anti-hiccup Fungus",
+    "type": "overworld",
+    "requirements": [ "blue", "white" ]
+  },
+  {
+    "name": "WW Armored Nut",
+    "type": "overworld_enemy",
+    "requirements": [ "blue" ]
+  },
+  {
+    "name": "WW Conifer Spire",
+    "type": "overworld",
+    "requirements": [ "yellow" ]
+  },
+  {
+    "name": "CoC Enamel Buster",
+    "type": "cave",
+    "requirements": []
+  },
+  {
+    "name": "CoC Mirth Sphere",
+    "type": "cave",
+    "requirements": []
+  },
+  {
+    "name": "CoC Essence of Despair",
+    "type": "cave_enemy",
+    "requirements": [ "red" ]
+  },
+  {
+    "name": "CoC Frosty Bauble",
+    "type": "cave_enemy",
+    "requirements": [ "red" ]
+  },
+  {
+    "name": "CoC Gemstar Wife",
+    "type": "cave_enemy",
+    "requirements": [ "red" ]
+  },
+  {
+    "name": "CoC Child of the Earth",
+    "type": "cave",
+    "requirements": []
+  },
+  {
+    "name": "CoC Infernal Vegetable",
+    "type": "cave",
+    "requirements": []
+  },
+  {
+    "name": "CoC Milk Tub",
+    "type": "cave",
+    "requirements": [ "blue" ]
+  },
+  {
+    "name": "CoC Mysterious Remains",
+    "type": "cave_enemy",
+    "requirements": [ "blue" ]
+  },
+  {
+    "name": "CoC Growshroom",
+    "type": "cave",
+    "requirements": [ "blue" ]
+  },
+  {
+    "name": "CoC Princess Pearl",
+    "type": "cave_enemy",
+    "requirements": [ "blue" ]
+  },
+  {
+    "name": "CoC Fuel Reservoir",
+    "type": "cave",
+    "requirements": [ "white" ]
+  },
+  {
+    "name": "CoC Impenetrable Cookie",
+    "type": "cave_enemy",
+    "requirements": [ "white" ]
+  },
+  {
+    "name": "CoC Fruit Guard",
+    "type": "cave",
+    "requirements": []
+  },
+  {
+    "name": "CoC Maternal Sculpture",
+    "type": "cave",
+    "requirements": [ "blue", "white" ]
+  },
+  {
+    "name": "CoC Wiggle Noggin",
+    "type": "cave",
+    "requirements": [ "blue", "white" ]
+  },
+  {
+    "name": "CoC Silencer",
+    "type": "cave_enemy",
+    "requirements": []
+  },
+  {
+    "name": "HoH Corpulent Nut",
+    "type": "cave",
+    "requirements": []
+  },
+  {
+    "name": "HoH Essence of True Love",
+    "type": "cave",
+    "requirements": []
+  },
+  {
+    "name": "HoH Love Sphere",
+    "type": "cave",
+    "requirements": []
+  },
+  {
+    "name": "HoH Lustrous Element",
+    "type": "cave_enemy",
+    "requirements": []
+  },
+  {
+    "name": "HoH Nutrient Silo",
+    "type": "cave",
+    "requirements": [ "blue" ]
+  },
+  {
+    "name": "HoH Joyless Jewel",
+    "type": "cave_enemy",
+    "requirements": []
+  },
+  {
+    "name": "HoH Dimensional Slicer",
+    "type": "cave_enemy",
+    "requirements": [ "red" ]
+  },
+  {
+    "name": "HoH Treasured Gyro Block",
+    "type": "cave_enemy",
+    "requirements": [ "white" ]
+  },
+  {
+    "name": "HoH Favorite Gyro Block",
+    "type": "cave_enemy",
+    "requirements": []
+  },
+  {
+    "name": "HoH Lost Gyro Block",
+    "type": "cave_enemy",
+    "requirements": []
+  },
+  {
+    "name": "HoH Memorable Gyro Block",
+    "type": "cave_enemy",
+    "requirements": [ "blue" ]
+  },
+  {
+    "name": "HoH Fond Gyro Block",
+    "type": "cave_enemy",
+    "requirements": [ "blue" ]
+  },
+  {
+    "name": "HoH Remembered Old Buddy",
+    "type": "cave_enemy",
+    "requirements": []
+  },
+  {
+    "name": "DD Disguised Delicacy",
+    "type": "cave",
+    "requirements": [ "white" ]
+  },
+  {
+    "name": "DD Implement of Toil",
+    "type": "cave",
+    "requirements": []
+  },
+  {
+    "name": "DD Manual Honer",
+    "type": "cave_enemy",
+    "requirements": [ "yellow" ]
+  },
+  {
+    "name": "DD Glee Spinner",
+    "type": "cave_enemy",
+    "requirements": [ "white" ]
+  },
+  {
+    "name": "DD Mirrored Element",
+    "type": "cave",
+    "requirements": [ "white" ]
+  },
+  {
+    "name": "DD Insect Condo",
+    "type": "cave_enemy",
+    "requirements": [ "red" ]
+  },
+  {
+    "name": "DD Future Orb",
+    "type": "cave_enemy",
+    "requirements": []
+  },
+  {
+    "name": "DD Essence of Desire",
+    "type": "cave_enemy",
+    "requirements": []
+  },
+  {
+    "name": "DD Extreme Perspirator",
+    "type": "cave",
+    "requirements": [ "white" ]
+  },
+  {
+    "name": "DD Possessed Squash",
+    "type": "cave",
+    "requirements": [ "white" ]
+  },
+  {
+    "name": "DD Talisman of Life",
+    "type": "cave_enemy",
+    "requirements": [ "blue" ]
+  },
+  {
+    "name": "DD Boss Stone",
+    "type": "cave",
+    "requirements": [ "white" ]
+  },
+  {
+    "name": "DD Yellow Taste Tyrant",
+    "type": "cave",
+    "requirements": [ "white" ]
+  },
+  {
+    "name": "DD Stringent Container",
+    "type": "cave_enemy",
+    "requirements": [ "white" ]
+  },
+  {
+    "name": "DD Universal Com",
+    "type": "cave",
+    "requirements": [ "white" ]
+  },
+  {
+    "name": "DD Hypnotic Platter",
+    "type": "cave_enemy",
+    "requirements": []
+  },
+  {
+    "name": "DD Comedy Bomb",
+    "type": "cave",
+    "requirements": []
+  },
+  {
+    "name": "DD Flare Cannon",
+    "type": "cave",
+    "requirements": []
+  },
+  {
+    "name": "DD Monster Pump",
+    "type": "cave",
+    "requirements": []
+  },
+  {
+    "name": "DD Shock Therapist",
+    "type": "cave",
+    "requirements": []
+  },
+  {
+    "name": "DD King of Bugs",
+    "type": "cave",
+    "requirements": []
+  }
+]

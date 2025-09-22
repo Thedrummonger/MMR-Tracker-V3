@@ -74,18 +74,20 @@ namespace MMR_Tracker_V3.TrackerObjects
         {
             public string region { get; set; }
             public string from { get; set; }
+            public string? DisplayOverride { get; set; }
             public override string ToString()
             {
-                return $"{region} <= {from}";
+                return DisplayOverride ?? $"{region} <= {from}";
             }
         }
         public class EntranceAreaPair
         {
             public string Area { get; set; }
             public string Exit { get; set; }
+            public string? DisplayOverride { get; set; }
             public string GetStringID()
             {
-                return $"{Area} X {Exit}";
+                return DisplayOverride ?? $"{Area} X {Exit}";
             }
         }
     }
