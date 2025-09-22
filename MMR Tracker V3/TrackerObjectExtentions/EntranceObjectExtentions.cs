@@ -18,7 +18,13 @@ namespace MMR_Tracker_V3.TrackerObjectExtensions
         {
             var Destination = ExitObjectObject.GetDestinationAtExit();
             string StarredDisplay = ExitObjectObject.Starred ? "*" : "";
-            string RandomizedExitDisplay = Destination is null ? "" : $"{Destination.region} <- {Destination.from}";
+            string RandomizedExitDisplay = "";
+            var DestData = Destination?.AsExit(ExitObjectObject.GetParent());
+            if (Destination is not null)
+                if (DestData is not null && DestData.GetDictEntry().DestinationHasSingleEntrance)
+                    RandomizedExitDisplay = $"{DestData?.DisplayExit() ?? Destination.region}";
+                else
+                    RandomizedExitDisplay = $"{DestData?.DisplayExit() ?? Destination.region} <- {DestData?.DisplayArea() ?? Destination.from}";
 
             return ExitObjectObject.CheckState switch
             {

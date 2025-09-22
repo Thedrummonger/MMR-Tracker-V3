@@ -324,6 +324,7 @@ namespace Windows_Form_Frontend
             lblAvailableEntrances.Size = new System.Drawing.Size(139, 15);
             lblAvailableEntrances.TabIndex = 28;
             lblAvailableEntrances.Text = "Available Entrances";
+            lblAvailableEntrances.Click += HeaderLabel_Click;
             // 
             // lblCheckedLocation
             // 
@@ -337,6 +338,7 @@ namespace Windows_Form_Frontend
             lblCheckedLocation.Size = new System.Drawing.Size(139, 15);
             lblCheckedLocation.TabIndex = 27;
             lblCheckedLocation.Text = "Checked locations";
+            lblCheckedLocation.Click += HeaderLabel_Click;
             // 
             // lblAvailableLocation
             // 
@@ -350,6 +352,7 @@ namespace Windows_Form_Frontend
             lblAvailableLocation.Size = new System.Drawing.Size(139, 15);
             lblAvailableLocation.TabIndex = 26;
             lblAvailableLocation.Text = "Available Locations";
+            lblAvailableLocation.Click += HeaderLabel_Click;
             // 
             // TXTCheckedSearch
             // 

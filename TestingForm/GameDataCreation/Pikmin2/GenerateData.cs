@@ -243,6 +243,7 @@ namespace TestingForm.GameDataCreation.Pikmin2
                 Entrance.Area = item.Value.RootArea;
                 Entrance.DisplayArea = Areas.AbbrevToName[item.Value.RootArea];
                 Entrance.RandomizableEntrance = true;
+                Entrance.DestinationHasSingleEntrance = true;
                 Logicdictionary.EntranceList.Add(ID, Entrance);
 
                 MMRData.JsonFormatLogicItem LogicItem = new MMRData.JsonFormatLogicItem();

@@ -645,7 +645,7 @@ namespace Windows_Form_Frontend
             ToolStripComboBox ListBoxDisplayOptions = new();
             ListBoxDisplayOptions.Items.AddRange(DisplayListStringList.ToArray());
             if (InstanceContainer.Instance.StaticOptions.ShowOptionsInListBox is null) { ListBoxDisplayOptions.SelectedIndex = 0; }
-            else { ListBoxDisplayOptions.SelectedIndex = EnumList.IndexOf(InstanceContainer.Instance.StaticOptions.ShowOptionsInListBox)+1; }
+            else { ListBoxDisplayOptions.SelectedIndex = EnumList.IndexOf(InstanceContainer.Instance.StaticOptions.ShowOptionsInListBox) + 1; }
             ListBoxDisplayOptions.SelectedIndex = DisplayListEnumList.IndexOf(InstanceContainer.Instance.StaticOptions.ShowOptionsInListBox);
             ListBoxDisplayOptions.SelectedIndexChanged += delegate (object sender, EventArgs e)
             {
@@ -1082,6 +1082,18 @@ namespace Windows_Form_Frontend
             {
                 CurrentNetClientForm = new NetClient(this, InstanceContainer);
                 CurrentNetClientForm.Show();
+            }
+        }
+
+        private void HeaderLabel_Click(object sender, EventArgs e)
+        {
+            if (InstanceContainer.Instance.StaticOptions.OptionFile.WinformData.UILayout == UILayout.Compact)
+            {
+                if (ViewFocus == DisplayListType.Locations) { ViewFocus = InstanceContainer.Instance.CombineEntrancesWithLocations() ? DisplayListType.Checked : DisplayListType.Entrances; }
+                else if (ViewFocus == DisplayListType.Entrances) { ViewFocus = DisplayListType.Checked; }
+                else if (ViewFocus == DisplayListType.Checked) { ViewFocus = DisplayListType.Locations; }
+                UpdateUI();
+                AlignUIElements();
             }
         }
     }
