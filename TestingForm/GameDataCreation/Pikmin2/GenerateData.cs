@@ -53,7 +53,8 @@ namespace TestingForm.GameDataCreation.Pikmin2
                 GameName = "Pikmin 2",
                 SpoilerLogInstructions = new()
                 {
-                    ArchipelagoParserPath = "PIK2"
+                    ArchipelagoParserPath = "PIK2",
+                    ArchipelagoFileImports = new() { { "APPatchFile", ("Archipelago Pikmin 2 Patch File", ["appik2"]) } }
                 }
             };
 
