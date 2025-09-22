@@ -17,11 +17,11 @@ namespace MMR_Tracker_V3.SpoilerLogHandling
             GenericAPSpoiler genericAPSpoiler = new GenericAPSpoiler();
             var APClient = IC.netConnection.ArchipelagoClient;
             var Data = APClient.Session.Locations.ScoutLocationsAsync(APClient.Session.Locations.AllLocations.ToArray()).Result;
-            foreach (var Entry in Data.Locations)
+            foreach (var Entry in Data)
             {
-                string LocationName = APClient.Session.Locations.GetLocationNameFromId(Entry.Location);
-                string ItemName = APClient.Session.Items.GetItemName(Entry.Item);
-                genericAPSpoiler.Locations.Add((LocationName, ItemName, Entry.Player));
+                string LocationName = Entry.Value.LocationName;
+                string ItemName = Entry.Value.ItemName;
+                genericAPSpoiler.Locations.Add((LocationName, ItemName, Entry.Value.Player));
             }
             genericAPSpoiler.SlotData = APClient.GetLoginSuccessInfo().SlotData;
 

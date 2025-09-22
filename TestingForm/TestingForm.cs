@@ -104,9 +104,7 @@ namespace TestingForm
             }
 
             var Data = archipelago.Session.Locations.ScoutLocationsAsync(archipelago.Session.Locations.AllLocations.ToArray()).Result;
-            var CleanData = Data.Locations.Select(x =>
-                (archipelago.Session.Locations.GetLocationNameFromId(x.Location),
-                archipelago.Session.Items.GetItemName(x.Item)));
+            var CleanData = Data.Select(x => (x.Value.LocationName, x.Value.ItemName));
             Debug.WriteLine(CleanData.ToFormattedJson());
             Debug.WriteLine(archipelago.GetLoginSuccessInfo().ToFormattedJson());
             Debug.WriteLine(archipelago.Session.DataStorage.GetHints(archipelago.Session.ConnectionInfo.Slot).ToFormattedJson());

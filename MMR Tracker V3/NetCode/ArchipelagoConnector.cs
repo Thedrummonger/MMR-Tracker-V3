@@ -67,7 +67,7 @@ namespace MMR_Tracker_V3.NetCode
         public string[] GetAllItems()
         {
             var AllLocations = Session.Items.AllItemsReceived.ToArray();
-            var AllLocationNames = AllLocations.Select(x => $"{Session.Items.GetItemName(x.Item)} ({Session.Players.GetPlayerAliasAndName(x.Player)})");
+            var AllLocationNames = AllLocations.Select(x => $"{x.ItemName} ({Session.Players.GetPlayerAliasAndName(x.Player)})");
             return [.. AllLocationNames];
         }
     }
@@ -128,7 +128,7 @@ namespace MMR_Tracker_V3.NetCode
             if (APItemIDLookup is null) { FillItemLookupDict(); }
             var Instance = Data.InstanceContainer.Instance;
             var Session = Data.InstanceContainer.netConnection.ArchipelagoClient.Session;
-            var AllItems = Session.Items.AllItemsReceived.Select(x => (Session.Items.GetItemName(x.Item), Session.Locations.GetLocationNameFromId(x.Location), x.Player)).ToArray();
+            var AllItems = Session.Items.AllItemsReceived.Select(x => (x.ItemName, x.LocationName, x.Player)).ToArray();
             var AllLocations = Session.Locations.AllLocationsChecked.Select(x => Session.Locations.GetLocationNameFromId(x)).ToArray();
             foreach (var i in Data.InstanceContainer.Instance.ItemPool.Values) { i.AmountAquiredOnline = []; }
             HashSet<LocationData.LocationObject> ToCheck = [];
@@ -182,11 +182,11 @@ namespace MMR_Tracker_V3.NetCode
                     }
                     else if (i.ReceivingPlayer == Session.ConnectionInfo.Slot && !i.Found)
                     {
+                        var FromPlayer = Session.Players.GetPlayerInfo(i.FindingPlayer);
                         var itemName = Session.Items.GetItemName(i.ItemId);
                         var itemObject = GetItemByNetID(itemName);
-                        var locationName = Session.Locations.GetLocationNameFromId(i.LocationId);
-                        Instance.GetParentContainer().netConnection.RemoteHints.Add(
-                            new HintData.RemoteLocationHint(itemObject, locationName, i.FindingPlayer));
+                        var locationName = Session.Locations.GetLocationNameFromId(i.LocationId, FromPlayer.Game);
+                        Instance.GetParentContainer().netConnection.RemoteHints.Add(new HintData.RemoteLocationHint(itemObject, locationName, i.FindingPlayer));
                     }
                 }
                 LocationChecker.CheckSelectedItems(HintedLocations, Data.InstanceContainer, new CheckItemSetting(MiscData.CheckState.Marked));
