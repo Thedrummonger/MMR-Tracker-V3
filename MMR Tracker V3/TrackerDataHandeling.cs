@@ -210,7 +210,10 @@ namespace MMR_Tracker_V3
             PriceDisplay = p < 0 || (!Available) ? "" : $" [{c}{p}]";
             RandomizedItemDisplay = instance.Instance.GetItemByID(Location.Randomizeditem.Item)?.GetDictEntry()?.GetName() ?? Location.Randomizeditem.Item;
 
-            ForPlayer = Location.Randomizeditem.Item is not null && Location.Randomizeditem.OwningPlayer >= 0 ? $" [Player: {PlayerNumber(Location.Randomizeditem.OwningPlayer)}]" : "";
+            ForPlayer = 
+                Location.Randomizeditem.Item is not null && 
+                (Location.Randomizeditem.OwningPlayer >= 0) && Location.Randomizeditem.OwningPlayer != instance.netConnection.PlayerID ? 
+                $" [Player: {PlayerNumber(Location.Randomizeditem.OwningPlayer)}]" : "";
 
             return Location.CheckState switch
             {
