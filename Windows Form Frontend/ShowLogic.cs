@@ -491,8 +491,21 @@ namespace Windows_Form_Frontend
         private string GetDisplayName(string i)
         {
             var data = IC.Instance.GetLogicItemData(i);
-            if (data.Type == LogicItemTypes.LogicEntryCollection) { Debug.WriteLine(((OptionData.LogicEntryCollection)data.Object).GetValue(IC.Instance).ToFormattedJson()); }
-            return i + (data.IntOptionCount is null ? "" : $"[{data.IntOptionCount.Value}]") + (IC.logicCalculation.LogicEntryAquired(i) ? "*" : "");
+            //if (data.Type == LogicItemTypes.LogicEntryCollection) { Debug.WriteLine(((OptionData.LogicEntryCollection)data.Object).GetValue(IC.Instance).ToFormattedJson()); }
+
+            string Name = data.CleanID;
+            string Amount = data.Amount.ToString();
+            if (data.LogicCollectionUsableItems is not null)
+                Name += $" [{data.LogicCollectionUsableItems.Count}]";
+            if (data.IntOptionCount is not null)
+                Amount = $"{data.IntOptionCount.ID} [{data.IntOptionCount.Value}]";
+
+            string Final = Name;
+            if (data.Amount > 0)
+                Final += $", {Amount}";
+            if (IC.logicCalculation.LogicEntryAquired(i))
+                Final += "*";
+            return Final;
         }
 
         private void btnGoTo_Click(object sender, EventArgs e)

@@ -92,10 +92,9 @@ namespace MMR_Tracker_V3.Logic
             }
         }
 
-        public bool CheckItemArray(string ArrVar, int amount, Dictionary<string, LogicItemData> UnlockData = null)
+        public List<string> GetCollectedItemsFromCollection(string ArrVar)
         {
-            var EditActions = container.Instance.GetOptionActions();
-            if (!container.Instance.LogicEntryCollections.TryGetValue(ArrVar, out OptionData.LogicEntryCollection Collection)) { return false; }
+            if (!container.Instance.LogicEntryCollections.TryGetValue(ArrVar, out OptionData.LogicEntryCollection Collection)) { return null; }
             List<string> VariableEntries = Collection.GetValue(container.Instance);
             VariableEntries = ExpandSubCollections(VariableEntries);
 
@@ -113,7 +112,13 @@ namespace MMR_Tracker_V3.Logic
                     ExpandedList.Add(VariableEntry);
                 }
             }
-            if (ExpandedList.Count < amount) { return false; }
+            return ExpandedList;
+        }
+
+        public bool CheckItemArray(string ArrVar, int amount, Dictionary<string, LogicItemData> UnlockData = null)
+        {
+            var ExpandedList = GetCollectedItemsFromCollection(ArrVar);
+            if (ExpandedList is null || ExpandedList.Count < amount) { return false; }
             IEnumerable<string> UsedItems = ExpandedList.Take(amount);
             Dictionary<string, LogicItemData> ItemCounts = [];
             Dictionary<string, LogicItemData> HasAmountEntries = [];

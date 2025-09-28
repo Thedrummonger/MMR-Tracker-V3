@@ -21,15 +21,16 @@ namespace MMR_Tracker_V3.TrackerObjectExtensions
             bool MultiItem = Instance.MultipleItemEntry(LogicItem, out string _LogicItem, out int Amount, out string IntOption);
             bool Literal = _LogicItem.IsLiteralID(out _LogicItem);
             var type = Instance.GetItemEntryType(_LogicItem, Literal, out object obj);
-            return new LogicItemData { 
-                CleanID = _LogicItem, 
-                Literal = Literal, 
-                RawID = LogicItem, 
-                Type = type, 
-                Amount = Amount, 
-                Object = obj, 
+            return new LogicItemData {
+                CleanID = _LogicItem,
+                Literal = Literal,
+                RawID = LogicItem,
+                Type = type,
+                Amount = Amount,
+                Object = obj,
                 HadItemCount = MultiItem,
                 IntOptionCount = IntOption is null ? null : Instance.IntOptions[IntOption],
+                LogicCollectionUsableItems = type == LogicItemTypes.LogicEntryCollection ? Instance.GetParentContainer().logicCalculation.GetCollectedItemsFromCollection(_LogicItem) : null
             };
         }
         public static ItemObject GetItemByID(this InstanceData.TrackerInstance instance, string item)
