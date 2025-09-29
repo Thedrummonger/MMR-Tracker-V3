@@ -501,7 +501,7 @@ namespace Windows_Form_Frontend
                 Amount = $"{data.IntOptionCount.ID} [{data.IntOptionCount.Value}]";
 
             string Final = Name;
-            if (data.Amount > 0)
+            if (data.HadItemCount)
                 Final += $", {Amount}";
             if (IC.logicCalculation.LogicEntryAquired(i))
                 Final += "*";
