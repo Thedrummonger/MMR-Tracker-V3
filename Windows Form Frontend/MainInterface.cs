@@ -61,6 +61,12 @@ namespace Windows_Form_Frontend
             foreach (var i in tlpChecked.Controls) { TLPCheckedControls.Add((Control)i); }
             foreach (var i in tlpEntrances.Controls) { TLPEntranceControls.Add((Control)i); }
             foreach (var i in tlpPathFinder.Controls) { TLPPathfinderControls.Add((Control)i); }
+
+            RandomizerOptionsToolStripMenuItem1.DropDown.Closing += (_, e) =>
+            {
+                if (e.CloseReason == ToolStripDropDownCloseReason.ItemClicked)
+                    e.Cancel = true;
+            };
         }
 
         //MainForm Actions
@@ -749,6 +755,7 @@ namespace Windows_Form_Frontend
                         if (!InstanceContainer.logicCalculation.ReCompileLogicOnCalculation) { InstanceContainer.logicCalculation.CompileOptionActionEdits(); }
                         LocationChecker.TriggerUserOptionUpdatedEvent([ToggleOption], InstanceContainer.Instance);
                         InstanceContainer.logicCalculation.CalculateLogic();
+                        menuItem.Checked = ToggleOption.IsEnabled();
                         UpdateUI();
                     };
                     OptionTree.MenuItems.Add(menuItem);
@@ -781,6 +788,12 @@ namespace Windows_Form_Frontend
                 {
                     if (!i.Value.MenuItems.Any() && !i.Value.SubGroups.Any()) { continue; }
                     ToolStripMenuItem SubMenu = new ToolStripMenuItem() { Text = i.Key };
+                    SubMenu.DropDown.Closing += (_, e) =>
+                    {
+                        Debug.WriteLine(e.CloseReason);
+                        if (e.CloseReason == ToolStripDropDownCloseReason.ItemClicked)
+                            e.Cancel = true;
+                    };
                     Tree.MenuItem.DropDownItems.Add(SubMenu);
                     i.Value.MenuItem = SubMenu;
                     ApplyMenuItems(i.Value);
